@@ -31,6 +31,8 @@ If you are using Jupyter notebooks for any use case applied to Infosec, we want 
 * Well documented notebook with enough context (e.g. Markdown text) to tell the story behind the code.
 * A well defined step by step process to go from basic to advanced skills.
 * Use of open source code (e.g pandas) to allow attendees to replicate the research at home.
+* Notebook and data must be freely releasable
+* 15-30mins notebook presentation.
 
 ## Open Infrastructure for an Open Event!
 
