@@ -299,7 +299,7 @@ DEPENDENCIES
   guard-livereload (~> 2.5.2)
   jekyll-feed (~> 0.6)
   jekyll-redirect-from
-  jekyll-scholar
+  jekyll-scholar (= 5.16.0)
   nokogiri (>= 1.10.8)
   tzinfo-data
 
