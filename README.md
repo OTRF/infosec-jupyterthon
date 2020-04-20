@@ -52,3 +52,4 @@ Much like the planet Jupiter and our solar system, the Jupyter community is larg
 * https://medium.com/threat-hunters-forge/writing-an-interactive-book-over-the-threat-hunter-playbook-with-the-help-of-the-jupyter-book-3ff37a3123c7
 * https://medium.com/threat-hunters-forge/threat-hunter-playbook-mordor-datasets-binderhub-open-infrastructure-for-open-8c8aee3d8b4
 * https://jupyter.readthedocs.io/en/latest/community/content-community.html#what-is-a-jovyan
+* https://discover-cookbook.numfocus.org/
