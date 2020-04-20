@@ -4,7 +4,9 @@
 
 <img src="docs/content/images/infosec-jupyterthon-main.png" width=700 alt="This image was created by Scriberia for The Turing Way community and is used under a CC-BY licence">
 
-An open community event for security researchers to share their favorite notebooks with the infosec community. We meet virtually, share notebooks round robin style, and have fun learning more about Jupyter notebooks applied to the infosec field.
+An open community event for security researchers to share their favorite notebooks with the infosec community. We meet virtually, share notebooks round robin style, and have fun learning more about Jupyter notebooks applied to the infosec field. A great place to meet other Infosec Jovyan!
+
+## Website https://infosecjupyterthon.com
 
 ## Event Goals
 
@@ -14,16 +16,21 @@ An open community event for security researchers to share their favorite noteboo
 * Have fun!
 
 ## Quick Information
-* **When?:** May 15th, 2020
-* **Where?:** Virtual Event. Potentially via [AltspaceVR](https://altvr.com/)
-* **How Much?:** Free
+* **When?** May 8th, 2020
+* **Where?** Virtual Event. Potentially via [AltspaceVR](https://altvr.com/)
+* **How Much?** Free
 
 ## Call For Notebooks!
 If you are using Jupyter notebooks for any use case applied to Infosec, we want to hear from you! Presentation slides are not required. You and a notebook is enough! 
 
-* **CFN form:** https://forms.office.com/Pages/ResponsePage.aspx?id=DQSIkWdsW0yxEjajBLZtrQAAAAAAAAAAAANAASH18J1UREEzUkhXVTRDVlFJSTBaVDQxTjk5UVdQSy4u
+* **CFN form:** https://bit.ly/InfosecJupyterthonCFN
 * **CFN starts:** 2020/04/20
 * **CFN ends:** 2020/05/01
+
+### A few submission guidelines
+* Well documented notebook with enough context (e.g. Markdown text) to tell the story behind the code.
+* A well defined step by step process to go from basic to advanced skills.
+* Use of open source code (e.g pandas) to allow attendees to replicate the research at home.
 
 ## Open Infrastructure for an Open Event!
 
