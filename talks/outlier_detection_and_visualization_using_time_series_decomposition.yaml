@@ -1,0 +1,19 @@
+title: Outlier detection and visualization using Time Series decomposition
+speaker: Ashwin Patil
+twitter: "@ashwinpatil"
+bio: >-
+    Ashwin Patil currently works as Senior Program Manager for Microsoft Threat Intelligence Center (MSTIC) and has over 10 years of experience entirely focused on Security monitoring and Incident Response defending enterprise networks.
+    In his current role, he primarily works on threat hunting , detection research in KQL (Kusto Query Language) for Azure Sentinel and develop Jupyter notebooks written in Python/R to do threat hunting and investigation across variety of cloud and on-premise security event log data sources.
+    He has Bachelor degree in Computer Engineering and also have certified with various SANS certifications such as GCIA, GCFE, GCIH in the field of Digital Forensics and Incident Response (DFIR). 
+job_title: Senior Program Manager
+company: Microsoft MSTIC
+time: TBD
+abstract: >-
+    As part of security monitoring and incident response, analysts often develop several detections based on static thresholds within a specified time interval window. e.g. brute force attack may have logic of 50 logon failures in 1 min etc.
+    Traditionally this threshold value is static and identified by either manually analyzing historical trend of events or taking average over a longer period.
+    In a typical enterprise environments, these detections flag false positives or misses true negatives since static threshold does not consider different time intervals such as after hours, weekends, holidays which affect it`s values.
+    Also in addition, despite of static threshold being reached/ exceeded slightly, the results are often uninteresting and generate false positives for analysts.
+    As part of triage, analyst keep on improving detections continuously via whitelisting to reduce false positive rate. This approach is not scalable and time series analysis can help us in such cases.
+    It will identify time-based patterns(e.g. seasonality, trend etc) by extracting meaningful statistics to correctly flag outlier.
+    The outliers are generally robust to false positives as it considers seasonality and historical trend before flagging.
+    In this session, we will look at practical use cases on security event logs along with the example implementation notebook walk through. We will start with loading data and preparation using Pandas, data wrangling using Seasonal-Trend decomposition using LOESS (STL) approach available in stats library to create baseline pattern from seasonality, trend, residuals etc and lastly use z-score to calculate the score which can be used to flag point anamolies deviating far from the baseline. Lastly we will visualize the results as interactive chart using Bokeh library. We will conclude the session with how these functionalities are natively available in msticpy library to be able to use on any type of data. 

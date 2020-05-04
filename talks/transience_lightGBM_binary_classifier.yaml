@@ -1,0 +1,22 @@
+title: Transience LightGBM Binary Classifier
+speaker: Daniel Tetrick
+twitter:
+bio: >-
+    After completing a 6-year enlistment as a Nuclear Missile Technician aboard submarines in the US Navy, Dan became a Learning Scientist where he developed RescuShell, the first all-virtual engineering course for a major university.
+    His passion for statistics and computational modeling eventually led him into a career in predictive modeling.
+    Here his first major accomplishment was providing statistical evidence to the US Federal Government regarding the mortgage back security and appraisal fraud cases.
+    Dan’s next major success was at Boeing where he helped them through their spare parts pricing transformation.
+    He was responsible for creating their pricing models and optimization algorithms leading them to a market-based pricing strategy.
+    Now he is a Slalom data scientist where he performs big data machine learning and predictive modeling across both the AWS and Azure stacks, combining SQL, Python, and R skills to meet the.
+    Additionally, he conducts national training on Machine Learning and R programming.
+    Dan is an expert in R programming and his career interests include predictive modeling, distributed computation, and other highly analytical areas with problem-solving and consulting functionalities in nature. 
+job_title: Data Scientist
+company: Slalom
+time: TBD
+abstract: >-
+    The audience will learn how to build a binary classifier to predict whether new security assets will be transient/ephemeral using a Databricks notebook.
+    Using Pyspark, the notebook ingests curated data from Azure Data Lake angd then builds features to censure the data model.
+    ML pipelines are used to vectorized and one-hot encode 10 categorical variables, then over 40 additional numeric variables are added to create a final data model.
+    The data model is randomly sampled into 70/30 training and test data sets, then a Light GBM is used to create a classifier with the training data.
+    The training and test data is evaluated with area under the precision/recall curve and model stats are preserved using ML Flow.
+    Final predictions on new data is written back to Azure Data Lake. 

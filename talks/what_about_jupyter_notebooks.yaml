@@ -1,0 +1,11 @@
+title: What About Jupyter Notebooks?
+speaker: Roberto Rodriguez
+twitter: "@Cyb3rWard0g"
+bio: >-
+    Roberto Rodriquez is a Threat Researcher and Security engineer at the Microsoft Threat Intelligence Center (MSTIC) R&D team. He is also the author of several open source projects, such as the Threat Hunter Playbook, Mordor and HELK, to aid the community development of techniques and tooling for threat research. blog at https://medium.com/@Cyb3rWard0g 
+job_title: Threat Researcher
+company: Microsoft MSTIC
+time: 10:15-10:55
+abstract: >-
+    An introduction to Jupyter Notebooks to kick off the main event! We are going to talk about the basics of notebooks, architecture, and how to deploy your own at home and even use open infrastructure to deploy one in the cloud and access it through your favorite browser.
+    In addition, we are going to go over a few ways to connect to a few popular SIEMs such as ELK, splunk and Azure Sentinel from a notebook and return a dataframe to perfom additional analysis.

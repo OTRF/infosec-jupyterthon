@@ -1,0 +1,12 @@
+title: OSQuery Table Visualizer
+speaker: SK34
+twitter: "@SKwid345"
+bio: >-
+    I'm a Security Analist with eye for detail.
+    Very interested in open-source projects and working with Jupyter for a few months now.
+    Linkedin: https://nl.linkedin.com/in/sevickson
+company: DICTU
+time: TBD
+abstract: >-
+    This notebook was created from curiosity on how OSQuery tables relate to each other for possible JOINS.
+    The audience can learn how to extract specific data from a source and transform it in a graph to display relationships. 

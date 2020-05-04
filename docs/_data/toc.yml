@@ -1,5 +1,7 @@
 - url: /introduction
   not_numbered: true
+- url: /agenda
+  not_numbered: true
 - title: GitHub Repository
   url: https://github.com/OTRF/infosec-jupyterthon
   external: true

@@ -1,0 +1,96 @@
+---
+redirect_from:
+  - "/talks-schedule"
+title: |-
+  Schedule
+pagenum: 1
+prev_page:
+  url: /introduction.html
+next_page:
+  url: 
+suffix: .md
+search: data notebook using analyst used security such different notebooks environment also not analysts work dns trend network etc graph log through into focus our approach model static false analysis source python pandas talk sharing technology jupyter allows since azure create training detect encryption based detections threshold flag positives seasonality library logs visual files siem queries open gpu point graphistry code operations before information need event consistent lack documentation share containerized solution api wrappers perform internal investigation without process additional does us sentinel skill sets specific features develop any microsoft mstic binary audience learn classifier new lake ml variables final test
+
+comment: "***PROGRAMMATICALLY GENERATED, DO NOT EDIT. SEE ORIGINAL FILES IN /content***"
+---
+
+    <main class="jupyter-page">
+    <div id="page-info"><div id="page-title">Schedule</div>
+</div>
+    <div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<table>
+<thead><tr>
+<th style="text-align:left">Time</th>
+<th style="text-align:left">Speaker</th>
+<th style="text-align:left">Title</th>
+<th style="text-align:left">Talk</th>
+<th style="text-align:left">Abstract</th>
+<th style="text-align:left">Company</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">2017/01/05</td>
+<td style="text-align:left">@lmeyerov</td>
+<td style="text-align:left">GPU-accelerated network mapping</td>
+<td style="text-align:left">A basic ability is mapping a bunch of network logs - Zeek, CloudTrails, FireEye/Palo Alto firewall, VPN, etc. - and especially together. Visual graph analysis of log files and SIEM queries is a natural fit. The trick is handling log volume and avoiding UI coding. This surprisingly tiny notebook shares going from a large log file, through the emerging pip-installable open source GPU python analytics ecosystem RAPIDS.ai (think Pandas, SQL, SciKit, Spark, NetworkX, ...), and into point-and-click GPU visual graph analysis tool Graphistry. The result is, with a few lines of code, you can quickly go from a log query to graph insights, even when there are billions of nodes and edges!</td>
+<td style="text-align:left">Graphistry</td>
+</tr>
+<tr>
+<td style="text-align:left">2017/01/06</td>
+<td style="text-align:left">@77_6a</td>
+<td style="text-align:left">Jupytering your security operations.</td>
+<td style="text-align:left">This talk will no focus on a particular notebook. The talk focus on our approach in solving some of the security operations such as: - Low efficiency such as number of ‘clicks’ before the analyst can obtain the information they need for an event - High turnover which leads to operation centers not running in a consistent standard - Lack of knowledge sharing between analysts - Lack of adequate documentation of work - Different technology user interfaces to work with We will share our approach to the problem using a combination of containerized solution (Kubernetes), Jupyter notebook and API wrappers. With that, we built an environment that attempts to solve some of these problems. The jupyter environment allows an analyst to perform different external and internal queries such as virustotal, passivetotal or internal tooling such as ticketing system, SIEM and sandbox solution through the use of different API wrappers. The analyst could stay in the same environment to perform their investigation without pivoting to different platforms. And since Jupyter Notebook supports python, an analyst could use python to work with the data and also leverage different data science libraries such as pandas, numpy, and hvplot to assist them to investigate or hunt. The analyst could also share their investigation thought process by sharing their notebooks with other analysts without much additional documentation work. The environment is managed using containerized technology. This provides the advantage of providing a consistent environment that the analyst does not need to maintain themselves. It also allows us to patch or upgrade the environment efficiently. We also included personal and shared persistent storage that allows the analyst to store their own notebooks and also allow sharing of notebooks with other analysts easily.</td>
+<td style="text-align:left">Grab</td>
+</tr>
+<tr>
+<td style="text-align:left">2017/01/06</td>
+<td style="text-align:left">@MSSPete</td>
+<td style="text-align:left">Making notebooks work for everyone.</td>
+<td style="text-align:left">Rather than focus on a single notebook I will cover some of the highlights of the Azure Sentinel Notebooks we have published from the perspective of making them usable and resilient for a wide range of users and skill sets. This will focus less on the specific technology and features (although we will look at some) but instead look at how we have taken Notebooks from something you personally develop and use at a individual or team level and developed generic versions that can in theory be used by any Sentinel customer regardless of skill, and largely agnostic of what data you have. All the Notebooks we have are open sourced and I will pick elements from across them to demo and talk about.</td>
+<td style="text-align:left">Microsoft MSTIC</td>
+</tr>
+<tr>
+<td style="text-align:left">2017/01/08</td>
+<td style="text-align:left">Daniel Tetrick</td>
+<td style="text-align:left">Transience LightGBM Binary Classifier</td>
+<td style="text-align:left">The audience will learn how to build a binary classifier to predict whether new security assets will be transient/ephemeral using a Databricks notebook. Using Pyspark, the notebook ingests curated data from Azure Data Lake angd then builds features to censure the data model. ML pipelines are used to vectorized and one-hot encode 10 categorical variables, then over 40 additional numeric variables are added to create a final data model. The data model is randomly sampled into 70/30 training and test data sets, then a Light GBM is used to create a classifier with the training data. The training and test data is evaluated with area under the precision/recall curve and model stats are preserved using ML Flow. Final predictions on new data is written back to Azure Data Lake.</td>
+<td style="text-align:left">Slalom</td>
+</tr>
+<tr>
+<td style="text-align:left">2017/01/09</td>
+<td style="text-align:left">@SonicTheHexHog</td>
+<td style="text-align:left">Collecting IOCs to Detect Encrypted DNS</td>
+<td style="text-align:left">There has been some attention given lately to different protocols used to encrypt DNS traffic and their pros and cons with respect to privacy and security. Since encrypted DNS on our networks could lessen the visibility of several of tools in our security stacks, I looked into ways to detect and prevent its use in an enterprise network setting. One of the simplest options is to collect and use domains and IPs publicly known to be used for DNS encryption. There is a good source for that information, but unfortunately the format is not ideal. This notebook will take you through the process of decoding DNSStamps into IOCs that can be used to detect and/or block the use of DNS encryption on your network. This code can be used to ensure that the lists are always up to date based on the configuration files that DNS Encryption software uses.</td>
+<td style="text-align:left">NA</td>
+</tr>
+<tr>
+<td style="text-align:left">2017/01/10</td>
+<td style="text-align:left">@ashwinpatil</td>
+<td style="text-align:left">Outlier detection and visualization using Time Series decomposition</td>
+<td style="text-align:left">As part of security monitoring and incident response, analysts often develop several detections based on static thresholds within a specified time interval window. e.g. brute force attack may have logic of 50 logon failures in 1 min etc. Traditionally this threshold value is static and identified by either manually analyzing historical trend of events or taking average over a longer period. In a typical enterprise environments, these detections flag false positives or misses true negatives since static threshold does not consider different time intervals such as after hours, weekends, holidays which affect it`s values. Also in addition, despite of static threshold being reached/ exceeded slightly, the results are often uninteresting and generate false positives for analysts. As part of triage, analyst keep on improving detections continuously via whitelisting to reduce false positive rate. This approach is not scalable and time series analysis can help us in such cases. It will identify time-based patterns(e.g. seasonality, trend etc) by extracting meaningful statistics to correctly flag outlier. The outliers are generally robust to false positives as it considers seasonality and historical trend before flagging. In this session, we will look at practical use cases on security event logs along with the example implementation notebook walk through. We will start with loading data and preparation using Pandas, data wrangling using Seasonal-Trend decomposition using LOESS (STL) approach available in stats library to create baseline pattern from seasonality, trend, residuals etc and lastly use z-score to calculate the score which can be used to flag point anamolies deviating far from the baseline. Lastly we will visualize the results as interactive chart using Bokeh library. We will conclude the session with how these functionalities are natively available in msticpy library to be able to use on any type of data.</td>
+<td style="text-align:left">Microsoft MSTIC</td>
+</tr>
+<tr>
+<td style="text-align:left">2017/01/12</td>
+<td style="text-align:left">@SKwid345</td>
+<td style="text-align:left">OSQuery Table Visualizer</td>
+<td style="text-align:left">This notebook was created from curiosity on how OSQuery tables relate to each other for possible JOINS. The audience can learn how to extract specific data from a source and transform it in a graph to display relationships.</td>
+<td style="text-align:left">DICTU</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+</div>
+</div>
+</div>
+
+ 
+
+
+    </main>
+    
