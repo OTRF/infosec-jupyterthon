@@ -2,6 +2,5 @@
 
 |Time|topic|
 | :---| :---|
-|10:00am-10:15am|Welcome<br>Roberto Rodriguez [@Cyb3rWard0g](http://twitter.com/@Cyb3rWard0g), Microsoft MSTIC|
-{% for talk in renderyaml|sort(attribute='time') %}|{{talk['time']}}|<b>{{talk['title']}}</b><br>{{talk['speaker']}}{% if talk['twitter'] %}{% set handle = talk['twitter'].split('@') %} [{{talk['twitter']}}](http://twitter.com/{{handle[1]}}){% endif %}, {{talk['company']}}<br><br><b>Description</b><br>{{talk['abstract']}}|
+{% for talk in renderyaml|sort(attribute='time') %}|{{talk['time']}}|<b>{{talk['title']}}</b><br><br>{% if talk['abstract'] %}{{talk['abstract']}}<br><br>{% endif %}{% if talk['speaker'] %}{% for speaker in talk['speaker'] %}{{speaker['name']}}{% if speaker['twitter'] %}{% set handle = speaker['twitter'].split('@') %} [{{speaker['twitter']}}](http://twitter.com/{{handle[1]}}){% endif %}, {{speaker['job_title']}}, {{talk['company']}}<br>{% endfor %}{% endif %}|
 {% endfor %}

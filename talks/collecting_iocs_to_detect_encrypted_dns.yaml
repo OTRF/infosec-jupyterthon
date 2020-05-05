@@ -1,16 +1,17 @@
 title: Collecting IOCs to Detect Encrypted DNS
-speaker: TK
-twitter: "@SonicTheHexHog"
-bio: >-
-    When Troy was 5 years old he used to open executable files in notepad and edit them.
-    He thought he was programming. Now he opens them in IDA pro and thinks he's reverse engineering.
-    His knack for pattern recognition and apparent fear of allowing puzzles to defeat him has led him to his passion of CyberSecurity.
-    He has spent his career in SOCs as multiple Tiers of Analyst and an Investigator; working ticket queues, hunting for security incidents, rapidly prototyping new ideas into existence, working terrible hours and questioning career decisions.
-    At Awake Security he is a Threat Researcher who uses his skills and knowledge to ensure that Awake empowers the analyst as much as possible.
-    He loves what he does, and hopes what he does ensures that others do too. 
-job_title: Threat Researcher
+speaker:
+    - name: TK
+      job_title: Threat Researcher
+      twitter: "@SonicTheHexHog"
+      bio: >-
+        When Troy was 5 years old he used to open executable files in notepad and edit them.
+        He thought he was programming. Now he opens them in IDA pro and thinks he's reverse engineering.
+        His knack for pattern recognition and apparent fear of allowing puzzles to defeat him has led him to his passion of CyberSecurity.
+        He has spent his career in SOCs as multiple Tiers of Analyst and an Investigator; working ticket queues, hunting for security incidents, rapidly prototyping new ideas into existence, working terrible hours and questioning career decisions.
+        At Awake Security he is a Threat Researcher who uses his skills and knowledge to ensure that Awake empowers the analyst as much as possible.
+        He loves what he does, and hopes what he does ensures that others do too.
 company: NA
-time: TBD
+time: 5:30pm-6:00pm
 abstract: >-
     There has been some attention given lately to different protocols used to encrypt DNS traffic and their pros and cons with respect to privacy and security.
     Since encrypted DNS on our networks could lessen the visibility of several of tools in our security stacks, I looked into ways to detect and prevent its use in an enterprise network setting.

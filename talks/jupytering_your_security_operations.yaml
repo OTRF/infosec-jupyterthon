@@ -1,12 +1,13 @@
 title: Jupytering your security operations.
-speaker: WJ
-twitter: "@77_6a"
-bio: >-
-    Wei Chea is a security engineer at Grab, Southeast Asia’s leading superapp.
-    His major interests are in threat detection, automation and data analytics
-job_title: Security Engineer
+speaker:
+    - name: Wei Chea
+      job_title: Security Engineer
+      twitter: "@77_6a"
+      bio: >-
+        Wei Chea is a security engineer at Grab, Southeast Asia’s leading superapp.
+        His major interests are in threat detection, automation and data analytics
 company: Grab
-time: TBD
+time: 1:40pm-2:10pm
 abstract: >-
     This talk will no focus on a particular notebook.
     The talk focus on our approach in solving some of the security operations such as:

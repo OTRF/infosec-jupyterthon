@@ -1,15 +1,16 @@
 title: Making notebooks work for everyone.
-speaker: Pete Bryan
-twitter: "@MSSPete"
-bio: >-
-    Pete currently works as a senior software engineer in the Microsoft Threat Intelligence Center.
-    His daily work involves security research to develop new and novel ways to detect security threats, as well as helping customers detect and respond to security incidents.
-    As part of this work he develops Python Notebooks and supporting Open Source libraries to aid in defenders in detecting the investigating these threats.
-    Prior to this role he spent his career working in security analysis and incident response in a range of organizations including government, private sector organizations and managed security service providers.
-    He has a wide range of experience working in SOC environments and with traditional SOC tooling.
-job_title: Senior Software Engineer
+speaker:
+    - name: Pete Bryan
+      job_title: Senior Software Engineer
+      twitter: "@MSSPete"
+      bio: >-
+        Pete currently works as a senior software engineer in the Microsoft Threat Intelligence Center.
+        His daily work involves security research to develop new and novel ways to detect security threats, as well as helping customers detect and respond to security incidents.
+        As part of this work he develops Python Notebooks and supporting Open Source libraries to aid in defenders in detecting the investigating these threats.
+        Prior to this role he spent his career working in security analysis and incident response in a range of organizations including government, private sector organizations and managed security service providers.
+        He has a wide range of experience working in SOC environments and with traditional SOC tooling.
 company: Microsoft MSTIC
-time: TBD
+time: 4:50pm-5:25pm
 abstract: >-
     Rather than focus on a single notebook I will cover some of the highlights of the Azure Sentinel Notebooks we have published from the perspective of making them usable and resilient for a wide range of users and skill sets.
     This will focus less on the specific technology and features (although we will look at some) but instead look at how we have taken Notebooks from something you personally develop and use at a individual or team level and developed generic versions that can in theory be used by any Sentinel customer regardless of skill, and largely agnostic of what data you have.

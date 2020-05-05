@@ -18,7 +18,7 @@ An open community event for security researchers to share their favorite noteboo
 
 
 ## Quick Information
-* **When?** May 8th, 2020
+* **When?** May 8th, 2020 (10:00am-8:00pm Eastern Time)
 * **Where?** [https://aka.ms/InfosecJupyterthonLive](https://aka.ms/InfosecJupyterthonLive)
 * **How Much?** Free
 

@@ -1,13 +1,14 @@
 title: MSTICPy and Notebooklets
-speaker: Ian Hellen
-twitter: "@ianhellen"
-bio: >-
-    Ian is a Principal Software Engineer in the MS Threat Intelligence Center in Azure Security.
-    He works primarily on Python tools and Jupyter Notebooks for cybersecurity hunting and investigation in Azure Sentinel.
-    He is the author of the Python msticpy security package and has written a series of blogs on using Jupyter with Azure Sentinel.
-    Prior to this he worked on security detections for Azure Security Center and MS Defender ATP and has been working on product and service security in Microsoft for over 15 years.
-job_title: Principal Software Engineer
+speaker:
+    - name: Ian Hellen
+      job_title: Principal Software Engineer
+      twitter: "@ianhellen"
+      bio: >-
+        Ian is a Principal Software Engineer in the MS Threat Intelligence Center in Azure Security.
+        He works primarily on Python tools and Jupyter Notebooks for cybersecurity hunting and investigation in Azure Sentinel.
+        He is the author of the Python msticpy security package and has written a series of blogs on using Jupyter with Azure Sentinel.
+        Prior to this he worked on security detections for Azure Security Center and MS Defender ATP and has been working on product and service security in Microsoft for over 15 years.
 company: Microsoft MSTIC
-time: TBD
+time: 3:00pm-3:30pm
 abstract: >-
     Speeding up infosec notebook creation with packages and patterns.

@@ -1,11 +1,12 @@
 title: GPU-accelerated network mapping
-speaker: Leo Meyerovich
-twitter: "@lmeyerov"
-bio: >-
-    CEO @ Graphistry
-job_title: CEO
+speaker:
+    - name: Leo Meyerovich
+      job_title: CEO
+      twitter: "@lmeyerov"
+      bio: >-
+        CEO @ Graphistry
 company: Graphistry
-time: TBD
+time: 3:35pm-4:05pm
 abstract: >-
     A basic ability is mapping a bunch of network logs - Zeek, CloudTrails, FireEye/Palo Alto firewall, VPN, etc. - and especially together. Visual graph analysis of log files and SIEM queries is a natural fit.
     The trick is handling log volume and avoiding UI coding.

@@ -1,0 +1,30 @@
+title: The forever journey of making hard technical concepts/activities approachable, repeatable and explainable
+speaker:
+    - name: Andrew Prichett
+      job_title: Senior Detection & Response Engineer
+      twitter:
+      bio: >-
+        We have the strength of ten because our hearts are pure
+    - name: Dan Whalen
+      job_title: Principal Detection & Response Engineer
+      twitter: "@vac4n7"
+      bio: >-
+        We have the strength of ten because our hearts are pure
+    - name: Jon Hencinski
+      job_title: Director of Global Security Operations
+      twitter: "@jhencinski"
+      bio: >-
+        We have the strength of ten because our hearts are pure
+    - name: Peter Silberman
+      job_title: CTO
+      twitter: "@petersilberman"
+      bio: >-
+        We have the strength of ten because our hearts are pure
+company: Expel
+time: 12:00pm-01:00pm
+abstract: >-
+    A Security Operations Center can be a hard thing to explain - often involving complex technical activities like managing detection rules and threat hunting.
+    At Expel, we want our service to be as transparent as possible.
+    For the past 2 1/2 years we've been using Jupyter notebooks to help make these kinds of difficult tasks approachable, explainable, and repeatable.
+    In this presentation we will take you on our journey from simple beginnings (naively thinking storing notebooks on Github was good enough) to our current CI/CD pipeline with JupyterHub and beyond!
+    We'll demo a few notebooks we've built that are used daily for various tasks including triaging hunting results, evaluating detection settings, and gathering metrics on the state of our security operations.

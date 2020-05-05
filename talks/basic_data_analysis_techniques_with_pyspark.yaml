@@ -1,11 +1,12 @@
 title: Basic Data Analysis techniques with PySpark over the ATT&CK APT29 Evals datasets
-speaker: Jose Luis Rodriguez
-twitter: "@Cyb3rPandaH"
-bio: >-
-    Jose Luis Rodriguez is a threat researcher and currently a student at Northern Virginia Community College. A former Senior Business Intelligence for UNACEM Peru.
-job_title: Threat Researcher
+speaker:
+    - name: Jose Luis Rodriguez
+      job_title: Threat Researcher
+      twitter: "@Cyb3rPandaH"
+      bio: >-
+        Jose Luis Rodriguez is a threat researcher and currently a student at Northern Virginia Community College. A former Senior Business Intelligence for UNACEM Peru.
 company: NOVA Community College
-time: 11:00am-11:30am
+time: 11:00am-11:35am
 abstract: >-
     In this session, we will go over a few data analysis techniques leveraging PySpark and visualizations to generate additional context around security event logs and get a better understanding of adversarial techniques through data.
     We are going to be using the open dataset created by the Mordor project's team after following the Mitre ATT&CK evaluations methodology and executing the public emulation plans.
