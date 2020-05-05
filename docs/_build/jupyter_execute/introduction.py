@@ -4,7 +4,10 @@
 
 ![](images/infosec-jupyterthon-main.png)
 
-An open community event for security researchers to share their favorite notebooks with the infosec community. We meet virtually, share notebooks round robin style, and have fun learning more about Jupyter notebooks applied to the infosec field. A great place to meet other Infosec Jovyan!
+An open community event for security researchers to share their favorite notebooks with the infosec community. We meet virtually, share notebooks round robin style, and have fun learning more about Jupyter notebooks applied to the infosec field. A great place to meet other Infosec Jovyans!
+
+
+print("Hola Infosec Jovyan!")
 
 ## Event Goals
 
@@ -67,7 +70,6 @@ Much like the planet Jupiter and our solar system, the Jupyter community is larg
 * [https://medium.com/threat-hunters-forge/threat-hunter-playbook-mordor-datasets-binderhub-open-infrastructure-for-open-8c8aee3d8b4](https://medium.com/threat-hunters-forge/threat-hunter-playbook-mordor-datasets-binderhub-open-infrastructure-for-open-8c8aee3d8b4)
 * [https://jupyter.readthedocs.io/en/latest/community/content-community.html#what-is-a-jovyan](https://jupyter.readthedocs.io/en/latest/community/content-community.html#what-is-a-jovyan)
 * [https://discover-cookbook.numfocus.org/](https://discover-cookbook.numfocus.org/)
-
 
 
 
