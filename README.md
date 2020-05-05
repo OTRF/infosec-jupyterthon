@@ -15,10 +15,18 @@ An open community event for security researchers to share their favorite noteboo
 * Share information about how to integrate Jupyter notebooks with other open source projects in the Infosec community!
 * Have fun!
 
+## Agenda
+
+* https://infosecjupyterthon.com/agenda.html
+
 ## Quick Information
 * **When?** May 8th, 2020
-* **Where?** Virtual Event. Potentially via [AltspaceVR](https://altvr.com/)
+* **Where?** https://aka.ms/InfosecJupyterthonLive
 * **How Much?** Free
+
+## Registration
+
+* Form https://bit.ly/InfosecJupyterthonRegistration
 
 ## Call For Notebooks!
 If you are using Jupyter notebooks for any use case applied to Infosec, we want to hear from you! Presentation slides are not required. You and a notebook is enough! 
