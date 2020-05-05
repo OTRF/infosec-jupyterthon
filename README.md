@@ -2,7 +2,7 @@
 
 [![Open Source Love](https://badges.frapsoft.com/os/v3/open-source.svg?v=103)](https://github.com/ellerbrock/open-source-badges/)
 
-<img src="docs/content/images/infosec-jupyterthon-main.png" width=700 alt="This image was created by Scriberia for The Turing Way community and is used under a CC-BY licence">
+<img src="docs/images/infosec-jupyterthon-main.png" width=700 alt="This image was created by Scriberia for The Turing Way community and is used under a CC-BY licence">
 
 An open community event for security researchers to share their favorite notebooks with the infosec community. We meet virtually, share notebooks round robin style, and have fun learning more about Jupyter notebooks applied to the infosec field. A great place to meet other Infosec Jovyan!
 
