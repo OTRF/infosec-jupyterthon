@@ -77,5 +77,5 @@ Much like the planet Jupiter and our solar system, the Jupyter community is larg
 :titlesonly:
 :caption: Infosec Jupyterthon
 
-content/agenda
+agenda
 ```
