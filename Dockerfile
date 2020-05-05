@@ -22,7 +22,7 @@ RUN adduser --disabled-password \
 
 USER ${NB_USER}
 
-COPY docs/content ${HOME}/content
+COPY docs/ ${HOME}/
 
 USER root
 
