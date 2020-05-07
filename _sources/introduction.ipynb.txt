@@ -39,7 +39,7 @@
     "\n",
     "## Quick Information\n",
     "* **When?** May 8th, 2020 (10:00am-8:00pm Eastern Time)\n",
-    "* **Where?** [https://aka.ms/InfosecJupyterthonLive](https://aka.ms/InfosecJupyterthonLive)\n",
+    "* **Where?** [YouTube Live Stream](https://youtu.be/QCVd4Svtaa8)\n",
     "* **How Much?** Free\n",
     "\n",
     "## Registration\n",
