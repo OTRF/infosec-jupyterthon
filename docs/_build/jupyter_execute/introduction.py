@@ -22,7 +22,7 @@ print("Hola Infosec Jovyan!")
 
 ## Quick Information
 * **When?** May 8th, 2020 (10:00am-8:00pm Eastern Time)
-* **Where?** [https://aka.ms/InfosecJupyterthonLive](https://aka.ms/InfosecJupyterthonLive)
+* **Where?** [YouTube Live Stream](https://youtu.be/QCVd4Svtaa8)
 * **How Much?** Free
 
 ## Registration

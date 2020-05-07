@@ -11,4 +11,9 @@ speaker:
 company: Microsoft MSTIC
 time: 3:00pm-3:30pm
 abstract: >-
-    Speeding up infosec notebook creation with packages and patterns.
+  Jupyter notebooks are an amazing medium for developing repeatable data analysis tasks but have a few drawbacks:
+  1. Code re-use is limited to copy/paste and your ability to remember just where that cool bit of code you once wrote was.
+  2. Big code blocks detract from the results you are trying to present and can be intimidating to non-programmers.
+  3. Very limited testability.
+  We put a lot of our reusable InfoSec code into an OS Python package - msticpy. This allows to do complex visualization and analysis routines into one or two lines of code. However, we were still writing common sequences of code cells in many notebooks - most very specific to the data environment/schema we were working in. Notebooklets (msticnb) aims to capture platform/SIEM-specific notebook patterns into a reusable format. You can import notebooklets such as host_summary, network_flow_summary into your notebook and execute the equivalent of several cells with just a couple of lines of code.
+  In this session, I'll look at both msticpy and msticnb and demo some of their capabilities.
