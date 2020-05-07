@@ -2,25 +2,28 @@ title: The forever journey of making hard technical concepts/activities approach
 speaker:
     - name: Andrew Prichett
       job_title: Senior Detection & Response Engineer
+      company: Expel
       twitter:
       bio: >-
         We have the strength of ten because our hearts are pure
     - name: Dan Whalen
       job_title: Principal Detection & Response Engineer
+      company: Expel
       twitter: "@vac4n7"
       bio: >-
         We have the strength of ten because our hearts are pure
     - name: Jon Hencinski
       job_title: Director of Global Security Operations
+      company: Expel
       twitter: "@jhencinski"
       bio: >-
         We have the strength of ten because our hearts are pure
     - name: Peter Silberman
       job_title: CTO
+      company: Expel
       twitter: "@petersilberman"
       bio: >-
         We have the strength of ten because our hearts are pure
-company: Expel
 time: 12:00pm-01:00pm
 abstract: >-
     A Security Operations Center can be a hard thing to explain - often involving complex technical activities like managing detection rules and threat hunting.

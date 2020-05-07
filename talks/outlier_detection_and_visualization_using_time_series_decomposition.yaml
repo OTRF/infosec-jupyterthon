@@ -2,12 +2,12 @@ title: Outlier detection and visualization using Time Series decomposition
 speaker:
     - name: Ashwin Patil
       job_title: Senior Program Manager
+      company: Microsoft MSTIC
       twitter: "@ashwinpatil"
       bio: >-
         Ashwin Patil currently works as Senior Program Manager for Microsoft Threat Intelligence Center (MSTIC) and has over 10 years of experience entirely focused on Security monitoring and Incident Response defending enterprise networks.
         In his current role, he primarily works on threat hunting , detection research in KQL (Kusto Query Language) for Azure Sentinel and develop Jupyter notebooks written in Python/R to do threat hunting and investigation across variety of cloud and on-premise security event log data sources.
         He has Bachelor degree in Computer Engineering and also have certified with various SANS certifications such as GCIA, GCFE, GCIH in the field of Digital Forensics and Incident Response (DFIR). 
-company: Microsoft MSTIC
 time: 6:05pm-6:35pm
 abstract: >-
     As part of security monitoring and incident response, analysts often develop several detections based on static thresholds within a specified time interval window. e.g. brute force attack may have logic of 50 logon failures in 1 min etc.

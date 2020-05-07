@@ -2,12 +2,12 @@ title: OSQuery Table Visualizer
 speaker:
     - name: Sevickson
       job_title: Security Engineer
+      company: DICTU
       twitter: "@SKwid345"
       bio: >-
         I'm a Security Analist with eye for detail.
         Very interested in open-source projects and working with Jupyter for a few months now.
         Linkedin: https://nl.linkedin.com/in/sevickson
-company: DICTU
 time: 2:15pm-2:45pm
 abstract: >-
     This notebook was created from curiosity on how OSQuery tables relate to each other for possible JOINS.

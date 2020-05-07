@@ -2,10 +2,10 @@ title: Distinguishing Human from Machine Interaction
 speaker:
     - name: Thomas Patzke
       job_title: Threat Researcher
+      company: NA
       twitter: "@blubbfiction"
       bio: >-
         Threat hunter, incident responder, data science hobbyist and prefers to write some Python code instead of lenghty bios.
-company: NA
 time: 4:10pm-4:45pm
 abstract: >-
     Use Jupyter, Pandas and some basic statistics to distinguish between humans and machines.

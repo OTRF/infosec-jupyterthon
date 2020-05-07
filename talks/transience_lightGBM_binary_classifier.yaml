@@ -2,6 +2,7 @@ title: Transience LightGBM Binary Classifier
 speaker:
     - name: Daniel Tetrick
       job_title: Data Scientist
+      company: Microsoft CDG Security
       twitter:
       bio: >-
         After completing a 6-year enlistment as a Nuclear Missile Technician aboard submarines in the US Navy, Dan became a Learning Scientist where he developed RescuShell, the first all-virtual engineering course for a major university.
@@ -12,7 +13,6 @@ speaker:
         Now he is a Slalom data scientist where he performs big data machine learning and predictive modeling across both the AWS and Azure stacks, combining SQL, Python, and R skills to meet the.
         Additionally, he conducts national training on Machine Learning and R programming.
         Dan is an expert in R programming and his career interests include predictive modeling, distributed computation, and other highly analytical areas with problem-solving and consulting functionalities in nature.
-company: Microsoft CDG Security
 time: 6:35pm-7:25pm
 abstract: >-
     The audience will learn how to build a binary classifier to predict whether new security assets will be transient/ephemeral using a Databricks notebook.

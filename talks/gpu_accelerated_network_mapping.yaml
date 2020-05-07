@@ -2,10 +2,34 @@ title: GPU-accelerated network mapping
 speaker:
     - name: Leo Meyerovich
       job_title: CEO
+      company: Graphistry
       twitter: "@lmeyerov"
       bio: >-
-        CEO @ Graphistry
-company: Graphistry
+        CEO at Graphistry
+    - name: Rodrigo Aramburu
+      job_title: CEO
+      company: BlazingSQL
+      twitter: "@rodaramburu"
+      bio: >-
+        CEO at BlazingSQL
+    - name: Winston Robson
+      job_title: Data Scientist
+      company: BlazingSQL
+      twitter: "@winstonarobson"
+      bio: >-
+        Data Scientist at BlazingSQL
+    - name: Brad Rees
+      job_title: Sr. Eng. Manager
+      company: Nvidia
+      twitter: "@BradReesWork"
+      bio: >-
+        Sr. Eng. Manager at Nvidia
+    - name: Bartley Richardson
+      job_title: AI Infra Manager
+      company: Nvidia
+      twitter: "@BartleyR"
+      bio: >-
+        AI Infra Manager at Nvidia
 time: 3:35pm-4:05pm
 abstract: >-
     A basic ability is mapping a bunch of network logs - Zeek, CloudTrails, FireEye/Palo Alto firewall, VPN, etc. - and especially together. Visual graph analysis of log files and SIEM queries is a natural fit.

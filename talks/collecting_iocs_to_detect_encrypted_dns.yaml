@@ -2,6 +2,7 @@ title: Collecting IOCs to Detect Encrypted DNS
 speaker:
     - name: Troy Kent
       job_title: Threat Researcher
+      company: Awake Security
       twitter: "@SonicTheHexHog"
       bio: >-
         When Troy was 5 years old he used to open executable files in notepad and edit them.
@@ -10,7 +11,6 @@ speaker:
         He has spent his career in SOCs as multiple Tiers of Analyst and an Investigator; working ticket queues, hunting for security incidents, rapidly prototyping new ideas into existence, working terrible hours and questioning career decisions.
         At Awake Security he is a Threat Researcher who uses his skills and knowledge to ensure that Awake empowers the analyst as much as possible.
         He loves what he does, and hopes what he does ensures that others do too.
-company: Awake Security
 time: 5:30pm-6:00pm
 abstract: >-
     There has been some attention given lately to different protocols used to encrypt DNS traffic and their pros and cons with respect to privacy and security.
