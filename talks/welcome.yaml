@@ -1,4 +1,5 @@
 title: Welcome
+binder: https://mybinder.org/v2/gh/OTRF/infosec-jupyterthon/master?urlpath=tree/docs/notebooks/0_banner.ipynb
 speaker:
     - name: Roberto Rodriguez
       job_title: Threat Researcher
