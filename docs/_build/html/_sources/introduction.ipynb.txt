@@ -26,6 +26,7 @@
    "cell_type": "markdown",
    "metadata": {},
    "source": [
+    "## Survey: [Infosec Jupyterthon Survey](https://forms.office.com/Pages/ResponsePage.aspx?id=DQSIkWdsW0yxEjajBLZtrQAAAAAAAAAAAANAASH18J1UQVpURUFQN1NQVjNMRUpQRUZBUTE0UDdFMi4u)\n",
     "## Event Goals\n",
     "\n",
     "* Learn basic notebook concepts with the Infosec community!\n",

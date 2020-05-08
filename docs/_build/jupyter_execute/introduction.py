@@ -9,6 +9,7 @@ An open community event for security researchers to share their favorite noteboo
 
 print("Hola Infosec Jovyan!")
 
+## Survey: [Infosec Jupyterthon Survey](https://forms.office.com/Pages/ResponsePage.aspx?id=DQSIkWdsW0yxEjajBLZtrQAAAAAAAAAAAANAASH18J1UQVpURUFQN1NQVjNMRUpQRUZBUTE0UDdFMi4u)
 ## Event Goals
 
 * Learn basic notebook concepts with the Infosec community!
