@@ -4,7 +4,7 @@
 * **Author:** Sevickson Kwidama 
     * [Twitter](https://twitter.com/SKwid345)
     * [LinkedIn](https://nl.linkedin.com/in/sevickson)
-    * [Blog](https://medium.com/@sevickson/untangling-the-osquery-tables-web-using-jupyter-notebooks-7c979c03f42d)
+    * [GitHub Repo](https://github.com/sevickson/osquery_tables_graph)
 * **Version:** 1.0_Jupyterthon
 
 ### Install and Upgrade `pip` packages if needed
