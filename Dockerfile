@@ -19,20 +19,12 @@ RUN adduser --disabled-password \
     --gecos "Default user" \
     --uid ${NB_UID} \
     ${NB_USER} \
-    && chown -R ${NB_USER}:${NB_USER} ${HOME} ${JUPYTER_DIR} ${CONDA_DIR}
+    && chown -R ${NB_USER}:${NB_USER} ${HOME} ${JUPYTER_DIR}
 
 USER ${NB_USER}
 
-RUN conda install --quiet --yes \
-    'networkx=2.4' \
-    'nxviz=0.6.2' \
-    'matplotlib=3.2.1' \
-    && conda update --all --quiet --yes \
-    # *********** Clean ****************&& conda clean -tipy \
-    && conda build purge-all \
-    && rm -rf /home/$USER/.cache/yarn \
-    && python3 -m pip install \
-    openhunt==1.6.6 RISE==5.6.1 emoji==0.5.4 msticpy>=0.4.0 statsmodels==0.11.1 pyvis==0.1.7.0 --user
+RUN python3 -m pip install \
+    openhunt==1.6.6 RISE==5.6.1 emoji==0.5.4 msticpy statsmodels==0.11.1 pyvis==0.1.7.0 --user
 
 COPY docs ${HOME}/docs
 
