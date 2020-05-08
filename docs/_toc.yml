@@ -1,4 +1,5 @@
 - file: introduction
 - header: Infosec Jupyterthon
 - file: agenda
-- header: Event Resources
+- header: Interactive Resources
+- file: notebooks/0_banner

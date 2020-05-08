@@ -70,6 +70,7 @@ Much like the planet Jupiter and our solar system, the Jupyter community is larg
 * [https://medium.com/threat-hunters-forge/threat-hunter-playbook-mordor-datasets-binderhub-open-infrastructure-for-open-8c8aee3d8b4](https://medium.com/threat-hunters-forge/threat-hunter-playbook-mordor-datasets-binderhub-open-infrastructure-for-open-8c8aee3d8b4)
 * [https://jupyter.readthedocs.io/en/latest/community/content-community.html#what-is-a-jovyan](https://jupyter.readthedocs.io/en/latest/community/content-community.html#what-is-a-jovyan)
 * [https://discover-cookbook.numfocus.org/](https://discover-cookbook.numfocus.org/)
+* [https://blog.jupyter.org/the-superheros-and-the-magic-wand-596acaab722a](https://blog.jupyter.org/the-superheros-and-the-magic-wand-596acaab722a)
 
 
 
@@ -80,4 +81,13 @@ Much like the planet Jupiter and our solar system, the Jupyter community is larg
 :caption: Infosec Jupyterthon
 
 agenda
+```
+
+
+```{toctree}
+:hidden:
+:titlesonly:
+:caption: Interactive Resources
+
+notebooks/0_banner
 ```
