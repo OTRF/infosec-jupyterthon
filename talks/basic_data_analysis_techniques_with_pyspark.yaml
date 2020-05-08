@@ -1,4 +1,5 @@
 title: Basic Data Analysis techniques with PySpark over the ATT&CK APT29 Evals datasets
+binder: https://mybinder.org/v2/gh/OTRF/infosec-jupyterthon/master?urlpath=tree/docs/notebooks/2_Jupyterthon_Cyb3rPandaH_2020.ipynb
 speaker:
     - name: Jose Luis Rodriguez
       job_title: Threat Researcher
