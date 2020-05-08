@@ -3,3 +3,7 @@
 - file: agenda
 - header: Interactive Resources
 - file: notebooks/0_banner
+- file: notebooks/1_what_about_notebooks
+- file: notebooks/2_Jupyterthon_Cyb3rPandaH_2020
+- file: notebooks/6_OSQuery-Tables-interactive_Jupyterthon
+- file: notebooks/12_Jupyterthon-TimeSeries-Demo

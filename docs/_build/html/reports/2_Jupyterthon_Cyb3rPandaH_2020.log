@@ -1,0 +1,24 @@
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.7/site-packages/jupyter_cache/executors/basic.py", line 157, in execute
+    executenb(nb_bundle.nb, cwd=tmpdirname)
+  File "/usr/local/lib/python3.7/site-packages/nbconvert/preprocessors/execute.py", line 737, in executenb
+    return ep.preprocess(nb, resources, km=km)[0]
+  File "/usr/local/lib/python3.7/site-packages/nbconvert/preprocessors/execute.py", line 403, in preprocess
+    with self.setup_preprocessor(nb, resources, km=km):
+  File "/usr/local/Cellar/python/3.7.6_1/Frameworks/Python.framework/Versions/3.7/lib/python3.7/contextlib.py", line 112, in __enter__
+    return next(self.gen)
+  File "/usr/local/lib/python3.7/site-packages/nbconvert/preprocessors/execute.py", line 345, in setup_preprocessor
+    self.km, self.kc = self.start_new_kernel(**kwargs)
+  File "/usr/local/lib/python3.7/site-packages/nbconvert/preprocessors/execute.py", line 291, in start_new_kernel
+    km.start_kernel(extra_arguments=self.extra_arguments, **kwargs)
+  File "/usr/local/lib/python3.7/site-packages/jupyter_client/manager.py", line 301, in start_kernel
+    kernel_cmd, kw = self.pre_start_kernel(**kw)
+  File "/usr/local/lib/python3.7/site-packages/jupyter_client/manager.py", line 254, in pre_start_kernel
+    kernel_cmd = self.format_kernel_cmd(extra_arguments=extra_arguments)
+  File "/usr/local/lib/python3.7/site-packages/jupyter_client/manager.py", line 178, in format_kernel_cmd
+    cmd = self.kernel_spec.argv + extra_arguments
+  File "/usr/local/lib/python3.7/site-packages/jupyter_client/manager.py", line 84, in kernel_spec
+    self._kernel_spec = self.kernel_spec_manager.get_kernel_spec(self.kernel_name)
+  File "/usr/local/lib/python3.7/site-packages/jupyter_client/kernelspec.py", line 235, in get_kernel_spec
+    raise NoSuchKernel(kernel_name)
+jupyter_client.kernelspec.NoSuchKernel: No such kernel named pyspark3

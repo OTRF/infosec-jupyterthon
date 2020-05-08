@@ -90,4 +90,8 @@ agenda
 :caption: Interactive Resources
 
 notebooks/0_banner
+notebooks/1_what_about_notebooks
+notebooks/2_Jupyterthon_Cyb3rPandaH_2020
+notebooks/6_OSQuery-Tables-interactive_Jupyterthon
+notebooks/12_Jupyterthon-TimeSeries-Demo
 ```
