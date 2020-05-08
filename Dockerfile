@@ -19,7 +19,7 @@ RUN adduser --disabled-password \
     --gecos "Default user" \
     --uid ${NB_UID} \
     ${NB_USER} \
-    && chown -R ${NB_USER}:${NB_USER} ${HOME} ${JUPYTER_DIR}
+    && chown -R ${NB_USER}:${NB_USER} ${HOME} ${JUPYTER_DIR} ${CONDA_DIR}
 
 USER ${NB_USER}
 
