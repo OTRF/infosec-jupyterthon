@@ -20,4 +20,4 @@ yaml_for_render = copy.deepcopy(yaml_loaded)
 
 # Generate the markdown
 markdown = yaml_template.render(renderyaml=yaml_for_render)
-open('../docs/agenda.md', 'w').write(markdown)
+open('../docs/2020/agenda.md', 'w').write(markdown)

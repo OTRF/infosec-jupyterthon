@@ -1,9 +1,15 @@
-- file: introduction
-- header: Infosec Jupyterthon
-- file: agenda
-- header: Interactive Resources
-- file: notebooks/0_banner
-- file: notebooks/1_what_about_notebooks
-- file: notebooks/2_Jupyterthon_Cyb3rPandaH_2020
-- file: notebooks/6_OSQuery-Tables-interactive_Jupyterthon
-- file: notebooks/12_Jupyterthon-TimeSeries-Demo
+format: jb-book
+root: introduction
+parts:
+  - caption: Editions
+    chapters:
+    - file: 2021/agenda
+      title: 2021 Edition
+    - file: 2020/agenda
+      title: 2020 Edition
+      sections:
+      - file: 2020/notebooks/0_banner
+      - file: 2020/notebooks/1_what_about_notebooks
+      - file: 2020/notebooks/2_Jupyterthon_Cyb3rPandaH_2020
+      - file: 2020/notebooks/6_OSQuery-Tables-interactive_Jupyterthon
+      - file: 2020/notebooks/12_Jupyterthon-TimeSeries-Demo
