@@ -1,0 +1,863 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Untangling the Osquery❓ tables web🕸 using Jupyter Notebooks📓</title>
+    
+  <link href="../../_static/css/theme.css" rel="stylesheet" />
+  <link href="../../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+
+    
+  <link rel="stylesheet"
+    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/sphinx-book-theme.acff12b8f9c144ce68a297486a2fa670.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/tabs.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../../_static/js/index.1c5a1a01449ed65a7b51.js">
+
+    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <link rel="canonical" href="https://infosecjupyterthon.com/2020/notebooks/6_OSQuery-Tables-interactive_Jupyterthon.html" />
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Anomaly detection and visualization using Time Series Decomposition" href="12_Jupyterthon-TimeSeries-Demo.html" />
+    <link rel="prev" title="ATT&amp;CK - APT29 Evals Datasets" href="2_Jupyterthon_Cyb3rPandaH_2020.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../../index.html">
+      
+      <img src="../../_static/logo.png" class="logo" alt="logo">
+      
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <div class="bd-toc-item active">
+        <p class="caption">
+ <span class="caption-text">
+  Editions
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../2021/agenda.html">
+   2021 Edition
+  </a>
+ </li>
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="../agenda.html">
+   2020 Edition
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2">
+    <a class="reference internal" href="0_banner.html">
+     Infosec Jupyterthon 2020!
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="1_what_about_notebooks.html">
+     <font color="peru">
+      Welcome Infosec Community!
+     </font>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="2_Jupyterthon_Cyb3rPandaH_2020.html">
+     ATT&amp;CK - APT29 Evals Datasets
+    </a>
+   </li>
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     Untangling the Osquery❓ tables web🕸 using Jupyter Notebooks📓
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="12_Jupyterthon-TimeSeries-Demo.html">
+     Anomaly detection and visualization using Time Series Decomposition
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../../_sources/2020/notebooks/6_OSQuery-Tables-interactive_Jupyterthon.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        
+        
+        <a class="edit-button" href="https://github.com/OTRF/infosec-jupyterthon/edit/master/docs/2020/notebooks/6_OSQuery-Tables-interactive_Jupyterthon.ipynb"><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Edit this page"><i class="fas fa-pencil-alt"></i>suggest edit</button></a>
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/OTRF/infosec-jupyterthon/master?urlpath=tree/docs/2020/notebooks/6_OSQuery-Tables-interactive_Jupyterthon.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   Untangling the Osquery❓ tables web🕸 using Jupyter Notebooks📓
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#joining-osquery-tables-using-graphing-techniques">
+     JOINing Osquery tables using graphing techniques
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#install-and-upgrade-pip-packages-if-needed">
+       Install and Upgrade
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         pip
+        </span>
+       </code>
+       packages if needed
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#import-modules-in-this-jupyter-notebook">
+       Import modules in this Jupyter Notebook
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#ingest-and-manipulate-data">
+   INGEST AND MANIPULATE DATA
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#download-the-latest-zip-and-extract-only-the-tables-folder">
+     Download the latest zip and extract only the tables folder
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#extract-table-names-and-columns-from-the-osquery-table-files">
+     Extract table names and columns from the Osquery table files
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#add-os-into-dataframe-based-on-cmakelists-file">
+     Add OS into DataFrame based on cMakelists file
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#create-separate-dataframes-based-on-os">
+     Create separate DataFrames based on OS
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#graphs">
+   GRAPHS 🕸
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#function-to-create-the-graph-and-all-its-properties">
+     Function to create the graph and all its properties
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#column-filtering">
+     Column Filtering
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#all-os-graph">
+     All OS Graph
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#windows-graph">
+     Windows Graph
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#determine-shortest-path-from-table-a-to-table-b">
+       Determine shortest path from table A to table B
+      </a>
+      <ul class="nav section-nav flex-column">
+       <li class="toc-h4 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#sources">
+         Sources:
+        </a>
+       </li>
+      </ul>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="untangling-the-osquery-tables-web-using-jupyter-notebooks">
+<h1>Untangling the Osquery❓ tables web🕸 using Jupyter Notebooks📓<a class="headerlink" href="#untangling-the-osquery-tables-web-using-jupyter-notebooks" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="joining-osquery-tables-using-graphing-techniques">
+<h2>JOINing Osquery tables using graphing techniques<a class="headerlink" href="#joining-osquery-tables-using-graphing-techniques" title="Permalink to this headline">¶</a></h2>
+<hr class="docutils" />
+<ul class="simple">
+<li><p><strong>Author:</strong> Sevickson Kwidama</p>
+<ul>
+<li><p><a class="reference external" href="https://twitter.com/SKwid345">Twitter</a></p></li>
+<li><p><a class="reference external" href="https://nl.linkedin.com/in/sevickson">LinkedIn</a></p></li>
+<li><p><a class="reference external" href="https://github.com/sevickson/osquery_tables_graph">GitHub Repo</a></p></li>
+</ul>
+</li>
+<li><p><strong>Version:</strong> 1.0_Jupyterthon</p></li>
+</ul>
+<div class="section" id="install-and-upgrade-pip-packages-if-needed">
+<h3>Install and Upgrade <code class="docutils literal notranslate"><span class="pre">pip</span></code> packages if needed<a class="headerlink" href="#install-and-upgrade-pip-packages-if-needed" title="Permalink to this headline">¶</a></h3>
+<p>I start by getting the needed dependencies if any, only need to be run once</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>pip install --upgrade --user pip
+<span class="o">!</span>pip install --user pyvis
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="import-modules-in-this-jupyter-notebook">
+<h3>Import modules in this Jupyter Notebook<a class="headerlink" href="#import-modules-in-this-jupyter-notebook" title="Permalink to this headline">¶</a></h3>
+<p>Requirements:</p>
+<ul class="simple">
+<li><p>Python &gt;= 3.6 (There are some changes in the open() function that will give error in older versions)</p></li>
+</ul>
+<p>Below I import the needed modules, each time I need a new module I add it to the list below.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Standard modules to use and manipulate dataframes</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="c1"># Used to download from Osquery repository and unzip needed files</span>
+<span class="kn">import</span> <span class="nn">requests</span><span class="o">,</span> <span class="nn">zipfile</span><span class="o">,</span> <span class="nn">io</span>
+<span class="c1"># Used to be able to access locations on disk</span>
+<span class="kn">import</span> <span class="nn">pathlib</span>
+<span class="c1"># Regular expression based extracts and filtering</span>
+<span class="kn">import</span> <span class="nn">re</span>
+<span class="c1"># Module to copy same value in a dataframe, didn&#39;t find an easier way</span>
+<span class="kn">from</span> <span class="nn">itertools</span> <span class="kn">import</span> <span class="n">cycle</span>
+<span class="c1"># Modules to create the graphs and computations on the graphs</span>
+<span class="kn">import</span> <span class="nn">networkx</span> <span class="k">as</span> <span class="nn">nx</span>
+<span class="c1">#import matplotlib.pyplot as plt</span>
+<span class="kn">from</span> <span class="nn">pyvis.network</span> <span class="kn">import</span> <span class="n">Network</span>
+<span class="c1"># For the dropdown box interactions</span>
+<span class="kn">from</span> <span class="nn">ipywidgets</span> <span class="kn">import</span> <span class="n">interact</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="ingest-and-manipulate-data">
+<h1>INGEST AND MANIPULATE DATA<a class="headerlink" href="#ingest-and-manipulate-data" title="Permalink to this headline">¶</a></h1>
+<hr class="docutils" />
+<div class="section" id="download-the-latest-zip-and-extract-only-the-tables-folder">
+<h2>Download the latest zip and extract only the tables folder<a class="headerlink" href="#download-the-latest-zip-and-extract-only-the-tables-folder" title="Permalink to this headline">¶</a></h2>
+<p>Below I wrote some code based on a <a class="reference external" href="https://twitter.com/curi0usJack/status/1255702362225811457?s=20">tweet</a> I saw from &#64;curi0usJack.<br />
+In the code below I first download the complete zipped release, I iterate over the zipped file to extract only files from the <code class="docutils literal notranslate"><span class="pre">specs/</span></code> folder, this is the location for all the Osquery table definitions.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Get the latest release from the API data of GitHub </span>
+<span class="n">url_github_latest</span> <span class="o">=</span> <span class="s2">&quot;https://api.github.com/repos/osquery/osquery/releases/latest&quot;</span>
+<span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url_github_latest</span><span class="p">)</span><span class="o">.</span><span class="n">json</span><span class="p">()</span> 
+<span class="n">dir_tables</span> <span class="o">=</span> <span class="s1">&#39;osquery-tables&#39;</span>
+<span class="n">p</span> <span class="o">=</span> <span class="n">pathlib</span><span class="o">.</span><span class="n">Path</span><span class="p">(</span><span class="n">dir_tables</span><span class="p">)</span>
+  
+<span class="c1"># Response was in json and put in dict so can be called easily</span>
+<span class="n">url_github_dl</span> <span class="o">=</span> <span class="n">response</span><span class="p">[</span><span class="s1">&#39;zipball_url&#39;</span><span class="p">]</span>
+
+<span class="c1"># Get zipped content and unzip</span>
+<span class="n">github_content</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url_github_dl</span><span class="p">,</span> <span class="n">stream</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">zippedcontent</span> <span class="o">=</span> <span class="n">zipfile</span><span class="o">.</span><span class="n">ZipFile</span><span class="p">(</span><span class="n">io</span><span class="o">.</span><span class="n">BytesIO</span><span class="p">(</span><span class="n">github_content</span><span class="o">.</span><span class="n">content</span><span class="p">))</span>
+<span class="n">listOfFileNames</span> <span class="o">=</span> <span class="n">zippedcontent</span><span class="o">.</span><span class="n">namelist</span><span class="p">()</span>
+
+<span class="c1"># Iterate over the file names</span>
+<span class="k">for</span> <span class="n">fileName</span> <span class="ow">in</span> <span class="n">listOfFileNames</span><span class="p">:</span>
+    <span class="c1"># Check if file is located in the &#39;specs/&#39; folder</span>
+    <span class="k">if</span> <span class="s1">&#39;specs/&#39;</span> <span class="ow">in</span> <span class="n">fileName</span><span class="p">:</span>
+       <span class="c1"># Extract file from zip</span>
+        <span class="n">zippedcontent</span><span class="o">.</span><span class="n">extract</span><span class="p">(</span><span class="n">fileName</span><span class="p">,</span> <span class="n">dir_tables</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="extract-table-names-and-columns-from-the-osquery-table-files">
+<h2>Extract table names and columns from the Osquery table files<a class="headerlink" href="#extract-table-names-and-columns-from-the-osquery-table-files" title="Permalink to this headline">¶</a></h2>
+<p>Below is the function to check all the files with extension <code class="docutils literal notranslate"><span class="pre">.table</span></code> to extract the Table and Column names.<br />
+I filter out <code class="docutils literal notranslate"><span class="pre">example.table</span></code> and the hidden Column names as they are used for internal Osquery accounting as far as I could see.<br />
+Here I use a bit of a hack <code class="docutils literal notranslate"><span class="pre">list(zip(cycle))</span></code> to get both lists the same length.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">osquery_table_extract</span><span class="p">(</span><span class="n">dir_tables</span><span class="p">):</span>
+    <span class="n">table_columns</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">path</span> <span class="ow">in</span> <span class="n">p</span><span class="o">.</span><span class="n">rglob</span><span class="p">(</span><span class="s2">&quot;*.table&quot;</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">path</span><span class="o">.</span><span class="n">is_file</span><span class="p">()</span> <span class="ow">and</span> <span class="s1">&#39;example&#39;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">path</span><span class="o">.</span><span class="n">stem</span><span class="p">:</span>
+            <span class="n">cf</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="s2">&quot;r&quot;</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s2">&quot;utf-8&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+            <span class="n">tline</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">findall</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;table_name\(\&quot;(\w+)\&quot;.*\)&#39;</span><span class="p">,</span><span class="n">cf</span><span class="p">)</span>
+            <span class="c1">#below line is used to find all columns that do not have attribute hidden=True</span>
+            <span class="n">clines</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">findall</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;Column\(\&quot;(\w+?)\&quot;.+?(\n)?.+? (?!hidden=True)\S+\),$&#39;</span><span class="p">,</span><span class="n">cf</span><span class="p">,</span><span class="n">re</span><span class="o">.</span><span class="n">M</span><span class="p">)</span>
+            <span class="c1">#regex returns tuples because of the multiline matching so with list comprehesion turning it back in a list</span>
+            <span class="n">clines</span> <span class="o">=</span> <span class="p">[</span><span class="n">i</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">clines</span><span class="p">]</span>
+            <span class="n">tcList</span> <span class="o">=</span>  <span class="nb">list</span><span class="p">(</span><span class="nb">zip</span><span class="p">(</span><span class="n">cycle</span><span class="p">(</span><span class="n">tline</span><span class="p">),</span><span class="n">clines</span><span class="p">))</span>
+        <span class="n">table_columns</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">tcList</span><span class="p">)</span>
+    <span class="k">return</span><span class="p">(</span><span class="n">table_columns</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Below I call the function above to iterate over the files I exported from the zip. All the data is than put in a DataFrame (DF).<br />
+I also have some checks to make sure the data is correct.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">extract</span> <span class="o">=</span> <span class="n">osquery_table_extract</span><span class="p">(</span><span class="n">dir_tables</span><span class="p">)</span>
+<span class="n">extract_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">([</span><span class="n">t</span> <span class="k">for</span> <span class="n">lst</span> <span class="ow">in</span> <span class="n">extract</span> <span class="k">for</span> <span class="n">t</span> <span class="ow">in</span> <span class="n">lst</span><span class="p">],</span> <span class="n">columns</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Table&#39;</span><span class="p">,</span><span class="s1">&#39;Column&#39;</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Check count of table names to be sure all have been processed.<br />
+Check difference against Osquery website, I filtered out example.table as it is just an example table.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Tables&#39;</span><span class="p">,</span> <span class="n">extract_df</span><span class="o">.</span><span class="n">Table</span><span class="o">.</span><span class="n">nunique</span><span class="p">())</span>
+<span class="n">extract_df</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="add-os-into-dataframe-based-on-cmakelists-file">
+<h2>Add OS into DataFrame based on cMakelists file<a class="headerlink" href="#add-os-into-dataframe-based-on-cmakelists-file" title="Permalink to this headline">¶</a></h2>
+<p>The <code class="docutils literal notranslate"><span class="pre">cMakelists.txt</span></code> contains all the Table/OS combinations, so I needed to do some regexing to parse out the Table/OS combination.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">osquery_table_os</span><span class="p">(</span><span class="n">tname</span><span class="p">):</span>
+    <span class="c1"># For tables that are not present in cMakelists.txt</span>
+    <span class="n">tname_cmake</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">for</span> <span class="n">path</span> <span class="ow">in</span> <span class="n">p</span><span class="o">.</span><span class="n">rglob</span><span class="p">(</span><span class="s2">&quot;cMakelists.txt&quot;</span><span class="p">):</span>
+        <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">read_obj</span><span class="p">:</span>
+            <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">read_obj</span><span class="p">:</span>
+                <span class="k">if</span> <span class="n">tname</span> <span class="ow">in</span> <span class="n">line</span><span class="p">:</span>
+                    <span class="k">if</span> <span class="s1">&#39;/&#39;</span> <span class="ow">in</span> <span class="n">line</span><span class="p">:</span>
+                        <span class="c1">#used to delete part of string that can give double matches bases on tables names that have same start or end.</span>
+                        <span class="n">tname_cmake</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">search</span><span class="p">(</span> <span class="sa">r</span><span class="s1">&#39;^.*/(.*)$&#39;</span><span class="p">,</span> <span class="n">line</span><span class="p">,</span> <span class="n">re</span><span class="o">.</span><span class="n">M</span><span class="o">|</span><span class="n">re</span><span class="o">.</span><span class="n">I</span><span class="p">)</span><span class="o">.</span><span class="n">group</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+                    <span class="k">else</span><span class="p">:</span>
+                        <span class="n">tname_cmake</span> <span class="o">=</span> <span class="n">line</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
+    <span class="k">return</span><span class="p">(</span><span class="n">tname_cmake</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>The function above is called from here and I iterate over each Table name and based on the result I append the OS and if receive <code class="docutils literal notranslate"><span class="pre">0</span></code> it means Table is not present in the file but if it is present but no OS combination it means it is for all OS platforms.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">tname_list</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">tname</span> <span class="ow">in</span> <span class="n">extract_df</span><span class="p">[</span><span class="s1">&#39;Table&#39;</span><span class="p">]:</span>
+    <span class="n">table_os</span> <span class="o">=</span> <span class="n">osquery_table_os</span><span class="p">(</span><span class="n">tname</span><span class="p">)</span>
+    <span class="k">if</span> <span class="s1">&#39;:&#39;</span> <span class="ow">in</span> <span class="nb">str</span><span class="p">(</span><span class="n">table_os</span><span class="p">):</span>
+        <span class="n">t_os</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;^.+?:(.+?)&quot;$&#39;</span><span class="p">,</span> <span class="n">table_os</span><span class="p">,</span> <span class="n">re</span><span class="o">.</span><span class="n">M</span><span class="o">|</span><span class="n">re</span><span class="o">.</span><span class="n">I</span><span class="p">)</span><span class="o">.</span><span class="n">group</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+        <span class="n">tname_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">t_os</span><span class="p">)</span>
+    <span class="k">elif</span> <span class="s1">&#39;0&#39;</span> <span class="ow">in</span> <span class="nb">str</span><span class="p">(</span><span class="n">table_os</span><span class="p">):</span>
+        <span class="c1"># Not in cMakeLists.txt file but on the website so later manually add the OS</span>
+        <span class="n">t_os</span> <span class="o">=</span> <span class="s1">&#39;no_os&#39;</span>
+        <span class="n">tname_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">t_os</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">t_os</span> <span class="o">=</span> <span class="s1">&#39;linux,macos,freebsd,windows&#39;</span>
+        <span class="n">tname_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">t_os</span><span class="p">)</span>
+    
+<span class="n">extract_df_os</span> <span class="o">=</span> <span class="n">extract_df</span>
+<span class="n">extract_df_os</span><span class="p">[</span><span class="s1">&#39;OS&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">tname_list</span> 
+<span class="n">extract_df_os</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Workaround for issue that some tables did not get the correct OS assignment, fix this later in the re.search in the osquery_table_os function.<br />
+Issue seems to be if another table contains a part of the name of one of the prior tables it takes the value from the last table, so matching is not specific enough.</p>
+<p>Tables that have <code class="docutils literal notranslate"><span class="pre">no_os</span></code> need manual assignment too.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">extract_df_os</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">extract_df_os</span><span class="o">.</span><span class="n">Table</span> <span class="o">==</span> <span class="s1">&#39;crashes&#39;</span><span class="p">,</span> <span class="s1">&#39;OS&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;macos&#39;</span>
+<span class="n">extract_df_os</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">extract_df_os</span><span class="o">.</span><span class="n">Table</span> <span class="o">==</span> <span class="s1">&#39;azure_instance_metadata&#39;</span><span class="p">,</span> <span class="s1">&#39;OS&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;linux,macos,freebsd,windows&#39;</span>
+<span class="n">extract_df_os</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">extract_df_os</span><span class="o">.</span><span class="n">Table</span> <span class="o">==</span> <span class="s1">&#39;azure_instance_tags&#39;</span><span class="p">,</span> <span class="s1">&#39;OS&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;linux,macos,freebsd,windows&#39;</span>
+<span class="n">extract_df_os</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">extract_df_os</span><span class="o">.</span><span class="n">Table</span> <span class="o">==</span> <span class="s1">&#39;wifi_survey&#39;</span><span class="p">,</span> <span class="s1">&#39;OS&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;macos&#39;</span>
+<span class="n">extract_df_os</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">extract_df_os</span><span class="o">.</span><span class="n">Table</span> <span class="o">==</span> <span class="s1">&#39;processes&#39;</span><span class="p">,</span> <span class="s1">&#39;OS&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;linux,macos,freebsd,windows&#39;</span>
+<span class="n">extract_df_os</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">extract_df_os</span><span class="o">.</span><span class="n">Table</span> <span class="o">==</span> <span class="s1">&#39;groups&#39;</span><span class="p">,</span> <span class="s1">&#39;OS&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;linux,macos,freebsd,windows&#39;</span>
+<span class="n">extract_df_os</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">extract_df_os</span><span class="o">.</span><span class="n">Table</span> <span class="o">==</span> <span class="s1">&#39;hash&#39;</span><span class="p">,</span> <span class="s1">&#39;OS&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;linux,macos,freebsd,windows&#39;</span>
+<span class="n">extract_df_os</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">extract_df_os</span><span class="o">.</span><span class="n">Table</span> <span class="o">==</span> <span class="s1">&#39;time&#39;</span><span class="p">,</span> <span class="s1">&#39;OS&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;linux,macos,freebsd,windows&#39;</span>
+<span class="n">extract_df_os</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">extract_df_os</span><span class="o">.</span><span class="n">Table</span> <span class="o">==</span> <span class="s1">&#39;certificates&#39;</span><span class="p">,</span> <span class="s1">&#39;OS&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;macos,windows&#39;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Check if all <code class="docutils literal notranslate"><span class="pre">no_os</span></code> have been assigned, if there is output below check the website to manually add OS based on osquery schema.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">extract_df_os</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">extract_df_os</span><span class="o">.</span><span class="n">OS</span> <span class="o">==</span> <span class="s1">&#39;no_os&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Below is just some code that I do a quick check if a table has the correct association.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">extract_df_os</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">extract_df_os</span><span class="p">[</span><span class="s1">&#39;Table&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;logon_sessions&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="create-separate-dataframes-based-on-os">
+<h2>Create separate DataFrames based on OS<a class="headerlink" href="#create-separate-dataframes-based-on-os" title="Permalink to this headline">¶</a></h2>
+<p>Here I could have probably used a for loop with a list to get the same result.<br />
+I check in the DataFrame <code class="docutils literal notranslate"><span class="pre">extract_df_os</span></code> for the OS name in the <code class="docutils literal notranslate"><span class="pre">OS</span></code> column and if present put that row in a new DataFrame.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Windows</span>
+<span class="n">windows_df</span> <span class="o">=</span> <span class="n">extract_df_os</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">pd</span><span class="o">.</span><span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">extract_df_os</span><span class="o">.</span><span class="n">OS</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">contains</span><span class="p">(</span><span class="s2">&quot;windows&quot;</span><span class="p">))]</span>
+
+<span class="c1">#Linux</span>
+<span class="n">linux_df</span> <span class="o">=</span> <span class="n">extract_df_os</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">pd</span><span class="o">.</span><span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">extract_df_os</span><span class="o">.</span><span class="n">OS</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">contains</span><span class="p">(</span><span class="s2">&quot;linux&quot;</span><span class="p">))]</span>
+
+<span class="c1">#macOS</span>
+<span class="n">macos_df</span> <span class="o">=</span> <span class="n">extract_df_os</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">pd</span><span class="o">.</span><span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">extract_df_os</span><span class="o">.</span><span class="n">OS</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">contains</span><span class="p">(</span><span class="s2">&quot;macos&quot;</span><span class="p">))]</span>
+
+<span class="c1">#FreeBSD</span>
+<span class="n">freebsd_df</span> <span class="o">=</span> <span class="n">extract_df_os</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">pd</span><span class="o">.</span><span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">extract_df_os</span><span class="o">.</span><span class="n">OS</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">contains</span><span class="p">(</span><span class="s2">&quot;freebsd&quot;</span><span class="p">))]</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="graphs">
+<h1>GRAPHS 🕸<a class="headerlink" href="#graphs" title="Permalink to this headline">¶</a></h1>
+<hr class="docutils" />
+<div class="section" id="function-to-create-the-graph-and-all-its-properties">
+<h2>Function to create the graph and all its properties<a class="headerlink" href="#function-to-create-the-graph-and-all-its-properties" title="Permalink to this headline">¶</a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">create_OS_graph</span></code> function ingests a DF and creates the graph from this DF.<br />
+I iterate twice over the graph to first remove Columns with only one connection as this implies it is only connected to one Table and after that iterate to remove orphaned Tables.<br />
+I also assing different colors and sized dependent on the properties of each node.</p>
+<ul class="simple">
+<li><p>Tables with only one connection are <strong>ORANGE</strong></p></li>
+<li><p>Tables with more than one connection are <strong>GREEN</strong></p></li>
+<li><p>Columns are <strong>RED</strong></p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">create_OS_graph</span><span class="p">(</span><span class="n">df_OS</span><span class="p">):</span>
+    <span class="c1"># Create nx node graph from DF</span>
+    <span class="n">G</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">from_pandas_edgelist</span><span class="p">(</span><span class="n">df</span><span class="o">=</span><span class="n">df_OS</span><span class="p">,</span> <span class="n">source</span><span class="o">=</span><span class="s1">&#39;Table&#39;</span><span class="p">,</span> <span class="n">target</span><span class="o">=</span><span class="s1">&#39;Column&#39;</span><span class="p">)</span>
+    <span class="c1"># Initiliaze lists to use for appending</span>
+    <span class="n">colors</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="n">sizes</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="n">selected_nodes_list</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="n">selected_nodes_list_H</span> <span class="o">=</span> <span class="p">[]</span>
+    
+    <span class="c1"># Calculate all degrees of separation for the nodes, so how many connection does each node have</span>
+    <span class="n">degree</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">degree</span><span class="p">(</span><span class="n">G</span><span class="p">)</span>
+
+    <span class="c1"># Iterate through nodes, if node is Table than check if node has connections, if so add to list, if no connections discard.</span>
+    <span class="c1"># If node not a Table than it would be a Column and if it has more than 1 connection than add to list</span>
+    <span class="k">for</span> <span class="n">node</span> <span class="ow">in</span> <span class="n">G</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">node</span> <span class="ow">in</span> <span class="n">df_OS</span><span class="o">.</span><span class="n">Table</span><span class="o">.</span><span class="n">values</span><span class="p">:</span>
+            <span class="k">if</span> <span class="p">(</span><span class="n">degree</span><span class="p">(</span><span class="n">node</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">):</span>
+                <span class="n">selected_nodes_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">node</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span> 
+            <span class="c1"># Column has always at least connection to it&#39;s own table that is why need to check for more than 1 connection</span>
+            <span class="k">if</span> <span class="p">(</span><span class="n">degree</span><span class="p">(</span><span class="n">node</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">):</span>
+                <span class="n">selected_nodes_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">node</span><span class="p">)</span>
+
+    <span class="c1"># Create subgraph and degress based on filtering above</span>
+    <span class="n">H</span> <span class="o">=</span> <span class="n">G</span><span class="o">.</span><span class="n">subgraph</span><span class="p">(</span><span class="n">selected_nodes_list</span><span class="p">)</span>
+    <span class="n">degree_H</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">degree</span><span class="p">(</span><span class="n">H</span><span class="p">)</span>
+
+    <span class="c1"># Run the same logic as above to filter out Tables and Columns that were orphaned</span>
+    <span class="c1"># Also add color and size to Table or Column dependent on how many connections</span>
+    <span class="k">for</span> <span class="n">node</span> <span class="ow">in</span> <span class="n">H</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">node</span> <span class="ow">in</span> <span class="n">df_OS</span><span class="o">.</span><span class="n">Table</span><span class="o">.</span><span class="n">values</span><span class="p">:</span>
+            <span class="k">if</span> <span class="p">(</span><span class="n">degree_H</span><span class="p">(</span><span class="n">node</span><span class="p">)</span> <span class="o">==</span> <span class="mi">1</span><span class="p">):</span>
+                <span class="n">selected_nodes_list_H</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">node</span><span class="p">)</span>
+                <span class="n">colors</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">&quot;orange&quot;</span><span class="p">)</span>
+                <span class="n">sizes</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="mi">300</span><span class="p">)</span>
+            <span class="k">elif</span> <span class="p">(</span><span class="n">degree_H</span><span class="p">(</span><span class="n">node</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">):</span>
+                <span class="n">selected_nodes_list_H</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">node</span><span class="p">)</span>
+                <span class="n">colors</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">&quot;green&quot;</span><span class="p">)</span>
+                <span class="n">sizes</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">H</span><span class="o">.</span><span class="n">degree</span><span class="p">(</span><span class="n">node</span><span class="p">)</span> <span class="o">*</span> <span class="mi">700</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span> 
+            <span class="k">if</span> <span class="p">(</span><span class="n">degree_H</span><span class="p">(</span><span class="n">node</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">):</span>
+                <span class="n">selected_nodes_list_H</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">node</span><span class="p">)</span>
+                <span class="n">colors</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">&quot;red&quot;</span><span class="p">)</span>
+                <span class="n">sizes</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">H</span><span class="o">.</span><span class="n">degree</span><span class="p">(</span><span class="n">node</span><span class="p">)</span> <span class="o">*</span> <span class="mi">1000</span><span class="p">)</span>
+
+    <span class="n">I</span> <span class="o">=</span> <span class="n">H</span><span class="o">.</span><span class="n">subgraph</span><span class="p">(</span><span class="n">selected_nodes_list_H</span><span class="p">)</span>
+    <span class="k">return</span><span class="p">(</span><span class="n">I</span><span class="p">,</span> <span class="n">colors</span><span class="p">,</span> <span class="n">sizes</span><span class="p">,</span> <span class="n">selected_nodes_list_H</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="column-filtering">
+<h2>Column Filtering<a class="headerlink" href="#column-filtering" title="Permalink to this headline">¶</a></h2>
+<p>Check the most common <code class="docutils literal notranslate"><span class="pre">Columns</span></code> to filter out common names that will not be able to JOIN.<br />
+Used below to start creating the ignore_list, finished it visually by walking the graph.<br />
+Each OS has a different <code class="docutils literal notranslate"><span class="pre">ignore_list</span></code> but the basis is from the information below.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">column_count</span> <span class="o">=</span> <span class="n">extract_df</span><span class="p">[</span><span class="s1">&#39;Column&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span>
+<span class="n">column_for_joins</span> <span class="o">=</span> <span class="n">column_count</span><span class="p">[</span><span class="n">column_count</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">]</span>
+<span class="n">column_for_joins</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Create a folder location to place the created graphs.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">path_graphs</span> <span class="o">=</span> <span class="n">pathlib</span><span class="o">.</span><span class="n">Path</span><span class="o">.</span><span class="n">cwd</span><span class="p">()</span> <span class="o">/</span> <span class="s1">&#39;graphs&#39;</span>
+
+<span class="k">try</span><span class="p">:</span>
+    <span class="n">path_graphs</span><span class="o">.</span><span class="n">mkdir</span><span class="p">()</span>
+<span class="k">except</span><span class="p">:</span>
+    <span class="nb">print</span> <span class="p">(</span><span class="s2">&quot;Creation of the directory </span><span class="si">%s</span><span class="s2"> failed, location probably already exists&quot;</span> <span class="o">%</span> <span class="n">path_graphs</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span> <span class="p">(</span><span class="s2">&quot;Successfully created the directory </span><span class="si">%s</span><span class="s2"> &quot;</span> <span class="o">%</span> <span class="n">path_graphs</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="all-os-graph">
+<h2>All OS Graph<a class="headerlink" href="#all-os-graph" title="Permalink to this headline">¶</a></h2>
+<p>By using <code class="docutils literal notranslate"><span class="pre">pyvis.network</span></code> module I could create beautiful interactive graphs.<br />
+The graph is created from the graph I created in the <code class="docutils literal notranslate"><span class="pre">create_OS_graph</span></code> function the colors and sizes are also taken from that function.<br />
+<code class="docutils literal notranslate"><span class="pre">barnes_hut</span></code> is the type of visualization used.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Get the needed data from the function</span>
+<span class="n">OS_graph</span><span class="p">,</span> <span class="n">colors</span><span class="p">,</span> <span class="n">sizes</span><span class="p">,</span> <span class="n">nodelist</span> <span class="o">=</span> <span class="n">create_OS_graph</span><span class="p">(</span><span class="n">extract_df_os</span><span class="p">)</span>
+
+<span class="n">gr</span><span class="o">=</span><span class="n">Network</span><span class="p">(</span><span class="n">height</span><span class="o">=</span><span class="mi">800</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="mi">1200</span><span class="p">,</span> <span class="n">notebook</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">bgcolor</span><span class="o">=</span><span class="s2">&quot;#222222&quot;</span><span class="p">,</span> <span class="n">font_color</span><span class="o">=</span><span class="s2">&quot;white&quot;</span><span class="p">)</span>
+<span class="c1"># First add the nodes with its properties to the graph</span>
+<span class="n">gr</span><span class="o">.</span><span class="n">add_nodes</span><span class="p">(</span><span class="n">nodelist</span><span class="p">,</span> <span class="n">value</span><span class="o">=</span><span class="n">sizes</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="n">nodelist</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="n">colors</span><span class="p">)</span>
+<span class="n">gr</span><span class="o">.</span><span class="n">barnes_hut</span><span class="p">()</span>
+<span class="c1"># Now connect the nodes based on the graph returned from the function</span>
+<span class="n">gr</span><span class="o">.</span><span class="n">from_nx</span><span class="p">(</span><span class="n">OS_graph</span><span class="p">)</span>
+<span class="n">gr</span><span class="o">.</span><span class="n">show</span><span class="p">(</span><span class="s2">&quot;graphs/osquery_tables_OS_ALL_graph.html&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="windows-graph">
+<h2>Windows Graph<a class="headerlink" href="#windows-graph" title="Permalink to this headline">¶</a></h2>
+<p>Filtering used is OS dependent. I noticed that filtering needs some more fine-tuning this will be in the next release of this Notebook.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ignore_list_w</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;name&#39;</span><span class="p">,</span><span class="s1">&#39;path&#39;</span><span class="p">,</span><span class="s1">&#39;type&#39;</span><span class="p">,</span><span class="s1">&#39;version&#39;</span><span class="p">,</span><span class="s1">&#39;size&#39;</span><span class="p">,</span><span class="s1">&#39;version&#39;</span><span class="p">,</span><span class="s1">&#39;description&#39;</span><span class="p">,</span><span class="s1">&#39;status&#39;</span><span class="p">,</span><span class="s1">&#39;state&#39;</span><span class="p">,</span><span class="s1">&#39;label&#39;</span><span class="p">,</span><span class="s1">&#39;class&#39;</span><span class="p">,</span><span class="s1">&#39;source&#39;</span><span class="p">,</span><span class="s1">&#39;device&#39;</span><span class="p">,</span><span class="s1">&#39;mode&#39;</span><span class="p">,</span><span class="s1">&#39;value&#39;</span><span class="p">,</span><span class="s1">&#39;result&#39;</span><span class="p">,</span><span class="s1">&#39;hardware_model&#39;</span><span class="p">,</span><span class="s1">&#39;manufacturer&#39;</span><span class="p">,</span><span class="s1">&#39;query&#39;</span><span class="p">,</span><span class="s1">&#39;model&#39;</span><span class="p">,</span><span class="s1">&#39;device_id&#39;</span><span class="p">,</span><span class="s1">&#39;action&#39;</span><span class="p">,</span><span class="s1">&#39;script_text&#39;</span><span class="p">,</span><span class="s1">&#39;time&#39;</span><span class="p">,</span><span class="s1">&#39;enabled&#39;</span><span class="p">,</span>
+               <span class="s1">&#39;date&#39;</span><span class="p">,</span><span class="s1">&#39;caption&#39;</span><span class="p">,</span><span class="s1">&#39;publisher&#39;</span><span class="p">,</span><span class="s1">&#39;active&#39;</span><span class="p">,</span><span class="s1">&#39;autoupdate&#39;</span><span class="p">,</span><span class="s1">&#39;flags&#39;</span><span class="p">,</span><span class="s1">&#39;comment&#39;</span><span class="p">,</span><span class="s1">&#39;data&#39;</span><span class="p">,</span><span class="s1">&#39;registry&#39;</span><span class="p">,</span><span class="s1">&#39;author&#39;</span><span class="p">,</span><span class="s1">&#39;directory&#39;</span><span class="p">,</span><span class="s1">&#39;license&#39;</span><span class="p">,</span><span class="s1">&#39;summary&#39;</span><span class="p">,</span><span class="s1">&#39;permissions&#39;</span><span class="p">]</span> 
+<span class="c1">#maybe filter out key not the same meaning in all tables</span>
+<span class="c1">#path can be used for some good joins but too noisy for now, example http://www.osdfcon.org/presentations/2016/Facebook-osquery.pdf</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Below we create the Windows-only graph, we first filter down the OS DataFrame we created earlier with the <code class="docutils literal notranslate"><span class="pre">ignore_list_w</span></code>.</p>
+<p>After that, we run the same code used to create the ‘All OS Graph’, we do the same for each OS.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">windows_df_filtered</span> <span class="o">=</span> <span class="n">windows_df</span><span class="p">[</span><span class="o">~</span><span class="n">windows_df</span><span class="p">[</span><span class="s1">&#39;Column&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">isin</span><span class="p">(</span><span class="n">ignore_list_w</span><span class="p">)]</span>
+<span class="n">OS_graph</span><span class="p">,</span> <span class="n">colors</span><span class="p">,</span> <span class="n">sizes</span><span class="p">,</span> <span class="n">nodelist</span> <span class="o">=</span> <span class="n">create_OS_graph</span><span class="p">(</span><span class="n">windows_df_filtered</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Nodes:&#39;</span><span class="p">,</span> <span class="n">OS_graph</span><span class="o">.</span><span class="n">number_of_nodes</span><span class="p">(),</span> <span class="s1">&#39;Edges:&#39;</span><span class="p">,</span> <span class="n">OS_graph</span><span class="o">.</span><span class="n">number_of_edges</span><span class="p">())</span>
+
+<span class="n">gr</span><span class="o">=</span><span class="n">Network</span><span class="p">(</span><span class="n">height</span><span class="o">=</span><span class="mi">800</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="mi">1200</span><span class="p">,</span> <span class="n">notebook</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">bgcolor</span><span class="o">=</span><span class="s2">&quot;#222222&quot;</span><span class="p">,</span> <span class="n">font_color</span><span class="o">=</span><span class="s2">&quot;white&quot;</span><span class="p">)</span>
+<span class="n">gr</span><span class="o">.</span><span class="n">add_nodes</span><span class="p">(</span><span class="n">nodelist</span><span class="p">,</span> <span class="n">value</span><span class="o">=</span><span class="n">sizes</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="n">nodelist</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="n">colors</span><span class="p">)</span>
+<span class="n">gr</span><span class="o">.</span><span class="n">barnes_hut</span><span class="p">()</span>
+<span class="n">gr</span><span class="o">.</span><span class="n">from_nx</span><span class="p">(</span><span class="n">OS_graph</span><span class="p">)</span>
+<span class="n">gr</span><span class="o">.</span><span class="n">show</span><span class="p">(</span><span class="s2">&quot;graphs/osquery_tables_OS_win_graph.html&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="determine-shortest-path-from-table-a-to-table-b">
+<h3>Determine shortest path from table A to table B<a class="headerlink" href="#determine-shortest-path-from-table-a-to-table-b" title="Permalink to this headline">¶</a></h3>
+<p>Another part of this Notebook is to create a function to easily see connections between 2 different tables.<br />
+I actually use the same code that is in <code class="docutils literal notranslate"><span class="pre">create_OS_graph</span></code> but a trimmed down version with an extra function, <code class="docutils literal notranslate"><span class="pre">shortest_path</span></code>, to retun the shortest path between Table A and B based on Dijkstra’s algorithm.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">shortest_path</span><span class="p">(</span><span class="n">df_OS</span><span class="p">,</span><span class="n">s</span><span class="p">,</span><span class="n">t</span><span class="p">):</span>
+    <span class="n">P</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">from_pandas_edgelist</span><span class="p">(</span><span class="n">df</span><span class="o">=</span><span class="n">df_OS</span><span class="p">,</span> <span class="n">source</span><span class="o">=</span><span class="s1">&#39;Table&#39;</span><span class="p">,</span> <span class="n">target</span><span class="o">=</span><span class="s1">&#39;Column&#39;</span><span class="p">)</span>
+    <span class="n">path_list</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="n">colors_sp</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="n">sizes_sp</span> <span class="o">=</span> <span class="p">[]</span>
+    
+    <span class="c1"># If there is a path between Table A and B, return the list with the nodes.</span>
+    <span class="k">if</span> <span class="n">nx</span><span class="o">.</span><span class="n">has_path</span><span class="p">(</span><span class="n">P</span><span class="p">,</span> <span class="n">s</span><span class="p">,</span> <span class="n">t</span><span class="p">):</span>
+        <span class="n">path_list</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">shortest_path</span><span class="p">(</span><span class="n">P</span><span class="p">,</span> <span class="n">source</span><span class="o">=</span><span class="n">s</span><span class="p">,</span> <span class="n">target</span><span class="o">=</span><span class="n">t</span><span class="p">)</span> 
+    <span class="k">else</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;No path available.&#39;</span><span class="p">)</span>
+    
+    <span class="c1"># Create subgraph based on the shortest path.</span>
+    <span class="n">Q</span> <span class="o">=</span> <span class="n">P</span><span class="o">.</span><span class="n">subgraph</span><span class="p">(</span><span class="n">path_list</span><span class="p">)</span>
+    <span class="n">degree_Q</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">degree</span><span class="p">(</span><span class="n">Q</span><span class="p">)</span>
+    
+    <span class="c1"># Below is used to add colors and sizes</span>
+    <span class="k">for</span> <span class="n">node</span> <span class="ow">in</span> <span class="n">path_list</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">node</span> <span class="ow">in</span> <span class="n">df_OS</span><span class="o">.</span><span class="n">Table</span><span class="o">.</span><span class="n">values</span><span class="p">:</span>
+            <span class="k">if</span> <span class="p">(</span><span class="n">degree_Q</span><span class="p">(</span><span class="n">node</span><span class="p">)</span> <span class="o">==</span> <span class="mi">1</span><span class="p">):</span>
+                <span class="n">colors_sp</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">&quot;orange&quot;</span><span class="p">)</span>
+                <span class="n">sizes_sp</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="mi">300</span><span class="p">)</span>
+            <span class="k">elif</span> <span class="p">(</span><span class="n">degree_Q</span><span class="p">(</span><span class="n">node</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">):</span>
+                <span class="n">colors_sp</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">&quot;green&quot;</span><span class="p">)</span>
+                <span class="n">sizes_sp</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">Q</span><span class="o">.</span><span class="n">degree</span><span class="p">(</span><span class="n">node</span><span class="p">)</span> <span class="o">*</span> <span class="mi">700</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span> 
+                <span class="n">colors_sp</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">&quot;red&quot;</span><span class="p">)</span>
+                <span class="n">sizes_sp</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">Q</span><span class="o">.</span><span class="n">degree</span><span class="p">(</span><span class="n">node</span><span class="p">)</span> <span class="o">*</span> <span class="mi">1000</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="p">(</span><span class="n">Q</span><span class="p">,</span> <span class="n">path_list</span><span class="p">,</span> <span class="n">colors_sp</span><span class="p">,</span> <span class="n">sizes_sp</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">&#64;interact</span></code> is an easy way to create user interface controls for exploring data interactively.<br />
+The definition of <code class="docutils literal notranslate"><span class="pre">corr_graph</span></code> automatically creates the controls. The dropdown box is based on unique values in the OS DataFrame.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">windows_df_filtered_tb</span> <span class="o">=</span> <span class="n">windows_df</span><span class="p">[</span><span class="o">~</span><span class="n">windows_df</span><span class="p">[</span><span class="s1">&#39;Column&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">isin</span><span class="p">(</span><span class="n">ignore_list_w</span><span class="p">)]</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="s1">&#39;Table&#39;</span><span class="p">)</span>
+
+<span class="nd">@interact</span>
+<span class="k">def</span> <span class="nf">corr_graph</span><span class="p">(</span><span class="n">Source</span><span class="o">=</span><span class="nb">list</span><span class="p">(</span><span class="n">windows_df_filtered_tb</span><span class="o">.</span><span class="n">Table</span><span class="o">.</span><span class="n">unique</span><span class="p">()),</span> <span class="n">Destination</span><span class="o">=</span><span class="nb">list</span><span class="p">(</span><span class="n">windows_df_filtered_tb</span><span class="o">.</span><span class="n">Table</span><span class="o">.</span><span class="n">unique</span><span class="p">())):</span>
+    <span class="n">sp_graph</span><span class="p">,</span> <span class="n">sp_list</span><span class="p">,</span> <span class="n">sp_colors</span><span class="p">,</span> <span class="n">sp_sizes</span> <span class="o">=</span> <span class="n">shortest_path</span><span class="p">(</span><span class="n">windows_df_filtered_tb</span><span class="p">,</span><span class="n">Source</span><span class="p">,</span><span class="n">Destination</span><span class="p">)</span>  
+    
+    <span class="c1"># Check if the sp_list returned is not NULL which means there is no path and if sp_list == 1 this means that the Table name in Source and Destination is the same</span>
+    <span class="k">if</span> <span class="n">sp_list</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="ow">and</span> <span class="nb">len</span><span class="p">(</span><span class="n">sp_list</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">:</span>
+        <span class="n">sp_gr</span><span class="o">=</span><span class="n">Network</span><span class="p">(</span><span class="n">notebook</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">bgcolor</span><span class="o">=</span><span class="s2">&quot;#222222&quot;</span><span class="p">,</span> <span class="n">font_color</span><span class="o">=</span><span class="s2">&quot;white&quot;</span><span class="p">)</span>
+        <span class="n">sp_gr</span><span class="o">.</span><span class="n">add_nodes</span><span class="p">(</span><span class="n">sp_list</span><span class="p">,</span> <span class="n">value</span><span class="o">=</span><span class="n">sp_sizes</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="n">sp_list</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="n">sp_colors</span><span class="p">)</span>
+        <span class="n">sp_gr</span><span class="o">.</span><span class="n">barnes_hut</span><span class="p">()</span>
+        <span class="n">sp_gr</span><span class="o">.</span><span class="n">from_nx</span><span class="p">(</span><span class="n">sp_graph</span><span class="p">)</span>
+        <span class="k">return</span><span class="p">(</span><span class="n">sp_gr</span><span class="o">.</span><span class="n">show</span><span class="p">(</span><span class="s2">&quot;graphs/shortest_path_graph.html&quot;</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
+<hr class="docutils" />
+<div class="section" id="sources">
+<h4>Sources:<a class="headerlink" href="#sources" title="Permalink to this headline">¶</a></h4>
+<p><a class="reference external" href="https://towardsdatascience.com/getting-started-with-graph-analysis-in-python-with-pandas-and-networkx-5e2d2f82f18e">https://towardsdatascience.com/getting-started-with-graph-analysis-in-python-with-pandas-and-networkx-5e2d2f82f18e</a><br />
+<a class="reference external" href="https://stackoverflow.com/questions/55342586/assign-color-to-networkx-node-based-on-column-name">https://stackoverflow.com/questions/55342586/assign-color-to-networkx-node-based-on-column-name</a><br />
+<a class="reference external" href="https://pyvis.readthedocs.io/en/latest/tutorial.html">https://pyvis.readthedocs.io/en/latest/tutorial.html</a><br />
+<a class="reference external" href="https://github.com/osquery/osquery">https://github.com/osquery/osquery</a></p>
+</div>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./2020\notebooks"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+        <div class='prev-next-bottom'>
+            
+    <a class='left-prev' id="prev-link" href="2_Jupyterthon_Cyb3rPandaH_2020.html" title="previous page">ATT&amp;CK - APT29 Evals Datasets</a>
+    <a class='right-next' id="next-link" href="12_Jupyterthon-TimeSeries-Demo.html" title="next page">Anomaly detection and visualization using Time Series Decomposition</a>
+
+        </div>
+        
+        </div>
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Roberto Rodriguez @Cyb3rWard0g<br/>
+        
+            &copy; Copyright 2020.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+
+  
+  </body>
+</html>

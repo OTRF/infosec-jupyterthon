@@ -1,0 +1,1200 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Welcome Infosec Community!</title>
+    
+  <link href="../../_static/css/theme.css" rel="stylesheet" />
+  <link href="../../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+
+    
+  <link rel="stylesheet"
+    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/sphinx-book-theme.acff12b8f9c144ce68a297486a2fa670.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/tabs.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../../_static/js/index.1c5a1a01449ed65a7b51.js">
+
+    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <link rel="canonical" href="https://infosecjupyterthon.com/2020/notebooks/1_what_about_notebooks.html" />
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="ATT&amp;CK - APT29 Evals Datasets" href="2_Jupyterthon_Cyb3rPandaH_2020.html" />
+    <link rel="prev" title="Infosec Jupyterthon 2020!" href="0_banner.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../../index.html">
+      
+      <img src="../../_static/logo.png" class="logo" alt="logo">
+      
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <div class="bd-toc-item active">
+        <p class="caption">
+ <span class="caption-text">
+  Editions
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../2021/agenda.html">
+   2021 Edition
+  </a>
+ </li>
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="../agenda.html">
+   2020 Edition
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2">
+    <a class="reference internal" href="0_banner.html">
+     Infosec Jupyterthon 2020!
+    </a>
+   </li>
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     <font color="peru">
+      Welcome Infosec Community!
+     </font>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="2_Jupyterthon_Cyb3rPandaH_2020.html">
+     ATT&amp;CK - APT29 Evals Datasets
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="6_OSQuery-Tables-interactive_Jupyterthon.html">
+     Untangling the Osquery❓ tables web🕸 using Jupyter Notebooks📓
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="12_Jupyterthon-TimeSeries-Demo.html">
+     Anomaly detection and visualization using Time Series Decomposition
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../../_sources/2020/notebooks/1_what_about_notebooks.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        
+        
+        <a class="edit-button" href="https://github.com/OTRF/infosec-jupyterthon/edit/master/docs/2020/notebooks/1_what_about_notebooks.ipynb"><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Edit this page"><i class="fas fa-pencil-alt"></i>suggest edit</button></a>
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/OTRF/infosec-jupyterthon/master?urlpath=tree/docs/2020/notebooks/1_what_about_notebooks.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   <font color="peru">
+    Welcome Infosec Community!
+   </font>
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#font-color-dimgray-roberto-rodriguez-font-font-color-cadetblue-cyb3rward0g-font">
+   <font color="dimgray">
+    Roberto Rodriguez
+   </font>
+   <font color="cadetblue">
+    @Cyb3rWard0g
+   </font>
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#font-color-dimgray-industry-font">
+   <font color="dimgray">
+    Industry
+   </font>
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#font-color-dimgray-jupyter-notebooks-level-font">
+   <font color="dimgray">
+    Jupyter Notebooks Level
+   </font>
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#font-color-dimgray-what-do-you-exepect-to-learn-about-jupyter-notebooks-in-this-event-font">
+   <font color="dimgray">
+    What do you exepect to learn about Jupyter Notebooks in this event?
+   </font>
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id1">
+   <font color="dimgray">
+    What do you exepect to learn about Jupyter Notebooks in this event?
+   </font>
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#font-color-dimgray-housekeeping-font">
+   <font color="dimgray">
+    Housekeeping
+   </font>
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#font-color-dimgray-interactive-talks-font">
+   <font color="dimgray">
+    Interactive Talks
+   </font>
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#font-color-dimgray-getting-up-to-speed-font">
+   <font color="dimgray">
+    Getting up to speed..
+   </font>
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id2">
+   <font color="dimgray">
+    Getting up to speed..
+   </font>
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#font-color-dimgray-what-is-interactive-computing-font">
+   <font color="dimgray">
+    What is Interactive Computing?
+   </font>
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#font-color-dimgray-interactivity-as-a-protocol-font">
+   <font color="dimgray">
+    Interactivity as a Protocol
+   </font>
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#font-color-dimgray-ipython-font">
+   <font color="dimgray">
+    IPython
+   </font>
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#font-color-dimgray-fernando-perez-inspiration-font">
+   <font color="dimgray">
+    Fernando Perez Inspiration
+   </font>
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#font-color-dimgray-ipython-jupyter-project-font">
+   <font color="dimgray">
+    IPython -&gt; Jupyter Project
+   </font>
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#font-color-dimgray-what-are-jupyter-notebooks-font">
+   <font color="dimgray">
+    What are Jupyter Notebooks?
+   </font>
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#font-color-dimgray-architecture-interactive-protocol-font">
+   <font color="dimgray">
+    Architecture (Interactive Protocol)
+   </font>
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#font-color-dimgray-what-does-it-look-like-font">
+   <font color="dimgray">
+    What does it look like?
+   </font>
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#font-color-dimgray-installing-jupyter-notebooks-manually-font">
+   <font color="dimgray">
+    Installing Jupyter Notebooks (Manually)
+   </font>
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#font-color-dimgray-installing-jupyter-notebooks-docker-ce-font">
+   <font color="dimgray">
+    Installing Jupyter Notebooks (Docker CE)
+   </font>
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#font-color-dimgray-enter-binder-project-font">
+   <font color="dimgray">
+    Enter Binder Project
+   </font>
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#font-color-dimgray-binderhub-font">
+   <font color="dimgray">
+    BinderHub
+   </font>
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#font-color-dimgray-binderhub-flow-font">
+   <font color="dimgray">
+    BinderHub Flow
+   </font>
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#font-color-dimgray-let-s-try-it-font">
+   <font color="dimgray">
+    Let’s Try it!
+   </font>
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#font-color-dimgray-i-have-a-notebook-now-what-font">
+   <font color="dimgray">
+    I have a Notebook. Now What!
+   </font>
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#font-color-hotpink-connect-to-elasticsearch-font-font-color-dimgray-elasticsearch-dsl-libraries-font">
+   <font color="hotpink">
+    Connect to Elasticsearch
+   </font>
+   <font color="dimgray">
+    (Elasticsearch DSL Libraries)
+   </font>
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id3">
+   <font color="hotpink">
+    Connect to Elasticsearch
+   </font>
+   <font color="dimgray">
+    (Elasticsearch DSL Libraries)
+   </font>
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id4">
+   <font color="hotpink">
+    Connect to Elasticsearch
+   </font>
+   <font color="dimgray">
+    (Elasticsearch DSL Libraries)
+   </font>
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id5">
+   <font color="hotpink">
+    Connect to Elasticsearch
+   </font>
+   <font color="dimgray">
+    (Elasticsearch DSL Libraries)
+   </font>
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id6">
+   <font color="hotpink">
+    Connect to Elasticsearch
+   </font>
+   <font color="dimgray">
+    (Elasticsearch DSL Libraries)
+   </font>
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#font-color-hotpink-connect-to-elasticsearch-font-font-color-dimgray-huntlib-library-davidjbianco-font">
+   <font color="hotpink">
+    Connect to Elasticsearch
+   </font>
+   <font color="dimgray">
+    (HuntLib Library @DavidJBianco)
+   </font>
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id7">
+   <font color="hotpink">
+    Connect to Elasticsearch
+   </font>
+   <font color="dimgray">
+    (HuntLib Library @DavidJBianco)
+   </font>
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#font-color-mediumaquamarine-connect-to-splunk-font-font-color-dimgray-huntlib-library-davidjbianco-font">
+   <font color="mediumaquamarine">
+    Connect to Splunk
+   </font>
+   <font color="dimgray">
+    (HuntLib Library @DavidJBianco)
+   </font>
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id8">
+   <font color="mediumaquamarine">
+    Connect to Splunk
+   </font>
+   <font color="dimgray">
+    (HuntLib Library @DavidJBianco)
+   </font>
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#font-color-dimgray-dataframes-font">
+   <font color="dimgray">
+    Dataframes?
+   </font>
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#font-color-dodgerblue-connect-to-azure-sentinel-font-font-color-dimgray-msticpy-font">
+   <font color="dodgerblue">
+    Connect to Azure Sentinel
+   </font>
+   <font color="dimgray">
+    (MSTICpy)
+   </font>
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id9">
+   <font color="dodgerblue">
+    Connect to Azure Sentinel
+   </font>
+   <font color="dimgray">
+    (MSTICpy)
+   </font>
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#native-kqlmagic-interface">
+     Native Kqlmagic interface
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#msitcpy-query-interface">
+     MSITCPy query interface
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#send-queries-of-arbitrary-complexity-using-kql-or-msticpy">
+       Send queries of arbitrary complexity (using
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         %%kql
+        </span>
+       </code>
+       or
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         msticpy
+        </span>
+       </code>
+       )
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#simple-parameterization-of-queries">
+       Simple parameterization of queries
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#font-color-dimgray-building-an-infosec-community-around-jupyter-notebooks-font">
+   <font color="dimgray">
+    Building an Infosec Community around Jupyter Notebooks
+   </font>
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#font-color-dimgray-enter-jupyter-book-font">
+   <font color="dimgray">
+    Enter Jupyter Book
+   </font>
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#font-color-dimgray-resources-font">
+   <font color="dimgray">
+    Resources
+   </font>
+  </a>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <p><img alt="" src="../../_images/banner.png" /></p>
+<div class="section" id="font-color-peru-welcome-infosec-community-font">
+<h1><font color=peru>Welcome Infosec Community!</font><a class="headerlink" href="#font-color-peru-welcome-infosec-community-font" title="Permalink to this headline">¶</a></h1>
+<p><img alt="" src="../../_images/jupyter-community.png" /></p>
+</div>
+<div class="section" id="font-color-dimgray-roberto-rodriguez-font-font-color-cadetblue-cyb3rward0g-font">
+<h1><font color=dimgray>Roberto Rodriguez</font> <font color=cadetblue>&#64;Cyb3rWard0g</font><a class="headerlink" href="#font-color-dimgray-roberto-rodriguez-font-font-color-cadetblue-cyb3rward0g-font" title="Permalink to this headline">¶</a></h1>
+<img src="images/author.jpg" align="right"/>
+<ul class="simple">
+<li><p>Microsoft Threat Intelligence Center (MSTIC) R&amp;D</p></li>
+<li><p>I ❤️ Open Source</p></li>
+<li><p>Read &gt; Blog &gt; Tweet &gt; Repeat!</p></li>
+<li><p>Projects:</p></li>
+<li><p>&#64;HunterPlaybook 🏹</p></li>
+<li><p>&#64;THE_HELK</p></li>
+<li><p>ATTACK-Python-Client</p></li>
+<li><p>&#64;OSSEM_Project</p></li>
+<li><p>&#64;Mordor_Project + Mordor Labs 😈</p></li>
+<li><p>Blacksmith &amp; More</p></li>
+<li><p>Non-tech:</p></li>
+<li><p>Blacksmithing!</p></li>
+<li><p>Cooking Recipes: <a class="reference external" href="https://infosecwelldone.com/">https://infosecwelldone.com/</a></p></li>
+</ul>
+</div>
+<div class="section" id="font-color-dimgray-industry-font">
+<h1><font color=dimgray>Industry</font><a class="headerlink" href="#font-color-dimgray-industry-font" title="Permalink to this headline">¶</a></h1>
+<p><img alt="" src="../../_images/community-industry.png" /></p>
+</div>
+<div class="section" id="font-color-dimgray-jupyter-notebooks-level-font">
+<h1><font color=dimgray>Jupyter Notebooks Level</font><a class="headerlink" href="#font-color-dimgray-jupyter-notebooks-level-font" title="Permalink to this headline">¶</a></h1>
+<p><img alt="" src="../../_images/community-jupyter-level.png" /></p>
+</div>
+<div class="section" id="font-color-dimgray-what-do-you-exepect-to-learn-about-jupyter-notebooks-in-this-event-font">
+<h1><font color=dimgray>What do you exepect to learn about Jupyter Notebooks in this event?</font><a class="headerlink" href="#font-color-dimgray-what-do-you-exepect-to-learn-about-jupyter-notebooks-in-this-event-font" title="Permalink to this headline">¶</a></h1>
+<p><img alt="" src="../../_images/cloud-words-rocket.jpg" /></p>
+</div>
+<div class="section" id="id1">
+<h1><font color=dimgray>What do you exepect to learn about Jupyter Notebooks in this event?</font><a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
+<p><img alt="" src="../../_images/cloud-words-paw.jpg" /></p>
+</div>
+<div class="section" id="font-color-dimgray-housekeeping-font">
+<h1><font color=dimgray>Housekeeping</font><a class="headerlink" href="#font-color-dimgray-housekeeping-font" title="Permalink to this headline">¶</a></h1>
+<ul class="simple">
+<li><p><strong>📺 Recordings</strong></p>
+<ul>
+<li><p>Today’s event is being recorded.</p></li>
+<li><p>Subscribe: <a class="reference external" href="https://bit.ly/OTRYouTubeSub">https://bit.ly/OTRYouTubeSub</a></p></li>
+</ul>
+</li>
+<li><p><strong>⏳ Timekeeping</strong></p>
+<ul>
+<li><p>Presentations from 10:00am - 8:00pm Eastern Time</p></li>
+<li><p>Breaks:</p>
+<ul>
+<li><p>11:35am -11:55am</p></li>
+<li><p>2:45pm - 3:00pm</p></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p><strong>🎙️ Online Conversations</strong></p>
+<ul>
+<li><p>Slack #infosecjupyterthon</p>
+<ul>
+<li><p>Automatic Invite: <a class="reference external" href="https://launchpass.com/threathunting">https://launchpass.com/threathunting</a></p></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p><strong>👍 Social Media</strong></p>
+<ul>
+<li><p>Twitter Handle: &#64;jupyterthon</p></li>
+<li><p>Hashtag: #infosecjupyterthon</p>
+<ul>
+<li><p>We would like to know where you are joining us from! 🌎</p></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="font-color-dimgray-interactive-talks-font">
+<h1><font color=dimgray>Interactive Talks</font><a class="headerlink" href="#font-color-dimgray-interactive-talks-font" title="Permalink to this headline">¶</a></h1>
+<p>Keep an eye on the Binder badge next to each talk title in the agenda!</p>
+<p><img alt="" src="../../_images/interactive-example.png" /></p>
+</div>
+<div class="section" id="font-color-dimgray-getting-up-to-speed-font">
+<h1><font color=dimgray>Getting up to speed..</font><a class="headerlink" href="#font-color-dimgray-getting-up-to-speed-font" title="Permalink to this headline">¶</a></h1>
+<p><img alt="" src="../../_images/timeline.png" /></p>
+</div>
+<div class="section" id="id2">
+<h1><font color=dimgray>Getting up to speed..</font><a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h1>
+<p><img alt="" src="../../_images/timeline-ipython.png" /></p>
+</div>
+<div class="section" id="font-color-dimgray-what-is-interactive-computing-font">
+<h1><font color=dimgray>What is Interactive Computing?</font><a class="headerlink" href="#font-color-dimgray-what-is-interactive-computing-font" title="Permalink to this headline">¶</a></h1>
+<p>An Interactive computation is a persistent computer program that runs with a <strong>“human in the loop”</strong> where the primary mode of steering the program is through the human iteratively writing/running blocks of code and looking at the result.</p>
+<p>Reference:<a class="reference external" href="https://www.youtube.com/watch?v=YKmJvHjTGAM&amp;list=PL055Epbe6d5aP6Ru42r7hk68GTSaclYgi&amp;index=29">https://www.youtube.com/watch?v=YKmJvHjTGAM&amp;list=PL055Epbe6d5aP6Ru42r7hk68GTSaclYgi&amp;index=29</a></p>
+</div>
+<div class="section" id="font-color-dimgray-interactivity-as-a-protocol-font">
+<h1><font color=dimgray>Interactivity as a Protocol</font><a class="headerlink" href="#font-color-dimgray-interactivity-as-a-protocol-font" title="Permalink to this headline">¶</a></h1>
+<ul class="simple">
+<li><p>Read-Evaluate-Print Loop (REPL):</p>
+<ul>
+<li><p>Takes a single user’s inputs</p></li>
+<li><p>Evaluates them</p></li>
+<li><p>Returns the result to the user</p></li>
+</ul>
+</li>
+<li><p>A two-process model based on a kernel-client infrastructure</p>
+<ul>
+<li><p>Kernel: Executes code</p></li>
+<li><p>Client: Reads input and present output</p></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="font-color-dimgray-ipython-font">
+<h1><font color=dimgray>IPython</font><a class="headerlink" href="#font-color-dimgray-ipython-font" title="Permalink to this headline">¶</a></h1>
+<ul class="simple">
+<li><p>Released on Dec 10, 2001 by Fernando Perez while he was a graduate student at the University of Colorado</p>
+<ul>
+<li><p>Release: <a class="reference external" href="https://mail.python.org/pipermail/python-list/2001-December/093408.html">https://mail.python.org/pipermail/python-list/2001-December/093408.html</a></p></li>
+</ul>
+</li>
+<li><p>IPython as we know it today grew out of the following three projects:</p>
+<ul>
+<li><p>ipython by Fernando Pérez.</p></li>
+<li><p>IPP by Janko Hauser.</p></li>
+<li><p>LazyPython by Nathan Gray.</p></li>
+</ul>
+</li>
+</ul>
+<p>Reference: <a class="reference external" href="https://ipython.readthedocs.io/en/stable/about/history.html">https://ipython.readthedocs.io/en/stable/about/history.html</a></p>
+<p><img alt="" src="../../_images/python-ipython-notebook.png" />
+Reference: <a class="reference external" href="https://ipython.readthedocs.io/en/stable/interactive/python-ipython-diff.html">https://ipython.readthedocs.io/en/stable/interactive/python-ipython-diff.html</a></p>
+</div>
+<div class="section" id="font-color-dimgray-fernando-perez-inspiration-font">
+<h1><font color=dimgray>Fernando Perez Inspiration</font><a class="headerlink" href="#font-color-dimgray-fernando-perez-inspiration-font" title="Permalink to this headline">¶</a></h1>
+<ul class="simple">
+<li><p>Research with open tools for access and collaboration</p>
+<ul>
+<li><p>Validated in SciPy India 2010 - Workshop to include students from underprivileged colleges in rural India.</p></li>
+</ul>
+</li>
+<li><p>Scientific</p>
+<ul>
+<li><p>Business of science is to understand nature</p></li>
+<li><p>Science is about opening up the black boxes nature</p></li>
+</ul>
+</li>
+<li><p>Community!</p>
+<ul>
+<li><p>SciPy: Scientists collaborating and building better tools together!</p></li>
+<li><p>Less competitions and more collaboration!</p></li>
+</ul>
+</li>
+</ul>
+<p>reference: <a class="reference external" href="https://www.youtube.com/watch?v=xuNj5paMuow&amp;list=PL055Epbe6d5aP6Ru42r7hk68GTSaclYgi">https://www.youtube.com/watch?v=xuNj5paMuow&amp;list=PL055Epbe6d5aP6Ru42r7hk68GTSaclYgi</a></p>
+</div>
+<div class="section" id="font-color-dimgray-ipython-jupyter-project-font">
+<h1><font color=dimgray>IPython -&gt; Jupyter Project</font><a class="headerlink" href="#font-color-dimgray-ipython-jupyter-project-font" title="Permalink to this headline">¶</a></h1>
+<p><img alt="" src="../../_images/ipython-to-jupyter.png" /></p>
+<p><img alt="" src="../../_images/ipython-features.png" /></p>
+<p>Reference: <a class="reference external" href="https://speakerdeck.com/fperez/project-jupyter?slide=5">https://speakerdeck.com/fperez/project-jupyter?slide=5</a></p>
+<p><img alt="" src="../../_images/ipython-jupyter-features.png" /></p>
+<p>Reference: <a class="reference external" href="https://speakerdeck.com/fperez/project-jupyter?slide=5">https://speakerdeck.com/fperez/project-jupyter?slide=5</a></p>
+</div>
+<div class="section" id="font-color-dimgray-what-are-jupyter-notebooks-font">
+<h1><font color=dimgray>What are Jupyter Notebooks?</font><a class="headerlink" href="#font-color-dimgray-what-are-jupyter-notebooks-font" title="Permalink to this headline">¶</a></h1>
+<p>The Jupyter Notebook is an open-source web application that allows you to create and share documents that contain live code, equations, visualizations and narrative text. The Jupyter notebook combines two components:</p>
+<ul class="simple">
+<li><p><strong>A web application</strong>: a browser-based tool for interactive authoring of documents which combine explanatory text, mathematics, computations and their rich media output.</p></li>
+<li><p><strong>Notebook documents</strong>: a representation of all content visible in the web application, including inputs and outputs of the computations, explanatory text, mathematics, images, and rich media representations of objects.</p></li>
+</ul>
+<p>Uses include:</p>
+<ul class="simple">
+<li><p>Data cleaning and transformation</p></li>
+<li><p>Statistical modeling</p></li>
+<li><p>Data visualization</p></li>
+<li><p>Machine learning, and much more</p></li>
+</ul>
+<p>reference: <a class="reference external" href="https://jupyter.org/">https://jupyter.org/</a></p>
+</div>
+<div class="section" id="font-color-dimgray-architecture-interactive-protocol-font">
+<h1><font color=dimgray>Architecture (Interactive Protocol)</font><a class="headerlink" href="#font-color-dimgray-architecture-interactive-protocol-font" title="Permalink to this headline">¶</a></h1>
+<p><img alt="" src="../../_images/jupyter-notebooks-architecture.png" /></p>
+</div>
+<div class="section" id="font-color-dimgray-what-does-it-look-like-font">
+<h1><font color=dimgray>What does it look like?</font><a class="headerlink" href="#font-color-dimgray-what-does-it-look-like-font" title="Permalink to this headline">¶</a></h1>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Hola Roberto!&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">5</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="font-color-dimgray-installing-jupyter-notebooks-manually-font">
+<h1><font color=dimgray>Installing Jupyter Notebooks (Manually)</font><a class="headerlink" href="#font-color-dimgray-installing-jupyter-notebooks-manually-font" title="Permalink to this headline">¶</a></h1>
+<p><strong>Prerequisite</strong>: Python</p>
+<p>While Jupyter runs code in many programming languages, Python is a requirement (Python 3.3 or greater, or Python 2.7) for installing the JupyterLab or the classic Jupyter Notebook.</p>
+<p><strong>Using Conda</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="n">install</span> <span class="o">-</span><span class="n">c</span> <span class="n">conda</span><span class="o">-</span><span class="n">forge</span> <span class="n">notebook</span>
+</pre></div>
+</div>
+<p><strong>Using PIP</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="n">notebook</span>
+</pre></div>
+</div>
+<p>Once Jupyter Notebook is installed, you can run it with the following command:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">jupyter</span> <span class="n">notebook</span>
+
+</pre></div>
+</div>
+</div>
+<div class="section" id="font-color-dimgray-installing-jupyter-notebooks-docker-ce-font">
+<h1><font color=dimgray>Installing Jupyter Notebooks (Docker CE)</font><a class="headerlink" href="#font-color-dimgray-installing-jupyter-notebooks-docker-ce-font" title="Permalink to this headline">¶</a></h1>
+<p><strong>Prerequisite</strong>: Docker CE</p>
+<p>You just have to install the community edition of Docker, so that you can pull and build ready-to-run Docker images containing Jupyter applications and interactive computing tools. You can use a stack image to do any of the following (and more):</p>
+<ul class="simple">
+<li><p>Start a personal Jupyter Notebook server in a local Docker container</p></li>
+<li><p>Run JupyterLab servers for a team using JupyterHub</p></li>
+<li><p>Write your own project Dockerfile</p></li>
+<li><p>Jupyter Docker Stacks: <a class="reference external" href="https://github.com/jupyter/docker-stacks">https://github.com/jupyter/docker-stacks</a></p></li>
+<li><p>Jupyter Docker Base Image: <a class="reference external" href="https://hub.docker.com/r/jupyter/base-notebook/">https://hub.docker.com/r/jupyter/base-notebook/</a></p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>docker run -p 8888:8888 jupyter/minimal-notebook:3b1f4f5e6cc1```
+</pre></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">YouTubeVideo</span>
+
+<span class="n">YouTubeVideo</span><span class="p">(</span><span class="s1">&#39;KVR1_cVlLRE&#39;</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="mi">1000</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="mi">800</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="font-color-dimgray-enter-binder-project-font">
+<h1><font color=dimgray>Enter Binder Project</font><a class="headerlink" href="#font-color-dimgray-enter-binder-project-font" title="Permalink to this headline">¶</a></h1>
+<ul class="simple">
+<li><p>Released on May, 2016</p></li>
+<li><p>Updated 2.0 on November, 2019</p></li>
+<li><p>The Binder Project is an open community that makes it possible to create shareable, interactive, reproducible environments.</p></li>
+<li><p>The main technical product that the community creates is called BinderHub, and one deployment of a BinderHub exists at <a class="reference external" href="http://mybinder.org">mybinder.org</a>.</p></li>
+<li><p>Who is it for?:</p>
+<ul>
+<li><p>Researchers, Educators, people analyzing data and people trying to communicate the data analysis to others!!</p></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="font-color-dimgray-binderhub-font">
+<h1><font color=dimgray>BinderHub</font><a class="headerlink" href="#font-color-dimgray-binderhub-font" title="Permalink to this headline">¶</a></h1>
+<p>BinderHub connects several services together to provide on-the-fly creation and registry of Docker images. It utilizes the following tools:</p>
+<ul class="simple">
+<li><p>A cloud provider such Google Cloud, Microsoft Azure, Amazon EC2, and others</p></li>
+<li><p>Kubernetes to manage resources on the cloud</p></li>
+<li><p>Helm to configure and control Kubernetes</p></li>
+<li><p>Docker to use containers that standardize computing environments</p></li>
+<li><p>A BinderHub UI that users can access to specify Git repos they want built</p></li>
+<li><p>BinderHub to generate Docker images using the URL of a Git repository</p></li>
+<li><p>A Docker registry (such as <a class="reference external" href="http://gcr.io">gcr.io</a>) that hosts container images</p></li>
+<li><p>JupyterHub to deploy temporary containers for users</p></li>
+</ul>
+</div>
+<div class="section" id="font-color-dimgray-binderhub-flow-font">
+<h1><font color=dimgray>BinderHub Flow</font><a class="headerlink" href="#font-color-dimgray-binderhub-flow-font" title="Permalink to this headline">¶</a></h1>
+<p><img alt="" src="../../_images/Binderhub-Architecture.png" /></p>
+</div>
+<div class="section" id="font-color-dimgray-let-s-try-it-font">
+<h1><font color=dimgray>Let’s Try it!</font><a class="headerlink" href="#font-color-dimgray-let-s-try-it-font" title="Permalink to this headline">¶</a></h1>
+<p><img alt="" src="../../_images/interactive-example.png" /></p>
+</div>
+<div class="section" id="font-color-dimgray-i-have-a-notebook-now-what-font">
+<h1><font color=dimgray>I have a Notebook. Now What!</font><a class="headerlink" href="#font-color-dimgray-i-have-a-notebook-now-what-font" title="Permalink to this headline">¶</a></h1>
+<p>From a security perspective, there are a few basic things that you can start doing to start integrating notebooks to your research operations.</p>
+<p>Connect to your favorite SIEMs</p>
+<ul class="simple">
+<li><p>ELK (Elasticsearch)</p></li>
+<li><p>Splunk</p></li>
+<li><p>Azure Sentinel (Workspace)</p></li>
+</ul>
+<p>Empower others in the infosec community and make your work reproducible</p>
+<ul class="simple">
+<li><p>Mordor Project (&#64;Mordor_Project)</p></li>
+<li><p>Threat Hunter Playbook (&#64;HunterPlaybook)</p></li>
+</ul>
+</div>
+<div class="section" id="font-color-hotpink-connect-to-elasticsearch-font-font-color-dimgray-elasticsearch-dsl-libraries-font">
+<h1><font color=hotpink>Connect to Elasticsearch</font> <font color=dimgray>(Elasticsearch DSL Libraries)</font><a class="headerlink" href="#font-color-hotpink-connect-to-elasticsearch-font-font-color-dimgray-elasticsearch-dsl-libraries-font" title="Permalink to this headline">¶</a></h1>
+<p>Pre-requisites:</p>
+<ul class="simple">
+<li><p>pip install elasticsearch</p></li>
+<li><p>pip install pandas</p></li>
+<li><p>pip install elasticsearch-dsl</p></li>
+</ul>
+<p>Import the following libraries</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">elasticsearch</span> <span class="kn">import</span> <span class="n">Elasticsearch</span>
+<span class="kn">from</span> <span class="nn">elasticsearch_dsl</span> <span class="kn">import</span> <span class="n">Search</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+</pre></div>
+</div>
+<p>Reference: <a class="reference external" href="https://medium.com/threat-hunters-forge/jupyter-notebooks-from-sigma-rules-%EF%B8%8F-to-query-elasticsearch-31a74cc59b99">https://medium.com/threat-hunters-forge/jupyter-notebooks-from-sigma-rules-️-to-query-elasticsearch-31a74cc59b99</a></p>
+</div>
+<div class="section" id="id3">
+<h1><font color=hotpink>Connect to Elasticsearch</font> <font color=dimgray>(Elasticsearch DSL Libraries)</font><a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h1>
+<p>Initialize an Elasticsearch client using a specific Elasticsearch URL. Next, you can pass the client to the Search object that we will use to represent the search request in a little bit.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">es</span> <span class="o">=</span> <span class="n">Elasticsearch</span><span class="p">([</span><span class="s1">&#39;http://&lt;elasticsearch-ip&gt;:9200&#39;</span><span class="p">])</span>
+<span class="n">searchContext</span> <span class="o">=</span> <span class="n">Search</span><span class="p">(</span><span class="n">using</span><span class="o">=</span><span class="n">es</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="s1">&#39;logs-*&#39;</span><span class="p">,</span> <span class="n">doc_type</span><span class="o">=</span><span class="s1">&#39;doc&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Reference: <a class="reference external" href="https://medium.com/threat-hunters-forge/jupyter-notebooks-from-sigma-rules-%EF%B8%8F-to-query-elasticsearch-31a74cc59b99">https://medium.com/threat-hunters-forge/jupyter-notebooks-from-sigma-rules-️-to-query-elasticsearch-31a74cc59b99</a></p>
+</div>
+<div class="section" id="id4">
+<h1><font color=hotpink>Connect to Elasticsearch</font> <font color=dimgray>(Elasticsearch DSL Libraries)</font><a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h1>
+<p>In addition, we will need to use the query class to pass an Elasticsearch query_string . For example, what if I want to query event_id 1 events?.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">s</span> <span class="o">=</span> <span class="n">searchContext</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s1">&#39;query_string&#39;</span><span class="p">,</span> <span class="n">query</span><span class="o">=</span><span class="s1">&#39;event_id:1&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Reference: <a class="reference external" href="https://medium.com/threat-hunters-forge/jupyter-notebooks-from-sigma-rules-%EF%B8%8F-to-query-elasticsearch-31a74cc59b99">https://medium.com/threat-hunters-forge/jupyter-notebooks-from-sigma-rules-️-to-query-elasticsearch-31a74cc59b99</a></p>
+</div>
+<div class="section" id="id5">
+<h1><font color=hotpink>Connect to Elasticsearch</font> <font color=dimgray>(Elasticsearch DSL Libraries)</font><a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h1>
+<p>Finally, you can run the query and get the results back as a DataFrame</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="n">response</span><span class="o">.</span><span class="n">success</span><span class="p">():</span>
+    <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">((</span><span class="n">d</span><span class="o">.</span><span class="n">to_dict</span><span class="p">()</span> <span class="k">for</span> <span class="n">d</span> <span class="ow">in</span> <span class="n">s</span><span class="o">.</span><span class="n">scan</span><span class="p">()))</span>
+
+<span class="n">df</span>
+</pre></div>
+</div>
+<p>Reference: <a class="reference external" href="https://medium.com/threat-hunters-forge/jupyter-notebooks-from-sigma-rules-%EF%B8%8F-to-query-elasticsearch-31a74cc59b99">https://medium.com/threat-hunters-forge/jupyter-notebooks-from-sigma-rules-️-to-query-elasticsearch-31a74cc59b99</a></p>
+</div>
+<div class="section" id="id6">
+<h1><font color=hotpink>Connect to Elasticsearch</font> <font color=dimgray>(Elasticsearch DSL Libraries)</font><a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h1>
+<p><img alt="" src="../../_images/elasticsearch-dsl-query.png" /></p>
+<p>Reference: <a class="reference external" href="https://medium.com/threat-hunters-forge/jupyter-notebooks-from-sigma-rules-%EF%B8%8F-to-query-elasticsearch-31a74cc59b99">https://medium.com/threat-hunters-forge/jupyter-notebooks-from-sigma-rules-️-to-query-elasticsearch-31a74cc59b99</a></p>
+</div>
+<div class="section" id="font-color-hotpink-connect-to-elasticsearch-font-font-color-dimgray-huntlib-library-davidjbianco-font">
+<h1><font color=hotpink>Connect to Elasticsearch</font> <font color=dimgray>(HuntLib Library &#64;DavidJBianco)</font><a class="headerlink" href="#font-color-hotpink-connect-to-elasticsearch-font-font-color-dimgray-huntlib-library-davidjbianco-font" title="Permalink to this headline">¶</a></h1>
+<p>Pre-requisites:</p>
+<ul class="simple">
+<li><p>pip install huntlib</p></li>
+</ul>
+<p>Import the Elastic Dataframe class and create a plaintext connection to the Elastic server, no authentication.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">huntlib.elastic</span> <span class="kn">import</span> <span class="n">ElasticDF</span>
+
+<span class="n">e</span> <span class="o">=</span> <span class="n">ElasticDF</span><span class="p">(</span>
+    <span class="n">url</span><span class="o">=</span><span class="s2">&quot;http://localhost:9200&quot;</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+<p>Reference: <a class="reference external" href="https://github.com/target/huntlib">https://github.com/target/huntlib</a></p>
+</div>
+<div class="section" id="id7">
+<h1><font color=hotpink>Connect to Elasticsearch</font> <font color=dimgray>(HuntLib Library &#64;DavidJBianco)</font><a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h1>
+<p>A more complex example, showing how to set the Elastic document type, use Python-style datetime objects to constrain the search to a certain time period, and a user-defined field against which to do the time comparisons. The result size will be limited to no more than 1500 entries.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">e</span><span class="o">.</span><span class="n">search_df</span><span class="p">(</span>
+                  <span class="n">lucene</span><span class="o">=</span><span class="s2">&quot;item:5285 AND color:red&quot;</span><span class="p">,</span>
+                  <span class="n">index</span><span class="o">=</span><span class="s2">&quot;myindex-*&quot;</span><span class="p">,</span>
+                  <span class="n">doctype</span><span class="o">=</span><span class="s2">&quot;doc&quot;</span><span class="p">,</span> <span class="n">date_field</span><span class="o">=</span><span class="s2">&quot;mydate&quot;</span><span class="p">,</span>
+                  <span class="n">start_time</span><span class="o">=</span><span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">()</span> <span class="o">-</span> <span class="n">timedelta</span><span class="p">(</span><span class="n">days</span><span class="o">=</span><span class="mi">8</span><span class="p">),</span>
+                  <span class="n">end_time</span><span class="o">=</span><span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">()</span> <span class="o">-</span> <span class="n">timedelta</span><span class="p">(</span><span class="n">days</span><span class="o">=</span><span class="mi">6</span><span class="p">),</span>
+                  <span class="n">limit</span><span class="o">=</span><span class="mi">1500</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+<p>Reference: <a class="reference external" href="https://github.com/target/huntlib">https://github.com/target/huntlib</a></p>
+</div>
+<div class="section" id="font-color-mediumaquamarine-connect-to-splunk-font-font-color-dimgray-huntlib-library-davidjbianco-font">
+<h1><font color=mediumaquamarine>Connect to Splunk</font> <font color=dimgray>(HuntLib Library &#64;DavidJBianco)</font><a class="headerlink" href="#font-color-mediumaquamarine-connect-to-splunk-font-font-color-dimgray-huntlib-library-davidjbianco-font" title="Permalink to this headline">¶</a></h1>
+<p>The SplunkDF class search Splunk and returns the results as a Pandas DataFrame. This makes it easier to work with the search results using standard data analysis techniques. Establish a connectio to the splunk server</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">huntlib.splunk</span> <span class="kn">import</span> <span class="n">SplunkDF</span>
+
+<span class="n">s</span> <span class="o">=</span> <span class="n">SplunkDF</span> <span class="p">(</span>
+    <span class="n">host</span><span class="o">=</span><span class="n">splunk_server</span><span class="p">,</span>
+    <span class="n">username</span><span class="o">=</span><span class="s2">&quot;myuser&quot;</span><span class="p">,</span>
+    <span class="n">password</span><span class="o">=</span><span class="s2">&quot;mypass&quot;</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+<p>Reference: <a class="reference external" href="https://github.com/target/huntlib">https://github.com/target/huntlib</a></p>
+</div>
+<div class="section" id="id8">
+<h1><font color=mediumaquamarine>Connect to Splunk</font> <font color=dimgray>(HuntLib Library &#64;DavidJBianco)</font><a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h1>
+<p>Time bounded search using Splunk notation.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">s</span><span class="o">.</span><span class="n">search_df</span><span class="p">(</span>
+                  <span class="n">spl</span><span class="o">=</span><span class="s2">&quot;search index=win_events EventCode=4688&quot;</span><span class="p">,</span>
+                  <span class="n">start_time</span><span class="o">=</span><span class="s2">&quot;-2d@d&quot;</span><span class="p">,</span>
+                  <span class="n">end_time</span><span class="o">=</span><span class="s2">&quot;@d&quot;</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+<p>Reference: <a class="reference external" href="https://github.com/target/huntlib">https://github.com/target/huntlib</a></p>
+</div>
+<div class="section" id="font-color-dimgray-dataframes-font">
+<h1><font color=dimgray>Dataframes?</font><a class="headerlink" href="#font-color-dimgray-dataframes-font" title="Permalink to this headline">¶</a></h1>
+<ul class="simple">
+<li><p>DataFrame is a 2-dimensional labeled data structure with columns of potentially different types.</p></li>
+<li><p>You can think of it like a spreadsheet or SQL table</p></li>
+</ul>
+<p><img alt="" src="../../_images/dataframes.png" /></p>
+</div>
+<div class="section" id="font-color-dodgerblue-connect-to-azure-sentinel-font-font-color-dimgray-msticpy-font">
+<h1><font color=dodgerblue>Connect to Azure Sentinel</font> <font color=dimgray>(MSTICpy)</font><a class="headerlink" href="#font-color-dodgerblue-connect-to-azure-sentinel-font-font-color-dimgray-msticpy-font" title="Permalink to this headline">¶</a></h1>
+<p>Import libraries</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
+
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">from</span> <span class="nn">msticpy.nbtools.wsconfig</span> <span class="kn">import</span> <span class="n">WorkspaceConfig</span>
+<span class="kn">from</span> <span class="nn">msticpy.data.data_providers</span> <span class="kn">import</span> <span class="n">QueryProvider</span>
+<span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s2">&quot;KQLMAGIC_LOAD_MODE&quot;</span><span class="p">]</span><span class="o">=</span><span class="s2">&quot;silent&quot;</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="id9">
+<h1><font color=dodgerblue>Connect to Azure Sentinel</font> <font color=dimgray>(MSTICpy)</font><a class="headerlink" href="#id9" title="Permalink to this headline">¶</a></h1>
+<p>Define connection string. We are going to authenticate to our demo workspace with an AppKey. Therefore, there is no need for you to pass an azure account or authenticate with your credentials! This is a great demo environment to test your notebooks!</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">connect_str</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;loganalytics://workspace=&#39;DEMO_WORKSPACE&#39;;appkey=&#39;DEMO_KEY&#39;;alias=&#39;myworkspace&#39;&quot;</span>
+<span class="n">qry_prov</span> <span class="o">=</span> <span class="n">QueryProvider</span><span class="p">(</span><span class="s2">&quot;LogAnalytics&quot;</span><span class="p">)</span>
+<span class="n">qry_prov</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="n">connect_str</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="native-kqlmagic-interface">
+<h2>Native Kqlmagic interface<a class="headerlink" href="#native-kqlmagic-interface" title="Permalink to this headline">¶</a></h2>
+<p>See <a class="reference external" href="https://github.com/Microsoft/jupyter-Kqlmagic">https://github.com/Microsoft/jupyter-Kqlmagic</a></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">kql</span> SecurityEvent | take 1
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="msitcpy-query-interface">
+<h2>MSITCPy query interface<a class="headerlink" href="#msitcpy-query-interface" title="Permalink to this headline">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">alerts_df</span> <span class="o">=</span> <span class="n">qry_prov</span><span class="o">.</span><span class="n">exec_query</span><span class="p">(</span><span class="s2">&quot;&quot;&quot;</span>
+<span class="s2">SecurityAlert </span>
+<span class="s2">| take 10</span>
+<span class="s2">&quot;&quot;&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">alerts_df</span><span class="p">))</span>
+<span class="n">alerts_df</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="send-queries-of-arbitrary-complexity-using-kql-or-msticpy">
+<h3>Send queries of arbitrary complexity (using <code class="docutils literal notranslate"><span class="pre">%%kql</span></code> or <code class="docutils literal notranslate"><span class="pre">msticpy</span></code>)<a class="headerlink" href="#send-queries-of-arbitrary-complexity-using-kql-or-msticpy" title="Permalink to this headline">¶</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">events_df</span> <span class="o">=</span> <span class="n">qry_prov</span><span class="o">.</span><span class="n">exec_query</span><span class="p">(</span><span class="s2">&quot;&quot;&quot;</span>
+<span class="s2">SecurityEvent</span>
+<span class="s2">| where TimeGenerated between (ago(1d) .. now())</span>
+<span class="s2">| summarize EventCount=count() by EventID</span>
+<span class="s2">&quot;&quot;&quot;</span><span class="p">)</span>
+<span class="n">display</span><span class="p">(</span><span class="n">events_df</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">5</span><span class="p">))</span>
+<span class="n">events_df</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s2">&quot;EventID&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="simple-parameterization-of-queries">
+<h3>Simple parameterization of queries<a class="headerlink" href="#simple-parameterization-of-queries" title="Permalink to this headline">¶</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">datetime</span> <span class="kn">import</span> <span class="n">datetime</span><span class="p">,</span> <span class="n">timedelta</span>
+<span class="n">param_query</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;</span>
+<span class="s2">SecurityEvent</span>
+<span class="s2">| where TimeGenerated between (datetime(</span><span class="si">{start}</span><span class="s2">) .. datetime(</span><span class="si">{end}</span><span class="s2">))</span>
+<span class="s2">| summarize EventCount=count() by EventID</span>
+<span class="s2">&quot;&quot;&quot;</span>
+
+<span class="n">end</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">utcnow</span><span class="p">()</span>
+<span class="n">start</span> <span class="o">=</span> <span class="n">end</span> <span class="o">-</span> <span class="n">timedelta</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+
+<span class="n">events_df</span> <span class="o">=</span> <span class="n">qry_prov</span><span class="o">.</span><span class="n">exec_query</span><span class="p">(</span>
+    <span class="n">param_query</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">start</span><span class="o">=</span><span class="n">start</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="n">end</span><span class="p">)</span>
+<span class="p">)</span>
+
+<span class="n">display</span><span class="p">(</span><span class="n">events_df</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">5</span><span class="p">))</span>
+<span class="n">events_df</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s2">&quot;EventID&quot;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s2">&quot;EventCount&quot;</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">15</span><span class="p">,</span> <span class="mi">4</span><span class="p">),</span> <span class="n">s</span><span class="o">=</span><span class="mi">50</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="s2">&quot;EventCount&quot;</span><span class="p">,</span> <span class="n">colormap</span><span class="o">=</span><span class="s2">&quot;viridis&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="font-color-dimgray-building-an-infosec-community-around-jupyter-notebooks-font">
+<h1><font color=dimgray>Building an Infosec Community around Jupyter Notebooks</font><a class="headerlink" href="#font-color-dimgray-building-an-infosec-community-around-jupyter-notebooks-font" title="Permalink to this headline">¶</a></h1>
+<p>How can I expedite collaboration in the Infosec community and allow anyone in the 🌎 to use the notebooks I build and also the datasets to reproduce my research?</p>
+<ul class="simple">
+<li><p>Threat Hunter Playbook (&#64;HunterPlaybook)</p>
+<ul>
+<li><p><a class="reference external" href="https://threathunterplaybook.com/introduction">https://threathunterplaybook.com/introduction</a></p></li>
+</ul>
+</li>
+<li><p>Mordor Project (&#64;Mordor_Project)</p>
+<ul>
+<li><p><a class="reference external" href="https://mordordatasets.com/introduction">https://mordordatasets.com/introduction</a></p></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="font-color-dimgray-enter-jupyter-book-font">
+<h1><font color=dimgray>Enter Jupyter Book</font><a class="headerlink" href="#font-color-dimgray-enter-jupyter-book-font" title="Permalink to this headline">¶</a></h1>
+<p>Jupyter Book is an open source project for building beautiful, publication-quality books and documents from computational material.</p>
+<p><img alt="" src="../../_images/jupyter-book-jupyterthon.png" /></p>
+</div>
+<div class="section" id="font-color-dimgray-resources-font">
+<h1><font color=dimgray>Resources</font><a class="headerlink" href="#font-color-dimgray-resources-font" title="Permalink to this headline">¶</a></h1>
+<ul class="simple">
+<li><p><a class="reference external" href="https://the-turing-way.netlify.app/introduction/introduction.html">https://the-turing-way.netlify.app/introduction/introduction.html</a></p></li>
+<li><p><a class="reference external" href="https://gist.github.com/fperez/1579699">https://gist.github.com/fperez/1579699</a></p></li>
+<li><p><a class="reference external" href="https://mail.python.org/pipermail/python-list/2001-December/093408.html">https://mail.python.org/pipermail/python-list/2001-December/093408.html</a></p></li>
+<li><p><a class="reference external" href="https://ipython.org/news.html#ipython-0-12">https://ipython.org/news.html#ipython-0-12</a></p></li>
+<li><p><a class="reference external" href="https://speakerdeck.com/fperez/project-jupyter">https://speakerdeck.com/fperez/project-jupyter</a></p></li>
+<li><p><a class="reference external" href="https://blog.jupyter.org/rendering-notebooks-on-github-f7ac8736d686">https://blog.jupyter.org/rendering-notebooks-on-github-f7ac8736d686</a></p></li>
+<li><p><a class="reference external" href="https://blog.jupyter.org/binder-2-0-a-tech-guide-2017-fd40515a3a84">https://blog.jupyter.org/binder-2-0-a-tech-guide-2017-fd40515a3a84</a></p></li>
+<li><p><a class="reference external" href="https://elifesciences.org/labs/a7d53a88/toward-publishing-reproducible-computation-with-binder">https://elifesciences.org/labs/a7d53a88/toward-publishing-reproducible-computation-with-binder</a></p></li>
+<li><p><a class="reference external" href="https://mordordatasets.com/introduction">https://mordordatasets.com/introduction</a></p></li>
+<li><p><a class="reference external" href="https://threathunterplaybook.com/introduction">https://threathunterplaybook.com/introduction</a></p></li>
+<li><p><a class="reference external" href="https://github.com/target/huntlib">https://github.com/target/huntlib</a></p></li>
+<li><p><a class="reference external" href="https://elasticsearch-dsl.readthedocs.io/en/latest/">https://elasticsearch-dsl.readthedocs.io/en/latest/</a></p></li>
+<li><p><a class="reference external" href="https://jupyterbook.org/intro.html">https://jupyterbook.org/intro.html</a></p></li>
+</ul>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./2020\notebooks"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+        <div class='prev-next-bottom'>
+            
+    <a class='left-prev' id="prev-link" href="0_banner.html" title="previous page">Infosec Jupyterthon 2020!</a>
+    <a class='right-next' id="next-link" href="2_Jupyterthon_Cyb3rPandaH_2020.html" title="next page">ATT&amp;CK - APT29 Evals Datasets</a>
+
+        </div>
+        
+        </div>
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Roberto Rodriguez @Cyb3rWard0g<br/>
+        
+            &copy; Copyright 2020.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+
+  
+  </body>
+</html>

@@ -1,110 +1,146 @@
 
-
 <!DOCTYPE html>
 
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html>
   <head>
     <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Infosec Jupyterthon!</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" integrity="sha384-KA6wR/X5RY4zFAHpv/CnoG2UW1uogYfdnP67Uv7eULvTveboZJg0qUpmJZb5VqzN" crossorigin="anonymous">
-    <link href="_static/css/index.css" rel="stylesheet">
-    <link rel="stylesheet" href="_static/sphinx-book-theme.css" type="text/css" />
+    
+  <link href="_static/css/theme.css" rel="stylesheet" />
+  <link href="_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+
+    
+  <link rel="stylesheet"
+    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/sphinx-book-theme.acff12b8f9c144ce68a297486a2fa670.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
-    <link rel="stylesheet" type="text/css" href="_static/jupyter-sphinx.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/tabs.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="_static/js/index.1c5a1a01449ed65a7b51.js">
+
     <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
-    <script src="_static/sphinx-book-theme.js"></script>
     <script src="_static/jquery.js"></script>
     <script src="_static/underscore.js"></script>
     <script src="_static/doctools.js"></script>
-    <script src="_static/language_data.js"></script>
     <script src="_static/togglebutton.js"></script>
     <script src="_static/clipboard.min.js"></script>
     <script src="_static/copybutton.js"></script>
-    <script src="_static/mystnb.js"></script>
-    <script src="_static/sphinx-book-theme.js"></script>
-    <script >var togglebuttonSelector = '.toggle, .secondtoggle, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.18.0/dist/embed.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
     <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
-    <script async="async" src="_static/thebelab.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
     <link rel="canonical" href="https://infosecjupyterthon.com/introduction.html" />
     <link rel="shortcut icon" href="_static/favicon.ico"/>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Agenda (Eastern Time)" href="agenda.html" />
-
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="docsearch:language" content="en">
-<!-- Put requirejs at the end so it's always after bootstrap -->
-<!-- TODO: remove this once https://github.com/pandas-dev/pydata-sphinx-theme/pull/149 is merged -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js"></script>
-
-
-<!-- Opengraph tags -->
-<meta property="og:url"         content="https://infosecjupyterthon.com/introduction.html" />
-<meta property="og:type"        content="article" />
-<meta property="og:title"       content="Infosec Jupyterthon!" />
-<meta property="og:description" content="Infosec Jupyterthon!  Open Source Love    An open community event for security researchers to share their favorite notebooks with the infosec community. We meet" />
-<meta property="og:image"       content="https://infosecjupyterthon.com/_static/logo.png" />
-
-<meta name="twitter:card" content="summary">
-
-
+    <link rel="next" title="Agenda (Eastern Time)" href="2021/agenda.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
   </head>
   <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
     
 
     <div class="container-xl">
       <div class="row">
           
-
 <div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
-    <div class="navbar-brand-box">
-<a class="navbar-brand text-wrap" href="index.html">
-  
-  <img src="_static/logo.png" class="logo" alt="logo">
-  
-  
-</a>
-</div>
-
-<form class="bd-search d-flex align-items-center" action="search.html" method="get">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="index.html">
+      
+      <img src="_static/logo.png" class="logo" alt="logo">
+      
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
   <i class="icon fas fa-search"></i>
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
-</form>
-
-<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
-  
-  <ul class="nav sidenav_l1">
-<li class="navbar-special">
-<p class="margin-caption">Infosec Jupyterthon</p>
-</li>
-  <li class="">
-    <a href="agenda.html">Agenda (Eastern Time)</a>
-  </li>
-<li class="navbar-special">
-<p class="margin-caption">Interactive Resources</p>
-</li>
-  <li class="">
-    <a href="notebooks/0_banner.html">Infosec Jupyterthon 2020!</a>
-  </li>
-  <li class="">
-    <a href="notebooks/1_what_about_notebooks.html"><font color=peru>Welcome Infosec Community!</font></a>
-  </li>
-  <li class="">
-    <a href="notebooks/2_Jupyterthon_Cyb3rPandaH_2020.html">ATT&CK - APT29 Evals Datasets</a>
-  </li>
-  <li class="">
-    <a href="notebooks/6_OSQuery-Tables-interactive_Jupyterthon.html">Untangling the Osquery❓ tables web🕸 using Jupyter Notebooks📓</a>
-  </li>
-  <li class="">
-    <a href="notebooks/12_Jupyterthon-TimeSeries-Demo.html">Anomaly detection and visualization using Time Series Decomposition</a>
-  </li>
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <div class="bd-toc-item active">
+        <p class="caption">
+ <span class="caption-text">
+  Editions
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="2021/agenda.html">
+   2021 Edition
+  </a>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="2020/agenda.html">
+   2020 Edition
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="2020/notebooks/0_banner.html">
+     Infosec Jupyterthon 2020!
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="2020/notebooks/1_what_about_notebooks.html">
+     <font color="peru">
+      Welcome Infosec Community!
+     </font>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="2020/notebooks/2_Jupyterthon_Cyb3rPandaH_2020.html">
+     ATT&amp;CK - APT29 Evals Datasets
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="2020/notebooks/6_OSQuery-Tables-interactive_Jupyterthon.html">
+     Untangling the Osquery❓ tables web🕸 using Jupyter Notebooks📓
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="2020/notebooks/12_Jupyterthon-TimeSeries-Demo.html">
+     Anomaly detection and visualization using Time Series Decomposition
+    </a>
+   </li>
+  </ul>
+ </li>
 </ul>
-</nav>
-<p class="navbar_footer">Powered by <a href="https://jupyterbook.org">Jupyter Book</a></p>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
 </div>
 
 
@@ -114,127 +150,153 @@
           
 <main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
     
-    <div class="row topbar fixed-top container-xl">
-    <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show">
-    </div>
-    <div class="col pl-2 topbar-main">
-        
-        <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse" data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu" aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation" title="Toggle navigation" data-toggle="tooltip" data-placement="left">
-            <i class="fas fa-bars"></i>
-            <i class="fas fa-arrow-left"></i>
-            <i class="fas fa-arrow-up"></i>
-        </button>
-        <div class="dropdown-buttons-trigger">
-            <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i class="fas fa-download"></i></button>
-
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
             
-            <div class="dropdown-buttons">
-                <!-- ipynb file if we had a myst markdown file -->
-                
-                <!-- Download raw file -->
-                <a class="dropdown-buttons" href="_sources/introduction.ipynb.txt"><button type="button" class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip" data-placement="left">.ipynb</button></a>
-                <!-- Download PDF via print -->
-                <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF" onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
-            </div>
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
             
-        </div>
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
 
-        <!-- Edit this page -->
-        <a class="edit-button" href="https://github.com/OTRF/infosec-jupyterthon/edit/master/docs/introduction.ipynb"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="bottom" title="Edit this page"><i class="fas fa-pencil-alt"></i></button></a>
-
-        <!-- Full screen (wrap in <a> to have style consistency -->
-        <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="bottom" onclick="toggleFullScreen()" title="Fullscreen mode"><i class="fas fa-expand"></i></button></a>
-
-        <!-- Launch buttons -->
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
         
-        <div class="dropdown-buttons-trigger">
-            <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
-            <div class="dropdown-buttons">
-                
-                <a class="binder-button" href="https://mybinder.org/v2/gh/OTRF/infosec-jupyterthon/master?urlpath=tree/docs/introduction.ipynb"><button type="button" class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip" data-placement="left"><img class="binder-button-logo" src="_static/images/logo_binder.svg" alt="Interact on binder">Binder</button></a>
-                
-                
-                <button type="button" class="btn btn-secondary topbarbtn thebelab-launch-button" onclick="initThebelab()" title="Launch Thebelab" data-toggle="tooltip" data-placement="left"><i class="fas fa-rocket"></i><span style="margin-left: .4em;">ThebeLab</span></button>
-                
-            </div>
-        </div>
-        
-
-        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="_sources/introduction.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
     </div>
-    <div class="d-none d-md-block col-md-2 bd-toc show">
-<div class="tocsection onthispage pt-5 pb-3">
-    <i class="fas fa-list"></i> On this page
 </div>
 
-<nav id="bd-toc-nav">
-    <ul class="nav section-nav flex-column">
-    
-        <li class="nav-item toc-entry toc-h2">
-            <a href="#survey-infosec-jupyterthon-survey" class="nav-link">Survey: Infosec Jupyterthon Survey</a>
-        </li>
-    
-        <li class="nav-item toc-entry toc-h2">
-            <a href="#event-goals" class="nav-link">Event Goals</a>
-        </li>
-    
-        <li class="nav-item toc-entry toc-h2">
-            <a href="#agenda" class="nav-link">Agenda</a>
-        </li>
-    
-        <li class="nav-item toc-entry toc-h2">
-            <a href="#quick-information" class="nav-link">Quick Information</a>
-        </li>
-    
-        <li class="nav-item toc-entry toc-h2">
-            <a href="#registration" class="nav-link">Registration</a>
-        </li>
-    
-        <li class="nav-item toc-entry toc-h2">
-            <a href="#call-for-notebooks" class="nav-link">Call For Notebooks!</a><ul class="nav section-nav flex-column">
-                
-        <li class="nav-item toc-entry toc-h3">
-            <a href="#a-few-submission-guidelines" class="nav-link">A few submission guidelines</a>
-        </li>
-    
-            </ul>
-        </li>
-    
-        <li class="nav-item toc-entry toc-h2">
-            <a href="#open-infrastructure-for-an-open-event" class="nav-link">Open Infrastructure for an Open Event!</a>
-        </li>
-    
-        <li class="nav-item toc-entry toc-h2">
-            <a href="#what-is-a-notebook" class="nav-link">What is a Notebook?</a>
-        </li>
-    
-        <li class="nav-item toc-entry toc-h2">
-            <a href="#what-is-a-jupyter-notebook" class="nav-link">What is a Jupyter Notebook?</a>
-        </li>
-    
-        <li class="nav-item toc-entry toc-h2">
-            <a href="#what-is-a-jovyan" class="nav-link">What is a Jovyan?</a>
-        </li>
-    
-        <li class="nav-item toc-entry toc-h2">
-            <a href="#references" class="nav-link">References</a>
-        </li>
-    
-    </ul>
-</nav>
+            <!-- Source interaction buttons -->
 
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        
+        
+        <a class="edit-button" href="https://github.com/OTRF/infosec-jupyterthon/edit/master/docs/introduction.ipynb"><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Edit this page"><i class="fas fa-pencil-alt"></i>suggest edit</button></a>
+    </div>
+</div>
 
+            <!-- Full screen (wrap in <a> to have style consistency -->
 
-<div class="tocsection editthispage">
-    <a href="https://github.com/OTRF/infosec-jupyterthon/edit/master/docs/introduction.ipynb">
-        <i class="fas fa-pencil-alt"></i> Edit this page
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/OTRF/infosec-jupyterthon/master?urlpath=tree/docs/introduction.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#event-goals">
+   Event Goals
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#agenda">
+   Agenda
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#quick-information">
+   Quick Information
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#registration">
+   Registration
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#call-for-notebooks">
+   Call For Notebooks!
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#a-few-submission-guidelines">
+     A few submission guidelines
     </a>
-</div>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#open-infrastructure-for-an-open-event">
+   Open Infrastructure for an Open Event!
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#what-is-a-notebook">
+   What is a Notebook?
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#what-is-a-jupyter-notebook">
+   What is a Jupyter Notebook?
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#what-is-a-jovyan">
+   What is a Jovyan?
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#references">
+   References
+  </a>
+ </li>
+</ul>
 
+            </nav>
+        </div>
     </div>
 </div>
     <div id="main-content" class="row">
-        <div class="col-12 col-md-9 col-xxl-7 pl-md-3 pr-md-0">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
         
               <div>
                 
@@ -242,26 +304,23 @@
 <h1>Infosec Jupyterthon!<a class="headerlink" href="#infosec-jupyterthon" title="Permalink to this headline">¶</a></h1>
 <p><a class="reference external" href="https://github.com/ellerbrock/open-source-badges/"><img alt="Open Source Love" src="https://badges.frapsoft.com/os/v3/open-source.svg?v=103" /></a></p>
 <p><img alt="" src="_images/infosec-jupyterthon-main.png" /></p>
-<p>An open community event for security researchers to share their favorite notebooks with the infosec community. We meet virtually, share notebooks round robin style, and have fun learning more about Jupyter notebooks applied to the infosec field. A great place to meet other Infosec Jovyans!</p>
+<p>An open community event for security researchers to share their experience and favorite notebooks with the infosec community. We meet virtually, share notebooks, and have fun learning more about Jupyter notebooks applied to the infosec field. A great place to meet other Infosec Jovyans!</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Hola Infosec Jovyan!&quot;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Hola Infosec Jovyan!&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>Hola Infosec Jovyan!
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Hola Infosec Jovyan!
 </pre></div>
 </div>
 </div>
 </div>
-<div class="section" id="survey-infosec-jupyterthon-survey">
-<h2>Survey: <a class="reference external" href="https://forms.office.com/Pages/ResponsePage.aspx?id=DQSIkWdsW0yxEjajBLZtrQAAAAAAAAAAAANAASH18J1UQVpURUFQN1NQVjNMRUpQRUZBUTE0UDdFMi4u">Infosec Jupyterthon Survey</a><a class="headerlink" href="#survey-infosec-jupyterthon-survey" title="Permalink to this headline">¶</a></h2>
-</div>
 <div class="section" id="event-goals">
 <h2>Event Goals<a class="headerlink" href="#event-goals" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li><p>Learn basic notebook concepts with the Infosec community!</p></li>
+<li><p>Learn the basics of Jupyter Noteooks!</p></li>
 <li><p>Share knowledge around Jupyter notebooks used for real-world scenarios in the Infosec field!</p></li>
 <li><p>Share information about how to integrate Jupyter notebooks with other open source projects in the Infosec community!</p></li>
 <li><p>Have fun!</p></li>
@@ -270,30 +329,30 @@
 <div class="section" id="agenda">
 <h2>Agenda<a class="headerlink" href="#agenda" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li><p><a class="reference external" href="https://infosecjupyterthon.com/agenda.html">https://infosecjupyterthon.com/agenda.html</a></p></li>
+<li><p><a class="reference external" href="https://infosecjupyterthon.com/2021/agenda.html">https://infosecjupyterthon.com/2021/agenda.html</a></p></li>
 </ul>
 </div>
 <div class="section" id="quick-information">
 <h2>Quick Information<a class="headerlink" href="#quick-information" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li><p><strong>When?</strong> May 8th, 2020 (10:00am-8:00pm Eastern Time)</p></li>
-<li><p><strong>Where?</strong> <a class="reference external" href="https://youtu.be/QCVd4Svtaa8">YouTube Live Stream</a></p></li>
-<li><p><strong>How Much?</strong> Free</p></li>
+<li><p><strong>When?</strong> December 2nd and 3rd, 2021 (10:00am-8:00pm Eastern Time)</p></li>
+<li><p><strong>Where?</strong> YouTube Live Stream - LINK SOON</p></li>
+<li><p><strong>How Much?</strong> FREE</p></li>
 </ul>
 </div>
 <div class="section" id="registration">
 <h2>Registration<a class="headerlink" href="#registration" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li><p><strong>Form</strong> <a class="reference external" href="https://bit.ly/InfosecJupyterthonRegistration">https://bit.ly/InfosecJupyterthonRegistration</a></p></li>
+<li><p><strong>Form</strong> <a class="reference external" href="https://aka.ms/Jupyterthon2021Registration">https://aka.ms/Jupyterthon2021Registration</a></p></li>
 </ul>
 </div>
 <div class="section" id="call-for-notebooks">
 <h2>Call For Notebooks!<a class="headerlink" href="#call-for-notebooks" title="Permalink to this headline">¶</a></h2>
 <p>If you are using Jupyter notebooks for any use case applied to Infosec, we want to hear from you! Presentation slides are not required. You and a notebook is enough!.</p>
 <ul class="simple">
-<li><p><strong>CFN form:</strong> https://bit.ly/InfosecJupyterthonCFN</p></li>
-<li><p><strong>CFN starts:</strong> 2020/04/20</p></li>
-<li><p><strong>CFN ends:</strong> 2020/05/01</p></li>
+<li><p><strong>CFN form:</strong> <a class="reference external" href="https://aka.ms/Jupyterthon2021CFP">https://aka.ms/Jupyterthon2021CFP</a></p></li>
+<li><p><strong>CFN starts:</strong> 2021/10/27</p></li>
+<li><p><strong>CFN ends:</strong> 2021/11/21</p></li>
 </ul>
 <div class="section" id="a-few-submission-guidelines">
 <h3>A few submission guidelines<a class="headerlink" href="#a-few-submission-guidelines" title="Permalink to this headline">¶</a></h3>
@@ -302,13 +361,13 @@
 <li><p>A well defined step by step process to go from basic to advanced skills.</p></li>
 <li><p>Use of open source code (e.g pandas) to allow attendees to replicate the research at home.</p></li>
 <li><p>Notebook and data must be freely releasable</p></li>
-<li><p>15-30mins notebook presentation.</p></li>
+<li><p>30-45mins notebook presentation.</p></li>
 </ul>
 </div>
 </div>
 <div class="section" id="open-infrastructure-for-an-open-event">
 <h2>Open Infrastructure for an Open Event!<a class="headerlink" href="#open-infrastructure-for-an-open-event" title="Permalink to this headline">¶</a></h2>
-<p>Thanks to the <a class="reference external" href="https://twitter.com/mybinderteam">&#64;mybinderteam</a>, <strong>all the material that can be tested at home for this event</strong> will be shared and run in their public BinderHub environment. This website was built with the awesome project <a class="reference external" href="https://github.com/jupyter/jupyter-book">Jupyter Book</a> and it is already integrated with <a class="reference external" href="https://mybinder.org/">Binder</a>. Therefore, you could use this site to know about the event, but also use it during the event to follow most of the notebooks shared by the community! You will be able to run most of the notebooks interactively without installing anything in your computer.</p>
+<p>Thanks to the <a class="reference external" href="https://twitter.com/mybinderteam">&#64;mybinderteam</a>, <strong>all the material that can be tested at home for this event</strong> will be shared and run in their public BinderHub environment. This website was built with the awesome project <a class="reference external" href="https://github.com/executablebooks/jupyter-book">Jupyter Book</a> and it is already integrated with <a class="reference external" href="https://mybinder.org/">Binder</a>. Therefore, you could use this site to know about the event, but also use it during the event to follow most of the notebooks shared by the community! You will be able to run most of the notebooks interactively without installing anything in your computer.</p>
 <p><img alt="" src="_images/binderhub-process.png" /></p>
 </div>
 <div class="section" id="what-is-a-notebook">
@@ -337,10 +396,8 @@
 <li><p><a class="reference external" href="https://discover-cookbook.numfocus.org/">https://discover-cookbook.numfocus.org/</a></p></li>
 <li><p><a class="reference external" href="https://blog.jupyter.org/the-superheros-and-the-magic-wand-596acaab722a">https://blog.jupyter.org/the-superheros-and-the-magic-wand-596acaab722a</a></p></li>
 </ul>
-<div class="toctree-wrapper compound">
 </div>
 <div class="toctree-wrapper compound">
-</div>
 </div>
 </div>
 
@@ -348,7 +405,7 @@
     {
         requestKernel: true,
         binderOptions: {
-            repo: "OTRF/infosec-jupyterthon",
+            repo: "binder-examples/jupyter-stacks-datascience",
             ref: "master",
         },
         codeMirrorConfig: {
@@ -357,38 +414,42 @@
         },
         kernelOptions: {
             kernelName: "python3",
-            path: "."
-        }
+            path: "./."
+        },
+        predefinedOutput: true
     }
     </script>
     <script>kernelName = 'python3'</script>
 
               </div>
               
+        
+        <div class='prev-next-bottom'>
+            
+    <a class='right-next' id="next-link" href="2021/agenda.html" title="next page">Agenda (Eastern Time)</a>
+
+        </div>
+        
         </div>
     </div>
-    
-    
-    <div class='prev-next-bottom'>
-        
-    <a class='right-next' id="next-link" href="agenda.html" title="next page">Agenda (Eastern Time)</a>
-
-    </div>
     <footer class="footer mt-5 mt-md-0">
-  <div class="container">
-    <p>
-          &copy; Copyright 2020.<br/>
-        Created using <a href="http://sphinx-doc.org/">Sphinx</a> 2.4.1.<br/>
-    </p>
-  </div>
-</footer>
+    <div class="container">
+      <p>
+        
+          By Roberto Rodriguez @Cyb3rWard0g<br/>
+        
+            &copy; Copyright 2020.<br/>
+      </p>
+    </div>
+  </footer>
 </main>
 
 
       </div>
     </div>
+  
+  <script src="_static/js/index.1c5a1a01449ed65a7b51.js"></script>
 
-    <script src="_static/js/index.js"></script>
-    
+  
   </body>
 </html>

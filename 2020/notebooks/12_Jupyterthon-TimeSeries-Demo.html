@@ -1,0 +1,1211 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Anomaly detection and visualization using Time Series Decomposition</title>
+    
+  <link href="../../_static/css/theme.css" rel="stylesheet" />
+  <link href="../../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+
+    
+  <link rel="stylesheet"
+    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/sphinx-book-theme.acff12b8f9c144ce68a297486a2fa670.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/tabs.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../../_static/js/index.1c5a1a01449ed65a7b51.js">
+
+    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <link rel="canonical" href="https://infosecjupyterthon.com/2020/notebooks/12_Jupyterthon-TimeSeries-Demo.html" />
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="prev" title="Untangling the Osquery❓ tables web🕸 using Jupyter Notebooks📓" href="6_OSQuery-Tables-interactive_Jupyterthon.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../../index.html">
+      
+      <img src="../../_static/logo.png" class="logo" alt="logo">
+      
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <div class="bd-toc-item active">
+        <p class="caption">
+ <span class="caption-text">
+  Editions
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../2021/agenda.html">
+   2021 Edition
+  </a>
+ </li>
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="../agenda.html">
+   2020 Edition
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2">
+    <a class="reference internal" href="0_banner.html">
+     Infosec Jupyterthon 2020!
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="1_what_about_notebooks.html">
+     <font color="peru">
+      Welcome Infosec Community!
+     </font>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="2_Jupyterthon_Cyb3rPandaH_2020.html">
+     ATT&amp;CK - APT29 Evals Datasets
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="6_OSQuery-Tables-interactive_Jupyterthon.html">
+     Untangling the Osquery❓ tables web🕸 using Jupyter Notebooks📓
+    </a>
+   </li>
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     Anomaly detection and visualization using Time Series Decomposition
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../../_sources/2020/notebooks/12_Jupyterthon-TimeSeries-Demo.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        
+        
+        <a class="edit-button" href="https://github.com/OTRF/infosec-jupyterthon/edit/master/docs/2020/notebooks/12_Jupyterthon-TimeSeries-Demo.ipynb"><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Edit this page"><i class="fas fa-pencil-alt"></i>suggest edit</button></a>
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/OTRF/infosec-jupyterthon/master?urlpath=tree/docs/2020/notebooks/12_Jupyterthon-TimeSeries-Demo.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#description">
+   Description
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#generating-timeseries-data">
+   Generating TimeSeries Data
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#read-from-external-sources">
+     Read From External Sources
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#use-time-series-anaysis-functions-to-discover-anomalies">
+   Use Time Series Anaysis functions to discover anomalies
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#time-series-anomalies-using-siem">
+     Time Series Anomalies using SIEM
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#time-series-analysis-using-python">
+     Time Series analysis using Python
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#z-score-using-stats-library">
+     Z-score using Stats library
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#visualize-time-series-anomalies">
+   Visualize Time Series anomalies
+  </a>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <h1>Table of Contents<span class="tocSkip"></span></h1>
+<div class="toc"><ul class="toc-item"><li><span><a href="#Description" data-toc-modified-id="Description-1">Description</a></span></li><li><span><a href="#Generating-TimeSeries-Data" data-toc-modified-id="Generating-TimeSeries-Data-2">Generating TimeSeries Data</a></span><ul class="toc-item"><li><span><a href="#Read-From-External-Sources" data-toc-modified-id="Read-From-External-Sources-2.1">Read From External Sources</a></span></li></ul></li><li><span><a href="#Use-Time-Series-Anaysis-functions-to-discover-anomalies" data-toc-modified-id="Use-Time-Series-Anaysis-functions-to-discover-anomalies-3">Use Time Series Anaysis functions to discover anomalies</a></span><ul class="toc-item"><li><span><a href="#Time-Series-Anomalies-using-SIEM" data-toc-modified-id="Time-Series-Anomalies-using-SIEM-3.1">Time Series Anomalies using SIEM</a></span></li><li><span><a href="#Time-Series-analysis-using-Python" data-toc-modified-id="Time-Series-analysis-using-Python-3.2">Time Series analysis using Python</a></span></li><li><span><a href="#Z-score-using-Stats-library" data-toc-modified-id="Z-score-using-Stats-library-3.3">Z-score using Stats library</a></span></li></ul></li><li><span><a href="#Visualize-Time-Series-anomalies" data-toc-modified-id="Visualize-Time-Series-anomalies-4">Visualize Time Series anomalies</a></span></li></ul></div><div class="section" id="anomaly-detection-and-visualization-using-time-series-decomposition">
+<h1>Anomaly detection and visualization using Time Series Decomposition<a class="headerlink" href="#anomaly-detection-and-visualization-using-time-series-decomposition" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="description">
+<h2>Description<a class="headerlink" href="#description" title="Permalink to this headline">¶</a></h2>
+<p>This notebook demonstrates the time series analysis and anomalies visualization built using the <a class="reference external" href="https://bokeh.pydata.org">Bokeh library</a> as well as using msticpy libraries.</p>
+<p>Time Series analysis generally involves below steps</p>
+<ul class="simple">
+<li><p>Generating TimeSeries Data</p></li>
+<li><p>Use Time Series Analysis functions to discover anomalies</p></li>
+<li><p>Visualize Time Series anomalies</p></li>
+</ul>
+<p>Read more about time series analysis in detail from reference microsoft TechCommunity blog posts</p>
+<p><br><em><strong>Reference Blog Posts:</strong></em></p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://techcommunity.microsoft.com/t5/azure-sentinel/looking-for-unknown-anomalies-what-is-normal-time-series/ba-p/555052">Looking for unknown anomalies - what is normal? Time Series analysis &amp; its applications in Security</a></p></li>
+<li><p><a class="reference external" href="https://techcommunity.microsoft.com/t5/azure-sentinel/time-series-visualization-of-palo-alto-logs-to-detect-data/ba-p/666344">Time Series visualization of Palo Alto logs to detect data exfiltration</a></p></li>
+</ul>
+<p>Also Check out the msticpy Documentation Notebook :
+<a class="reference external" href="https://nbviewer.jupyter.org/github/microsoft/msticpy/blob/master/docs/notebooks/TimeSeriesAnomaliesVisualization.ipynb">Time Series Analysis and Anomalies Visualization</a></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Imports</span>
+<span class="c1">#msticpy imports</span>
+<span class="kn">from</span> <span class="nn">msticpy.nbtools.timeseries</span> <span class="kn">import</span> <span class="n">display_timeseries_anomolies</span>
+
+<span class="c1">#pandas</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+
+<span class="c1">#stats library to calculate z-score</span>
+<span class="kn">from</span> <span class="nn">scipy</span> <span class="kn">import</span> <span class="n">stats</span>
+
+<span class="c1">#statsmodels to use STL for time series decomposition</span>
+<span class="kn">import</span> <span class="nn">statsmodels.api</span> <span class="k">as</span> <span class="nn">sm</span>
+<span class="kn">from</span> <span class="nn">statsmodels.tsa.seasonal</span> <span class="kn">import</span> <span class="n">STL</span>
+
+<span class="c1">#matplotlib plots for visualization</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">style</span><span class="o">.</span><span class="n">use</span><span class="p">(</span><span class="s1">&#39;fivethirtyeight&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">rc</span><span class="p">(</span><span class="s1">&#39;figure&#39;</span><span class="p">,</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">16</span><span class="p">,</span><span class="mi">12</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">rc</span><span class="p">(</span><span class="s1">&#39;font&#39;</span><span class="p">,</span><span class="n">size</span><span class="o">=</span><span class="mi">14</span><span class="p">)</span>
+
+<span class="c1">#For widescreen view</span>
+<span class="kn">from</span> <span class="nn">IPython.core.display</span> <span class="kn">import</span> <span class="n">display</span><span class="p">,</span> <span class="n">HTML</span>
+<span class="n">display</span><span class="p">(</span><span class="n">HTML</span><span class="p">(</span><span class="s2">&quot;&lt;style&gt;.container { width:80% !important; }&lt;/style&gt;&quot;</span><span class="p">))</span> 
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><style>.container { width:80% !important; }</style></div></div>
+</div>
+</div>
+<div class="section" id="generating-timeseries-data">
+<h2>Generating TimeSeries Data<a class="headerlink" href="#generating-timeseries-data" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="read-from-external-sources">
+<h3>Read From External Sources<a class="headerlink" href="#read-from-external-sources" title="Permalink to this headline">¶</a></h3>
+<p>If you have time series data in other locations, you can read it via pandas or respective data store API where data is stored. The pandas I/O API is a set of top level reader functions accessed like pandas.read_csv() that generally return a pandas object.</p>
+<p>Read More at Pandas Documentation:</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://pandas.pydata.org/pandas-docs/stable/user_guide/io.html">I/O Tools (Text ,CSV,HDF5..)</a></p></li>
+</ul>
+<p>Example of using Pandas <code class="docutils literal notranslate"><span class="pre">read_csv</span></code> to read local csv file containing TimeSeries demo dataset.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">timeseriesdemo</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span>
+    <span class="s2">&quot;https://raw.githubusercontent.com/ashwin-patil/threat-hunting-with-notebooks/master/rawdata/HostLogons-demo.csv&quot;</span><span class="p">,</span> <span class="n">parse_dates</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;Date&quot;</span><span class="p">],</span> <span class="n">infer_datetime_format</span><span class="o">=</span><span class="kc">True</span>
+<span class="p">)</span>
+
+<span class="c1">#show sample records</span>
+<span class="n">timeseriesdemo</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Date</th>
+      <th>EventId</th>
+      <th>AccountNtdomain</th>
+      <th>ComputerName</th>
+      <th>logontype</th>
+      <th>TotalLogons</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>2018-01-03</td>
+      <td>Microsoft-Windows-Security-Auditing:4624</td>
+      <td>LABDOMAIN.LOCAL</td>
+      <td>WIN-DC01</td>
+      <td>10</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>2018-01-03</td>
+      <td>Microsoft-Windows-Security-Auditing:4624</td>
+      <td>LABDOMAIN.LOCAL</td>
+      <td>WIN-DC01</td>
+      <td>3</td>
+      <td>106</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>2018-01-03</td>
+      <td>Microsoft-Windows-Security-Auditing:4624</td>
+      <td>LABDOMAIN.LOCAL</td>
+      <td>WIN-DC01</td>
+      <td>4</td>
+      <td>68</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>2018-01-04</td>
+      <td>Microsoft-Windows-Security-Auditing:4624</td>
+      <td>LABDOMAIN.LOCAL</td>
+      <td>WIN-DC01</td>
+      <td>3</td>
+      <td>53</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>2018-01-04</td>
+      <td>Microsoft-Windows-Security-Auditing:4624</td>
+      <td>LABDOMAIN.LOCAL</td>
+      <td>WIN-DC01</td>
+      <td>4</td>
+      <td>89</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Aggregate and sum of Total Logons</span>
+<span class="n">timeseriesdemo_agg</span> <span class="o">=</span> <span class="n">timeseriesdemo</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s1">&#39;Date&#39;</span><span class="p">,</span><span class="s1">&#39;ComputerName&#39;</span><span class="p">])[</span><span class="s1">&#39;TotalLogons&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()</span>
+<span class="n">timeseriesdemo_agg</span> <span class="o">=</span> <span class="n">timeseriesdemo_agg</span><span class="p">[[</span><span class="s1">&#39;Date&#39;</span><span class="p">,</span><span class="s1">&#39;TotalLogons&#39;</span><span class="p">]]</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="s1">&#39;Date&#39;</span><span class="p">)</span>
+<span class="n">timeseriesdemo_agg</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>TotalLogons</th>
+    </tr>
+    <tr>
+      <th>Date</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>2018-01-03</th>
+      <td>176</td>
+    </tr>
+    <tr>
+      <th>2018-01-04</th>
+      <td>142</td>
+    </tr>
+    <tr>
+      <th>2018-01-05</th>
+      <td>85</td>
+    </tr>
+    <tr>
+      <th>2018-01-06</th>
+      <td>147</td>
+    </tr>
+    <tr>
+      <th>2018-01-07</th>
+      <td>142</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>2018-04-26</th>
+      <td>180</td>
+    </tr>
+    <tr>
+      <th>2018-04-27</th>
+      <td>98</td>
+    </tr>
+    <tr>
+      <th>2018-04-28</th>
+      <td>106</td>
+    </tr>
+    <tr>
+      <th>2018-04-29</th>
+      <td>322</td>
+    </tr>
+    <tr>
+      <th>2018-04-30</th>
+      <td>639</td>
+    </tr>
+  </tbody>
+</table>
+<p>118 rows × 1 columns</p>
+</div></div></div>
+</div>
+</div>
+</div>
+<div class="section" id="use-time-series-anaysis-functions-to-discover-anomalies">
+<h2>Use Time Series Anaysis functions to discover anomalies<a class="headerlink" href="#use-time-series-anaysis-functions-to-discover-anomalies" title="Permalink to this headline">¶</a></h2>
+<p>By analyzing time series data over an extended period, we can identify time-based patterns (e.g. seasonality, trend etc.) in the data and extract meaningful statistics which can help in flagging outliers.  A particular example in a security context is user logon patterns over a period of time exhibiting different behavior after hours and on weekends: computing deviations from these changing patterns is rather difficult in traditional atomic detections with static thresholds. KQL built-in functions can automatically identify such seasonality and trend from the input data and take it into consideration when flagging anomalies.</p>
+<div class="section" id="time-series-anomalies-using-siem">
+<h3>Time Series Anomalies using SIEM<a class="headerlink" href="#time-series-anomalies-using-siem" title="Permalink to this headline">¶</a></h3>
+<p><em><strong>Azure Sentinel KQL Reference Documentation:</strong></em></p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://docs.microsoft.com/en-us/azure/kusto/query/series-decomposefunction">series_decompose</a></p></li>
+<li><p><a class="reference external" href="https://docs.microsoft.com/en-us/azure/data-explorer/kusto/query/series-decompose-anomaliesfunction">series_decompose_anomalies</a></p></li>
+</ul>
+<p><em><strong>Splunk Time Series/ML References:</strong></em></p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://docs.splunk.com/Documentation/Splunk/8.0.3/Search/Detectinganomalies">Detecting Anomalies</a></p></li>
+<li><p><a class="reference external" href="https://docs.splunk.com/Documentation/Splunk/8.0.3/Search/Aboutpredictiveanalytics">About Time Series Forecasting</a></p></li>
+<li><p><a class="reference external" href="https://docs.splunk.com/Documentation/MLApp/5.1.0/User/SmartOutlierAssistant">Splunk MLApp</a></p></li>
+</ul>
+<p><em><strong>ElasticSearch Time Series/ML References:</strong></em></p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://www.elastic.co/guide/en/kibana/current/xpack-ml-anomalies.html">Anomaly Detection</a></p></li>
+</ul>
+</div>
+<div class="section" id="time-series-analysis-using-python">
+<h3>Time Series analysis using Python<a class="headerlink" href="#time-series-analysis-using-python" title="Permalink to this headline">¶</a></h3>
+<p><em><strong>Python Statsmodels TSA Library</strong></em></p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://www.statsmodels.org/dev/examples/notebooks/generated/stl_decomposition.html">Seasonal-Trend decomposition using LOESS (STL)</a></p></li>
+</ul>
+<p>STL uses LOESS (locally estimated scatterplot smoothing) to extract smooths estimates of the three components</p>
+</div>
+<div class="section" id="z-score-using-stats-library">
+<h3>Z-score using Stats library<a class="headerlink" href="#z-score-using-stats-library" title="Permalink to this headline">¶</a></h3>
+<p>Z-score (also called a standard score) gives you measurement for the distance from the mean value.</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://docs.scipy.org/doc/scipy/reference/generated/scipy.stats.zscore.html">z-score</a>
+Compute the z score of each value in the sample, relative to the sample mean and standard deviation.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># STL method does Season-Trend decomposition using LOESS</span>
+<span class="n">stl</span> <span class="o">=</span> <span class="n">STL</span><span class="p">(</span><span class="n">timeseriesdemo_agg</span><span class="p">)</span>
+<span class="c1">#Fitting the data - Estimate season, trend and residuals components.</span>
+<span class="n">res</span> <span class="o">=</span> <span class="n">stl</span><span class="o">.</span><span class="n">fit</span><span class="p">()</span>
+<span class="c1"># Plotting the result from fit method</span>
+<span class="n">fig</span> <span class="o">=</span> <span class="n">res</span><span class="o">.</span><span class="n">plot</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/12_Jupyterthon-TimeSeries-Demo_9_0.png" src="../../_images/12_Jupyterthon-TimeSeries-Demo_9_0.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">tsa_using_stl</span><span class="p">(</span><span class="n">data</span><span class="p">,</span><span class="n">score_threshold</span><span class="p">):</span>
+    
+    <span class="n">output</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+    
+    <span class="c1"># Create dataframe columns from decomposition results</span>
+    <span class="n">output</span><span class="p">[</span><span class="s1">&#39;residual&#39;</span><span class="p">]</span><span class="o">=</span> <span class="n">res</span><span class="o">.</span><span class="n">resid</span>
+    <span class="n">output</span><span class="p">[</span><span class="s1">&#39;trend&#39;</span><span class="p">]</span><span class="o">=</span> <span class="n">res</span><span class="o">.</span><span class="n">trend</span>
+    <span class="n">output</span><span class="p">[</span><span class="s1">&#39;seasonal&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">res</span><span class="o">.</span><span class="n">seasonal</span>
+    <span class="n">output</span><span class="p">[</span><span class="s1">&#39;weights&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">res</span><span class="o">.</span><span class="n">weights</span>
+    
+    <span class="c1">#Baseline is generally seasonal + trend </span>
+    <span class="n">output</span><span class="p">[</span><span class="s1">&#39;baseline&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">output</span><span class="p">[</span><span class="s1">&#39;seasonal&#39;</span><span class="p">]</span><span class="o">+</span><span class="n">output</span><span class="p">[</span><span class="s1">&#39;trend&#39;</span><span class="p">]</span>
+    
+    <span class="c1"># Type cast and replace na values with 0</span>
+    <span class="n">output</span> <span class="o">=</span> <span class="n">output</span><span class="o">.</span><span class="n">fillna</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="s1">&#39;int64&#39;</span><span class="p">)</span>
+    
+    <span class="c1"># Calculate zscore based on residual column - this column does not contain seasonal/trend components</span>
+    <span class="n">output</span><span class="p">[</span><span class="s1">&#39;score&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">stats</span><span class="o">.</span><span class="n">zscore</span><span class="p">(</span><span class="n">output</span><span class="p">[</span><span class="s1">&#39;residual&#39;</span><span class="p">])</span>
+    
+    <span class="c1"># create positive and negative columns based on threshold(3) and seasonal components</span>
+    <span class="n">output</span><span class="o">.</span><span class="n">loc</span><span class="p">[(</span><span class="n">output</span><span class="p">[</span><span class="s1">&#39;score&#39;</span><span class="p">]</span> <span class="o">&gt;</span> <span class="n">score_threshold</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">output</span><span class="p">[</span><span class="s1">&#39;seasonal&#39;</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">),</span><span class="s1">&#39;anomalies&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
+    <span class="n">output</span><span class="o">.</span><span class="n">loc</span><span class="p">[(</span><span class="n">output</span><span class="p">[</span><span class="s1">&#39;score&#39;</span><span class="p">]</span> <span class="o">&gt;</span> <span class="n">score_threshold</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">output</span><span class="p">[</span><span class="s1">&#39;seasonal&#39;</span><span class="p">]</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">),</span><span class="s1">&#39;anomalies&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span>
+    <span class="n">output</span><span class="o">.</span><span class="n">loc</span><span class="p">[(</span><span class="n">output</span><span class="p">[</span><span class="s1">&#39;score&#39;</span><span class="p">]</span> <span class="o">&lt;</span> <span class="n">score_threshold</span><span class="p">),</span><span class="s1">&#39;anomalies&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>
+    
+    <span class="c1">#Datatype casting</span>
+    <span class="n">output</span><span class="p">[</span><span class="s1">&#39;anomalies&#39;</span><span class="p">]</span><span class="o">=</span><span class="n">output</span><span class="p">[</span><span class="s1">&#39;anomalies&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="s1">&#39;int64&#39;</span><span class="p">)</span>
+    <span class="n">output</span> <span class="o">=</span> <span class="n">output</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()</span>
+    
+    <span class="k">return</span> <span class="n">output</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">STL_df</span> <span class="o">=</span> <span class="n">tsa_using_stl</span><span class="p">(</span><span class="n">timeseriesdemo_agg</span><span class="p">,</span> <span class="mf">2.5</span><span class="p">)</span>
+
+<span class="c1">#Display sample results</span>
+<span class="n">STL_df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Date</th>
+      <th>TotalLogons</th>
+      <th>residual</th>
+      <th>trend</th>
+      <th>seasonal</th>
+      <th>weights</th>
+      <th>baseline</th>
+      <th>score</th>
+      <th>anomalies</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>2018-01-03</td>
+      <td>176</td>
+      <td>20</td>
+      <td>126</td>
+      <td>28</td>
+      <td>1</td>
+      <td>155</td>
+      <td>0.623482</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>2018-01-04</td>
+      <td>142</td>
+      <td>-6</td>
+      <td>133</td>
+      <td>15</td>
+      <td>1</td>
+      <td>148</td>
+      <td>-0.156633</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>2018-01-05</td>
+      <td>85</td>
+      <td>-7</td>
+      <td>139</td>
+      <td>-47</td>
+      <td>1</td>
+      <td>92</td>
+      <td>-0.186638</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>2018-01-06</td>
+      <td>147</td>
+      <td>-17</td>
+      <td>146</td>
+      <td>17</td>
+      <td>1</td>
+      <td>164</td>
+      <td>-0.486682</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>2018-01-07</td>
+      <td>142</td>
+      <td>-9</td>
+      <td>152</td>
+      <td>-1</td>
+      <td>1</td>
+      <td>151</td>
+      <td>-0.246647</td>
+      <td>0</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Now we have baseline calculated , lets plot a Overlapping time chart to compare observed/actual values vs baseline</span>
+<span class="n">STL_df</span><span class="p">[[</span><span class="s1">&#39;TotalLogons&#39;</span><span class="p">,</span><span class="s1">&#39;baseline&#39;</span><span class="p">]]</span><span class="o">.</span><span class="n">plot</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.axes._subplots.AxesSubplot at 0x7fe7412072d0&gt;
+</pre></div>
+</div>
+<img alt="../../_images/12_Jupyterthon-TimeSeries-Demo_12_1.png" src="../../_images/12_Jupyterthon-TimeSeries-Demo_12_1.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Filter the dataframe and displaying only Flagged anomalies</span>
+<span class="n">STL_df</span><span class="p">[</span><span class="n">STL_df</span><span class="p">[</span><span class="s1">&#39;anomalies&#39;</span><span class="p">]</span><span class="o">==</span><span class="mi">1</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Date</th>
+      <th>TotalLogons</th>
+      <th>residual</th>
+      <th>trend</th>
+      <th>seasonal</th>
+      <th>weights</th>
+      <th>baseline</th>
+      <th>score</th>
+      <th>anomalies</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>15</th>
+      <td>2018-01-18</td>
+      <td>283</td>
+      <td>92</td>
+      <td>158</td>
+      <td>31</td>
+      <td>1</td>
+      <td>190</td>
+      <td>2.783802</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>87</th>
+      <td>2018-03-31</td>
+      <td>355</td>
+      <td>156</td>
+      <td>122</td>
+      <td>75</td>
+      <td>1</td>
+      <td>198</td>
+      <td>4.704087</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>117</th>
+      <td>2018-04-30</td>
+      <td>639</td>
+      <td>86</td>
+      <td>397</td>
+      <td>155</td>
+      <td>1</td>
+      <td>552</td>
+      <td>2.603776</td>
+      <td>1</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+</div>
+</div>
+<div class="section" id="visualize-time-series-anomalies">
+<h2>Visualize Time Series anomalies<a class="headerlink" href="#visualize-time-series-anomalies" title="Permalink to this headline">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">timeseries_anomalies_plot</span> <span class="o">=</span> <span class="n">display_timeseries_anomolies</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">STL_df</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s2">&quot;TotalLogons&quot;</span><span class="p">,</span><span class="n">time_column</span><span class="o">=</span><span class="s1">&#39;Date&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html">
+<div class="bk-root">
+    <a href="https://bokeh.org" target="_blank" class="bk-logo bk-logo-small bk-logo-notebook"></a>
+    <span id="1001">Loading BokehJS ...</span>
+</div></div><script type="application/javascript">
+(function(root) {
+  function now() {
+    return new Date();
+  }
+
+  var force = true;
+
+  if (typeof root._bokeh_onload_callbacks === "undefined" || force === true) {
+    root._bokeh_onload_callbacks = [];
+    root._bokeh_is_loading = undefined;
+  }
+
+  var JS_MIME_TYPE = 'application/javascript';
+  var HTML_MIME_TYPE = 'text/html';
+  var EXEC_MIME_TYPE = 'application/vnd.bokehjs_exec.v0+json';
+  var CLASS_NAME = 'output_bokeh rendered_html';
+
+  /**
+   * Render data to the DOM node
+   */
+  function render(props, node) {
+    var script = document.createElement("script");
+    node.appendChild(script);
+  }
+
+  /**
+   * Handle when an output is cleared or removed
+   */
+  function handleClearOutput(event, handle) {
+    var cell = handle.cell;
+
+    var id = cell.output_area._bokeh_element_id;
+    var server_id = cell.output_area._bokeh_server_id;
+    // Clean up Bokeh references
+    if (id != null && id in Bokeh.index) {
+      Bokeh.index[id].model.document.clear();
+      delete Bokeh.index[id];
+    }
+
+    if (server_id !== undefined) {
+      // Clean up Bokeh references
+      var cmd = "from bokeh.io.state import curstate; print(curstate().uuid_to_server['" + server_id + "'].get_sessions()[0].document.roots[0]._id)";
+      cell.notebook.kernel.execute(cmd, {
+        iopub: {
+          output: function(msg) {
+            var id = msg.content.text.trim();
+            if (id in Bokeh.index) {
+              Bokeh.index[id].model.document.clear();
+              delete Bokeh.index[id];
+            }
+          }
+        }
+      });
+      // Destroy server and session
+      var cmd = "import bokeh.io.notebook as ion; ion.destroy_server('" + server_id + "')";
+      cell.notebook.kernel.execute(cmd);
+    }
+  }
+
+  /**
+   * Handle when a new output is added
+   */
+  function handleAddOutput(event, handle) {
+    var output_area = handle.output_area;
+    var output = handle.output;
+
+    // limit handleAddOutput to display_data with EXEC_MIME_TYPE content only
+    if ((output.output_type != "display_data") || (!output.data.hasOwnProperty(EXEC_MIME_TYPE))) {
+      return
+    }
+
+    var toinsert = output_area.element.find("." + CLASS_NAME.split(' ')[0]);
+
+    if (output.metadata[EXEC_MIME_TYPE]["id"] !== undefined) {
+      toinsert[toinsert.length - 1].firstChild.textContent = output.data[JS_MIME_TYPE];
+      // store reference to embed id on output_area
+      output_area._bokeh_element_id = output.metadata[EXEC_MIME_TYPE]["id"];
+    }
+    if (output.metadata[EXEC_MIME_TYPE]["server_id"] !== undefined) {
+      var bk_div = document.createElement("div");
+      bk_div.innerHTML = output.data[HTML_MIME_TYPE];
+      var script_attrs = bk_div.children[0].attributes;
+      for (var i = 0; i < script_attrs.length; i++) {
+        toinsert[toinsert.length - 1].firstChild.setAttribute(script_attrs[i].name, script_attrs[i].value);
+        toinsert[toinsert.length - 1].firstChild.textContent = bk_div.children[0].textContent
+      }
+      // store reference to server id on output_area
+      output_area._bokeh_server_id = output.metadata[EXEC_MIME_TYPE]["server_id"];
+    }
+  }
+
+  function register_renderer(events, OutputArea) {
+
+    function append_mime(data, metadata, element) {
+      // create a DOM node to render to
+      var toinsert = this.create_output_subarea(
+        metadata,
+        CLASS_NAME,
+        EXEC_MIME_TYPE
+      );
+      this.keyboard_manager.register_events(toinsert);
+      // Render to node
+      var props = {data: data, metadata: metadata[EXEC_MIME_TYPE]};
+      render(props, toinsert[toinsert.length - 1]);
+      element.append(toinsert);
+      return toinsert
+    }
+
+    /* Handle when an output is cleared or removed */
+    events.on('clear_output.CodeCell', handleClearOutput);
+    events.on('delete.Cell', handleClearOutput);
+
+    /* Handle when a new output is added */
+    events.on('output_added.OutputArea', handleAddOutput);
+
+    /**
+     * Register the mime type and append_mime function with output_area
+     */
+    OutputArea.prototype.register_mime_type(EXEC_MIME_TYPE, append_mime, {
+      /* Is output safe? */
+      safe: true,
+      /* Index of renderer in `output_area.display_order` */
+      index: 0
+    });
+  }
+
+  // register the mime type if in Jupyter Notebook environment and previously unregistered
+  if (root.Jupyter !== undefined) {
+    var events = require('base/js/events');
+    var OutputArea = require('notebook/js/outputarea').OutputArea;
+
+    if (OutputArea.prototype.mime_types().indexOf(EXEC_MIME_TYPE) == -1) {
+      register_renderer(events, OutputArea);
+    }
+  }
+
+  
+  if (typeof (root._bokeh_timeout) === "undefined" || force === true) {
+    root._bokeh_timeout = Date.now() + 5000;
+    root._bokeh_failed_load = false;
+  }
+
+  var NB_LOAD_WARNING = {'data': {'text/html':
+     "<div style='background-color: #fdd'>\n"+
+     "<p>\n"+
+     "BokehJS does not appear to have successfully loaded. If loading BokehJS from CDN, this \n"+
+     "may be due to a slow or bad network connection. Possible fixes:\n"+
+     "</p>\n"+
+     "<ul>\n"+
+     "<li>re-rerun `output_notebook()` to attempt to load from CDN again, or</li>\n"+
+     "<li>use INLINE resources instead, as so:</li>\n"+
+     "</ul>\n"+
+     "<code>\n"+
+     "from bokeh.resources import INLINE\n"+
+     "output_notebook(resources=INLINE)\n"+
+     "</code>\n"+
+     "</div>"}};
+
+  function display_loaded() {
+    var el = document.getElementById("1001");
+    if (el != null) {
+      el.textContent = "BokehJS is loading...";
+    }
+    if (root.Bokeh !== undefined) {
+      if (el != null) {
+        el.textContent = "BokehJS " + root.Bokeh.version + " successfully loaded.";
+      }
+    } else if (Date.now() < root._bokeh_timeout) {
+      setTimeout(display_loaded, 100)
+    }
+  }
+
+
+  function run_callbacks() {
+    try {
+      root._bokeh_onload_callbacks.forEach(function(callback) {
+        if (callback != null)
+          callback();
+      });
+    } finally {
+      delete root._bokeh_onload_callbacks
+    }
+    console.debug("Bokeh: all callbacks have finished");
+  }
+
+  function load_libs(css_urls, js_urls, callback) {
+    if (css_urls == null) css_urls = [];
+    if (js_urls == null) js_urls = [];
+
+    root._bokeh_onload_callbacks.push(callback);
+    if (root._bokeh_is_loading > 0) {
+      console.debug("Bokeh: BokehJS is being loaded, scheduling callback at", now());
+      return null;
+    }
+    if (js_urls == null || js_urls.length === 0) {
+      run_callbacks();
+      return null;
+    }
+    console.debug("Bokeh: BokehJS not loaded, scheduling load and callback at", now());
+    root._bokeh_is_loading = css_urls.length + js_urls.length;
+
+    function on_load() {
+      root._bokeh_is_loading--;
+      if (root._bokeh_is_loading === 0) {
+        console.debug("Bokeh: all BokehJS libraries/stylesheets loaded");
+        run_callbacks()
+      }
+    }
+
+    function on_error() {
+      console.error("failed to load " + url);
+    }
+
+    for (var i = 0; i < css_urls.length; i++) {
+      var url = css_urls[i];
+      const element = document.createElement("link");
+      element.onload = on_load;
+      element.onerror = on_error;
+      element.rel = "stylesheet";
+      element.type = "text/css";
+      element.href = url;
+      console.debug("Bokeh: injecting link tag for BokehJS stylesheet: ", url);
+      document.body.appendChild(element);
+    }
+
+    const hashes = {"https://cdn.bokeh.org/bokeh/release/bokeh-2.0.1.min.js": "JpP8FXbgAZLkfur7LiK3j9AGBhHNIvF742meBJrjO2ShJDhCG2I1uVvW+0DUtrmc", "https://cdn.bokeh.org/bokeh/release/bokeh-widgets-2.0.1.min.js": "xZlADit0Q04ISQEdKg2k3L4W9AwQBAuDs9nJL9fM/WwzL1tEU9VPNezOFX0nLEAz", "https://cdn.bokeh.org/bokeh/release/bokeh-tables-2.0.1.min.js": "4BuPRZkdMKSnj3zoxiNrQ86XgNw0rYmBOxe7nshquXwwcauupgBF2DHLVG1WuZlV", "https://cdn.bokeh.org/bokeh/release/bokeh-gl-2.0.1.min.js": "Dv1SQ87hmDqK6S5OhBf0bCuwAEvL5QYL0PuR/F1SPVhCS/r/abjkbpKDYL2zeM19"};
+
+    for (var i = 0; i < js_urls.length; i++) {
+      var url = js_urls[i];
+      var element = document.createElement('script');
+      element.onload = on_load;
+      element.onerror = on_error;
+      element.async = false;
+      element.src = url;
+      if (url in hashes) {
+        element.crossOrigin = "anonymous";
+        element.integrity = "sha384-" + hashes[url];
+      }
+      console.debug("Bokeh: injecting script tag for BokehJS library: ", url);
+      document.head.appendChild(element);
+    }
+  };var element = document.getElementById("1001");
+  if (element == null) {
+    console.error("Bokeh: ERROR: autoload.js configured with elementid '1001' but no matching script tag was found. ")
+    return false;
+  }
+
+  function inject_raw_css(css) {
+    const element = document.createElement("style");
+    element.appendChild(document.createTextNode(css));
+    document.body.appendChild(element);
+  }
+
+  
+  var js_urls = ["https://cdn.bokeh.org/bokeh/release/bokeh-2.0.1.min.js", "https://cdn.bokeh.org/bokeh/release/bokeh-widgets-2.0.1.min.js", "https://cdn.bokeh.org/bokeh/release/bokeh-tables-2.0.1.min.js", "https://cdn.bokeh.org/bokeh/release/bokeh-gl-2.0.1.min.js"];
+  var css_urls = [];
+  
+
+  var inline_js = [
+    function(Bokeh) {
+      Bokeh.set_log_level("info");
+    },
+    function(Bokeh) {
+    
+    
+    }
+  ];
+
+  function run_inline_js() {
+    
+    if (root.Bokeh !== undefined || force === true) {
+      
+    for (var i = 0; i < inline_js.length; i++) {
+      inline_js[i].call(root, root.Bokeh);
+    }
+    if (force === true) {
+        display_loaded();
+      }} else if (Date.now() < root._bokeh_timeout) {
+      setTimeout(run_inline_js, 100);
+    } else if (!root._bokeh_failed_load) {
+      console.log("Bokeh: BokehJS failed to load within specified timeout.");
+      root._bokeh_failed_load = true;
+    } else if (force !== true) {
+      var cell = $(document.getElementById("1001")).parents('.cell').data().cell;
+      cell.output_area.append_execute_result(NB_LOAD_WARNING)
+    }
+
+  }
+
+  if (root._bokeh_is_loading === 0) {
+    console.debug("Bokeh: BokehJS loaded, going straight to plotting");
+    run_inline_js();
+  } else {
+    load_libs(css_urls, js_urls, function() {
+      console.debug("Bokeh: BokehJS plotting callback run at", now());
+      run_inline_js();
+    });
+  }
+}(window));</script><div class="output text_html">
+
+
+
+
+
+<div class="bk-root" id="d92c70d9-25a4-4871-a945-91c1870267ad" data-root-id="1142"></div>
+</div><script type="application/javascript">(function(root) {
+  function embed_document(root) {
+    
+  var docs_json = {"5d0885ee-4358-4b55-bfcd-bc0471657e98":{"roots":{"references":[{"attributes":{"children":[{"id":"1004"},{"id":"1112"}]},"id":"1142","type":"Column"},{"attributes":{"label":{"value":"baseline"},"renderers":[{"id":"1066"}]},"id":"1086","type":"LegendItem"},{"attributes":{},"id":"1178","type":"YearsTicker"},{"attributes":{"fill_alpha":{"value":0.1},"fill_color":{"value":"firebrick"},"line_alpha":{"value":0.1},"line_color":{"value":"firebrick"},"size":{"units":"screen","value":12},"x":{"field":"Date"},"y":{"field":"TotalLogons"}},"id":"1090","type":"CircleX"},{"attributes":{"data":{"Date":{"__ndarray__":"AACAFJULdkIAAEB65wt2QgAAAOA5DHZCAADARYwMdkIAAICr3gx2QgAAQBExDXZCAAAAd4MNdkIAAMDc1Q12QgAAgEIoDnZCAABAqHoOdkIAAAAOzQ52QgAAwHMfD3ZCAACA2XEPdkIAAEA/xA92QgAAAKUWEHZCAADACmkQdkIAAIBwuxB2QgAAQNYNEXZCAAAAPGARdkIAAMChshF2QgAAgAcFEnZCAABAbVcSdkIAAADTqRJ2QgAAwDj8EnZCAACAnk4TdkIAAEAEoRN2QgAAAGrzE3ZCAADAz0UUdkIAAIA1mBR2QgAAQJvqFHZCAAAAAT0VdkIAAMBmjxV2QgAAgMzhFXZCAABAMjQWdkIAAACYhhZ2QgAAwP3YFnZCAACAYysXdkIAAEDJfRd2QgAAAC/QF3ZCAADAlCIYdkIAAID6dBh2QgAAQGDHGHZCAAAAxhkZdkIAAMArbBl2QgAAgJG+GXZCAABA9xAadkIAAABdYxp2QgAAwMK1GnZCAACAKAgbdkIAAECOWht2QgAAAPSsG3ZCAADAWf8bdkIAAIC/URx2QgAAQCWkHHZCAAAAi/YcdkIAAMDwSB12QgAAgFabHXZCAABAvO0ddkIAAAAiQB52QgAAwIeSHnZCAACA7eQedkIAAEBTNx92QgAAALmJH3ZCAADAHtwfdkIAAICELiB2QgAAQOqAIHZCAAAAUNMgdkIAAMC1JSF2QgAAgBt4IXZCAABAgcohdkIAAADnHCJ2QgAAwExvInZCAACAssEidkIAAEAYFCN2QgAAAH5mI3ZCAADA47gjdkIAAIBJCyR2QgAAQK9dJHZCAAAAFbAkdkIAAMB6AiV2QgAAgOBUJXZCAABARqcldkIAAACs+SV2QgAAwBFMJnZCAACAd54mdkIAAEDd8CZ2QgAAAENDJ3ZCAADAqJUndkIAAIAO6Cd2QgAAQHQ6KHZCAAAA2owodkIAAMA/3yh2QgAAgKUxKXZCAABAC4QpdkIAAABx1il2QgAAwNYoKnZCAACAPHsqdkIAAECizSp2QgAAAAggK3ZCAADAbXIrdkIAAIDTxCt2QgAAQDkXLHZCAAAAn2ksdkIAAMAEvCx2QgAAgGoOLXZCAABA0GAtdkIAAAA2sy12QgAAwJsFLnZCAACAAVgudkIAAEBnqi52QgAAAM38LnZCAADAMk8vdkIAAICYoS92QgAAQP7zL3ZCAAAAZEYwdkIAAMDJmDB2QgAAgC/rMHZCAABAlT0xdkI=","dtype":"float64","shape":[118]},"TotalLogons":[176,142,85,147,142,159,187,196,185,218,248,216,161,157,166,283,72,136,113,139,166,163,188,161,125,107,136,150,124,65,112,89,88,89,140,175,258,225,127,115,128,185,201,190,223,131,104,84,146,151,94,106,188,86,75,106,112,120,114,123,132,174,128,129,132,158,166,178,134,130,125,127,132,244,114,123,153,114,76,76,81,77,88,87,82,66,67,355,85,83,79,76,62,56,80,124,134,103,86,89,43,95,106,74,121,120,105,77,118,104,94,124,135,180,98,106,322,639],"anomalies":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1],"baseline":[155,148,92,164,151,148,171,208,225,170,211,190,183,187,183,190,134,149,128,129,155,161,192,142,134,112,111,127,122,140,118,77,75,105,162,179,188,205,156,132,129,179,191,186,189,151,108,98,130,138,128,135,125,92,94,113,114,104,122,157,126,127,137,139,135,143,184,145,144,142,133,125,134,200,139,133,127,98,70,65,167,67,72,87,94,91,90,198,117,114,100,74,56,45,149,97,94,105,98,84,37,93,94,133,111,113,114,43,50,110,203,136,145,187,140,163,342,552],"index":[0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63,64,65,66,67,68,69,70,71,72,73,74,75,76,77,78,79,80,81,82,83,84,85,86,87,88,89,90,91,92,93,94,95,96,97,98,99,100,101,102,103,104,105,106,107,108,109,110,111,112,113,114,115,116,117],"residual":[20,-6,-7,-17,-9,10,15,-12,-40,47,36,25,-22,-30,-17,92,-62,-13,-15,9,10,1,-4,18,-9,-5,24,22,1,-75,-6,11,12,-16,-22,-4,69,19,-29,-17,-1,5,9,3,33,-20,-4,-14,15,12,-34,-29,62,-6,-19,-7,-2,15,-8,-34,5,46,-9,-10,-3,14,-18,32,-10,-12,-8,1,-2,43,-25,-10,25,15,5,10,-86,9,15,0,-12,-25,-23,156,-32,-31,-21,1,5,10,-69,26,39,-2,-12,4,5,1,11,-59,9,6,-9,33,67,-6,-109,-12,-10,-7,-42,-57,-20,86],"score":{"__ndarray__":"ucgV6pDz4z+uLAD0jwzEv1uIA3q/48e/j44SW80l37+1PwqGHpLPvxHHGjY0s9Q/QSwjBStN3j9eKQqM1ovVvzRLDvgb1PK/xTlW2Qjw9j+3mxGBJ6jxP1H7mVGMwOg/4HkNFeJf5L86MRQhQQ7sv4+OElvNJd+/uI6UFTpFBkBQh5eo3mP9vzXXC09ud9e/4jIP1Z1O2786GRlznMfSPxHHGjY0s9Q/NFRd2PJWqz+o6vLPYby4v+IaFCf5B+I/tT8Khh6Sz78B0fxtYDXAv2YkGXDAyuc/j3YXrSjf5T80VF3Y8larPyV+LvHF0AHAriwA9I8MxL/ndBz5y57WP74iHrxjitg/uOAQmDU63b/geQ0V4l/kv6jq8s9hvLi/8LrvxOW/AEDO8ZQIxf3iP05akz91GOu/j44SW80l37+kSey9ShR7v8DDJM56MsY/OhkZc5zH0j/OGDyENwi9P1ZZ0K51N/A/CcwLUkp04r+o6vLPYby4vwuFDRIGY9m/QSwjBStN3j++Ih68Y4rYP+aMF6dw5e+/TlqTP3UY67+phZz0gSP+P64sAPSPDMS/HvWKcH5+4b9biAN6v+PHv+j3ym9Hv6K/QSwjBStN3j8I5AYA77rLv+aMF6dw5e+/wMMkznoyxj9PzpXoInX2P7U/CoYeks+/sc0GBqe00b9OM+zDAg6xv2t+IUKTYdw/Mx4Kj7KI4L/B2x98H3nvP7HNBgantNG/XikKjNaL1b8I5AYA77rLvzRUXdjyVqs/6PfKb0e/or/ui1QWcQT1P6H+j7lFQee/sc0GBqe00b9R+5lRjMDoP0EsIwUrTd4/wMMkznoyxj8Rxxo2NLPUPyzNUJ22dATAOhkZc5zH0j9BLCMFK03eP//Kn4Bp9Jc/XikKjNaL1b+h/o+5RUHnv8tQjvatVeW/tv7QFvzQEkAQ3xXk2PntvyUIlQINBO2/9KKMMxZq4780VF3Y8larP8DDJM56MsY/EccaNjSz1D/EO+0eFGAAwDzSGjNYtuk/GN5SU9kY8z/o98pvR7+iv14pCozWi9W/E2ghSEtbwj/AwyTOejLGPzRUXdjyVqs/53Qc+cue1j/vRFbWLPP7vzoZGXOcx9I/bR8oVKoJyj+1PwqGHpLPv1ZZ0K51N/A/ek8v1P9EAECuLAD0jwzEv/Wg9e0K+gnAXikKjNaL1b+xzQYGp7TRv1uIA3q/48e/ICKP2efJ878EbtX0YP36vwnMC1JKdOK/WExTQ4jUBEA=","dtype":"float64","shape":[118]},"seasonal":[28,15,-47,17,-1,-11,-1,20,25,-34,8,-10,-12,2,13,31,-19,-1,-18,-15,6,9,40,-7,-13,-28,-17,10,14,37,18,-25,-37,-26,14,20,23,34,-17,-39,-38,10,22,20,29,0,-35,-35,6,17,8,18,12,-20,-19,0,4,-7,3,30,-5,-8,-5,-6,-12,-4,37,-1,0,-2,-12,-20,-10,55,-4,-4,0,-14,-28,-23,85,-10,-5,0,-12,-28,-32,75,-2,1,0,-10,-23,-38,61,6,1,8,0,-11,-51,6,7,44,16,8,1,-68,-56,6,98,25,17,13,-88,-119,3,155],"trend":[126,133,139,146,152,160,173,188,199,204,203,200,196,184,169,158,153,150,147,145,149,151,151,150,147,141,129,116,108,103,100,102,113,132,148,158,165,170,173,171,168,168,169,166,159,152,144,133,124,121,120,117,113,112,114,112,109,112,119,126,131,136,142,146,147,147,147,146,145,144,145,145,144,144,143,138,127,112,99,89,81,77,78,87,106,119,123,122,119,113,99,84,79,83,88,90,93,97,99,95,89,86,86,89,95,105,113,112,107,104,105,111,127,174,228,283,339,397],"weights":[1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1]},"selected":{"id":"1071"},"selection_policy":{"id":"1072"}},"id":"1002","type":"ColumnDataSource"},{"attributes":{"format":"00"},"id":"1038","type":"NumeralTickFormatter"},{"attributes":{},"id":"1071","type":"Selection"},{"attributes":{"source":{"id":"1087"}},"id":"1092","type":"CDSView"},{"attributes":{"data_source":{"id":"1002"},"glyph":{"id":"1064"},"hover_glyph":null,"muted_glyph":null,"nonselection_glyph":{"id":"1065"},"selection_glyph":null,"view":{"id":"1067"}},"id":"1066","type":"GlyphRenderer"},{"attributes":{"axis":{"id":"1019"},"dimension":1,"grid_line_color":null,"ticker":null},"id":"1022","type":"Grid"},{"attributes":{},"id":"1072","type":"UnionRenderers"},{"attributes":{"line_alpha":0.1,"line_color":"green","x":{"field":"Date"},"y":{"field":"baseline"}},"id":"1065","type":"Line"},{"attributes":{"fill_color":{"value":"blue"},"line_color":{"value":"blue"},"x":{"field":"Date"},"y":{"field":"score"}},"id":"1133","type":"Circle"},{"attributes":{"source":{"id":"1002"}},"id":"1067","type":"CDSView"},{"attributes":{"data_source":{"id":"1087"},"glyph":{"id":"1089"},"hover_glyph":null,"muted_glyph":null,"nonselection_glyph":{"id":"1090"},"selection_glyph":null,"view":{"id":"1092"}},"id":"1091","type":"GlyphRenderer"},{"attributes":{"fill_alpha":{"value":0.2},"fill_color":{"value":"firebrick"},"line_color":{"value":"firebrick"},"size":{"units":"screen","value":12},"x":{"field":"Date"},"y":{"field":"TotalLogons"}},"id":"1089","type":"CircleX"},{"attributes":{"data":{"Date":{"__ndarray__":"AADACmkQdkIAAMColSd2QgAAQJU9MXZC","dtype":"float64","shape":[3]},"TotalLogons":[283,355,639],"baseline":[190,198,552],"index":[15,87,117],"level_0":[0,1,2],"residual":[92,156,86],"score":{"__ndarray__":"uI6UFTpFBkC2/tAW/NASQFhMU0OI1ARA","dtype":"float64","shape":[3]},"seasonal":[31,75,155],"trend":[158,122,397],"weights":[1,1,1]},"selected":{"id":"1150"},"selection_policy":{"id":"1151"}},"id":"1087","type":"ColumnDataSource"},{"attributes":{"below":[{"id":"1123"},{"id":"1128"}],"center":[{"id":"1126"}],"plot_height":120,"plot_width":1200,"renderers":[{"id":"1135"}],"title":{"id":"1113"},"toolbar":{"id":"1127"},"toolbar_location":null,"x_range":{"id":"1115"},"x_scale":{"id":"1119"},"y_range":{"id":"1117"},"y_scale":{"id":"1121"}},"id":"1112","subtype":"Figure","type":"Plot"},{"attributes":{"fill_alpha":{"value":0.1},"fill_color":{"value":"blue"},"line_alpha":{"value":0.1},"line_color":{"value":"blue"},"x":{"field":"Date"},"y":{"field":"score"}},"id":"1134","type":"Circle"},{"attributes":{"label":{"value":"observed"},"renderers":[{"id":"1043"}]},"id":"1062","type":"LegendItem"},{"attributes":{"text":"Range Selector"},"id":"1113","type":"Title"},{"attributes":{"overlay":{"id":"1028"}},"id":"1024","type":"BoxZoomTool"},{"attributes":{},"id":"1059","type":"YearsTicker"},{"attributes":{"axis":{"id":"1123"},"ticker":null},"id":"1126","type":"Grid"},{"attributes":{"end":1526562720000.0,"start":1513421280000.0},"id":"1115","type":"Range1d"},{"attributes":{"data_source":{"id":"1131"},"glyph":{"id":"1133"},"hover_glyph":null,"muted_glyph":null,"nonselection_glyph":{"id":"1134"},"selection_glyph":null,"view":{"id":"1136"}},"id":"1135","type":"GlyphRenderer"},{"attributes":{"source":{"id":"1002"}},"id":"1044","type":"CDSView"},{"attributes":{"num_minor_ticks":10,"tickers":[{"id":"1048"},{"id":"1049"},{"id":"1050"},{"id":"1051"},{"id":"1052"},{"id":"1053"},{"id":"1054"},{"id":"1055"},{"id":"1056"},{"id":"1057"},{"id":"1058"},{"id":"1059"}]},"id":"1016","type":"DatetimeTicker"},{"attributes":{"data":{"Date":{"__ndarray__":"AACAFJULdkIAAEB65wt2QgAAAOA5DHZCAADARYwMdkIAAICr3gx2QgAAQBExDXZCAAAAd4MNdkIAAMDc1Q12QgAAgEIoDnZCAABAqHoOdkIAAAAOzQ52QgAAwHMfD3ZCAACA2XEPdkIAAEA/xA92QgAAAKUWEHZCAADACmkQdkIAAIBwuxB2QgAAQNYNEXZCAAAAPGARdkIAAMChshF2QgAAgAcFEnZCAABAbVcSdkIAAADTqRJ2QgAAwDj8EnZCAACAnk4TdkIAAEAEoRN2QgAAAGrzE3ZCAADAz0UUdkIAAIA1mBR2QgAAQJvqFHZCAAAAAT0VdkIAAMBmjxV2QgAAgMzhFXZCAABAMjQWdkIAAACYhhZ2QgAAwP3YFnZCAACAYysXdkIAAEDJfRd2QgAAAC/QF3ZCAADAlCIYdkIAAID6dBh2QgAAQGDHGHZCAAAAxhkZdkIAAMArbBl2QgAAgJG+GXZCAABA9xAadkIAAABdYxp2QgAAwMK1GnZCAACAKAgbdkIAAECOWht2QgAAAPSsG3ZCAADAWf8bdkIAAIC/URx2QgAAQCWkHHZCAAAAi/YcdkIAAMDwSB12QgAAgFabHXZCAABAvO0ddkIAAAAiQB52QgAAwIeSHnZCAACA7eQedkIAAEBTNx92QgAAALmJH3ZCAADAHtwfdkIAAICELiB2QgAAQOqAIHZCAAAAUNMgdkIAAMC1JSF2QgAAgBt4IXZCAABAgcohdkIAAADnHCJ2QgAAwExvInZCAACAssEidkIAAEAYFCN2QgAAAH5mI3ZCAADA47gjdkIAAIBJCyR2QgAAQK9dJHZCAAAAFbAkdkIAAMB6AiV2QgAAgOBUJXZCAABARqcldkIAAACs+SV2QgAAwBFMJnZCAACAd54mdkIAAEDd8CZ2QgAAAENDJ3ZCAADAqJUndkIAAIAO6Cd2QgAAQHQ6KHZCAAAA2owodkIAAMA/3yh2QgAAgKUxKXZCAABAC4QpdkIAAABx1il2QgAAwNYoKnZCAACAPHsqdkIAAECizSp2QgAAAAggK3ZCAADAbXIrdkIAAIDTxCt2QgAAQDkXLHZCAAAAn2ksdkIAAMAEvCx2QgAAgGoOLXZCAABA0GAtdkIAAAA2sy12QgAAwJsFLnZCAACAAVgudkIAAEBnqi52QgAAAM38LnZCAADAMk8vdkIAAICYoS92QgAAQP7zL3ZCAAAAZEYwdkIAAMDJmDB2QgAAgC/rMHZCAABAlT0xdkI=","dtype":"float64","shape":[118]},"TotalLogons":[176,142,85,147,142,159,187,196,185,218,248,216,161,157,166,283,72,136,113,139,166,163,188,161,125,107,136,150,124,65,112,89,88,89,140,175,258,225,127,115,128,185,201,190,223,131,104,84,146,151,94,106,188,86,75,106,112,120,114,123,132,174,128,129,132,158,166,178,134,130,125,127,132,244,114,123,153,114,76,76,81,77,88,87,82,66,67,355,85,83,79,76,62,56,80,124,134,103,86,89,43,95,106,74,121,120,105,77,118,104,94,124,135,180,98,106,322,639],"anomalies":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1],"baseline":[155,148,92,164,151,148,171,208,225,170,211,190,183,187,183,190,134,149,128,129,155,161,192,142,134,112,111,127,122,140,118,77,75,105,162,179,188,205,156,132,129,179,191,186,189,151,108,98,130,138,128,135,125,92,94,113,114,104,122,157,126,127,137,139,135,143,184,145,144,142,133,125,134,200,139,133,127,98,70,65,167,67,72,87,94,91,90,198,117,114,100,74,56,45,149,97,94,105,98,84,37,93,94,133,111,113,114,43,50,110,203,136,145,187,140,163,342,552],"index":[0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63,64,65,66,67,68,69,70,71,72,73,74,75,76,77,78,79,80,81,82,83,84,85,86,87,88,89,90,91,92,93,94,95,96,97,98,99,100,101,102,103,104,105,106,107,108,109,110,111,112,113,114,115,116,117],"residual":[20,-6,-7,-17,-9,10,15,-12,-40,47,36,25,-22,-30,-17,92,-62,-13,-15,9,10,1,-4,18,-9,-5,24,22,1,-75,-6,11,12,-16,-22,-4,69,19,-29,-17,-1,5,9,3,33,-20,-4,-14,15,12,-34,-29,62,-6,-19,-7,-2,15,-8,-34,5,46,-9,-10,-3,14,-18,32,-10,-12,-8,1,-2,43,-25,-10,25,15,5,10,-86,9,15,0,-12,-25,-23,156,-32,-31,-21,1,5,10,-69,26,39,-2,-12,4,5,1,11,-59,9,6,-9,33,67,-6,-109,-12,-10,-7,-42,-57,-20,86],"score":{"__ndarray__":"ucgV6pDz4z+uLAD0jwzEv1uIA3q/48e/j44SW80l37+1PwqGHpLPvxHHGjY0s9Q/QSwjBStN3j9eKQqM1ovVvzRLDvgb1PK/xTlW2Qjw9j+3mxGBJ6jxP1H7mVGMwOg/4HkNFeJf5L86MRQhQQ7sv4+OElvNJd+/uI6UFTpFBkBQh5eo3mP9vzXXC09ud9e/4jIP1Z1O2786GRlznMfSPxHHGjY0s9Q/NFRd2PJWqz+o6vLPYby4v+IaFCf5B+I/tT8Khh6Sz78B0fxtYDXAv2YkGXDAyuc/j3YXrSjf5T80VF3Y8larPyV+LvHF0AHAriwA9I8MxL/ndBz5y57WP74iHrxjitg/uOAQmDU63b/geQ0V4l/kv6jq8s9hvLi/8LrvxOW/AEDO8ZQIxf3iP05akz91GOu/j44SW80l37+kSey9ShR7v8DDJM56MsY/OhkZc5zH0j/OGDyENwi9P1ZZ0K51N/A/CcwLUkp04r+o6vLPYby4vwuFDRIGY9m/QSwjBStN3j++Ih68Y4rYP+aMF6dw5e+/TlqTP3UY67+phZz0gSP+P64sAPSPDMS/HvWKcH5+4b9biAN6v+PHv+j3ym9Hv6K/QSwjBStN3j8I5AYA77rLv+aMF6dw5e+/wMMkznoyxj9PzpXoInX2P7U/CoYeks+/sc0GBqe00b9OM+zDAg6xv2t+IUKTYdw/Mx4Kj7KI4L/B2x98H3nvP7HNBgantNG/XikKjNaL1b8I5AYA77rLvzRUXdjyVqs/6PfKb0e/or/ui1QWcQT1P6H+j7lFQee/sc0GBqe00b9R+5lRjMDoP0EsIwUrTd4/wMMkznoyxj8Rxxo2NLPUPyzNUJ22dATAOhkZc5zH0j9BLCMFK03eP//Kn4Bp9Jc/XikKjNaL1b+h/o+5RUHnv8tQjvatVeW/tv7QFvzQEkAQ3xXk2PntvyUIlQINBO2/9KKMMxZq4780VF3Y8larP8DDJM56MsY/EccaNjSz1D/EO+0eFGAAwDzSGjNYtuk/GN5SU9kY8z/o98pvR7+iv14pCozWi9W/E2ghSEtbwj/AwyTOejLGPzRUXdjyVqs/53Qc+cue1j/vRFbWLPP7vzoZGXOcx9I/bR8oVKoJyj+1PwqGHpLPv1ZZ0K51N/A/ek8v1P9EAECuLAD0jwzEv/Wg9e0K+gnAXikKjNaL1b+xzQYGp7TRv1uIA3q/48e/ICKP2efJ878EbtX0YP36vwnMC1JKdOK/WExTQ4jUBEA=","dtype":"float64","shape":[118]},"seasonal":[28,15,-47,17,-1,-11,-1,20,25,-34,8,-10,-12,2,13,31,-19,-1,-18,-15,6,9,40,-7,-13,-28,-17,10,14,37,18,-25,-37,-26,14,20,23,34,-17,-39,-38,10,22,20,29,0,-35,-35,6,17,8,18,12,-20,-19,0,4,-7,3,30,-5,-8,-5,-6,-12,-4,37,-1,0,-2,-12,-20,-10,55,-4,-4,0,-14,-28,-23,85,-10,-5,0,-12,-28,-32,75,-2,1,0,-10,-23,-38,61,6,1,8,0,-11,-51,6,7,44,16,8,1,-68,-56,6,98,25,17,13,-88,-119,3,155],"trend":[126,133,139,146,152,160,173,188,199,204,203,200,196,184,169,158,153,150,147,145,149,151,151,150,147,141,129,116,108,103,100,102,113,132,148,158,165,170,173,171,168,168,169,166,159,152,144,133,124,121,120,117,113,112,114,112,109,112,119,126,131,136,142,146,147,147,147,146,145,144,145,145,144,144,143,138,127,112,99,89,81,77,78,87,106,119,123,122,119,113,99,84,79,83,88,90,93,97,99,95,89,86,86,89,95,105,113,112,107,104,105,111,127,174,228,283,339,397],"weights":[1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1]},"selected":{"id":"1165"},"selection_policy":{"id":"1166"}},"id":"1131","type":"ColumnDataSource"},{"attributes":{"months":[0,2,4,6,8,10]},"id":"1175","type":"MonthsTicker"},{"attributes":{"base":24,"mantissas":[1,2,4,6,8,12],"max_interval":43200000.0,"min_interval":3600000.0,"num_minor_ticks":0},"id":"1169","type":"AdaptiveTicker"},{"attributes":{"months":[0,6]},"id":"1177","type":"MonthsTicker"},{"attributes":{"days":[1,8,15,22]},"id":"1172","type":"DaysTicker"},{"attributes":{"dimensions":"width"},"id":"1027","type":"PanTool"},{"attributes":{"days":["%m-%d %H:%M"],"hours":["%H:%M:%S"],"milliseconds":["%H:%M:%S.%3N"],"minutes":["%H:%M:%S"],"seconds":["%H:%M:%S"]},"id":"1129","type":"DatetimeTickFormatter"},{"attributes":{},"id":"1117","type":"DataRange1d"},{"attributes":{"months":[0,4,8]},"id":"1057","type":"MonthsTicker"},{"attributes":{"base":60,"mantissas":[1,2,5,10,15,20,30],"max_interval":1800000.0,"min_interval":1000.0,"num_minor_ticks":0},"id":"1168","type":"AdaptiveTicker"},{"attributes":{"callback":null,"formatters":{"Date":"datetime","Tooltip":"printf"},"tooltips":[["Date","@Date{%F %T}"],["TotalLogons","@TotalLogons"],["residual","@residual"],["trend","@trend"],["seasonal","@seasonal"],["weights","@weights"],["baseline","@baseline"],["score","@score"]]},"id":"1003","type":"HoverTool"},{"attributes":{"num_minor_ticks":5,"tickers":[{"id":"1167"},{"id":"1168"},{"id":"1169"},{"id":"1170"},{"id":"1171"},{"id":"1172"},{"id":"1173"},{"id":"1174"},{"id":"1175"},{"id":"1176"},{"id":"1177"},{"id":"1178"}]},"id":"1124","type":"DatetimeTicker"},{"attributes":{"mantissas":[1,2,5],"max_interval":500.0,"num_minor_ticks":0},"id":"1048","type":"AdaptiveTicker"},{"attributes":{"align":"right","text":"Drag the middle or edges of the selection box to change the range in the main chart","text_font_size":{"value":"10px"}},"id":"1128","type":"Title"},{"attributes":{"line_color":"green","x":{"field":"Date"},"y":{"field":"baseline"}},"id":"1064","type":"Line"},{"attributes":{"months":[0,4,8]},"id":"1176","type":"MonthsTicker"},{"attributes":{"months":[0,6]},"id":"1058","type":"MonthsTicker"},{"attributes":{"days":[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31]},"id":"1170","type":"DaysTicker"},{"attributes":{"data_source":{"id":"1002"},"glyph":{"id":"1041"},"hover_glyph":null,"muted_glyph":null,"nonselection_glyph":{"id":"1042"},"selection_glyph":null,"view":{"id":"1044"}},"id":"1043","type":"GlyphRenderer"},{"attributes":{"base":24,"mantissas":[1,2,4,6,8,12],"max_interval":43200000.0,"min_interval":3600000.0,"num_minor_ticks":0},"id":"1050","type":"AdaptiveTicker"},{"attributes":{"mantissas":[1,2,5],"max_interval":500.0,"num_minor_ticks":0},"id":"1167","type":"AdaptiveTicker"},{"attributes":{"fill_alpha":0.2,"fill_color":"navy","level":"overlay","line_alpha":1.0,"line_color":"black","line_dash":[2,2],"line_width":0.5},"id":"1138","type":"BoxAnnotation"},{"attributes":{"months":[0,1,2,3,4,5,6,7,8,9,10,11]},"id":"1055","type":"MonthsTicker"},{"attributes":{"months":[0,1,2,3,4,5,6,7,8,9,10,11]},"id":"1174","type":"MonthsTicker"},{"attributes":{"days":[1,4,7,10,13,16,19,22,25,28]},"id":"1171","type":"DaysTicker"},{"attributes":{},"id":"1119","type":"LinearScale"},{"attributes":{"below":[{"id":"1015"}],"center":[{"id":"1018"},{"id":"1022"},{"id":"1061"}],"left":[{"id":"1019"}],"min_border_left":50,"plot_height":300,"plot_width":1200,"renderers":[{"id":"1043"},{"id":"1066"},{"id":"1091"}],"title":{"id":"1005"},"toolbar":{"id":"1029"},"toolbar_location":"above","x_range":{"id":"1007"},"x_scale":{"id":"1011"},"y_range":{"id":"1009"},"y_scale":{"id":"1013"}},"id":"1004","subtype":"Figure","type":"Plot"},{"attributes":{"days":[1,4,7,10,13,16,19,22,25,28]},"id":"1052","type":"DaysTicker"},{"attributes":{"axis":{"id":"1015"},"grid_line_color":null,"ticker":null},"id":"1018","type":"Grid"},{"attributes":{"active_drag":"auto","active_inspect":"auto","active_multi":{"id":"1137"},"active_scroll":"auto","active_tap":"auto","tools":[{"id":"1137"}]},"id":"1127","type":"Toolbar"},{"attributes":{"label":{"value":"anomalies"},"renderers":[{"id":"1091"}]},"id":"1111","type":"LegendItem"},{"attributes":{"months":[0,2,4,6,8,10]},"id":"1056","type":"MonthsTicker"},{"attributes":{"days":[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31]},"id":"1051","type":"DaysTicker"},{"attributes":{"days":[1,15]},"id":"1173","type":"DaysTicker"},{"attributes":{},"id":"1025","type":"ResetTool"},{"attributes":{"axis_label":"TotalLogons","formatter":{"id":"1038"},"ticker":{"id":"1020"}},"id":"1019","type":"LinearAxis"},{"attributes":{"click_policy":"hide","items":[{"id":"1062"},{"id":"1086"},{"id":"1111"}],"location":"top_left"},"id":"1061","type":"Legend"},{"attributes":{"formatter":{"id":"1129"},"ticker":{"id":"1124"}},"id":"1123","type":"DatetimeAxis"},{"attributes":{},"id":"1150","type":"Selection"},{"attributes":{"active_drag":"auto","active_inspect":"auto","active_multi":null,"active_scroll":"auto","active_tap":"auto","tools":[{"id":"1003"},{"id":"1023"},{"id":"1024"},{"id":"1025"},{"id":"1026"},{"id":"1027"}]},"id":"1029","type":"Toolbar"},{"attributes":{"fill_alpha":{"value":0.1},"fill_color":{"value":"#1f77b4"},"line_alpha":{"value":0.1},"line_color":{"value":"navy"},"x":{"field":"Date"},"y":{"field":"TotalLogons"}},"id":"1042","type":"Circle"},{"attributes":{},"id":"1026","type":"SaveTool"},{"attributes":{},"id":"1011","type":"LinearScale"},{"attributes":{"end":1525551840000.0,"start":1514432160000.0},"id":"1007","type":"Range1d"},{"attributes":{"fill_color":{"value":"#1f77b4"},"line_color":{"value":"navy"},"x":{"field":"Date"},"y":{"field":"TotalLogons"}},"id":"1041","type":"Circle"},{"attributes":{"source":{"id":"1131"}},"id":"1136","type":"CDSView"},{"attributes":{"overlay":{"id":"1138"},"x_range":{"id":"1007"},"y_range":null},"id":"1137","type":"RangeTool"},{"attributes":{"base":60,"mantissas":[1,2,5,10,15,20,30],"max_interval":1800000.0,"min_interval":1000.0,"num_minor_ticks":0},"id":"1049","type":"AdaptiveTicker"},{"attributes":{"days":["%m-%d %H:%M"],"hours":["%H:%M:%S"],"milliseconds":["%H:%M:%S.%3N"],"minutes":["%H:%M:%S"],"seconds":["%H:%M:%S"]},"id":"1036","type":"DatetimeTickFormatter"},{"attributes":{"text":"Time Series Anomalies Visualization"},"id":"1005","type":"Title"},{"attributes":{},"id":"1013","type":"LinearScale"},{"attributes":{"bottom_units":"screen","fill_alpha":0.5,"fill_color":"lightgrey","left_units":"screen","level":"overlay","line_alpha":1.0,"line_color":"black","line_dash":[4,4],"line_width":2,"render_mode":"css","right_units":"screen","top_units":"screen"},"id":"1028","type":"BoxAnnotation"},{"attributes":{"dimensions":"width"},"id":"1023","type":"WheelZoomTool"},{"attributes":{},"id":"1151","type":"UnionRenderers"},{"attributes":{},"id":"1020","type":"BasicTicker"},{"attributes":{},"id":"1165","type":"Selection"},{"attributes":{"axis_label":"Date","formatter":{"id":"1036"},"ticker":{"id":"1016"}},"id":"1015","type":"DatetimeAxis"},{"attributes":{"days":[1,8,15,22]},"id":"1053","type":"DaysTicker"},{"attributes":{},"id":"1121","type":"LinearScale"},{"attributes":{},"id":"1009","type":"DataRange1d"},{"attributes":{"days":[1,15]},"id":"1054","type":"DaysTicker"},{"attributes":{},"id":"1166","type":"UnionRenderers"}],"root_ids":["1142"]},"title":"Bokeh Application","version":"2.0.1"}};
+  var render_items = [{"docid":"5d0885ee-4358-4b55-bfcd-bc0471657e98","root_ids":["1142"],"roots":{"1142":"d92c70d9-25a4-4871-a945-91c1870267ad"}}];
+  root.Bokeh.embed.embed_items_notebook(docs_json, render_items);
+
+  }
+  if (root.Bokeh !== undefined) {
+    embed_document(root);
+  } else {
+    var attempts = 0;
+    var timer = setInterval(function(root) {
+      if (root.Bokeh !== undefined) {
+        clearInterval(timer);
+        embed_document(root);
+      } else {
+        attempts++;
+        if (attempts > 100) {
+          clearInterval(timer);
+          console.log("Bokeh: ERROR: Unable to run BokehJS code because BokehJS library is missing");
+        }
+      }
+    }, 10, root)
+  }
+})(window);</script></div>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./2020\notebooks"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+        <div class='prev-next-bottom'>
+            
+    <a class='left-prev' id="prev-link" href="6_OSQuery-Tables-interactive_Jupyterthon.html" title="previous page">Untangling the Osquery❓ tables web🕸 using Jupyter Notebooks📓</a>
+
+        </div>
+        
+        </div>
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Roberto Rodriguez @Cyb3rWard0g<br/>
+        
+            &copy; Copyright 2020.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+
+  
+  </body>
+</html>
