@@ -1,53 +1,52 @@
 # Infosec Jupyterthon!
 
+[![Twitter](https://img.shields.io/twitter/follow/jupyterthon.svg?style=social&label=Follow)](https://twitter.com/jupyterthon)
+[![Open_Threat_Research Community](https://img.shields.io/badge/Open_Threat_Research-Community-brightgreen.svg)](https://twitter.com/OTR_Community)
 [![Open Source Love](https://badges.frapsoft.com/os/v3/open-source.svg?v=103)](https://github.com/ellerbrock/open-source-badges/)
 
 <img src="docs/images/infosec-jupyterthon-main.png" width=700 alt="This image was created by Scriberia for The Turing Way community and is used under a CC-BY licence">
 
-An open community event for security researchers to share their favorite notebooks with the infosec community. We meet virtually, share notebooks round robin style, and have fun learning more about Jupyter notebooks applied to the infosec field. A great place to meet other Infosec Jovyan!
+An open community event for security researchers to share their experience and favorite notebooks with the infosec community. We meet virtually, share notebooks, and have fun learning more about Jupyter notebooks applied to the infosec field. A great place to meet other Infosec Jovyans!
 
 ## Website https://infosecjupyterthon.com
 
 ## Event Goals
 
-* Learn basic notebook concepts with the Infosec community!
+* Learn the basics of Jupyter Noteooks!
 * Share knowledge around Jupyter notebooks used for real-world scenarios in the Infosec field!
 * Share information about how to integrate Jupyter notebooks with other open source projects in the Infosec community!
 * Have fun!
 
 ## Agenda
-
-* https://infosecjupyterthon.com/agenda.html
+* [https://infosecjupyterthon.com/2021/agenda.html](https://infosecjupyterthon.com/2021/agenda.html)
 
 ## Quick Information
-* **When?** May 8th, 2020
-* **Where?** https://aka.ms/InfosecJupyterthonLive
-* **How Much?** Free
+* **When?** December 2nd and 3rd, 2021 (10:00am-8:00pm Eastern Time)
+* **Where?** YouTube Live Stream - LINK SOON
+* **How Much?** FREE
 
 ## Registration
-
-* Form https://bit.ly/InfosecJupyterthonRegistration
+* **Form** [https://aka.ms/Jupyterthon2021Registration](https://aka.ms/Jupyterthon2021Registration)
 
 ## Call For Notebooks!
-If you are using Jupyter notebooks for any use case applied to Infosec, we want to hear from you! Presentation slides are not required. You and a notebook is enough! 
+If you are using Jupyter notebooks for any use case applied to Infosec, we want to hear from you! Presentation slides are not required. You and a notebook is enough!.
 
-* **CFN form:** https://bit.ly/InfosecJupyterthonCFN
-* **CFN starts:** 2020/04/20
-* **CFN ends:** 2020/05/01
+* **CFN form:** [https://aka.ms/Jupyterthon2021CFP](https://aka.ms/Jupyterthon2021CFP)
+* **CFN starts:** 2021/10/27
+* **CFN ends:** 2021/11/21
 
 ### A few submission guidelines
 * Well documented notebook with enough context (e.g. Markdown text) to tell the story behind the code.
 * A well defined step by step process to go from basic to advanced skills.
 * Use of open source code (e.g pandas) to allow attendees to replicate the research at home.
 * Notebook and data must be freely releasable
-* 15-30mins notebook presentation.
+* 30-45mins notebook presentation.
 
 ## Open Infrastructure for an Open Event!
 
-Thanks to the [@mybinderteam](https://twitter.com/mybinderteam), **all the material used for this event** will be shared and run in their public BinderHub environment. This website was built with the awesome project [Jupyter Book](https://github.com/jupyter/jupyter-book) and it is already integrated with [Binder](https://mybinder.org/). Therefore, you could use this site to know about the event, but also use it during the event to follow most of the notebooks shared by the community! You will be able to run most of the notebooks interactively without installing anything in your computer.
+Thanks to the [@mybinderteam](https://twitter.com/mybinderteam), **all the material that can be tested at home for this event** will be shared and run in their public BinderHub environment. This website was built with the awesome project [Jupyter Book](https://github.com/executablebooks/jupyter-book) and it is already integrated with [Binder](https://mybinder.org/). Therefore, you could use this site to know about the event, but also use it during the event to follow most of the notebooks shared by the community! You will be able to run most of the notebooks interactively without installing anything in your computer.
 
 <img src="docs/content/images/binderhub-process.png" width=700 alt="Cyb3rWard0g">
-
 
 ## What is a Notebook?
 Think of a notebook as a document that you can access via a web interface that allows you to save input (i.e. live code) and output (i.e. code execution results / evaluated code output) of interactive sessions as well as important notes needed to explain the methodology and steps taken to perform specific tasks (i.e data analysis).
