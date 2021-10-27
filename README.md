@@ -12,7 +12,7 @@ An open community event for security researchers to share their experience and f
 
 ## Event Goals
 
-* Learn the basics of Jupyter Noteooks!
+* Learn the basics of Jupyter Notebooks!
 * Share knowledge around Jupyter notebooks used for real-world scenarios in the Infosec field!
 * Share information about how to integrate Jupyter notebooks with other open source projects in the Infosec community!
 * Have fun!
