@@ -1,0 +1,29 @@
+metadata:
+  version: 1
+  description: Local Data Queries
+  data_environments: [LocalData]
+  data_families: [SecurityAlert, WindowsSecurity, Network, Azure]
+  tags: ['process', 'account', 'network', 'logon']
+defaults:
+sources:
+  list_network_flows:
+    description: List network flows
+    metadata:
+      data_families: [Network]
+    args:
+      query: az_net_comms_df.pkl
+    parameters:
+  list_host_logons:
+    description: List logons on host
+    metadata:
+      data_families: [WindowsSecurity]
+    args:
+      query: host_logons.pkl
+    parameters:
+  list_host_processes:
+    description: List processes on host
+    metadata:
+      data_families: [WindowsSecurity]
+    args:
+      query: processes_test.pkl
+    parameters:
