@@ -1,0 +1,736 @@
+﻿Industry,JupyterNotebookLevel,Expectations
+Technology,Intermediate,
+Technology,Beginner,At least an introduction and how jupyter can be applied to security with concrete technical examples (use case and at least the start of the implementation => skeleton) 
+Technology,Advanced,
+Consulting,Beginner,"meet other security professionals. share tools, tips, and knowledge. Basics and getting setup with jupyter notebooks."
+Technology,Beginner,
+Consulting,Beginner,
+Technology,Intermediate,
+Technology,Beginner,SOC Automation
+,Beginner,
+Technology,Beginner,
+Finance,Beginner,
+Consulting,Advanced,
+Consulting,Beginner,Used Jupyter from scratch. Like from 0 to hero! But not to be hero! 
+Finance,Beginner,Novel use cases that help automate data analysis.
+Technology,Beginner,to find out how do you eat a jupyter notebook
+Finance,Beginner,
+Hotel & Food Services,Beginner,
+Aerospace & Defense ,Beginner,It’s my first time and looking forward to know how it can be useful for my job or for personal use. 
+Nuclear,Intermediate,Security use cases
+Nonprofit,Beginner,Start
+,Beginner,
+Technology,Beginner,
+Finance,,How to be a cool kid and use them 
+other,Beginner,
+,,
+Technology,Intermediate,"Not sure, but I'm looking forward to geeking out with peeps in notebooks on all the cyberz!"
+Healthcare,Beginner,I am hoping to learn how to integrate Jupyter Notebooks in my normal workflows.
+,Intermediate,
+Technology,Intermediate,
+Finance,Beginner,
+Finance,Beginner,
+Technology,Intermediate,
+Technology,Beginner,
+MSSP,Intermediate,
+Retail,Beginner,Getting up to speed to be able to deploy my first one
+Finance,Beginner,How its being used by other teams
+construction,Beginner,
+Finance,Beginner,How my team can leverage Jupyter notebook for infosec work.
+Technology,Beginner,Tips and tricks on how to write good notebooks for information security purposes. Best way to analyze data relevant to security logs. 
+Consulting,Beginner,Insight on Jupyter notebook 
+Finance,Beginner,
+"Combining industry and academia in cybersecurity, networking and IT",Advanced,New InfoSec notebooks and analitycal ideas for data science in cybersecurity
+Consulting,Beginner,
+Technology,Intermediate,
+,Intermediate,Use cases I could potentially apply at my job as a security engineer working on vuln management and threat hunting.
+Technology,Expert,
+Technology,Intermediate,See new ideas and examples. It would be nice to learn more about templating and runbook type applications.
+Consulting,Beginner,Introduction and basic level 
+Technology,Beginner,Hoping to see cyber security relevant demonstrations as well as integrations into other security tools.
+Consulting,Beginner,Jupyter notebook familiarization and best practices
+Healthcare,Beginner,
+Finance,Beginner,
+Consulting,Advanced,
+Telecom,Intermediate,Get to know other perspectives about the usage and data exploration oriented into cybersecurity.
+,Beginner,
+Consulting,Beginner,
+Healthcare,Intermediate,
+Healthcare,Intermediate,Looking to learn more about jupyter use cases in infosec. I create a lot of automations and using jupyter more is of a lot of interest to me.
+Technology,Beginner,Security dataset processing
+Retail,Intermediate,
+Consulting,Beginner,New ways to analyze infosec related datasets to drive potential enhanced security posture.
+Technology,Beginner,
+Technology,Beginner,Fundamental to creating a strong foundation on Jupyter notebook.
+Technology,Beginner,Threat hunting
+Telecom,Beginner,Learn basics of building Jupyter notebook 
+Technology,Beginner,How to use for infosec
+Technology,Intermediate,Learn about this events and encourage myself for infosec activity associated with it.
+Technology,Beginner,To learn the core fundamental to create a strong base to build upon.
+Retail,Intermediate,More unique ways in which I can utilize Jupyter Notebooks!
+Technology,Intermediate,To see how people use Jupyter Notebook in their use case
+Technology,Beginner,
+Finance,Intermediate,
+Consulting,Beginner,Apply Jupyter Notebooks on Malware/Security-related datasets. 
+Technology,Beginner,
+Consulting,Intermediate,
+Consulting,Beginner,Learn more of and become more handy with notebooks.
+Healthcare,Beginner,stuff
+,Intermediate,Using Jupyter notebook to find undetected attack patterns
+Consulting,Beginner,"Heard lots about the project, now it's a good time to learn how to use notebooks."
+Education,Beginner,Curious about using Jupiter notebooks for incident response templates and other security research. Would love to integrate with personal blog
+Technology,Beginner,More in technology 
+Finance,Beginner,
+Technology,Intermediate,Everything and anything that is discussed. Looking forward to it!
+Technology,Beginner,"How to use it, possible to prepare reports data from siems like azure sentinel "
+Technology,Beginner,"Expecting the ways to use Jupyter Notebook for various field such as Incident Response, Security."
+Consulting,Beginner,New 
+Technology,Beginner,How to use the notebooks within the DFIR field
+Technology,Beginner,
+Technology,Intermediate,
+Technology,Beginner,Analysis of large datasets
+Consulting,Beginner,Learn new things 
+Technology,Intermediate,New techniques 
+Technology,Beginner,
+Technology,Beginner,Different use cases
+Consulting,Beginner,
+,Beginner,
+Technology,Intermediate,Notebook use cases & what others outside of Microsoft are doing with Notebooks. Super stoked to learn what cool things people are doing with Notebooks.
+Technology,Beginner,A better idea of how they can be used in infosec. 
+Technology,Beginner,A better understanding of how notebooks are used in infosec. 
+Consulting,Beginner,How to effectively use the Jupyter notebooks
+Technology,Advanced,Interesting threat analytics tips and tricks.
+Consulting,Intermediate,
+Technology,Beginner,Enough to get me started and hopefully it will help me in my day to day duties. 
+Technology,Beginner,
+Consulting,Intermediate,
+Student,Beginner,Working principles and methodologies.
+Technology,Intermediate,"See examples, get ideas."
+Finance,Beginner,
+Consulting,Beginner,
+Consulting,Beginner,
+Technology,Intermediate,Things people are doing with it to ease infosec operations.
+Technology,Beginner,open my mind about jupyter usage
+Technology,Beginner,
+Finance,Beginner,How to use and utilise jupyter notebooks
+Technology,Beginner,Knowing more about Jupyter
+Consulting,Beginner,Better understand how we can leverage JN in the SC
+Technology,Beginner,To understand the basics of jupyter & apply them to security environments as an amateur blue teamer
+Consulting,Intermediate,Find ideas to improve incident response and live hunting process
+Consulting,Beginner,How it can apply to infosec
+Finance,Beginner,
+Healthcare,Intermediate,
+Telecoms,Beginner,How Jupyter notebooks can be used within security operations
+Retail,Intermediate,"Ways to visualise data and slice'n'dice logs.
+Maybe something really interesting about capturing data or probing systems "
+Finance,Advanced,
+Technology,Beginner,
+Government,Advanced,Interesting use cases
+Government,Intermediate,"interesting, innovative and efficient uses of notebooks and code"
+,Beginner,Jupyter infosec best practices 
+Technology,Intermediate,New development in this space.
+Technology,Beginner,"How they can help my SOC 
+"
+Technology,Advanced,
+Technology,Advanced,
+Technology,Intermediate,
+Technology,Intermediate,"Help to spread love in my team, up skills and learning will."
+Technology,Beginner,
+Retail,Beginner,
+Finance,Intermediate,"Cool new ways to leverage Jupyter, preferably at scale."
+Technology,Beginner,
+Consulting,Intermediate,"I have used notebooks before but do not have much experience using them for infosec. What I would like to gain is more experience with notebooks in infosec, as well as see what the community is already doing, as well as just increase my knowledge in the area in general."
+Finance,Beginner,
+Technology,Beginner,
+Technology,Advanced,
+Technology,Intermediate,Useful features that will improve my notebook skills
+NFP,Beginner,Anything 
+Technology,Beginner,
+Retail,Beginner,To learn something new at which I am a beginner.
+Research,Advanced,"Ideally, use cases where python is uniquely or best positioned to solve a security problem, not just an alternative way of doing the same things as other platforms"
+,Beginner,Some interesting use cases!
+Technology,Intermediate,
+Finance,Intermediate,
+,Beginner,
+Technology,Intermediate,
+Technology,Beginner,
+Technology,Beginner,A good understanding of how to use Jupyter Notebooks focused on security
+Technology,Beginner,
+Government,Beginner,Just connecting to see what the hype is about and to learn more about Jupyter notebooks.
+Technology,Intermediate,fundamentals that are required for effective  self-study on advanced topics.
+Technology,Beginner,
+,Expert,Looking for new analysis techniques I can apply to Threat Hunting and/or Incident Response.
+,Beginner,The basics and the capabilities of using it.
+Student,Beginner,
+Retail,Intermediate,Other people's good ideas for me to steal!
+Technology,Beginner,"Basic how-tos, useful Jupyter notebooks to watch and use"
+Student,Intermediate,
+Technology,Beginner,Increase knowledge on what is out there.  I really enjoyed the first event.
+,Advanced,
+Finance,Intermediate,What projects other info sec pros are using notebooks to solve. 
+Technology,Beginner,How others use it :)
+Telecom,Beginner,Know better!
+Finance,,
+,,
+Technology,Beginner,A pathway for using Jupyter Notebooks from zero to Advanced level.
+Finance,Beginner,
+Retail,Beginner,new knowledge and techniques
+Technology,Advanced,"Hoping to see that various ways folks solve security problems and have found ways to make notebooks more reusable across people, teams, and in automation."
+Retail,Beginner,
+Finance,Beginner,
+Technology,Beginner,
+Technology,Intermediate,See how others are using Jupyter for varied security practices. 
+Technology,Intermediate,How to use them to enable better information security solutions
+Education,Beginner,
+Technology,Beginner,
+Consulting,Beginner,Basic skills and become a master
+Technology,Beginner,
+Technology,Beginner,How to leverage it for visualizing data at scale. 
+Retail,Beginner,How to get started 
+Technology,Beginner,How to leverage and utilize them. 
+Consulting,Beginner,Getting started and how to get value day 1
+Retail,Beginner,
+Technology,Beginner,
+Finance,Intermediate,Usage of Jupyter Notebooks in areas of Incident Response and Threat Intelligence
+Technology,Beginner,Just learn what folks are doing
+Technology,Intermediate,learn how to contribute to other open source projects
+Technology,Beginner,"How to get started, examples of cool things I can use them for"
+Consulting,Intermediate,I am looking for inspiration! I want to see what other people are doing with Jupyter Notebooks :)
+Consulting,Beginner,The basics
+Consulting,Beginner,Benefits and how it can be utilised operationally in a 365 environment
+Technology,Beginner,
+Consulting,Beginner,Nothing. Lets see :)
+Technology,Beginner,
+Technology,Intermediate,
+Education,Beginner,I am just starting to look at Jupyter as a potentially useful format for presenting dynamic data. I hope to see how others are using the tool.
+Technology,Intermediate,tips and tricks
+Technology,Intermediate,Tips and tricks
+Student,Beginner,
+Technology,Advanced,
+Technology,Beginner,"tips, tricks and best practices for data analysis that I can apply to threat hunting. "
+Technology,Intermediate,=) make better use of them for sharing prototypes.
+Student,Beginner,
+Technology,Beginner,security automation and threat hunting
+Technology,Beginner,Get familiar with Jupyter
+Technology,Beginner,Coming from a very low baseline so just interested to get amongst it.
+Finance,Beginner,"Origin, best uses fir tool, how to get started and some use cases"
+Technology,Intermediate,Data science applications in Security
+Technology,Beginner,"Honestly, I wish to learn how to work with it in the practical sense."
+Technology,Beginner,
+Technology,Advanced,
+,Beginner,
+Consulting,Beginner,
+Technology,Intermediate,Learn & share about log analysis topics like anomaly detection etc. 
+Technology,Beginner,
+Healthcare,Beginner,A better understanding of industry and everyday use cases.
+,Beginner,
+Utilities,Beginner,I have only used Jupyter notebooks to do quick single lines of code. I am very interested in seeing Jupyter Notebook's capabilities in Infosec
+Consulting,Beginner,Resources to learn how to use Jupyter Notebooks more effectively 
+,,
+Consulting,Beginner,Basics
+Technology,Intermediate,All the thingz
+Technology,Beginner,
+Technology,Beginner,Wanted to Learn how to use these notebook for incident investigation using powershell Splunk qradar or edr queries to keep them as knowledge base for investigations
+Government ,Intermediate,How others are using it and cloud integrations
+Technology,Intermediate,"Productivity tips & tricks.
+New ways of improving performance."
+Finance,Beginner,
+,Beginner,
+Government,Beginner,
+Technology,Advanced,"New use cases, additional features, innovative workflows"
+Healthcare,Beginner,
+Law,Beginner,
+Technology,Beginner,
+Technology,Beginner,
+Technology,Beginner,
+Transportation ,Beginner,
+Technology,Intermediate,"How to best use them on security, specifically on threat hunting"
+Technology,Advanced,
+Hotel & Food Services,Intermediate,"Widgets, and Dashboard creation"
+Technology,Intermediate,
+Technology,Intermediate,ML Libraries and data manipulation 
+Technology,Beginner,
+Technology,Beginner,
+Technology,Intermediate,effectively understanding the functionality and operation of a notebook
+Student,Beginner,
+Technology,Beginner,
+Education,Beginner,
+It,Beginner,SOC automation
+Manufacturing,Beginner,"I keep hearing about how useful Jupyter notebooks are for some SOCs, want to get an idea of whether or not we should be using them."
+Technology,Beginner,
+Technology,Beginner,
+Transportation,Beginner,
+Finance,Beginner,I'd like to see how Jupyter Notebooks could be introduced into our threat hunting operations and offer any useful insights or comments to the community as appropriate.
+Technology,Beginner,
+Technology,Beginner,
+Healthcare,Beginner,Getting started with JN & see what use cases exist to implement.
+Finance,Beginner,
+Finance,Intermediate,
+Technology,Intermediate,
+Healthcare,Beginner,
+Technology,Beginner,More security use cases and analysis techniques. 
+Technology,Intermediate,How teams are utilising jupyter to address cybersecurity challenges
+Technology,Beginner,How to use them
+Technology,Advanced,
+Technology,Beginner,
+SOC,Intermediate,Uses cases
+Technology,Intermediate,More use cases with jupyter notebooks
+Technology,Beginner,I'm interested in learning the basics to see if I could leverage it for my own work
+Technology,Advanced,
+Finance,Intermediate,"Incident response, threat hunting, ML applied to infosec operations."
+Technology,Beginner,expand my knowledge
+Technology,Intermediate,Everything and anything. Previously sent into a request to join but verification for discord server expired.
+Technology,Intermediate,How to use the platform to its fullest potential. 
+Technology,Intermediate,
+Technology,Intermediate,
+Education,Expert,
+Technology,Intermediate,"Learn more hack to do things in Notebook like Data Manipulation, visualization, and automating stuff. "
+Finance,Intermediate,cool stuff
+Technology,Intermediate,N/A
+Healthcare,Beginner,Learn
+Technology,Beginner,"I would like to learn more about IR, Security Detections, and Analytics"
+Technology,Beginner,Just what are the others doing and how they commoditise their notebooks 
+Technology,Beginner,What are others doing
+Technology,Beginner,Analysis on a large data sets
+Consulting,Intermediate,
+Finance,Beginner,I would love to learn more about Jupyter as I'm building my skills in Threat hunting and automation 
+Technology,Intermediate,"Managing an eco-system for wide team use, working with graphframes, visualizing findings "
+Technology,Expert,What others are using Jupyter to do.
+,Beginner,
+Finance,Beginner,Threat hunting in the cloud
+Education,Beginner,
+Education,Beginner,
+Consulting,Intermediate,Tips and tricks
+Technology,Advanced,Understand how other people are using it. 
+Technology,Intermediate,How to integrate it into my team’s SOC workflow!
+Consulting,Beginner,"The use of Jupyter Notebooks as applies to InfoSec, specifically."
+Student,Beginner,
+Consulting,Beginner,
+Technology,Beginner,
+Finance,Intermediate,Application in cyber analytics
+,Beginner,
+Consulting,Intermediate,
+Technology,Beginner,how to apply Jupyter to infosec use-cases
+Government,Intermediate,
+Technology,Beginner,threat hunting
+Technology,Beginner,How to utilize Jupyter Notebook successfully. 
+,Advanced,
+Technology,Beginner,Overview of it’s capability and idea for using it in my daily job and security project.
+Finance,Beginner,"Anything and everything would be helpful! I deployed Jupyterlab for my team. I now would like to learn more about what it can do for us as a security team, and how to write notebooks myself. I have taken classes in Python, but have not used it in a business setting."
+Student,Beginner,How to use it in the field of cyber security
+Technology,Intermediate,Cool new techniques!
+Finance,Intermediate,Cutting edge fun for pulling insight out of data using notebooks or how to implement them at scale 
+Technology,Intermediate,
+Technology,Intermediate,Just want to get fresh perspectives and learn how others are utilizing this awesome tool!
+Technology,Beginner,Understand challenges with notebooks adoption in a SOC and any lessons learned.
+Retail,Intermediate,Data analysis and detection with large data sets 
+,Beginner,
+Technology,Intermediate,
+Education,Intermediate,Ideas for making better use of Jupyter notebooks for info sec. 
+Finance,Intermediate,How to move from Notebooks to operational models
+Insurance,Beginner,"Learn about the capabilities of Jupiter notebooks for threat hunting, reverse engineering and IR"
+Cyber security ,Intermediate,More interesting  ideas and skills
+Technology,Advanced,More advanced notebooks 
+Finance,Beginner,
+Consulting,Beginner,
+Finance,Intermediate,
+Technology,Intermediate,Threat Hunting 
+Finance,Intermediate,
+gov,Beginner,basic
+Technology,Beginner,usage practices and examples
+Finance,Beginner,
+Education,Beginner,Learn cyber security use cases for daily ops
+Technology,Intermediate,getting new ideas for notebooks
+Technology,Beginner,
+Student,Beginner,Some basics on how to get into infosec and use Jupyter Notebooks.
+Student,Beginner,Learn more about Jupyter.
+Consulting,Beginner,Get an update of the technlogy
+Finance,Beginner,
+Healthcare,Beginner,All the things.  
+Consulting,Beginner,learn
+Finance,Beginner,I would like to learn basics. I would also like to learn how notebooks are being used by others for InfoSec purposes (use cases; automations; etc.)
+Retail,Beginner,Getting started; analyzing some data
+Technology,Beginner,How to use with azure sentinel 
+,Beginner,Cool security use cases for notebooks
+Technology,Intermediate,
+Technology,Intermediate,
+Finance,Intermediate,
+Technology,Beginner,Collaborative data analysis workflow best practices
+Technology,Intermediate,More than i already know :)
+semiconductor,Intermediate,
+Consulting,Beginner,How can I use Jupyter Notebooks to automate security operations tasks.
+Technology,Intermediate,Cyber api calls to sentinel
+Technology,Beginner,Twitter
+Technology,Beginner,
+Technology,Beginner,
+Technology,Beginner,100 - 200 level information
+Technology,Beginner,How to start from scratch and enable my first Notebook
+PS,Beginner,
+Technology,Beginner,develop foundational proficiency
+Finance,Beginner,
+Technology,Intermediate,
+Technology,Beginner,How to start with python and then start building beginner jupyter notebooks. 
+Technology,Beginner,
+Retail,Intermediate,understand and collaborate on new security products capabilities and get update on new features
+Technology,Beginner,a lot.
+Technology,Beginner,
+Technology,Beginner,
+Consulting,Beginner,
+Education,Beginner,I would like to be able to set up and run Jupyter Notebooks in our tenant
+Technology,Beginner,How to use notebooks for automation of sec ops sites
+Consulting,Intermediate,
+Technology,Beginner,Basic
+Education,Beginner,
+Technology,Beginner,security automation
+Data Science,Intermediate,
+Technology,Beginner,
+Consulting,Intermediate,
+Finance,Intermediate,Cool new features and updates
+Education,Advanced,To find out more great ways Jupyter is used for teaching cyber security
+Consulting,Beginner,We use Jupyter notebooks inside the company however I am currently only a user of existing notebooks and would like to learn more in order to be able to create notebooks myself in the future
+Technology,Intermediate,Interest in the other applications of Jupyter related to security
+Technology,Intermediate,Learning cool unknown tricks! Improving the efficiency of my code/data handling
+Consulting,Beginner,
+Technology,Beginner,CyberSecurity community experience sharing
+Consulting,Intermediate,"I leverage Jupyter on day to day but self taught, I’d love to see how others are leveraging jupyter notebooks "
+Finance,Beginner,How to leverage them day to day 
+Consulting,Intermediate,Maybe some ease-of use as well as some take-action / take-home techniques
+Technology,Beginner,learn different visualizations in jupyter notebooks 
+Technology,Beginner,
+Technology,Beginner,"Everything, am just a beginner"
+Technology,Beginner,
+Technology,Beginner,to learn about Jupyter Notebook and its usage 
+Technology,Beginner,understand the function and feature of jupyter notebooks and how to cater it for multi security product
+Technology,Beginner,More about Jupyter
+Education,Advanced,
+Technology,Beginner,
+Retail,Beginner,Knowledge
+Technology,Beginner,Yes
+Consulting,Intermediate,
+Student,,
+Consulting,Beginner,
+Distribution,Beginner,"general overview, hot topics"
+Consulting,Beginner,
+Technology,Beginner,
+Technology,Beginner,
+Consulting,Beginner,To learn a lot of Jupyter and Security
+Student,Beginner,
+Technology,Advanced,To learn something.
+Technology,Expert,
+Consulting,Intermediate,Develop notebooks for threat hunting and security operations  
+Consulting,Beginner,Learning & Growth
+Consulting,Beginner,
+Technology,Expert,"Best practices, new techniques, advanced topics. Besides, seize the opportunity for additional networking interactions."
+Technology,Beginner,Tips and tricks for how our SOC can get started with investigations using Jupyter Notebook. We are a Sentinel and Azure-based MSSP and think notebooks will give lots of added value to how we do threat investigations. 
+Technology,Beginner,How to use with python and integrate with Microsoft Sentinel or other services
+Consulting,Beginner,
+Student,Beginner,
+Technology,Beginner,
+Healthcare,Beginner,
+Technology,Beginner,
+Utility,Beginner,Basic syntaxand its usage and how to use it to build scripts
+Technology,Intermediate,
+Cyber Security,Beginner,
+Technology,Beginner,
+Transport,Beginner,
+Technology,Beginner,
+Education,Beginner,
+Technology,Beginner,
+Technology,Beginner,explore in product
+Healthcare,Intermediate,"Understand how others are using Jupyter in Cybersecurity, specially integration with M365, Azure and other contemporary data sources."
+Technology,Beginner,
+Technology,Beginner,
+Technology,Beginner,
+,Beginner,
+Technology,Beginner,
+Consulting,Beginner,Leveraging notebooks for threat hunting in Microsoft Sentinel. 
+Education,Beginner,Deep dive to Jupyter Notebooks for Info Sec.
+Technology,Beginner,
+Healthcare,Beginner,basics and possibly a better way to work
+,Beginner,
+Technology,Beginner,To Learn about Jupyter Notebooks and how I can leverage it in Sentinel Threat Hunting
+Technology,Advanced,I would like to make networking and learn new things in cybersecurity
+,Beginner,
+Technology,Beginner,education
+,Intermediate,
+Technology,Intermediate,Options for running Jupyter Notebooks in gov cloud and on privilege access workstations.
+Consulting,Beginner,
+Consulting,Beginner,
+Technology,Intermediate,
+Technology,Beginner,Learn the fundamentals of Jupyter and how to use it in Security monitoring
+Healthcare,Beginner,intro to (using) Jupyter Notebooks
+Consulting,Beginner,
+Technology,Intermediate,
+,Beginner,
+Consulting,Beginner,
+Legal,Beginner,"Introduction to Jupyter Notebooks, how they are/can be used"
+Technology,Beginner,
+Education,Beginner,Learn about Jupyter Notebooks
+Technology,Beginner,What are Jupyter Notebooks?  j/k... looking to see how others are using them and how we can fit that into our workflow.
+Technology,Intermediate,
+Technology,Beginner,
+Technology,Beginner,"foundational elements, functionality, use cases, how to bootstrap development of notebooks"
+Education,Beginner,everything and/or anything
+Finance,Beginner,
+Finance,Beginner,
+Technology,Intermediate,learn more about Jupyter Notebooks
+Technology,Beginner,
+Technology,Beginner,
+Technology,Beginner,"How proper configure and use Jupyter with Security concepts, insights, use cases and best practices."
+Consulting,Advanced,
+Education,Beginner,learn about common security threats
+Technology,Intermediate,updates
+Finance,Beginner,everything
+Technology,Beginner,
+Consulting,Beginner,
+Consulting,Intermediate,real customer scenarios
+Transport Logistics,Beginner,
+Consulting,Beginner,
+Education,Beginner,
+Finance,Beginner, 
+Technology,Beginner,
+Technology,Intermediate,New usecases for Notebooks.
+Technology,Beginner,
+Finance,Intermediate,"Jupyter notebooks in VS Code running against Log Analytics, Resource Graph, and other APIs such as ARM RPs."
+Utilities - Energy,Beginner,introduction to using them
+Technology,Intermediate,More ways to use Jupyter in day to day security activities
+Technology,Beginner,Learn what it's about and how I can use or contribute.
+government,Beginner,
+Technology,Intermediate,
+Consulting,Intermediate,
+Technology,Beginner,
+Technology,Beginner,a lot about it
+Technology,Beginner,
+Consulting,Advanced,
+Technology,Beginner,
+Technology,Beginner,
+Healthcare,Intermediate,
+Finance,Beginner,
+Technology,Intermediate,Everything!!!!!!!
+Legal,Beginner,
+Technology,Beginner,to get job done in 'security data analysis'
+Technology,Beginner,All
+,Beginner,
+Consulting,Advanced,
+Technology,Beginner,
+Consulting,Intermediate,
+Technology,Intermediate,
+Technology,Intermediate,
+Technology,Beginner,Basics
+Technology,Beginner,
+Technology,Advanced,Something new
+Finance,Beginner,Everything :) 
+Consulting,Intermediate,How to use them in incident response.
+Consulting,Beginner,
+Technology,Intermediate,"New ways of using jupyter, with python, on security matters"
+Technology,Intermediate,
+Technology,Intermediate,Advanced use of jupyter for hunting
+Technology,Intermediate,
+Retail,Beginner,
+,Beginner,
+,,
+,Beginner,
+Technology,Beginner,Basic usage
+Technology,Beginner,
+Manufacturing ,Beginner,Get me started up! 
+Technology,Beginner,
+Media,Beginner,
+Manufacturing,Beginner,
+Technology,Beginner,
+Technology,Intermediate,improvement of understanding and implementing Notebooks
+Finance,Beginner,
+Technology,Intermediate,Python for InfoSec 
+Technology,Beginner,
+,Beginner,
+Healthcare,Intermediate,Great insights about security and threats.
+Consulting,Beginner,"Information Security and Use of Jupyter Notebooks, How To, Why, When and Where. "
+Student,,
+Education,Beginner,how to use it.
+construction,Beginner,To understand more about the Jupyter notebooks and try to utilize in work.
+Government,Beginner,
+Legal,Beginner,Understanding of using Jupyter Notebooks especially within our Azure Sentinel service
+Consulting,Beginner,
+Finance,Intermediate,
+Technology,Beginner,
+Consulting,Beginner,
+Consulting,Beginner,
+Healthcare,Beginner,Use case scenarios and best practices. 
+Healthcare,Beginner,I have heard great things about many in the Threat Hunting community making use of Jupyter notebooks. Looking forward to learn the tips and tricks and to put the learning to practice!
+Healthcare,Intermediate,workflow ideas
+Healthcare,Advanced,Security applications for ML
+Finance,Beginner,As much as possible
+Manufacturing,Beginner,How to use it in SOC
+Technology,Beginner,
+Finance,Intermediate,Cyber analytics at scale with applications in threat hunting 
+Finance,Intermediate,Cyber analytics at scale with applications in threat hunting 
+Finance,Intermediate,Cyber analytics at scale with applications in threat hunting 
+Technology,Beginner,
+Consulting,Beginner,General workflow and capabilities
+Technology,Intermediate,"Improve knowledge about style and design of cells, to make report templates so that output is consistent and and reports are easier to read. I would also like to know more about adding ML and how it can help within technical contexts."
+Technology,Advanced,
+Technology,Beginner,
+Technology,Advanced,
+Education,Beginner,
+Technology,Beginner,
+Technology,Intermediate,
+Technology,Beginner,Everything
+Government,Beginner,
+News Media,Beginner,A lot of security information 
+Construction,Advanced,
+,,
+Finance,Intermediate,
+Technology,Beginner,New innovative ideas that ease our life. 
+Aerospace and Defense,Intermediate,"Practical applications, interesting visualizations, new potential use cases."
+Travel,Intermediate,"Security Automation, especially Threat Hunting and Analysis"
+Technology,Beginner,More ways to leverage Jupyter more effectively to conduct threat analysis
+Consulting,Beginner,
+Media,Beginner,
+Technology,Beginner,
+Technology,Beginner,
+Technology,Beginner,Introduction to use and some advance topics
+Government ,Beginner,More information about it use and how we can benefit from it's use with in my organisation 
+Technology,Intermediate,
+Engineering,Beginner,Learn possible use cases and techniques for hunting and ir processes
+Consulting,Intermediate,Useful ideas and some tips on using notebooks for incident response.
+Finance,Beginner,"dynamic playbooks, etc."
+Retail,Beginner,
+Hotel & Food Services,Intermediate,"I plan to share information security experiences, show how I do my threat investigations, and see how colleagues are dealing with threats."
+Energy,Beginner,networking and learning from peers
+,Beginner,
+Technology,Beginner,
+Technology,Intermediate,
+Insurance,Beginner,Obtain a foundation to learn more
+Consulting,Beginner,
+Technology,Beginner,"to make a connection between apachespark and elasticsearch cluster, because the one I made is still very slow when streaming data"
+Technology,Beginner,
+Technology,Intermediate,Use of Jupyter notebooks in cyber security related analytics.
+IT,Beginner,
+Education,Beginner,Better understanding of the tool
+Energy,Beginner,"How to use Jupyter Notebooks? 
+Cookbooks for security analysis of application 
+.Net application specific security and venerability analysis "
+Technology,Beginner,
+Government,Beginner,
+Technology,Beginner,Alot!
+Finance,Advanced,Using security tools in a jupyter lab environments 
+Finance,Beginner,get understanding why I/we would  need them and how to get started
+Finance,Intermediate,
+Consulting,Beginner,"Would like to see ground-up builds, as well as art of the possible."
+Finance,Beginner,Learn from experts. 
+Technology,Beginner,
+Technology,Beginner,
+Technology,Beginner,
+Technology,Intermediate,
+Technology,Advanced,"Tips for workflow, better integration with dev environments, best practices"
+Technology,Beginner,Learning!
+Finance,Intermediate,I would love to see how other infosec researchers and analysts are incorporating Jupyter into their work and workflows.
+Retail,Beginner,More info about the jupyter notebooks.
+Technology,Beginner,General knowledge
+Technology,Beginner,
+Technology,Beginner,I'm hoping to improve my use of Jupyter notebooks with the graph API to visualise & investigate potential security incidents in our Microsoft environment investigate.
+Technology,Intermediate,
+Technology,Beginner,
+,,
+,Beginner,
+Technology,Intermediate,Basics of jupyter and automation ideas which coudl be shared among teams and partners.
+Construction,Beginner,Learn more about Jupyter
+,Beginner,
+Technology,Beginner,
+Technology,Beginner,
+Finance,Beginner,
+Technology,Beginner,Get an overview and how better we can use Jupiter notebook in security and incident response 
+Technology,Intermediate,anything
+Consulting,Beginner,
+Technology,Beginner,Basics of Jupyter and how effectively can we use it for our analysis.
+Technology,Advanced,New tricks and tips
+Technology,Expert,hunting and project idea
+Technology,Beginner,
+Technology,Beginner,Use cases that notebooks can be applied to.
+Technology,Intermediate,
+Technology,Beginner,threat hunting methods in Jupyter
+Technology,Beginner,
+Technology,Beginner,automating security 
+Food and Beverage Factory engineering,Beginner,
+Technology,Beginner,
+Technology,Beginner,"High level overview of what the product is, features and capabilities, and how to utilize the product in my current role as a security analyst. "
+,Intermediate,
+Education,Beginner,How to begin to used Juypter Notebooks in security. 
+Technology,Beginner,Share experience~!
+Technology,Beginner,
+Technology,Beginner,
+Technology,Intermediate,Informational Sessions
+Technology,Intermediate,
+Technology,Beginner,learn about the basics
+Consulting,Beginner,Learn more about how to use notebook for security hunting.
+Technology,Intermediate,
+Education,Beginner,"Learn, understand and use it, simple as that."
+Technology,Advanced,
+Finance,Beginner,I a highly interested on using Notebooks for Incidence Response and to detect and understand attacker patterns in a more efficient manner.
+Finance,Beginner,New features that I can implement at work
+Security,Beginner,Some awesome stuff that can be applied to hunting :)
+,Expert,failles
+Technology,Beginner,
+Technology,Beginner,no expectations
+Finance,Beginner,State-of-the art tips and trick on how to utilize jupyter notebook in threat hunting
+Retail,Beginner,Attain a level of understanding.
+Aerospace and defense,Beginner,
+Healthcare,Beginner,Get a global idea of the possibility of Jupyter Notebooks on how to optimize them.
+Government,Beginner,How to use Jupyter Notebooks and integrate it within our Incident Response process
+Finance,Intermediate,Learn advanced technique for cyber hunting
+Finance,Beginner,
+Finance,Intermediate,
+Finance,Beginner,
+Technology,Beginner,
+Technology,Advanced,Everything related to AI and intelligence of Threats / bad actors.
+Technology,Beginner,
+,Beginner,
+Technology,Beginner,How effectively jupyter notebooks can be used in threat hunting
+Technology,Beginner,For SOC uses
+NFP,Beginner,Anything 
+Technology,Intermediate,
+Technology,Intermediate,
+,Beginner,
+Consulting,Beginner,
+Technology,Intermediate,"Learn new utilities to this very great tool, even learn what is other people doing with it"
+Technology,Beginner,
+Technology,Intermediate,
+Consulting,Beginner,To learn more about the capabilities of Jupyter
+Technology,Beginner,
+Manufacturing,Beginner,How could i use Jupyter Notebooks for increasing security posture in the company.
+Technology,Beginner,Tips or useful frameworks
+,Intermediate,
+Public Sector,Intermediate,Investigation inspiration
+Technology,Intermediate,
+Finance,Beginner,Ideas to utilize and integrate Jupyter into work activities
+Technology,Intermediate,
+Oil & Gas,Beginner,
+Technology,Beginner,
+Technology,Beginner,how to get started
+Education,Intermediate,
+Technology,Beginner,
+Education,Beginner,
+Technology,Beginner,How to further integrate Jupyter into our processes.
+Finance,Beginner,Why and how I should use Jupyter Notebooks
+Technology,Intermediate,To explore new functionality.
+Consulting,Beginner,Not sure but more of what I need to learn
+Education,Beginner,"State of the Jupyter Notebook, where is it headed? What updates have been applied? What new tools have been implemented and can be used. "
+Technology,Beginner,
+Finance,Beginner,Have only used Jupyter in a class and would like to learn more. 
+Technology,Beginner,How useful it is for Analysis
+Technology,Advanced,All the things.
+Finance,Beginner,
+Finance,Beginner, 
+Technology,Beginner,
+Technology,Expert,
+Finance,Intermediate,Hopefully everything
+Energy,Beginner,
+Technology,Intermediate, how to use it as a tool for gathering threat intelligence
+Technology,Beginner,How I can use notebooks to improve my day to day activities. 
+Technology,Intermediate,"Get samples, see what's possible and if I can emulate it"
+Technology,Intermediate,Threat Hunting in Cyber Security
+Technology,Beginner,A-Z!
+Technology,Beginner,
+Technology,Beginner,Everything I possibly can
+Technology,Beginner,
+Technology,Intermediate,Library building 
+Technology,Beginner,
