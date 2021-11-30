@@ -1,0 +1,212 @@
+[
+    {
+        "technique_id": "T1547.004",
+        "x_mitre_is_subtechnique": true,
+        "technique": "Winlogon Helper DLL",
+        "tactic": [
+            "persistence",
+            "privilege-escalation"
+        ],
+        "platform": [
+            "Windows"
+        ],
+        "data_source": "windows registry",
+        "data_component": "windows registry key modification",
+        "name": "Process modified Windows registry key value",
+        "source": "process",
+        "relationship": "modified",
+        "target": "windows registry key value",
+        "event_id": 13,
+        "event_name": "RegistryEvent (Value Set).",
+        "event_platform": "Windows",
+        "audit_category": "RegistryEvent",
+        "audit_sub_category": NaN,
+        "log_channel": "Microsoft-Windows-Sysmon/Operational",
+        "log_provider": "Microsoft-Windows-Sysmon",
+        "filter_in": NaN
+    },
+    {
+        "technique_id": "T1547.005",
+        "x_mitre_is_subtechnique": true,
+        "technique": "Security Support Provider",
+        "tactic": [
+            "persistence",
+            "privilege-escalation"
+        ],
+        "platform": [
+            "Windows"
+        ],
+        "data_source": "module",
+        "data_component": "module load",
+        "name": "Process loaded Module",
+        "source": "process",
+        "relationship": "loaded",
+        "target": "module",
+        "event_id": 7,
+        "event_name": "Image loaded.",
+        "event_platform": "Windows",
+        "audit_category": "ImageLoad",
+        "audit_sub_category": NaN,
+        "log_channel": "Microsoft-Windows-Sysmon/Operational",
+        "log_provider": "Microsoft-Windows-Sysmon",
+        "filter_in": NaN
+    },
+    {
+        "technique_id": "T1547.006",
+        "x_mitre_is_subtechnique": true,
+        "technique": "Kernel Modules and Extensions",
+        "tactic": [
+            "persistence",
+            "privilege-escalation"
+        ],
+        "platform": [
+            "macOS",
+            "Linux"
+        ],
+        "data_source": "command",
+        "data_component": "command execution",
+        "name": "Process executed Command",
+        "source": "process",
+        "relationship": "executed",
+        "target": "command",
+        "event_id": 1,
+        "event_name": "Process Creation.",
+        "event_platform": "Linux",
+        "audit_category": "ProcessCreate",
+        "audit_sub_category": NaN,
+        "log_channel": "Linux-Sysmon/Operational",
+        "log_provider": "Linux-Sysmon",
+        "filter_in": NaN
+    },
+    {
+        "technique_id": "T1547.008",
+        "x_mitre_is_subtechnique": true,
+        "technique": "LSASS Driver",
+        "tactic": [
+            "persistence",
+            "privilege-escalation"
+        ],
+        "platform": [
+            "Windows"
+        ],
+        "data_source": "file",
+        "data_component": "file creation",
+        "name": "Process created File",
+        "source": "process",
+        "relationship": "created",
+        "target": "file",
+        "event_id": 11,
+        "event_name": "FileCreate.",
+        "event_platform": "Windows",
+        "audit_category": "FileCreate",
+        "audit_sub_category": NaN,
+        "log_channel": "Microsoft-Windows-Sysmon/Operational",
+        "log_provider": "Microsoft-Windows-Sysmon",
+        "filter_in": NaN
+    },
+    {
+        "technique_id": "T1547.008",
+        "x_mitre_is_subtechnique": true,
+        "technique": "LSASS Driver",
+        "tactic": [
+            "persistence",
+            "privilege-escalation"
+        ],
+        "platform": [
+            "Windows"
+        ],
+        "data_source": "file",
+        "data_component": "file modification",
+        "name": "User modified File",
+        "source": "user",
+        "relationship": "modified",
+        "target": "file",
+        "event_id": 4670,
+        "event_name": "Permissions on an object were changed.",
+        "event_platform": "Windows",
+        "audit_category": "Object Access",
+        "audit_sub_category": "File System",
+        "log_channel": "Security",
+        "log_provider": "Microsoft-Windows-Security-Auditing",
+        "filter_in": NaN
+    },
+    {
+        "technique_id": "T1547.009",
+        "x_mitre_is_subtechnique": true,
+        "technique": "Shortcut Modification",
+        "tactic": [
+            "persistence",
+            "privilege-escalation"
+        ],
+        "platform": [
+            "Windows"
+        ],
+        "data_source": "file",
+        "data_component": "file modification",
+        "name": "Process modified File",
+        "source": "process",
+        "relationship": "modified",
+        "target": "file",
+        "event_id": "FileModified",
+        "event_name": "FileModified",
+        "event_platform": "Windows",
+        "audit_category": null,
+        "audit_sub_category": NaN,
+        "log_channel": "DeviceFileEvents",
+        "log_provider": "Microsoft Defender for Endpoint",
+        "filter_in": NaN
+    },
+    {
+        "technique_id": "T1547.009",
+        "x_mitre_is_subtechnique": true,
+        "technique": "Shortcut Modification",
+        "tactic": [
+            "persistence",
+            "privilege-escalation"
+        ],
+        "platform": [
+            "Windows"
+        ],
+        "data_source": "file",
+        "data_component": "file creation",
+        "name": "Process created File",
+        "source": "process",
+        "relationship": "created",
+        "target": "file",
+        "event_id": "FileCreated",
+        "event_name": "FileCreated",
+        "event_platform": "Windows",
+        "audit_category": null,
+        "audit_sub_category": NaN,
+        "log_channel": "DeviceFileEvents",
+        "log_provider": "Microsoft Defender for Endpoint",
+        "filter_in": NaN
+    },
+    {
+        "technique_id": "T1562.010",
+        "x_mitre_is_subtechnique": true,
+        "technique": "Downgrade Attack",
+        "tactic": [
+            "defense-evasion"
+        ],
+        "platform": [
+            "Windows",
+            "Linux",
+            "macOS"
+        ],
+        "data_source": "command",
+        "data_component": "command execution",
+        "name": "User executed Command",
+        "source": "user",
+        "relationship": "executed",
+        "target": "command",
+        "event_id": 4688,
+        "event_name": "A new process has been created.",
+        "event_platform": "Windows",
+        "audit_category": "Detailed Tracking",
+        "audit_sub_category": "Process Creation",
+        "log_channel": "Security",
+        "log_provider": "Microsoft-Windows-Security-Auditing",
+        "filter_in": NaN
+    }
+]
