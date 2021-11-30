@@ -1,0 +1,18 @@
+title: Reason Cyber Campaigns With Kestrel
+speaker:
+    - name: Xiaokui Shu
+      job_title: Research Staff Member
+      company: IBM
+      twitter:
+      bio: >-
+        Xiaokui Shu is a Research Staff Member at IBM Research and a member of the ACM Future of Computing Academy.
+        Dr. Shu leads the cyber reasoning initiative at IBM Research including projects Kestrel, τ-calculus, and GNN-based graph reasoning.
+        He is an advocate of open security and believes knowledge composition, reuse, and sharing is the key to reactive and proactive security with zero trust, as he explained in "The Pursuit of Speed in Cybersecurity" (interview with ACM) and "Unleashing Cyber Reasoning: DARPA Transparent Computing Threat Hunting Retrospective" (talk at ACSAC'20).
+date: '2021-12-02'
+time: 2:15pm-2:50pm
+abstract: >-
+  Is there any evidence of these IOCs on my systems? From the context, are they false positives? Are these IOCs part of a larger campaign?
+  Do you frequently search for TTPs, manually walk process trees to identify the root cause, or backtrack an attack across systems on your network?
+  Cyber reasoning is the abstraction behind all the above questions: like clearing the "fog of war" in a real-time strategy game, security analysts implement a reasoning step, execute it to clear a small piece of "fog" ahead, reevaluate the entire visible region, and plan for the next reasoning step to iterate. Analysts may enumerate well-known reasoning steps, encode the latest knowledge into never-seen steps, and probe in multiple directions to develop reasoning strategies for different clients regarding their security measures and gaps.
+  The Kestrel Threat Hunting Language enables comprehensive reasoning by minimizing distractions from low-level incompatible data and operations. In this session, we will perform step-by-step reasoning using Kestrel on Jupyter Notebook. To discover an APT campaign reproduced in our red lab, we will match TTP patterns, pivot around endpoint entities like processes, files, and network traffic, apply analytic steps including context enrichment and visualization, and backtrack the cyber campaign across devices and networks.
+  Join our hunters game at InfoSec Jupyterthon 2021 to reason cyber campaigns with Kestrel. https://github.com/opencybersecurityalliance/kestrel-lang

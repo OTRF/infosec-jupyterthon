@@ -3,7 +3,8 @@ import copy
 import yaml
 import glob
 from os import path
-from datetime import date
+from datetime import date, datetime
+import calendar
 
 # creating the date object of today's date
 todays_date = date.today()
@@ -21,13 +22,22 @@ print("  [>] Opening forge yaml files..")
 yaml_files = glob.glob(path.join(talks_directory, "*.yaml"))
 yaml_loaded = [yaml.safe_load(open(yf).read()) for yf in yaml_files]
 
+yaml_days = dict()
+format = "%Y-%m-%d"
+for yaml_doc in yaml_loaded:
+    dt_object = datetime.strptime(yaml_doc['date'], format)
+    day = calendar.day_name[dt_object.weekday()]
+    if day not in yaml_days.keys():
+        yaml_days[day] = list()
+    yaml_days[day].append(yaml_doc)
+
 # ******** Open forge template ****************
 print("  [>] Reading template..")
 yaml_template = Template(open(path.join(templates_directory, "table_template.md")).read())
 
 # Create Markdown file
 print("  [>] Writing docs to markdown ..")
-yaml_for_render = copy.deepcopy(yaml_loaded)
+yaml_for_render = copy.deepcopy(yaml_days)
 
 # Generate the markdown
 markdown = yaml_template.render(renderyaml=yaml_for_render)

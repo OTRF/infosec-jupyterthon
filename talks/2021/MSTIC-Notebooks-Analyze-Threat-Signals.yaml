@@ -1,0 +1,28 @@
+title: How MSTIC uses Notebooks to Analyze Threat Signals
+speaker:
+    - name: Neal Shenk
+      job_title: Senior Threat Intelligence Analyst
+      company: Microsoft
+      twitter:
+      bio: >-
+        Neal Shenk is a MSTIC Analyst who measures his career as an analyst in two epochs – 'BJ' (Before Jupyter) & 'AJ' (After Jupyter).
+    - name: Sil Han
+      job_title: Senior Threat Intelligence Analyst
+      company: Microsoft
+      twitter:
+      bio: >-
+        Sil Han is a manager of the Microsoft Threat Intelligence Center (MSTIC).
+        She’s been working to track and analyze state sponsored threats against both private sector and Government organizations.
+        Sil's primarily interests are in reverse engineering, threat intelligence analysis, and tool development.
+    - name: Natanela Brod
+      job_title: Software Engineer II
+      company: Microsoft
+      twitter:
+      bio: >-
+        Natanela Brod is a software engineer in Microsoft Threat Intelligence Center engineering team.
+        She designed and built MSTIC’s Threat Actor Monitoring Platform.
+        She enjoys working on tooling that maximize the impact of the threat intelligence analysis of MSTIC analysts.
+date: '2021-12-02'
+time: 1:35pm-2:05pm
+abstract: >-
+  An overview of how MSTIC created a platform upon which analysts can use Jupyter NBs to collect & process threat signals at-scale.
