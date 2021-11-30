@@ -2,7 +2,7 @@
 # Author: Ashwin Patil @ashwinpatil & Roberto Rodriguez @Cyb3rWard0g
 # License: GPL-3.0
 
-ARG BASE_CONTAINER=jupyter/scipy-notebook
+ARG BASE_CONTAINER=jupyter/pyspark-notebook
 FROM $BASE_CONTAINER
 
 LABEL maintainer="Ashwin Patil @ashwinpatil & Roberto Rodriguez @Cyb3rWard0g"
@@ -19,6 +19,9 @@ RUN apt-get update --yes && \
     r-cran-rodbc \
     gfortran \
     gcc && \
+    python3-gi && \
+    python3-gi-cairo && \
+    gir1.2-secret-1 && \
     apt-get clean && rm -rf /var/lib/apt/lists/*
 
 USER ${NB_UID}
@@ -107,18 +110,7 @@ RUN jupyter nbextension enable --py widgetsnbextension --sys-prefix && \
     jupyter labextension install @jupyterlab/git --no-build && \
     jupyter labextension install @jupyterlab/github --no-build && \
     jupyter labextension enable git && \
-    jupyter lab build --dev-build=False 
-
-# Below 2 imports take considerably longer upto 2-3 hour to build the image. Remove as needed.
-# Import matplotlib the first time to build the font cache.
-ENV XDG_CACHE_HOME="/home/${NB_USER}/.cache/"
-RUN MPLBACKEND=Agg python -c "import matplotlib.pyplot" && \
-    fix-permissions "/home/${NB_USER}"
-# The first time you 'import plotly' on a new system, it has to build the
-# font cache.  This takes a while and also causes spurious warnings, so
-# we can just do that during the build process and the user never has to
-# see it.
-RUN /opt/conda/bin/python -c 'import plotly'
+    jupyter lab build --dev-build=False
 
 USER ${NB_UID}
 
