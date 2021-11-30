@@ -1,0 +1,17 @@
+title: Keynote - The Open Source InfoSec Revolution
+speaker:
+    - name: John Lambert
+      job_title: Microsoft Threat Intelligence Center (MSTIC) GM
+      company: Microsoft
+      twitter: "@JohnLaTwC"
+      bio: >-
+        John Lambert holds the title of Distinguished Engineer and is the General Manager of the Microsoft Threat Intelligence Center.
+        The Center is responsible for detecting and disrupting adversary-based threats aimed at Microsoft and its customers.
+        Its mission is to drive detective innovations into products and services to raise the ability for every defender to deal with adversary-based threats through security research, threat intelligence, forensics, and data science.
+        Previously at Microsoft, Lambert worked in the Trustworthy Computing group for ten years and the Windows Security group on features related to cryptography and security management.
+        He joined Microsoft after three years at IBM as a developer in their software group.
+        Lambert holds a bachelor’s degree in computer science from Tulane University and is named on more than nine software patents and seven pending applications.
+date: '2021-12-02'
+time: 11:40am-12:05pm
+abstract: >-
+  The Open Source InfoSec Revolution

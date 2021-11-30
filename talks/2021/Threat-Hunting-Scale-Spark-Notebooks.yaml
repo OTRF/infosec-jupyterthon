@@ -1,0 +1,19 @@
+title: Threat Hunting at scale with Spark Notebooks
+speaker:
+    - name: Ashwin Patil
+      job_title: Senior Program Manager
+      company: Microsoft
+      twitter:
+      bio: >-
+        Ashwin Patil currently works as Senior Program Manager for Microsoft Threat Intelligence Center (MSTIC) and has over 10 years of experience entirely focused on Security monitoring and Incident Response defending enterprise networks.
+        In his current role, he primarily works on threat hunting , detection research in KQL (Kusto Query Language) for Azure Sentinel and develop Jupyter notebooks written in Python/R to do threat hunting and investigation across variety of cloud and on-premise security event log data sources.
+        He has Bachelor degree in Computer Engineering and also have certified with various SANS certifications such as GCIA, GCFE, GCIH in the field of Digital Forensics and Incident Response (DFIR).
+        He has previously spoken at conferences first JupyterThon, SANS Purple team summit, blue team village etc on topics threat hunting on cloud datasets and Jupyter Notebooks.
+date: '2021-12-02'
+time: 4:15pm-4:50pm
+abstract: >-
+  Jupyter notebooks already plays key role in threat hunting and automating blue team workflows.
+  In most of the use cases, data being worked on is relatively small and can be manipulated effectively with computes attached to Jupyter notebooks but  in some cases, analysts have to perform threat hunting or reactive investigation on historical logs ranging from 14 days to 30 days or sometimes even more on voluminous data sources such as network firewall logs.
+  Loading such large datasets and working with such large dataframes can be challenging with the limited compute and memory resources , in such cases we need to look at alternative solutions to handle such data at scale.
+  In this presentation, we will look at native python libraries available to manipulate large dataframes as well as look at handling it via notebooks attached to Apache Spark pools.
+  We will showcase notebook demonstrating various use cases where Apache Spark can help in performing distributed processing of large dataframes, performs complex data manipulation operations to find anomalous stuff , perform data engineering on raw datasets and explore Spark ML libraries to perform threat hunting at scale.

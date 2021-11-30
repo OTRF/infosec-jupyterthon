@@ -1,0 +1,15 @@
+title: Moonwalking - Deriving Audit policy's from EventID's
+speaker:
+    - name: Neil Desai
+      job_title: Principal Security Strategist
+      company: Elastic
+      twitter:
+      bio: >-
+        Neil Desai is a Principal Security Strategist for Elastic. He has over two decades of information security experience.
+        In past roles, he built Security Operations Centers (SOCs) and architected defensible and monitorable infrastructures for Fortune 500 US financial institutions.
+        Outside of work he was a part of 1@stPlace, winners of DEFCON's CTF in 2006 and 2007, and is a current member of C3X (https://www.thec3x.com/).
+date: '2021-12-02'
+time: 3:40pm-4:15pm
+abstract: >-
+  I will show walk users through connecting to an Elastic cluster, running queries that will give them an idea of what their audit policy looks like based on the EventID's. I will also walk them through matching the events they have to possible rules that would fire in the Elastic SIEM.
+  When you have logs, but don't know what's in them...I'll show users how to enumerate the logs and understand the fields/values that are important.
