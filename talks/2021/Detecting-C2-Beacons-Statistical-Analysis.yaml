@@ -1,0 +1,14 @@
+title: Detecting C2 Beacons using Statistical Analysis
+speaker:
+  - name: Mehmet Ergene
+    job_title: Threat Hunter
+    company: Confidential
+    twitter: "@Cyb3rMonk"
+    bio: >-
+      Mehmet Ergene is a threat hunter who likes to solve challenging problems in cyber security and share his knowledge with the community.
+date: '2021-12-03'
+time: '15:40'
+abstract: >-
+  RITA is an open source framework developed by Active Countermeasures. It can perform beaconing detection, DNS tunneling detection and blacklist checking.
+  In this session, we will partially implement the RITA beacon analyzer in jupyter notebook and analyze a dataset that was generated and shared with the community by Ali Aswahali(@ali_alwashali). The dataset comprises of  around 2M records created from all "malware-traffic-analysis.net" PCAP files, from 2013 to 2021.
+  The audience will be able to use the notebook, replicate the analysis, and , hopefully, use it in their environments. 

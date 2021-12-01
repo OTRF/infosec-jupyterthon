@@ -1,0 +1,15 @@
+title: SSH Session Hijack Analytic
+speaker:
+  - name: Shachar Roitman
+    job_title: Security Researcher
+    company: Palo Alto Networks
+    twitter: "@shacharoitman"
+    bio: >-
+      Shachar Roitman is a Security Researcher at Palo Alto Networks.
+      She’s passionate about creating analytics to detect attacks and spot anomalies. With over 6 years of industry experience, Shachar started her career in the IDF in IR and threat hunting before being recruited as a Security Researcher by Verint, where she utilized Pandas and Jupyter in the EDR/XDR space.
+date: '2021-12-03'
+time: '14:15'
+abstract: >-
+  SSH session hijacking is a technique used by adversaries that may lead to lateral movement and privilege escalation.
+  In the lecture we will go through why each logic is selected, what we can and cant see in the data , which indicators helped, why combining weak hypothesis is important when you dont have a strong indication and how to explore it.
+  https://hx015.medium.com/ssh-session-hijack-analytic-a2c684ba410f

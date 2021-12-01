@@ -1,30 +1,30 @@
 title: GPU-era Hunting of MBs/GBs/TBs- Graph Visualization & Wrangling
 speaker:
-    - name: Leo Meyerovich
-      job_title: CEO & Founder
-      company: Graphistry
-      twitter:
-      bio: >-
-        2 mini-sessions in one!
-        1. One honeypot event log, many graphs: A notebook tour of visual modeling of event data
-          - physical data: network connectivity graph, identity graph, ...
-          - metadata: multigraphs, hypergraphs, & handling time
-          - inferred data: k-core, ...
-          - AI embeddings: tabular + graph
-          - Making it practical: streamlit/databricks/graphistry dashboarding so your team doesn't hate you
-        2. The GPU-accelerated SOC: Going from pandas notebooks to 100GB/s AI
-        - pandas -> cudf: single gpu
-        - cudf -> dask-cudf: multi-gpu / bigger than memory gpu
-        - examples of normal DF ops and trickier corners like strings, graph partitions, & watching your memory
-        - discussion of going 100GB/s by thinking about parallel IO sw/hw (GPU Direct)
-        
-        Please RSVP (first 50 people!) for private GPU Paperspace+Graphistry accounts:
-        https://docs.google.com/forms/d/e/1FAIpQLSc7-RluHmzzEpgUsmEDzEETGJRhFW9p-aqHtth4DO7BKZSmrQ/viewform
+  - name: Leo Meyerovich
+    job_title: CEO & Founder
+    company: Graphistry
+    twitter: "@lmeyerov"
+    bio: >-
+      Leo Meyerovich is the founder & CEO of Graphistry, the first GPU-accelerated visual graph intelligence platform.
+      Federal, enterprise, science, and tech teams use Graphistry on problems like threat hunting, anti-fraud, and cancer genomics.
+      Leo's past research at UC Berkeley (PhD) and Brown (ScB) in high performance computing, security, and programming language design received the SIGPLAN 10 Year Test of Time award, multiple best paper awards, and is published in CACM, Security & Privacy, WWW, and others.
+      Several of the ideas are now common in browsers (parallelization), web frameworks (functional reactivity), and cloud infrastructure providers (security verification).
+      As part of Graphistry, he helped start the GPU dataframe ecosystem, the initial Apache Arrow implementation, and the medical anti-misinformation open AI effort Project Domino.
 date: '2021-12-02'
-time: 4:50pm-5:30pm
+time: '16:50'
 abstract: >-
-  Leo Meyerovich is the founder & CEO of Graphistry, the first GPU-accelerated visual graph intelligence platform.
-  Federal, enterprise, science, and tech teams use Graphistry on problems like threat hunting, anti-fraud, and cancer genomics.
-  Leo's past research at UC Berkeley (PhD) and Brown (ScB) in high performance computing, security, and programming language design received the SIGPLAN 10 Year Test of Time award, multiple best paper awards, and is published in CACM, Security & Privacy, WWW, and others.
-  Several of the ideas are now common in browsers (parallelization), web frameworks (functional reactivity), and cloud infrastructure providers (security verification).
-  As part of Graphistry, he helped start the GPU dataframe ecosystem, the initial Apache Arrow implementation, and the medical anti-misinformation open AI effort Project Domino.
+  2 mini-sessions in one!
+  1. One honeypot event log, many graphs: A notebook tour of visual modeling of event data
+  - physical data: network connectivity graph, identity graph, ...
+  - metadata: multigraphs, hypergraphs, & handling time
+  - inferred data: k-core, ...
+  - AI embeddings: tabular + graph
+  - Making it practical: streamlit/databricks/graphistry dashboarding so your team doesn't hate you
+  2. The GPU-accelerated SOC: Going from pandas notebooks to 100GB/s AI
+  - pandas -> cudf: single gpu
+  - cudf -> dask-cudf: multi-gpu / bigger than memory gpu
+  - examples of normal DF ops and trickier corners like strings, graph partitions, & watching your memory
+  - discussion of going 100GB/s by thinking about parallel IO sw/hw (GPU Direct)
+  Please RSVP (first 50 people!) for private GPU Paperspace+Graphistry accounts:
+  https://docs.google.com/forms/d/e/1FAIpQLSc7-RluHmzzEpgUsmEDzEETGJRhFW9p-aqHtth4DO7BKZSmrQ/viewform
+  

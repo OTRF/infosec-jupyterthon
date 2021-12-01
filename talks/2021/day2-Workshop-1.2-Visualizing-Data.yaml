@@ -1,0 +1,33 @@
+title: Workshop 1.2 - Visualizing Data
+speaker:
+  - name: Jose Rodriguez
+    job_title: Researcher
+    company: MITRE ATT&CK
+    twitter: "@Cyb3rPandah"
+    bio: >-
+      Jose is a cyber threat researcher collaborating with the ATT&CK team to improve the data sources aspect of the framework.
+      He is interested in applying data science into cybersecurity to develop effective cyber threat hunting campaigns.
+      He is one of the founders of the Open Threat Research (OTR) community.
+  - name: Ashwin Patil
+    job_title: Senior Program Manager
+    company: Microsoft
+    twitter: "@ashwinpatil"
+    bio: >-
+      Ashwin Patil currently works as Senior Program Manager for Microsoft Threat Intelligence Center (MSTIC) and has over 10 years of experience entirely focused on Security monitoring and Incident Response defending enterprise networks.
+      In his current role, he primarily works on threat hunting , detection research in KQL (Kusto Query Language) for Azure Sentinel and develop Jupyter notebooks written in Python/R to do threat hunting and investigation across variety of cloud and on-premise security event log data sources.
+      He has Bachelor degree in Computer Engineering and also have certified with various SANS certifications such as GCIA, GCFE, GCIH in the field of Digital Forensics and Incident Response (DFIR).
+      He has previously spoken at conferences first JupyterThon, SANS Purple team summit, blue team village etc on topics threat hunting on cloud datasets and Jupyter Notebooks.
+  - name: Pete Bryan
+    job_title: Something about security
+    company: Microsoft
+    twitter: "@MSSPete"
+    bio: >-
+      Pete works as a security research at Microsoft Threat Intelligence Center (MSTIC) - he is a regular notebook user and a co-author of the MSTICPy Python security tool package.
+  - name: Ian Hellen
+    job_title: Principal Developer and Security Engineer
+    company: Microsoft
+    twitter: "@ianhellen"
+    bio: >-
+date: '2021-12-03'
+time: '09:30'
+abstract: >-

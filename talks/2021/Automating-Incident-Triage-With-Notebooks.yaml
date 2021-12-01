@@ -1,0 +1,14 @@
+title: Automating Incident Triage with Notebooks
+speaker:
+  - name: Pete Bryan
+    job_title: Something about security
+    company: Microsoft
+    twitter: "@MSSPete"
+    bio: >-
+      Pete works as a security research at Microsoft Threat Intelligence Center (MSTIC) - he is a regular notebook user and a co-author of the MSTICPy Python security tool package.
+date: '2021-12-03'
+time: '13:00'
+abstract: >-
+  Incident triage is a fundamental part of SOC work, and ensuring efficient and accurate triage results can be the key to catching and responding to major security incidents.
+  Despite its criticality triage is often a very manual task with little quality control.
+  In this presentation we will talk about how Notebooks, and automated execution of them can be used to help create a software defined triage process that helps analysts by providing additional context, saves them time be pre-producing data, and validates their work to ensure quality, reputability, and auditability. 

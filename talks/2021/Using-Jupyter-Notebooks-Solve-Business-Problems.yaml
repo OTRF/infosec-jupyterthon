@@ -1,15 +1,15 @@
 title: Using Jupyter Notebooks to Solve A Variety of Business Problems
 speaker:
-    - name: Elisabeth Weber
-      job_title: Principal Data Scientist
-      company: Expel
-      twitter:
-      bio: >-
-        Elisabeth Weber is a Data Scientist at Expel, a managed detection and response security provider.
-        In her role at Expel, she works on a variety of data science projects, largely focused on improving the efficiency of SOC analysts.
-        Prior to joining Expel, she worked as a Data Scientist in market research for five years at Nielsen.
+  - name: Elisabeth Weber
+    job_title: Principal Data Scientist
+    company: Expel
+    twitter:
+    bio: >-
+      Elisabeth Weber is a Data Scientist at Expel, a managed detection and response security provider.
+      In her role at Expel, she works on a variety of data science projects, largely focused on improving the efficiency of SOC analysts.
+      Prior to joining Expel, she worked as a Data Scientist in market research for five years at Nielsen.
 date: '2021-12-02'
-time: 1:00pm-1:35pm
+time: '13:00'
 abstract: >-
   Notebooks are a powerful tool — we all love simplifying the gap between research, presentation, and delivery of results, right?
   However, the best way to use notebooks is often different depending on the end consumer of the information you’re providing.

@@ -1,0 +1,27 @@
+title: Workshop 1.2 - Acquiring Data
+speaker:
+  - name: Roberto Rodriguez
+    job_title: Principal Threat Researcher
+    company: Microsoft
+    twitter: "@Cyb3rWard0g"
+    bio: >-
+      Roberto Rodriquez is a Principal Threat Researcher and Security engineer at the Microsoft Threat Intelligence Center (MSTIC) R&D team.
+      He is the founder of the Open Threat Research (OTR) community and author of several open source projects, such as the Threat Hunter Playbook, OSSEM, SimuLand, Cloud Katana, ATT&CK Python Client, and more.
+      OTR GitHub Open Organization: https://github.com/OTRF.
+  - name: Jose Rodriguez
+    job_title: Researcher
+    company: MITRE ATT&CK
+    twitter: "@Cyb3rPandah"
+    bio: >-
+      Jose is a cyber threat researcher collaborating with the ATT&CK team to improve the data sources aspect of the framework.
+      He is interested in applying data science into cybersecurity to develop effective cyber threat hunting campaigns.
+      He is one of the founders of the Open Threat Research (OTR) community.
+  - name: Pete Bryan
+    job_title: Something about security
+    company: Microsoft
+    twitter: "@MSSPete"
+    bio: >-
+      Pete works as a security research at Microsoft Threat Intelligence Center (MSTIC) - he is a regular notebook user and a co-author of the MSTICPy Python security tool package.
+date: '2021-12-02'
+time: '09:20'
+abstract: >-
