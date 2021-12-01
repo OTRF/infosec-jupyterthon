@@ -1,53 +1,101 @@
-.sphinx-tabs {
-  margin-bottom: 1rem;
+:root {
+  --tabs--label-text: #8c8c8c;
+  --tabs--label-text--active: #368ce2;
+  --tabs--label-text--hover: #1d73c9;
+  --tabs--label-background--active: transparent;
+  --tabs--label-background--hover: #f7f7f7;
+  --tabs--border: #e6e6e6;
+  --tabs--border--active: var(--tabs--label-text--active);
+}
+/* Hide radio buttons */
+.tab-set > input {
+  position: absolute;
+  opacity: 0;
 }
 
-[role="tablist"] {
-  border-bottom: 1px solid #a0b3bf;
-}
-
-.sphinx-tabs-tab {
+/* Tab set container */
+.tab-set {
+  border-radius: 2px;
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0.75em 0;
   position: relative;
-  font-family: Lato,'Helvetica Neue',Arial,Helvetica,sans-serif;
-  color: #1D5C87;
-  line-height: 24px;
-  margin: 0;
-  font-size: 16px;
-  font-weight: 400;
-  background-color: rgba(255, 255, 255, 0);
-  border-radius: 5px 5px 0 0;
-  border: 0;
-  padding: 1rem 1.5rem;
+}
+
+/* Tab label */
+.tab-set > label {
+  z-index: 1;
+
+  width: auto;
+  border-bottom: 2px solid transparent;
+  padding: 1em 1.25em 0.5em;
+
+  color: var(--tabs--label-text);
+  transition: color 250ms;
+
+  cursor: pointer;
+
+  font-size: 0.875em;
+  font-weight: 700;
+}
+
+/* Active tab label */
+.tab-set > input:checked + label {
+  color: var(--tabs--label-text--active);
+  background: var(--tabs--label-background--active);
+  border-color: var(--tabs--border--active);
+}
+.tab-set > input:checked + label:hover {
+  border-color: var(--tabs--border--active);
+}
+
+/* Focused tab label */
+.tab-set > input:focus + label {
+  outline-style: auto;
+}
+
+.tab-set > input:not(.focus-visible) + label {
+  outline: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* Hovered label */
+html .tab-set > label:hover {
+  color: var(--tabs--label-text--hover);
+  background: var(--tabs--label-background--hover);
+  border-color: var(--tabs--border);
+}
+
+/* Tab content */
+.tab-content {
+  order: 99;
+  display: none;
+  width: 100%;
+  box-shadow: 0 -0.0625rem var(--tabs--border);
+}
+/* Show content, when input is checked. */
+.tab-set > input:checked + label + .tab-content {
+  display: block;
+}
+.tab-content > p:first-child {
+  margin-top: 0.75rem;
+}
+/* Remove the top border on first code block */
+.tab-content > [class^="highlight-"]:first-child .highlight {
+  border-top: none;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+
+/* Remove margins on children */
+.tab-content > *:first-child {
+  margin-top: 0;
+}
+.tab-content > *:last-child {
   margin-bottom: 0;
 }
 
-.sphinx-tabs-tab[aria-selected="true"] {
-  font-weight: 700;
-  border: 1px solid #a0b3bf;
-  border-bottom: 1px solid white;
-  margin: -1px;
-  background-color: white;
-}
-
-.sphinx-tabs-tab:focus {
-  z-index: 1;
-  outline-offset: 1px;
-}
-
-.sphinx-tabs-panel {
-  position: relative;
-  padding: 1rem;
-  border: 1px solid #a0b3bf;
-  margin: 0px -1px -1px -1px;
-  border-radius: 0 0 5px 5px;
-  border-top: 0;
-  background: white;
-}
-
-.sphinx-tabs-panel.code-tab {
-  padding: 0.4rem;
-}
-
-.sphinx-tab img {
-	margin-bottom: 24 px;
+/* Remove margins on nested tabs */
+.tab-content > .tab-set {
+  margin: 0;
 }
