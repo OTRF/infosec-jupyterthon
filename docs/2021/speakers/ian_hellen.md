@@ -1,2 +1,12 @@
 # Ian Hellen
 
+Ian is a Principal Software Engineer in the Microsoft Intelligence Center.
+Mainly working in Python and Jupyter notebooks, he is the original author
+and current co-author/maintainer of [MSTICPy](https://github.com/microsoft/msticpy)
+(with Pete Bryan and Ashwin Patil). Together, we also contribute a lot of
+Jupyter notebooks to [Microsoft Sentinel](https://github.com/Azure/Azure-Sentinel-Notebooks)
+
+When not working on security projects, he likes: music, skiing, scuba diving,
+hiking, raspberry PIs, science and NYTimes Sunday crosswords.
+
+Twitter: [@ianhellen](https://twitter.com/ianhellen)
