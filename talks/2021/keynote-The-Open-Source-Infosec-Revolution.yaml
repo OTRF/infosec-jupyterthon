@@ -1,17 +1,22 @@
 title: Keynote - The Open Source InfoSec Revolution
 speaker:
-    - name: John Lambert
-      job_title: Microsoft Threat Intelligence Center (MSTIC) GM
-      company: Microsoft
-      twitter: "@JohnLaTwC"
-      bio: >-
-        John Lambert holds the title of Distinguished Engineer and is the General Manager of the Microsoft Threat Intelligence Center.
-        The Center is responsible for detecting and disrupting adversary-based threats aimed at Microsoft and its customers.
-        Its mission is to drive detective innovations into products and services to raise the ability for every defender to deal with adversary-based threats through security research, threat intelligence, forensics, and data science.
-        Previously at Microsoft, Lambert worked in the Trustworthy Computing group for ten years and the Windows Security group on features related to cryptography and security management.
-        He joined Microsoft after three years at IBM as a developer in their software group.
-        Lambert holds a bachelor’s degree in computer science from Tulane University and is named on more than nine software patents and seven pending applications.
+  - name: John Lambert
+    job_title: Microsoft Threat Intelligence Center (MSTIC) GM
+    company: Microsoft
+    twitter: "@JohnLaTwC"
+    bio: >-
+      John Lambert holds the title of Distinguished Engineer and is the General Manager of the Microsoft Threat Intelligence Center.
+      The Center is responsible for detecting and disrupting adversary-based threats aimed at Microsoft and its customers.
+      Its mission is to drive detective innovations into products and services to raise the ability for every defender to deal with adversary-based threats through security research, threat intelligence, forensics, and data science.
+      Previously at Microsoft, Lambert worked in the Trustworthy Computing group for ten years and the Windows Security group on features related to cryptography and security management.
+      He joined Microsoft after three years at IBM as a developer in their software group.
+      Lambert holds a bachelor’s degree in computer science from Tulane University and is named on more than nine software patents and seven pending applications.
 date: '2021-12-02'
-time: 11:40am-12:05pm
+time: '11:40'
 abstract: >-
-  The Open Source InfoSec Revolution
+  "If you want to go fast, go alone, if you want to go far, go together"
+  The sharing of knowledge, techniques and tools through open collaboration is key to cyber defense.
+  Initiatives like SIGMA, MITRE ATT&CK, Jupyter and OTRF allow defenders to pool resources to combat increasingly sophisticated and coordinated adversaries.
+  Integrating open source tools like Jupyter into your SOC processes is not without cost: there is a learning curve that can appear steep.
+  Is it worth the investment? Where do I start? What is the payback?
+  John will describe his journey with Jupyter notebooks in Infosec to try to answer these questions.

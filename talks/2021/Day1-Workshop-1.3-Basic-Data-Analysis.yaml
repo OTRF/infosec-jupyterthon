@@ -1,0 +1,24 @@
+title: Workshop 1.3 - Basic of Data Analysis
+speaker:
+  - name: Jose Rodriguez
+    job_title: Researcher
+    company: MITRE ATT&CK
+    twitter: "@Cyb3rPandah"
+    bio: >-
+      Jose is a cyber threat researcher collaborating with the ATT&CK team to improve the data sources aspect of the framework.
+      He is interested in applying data science into cybersecurity to develop effective cyber threat hunting campaigns.
+      He is one of the founders of the Open Threat Research (OTR) community.
+  - name: Pete Bryan
+    job_title: Something about security
+    company: Microsoft
+    twitter: "@MSSPete"
+    bio: >-
+      Pete works as a security research at Microsoft Threat Intelligence Center (MSTIC) - he is a regular notebook user and a co-author of the MSTICPy Python security tool package.
+  - name: Ian Hellen
+    job_title: Principal Developer and Security Engineer
+    company: Microsoft
+    twitter: "@ianhellen"
+    bio: >-
+date: '2021-12-02'
+time: '10:35'
+abstract: >-

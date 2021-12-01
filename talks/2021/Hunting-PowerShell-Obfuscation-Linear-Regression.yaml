@@ -1,0 +1,18 @@
+title: Hunting Powershell Obfuscation with Linear Regression
+speaker:
+  - name: Joe Petroske
+    job_title: Cyber Threat Hunter
+    company: Target
+    twitter:
+    bio: >-
+      Joe Petroske is a Cyber Threat Hunter for Target's Cyber Defense Team.
+      A 15-year security veteran with experience in the retail and agribusiness sectors, he works to find weird signals in all the noise.
+      Joe holds the CISSP, GCIA, GCIH, GCFA, and CREA certifications, and a master’s degree in Software Engineering and Computer Security from the University of St. Thomas in St. Paul, Minnesota.
+date: '2021-12-03'
+time: '14:50'
+abstract: >-
+  Powershell obfuscation is commonly used by adversaries because it allows for native code execution, and it evades static string detection.
+  There’s no way to write static detection for all possible obfuscation techniques.
+  Instead, let’s go hunt for the obfuscation! It turns out that for normal/non-obfuscated Powershell commands, there are strong correlations between the length of a command and the count of various characters in that command.
+  We can use statistical techniques such as Linear Regression to find commands that don’t match our expected correlations, and therefore have a higher chance of being obfuscated.
+  This presentation will demonstrate an effective technique for finding these outliers.

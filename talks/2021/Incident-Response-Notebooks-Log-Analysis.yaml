@@ -1,15 +1,15 @@
 title: Incident response notebooks - Log Análisis
 speaker:
-    - name: Luis F Monge
-      job_title: Forensic analyst and incident handler
-      company: Telefónica
-      twitter:
-      bio: >-
-        Digital forensic and incident handler at Telefónica responding to cyber attacks in large companies.
-        Previously, I was working as a cybersecurity researcher at the National Cybersecurity Institute of Spain, supporting law enforcement in cyber investigations.
-        Prior to this I served as a systems administrator in the Military Emergency Unit for over 9 years.
+  - name: Luis F Monge
+    job_title: Forensic analyst and incident handler
+    company: Telefónica
+    twitter: "@Lukky86"
+    bio: >-
+      Digital forensic and incident handler at Telefónica responding to cyber attacks in large companies.
+      Previously, I was working as a cybersecurity researcher at the National Cybersecurity Institute of Spain, supporting law enforcement in cyber investigations.
+      Prior to this I served as a systems administrator in the Military Emergency Unit for over 9 years.
 date: '2021-12-02'
-time: 2:15pm-2:50pm
+time: '14:15'
 abstract: >-
   Log analysis is a big problem in incident response.  It is common for an incident to have to analyze gigabytes of events, usually in unhelpful formats.
   During the presentation, a proposal for the parsing, filtering and analysis of these events will be shown.  In the same way, it will talk about the limitations of pandas for the analysis of large amounts of data and how these situations can be handled.
