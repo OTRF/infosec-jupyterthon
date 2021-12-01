@@ -68,7 +68,7 @@ RUN set -x && \
 ENV PATH /opt/conda/envs/env/bin:$PATH
 # Environment variable for Pip and conda packages to be installed
 ENV INSTALL_CONDA_PACKAGES jupyter_contrib_nbextensions jupyterthemes selenium phantomjs autopep8 plotly qgrid black pandas-profiling rise vega vega_datasets
-ENV INSTALL_PIP_PACKAGES azure-cli jupyterlab-git pyvis setuptools_git pandas-bokeh nbcommands awscli attackcti splunk-sdk elasticsearch elasticsearch-dsl geoip2 untangle huntlib requests requests-html graphistry openhunt==1.6.6
+ENV INSTALL_PIP_PACKAGES azure-cli jupyterlab-git pyvis setuptools_git pandas-bokeh nbcommands awscli attackcti splunk-sdk elasticsearch elasticsearch-dsl geoip2 untangle huntlib requests requests-html graphistry openhunt==1.6.6 jupyter_bokeh
 ENV INSTALL_MSTICPY_DEV_PACKAGES aiohttp>=3.0.0 bandit>=1.7.0 beautifulsoup4 black>=20.8b1 coverage>=5.5 filelock>=3.0.0 flake8>=3.8.4 markdown>=3.3.4 mccabe>=0.6.1 mypy>=0.812 nbdime>=2.1.0 pep8-naming>=0.10.0 pep8>=1.7.1 pipreqs>=0.4.9 prospector>=1.3.1 pycodestyle>=2.6.0 pydocstyle>=6.0.0 pyflakes>=2.2.0 pylint>=2.5.3 pyroma>=3.1 pytest-check>=1.0.1 pytest-cov>=2.11.1 pytest>=5.0.1 responses>=0.13.2 sphinx>=2.1.2 sphinx_rtd_theme>=0.5.1 virtualenv 
 # Install conda and pip packages 
 RUN conda install --quiet --yes ${INSTALL_CONDA_PACKAGES} && \
