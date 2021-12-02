@@ -1,0 +1,974 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Workshop 1.1: Jupyter Notebooks Introduction</title>
+    
+  <link href="../../_static/css/theme.css" rel="stylesheet" />
+  <link href="../../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+
+    
+  <link rel="stylesheet"
+    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/sphinx-book-theme.acff12b8f9c144ce68a297486a2fa670.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/tabs.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/tabs.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../../_static/js/index.1c5a1a01449ed65a7b51.js">
+
+    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script src="../../_static/tabs.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <link rel="canonical" href="https://infosecjupyterthon.com/workshops/day1/day1-1-Jupyter-Introduction.html" />
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Workshop 1.2: Acquiring Data" href="day1-2-Acquiring-data.html" />
+    <link rel="prev" title="Day 1" href="intro.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../../index.html">
+      
+      <img src="../../_static/logo.png" class="logo" alt="logo">
+      
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <div class="bd-toc-item active">
+        <p class="caption">
+ <span class="caption-text">
+  Editions
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../2021/agenda.html">
+   2021 Edition
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../../2021/sessions/intro.html">
+     Sessions
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+    <label for="toctree-checkbox-2">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../2021/sessions/day1-0-welcome.html">
+       <font color="peru">
+        Welcome to the InfoSec Jupyterthon 2021!
+       </font>
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../../2021/speakers/intro.html">
+     Speakers
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+    <label for="toctree-checkbox-3">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../2021/speakers/pete_bryan.html">
+       Pete Bryan
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../2021/speakers/roberto_rodriguez.html">
+       Roberto Rodriguez
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../2021/speakers/jose_rodriguez.html">
+       Jose Rodriguez
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../2021/speakers/ian_hellen.html">
+       Ian Hellen
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../2021/speakers/ashwin_patil.html">
+       Ashwin Patil
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../2021/speakers/luis_f_monge.html">
+       Luis F Monge
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../2021/speakers/mehmet_ergene.html">
+       Mehmet Ergene
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../2021/speakers/leo_meyerovich.html">
+       Leo Meyerovich
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../2021/speakers/joe_petroske.html">
+       Joe Petroske
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../2021/speakers/john_lambert.html">
+       John Lambert
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../2021/speakers/neil_desai.html">
+       Neil Desai
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../2021/speakers/neal_shenk.html">
+       Neal Shenk
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../2021/speakers/sil_han.html">
+       Sil Han
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../2021/speakers/natanela_brod.html">
+       Natanela Brod
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../2021/speakers/xiaokui_shu.html">
+       Xiaokui Shu
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../2021/speakers/mark_kendrick.html">
+       Mark Kendrick
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../2021/speakers/shachar_roitman.html">
+       Shachar Roitman
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../2021/speakers/elisabeth_weber.html">
+       Elisabeth Weber
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../2020/agenda.html">
+   2020 Edition
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+  <label for="toctree-checkbox-4">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../2020/notebooks/0_banner.html">
+     Infosec Jupyterthon 2020!
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../2020/notebooks/1_what_about_notebooks.html">
+     <font color="peru">
+      Welcome Infosec Community!
+     </font>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../2020/notebooks/2_Jupyterthon_Cyb3rPandaH_2020.html">
+     ATT&amp;CK - APT29 Evals Datasets
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../2020/notebooks/6_OSQuery-Tables-interactive_Jupyterthon.html">
+     Untangling the Osquery❓ tables web🕸 using Jupyter Notebooks📓
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../2020/notebooks/12_Jupyterthon-TimeSeries-Demo.html">
+     Anomaly detection and visualization using Time Series Decomposition
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Workshops
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="intro.html">
+   Day 1
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+  <label for="toctree-checkbox-5">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     Workshop 1.1:
+     <font color="peru">
+      Jupyter Notebooks Introduction
+     </font>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="day1-2-Acquiring-data.html">
+     Workshop 1.2:
+     <font color="peru">
+      Acquiring Data
+     </font>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="day1-3-Data-Analysis-with-Pandas%20Intro.html">
+     Workshop 1.3:
+     <font color="peru">
+      Basics of Data Analysis with Pandas
+     </font>
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../day2/intro.html">
+   Day 2
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
+  <label for="toctree-checkbox-6">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../day2/day2-1-Jupyter-advanced-topics.html">
+     Workshop 2.1:
+     <font color="peru">
+      Jupyter Notebooks Advanced
+     </font>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../day2/day2-1-R-demo-notebook.html">
+     Workshop 2.1:
+     <font color="peru">
+      R Demo Notebook
+     </font>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../day2/day2-2-Visualization.html">
+     Workshop 2.2:
+     <font color="peru">
+      Visualization in Jupyter Notebooks
+     </font>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../day2/day2-3-Advanced-pandas.html">
+     Workshop 2.3:
+     <font color="peru">
+      Advanced Pandas
+     </font>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../day2/day2-4-MSTICPy.html">
+     Workshop 2.4:
+     <font color="peru">
+      MSTICPy
+     </font>
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../../_sources/workshops/day1/day1-1-Jupyter-Introduction.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        
+        
+        <a class="edit-button" href="https://github.com/OTRF/infosec-jupyterthon/edit/master/docs/workshops/day1/day1-1-Jupyter-Introduction.ipynb"><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Edit this page"><i class="fas fa-pencil-alt"></i>suggest edit</button></a>
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/OTRF/infosec-jupyterthon/master?urlpath=tree/docs/workshops/day1/day1-1-Jupyter-Introduction.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   Workshop 1.1:
+   <font color="peru">
+    Jupyter Notebooks Introduction
+   </font>
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#font-color-peru-overview-font">
+   <font color="peru">
+    Overview
+   </font>
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#font-color-dimgray-getting-up-to-speed-font">
+   <font color="dimgray">
+    Getting up to speed..
+   </font>
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id1">
+   <font color="dimgray">
+    Getting up to speed..
+   </font>
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#font-color-dimgray-what-is-interactive-computing-font">
+   <font color="dimgray">
+    What is Interactive Computing?
+   </font>
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#font-color-dimgray-interactivity-as-a-protocol-font">
+   <font color="dimgray">
+    Interactivity as a Protocol
+   </font>
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#font-color-dimgray-ipython-font">
+   <font color="dimgray">
+    IPython
+   </font>
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#font-color-dimgray-fernando-perez-inspiration-font">
+   <font color="dimgray">
+    Fernando Perez Inspiration
+   </font>
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#font-color-dimgray-ipython-jupyter-project-font">
+   <font color="dimgray">
+    IPython -&gt; Jupyter Project
+   </font>
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#font-color-dimgray-what-are-jupyter-notebooks-font">
+   <font color="dimgray">
+    What are Jupyter Notebooks?
+   </font>
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#font-color-dimgray-what-does-it-look-like-font">
+   <font color="dimgray">
+    What does it look like?
+   </font>
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#font-color-peru-architecture-font">
+   <font color="peru">
+    Architecture
+   </font>
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#font-color-dimgray-architecture-interactive-protocol-font">
+   <font color="dimgray">
+    Architecture (Interactive Protocol)
+   </font>
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#font-color-peru-installation-font">
+   <font color="peru">
+    Installation
+   </font>
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#font-color-dimgray-installing-jupyter-notebooks-manually-font">
+   <font color="dimgray">
+    Installing Jupyter Notebooks (Manually)
+   </font>
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#font-color-dimgray-installing-jupyter-notebooks-docker-ce-font">
+   <font color="dimgray">
+    Installing Jupyter Notebooks (Docker CE)
+   </font>
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#font-color-dimgray-enter-binder-project-font">
+   <font color="dimgray">
+    Enter Binder Project
+   </font>
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#font-color-dimgray-binderhub-font">
+   <font color="dimgray">
+    BinderHub
+   </font>
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#font-color-dimgray-binderhub-flow-font">
+   <font color="dimgray">
+    BinderHub Flow
+   </font>
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#font-color-dimgray-let-s-try-it-font">
+   <font color="dimgray">
+    Let’s Try it!
+   </font>
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#font-color-peru-jupyter-flavors-font">
+   <font color="peru">
+    Jupyter Flavors
+   </font>
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#font-color-dimgray-enter-jupyter-book-font">
+   <font color="dimgray">
+    Enter Jupyter Book
+   </font>
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#font-color-dimgray-resources-font">
+   <font color="dimgray">
+    Resources
+   </font>
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#font-color-peru-break-5-minutes-font">
+   <font color="peru">
+    Break: 5 Minutes
+   </font>
+  </a>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <p><img alt="Banner" src="../../_images/banner11.png" /></p>
+<hr class="docutils" />
+<div class="section" id="workshop-1-1-font-color-peru-jupyter-notebooks-introduction-font">
+<h1>Workshop 1.1: <font color=peru>Jupyter Notebooks Introduction</font><a class="headerlink" href="#workshop-1-1-font-color-peru-jupyter-notebooks-introduction-font" title="Permalink to this headline">¶</a></h1>
+<ul class="simple">
+<li><p><strong>Contributors</strong>:</p>
+<ul>
+<li><p>Roberto Rodriguez (&#64;Cyb3rWard0g)</p></li>
+<li><p>Jose Rodriguez (&#64;Cyb3rPandah)</p></li>
+</ul>
+</li>
+<li><p><strong>Agenda</strong>:</p>
+<ul>
+<li><p>Overview</p></li>
+<li><p>Architecture</p></li>
+<li><p>Deployment</p></li>
+<li><p>Jupyter Flavors</p></li>
+</ul>
+</li>
+<li><p><strong>Notebook</strong>: <a class="reference external" href="https://infosecjupyterthon.com/introduction.html">https://infosecjupyterthon.com/introduction.html</a></p></li>
+<li><p><strong>License</strong>: <a class="reference external" href="https://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International</a></p></li>
+</ul>
+</div>
+<div class="section" id="font-color-peru-overview-font">
+<h1><font color=peru>Overview</font><a class="headerlink" href="#font-color-peru-overview-font" title="Permalink to this headline">¶</a></h1>
+</div>
+<div class="section" id="font-color-dimgray-getting-up-to-speed-font">
+<h1><font color=dimgray>Getting up to speed..</font><a class="headerlink" href="#font-color-dimgray-getting-up-to-speed-font" title="Permalink to this headline">¶</a></h1>
+<p><img alt="" src="../../_images/timeline1.png" /></p>
+</div>
+<div class="section" id="id1">
+<h1><font color=dimgray>Getting up to speed..</font><a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
+<p><img alt="" src="../../_images/timeline-ipython1.png" /></p>
+</div>
+<div class="section" id="font-color-dimgray-what-is-interactive-computing-font">
+<h1><font color=dimgray>What is Interactive Computing?</font><a class="headerlink" href="#font-color-dimgray-what-is-interactive-computing-font" title="Permalink to this headline">¶</a></h1>
+<p>An Interactive computation is a persistent computer program that runs with a <strong>“human in the loop”</strong> where the primary mode of steering the program is through the human iteratively writing/running blocks of code and looking at the result.</p>
+<p>Reference:<a class="reference external" href="https://www.youtube.com/watch?v=YKmJvHjTGAM&amp;list=PL055Epbe6d5aP6Ru42r7hk68GTSaclYgi&amp;index=29">https://www.youtube.com/watch?v=YKmJvHjTGAM&amp;list=PL055Epbe6d5aP6Ru42r7hk68GTSaclYgi&amp;index=29</a></p>
+</div>
+<div class="section" id="font-color-dimgray-interactivity-as-a-protocol-font">
+<h1><font color=dimgray>Interactivity as a Protocol</font><a class="headerlink" href="#font-color-dimgray-interactivity-as-a-protocol-font" title="Permalink to this headline">¶</a></h1>
+<ul class="simple">
+<li><p>Read-Evaluate-Print Loop (REPL):</p>
+<ul>
+<li><p>Takes a single user’s inputs</p></li>
+<li><p>Evaluates them</p></li>
+<li><p>Returns the result to the user</p></li>
+</ul>
+</li>
+<li><p>A two-process model based on a kernel-client infrastructure</p>
+<ul>
+<li><p>Kernel: Executes code</p></li>
+<li><p>Client: Reads input and present output</p></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="font-color-dimgray-ipython-font">
+<h1><font color=dimgray>IPython</font><a class="headerlink" href="#font-color-dimgray-ipython-font" title="Permalink to this headline">¶</a></h1>
+<ul class="simple">
+<li><p>Released on Dec 10, 2001 by Fernando Perez while he was a graduate student at the University of Colorado</p>
+<ul>
+<li><p>Release: <a class="reference external" href="https://mail.python.org/pipermail/python-list/2001-December/093408.html">https://mail.python.org/pipermail/python-list/2001-December/093408.html</a></p></li>
+</ul>
+</li>
+<li><p>IPython as we know it today grew out of the following three projects:</p>
+<ul>
+<li><p>ipython by Fernando Pérez.</p></li>
+<li><p>IPP by Janko Hauser.</p></li>
+<li><p>LazyPython by Nathan Gray.</p></li>
+</ul>
+</li>
+</ul>
+<p>Reference: <a class="reference external" href="https://ipython.readthedocs.io/en/stable/about/history.html">https://ipython.readthedocs.io/en/stable/about/history.html</a></p>
+<p><img alt="" src="../../_images/python-ipython-notebook1.png" />
+Reference: <a class="reference external" href="https://ipython.readthedocs.io/en/stable/interactive/python-ipython-diff.html">https://ipython.readthedocs.io/en/stable/interactive/python-ipython-diff.html</a></p>
+</div>
+<div class="section" id="font-color-dimgray-fernando-perez-inspiration-font">
+<h1><font color=dimgray>Fernando Perez Inspiration</font><a class="headerlink" href="#font-color-dimgray-fernando-perez-inspiration-font" title="Permalink to this headline">¶</a></h1>
+<ul class="simple">
+<li><p>Research with open tools for access and collaboration</p>
+<ul>
+<li><p>Validated in SciPy India 2010 - Workshop to include students from underprivileged colleges in rural India.</p></li>
+</ul>
+</li>
+<li><p>Scientific</p>
+<ul>
+<li><p>Business of science is to understand nature</p></li>
+<li><p>Science is about opening up the black boxes nature</p></li>
+</ul>
+</li>
+<li><p>Community!</p>
+<ul>
+<li><p>SciPy: Scientists collaborating and building better tools together!</p></li>
+<li><p>Less competitions and more collaboration!</p></li>
+</ul>
+</li>
+</ul>
+<p>reference: <a class="reference external" href="https://www.youtube.com/watch?v=xuNj5paMuow&amp;list=PL055Epbe6d5aP6Ru42r7hk68GTSaclYgi">https://www.youtube.com/watch?v=xuNj5paMuow&amp;list=PL055Epbe6d5aP6Ru42r7hk68GTSaclYgi</a></p>
+</div>
+<div class="section" id="font-color-dimgray-ipython-jupyter-project-font">
+<h1><font color=dimgray>IPython -&gt; Jupyter Project</font><a class="headerlink" href="#font-color-dimgray-ipython-jupyter-project-font" title="Permalink to this headline">¶</a></h1>
+<p><img alt="" src="../../_images/ipython-to-jupyter1.png" /></p>
+<p><img alt="" src="../../_images/ipython-features1.png" /></p>
+<p>Reference: <a class="reference external" href="https://speakerdeck.com/fperez/project-jupyter?slide=5">https://speakerdeck.com/fperez/project-jupyter?slide=5</a></p>
+<p><img alt="" src="../../_images/ipython-jupyter-features1.png" /></p>
+<p>Reference: <a class="reference external" href="https://speakerdeck.com/fperez/project-jupyter?slide=5">https://speakerdeck.com/fperez/project-jupyter?slide=5</a></p>
+</div>
+<div class="section" id="font-color-dimgray-what-are-jupyter-notebooks-font">
+<h1><font color=dimgray>What are Jupyter Notebooks?</font><a class="headerlink" href="#font-color-dimgray-what-are-jupyter-notebooks-font" title="Permalink to this headline">¶</a></h1>
+<p>The Jupyter Notebook is an open-source web application that allows you to create and share documents that contain live code, equations, visualizations and narrative text. The Jupyter notebook combines two components:</p>
+<ul class="simple">
+<li><p><strong>A web application</strong>: a browser-based tool for interactive authoring of documents which combine explanatory text, mathematics, computations and their rich media output.</p></li>
+<li><p><strong>Notebook documents</strong>: a representation of all content visible in the web application, including inputs and outputs of the computations, explanatory text, mathematics, images, and rich media representations of objects.</p></li>
+</ul>
+<p>Uses include:</p>
+<ul class="simple">
+<li><p>Data cleaning and transformation</p></li>
+<li><p>Statistical modeling</p></li>
+<li><p>Data visualization</p></li>
+<li><p>Machine learning, and much more</p></li>
+</ul>
+<p>reference: <a class="reference external" href="https://jupyter.org/">https://jupyter.org/</a></p>
+</div>
+<div class="section" id="font-color-dimgray-what-does-it-look-like-font">
+<h1><font color=dimgray>What does it look like?</font><a class="headerlink" href="#font-color-dimgray-what-does-it-look-like-font" title="Permalink to this headline">¶</a></h1>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Hola Roberto!&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Hola Roberto!
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">5</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0
+1
+2
+3
+4
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="font-color-peru-architecture-font">
+<h1><font color=peru>Architecture</font><a class="headerlink" href="#font-color-peru-architecture-font" title="Permalink to this headline">¶</a></h1>
+</div>
+<div class="section" id="font-color-dimgray-architecture-interactive-protocol-font">
+<h1><font color=dimgray>Architecture (Interactive Protocol)</font><a class="headerlink" href="#font-color-dimgray-architecture-interactive-protocol-font" title="Permalink to this headline">¶</a></h1>
+<p><img alt="" src="../../_images/jupyter-notebooks-architecture1.png" /></p>
+</div>
+<div class="section" id="font-color-peru-installation-font">
+<h1><font color=peru>Installation</font><a class="headerlink" href="#font-color-peru-installation-font" title="Permalink to this headline">¶</a></h1>
+</div>
+<div class="section" id="font-color-dimgray-installing-jupyter-notebooks-manually-font">
+<h1><font color=dimgray>Installing Jupyter Notebooks (Manually)</font><a class="headerlink" href="#font-color-dimgray-installing-jupyter-notebooks-manually-font" title="Permalink to this headline">¶</a></h1>
+<p><strong>Prerequisite</strong>: Python</p>
+<p>While Jupyter runs code in many programming languages, Python is a requirement (Python 3.3 or greater, or Python 2.7) for installing the JupyterLab or the classic Jupyter Notebook.</p>
+<p><strong>Using Conda</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="n">install</span> <span class="o">-</span><span class="n">c</span> <span class="n">conda</span><span class="o">-</span><span class="n">forge</span> <span class="n">notebook</span>
+</pre></div>
+</div>
+<p><strong>Using PIP</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="n">notebook</span>
+</pre></div>
+</div>
+<p>Once Jupyter Notebook is installed, you can run it with the following command:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">jupyter</span> <span class="n">notebook</span>
+
+</pre></div>
+</div>
+</div>
+<div class="section" id="font-color-dimgray-installing-jupyter-notebooks-docker-ce-font">
+<h1><font color=dimgray>Installing Jupyter Notebooks (Docker CE)</font><a class="headerlink" href="#font-color-dimgray-installing-jupyter-notebooks-docker-ce-font" title="Permalink to this headline">¶</a></h1>
+<p><strong>Prerequisite</strong>: Docker CE</p>
+<p>You just have to install the community edition of Docker, so that you can pull and build ready-to-run Docker images containing Jupyter applications and interactive computing tools. You can use a stack image to do any of the following (and more):</p>
+<ul class="simple">
+<li><p>Start a personal Jupyter Notebook server in a local Docker container</p></li>
+<li><p>Run JupyterLab servers for a team using JupyterHub</p></li>
+<li><p>Write your own project Dockerfile</p></li>
+<li><p>Jupyter Docker Stacks: <a class="reference external" href="https://github.com/jupyter/docker-stacks">https://github.com/jupyter/docker-stacks</a></p></li>
+<li><p>Jupyter Docker Base Image: <a class="reference external" href="https://hub.docker.com/r/jupyter/base-notebook/">https://hub.docker.com/r/jupyter/base-notebook/</a></p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>docker run -p 8888:8888 jupyter/minimal-notebook:3b1f4f5e6cc1```
+</pre></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">YouTubeVideo</span>
+
+<span class="n">YouTubeVideo</span><span class="p">(</span><span class="s1">&#39;KVR1_cVlLRE&#39;</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="mi">1000</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="mi">800</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html">
+<iframe
+    width="1000"
+    height="800"
+    src="https://www.youtube.com/embed/KVR1_cVlLRE"
+    frameborder="0"
+    allowfullscreen
+
+></iframe>
+</div></div>
+</div>
+</div>
+<div class="section" id="font-color-dimgray-enter-binder-project-font">
+<h1><font color=dimgray>Enter Binder Project</font><a class="headerlink" href="#font-color-dimgray-enter-binder-project-font" title="Permalink to this headline">¶</a></h1>
+<ul class="simple">
+<li><p>Released on May, 2016</p></li>
+<li><p>Updated 2.0 on November, 2019</p></li>
+<li><p>The Binder Project is an open community that makes it possible to create shareable, interactive, reproducible environments.</p></li>
+<li><p>The main technical product that the community creates is called BinderHub, and one deployment of a BinderHub exists at <a class="reference external" href="http://mybinder.org">mybinder.org</a>.</p></li>
+<li><p>Who is it for?:</p>
+<ul>
+<li><p>Researchers, Educators, people analyzing data and people trying to communicate the data analysis to others!!</p></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="font-color-dimgray-binderhub-font">
+<h1><font color=dimgray>BinderHub</font><a class="headerlink" href="#font-color-dimgray-binderhub-font" title="Permalink to this headline">¶</a></h1>
+<p>BinderHub connects several services together to provide on-the-fly creation and registry of Docker images. It utilizes the following tools:</p>
+<ul class="simple">
+<li><p>A cloud provider such Google Cloud, Microsoft Azure, Amazon EC2, and others</p></li>
+<li><p>Kubernetes to manage resources on the cloud</p></li>
+<li><p>Helm to configure and control Kubernetes</p></li>
+<li><p>Docker to use containers that standardize computing environments</p></li>
+<li><p>A BinderHub UI that users can access to specify Git repos they want built</p></li>
+<li><p>BinderHub to generate Docker images using the URL of a Git repository</p></li>
+<li><p>A Docker registry (such as <a class="reference external" href="http://gcr.io">gcr.io</a>) that hosts container images</p></li>
+<li><p>JupyterHub to deploy temporary containers for users</p></li>
+</ul>
+</div>
+<div class="section" id="font-color-dimgray-binderhub-flow-font">
+<h1><font color=dimgray>BinderHub Flow</font><a class="headerlink" href="#font-color-dimgray-binderhub-flow-font" title="Permalink to this headline">¶</a></h1>
+<p><img alt="" src="../../_images/Binderhub-Architecture1.png" /></p>
+</div>
+<div class="section" id="font-color-dimgray-let-s-try-it-font">
+<h1><font color=dimgray>Let’s Try it!</font><a class="headerlink" href="#font-color-dimgray-let-s-try-it-font" title="Permalink to this headline">¶</a></h1>
+<p><img alt="" src="../../_images/interactive-example1.png" /></p>
+</div>
+<div class="section" id="font-color-peru-jupyter-flavors-font">
+<h1><font color=peru>Jupyter Flavors</font><a class="headerlink" href="#font-color-peru-jupyter-flavors-font" title="Permalink to this headline">¶</a></h1>
+</div>
+<div class="section" id="font-color-dimgray-enter-jupyter-book-font">
+<h1><font color=dimgray>Enter Jupyter Book</font><a class="headerlink" href="#font-color-dimgray-enter-jupyter-book-font" title="Permalink to this headline">¶</a></h1>
+<p>Jupyter Book is an open source project for building beautiful, publication-quality books and documents from computational material.</p>
+<p><img alt="" src="workshops/day1/images/jupyter-book-jupyterthon.png" /></p>
+</div>
+<div class="section" id="font-color-dimgray-resources-font">
+<h1><font color=dimgray>Resources</font><a class="headerlink" href="#font-color-dimgray-resources-font" title="Permalink to this headline">¶</a></h1>
+<ul class="simple">
+<li><p><a class="reference external" href="https://the-turing-way.netlify.app/introduction/introduction.html">https://the-turing-way.netlify.app/introduction/introduction.html</a></p></li>
+<li><p><a class="reference external" href="https://gist.github.com/fperez/1579699">https://gist.github.com/fperez/1579699</a></p></li>
+<li><p><a class="reference external" href="https://mail.python.org/pipermail/python-list/2001-December/093408.html">https://mail.python.org/pipermail/python-list/2001-December/093408.html</a></p></li>
+<li><p><a class="reference external" href="https://ipython.org/news.html#ipython-0-12">https://ipython.org/news.html#ipython-0-12</a></p></li>
+<li><p><a class="reference external" href="https://speakerdeck.com/fperez/project-jupyter">https://speakerdeck.com/fperez/project-jupyter</a></p></li>
+<li><p><a class="reference external" href="https://blog.jupyter.org/rendering-notebooks-on-github-f7ac8736d686">https://blog.jupyter.org/rendering-notebooks-on-github-f7ac8736d686</a></p></li>
+<li><p><a class="reference external" href="https://blog.jupyter.org/binder-2-0-a-tech-guide-2017-fd40515a3a84">https://blog.jupyter.org/binder-2-0-a-tech-guide-2017-fd40515a3a84</a></p></li>
+<li><p><a class="reference external" href="https://jupyterbook.org/intro.html">https://jupyterbook.org/intro.html</a></p></li>
+</ul>
+</div>
+<div class="section" id="font-color-peru-break-5-minutes-font">
+<h1><font color=peru>Break: 5 Minutes</font><a class="headerlink" href="#font-color-peru-break-5-minutes-font" title="Permalink to this headline">¶</a></h1>
+<p><img alt="" src="../../_images/dog-leash-break.jpg" /></p>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./workshops\day1"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+        <div class='prev-next-bottom'>
+            
+    <a class='left-prev' id="prev-link" href="intro.html" title="previous page">Day 1</a>
+    <a class='right-next' id="next-link" href="day1-2-Acquiring-data.html" title="next page">Workshop 1.2: <font color=peru>Acquiring Data</font></a>
+
+        </div>
+        
+        </div>
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Roberto Rodriguez @Cyb3rWard0g<br/>
+        
+            &copy; Copyright 2021.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+
+  
+  </body>
+</html>

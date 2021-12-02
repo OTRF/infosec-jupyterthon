@@ -1,0 +1,849 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Workshop 2.1: R Demo Notebook</title>
+    
+  <link href="../../_static/css/theme.css" rel="stylesheet" />
+  <link href="../../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+
+    
+  <link rel="stylesheet"
+    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/sphinx-book-theme.acff12b8f9c144ce68a297486a2fa670.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/tabs.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/tabs.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../../_static/js/index.1c5a1a01449ed65a7b51.js">
+
+    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script src="../../_static/tabs.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <link rel="canonical" href="https://infosecjupyterthon.com/workshops/day2/day2-1-R-demo-notebook.html" />
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Workshop 2.2: Visualization in Jupyter Notebooks" href="day2-2-Visualization.html" />
+    <link rel="prev" title="Workshop 2.1: Jupyter Notebooks Advanced" href="day2-1-Jupyter-advanced-topics.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../../index.html">
+      
+      <img src="../../_static/logo.png" class="logo" alt="logo">
+      
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <div class="bd-toc-item active">
+        <p class="caption">
+ <span class="caption-text">
+  Editions
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../2021/agenda.html">
+   2021 Edition
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../../2021/sessions/intro.html">
+     Sessions
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+    <label for="toctree-checkbox-2">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../2021/sessions/day1-0-welcome.html">
+       <font color="peru">
+        Welcome to the InfoSec Jupyterthon 2021!
+       </font>
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../../2021/speakers/intro.html">
+     Speakers
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+    <label for="toctree-checkbox-3">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../2021/speakers/pete_bryan.html">
+       Pete Bryan
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../2021/speakers/roberto_rodriguez.html">
+       Roberto Rodriguez
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../2021/speakers/jose_rodriguez.html">
+       Jose Rodriguez
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../2021/speakers/ian_hellen.html">
+       Ian Hellen
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../2021/speakers/ashwin_patil.html">
+       Ashwin Patil
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../2021/speakers/luis_f_monge.html">
+       Luis F Monge
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../2021/speakers/mehmet_ergene.html">
+       Mehmet Ergene
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../2021/speakers/leo_meyerovich.html">
+       Leo Meyerovich
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../2021/speakers/joe_petroske.html">
+       Joe Petroske
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../2021/speakers/john_lambert.html">
+       John Lambert
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../2021/speakers/neil_desai.html">
+       Neil Desai
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../2021/speakers/neal_shenk.html">
+       Neal Shenk
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../2021/speakers/sil_han.html">
+       Sil Han
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../2021/speakers/natanela_brod.html">
+       Natanela Brod
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../2021/speakers/xiaokui_shu.html">
+       Xiaokui Shu
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../2021/speakers/mark_kendrick.html">
+       Mark Kendrick
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../2021/speakers/shachar_roitman.html">
+       Shachar Roitman
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../2021/speakers/elisabeth_weber.html">
+       Elisabeth Weber
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../2020/agenda.html">
+   2020 Edition
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+  <label for="toctree-checkbox-4">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../2020/notebooks/0_banner.html">
+     Infosec Jupyterthon 2020!
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../2020/notebooks/1_what_about_notebooks.html">
+     <font color="peru">
+      Welcome Infosec Community!
+     </font>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../2020/notebooks/2_Jupyterthon_Cyb3rPandaH_2020.html">
+     ATT&amp;CK - APT29 Evals Datasets
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../2020/notebooks/6_OSQuery-Tables-interactive_Jupyterthon.html">
+     Untangling the Osquery❓ tables web🕸 using Jupyter Notebooks📓
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../2020/notebooks/12_Jupyterthon-TimeSeries-Demo.html">
+     Anomaly detection and visualization using Time Series Decomposition
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Workshops
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../day1/intro.html">
+   Day 1
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+  <label for="toctree-checkbox-5">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../day1/day1-1-Jupyter-Introduction.html">
+     Workshop 1.1:
+     <font color="peru">
+      Jupyter Notebooks Introduction
+     </font>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../day1/day1-2-Acquiring-data.html">
+     Workshop 1.2:
+     <font color="peru">
+      Acquiring Data
+     </font>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../day1/day1-3-Data-Analysis-with-Pandas%20Intro.html">
+     Workshop 1.3:
+     <font color="peru">
+      Basics of Data Analysis with Pandas
+     </font>
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="intro.html">
+   Day 2
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
+  <label for="toctree-checkbox-6">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2">
+    <a class="reference internal" href="day2-1-Jupyter-advanced-topics.html">
+     Workshop 2.1:
+     <font color="peru">
+      Jupyter Notebooks Advanced
+     </font>
+    </a>
+   </li>
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     Workshop 2.1:
+     <font color="peru">
+      R Demo Notebook
+     </font>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="day2-2-Visualization.html">
+     Workshop 2.2:
+     <font color="peru">
+      Visualization in Jupyter Notebooks
+     </font>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="day2-3-Advanced-pandas.html">
+     Workshop 2.3:
+     <font color="peru">
+      Advanced Pandas
+     </font>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="day2-4-MSTICPy.html">
+     Workshop 2.4:
+     <font color="peru">
+      MSTICPy
+     </font>
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../../_sources/workshops/day2/day2-1-R-demo-notebook.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        
+        
+        <a class="edit-button" href="https://github.com/OTRF/infosec-jupyterthon/edit/master/docs/workshops/day2/day2-1-R-demo-notebook.ipynb"><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Edit this page"><i class="fas fa-pencil-alt"></i>suggest edit</button></a>
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/OTRF/infosec-jupyterthon/master?urlpath=tree/docs/workshops/day2/day2-1-R-demo-notebook.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   Workshop 2.1:
+   <font color="peru">
+    R Demo Notebook
+   </font>
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#anomaly-detection-and-threat-hunting-on-windows-logon-data-using-anomalize">
+   Anomaly detection and threat hunting on Windows logon data using anomalize
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#install-missing-packages">
+     Install Missing packages
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#read-csv-using-r">
+     Read csv using R
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#printing-the-structure-of-the-data">
+     Printing the structure of the data
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#printing-sample-rows-from-the-dataset">
+     Printing Sample Rows from the dataset
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#time-series-anomaly-detection">
+   Time Series anomaly detection
+  </a>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <p><img alt="Banner" src="../../_images/banner2.png" /></p>
+<hr class="docutils" />
+<div class="section" id="workshop-2-1-font-color-peru-r-demo-notebook-font">
+<h1>Workshop 2.1: <font color=peru>R Demo Notebook</font><a class="headerlink" href="#workshop-2-1-font-color-peru-r-demo-notebook-font" title="Permalink to this headline">¶</a></h1>
+<ul class="simple">
+<li><p><strong>Contributors</strong>:</p>
+<ul>
+<li><p>Ashwin Patil (&#64;ashwinpatil)</p></li>
+<li><p>Jose Rodriguez (&#64;Cyb3rPandah)</p></li>
+<li><p>Ian Hellen (&#64;ianhellen)
+<br><br></p></li>
+</ul>
+</li>
+<li><p><strong>Agenda</strong>:</p>
+<ul>
+<li><p><a class="reference external" href="#notjustpython">Jupyter is not just Python</a>
+<br><br></p></li>
+</ul>
+</li>
+<li><p><strong>Notebook</strong>: <a class="reference external" href="https://aka.ms/Jupyterthon-ws-2-1">https://aka.ms/Jupyterthon-ws-2-1</a></p></li>
+<li><p><strong>License</strong>: <a class="reference external" href="https://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International</a></p></li>
+<li><p><strong>Q&amp;A</strong> - OTR Discord <strong>#Jupyterthon #WORKSHOP DAY 2 - JUPYTER ADVANCED</strong></p></li>
+</ul>
+</div>
+<div class="section" id="anomaly-detection-and-threat-hunting-on-windows-logon-data-using-anomalize">
+<h1>Anomaly detection and threat hunting on Windows logon data using anomalize<a class="headerlink" href="#anomaly-detection-and-threat-hunting-on-windows-logon-data-using-anomalize" title="Permalink to this headline">¶</a></h1>
+<p>Reference original blog post by Russ Mcree:</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://holisticinfosec.blogspot.com/2018/06/toolsmith-133-anomaly-detection-threat.html">https://holisticinfosec.blogspot.com/2018/06/toolsmith-133-anomaly-detection-threat.html</a></p></li>
+</ul>
+<p><a class="reference external" href="https://support.rstudio.com/hc/en-us/articles/201057987-Quick-list-of-useful-R-packages">Quick List of Useful Packages</a></p>
+<p><img alt="" src="https://upload.wikimedia.org/wikipedia/commons/f/f5/List-of-r-packages.png" /></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1">#Suppress R Warnings</span>
+<span class="nf">options</span><span class="p">(</span><span class="n">warn</span><span class="o">=</span><span class="m">-1</span><span class="p">)</span>
+<span class="c1"># Load R Packages</span>
+<span class="n">pkgs</span> <span class="o">&lt;-</span> <span class="nf">c</span><span class="p">(</span><span class="n">pkgs</span> <span class="o">&lt;-</span> <span class="nf">c</span><span class="p">(</span><span class="s">&quot;tibbletime&quot;</span><span class="p">,</span> <span class="s">&quot;tidyverse&quot;</span><span class="p">,</span><span class="s">&quot;anomalize&quot;</span><span class="p">,</span> <span class="s">&quot;jsonlite&quot;</span><span class="p">,</span> <span class="s">&quot;curl&quot;</span><span class="p">,</span> <span class="s">&quot;httr&quot;</span><span class="p">,</span> <span class="s">&quot;lubridate&quot;</span><span class="p">,</span><span class="s">&quot;dplyr&quot;</span><span class="p">))</span>
+<span class="nf">sapply</span><span class="p">(</span><span class="n">pkgs</span><span class="p">,</span> <span class="nf">function</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="nf">suppressPackageStartupMessages</span><span class="p">(</span><span class="nf">require</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">character.only</span> <span class="o">=</span> <span class="bp">T</span><span class="p">)))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><style>
+.dl-inline {width: auto; margin:0; padding: 0}
+.dl-inline>dt, .dl-inline>dd {float: none; width: auto; display: inline-block}
+.dl-inline>dt::after {content: ":\0020"; padding-right: .5ex}
+.dl-inline>dt:not(:first-of-type) {padding-left: .5ex}
+</style><dl class=dl-inline><dt>tibbletime</dt><dd>TRUE</dd><dt>tidyverse</dt><dd>TRUE</dd><dt>anomalize</dt><dd>TRUE</dd><dt>jsonlite</dt><dd>TRUE</dd><dt>curl</dt><dd>TRUE</dd><dt>httr</dt><dd>TRUE</dd><dt>lubridate</dt><dd>TRUE</dd><dt>dplyr</dt><dd>TRUE</dd></dl>
+</div></div>
+</div>
+<div class="section" id="install-missing-packages">
+<h2>Install Missing packages<a class="headerlink" href="#install-missing-packages" title="Permalink to this headline">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">install.packages</span><span class="p">(</span><span class="s">&quot;tibbletime&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Updating HTML index of packages in &#39;.Library&#39;
+
+Making &#39;packages.html&#39; ...
+ done
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">install.packages</span><span class="p">(</span><span class="s">&quot;anomalize&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Updating HTML index of packages in &#39;.Library&#39;
+
+Making &#39;packages.html&#39; ...
+ done
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1">#Suppress R Warnings</span>
+<span class="nf">options</span><span class="p">(</span><span class="n">warn</span><span class="o">=</span><span class="m">-1</span><span class="p">)</span>
+<span class="c1"># Load R Packages</span>
+<span class="n">pkgs</span> <span class="o">&lt;-</span> <span class="nf">c</span><span class="p">(</span><span class="n">pkgs</span> <span class="o">&lt;-</span> <span class="nf">c</span><span class="p">(</span><span class="s">&quot;tibbletime&quot;</span><span class="p">,</span> <span class="s">&quot;tidyverse&quot;</span><span class="p">,</span><span class="s">&quot;anomalize&quot;</span><span class="p">,</span> <span class="s">&quot;jsonlite&quot;</span><span class="p">,</span> <span class="s">&quot;curl&quot;</span><span class="p">,</span> <span class="s">&quot;httr&quot;</span><span class="p">,</span> <span class="s">&quot;lubridate&quot;</span><span class="p">,</span><span class="s">&quot;dplyr&quot;</span><span class="p">))</span>
+<span class="nf">sapply</span><span class="p">(</span><span class="n">pkgs</span><span class="p">,</span> <span class="nf">function</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="nf">suppressPackageStartupMessages</span><span class="p">(</span><span class="nf">require</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">character.only</span> <span class="o">=</span> <span class="bp">T</span><span class="p">)))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><style>
+.dl-inline {width: auto; margin:0; padding: 0}
+.dl-inline>dt, .dl-inline>dd {float: none; width: auto; display: inline-block}
+.dl-inline>dt::after {content: ":\0020"; padding-right: .5ex}
+.dl-inline>dt:not(:first-of-type) {padding-left: .5ex}
+</style><dl class=dl-inline><dt>tibbletime</dt><dd>TRUE</dd><dt>tidyverse</dt><dd>TRUE</dd><dt>anomalize</dt><dd>TRUE</dd><dt>jsonlite</dt><dd>TRUE</dd><dt>curl</dt><dd>TRUE</dd><dt>httr</dt><dd>TRUE</dd><dt>lubridate</dt><dd>TRUE</dd><dt>dplyr</dt><dd>TRUE</dd></dl>
+</div></div>
+</div>
+</div>
+<div class="section" id="read-csv-using-r">
+<h2>Read csv using R<a class="headerlink" href="#read-csv-using-r" title="Permalink to this headline">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1"># Read CSV into R</span>
+<span class="n">urlfile</span><span class="o">&lt;-</span><span class="s">&#39;https://raw.githubusercontent.com/ashwin-patil/threat-hunting-with-notebooks/master/rawdata/UserLogons-demo.csv&#39;</span>
+<span class="n">userlogondemo</span><span class="o">&lt;-</span><span class="nf">read.csv</span><span class="p">(</span><span class="n">urlfile</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="printing-the-structure-of-the-data">
+<h2>Printing the structure of the data<a class="headerlink" href="#printing-the-structure-of-the-data" title="Permalink to this headline">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">str</span><span class="p">(</span><span class="n">userlogondemo</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;data.frame&#39;:	2844 obs. of  6 variables:
+ $ Date           : chr  &quot;1/3/2018&quot; &quot;1/3/2018&quot; &quot;1/3/2018&quot; &quot;1/3/2018&quot; ...
+ $ EventId        : chr  &quot;Microsoft-Windows-Security-Auditing:4624&quot; &quot;Microsoft-Windows-Security-Auditing:4624&quot; &quot;Microsoft-Windows-Security-Auditing:4624&quot; &quot;Microsoft-Windows-Security-Auditing:4624&quot; ...
+ $ AccountNtDomain: chr  &quot;LABDOMAIN.LOCAL&quot; &quot;LABDOMAIN.LOCAL&quot; &quot;LABDOMAIN.LOCAL&quot; &quot;LABDOMAIN.LOCAL&quot; ...
+ $ AccountName    : chr  &quot;SRVACCNT-01&quot; &quot;SRVACCNT-01&quot; &quot;SRVACCNT-01&quot; &quot;SRVACCNT-01&quot; ...
+ $ logontype      : int  10 11 2 4 7 10 4 3 3 5 ...
+ $ TotalLogons    : int  28 2 15592 259 9 1 23 65 7 60 ...
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="printing-sample-rows-from-the-dataset">
+<h2>Printing Sample Rows from the dataset<a class="headerlink" href="#printing-sample-rows-from-the-dataset" title="Permalink to this headline">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">head</span><span class="p">(</span><span class="n">userlogondemo</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><table class="dataframe">
+<caption>A data.frame: 6 × 6</caption>
+<thead>
+	<tr><th></th><th scope=col>Date</th><th scope=col>EventId</th><th scope=col>AccountNtDomain</th><th scope=col>AccountName</th><th scope=col>logontype</th><th scope=col>TotalLogons</th></tr>
+	<tr><th></th><th scope=col>&lt;chr&gt;</th><th scope=col>&lt;chr&gt;</th><th scope=col>&lt;chr&gt;</th><th scope=col>&lt;chr&gt;</th><th scope=col>&lt;int&gt;</th><th scope=col>&lt;int&gt;</th></tr>
+</thead>
+<tbody>
+	<tr><th scope=row>1</th><td>1/3/2018</td><td>Microsoft-Windows-Security-Auditing:4624</td><td>LABDOMAIN.LOCAL</td><td>SRVACCNT-01</td><td>10</td><td>   28</td></tr>
+	<tr><th scope=row>2</th><td>1/3/2018</td><td>Microsoft-Windows-Security-Auditing:4624</td><td>LABDOMAIN.LOCAL</td><td>SRVACCNT-01</td><td>11</td><td>    2</td></tr>
+	<tr><th scope=row>3</th><td>1/3/2018</td><td>Microsoft-Windows-Security-Auditing:4624</td><td>LABDOMAIN.LOCAL</td><td>SRVACCNT-01</td><td> 2</td><td>15592</td></tr>
+	<tr><th scope=row>4</th><td>1/3/2018</td><td>Microsoft-Windows-Security-Auditing:4624</td><td>LABDOMAIN.LOCAL</td><td>SRVACCNT-01</td><td> 4</td><td>  259</td></tr>
+	<tr><th scope=row>5</th><td>1/3/2018</td><td>Microsoft-Windows-Security-Auditing:4624</td><td>LABDOMAIN.LOCAL</td><td>SRVACCNT-01</td><td> 7</td><td>    9</td></tr>
+	<tr><th scope=row>6</th><td>1/3/2018</td><td>Microsoft-Windows-Security-Auditing:4624</td><td>LABDOMAIN.LOCAL</td><td>SRVACCNT-01</td><td>10</td><td>    1</td></tr>
+</tbody>
+</table>
+</div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1">#Read Downloaded csv and arrange by columns</span>
+<span class="n">userlogonsummary</span> <span class="o">&lt;-</span> <span class="n">userlogondemo</span> <span class="o">%&gt;%</span>
+                    <span class="nf">arrange</span><span class="p">(</span><span class="n">AccountName</span><span class="p">,</span><span class="n">AccountNtDomain</span><span class="p">,</span><span class="n">Date</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1"># Aggregate By User Logon View</span>
+<span class="n">byuser</span> <span class="o">&lt;-</span> <span class="n">userlogonsummary</span> <span class="o">%&gt;%</span>
+          <span class="nf">mutate</span><span class="p">(</span><span class="n">Date</span> <span class="o">=</span> <span class="nf">as.Date</span><span class="p">(</span><span class="n">Date</span><span class="p">,</span> <span class="s">&quot;%m/%d/%Y&quot;</span><span class="p">))</span> <span class="o">%&gt;%</span> 
+          <span class="nf">group_by</span><span class="p">(</span><span class="n">Date</span><span class="p">,</span> <span class="n">AccountName</span><span class="p">)</span> <span class="o">%&gt;%</span>
+          <span class="nf">summarise</span><span class="p">(</span><span class="n">logoncount</span><span class="o">=</span><span class="nf">sum</span><span class="p">(</span><span class="n">TotalLogons</span><span class="p">))</span> <span class="o">%&gt;%</span> 
+          <span class="nf">ungroup</span><span class="p">()</span> <span class="o">%&gt;%</span>
+          <span class="nf">arrange</span><span class="p">(</span><span class="n">AccountName</span><span class="p">,</span> <span class="n">Date</span><span class="p">)</span>
+
+<span class="nf">head</span><span class="p">(</span><span class="n">byuser</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>`summarise()` has grouped output by &#39;Date&#39;. You can override using the `.groups` argument.
+</pre></div>
+</div>
+<div class="output text_html"><table class="dataframe">
+<caption>A tibble: 6 × 3</caption>
+<thead>
+	<tr><th scope=col>Date</th><th scope=col>AccountName</th><th scope=col>logoncount</th></tr>
+	<tr><th scope=col>&lt;date&gt;</th><th scope=col>&lt;chr&gt;</th><th scope=col>&lt;int&gt;</th></tr>
+</thead>
+<tbody>
+	<tr><td>2018-01-01</td><td>ASHWIN</td><td> 563</td></tr>
+	<tr><td>2018-01-03</td><td>ASHWIN</td><td>1462</td></tr>
+	<tr><td>2018-01-04</td><td>ASHWIN</td><td>1416</td></tr>
+	<tr><td>2018-01-05</td><td>ASHWIN</td><td>2241</td></tr>
+	<tr><td>2018-01-06</td><td>ASHWIN</td><td>1830</td></tr>
+	<tr><td>2018-01-08</td><td>ASHWIN</td><td> 278</td></tr>
+</tbody>
+</table>
+</div></div>
+</div>
+</div>
+</div>
+<div class="section" id="time-series-anomaly-detection">
+<h1>Time Series anomaly detection<a class="headerlink" href="#time-series-anomaly-detection" title="Permalink to this headline">¶</a></h1>
+<p>Anomalize : <a class="reference external" href="https://github.com/business-science/anomalize">https://github.com/business-science/anomalize</a>
+anomalize enables a tidy workflow for detecting anomalies in data. The main functions are time_decompose(), anomalize(), and time_recompose(). When combined, it’s quite simple to decompose time series, detect anomalies, and create bands separating the “normal” data from the anomalous data</p>
+<p>anomalize has three main functions:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">time_decompose()</span></code>: Separates the time series into seasonal, trend, and remainder components</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">anomalize()</span></code>: Applies anomaly detection methods to the remainder component.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">time_recompose()</span></code>: Calculates limits that separate the “normal” data from the anomalies!</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1"># Filtering dataset for specific User</span>
+<span class="n">FilteredAccount</span> <span class="o">=</span> <span class="s">&quot;SRVACCNT-01&quot;</span>
+
+<span class="c1"># Ungroup dataset , run Time series decomposition method and plot anomalies</span>
+<span class="n">graphUser</span> <span class="o">&lt;-</span> <span class="n">byuser</span> <span class="o">%&gt;%</span>
+  <span class="nf">filter</span><span class="p">(</span><span class="n">AccountName</span> <span class="o">==</span> <span class="n">FilteredAccount</span><span class="p">)</span> <span class="o">%&gt;%</span> 
+  <span class="nf">ungroup</span><span class="p">()</span><span class="o">%&gt;%</span>
+  <span class="nf">time_decompose</span><span class="p">(</span><span class="n">logoncount</span><span class="p">,</span> <span class="n">method</span> <span class="o">=</span> <span class="s">&quot;twitter&quot;</span><span class="p">,</span> <span class="n">trend</span> <span class="o">=</span> <span class="s">&quot;3 months&quot;</span><span class="p">)</span> <span class="o">%&gt;%</span>
+  <span class="nf">anomalize</span><span class="p">(</span><span class="n">remainder</span><span class="p">,</span> <span class="n">method</span> <span class="o">=</span> <span class="s">&quot;gesd&quot;</span><span class="p">)</span> <span class="o">%&gt;%</span>
+  <span class="nf">time_recompose</span><span class="p">()</span> <span class="o">%&gt;%</span>
+  <span class="c1"># Anomaly Visualziation</span>
+  <span class="nf">plot_anomalies</span><span class="p">(</span><span class="n">time_recomposed</span> <span class="o">=</span> <span class="kc">TRUE</span><span class="p">)</span> <span class="o">+</span>
+  <span class="nf">labs</span><span class="p">(</span><span class="n">title</span> <span class="o">=</span> <span class="nf">paste0</span><span class="p">(</span><span class="s">&quot;User Anomaly: &quot;</span><span class="p">,</span><span class="n">FilteredAccount</span><span class="p">),</span> <span class="n">subtitle</span> <span class="o">=</span> <span class="s">&quot;Twitter + GESD Methods&quot;</span><span class="p">)</span>
+
+<span class="nf">plot</span><span class="p">(</span><span class="n">graphUser</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Registered S3 method overwritten by &#39;tune&#39;:
+  method                   from   
+  required_pkgs.model_spec parsnip
+
+Converting from tbl_df to tbl_time.
+Auto-index message: index = Date
+
+frequency = 6 days
+
+Registered S3 method overwritten by &#39;quantmod&#39;:
+  method            from
+  as.zoo.data.frame zoo 
+
+median_span = 53 days
+</pre></div>
+</div>
+<img alt="../../_images/day2-1-R-demo-notebook_15_1.png" src="../../_images/day2-1-R-demo-notebook_15_1.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1"># Plot Time series decompositions components separately</span>
+<span class="n">byuser</span> <span class="o">%&gt;%</span>
+    <span class="nf">filter</span><span class="p">(</span><span class="n">AccountName</span> <span class="o">==</span> <span class="n">FilteredAccount</span><span class="p">)</span> <span class="o">%&gt;%</span> 
+    <span class="nf">ungroup</span><span class="p">()</span><span class="o">%&gt;%</span>
+    <span class="nf">time_decompose</span><span class="p">(</span><span class="n">logoncount</span><span class="p">,</span> <span class="n">method</span> <span class="o">=</span> <span class="s">&quot;twitter&quot;</span><span class="p">,</span> <span class="n">trend</span> <span class="o">=</span> <span class="s">&quot;3 months&quot;</span><span class="p">)</span> <span class="o">%&gt;%</span>
+    <span class="nf">anomalize</span><span class="p">(</span><span class="n">remainder</span><span class="p">,</span> <span class="n">method</span> <span class="o">=</span> <span class="s">&quot;gesd&quot;</span><span class="p">)</span> <span class="o">%&gt;%</span>
+    <span class="nf">plot_anomaly_decomposition</span><span class="p">()</span> <span class="o">+</span>
+    <span class="nf">labs</span><span class="p">(</span><span class="n">title</span> <span class="o">=</span> <span class="s">&quot;Decomposition of Anomalized Logons&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Converting from tbl_df to tbl_time.
+Auto-index message: index = Date
+
+frequency = 6 days
+
+median_span = 53 days
+</pre></div>
+</div>
+<img alt="../../_images/day2-1-R-demo-notebook_16_1.png" src="../../_images/day2-1-R-demo-notebook_16_1.png" />
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "r"
+        },
+        kernelOptions: {
+            kernelName: "ir",
+            path: "./workshops\day2"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'ir'</script>
+
+              </div>
+              
+        
+        <div class='prev-next-bottom'>
+            
+    <a class='left-prev' id="prev-link" href="day2-1-Jupyter-advanced-topics.html" title="previous page">Workshop 2.1: <font color=peru>Jupyter Notebooks Advanced</font></a>
+    <a class='right-next' id="next-link" href="day2-2-Visualization.html" title="next page">Workshop 2.2: <font color=peru>Visualization in Jupyter Notebooks</font></a>
+
+        </div>
+        
+        </div>
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Roberto Rodriguez @Cyb3rWard0g<br/>
+        
+            &copy; Copyright 2021.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+
+  
+  </body>
+</html>

@@ -1,0 +1,2400 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Workshop 2.1: Jupyter Notebooks Advanced</title>
+    
+  <link href="../../_static/css/theme.css" rel="stylesheet" />
+  <link href="../../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+
+    
+  <link rel="stylesheet"
+    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/sphinx-book-theme.acff12b8f9c144ce68a297486a2fa670.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/tabs.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/tabs.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../../_static/js/index.1c5a1a01449ed65a7b51.js">
+
+    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script src="../../_static/tabs.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <link rel="canonical" href="https://infosecjupyterthon.com/workshops/day2/day2-1-Jupyter-advanced-topics.html" />
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Workshop 2.1: R Demo Notebook" href="day2-1-R-demo-notebook.html" />
+    <link rel="prev" title="Day 2" href="intro.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../../index.html">
+      
+      <img src="../../_static/logo.png" class="logo" alt="logo">
+      
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <div class="bd-toc-item active">
+        <p class="caption">
+ <span class="caption-text">
+  Editions
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../2021/agenda.html">
+   2021 Edition
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../../2021/sessions/intro.html">
+     Sessions
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+    <label for="toctree-checkbox-2">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../2021/sessions/day1-0-welcome.html">
+       <font color="peru">
+        Welcome to the InfoSec Jupyterthon 2021!
+       </font>
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../../2021/speakers/intro.html">
+     Speakers
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+    <label for="toctree-checkbox-3">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../2021/speakers/pete_bryan.html">
+       Pete Bryan
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../2021/speakers/roberto_rodriguez.html">
+       Roberto Rodriguez
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../2021/speakers/jose_rodriguez.html">
+       Jose Rodriguez
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../2021/speakers/ian_hellen.html">
+       Ian Hellen
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../2021/speakers/ashwin_patil.html">
+       Ashwin Patil
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../2021/speakers/luis_f_monge.html">
+       Luis F Monge
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../2021/speakers/mehmet_ergene.html">
+       Mehmet Ergene
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../2021/speakers/leo_meyerovich.html">
+       Leo Meyerovich
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../2021/speakers/joe_petroske.html">
+       Joe Petroske
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../2021/speakers/john_lambert.html">
+       John Lambert
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../2021/speakers/neil_desai.html">
+       Neil Desai
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../2021/speakers/neal_shenk.html">
+       Neal Shenk
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../2021/speakers/sil_han.html">
+       Sil Han
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../2021/speakers/natanela_brod.html">
+       Natanela Brod
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../2021/speakers/xiaokui_shu.html">
+       Xiaokui Shu
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../2021/speakers/mark_kendrick.html">
+       Mark Kendrick
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../2021/speakers/shachar_roitman.html">
+       Shachar Roitman
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../2021/speakers/elisabeth_weber.html">
+       Elisabeth Weber
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../2020/agenda.html">
+   2020 Edition
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+  <label for="toctree-checkbox-4">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../2020/notebooks/0_banner.html">
+     Infosec Jupyterthon 2020!
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../2020/notebooks/1_what_about_notebooks.html">
+     <font color="peru">
+      Welcome Infosec Community!
+     </font>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../2020/notebooks/2_Jupyterthon_Cyb3rPandaH_2020.html">
+     ATT&amp;CK - APT29 Evals Datasets
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../2020/notebooks/6_OSQuery-Tables-interactive_Jupyterthon.html">
+     Untangling the Osquery❓ tables web🕸 using Jupyter Notebooks📓
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../2020/notebooks/12_Jupyterthon-TimeSeries-Demo.html">
+     Anomaly detection and visualization using Time Series Decomposition
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Workshops
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../day1/intro.html">
+   Day 1
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+  <label for="toctree-checkbox-5">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../day1/day1-1-Jupyter-Introduction.html">
+     Workshop 1.1:
+     <font color="peru">
+      Jupyter Notebooks Introduction
+     </font>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../day1/day1-2-Acquiring-data.html">
+     Workshop 1.2:
+     <font color="peru">
+      Acquiring Data
+     </font>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../day1/day1-3-Data-Analysis-with-Pandas%20Intro.html">
+     Workshop 1.3:
+     <font color="peru">
+      Basics of Data Analysis with Pandas
+     </font>
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="intro.html">
+   Day 2
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
+  <label for="toctree-checkbox-6">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     Workshop 2.1:
+     <font color="peru">
+      Jupyter Notebooks Advanced
+     </font>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="day2-1-R-demo-notebook.html">
+     Workshop 2.1:
+     <font color="peru">
+      R Demo Notebook
+     </font>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="day2-2-Visualization.html">
+     Workshop 2.2:
+     <font color="peru">
+      Visualization in Jupyter Notebooks
+     </font>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="day2-3-Advanced-pandas.html">
+     Workshop 2.3:
+     <font color="peru">
+      Advanced Pandas
+     </font>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="day2-4-MSTICPy.html">
+     Workshop 2.4:
+     <font color="peru">
+      MSTICPy
+     </font>
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../../_sources/workshops/day2/day2-1-Jupyter-advanced-topics.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        
+        
+        <a class="edit-button" href="https://github.com/OTRF/infosec-jupyterthon/edit/master/docs/workshops/day2/day2-1-Jupyter-advanced-topics.ipynb"><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Edit this page"><i class="fas fa-pencil-alt"></i>suggest edit</button></a>
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/OTRF/infosec-jupyterthon/master?urlpath=tree/docs/workshops/day2/day2-1-Jupyter-advanced-topics.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   Workshop 2.1:
+   <font color="peru">
+    Jupyter Notebooks Advanced
+   </font>
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#a-style-border-solid-padding-5pt-color-black-background-color-90caf9-name-notjustpython-jupyter-is-not-just-python-ashwin-a">
+   <a name="notjustpython" style="border: solid; padding:5pt; color:black; background-color:#90CAF9">
+    Jupyter is not just Python [Ashwin]
+   </a>
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#a-style-border-solid-padding-5pt-color-black-background-color-90caf9-name-kernels-jupyter-kernels-python-environments-a">
+   <a name="kernels" style="border: solid; padding:5pt; color:black; background-color:#90CAF9">
+    Jupyter Kernels &amp; Python environments
+   </a>
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#using-different-python-kernels-with-jupyter">
+     Using different Python Kernels with Jupyter
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#to-remove-unwanted-kernels">
+       To remove unwanted kernels
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#a-style-border-solid-padding-5pt-color-black-background-color-90caf9-name-magics-magics-ian-a">
+   <a name="magics" style="border: solid; padding:5pt; color:black; background-color:#90CAF9">
+    Magics [Ian]
+   </a>
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#what-are-they">
+     What are they?
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#line-magics-single">
+       Line magics - single %
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#cell-magics-double">
+       Cell magics - double %%
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#popular-magics">
+     Popular magics -
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#get-or-set-environment-variables">
+       Get or set environment variables
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#run-pip">
+       Run pip
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#write-or-append-the-contents-of-a-cell-to-a-file">
+       Write (or append) the contents of a cell to a file
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#run-a-python-script">
+       Run a Python script
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#invoking-shell-commands">
+     Invoking shell commands
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#creating-magics">
+     Creating Magics
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#magic-example">
+       Magic example
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#a-style-border-solid-padding-5pt-color-black-background-color-90caf9-name-widgets-widgets-introduction-luis-a">
+   <a name="widgets" style="border: solid; padding:5pt; color:black; background-color:#90CAF9">
+    Widgets introduction [Luis]
+   </a>
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#integer-slider">
+     Integer Slider
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#intenger-range-slider">
+     Intenger Range Slider
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#integer-progress-bar">
+     Integer Progress Bar
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#dropdown">
+     Dropdown
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#multiselector">
+     Multiselector
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#data-picker">
+     Data Picker
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#file-uploader">
+     File Uploader
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#more-sophisticated-file-folder-chooser">
+     More sophisticated file/folder chooser
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#a-style-border-solid-padding-5pt-color-black-background-color-90caf9-name-notjustpython-jupyter-extensions-luis-a">
+   <a name="notjustpython" style="border: solid; padding:5pt; color:black; background-color:#90CAF9">
+    Jupyter Extensions [Luis]
+   </a>
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#creating-config-file">
+     Creating config file
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#jupyterlab-system-monitor">
+     JupyterLab System Monitor
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#git">
+     Git
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#jupyterlab-templates">
+     JupyterLab Templates
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#code-snippets-elyra">
+     Code Snippets (Elyra)
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#a-style-border-solid-padding-5pt-color-black-background-color-90caf9-name-nbconvert-using-nbconvert-to-export-and-create-notebooks-a">
+   <a name="nbconvert" style="border: solid; padding:5pt; color:black; background-color:#90CAF9">
+    Using NBConvert to export and create notebooks
+   </a>
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#nbconvert-create-a-notebook-programmatically-roberto">
+     NBConvert - Create a notebook programmatically [Roberto]
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#nbconvert-exporting-and-converting-to-other-formats-ian">
+     NBConvert - Exporting and converting to other formats [Ian]
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#from-the-command-line">
+       From the command line
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#in-code">
+     In code
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#convert-a-notebook-to-html">
+       Convert a notebook to HTML
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#convert-to-python-module">
+       Convert to Python module
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#a-style-border-solid-padding-5pt-color-black-background-color-90caf9-name-debugging-dev-topics-debugging-and-testing-notebook-code-ian-a">
+   <a name="debugging" style="border: solid; padding:5pt; color:black; background-color:#90CAF9">
+    Dev topics - Debugging and testing notebook code [Ian]
+   </a>
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#magics-and-errors-traceback-xmode-debug">
+     Magics and errors – traceback, xmode, debug
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#use-tb-to-review-last-traceback">
+       Use %tb to review last traceback
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#use-xmode-magic-to-include-parameter-values">
+       Use
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         %xmode
+        </span>
+       </code>
+       magic to include parameter values
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#exceptions-within-exceptions">
+       Exceptions within Exceptions
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#debugging-bare-handed">
+     Debugging bare-handed
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#debugging-from-a-comfy-chair">
+     Debugging from a comfy chair
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#running-jupyter-notebooks-in-a-unit-test-ian">
+     Running Jupyter notebooks in a unit test [Ian]
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#why-quick-and-dirty-testing">
+       Why? - Quick and dirty testing
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#output-when-test-fails">
+       Output when test fails
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#end-of-session">
+   End of Session
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#font-color-peru-break-5-minutes-font">
+   <font color="peru">
+    Break: 5 Minutes
+   </font>
+  </a>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <p><img alt="Banner" src="../../_images/banner2.png" /></p>
+<hr class="docutils" />
+<div class="section" id="workshop-2-1-font-color-peru-jupyter-notebooks-advanced-font">
+<h1>Workshop 2.1: <font color=peru>Jupyter Notebooks Advanced</font><a class="headerlink" href="#workshop-2-1-font-color-peru-jupyter-notebooks-advanced-font" title="Permalink to this headline">¶</a></h1>
+<ul class="simple">
+<li><p><strong>Contributors</strong>:</p>
+<ul>
+<li><p>Ashwin Patil (&#64;ashwinpatil)</p></li>
+<li><p>Luis Francisco Monge Martinez (&#64;LuckyLuke)</p></li>
+<li><p>Ian Hellen (&#64;ianhellen)
+<br><br></p></li>
+</ul>
+</li>
+<li><p><strong>Agenda</strong>:</p>
+<ul>
+<li><p><a class="reference external" href="#notjustpython">Jupyter is not just Python</a></p></li>
+<li><p><a class="reference external" href="#kernels">Jupyter Kernels &amp; Python environments</a></p></li>
+<li><p><a class="reference external" href="#magics">Magics</a></p></li>
+<li><p><a class="reference external" href="#widgets">Widgets introduction</a>[</p></li>
+<li><p><a class="reference external" href="#extensions">Jupyter Extensions</a></p></li>
+<li><p><a class="reference external" href="#nbconvert">Using NBConvert to export and create notebooks</a></p></li>
+<li><p><a class="reference external" href="#debugging">Dev topics - Debugging and testing notebook code</a>
+<br><br></p></li>
+</ul>
+</li>
+<li><p><strong>Notebook</strong>: <a class="reference external" href="https://aka.ms/Jupyterthon-ws-2-1">https://aka.ms/Jupyterthon-ws-2-1</a></p></li>
+<li><p><strong>License</strong>: <a class="reference external" href="https://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International</a></p></li>
+<li><p><strong>Q&amp;A</strong> - OTR Discord <strong>#Jupyterthon #WORKSHOP DAY 2 - JUPYTER ADVANCED</strong></p></li>
+</ul>
+</div>
+<hr class="docutils" />
+<div class="section" id="a-style-border-solid-padding-5pt-color-black-background-color-90caf9-name-notjustpython-jupyter-is-not-just-python-ashwin-a">
+<h1><a style="border: solid; padding:5pt; color:black; background-color:#90CAF9" name="notjustpython">Jupyter is not just Python [Ashwin]</a><a class="headerlink" href="#a-style-border-solid-padding-5pt-color-black-background-color-90caf9-name-notjustpython-jupyter-is-not-just-python-ashwin-a" title="Permalink to this headline">¶</a></h1>
+<ul class="simple">
+<li><p>Powershell kernel</p></li>
+<li><p>R kernel</p></li>
+</ul>
+</div>
+<hr class="docutils" />
+<div class="section" id="a-style-border-solid-padding-5pt-color-black-background-color-90caf9-name-kernels-jupyter-kernels-python-environments-a">
+<h1><a style="border: solid; padding:5pt; color:black; background-color:#90CAF9" name="kernels">Jupyter Kernels &amp; Python environments</a><a class="headerlink" href="#a-style-border-solid-padding-5pt-color-black-background-color-90caf9-name-kernels-jupyter-kernels-python-environments-a" title="Permalink to this headline">¶</a></h1>
+<p>Python environments let you create “isolated” installations with independent versions of packages.</p>
+<p>This is usually <strong>A VERY GOOD IDEA</strong>!</p>
+<p>Linux</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python -m venv MyNewEnv
+<span class="nb">source</span> ./MyNewEnv/Scripts/activate
+pip install msticpy
+</pre></div>
+</div>
+<p>Windows</p>
+<div class="highlight-cmd notranslate"><div class="highlight"><pre><span></span>python -m venv MyNewEnv
+.\MyNewEnv\Scripts\activate
+pip install msticpy
+</pre></div>
+</div>
+<p>Conda</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>conda create -n MyNewCondaEnv
+conda activate MyNewCondaEnv
+conda install pip
+pip install msticpy
+</pre></div>
+</div>
+<div class="section" id="using-different-python-kernels-with-jupyter">
+<h2>Using different Python Kernels with Jupyter<a class="headerlink" href="#using-different-python-kernels-with-jupyter" title="Permalink to this headline">¶</a></h2>
+<p>Note: VSCode seems to be able to use Python or Conda environments anyway but installing a dedicated ipykernel is needed for debugging.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python -m ipykernel install --user --name MyNewCondaEnv --display-name <span class="s2">&quot;Python3 (MyNewCondaEnv)&quot;</span>
+</pre></div>
+</div>
+<p><img alt="Kernels1" src="../../_images/JLab_kernels1.png" />
+<img alt="Kernels2" src="../../_images/JLab_kernels2.png" /></p>
+<div class="section" id="to-remove-unwanted-kernels">
+<h3>To remove unwanted kernels<a class="headerlink" href="#to-remove-unwanted-kernels" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">jupyter</span> <span class="n">kernelspec</span> <span class="n">remove</span> <span class="n">KERNELNAME</span>
+
+</pre></div>
+</div>
+<p>Example</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>(base) e:\src\test&gt;jupyter kernelspec list
+[ListKernelSpecs] WARNING | Config option `kernel_spec_manager_class` not recognized by `ListKernelSpecs`.
+Available kernels:
+  bhconda          C:\Users\Ian\AppData\Roaming\jupyter\kernels\bhconda
+  bluehound        C:\Users\Ian\AppData\Roaming\jupyter\kernels\bluehound
+  condadev         C:\Users\Ian\AppData\Roaming\jupyter\kernels\condadev
+  mynewcondaenv    C:\Users\Ian\AppData\Roaming\jupyter\kernels\mynewcondaenv
+  python3          C:\Users\Ian\AppData\Roaming\jupyter\kernels\python3
+  xpython          F:\anaconda\share\jupyter\kernels\xpython
+
+
+(base) e:\src\test&gt;jupyter kernelspec remove mynewcondaenv
+[RemoveKernelSpec] WARNING | Config option `kernel_spec_manager_class` not recognized by `RemoveKernelSpec`.
+Kernel specs to remove:
+  mynewcondaenv         C:\Users\Ian\AppData\Roaming\jupyter\kernels\mynewcondaenv
+Remove 1 kernel specs [y/N]: y
+[RemoveKernelSpec] Removed C:\Users\Ian\AppData\Roaming\jupyter\kernels\mynewcondaenv
+</pre></div>
+</div>
+<p>Remove the environment if you don’t need it</p>
+<p>Python venv - just delete the venv folder</p>
+<p>Conda</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="n">remove</span> <span class="o">--</span><span class="nb">all</span> <span class="o">-</span><span class="n">n</span> <span class="n">MyNewCondaEnv</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<hr class="docutils" />
+<div class="section" id="a-style-border-solid-padding-5pt-color-black-background-color-90caf9-name-magics-magics-ian-a">
+<h1><a style="border: solid; padding:5pt; color:black; background-color:#90CAF9" name="magics">Magics [Ian]</a><a class="headerlink" href="#a-style-border-solid-padding-5pt-color-black-background-color-90caf9-name-magics-magics-ian-a" title="Permalink to this headline">¶</a></h1>
+<p><a class="reference external" href="https://ipython.readthedocs.io/en/stable/interactive/magics.html">https://ipython.readthedocs.io/en/stable/interactive/magics.html</a></p>
+<div class="section" id="what-are-they">
+<h2>What are they?<a class="headerlink" href="#what-are-they" title="Permalink to this headline">¶</a></h2>
+<p>Magics are a kind of macro/function that allows you to invoke functionality
+of the notebook or OS independent of the kernel language.</p>
+<div class="section" id="line-magics-single">
+<h3>Line magics - single %<a class="headerlink" href="#line-magics-single" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>Only operate on the arguments on the remainder of the line</p></li>
+<li><p>Can be mixed with other code</p></li>
+</ul>
+</div>
+<div class="section" id="cell-magics-double">
+<h3>Cell magics - double %%<a class="headerlink" href="#cell-magics-double" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>Operate on whole cell contents</p></li>
+<li><p>Must be in their own cell and at the start of the cell (even comments!)</p></li>
+</ul>
+</div>
+</div>
+<div class="section" id="popular-magics">
+<h2>Popular magics -<a class="headerlink" href="#popular-magics" title="Permalink to this headline">¶</a></h2>
+<p style="font-family:consolas; font-size:15pt; color:green">
+%magic %env %writefile %js %hmtl %pip %logstart 
+</p>
+<div class="section" id="get-or-set-environment-variables">
+<h3>Get or set environment variables<a class="headerlink" href="#get-or-set-environment-variables" title="Permalink to this headline">¶</a></h3>
+<p style="font-family:consolas; font-size:15pt; color:green">
+%env
+</p><div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">env</span> HOME
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;C:\\Users\\Ian&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># %load ./test_mod.py</span>
+<span class="kn">import</span> <span class="nn">sys</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">sys</span><span class="o">.</span><span class="n">version_info</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">sys</span><span class="o">.</span><span class="n">platform</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="run-pip">
+<h3>Run pip<a class="headerlink" href="#run-pip" title="Permalink to this headline">¶</a></h3>
+<p style="font-family:consolas; font-size:15pt; color:green">
+%pip 
+</p>
+<p>Always use this rather than !pip</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">pip</span> show pandas
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Name: pandas
+Version: 1.2.1
+Summary: Powerful data structures for data analysis, time series, and statistics
+Home-page: https://pandas.pydata.org
+Author: None
+Author-email: None
+License: BSD
+Location: c:\users\ian\appdata\roaming\python\python37\site-packages
+Requires: python-dateutil, pytz, numpy
+Required-by: statsmodels, seaborn, qgrid, pandasgui, pandas-profiling, Kqlmagic, hvplot, holoviews, msticnb, msticpy
+Note: you may need to restart the kernel to use updated packages.
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">pip</span> 
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">run</span> test_mod.py
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>sys.version_info(major=3, minor=7, micro=11, releaselevel=&#39;final&#39;, serial=0)
+win32
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">math</span>
+<span class="nb">max</span><span class="p">((</span><span class="n">math</span><span class="o">.</span><span class="n">pow</span><span class="p">(</span><span class="n">math</span><span class="o">.</span><span class="n">pi</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">)))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>29809.0993334462
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">timeit</span> max((math.pow(math.pi, x) for x in range(10)))
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2.78 µs ± 44 ns per loop (mean ± std. dev. of 7 runs, 100000 loops each)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%html</span>
+<span class="p">&lt;</span><span class="nt">p</span> <span class="na">style</span><span class="o">=</span><span class="s">&quot;border:solid; padding:20pt; color:blue; font-size:20pt; background-color:gray&quot;</span><span class="p">&gt;</span>
+Hello Jupyterthon!
+<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><p style="border:solid; padding:20pt; color:blue; font-size:20pt; background-color:gray">
+Hello Jupyterthon!
+</p>
+</div></div>
+</div>
+</div>
+<div class="section" id="write-or-append-the-contents-of-a-cell-to-a-file">
+<h3>Write (or append) the contents of a cell to a file<a class="headerlink" href="#write-or-append-the-contents-of-a-cell-to-a-file" title="Permalink to this headline">¶</a></h3>
+<p>** Note - cell magic! **</p>
+<p style="font-family:consolas; font-size:15pt; color:green">
+%%writefile <i>file_name</i><br>
+%%writefile -a <i>file_name</i>
+</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%writefile</span> -a test_mod.py
+
+<span class="nb">print</span><span class="p">(</span><span class="n">sys</span><span class="o">.</span><span class="n">platform</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Appending to test_mod.py
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="run-a-python-script">
+<h3>Run a Python script<a class="headerlink" href="#run-a-python-script" title="Permalink to this headline">¶</a></h3>
+<p style="font-family:consolas; font-size:15pt; color:green">
+%run <i>py_file_name</i>
+</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">run</span> test_mod.py
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>sys.version_info(major=3, minor=7, micro=11, releaselevel=&#39;final&#39;, serial=0)
+win32
+win32
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="invoking-shell-commands">
+<h2>Invoking shell commands<a class="headerlink" href="#invoking-shell-commands" title="Permalink to this headline">¶</a></h2>
+<p>Prefix with !</p>
+<p>These are not magics - they directly invoke underlying OS commands.</p>
+<p>Like line magics, can use these mixed with other code</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>dir
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> Volume in drive E has no label.
+ Volume Serial Number is 7E50-19F7
+
+ Directory of e:\src\infosec-jupyterthon\workshops\2021\day2
+
+11/24/2021  05:33 PM    &lt;DIR&gt;          .
+11/24/2021  01:00 PM    &lt;DIR&gt;          ..
+11/24/2021  05:34 PM            69,310 day2-1-Jupyter-advanced-topics.ipynb
+11/23/2021  10:34 AM         4,246,504 day2-2-Visualization.ipynb
+11/24/2021  04:20 PM           178,240 day2-3-Advanced-pandas.ipynb
+11/24/2021  11:22 AM            39,858 day2-4-MSTICPy.ipynb
+11/23/2021  10:34 AM           208,453 Holoviews.png
+11/23/2021  10:34 AM            50,124 JLab_kernels1.png
+11/23/2021  10:34 AM            88,887 JLab_kernels2.png
+11/24/2021  05:33 PM                60 test_mod.py
+11/24/2021  05:33 PM    &lt;DIR&gt;          __pycache__
+               8 File(s)      4,881,436 bytes
+               3 Dir(s)  229,351,170,048 bytes free
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">my_folder</span> <span class="o">=</span> <span class="o">!</span>dir
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Captured </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">my_folder</span><span class="p">)</span><span class="si">}</span><span class="s2"> lines:</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">my_folder</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Captured 18 lines:
+ [&#39; Volume in drive E has no label.&#39;, &#39; Volume Serial Number is 7E50-19F7&#39;, &#39;&#39;, &#39; Directory of e:\\src\\infosec-jupyterthon\\workshops\\2021\\day2&#39;, &#39;&#39;, &#39;11/24/2021  05:33 PM    &lt;DIR&gt;          .&#39;, &#39;11/24/2021  01:00 PM    &lt;DIR&gt;          ..&#39;, &#39;11/24/2021  05:34 PM            70,452 day2-1-Jupyter-advanced-topics.ipynb&#39;, &#39;11/23/2021  10:34 AM         4,246,504 day2-2-Visualization.ipynb&#39;, &#39;11/24/2021  04:20 PM           178,240 day2-3-Advanced-pandas.ipynb&#39;, &#39;11/24/2021  11:22 AM            39,858 day2-4-MSTICPy.ipynb&#39;, &#39;11/23/2021  10:34 AM           208,453 Holoviews.png&#39;, &#39;11/23/2021  10:34 AM            50,124 JLab_kernels1.png&#39;, &#39;11/23/2021  10:34 AM            88,887 JLab_kernels2.png&#39;, &#39;11/24/2021  05:33 PM                60 test_mod.py&#39;, &#39;11/24/2021  05:33 PM    &lt;DIR&gt;          __pycache__&#39;, &#39;               8 File(s)      4,882,578 bytes&#39;, &#39;               3 Dir(s)  229,351,165,952 bytes free&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="creating-magics">
+<h2>Creating Magics<a class="headerlink" href="#creating-magics" title="Permalink to this headline">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">IPython.core.magic</span> <span class="kn">import</span> <span class="n">register_line_magic</span>
+<span class="c1">## also register_cell_magic for cell magics</span>
+<span class="c1">#       register_line_cell_magic for a magic that works with both</span>
+
+<span class="nd">@register_line_magic</span>
+<span class="k">def</span> <span class="nf">ian_is</span><span class="p">(</span><span class="n">line</span><span class="p">):</span>
+    <span class="s2">&quot;my line magic&quot;</span>
+    <span class="k">return</span> <span class="sa">f</span><span class="s2">&quot;Ian is </span><span class="si">{</span><span class="s1">&#39; &#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">word</span><span class="o">.</span><span class="n">capitalize</span><span class="p">()</span> <span class="k">for</span> <span class="n">word</span> <span class="ow">in</span> <span class="n">line</span><span class="o">.</span><span class="n">split</span><span class="p">())</span><span class="si">}</span><span class="s2">&quot;</span>
+
+<span class="k">del</span> <span class="n">ian_is</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">ian_is</span> a fan of Python
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;Ian is A Fan Of Python&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="magic-example">
+<h3>Magic example<a class="headerlink" href="#magic-example" title="Permalink to this headline">¶</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">msticpy</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">ioc</span>
+
+TYPE
+INDICATOR
+ROLE
+TITLE
+ADDED
+ACTIVE
+RELATED PULSES
+URL	http://av-quiz.tk/wp-content/k6K/			Nov 16, 2021, 11:20:26 AM		2	
+IPv4	94.177.248.64			Nov 16, 2021, 11:20:26 AM		8	
+IPv4	92.207.181.106			Nov 16, 2021, 11:20:26 AM		2	
+IPv4	81.0.236.93			Nov 16, 2021, 11:20:26 AM		126	
+IPv4	51.75.33.120			Nov 16, 2021, 11:20:26 AM		265	
+FileHash-SHA256	f7a4da96129e9c9708a005ee28e4a46af092275af36e3afd63ff201633c70285			Nov 16, 2021, 11:20:26 AM		3	
+FileHash-SHA256	d95125b9b82df0734b6bc27c426d42dea895c642f2f6516132c80f896be6cf32			Nov 16, 2021, 11:20:26 AM		3	
+FileHash-SHA256	bd9b8fe173935ad51f14abc16ed6a5bf6ee92ec4f45fd2ae1154dd2f727fb245			Nov 16, 2021, 11:20:26 AM		3	
+FileHash-SHA256	b95a6218777e110578fa017ac14b33bf968ca9c57af7e99bd5843b78813f46e0			Nov 16, 2021, 11:20:26 AM		2	
+FileHash-SHA256	9c345ee65032ec38e1a29bf6b645cde468e3ded2e87b0c9c4a93c517d465e70d			Nov 16, 2021, 11:20:26 AM		2	
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[(&#39;ipv4&#39;, [&#39;92.207.181.106&#39;, &#39;81.0.236.93&#39;, &#39;51.75.33.120&#39;, &#39;94.177.248.64&#39;]),
+ (&#39;ipv6&#39;, [&#39;11:20:26&#39;]),
+ (&#39;dns&#39;, [&#39;av-quiz.tk&#39;]),
+ (&#39;url&#39;, [&#39;http://av-quiz.tk/wp-content/k6K/&#39;]),
+ (&#39;linux_path&#39;, [&#39;//av-quiz.tk/wp-content/k6K/\t\t\tNov&#39;]),
+ (&#39;sha256_hash&#39;,
+  [&#39;f7a4da96129e9c9708a005ee28e4a46af092275af36e3afd63ff201633c70285&#39;,
+   &#39;d95125b9b82df0734b6bc27c426d42dea895c642f2f6516132c80f896be6cf32&#39;,
+   &#39;b95a6218777e110578fa017ac14b33bf968ca9c57af7e99bd5843b78813f46e0&#39;,
+   &#39;9c345ee65032ec38e1a29bf6b645cde468e3ded2e87b0c9c4a93c517d465e70d&#39;,
+   &#39;bd9b8fe173935ad51f14abc16ed6a5bf6ee92ec4f45fd2ae1154dd2f727fb245&#39;])]
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<hr class="docutils" />
+<div class="section" id="a-style-border-solid-padding-5pt-color-black-background-color-90caf9-name-widgets-widgets-introduction-luis-a">
+<h1><a style="border: solid; padding:5pt; color:black; background-color:#90CAF9" name="widgets">Widgets introduction [Luis]</a><a class="headerlink" href="#a-style-border-solid-padding-5pt-color-black-background-color-90caf9-name-widgets-widgets-introduction-luis-a" title="Permalink to this headline">¶</a></h1>
+<p>Interactive HTML widgets for Jupyter Notebooks and IPython kernel.<br />
+Easy way to avoid input errors, types mismatch, date fortmat errors…</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>pip show ipykernel
+<span class="c1">#It&#39;s neccessary to select an ipykernel to work with ipywidgets</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Name: ipykernel
+Version: 6.0.1
+Summary: IPython Kernel for Jupyter
+Home-page: https://ipython.org
+Author: IPython Development Team
+Author-email: ipython-dev@scipy.org
+License: BSD
+Location: c:\users\pebryan\appdata\local\continuum\anaconda3\envs\dev38\lib\site-packages
+Requires: traitlets, ipython, tornado, debugpy, jupyter-client
+Required-by: qtconsole, notebook, jupyter, jupyter-console, ipywidgets
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">ipywidgets</span> <span class="k">as</span> <span class="nn">widgets</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="integer-slider">
+<h2>Integer Slider<a class="headerlink" href="#integer-slider" title="Permalink to this headline">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">w</span> <span class="o">=</span> <span class="n">widgets</span><span class="o">.</span><span class="n">IntSlider</span><span class="p">()</span>
+<span class="n">display</span><span class="p">(</span><span class="n">w</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<script type="application/vnd.jupyter.widget-view+json">
+{"model_id": "8039dc289b9f4ffc85ee8d833060dd7f", "version_major": 2, "version_minor": 0}
+</script></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">w</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="mi">89</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="intenger-range-slider">
+<h2>Intenger Range Slider<a class="headerlink" href="#intenger-range-slider" title="Permalink to this headline">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">widgets</span><span class="o">.</span><span class="n">IntRangeSlider</span><span class="p">(</span><span class="n">value</span><span class="o">=</span><span class="p">[</span><span class="mi">5</span><span class="p">,</span> <span class="mi">7</span><span class="p">],</span> <span class="nb">min</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="nb">max</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<script type="application/vnd.jupyter.widget-view+json">
+{"model_id": "ea2473ab24d54c0fbbb6a5c38b68c16e", "version_major": 2, "version_minor": 0}
+</script></div>
+</div>
+</div>
+<div class="section" id="integer-progress-bar">
+<h2>Integer Progress Bar<a class="headerlink" href="#integer-progress-bar" title="Permalink to this headline">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">p</span> <span class="o">=</span> <span class="n">widgets</span><span class="o">.</span><span class="n">IntProgress</span><span class="p">(</span>
+    <span class="n">value</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span>
+    <span class="nb">min</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span>
+    <span class="nb">max</span><span class="o">=</span><span class="mi">9</span><span class="p">,</span>
+    <span class="n">description</span><span class="o">=</span><span class="s1">&#39;Loading:&#39;</span><span class="p">,</span>
+    <span class="n">bar_style</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="c1"># &#39;success&#39;, &#39;info&#39;, &#39;warning&#39;, &#39;danger&#39; or &#39;&#39;</span>
+    <span class="n">style</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;bar_color&#39;</span><span class="p">:</span> <span class="s1">&#39;maroon&#39;</span><span class="p">},</span>
+    <span class="n">orientation</span><span class="o">=</span><span class="s1">&#39;horizontal&#39;</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">time</span>
+<span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">Markdown</span>
+<span class="n">display</span><span class="p">(</span><span class="n">p</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">):</span>
+    <span class="n">p</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="n">x</span>
+    <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">x</span><span class="o">&gt;</span><span class="mi">4</span><span class="p">:</span>
+        <span class="n">p</span><span class="o">.</span><span class="n">style</span><span class="o">.</span><span class="n">bar_color</span> <span class="o">=</span> <span class="s1">&#39;green&#39;</span>
+<span class="n">p</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+<span class="n">display</span><span class="p">(</span><span class="n">Markdown</span><span class="p">(</span><span class="s1">&#39;***Finished!***&#39;</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<script type="application/vnd.jupyter.widget-view+json">
+{"model_id": "150bf939604f4a368c7fb73b404f0c81", "version_major": 2, "version_minor": 0}
+</script><p><em><strong>Finished!</strong></em></p>
+</div>
+</div>
+</div>
+<div class="section" id="dropdown">
+<h2>Dropdown<a class="headerlink" href="#dropdown" title="Permalink to this headline">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">widgets</span><span class="o">.</span><span class="n">Dropdown</span><span class="p">(</span>
+    <span class="n">options</span><span class="o">=</span><span class="p">[(</span><span class="s1">&#39;One&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;Two&#39;</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;Three&#39;</span><span class="p">,</span> <span class="mi">3</span><span class="p">)],</span>
+    <span class="n">value</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span>
+    <span class="n">description</span><span class="o">=</span><span class="s1">&#39;Number:&#39;</span><span class="p">,</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<script type="application/vnd.jupyter.widget-view+json">
+{"model_id": "7e5b58a3a5fd49799b066ebfa4961709", "version_major": 2, "version_minor": 0}
+</script></div>
+</div>
+</div>
+<div class="section" id="multiselector">
+<h2>Multiselector<a class="headerlink" href="#multiselector" title="Permalink to this headline">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sm</span> <span class="o">=</span> <span class="n">widgets</span><span class="o">.</span><span class="n">SelectMultiple</span><span class="p">(</span>
+    <span class="n">options</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;Option1&#39;</span><span class="p">,</span> <span class="s1">&#39;Option2&#39;</span><span class="p">,</span> <span class="s1">&#39;Option3&#39;</span><span class="p">],</span>
+    <span class="c1">#rows=10,</span>
+    <span class="n">description</span><span class="o">=</span><span class="s1">&#39;Modules&#39;</span><span class="p">,</span>
+    <span class="n">disabled</span><span class="o">=</span><span class="kc">False</span>
+<span class="p">)</span>
+<span class="n">display</span><span class="p">(</span><span class="n">sm</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<script type="application/vnd.jupyter.widget-view+json">
+{"model_id": "64f91bd72cb94f03aa637bef5fd6d84f", "version_major": 2, "version_minor": 0}
+</script></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sm</span><span class="o">.</span><span class="n">value</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(&#39;Option1&#39;, &#39;Option2&#39;)
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="data-picker">
+<h2>Data Picker<a class="headerlink" href="#data-picker" title="Permalink to this headline">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">widgets</span><span class="o">.</span><span class="n">DatePicker</span><span class="p">(</span>
+    <span class="n">description</span><span class="o">=</span><span class="s1">&#39;Pick a Date&#39;</span><span class="p">,</span>
+    <span class="n">disabled</span><span class="o">=</span><span class="kc">False</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<script type="application/vnd.jupyter.widget-view+json">
+{"model_id": "d85315d8cdc74171abfff61ea68ae936", "version_major": 2, "version_minor": 0}
+</script></div>
+</div>
+</div>
+<div class="section" id="file-uploader">
+<h2>File Uploader<a class="headerlink" href="#file-uploader" title="Permalink to this headline">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fu</span> <span class="o">=</span> <span class="n">widgets</span><span class="o">.</span><span class="n">FileUpload</span><span class="p">(</span>
+    <span class="n">accept</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">,</span>  <span class="c1"># Accepted file extension e.g. &#39;.txt&#39;, &#39;.pdf&#39;, &#39;image/*&#39;, &#39;image/*,.pdf&#39;</span>
+    <span class="n">multiple</span><span class="o">=</span><span class="kc">False</span>  <span class="c1"># True to accept multiple files upload else False</span>
+<span class="p">)</span>
+<span class="n">display</span><span class="p">(</span><span class="n">fu</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<script type="application/vnd.jupyter.widget-view+json">
+{"model_id": "9df96c89a0b34677b24febbc08155fd5", "version_major": 2, "version_minor": 0}
+</script></div>
+</div>
+</div>
+<div class="section" id="more-sophisticated-file-folder-chooser">
+<h2>More sophisticated file/folder chooser<a class="headerlink" href="#more-sophisticated-file-folder-chooser" title="Permalink to this headline">¶</a></h2>
+<p><a class="reference external" href="https://github.com/crahan/ipyfilechooser">ipyfilechooser Project</a></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">pip</span> install ipyfilechooser
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Collecting ipyfilechooser
+  Downloading ipyfilechooser-0.6.0-py3-none-any.whl (11 kB)
+Requirement already satisfied: ipywidgets in c:\users\pebryan\appdata\local\continuum\anaconda3\envs\dev38\lib\site-packages (from ipyfilechooser) (7.6.3)
+Requirement already satisfied: ipykernel&gt;=4.5.1 in c:\users\pebryan\appdata\local\continuum\anaconda3\envs\dev38\lib\site-packages (from ipywidgets-&gt;ipyfilechooser) (6.0.1)
+Requirement already satisfied: widgetsnbextension~=3.5.0 in c:\users\pebryan\appdata\local\continuum\anaconda3\envs\dev38\lib\site-packages (from ipywidgets-&gt;ipyfilechooser) (3.5.1)
+Requirement already satisfied: ipython&gt;=4.0.0 in c:\users\pebryan\appdata\local\continuum\anaconda3\envs\dev38\lib\site-packages (from ipywidgets-&gt;ipyfilechooser) (7.25.0)
+Requirement already satisfied: traitlets&gt;=4.3.1 in c:\users\pebryan\appdata\local\continuum\anaconda3\envs\dev38\lib\site-packages (from ipywidgets-&gt;ipyfilechooser) (5.0.5)
+Requirement already satisfied: nbformat&gt;=4.2.0 in c:\users\pebryan\appdata\local\continuum\anaconda3\envs\dev38\lib\site-packages (from ipywidgets-&gt;ipyfilechooser) (5.1.3)
+Requirement already satisfied: jupyterlab-widgets&gt;=1.0.0 in c:\users\pebryan\appdata\local\continuum\anaconda3\envs\dev38\lib\site-packages (from ipywidgets-&gt;ipyfilechooser) (1.0.0)
+Requirement already satisfied: jupyter-client in c:\users\pebryan\appdata\local\continuum\anaconda3\envs\dev38\lib\site-packages (from ipykernel&gt;=4.5.1-&gt;ipywidgets-&gt;ipyfilechooser) (6.1.12)
+Requirement already satisfied: tornado&gt;=4.2 in c:\users\pebryan\appdata\local\continuum\anaconda3\envs\dev38\lib\site-packages (from ipykernel&gt;=4.5.1-&gt;ipywidgets-&gt;ipyfilechooser) (6.1)
+Requirement already satisfied: debugpy&gt;=1.0.0 in c:\users\pebryan\appdata\local\continuum\anaconda3\envs\dev38\lib\site-packages (from ipykernel&gt;=4.5.1-&gt;ipywidgets-&gt;ipyfilechooser) (1.3.0)
+Requirement already satisfied: decorator in c:\users\pebryan\appdata\local\continuum\anaconda3\envs\dev38\lib\site-packages (from ipython&gt;=4.0.0-&gt;ipywidgets-&gt;ipyfilechooser) (4.4.2)
+Requirement already satisfied: colorama in c:\users\pebryan\appdata\local\continuum\anaconda3\envs\dev38\lib\site-packages (from ipython&gt;=4.0.0-&gt;ipywidgets-&gt;ipyfilechooser) (0.4.4)
+Requirement already satisfied: setuptools&gt;=18.5 in c:\users\pebryan\appdata\local\continuum\anaconda3\envs\dev38\lib\site-packages (from ipython&gt;=4.0.0-&gt;ipywidgets-&gt;ipyfilechooser) (52.0.0.post20210125)
+Requirement already satisfied: jedi&gt;=0.16 in c:\users\pebryan\appdata\local\continuum\anaconda3\envs\dev38\lib\site-packages (from ipython&gt;=4.0.0-&gt;ipywidgets-&gt;ipyfilechooser) (0.18.0)
+Requirement already satisfied: prompt-toolkit!=3.0.0,!=3.0.1,&lt;3.1.0,&gt;=2.0.0 in c:\users\pebryan\appdata\local\continuum\anaconda3\envs\dev38\lib\site-packages (from ipython&gt;=4.0.0-&gt;ipywidgets-&gt;ipyfilechooser) (3.0.19)
+Requirement already satisfied: pygments in c:\users\pebryan\appdata\local\continuum\anaconda3\envs\dev38\lib\site-packages (from ipython&gt;=4.0.0-&gt;ipywidgets-&gt;ipyfilechooser) (2.9.0)
+Requirement already satisfied: matplotlib-inline in c:\users\pebryan\appdata\local\continuum\anaconda3\envs\dev38\lib\site-packages (from ipython&gt;=4.0.0-&gt;ipywidgets-&gt;ipyfilechooser) (0.1.2)
+Requirement already satisfied: backcall in c:\users\pebryan\appdata\local\continuum\anaconda3\envs\dev38\lib\site-packages (from ipython&gt;=4.0.0-&gt;ipywidgets-&gt;ipyfilechooser) (0.2.0)
+Requirement already satisfied: pickleshare in c:\users\pebryan\appdata\local\continuum\anaconda3\envs\dev38\lib\site-packages (from ipython&gt;=4.0.0-&gt;ipywidgets-&gt;ipyfilechooser) (0.7.5)
+Requirement already satisfied: parso&lt;0.9.0,&gt;=0.8.0 in c:\users\pebryan\appdata\local\continuum\anaconda3\envs\dev38\lib\site-packages (from jedi&gt;=0.16-&gt;ipython&gt;=4.0.0-&gt;ipywidgets-&gt;ipyfilechooser) (0.8.2)
+Requirement already satisfied: jupyter-core in c:\users\pebryan\appdata\local\continuum\anaconda3\envs\dev38\lib\site-packages (from nbformat&gt;=4.2.0-&gt;ipywidgets-&gt;ipyfilechooser) (4.7.1)
+Requirement already satisfied: ipython-genutils in c:\users\pebryan\appdata\local\continuum\anaconda3\envs\dev38\lib\site-packages (from nbformat&gt;=4.2.0-&gt;ipywidgets-&gt;ipyfilechooser) (0.2.0)
+Requirement already satisfied: jsonschema!=2.5.0,&gt;=2.4 in c:\users\pebryan\appdata\local\continuum\anaconda3\envs\dev38\lib\site-packages (from nbformat&gt;=4.2.0-&gt;ipywidgets-&gt;ipyfilechooser) (3.2.0)
+Requirement already satisfied: six&gt;=1.11.0 in c:\users\pebryan\appdata\local\continuum\anaconda3\envs\dev38\lib\site-packages (from jsonschema!=2.5.0,&gt;=2.4-&gt;nbformat&gt;=4.2.0-&gt;ipywidgets-&gt;ipyfilechooser) (1.16.0)
+Requirement already satisfied: pyrsistent&gt;=0.14.0 in c:\users\pebryan\appdata\local\continuum\anaconda3\envs\dev38\lib\site-packages (from jsonschema!=2.5.0,&gt;=2.4-&gt;nbformat&gt;=4.2.0-&gt;ipywidgets-&gt;ipyfilechooser) (0.18.0)
+Requirement already satisfied: attrs&gt;=17.4.0 in c:\users\pebryan\appdata\local\continuum\anaconda3\envs\dev38\lib\site-packages (from jsonschema!=2.5.0,&gt;=2.4-&gt;nbformat&gt;=4.2.0-&gt;ipywidgets-&gt;ipyfilechooser) (21.2.0)
+Requirement already satisfied: wcwidth in c:\users\pebryan\appdata\local\continuum\anaconda3\envs\dev38\lib\site-packages (from prompt-toolkit!=3.0.0,!=3.0.1,&lt;3.1.0,&gt;=2.0.0-&gt;ipython&gt;=4.0.0-&gt;ipywidgets-&gt;ipyfilechooser) (0.2.5)
+Requirement already satisfied: notebook&gt;=4.4.1 in c:\users\pebryan\appdata\local\continuum\anaconda3\envs\dev38\lib\site-packages (from widgetsnbextension~=3.5.0-&gt;ipywidgets-&gt;ipyfilechooser) (6.4.0)
+Requirement already satisfied: nbconvert in c:\users\pebryan\appdata\local\continuum\anaconda3\envs\dev38\lib\site-packages (from notebook&gt;=4.4.1-&gt;widgetsnbextension~=3.5.0-&gt;ipywidgets-&gt;ipyfilechooser) (6.1.0)
+Requirement already satisfied: argon2-cffi in c:\users\pebryan\appdata\local\continuum\anaconda3\envs\dev38\lib\site-packages (from notebook&gt;=4.4.1-&gt;widgetsnbextension~=3.5.0-&gt;ipywidgets-&gt;ipyfilechooser) (20.1.0)
+Requirement already satisfied: terminado&gt;=0.8.3 in c:\users\pebryan\appdata\local\continuum\anaconda3\envs\dev38\lib\site-packages (from notebook&gt;=4.4.1-&gt;widgetsnbextension~=3.5.0-&gt;ipywidgets-&gt;ipyfilechooser) (0.10.1)
+Requirement already satisfied: pyzmq&gt;=17 in c:\users\pebryan\appdata\local\continuum\anaconda3\envs\dev38\lib\site-packages (from notebook&gt;=4.4.1-&gt;widgetsnbextension~=3.5.0-&gt;ipywidgets-&gt;ipyfilechooser) (22.1.0)
+Requirement already satisfied: jinja2 in c:\users\pebryan\appdata\local\continuum\anaconda3\envs\dev38\lib\site-packages (from notebook&gt;=4.4.1-&gt;widgetsnbextension~=3.5.0-&gt;ipywidgets-&gt;ipyfilechooser) (3.0.1)
+Requirement already satisfied: Send2Trash&gt;=1.5.0 in c:\users\pebryan\appdata\local\continuum\anaconda3\envs\dev38\lib\site-packages (from notebook&gt;=4.4.1-&gt;widgetsnbextension~=3.5.0-&gt;ipywidgets-&gt;ipyfilechooser) (1.7.1)
+Requirement already satisfied: prometheus-client in c:\users\pebryan\appdata\local\continuum\anaconda3\envs\dev38\lib\site-packages (from notebook&gt;=4.4.1-&gt;widgetsnbextension~=3.5.0-&gt;ipywidgets-&gt;ipyfilechooser) (0.11.0)
+Requirement already satisfied: python-dateutil&gt;=2.1 in c:\users\pebryan\appdata\local\continuum\anaconda3\envs\dev38\lib\site-packages (from jupyter-client-&gt;ipykernel&gt;=4.5.1-&gt;ipywidgets-&gt;ipyfilechooser) (2.8.2)
+Requirement already satisfied: pywin32&gt;=1.0 in c:\users\pebryan\appdata\local\continuum\anaconda3\envs\dev38\lib\site-packages (from jupyter-core-&gt;nbformat&gt;=4.2.0-&gt;ipywidgets-&gt;ipyfilechooser) (301)
+Requirement already satisfied: pywinpty&gt;=1.1.0 in c:\users\pebryan\appdata\local\continuum\anaconda3\envs\dev38\lib\site-packages (from terminado&gt;=0.8.3-&gt;notebook&gt;=4.4.1-&gt;widgetsnbextension~=3.5.0-&gt;ipywidgets-&gt;ipyfilechooser) (1.1.3)
+Requirement already satisfied: cffi&gt;=1.0.0 in c:\users\pebryan\appdata\local\continuum\anaconda3\envs\dev38\lib\site-packages (from argon2-cffi-&gt;notebook&gt;=4.4.1-&gt;widgetsnbextension~=3.5.0-&gt;ipywidgets-&gt;ipyfilechooser) (1.14.6)
+Requirement already satisfied: pycparser in c:\users\pebryan\appdata\local\continuum\anaconda3\envs\dev38\lib\site-packages (from cffi&gt;=1.0.0-&gt;argon2-cffi-&gt;notebook&gt;=4.4.1-&gt;widgetsnbextension~=3.5.0-&gt;ipywidgets-&gt;ipyfilechooser) (2.20)
+Requirement already satisfied: MarkupSafe&gt;=2.0 in c:\users\pebryan\appdata\local\continuum\anaconda3\envs\dev38\lib\site-packages (from jinja2-&gt;notebook&gt;=4.4.1-&gt;widgetsnbextension~=3.5.0-&gt;ipywidgets-&gt;ipyfilechooser) (2.0.1)
+Requirement already satisfied: entrypoints&gt;=0.2.2 in c:\users\pebryan\appdata\local\continuum\anaconda3\envs\dev38\lib\site-packages (from nbconvert-&gt;notebook&gt;=4.4.1-&gt;widgetsnbextension~=3.5.0-&gt;ipywidgets-&gt;ipyfilechooser) (0.3)
+Requirement already satisfied: mistune&lt;2,&gt;=0.8.1 in c:\users\pebryan\appdata\local\continuum\anaconda3\envs\dev38\lib\site-packages (from nbconvert-&gt;notebook&gt;=4.4.1-&gt;widgetsnbextension~=3.5.0-&gt;ipywidgets-&gt;ipyfilechooser) (0.8.4)
+Requirement already satisfied: bleach in c:\users\pebryan\appdata\local\continuum\anaconda3\envs\dev38\lib\site-packages (from nbconvert-&gt;notebook&gt;=4.4.1-&gt;widgetsnbextension~=3.5.0-&gt;ipywidgets-&gt;ipyfilechooser) (3.3.1)
+Requirement already satisfied: testpath in c:\users\pebryan\appdata\local\continuum\anaconda3\envs\dev38\lib\site-packages (from nbconvert-&gt;notebook&gt;=4.4.1-&gt;widgetsnbextension~=3.5.0-&gt;ipywidgets-&gt;ipyfilechooser) (0.5.0)
+Requirement already satisfied: pandocfilters&gt;=1.4.1 in c:\users\pebryan\appdata\local\continuum\anaconda3\envs\dev38\lib\site-packages (from nbconvert-&gt;notebook&gt;=4.4.1-&gt;widgetsnbextension~=3.5.0-&gt;ipywidgets-&gt;ipyfilechooser) (1.4.3)
+Requirement already satisfied: jupyterlab-pygments in c:\users\pebryan\appdata\local\continuum\anaconda3\envs\dev38\lib\site-packages (from nbconvert-&gt;notebook&gt;=4.4.1-&gt;widgetsnbextension~=3.5.0-&gt;ipywidgets-&gt;ipyfilechooser) (0.1.2)
+Requirement already satisfied: defusedxml in c:\users\pebryan\appdata\local\continuum\anaconda3\envs\dev38\lib\site-packages (from nbconvert-&gt;notebook&gt;=4.4.1-&gt;widgetsnbextension~=3.5.0-&gt;ipywidgets-&gt;ipyfilechooser) (0.7.1)
+Requirement already satisfied: nbclient&lt;0.6.0,&gt;=0.5.0 in c:\users\pebryan\appdata\local\continuum\anaconda3\envs\dev38\lib\site-packages (from nbconvert-&gt;notebook&gt;=4.4.1-&gt;widgetsnbextension~=3.5.0-&gt;ipywidgets-&gt;ipyfilechooser) (0.5.3)
+Requirement already satisfied: async-generator in c:\users\pebryan\appdata\local\continuum\anaconda3\envs\dev38\lib\site-packages (from nbclient&lt;0.6.0,&gt;=0.5.0-&gt;nbconvert-&gt;notebook&gt;=4.4.1-&gt;widgetsnbextension~=3.5.0-&gt;ipywidgets-&gt;ipyfilechooser) (1.10)
+Requirement already satisfied: nest-asyncio in c:\users\pebryan\appdata\local\continuum\anaconda3\envs\dev38\lib\site-packages (from nbclient&lt;0.6.0,&gt;=0.5.0-&gt;nbconvert-&gt;notebook&gt;=4.4.1-&gt;widgetsnbextension~=3.5.0-&gt;ipywidgets-&gt;ipyfilechooser) (1.5.1)
+Requirement already satisfied: packaging in c:\users\pebryan\appdata\local\continuum\anaconda3\envs\dev38\lib\site-packages (from bleach-&gt;nbconvert-&gt;notebook&gt;=4.4.1-&gt;widgetsnbextension~=3.5.0-&gt;ipywidgets-&gt;ipyfilechooser) (21.0)
+Requirement already satisfied: webencodings in c:\users\pebryan\appdata\local\continuum\anaconda3\envs\dev38\lib\site-packages (from bleach-&gt;nbconvert-&gt;notebook&gt;=4.4.1-&gt;widgetsnbextension~=3.5.0-&gt;ipywidgets-&gt;ipyfilechooser) (0.5.1)
+Requirement already satisfied: pyparsing&gt;=2.0.2 in c:\users\pebryan\appdata\local\continuum\anaconda3\envs\dev38\lib\site-packages (from packaging-&gt;bleach-&gt;nbconvert-&gt;notebook&gt;=4.4.1-&gt;widgetsnbextension~=3.5.0-&gt;ipywidgets-&gt;ipyfilechooser) (2.4.7)
+Installing collected packages: ipyfilechooser
+Successfully installed ipyfilechooser-0.6.0
+Note: you may need to restart the kernel to use updated packages.
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">ipyfilechooser</span> <span class="kn">import</span> <span class="n">FileChooser</span>
+<span class="n">fc</span> <span class="o">=</span> <span class="n">FileChooser</span><span class="p">()</span>
+<span class="c1">#fc.show_only_dirs = True</span>
+<span class="n">fc</span><span class="o">.</span><span class="n">show_hidden</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="n">fc</span><span class="o">.</span><span class="n">use_dir_icons</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="n">fc</span><span class="o">.</span><span class="n">title</span> <span class="o">=</span> <span class="s1">&#39;&lt;b&gt;Input folder Path&lt;/b&gt;&#39;</span>
+<span class="n">display</span><span class="p">(</span><span class="n">fc</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<script type="application/vnd.jupyter.widget-view+json">
+{"model_id": "4ac9d78f969947c5bf2492965a66fea0", "version_major": 2, "version_minor": 0}
+</script></div>
+</div>
+<p>MSTICPy also includes a number of advanced widgets. You can find out more about them in the workshop session on MSTICPy later today.</p>
+</div>
+</div>
+<hr class="docutils" />
+<div class="section" id="a-style-border-solid-padding-5pt-color-black-background-color-90caf9-name-notjustpython-jupyter-extensions-luis-a">
+<h1><a style="border: solid; padding:5pt; color:black; background-color:#90CAF9" name="notjustpython">Jupyter Extensions [Luis]</a><a class="headerlink" href="#a-style-border-solid-padding-5pt-color-black-background-color-90caf9-name-notjustpython-jupyter-extensions-luis-a" title="Permalink to this headline">¶</a></h1>
+<p>Extension are client-specific, most only Jupyter classic. In this section we will talk about JupyterLab extensions.</p>
+<p>Fundamentally, JupyterLab is designed as an extensible environment. JupyterLab extensions can customize or enhance any part of JupyterLab. They can provide new themes, file viewers and editors, or renderers for rich outputs in notebooks. Extensions can add items to the menu or command palette, keyboard shortcuts, or settings in the settings system. Extensions can provide an API for other extensions to use and can depend on other extensions. In fact, the whole of JupyterLab itself is simply a collection of extensions that are no more powerful or privileged than any custom extension.</p>
+<div class="section" id="creating-config-file">
+<h2>Creating config file<a class="headerlink" href="#creating-config-file" title="Permalink to this headline">¶</a></h2>
+<p>This file will be used to keep extensions configurations.<br />
+File will be created in ‘~/.jupyter/jupyter_lab_config.py’</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>jupyter lab --generate-config
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="jupyterlab-system-monitor">
+<h2>JupyterLab System Monitor<a class="headerlink" href="#jupyterlab-system-monitor" title="Permalink to this headline">¶</a></h2>
+<p>JupyterLab extension to display system information (memory and cpu usage). <a class="reference external" href="https://github.com/jtpio/jupyterlab-system-monitor">Project</a></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>pip install jupyterlab-system-monitor
+</pre></div>
+</div>
+</div>
+</div>
+<p>Add this lines to config file.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># amount of memory expressed in bytes</span>
+<span class="n">c</span><span class="o">.</span><span class="n">ResourceUseDisplay</span><span class="o">.</span><span class="n">mem_limit</span> <span class="o">=</span> <span class="mi">8564768768</span>
+<span class="n">c</span><span class="o">.</span><span class="n">ResourceUseDisplay</span><span class="o">.</span><span class="n">track_cpu_percent</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="n">c</span><span class="o">.</span><span class="n">ResourceUseDisplay</span><span class="o">.</span><span class="n">cpu_limit</span> <span class="o">=</span> <span class="mi">8</span>
+</pre></div>
+</div>
+<p><img alt="Sysmonitor" src="https://github.com/jtpio/jupyterlab-system-monitor/raw/main/doc/screencast.gif" /></p>
+</div>
+<div class="section" id="git">
+<h2>Git<a class="headerlink" href="#git" title="Permalink to this headline">¶</a></h2>
+<p>A JupyterLab extension for version control using Git. <a class="reference external" href="https://github.com/jupyterlab/jupyterlab-git">Project</a></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>pip install jupyterlab-git
+</pre></div>
+</div>
+</div>
+</div>
+<p><img alt="Git" src="https://raw.githubusercontent.com/jupyterlab/jupyterlab-git/master/docs/figs/preview.gif" /></p>
+</div>
+<div class="section" id="jupyterlab-templates">
+<h2>JupyterLab Templates<a class="headerlink" href="#jupyterlab-templates" title="Permalink to this headline">¶</a></h2>
+<p>Support for jupyter notebook templates in jupyterlab. <a class="reference external" href="https://github.com/jpmorganchase/jupyterlab_templates">Project</a></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>pip install jupyterlab_templates
+<span class="o">!</span>jupyter labextension install jupyterlab_templates
+<span class="o">!</span>jupyter serverextension <span class="nb">enable</span> --py jupyterlab_templates
+</pre></div>
+</div>
+</div>
+</div>
+<p>Add this lines to config file.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">c</span><span class="o">.</span><span class="n">JupyterLabTemplates</span><span class="o">.</span><span class="n">template_dirs</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;list&#39;</span><span class="p">,</span> <span class="s1">&#39;of&#39;</span><span class="p">,</span> <span class="s1">&#39;template&#39;</span><span class="p">,</span> <span class="s1">&#39;directories&#39;</span><span class="p">]</span>
+<span class="n">c</span><span class="o">.</span><span class="n">JupyterLabTemplates</span><span class="o">.</span><span class="n">include_default</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="n">c</span><span class="o">.</span><span class="n">JupyterLabTemplates</span><span class="o">.</span><span class="n">include_core_paths</span> <span class="o">=</span> <span class="kc">True</span>
+</pre></div>
+</div>
+<p><strong>Tip</strong>: It’s necessary to put the templates inside a folder inside indicated folder.</p>
+<p><img alt="Templates" src="https://raw.githubusercontent.com/jpmorganchase/jupyterlab_templates/main/docs/example1.gif" /></p>
+</div>
+<div class="section" id="code-snippets-elyra">
+<h2>Code Snippets (Elyra)<a class="headerlink" href="#code-snippets-elyra" title="Permalink to this headline">¶</a></h2>
+<p>The ability to reuse pieces of code allows users to avoid doing repetitive work, making the programming workflow more simple and productive. Elyra supports custom code snippets that can be added to the file editor. <a class="reference external" href="https://elyra.readthedocs.io/en/latest/getting_started/overview.html#reusable-code-snippets">Project</a></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>pip install elyra-code-snippet-extension
+<span class="o">!</span>pip install -U <span class="s2">&quot;nbclassic&gt;=0.2.8&quot;</span>
+<span class="o">!</span>jupyter lab build
+</pre></div>
+</div>
+</div>
+</div>
+<p><img alt="Snippets example" src="https://elyra.readthedocs.io/en/latest/_images/code-snippet-expanded.png" /></p>
+</div>
+</div>
+<div class="section" id="a-style-border-solid-padding-5pt-color-black-background-color-90caf9-name-nbconvert-using-nbconvert-to-export-and-create-notebooks-a">
+<h1><a style="border: solid; padding:5pt; color:black; background-color:#90CAF9" name="nbconvert">Using NBConvert to export and create notebooks</a><a class="headerlink" href="#a-style-border-solid-padding-5pt-color-black-background-color-90caf9-name-nbconvert-using-nbconvert-to-export-and-create-notebooks-a" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="nbconvert-create-a-notebook-programmatically-roberto">
+<h2>NBConvert - Create a notebook programmatically [Roberto]<a class="headerlink" href="#nbconvert-create-a-notebook-programmatically-roberto" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="nbconvert-exporting-and-converting-to-other-formats-ian">
+<h2>NBConvert - Exporting and converting to other formats [Ian]<a class="headerlink" href="#nbconvert-exporting-and-converting-to-other-formats-ian" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="from-the-command-line">
+<h3>From the command line<a class="headerlink" href="#from-the-command-line" title="Permalink to this headline">¶</a></h3>
+<p style="font-family:consolas; font-size:15pt; color:green">
+jupyter nbconvert --to <i>FORMAT</i> input_notebook.ipynb
+</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>jupyter nbconvert --to RST day2-1-Jupyter-advanced-topics.ipynb
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[NbConvertApp] Converting notebook day2-1-Jupyter-advanced-topics.ipynb to RST
+[NbConvertApp] Writing 37699 bytes to day2-1-Jupyter-advanced-topics.rst
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="in-code">
+<h2>In code<a class="headerlink" href="#in-code" title="Permalink to this headline">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">nbformat</span>
+
+<span class="c1"># Import notebook into structured format with nbformat</span>
+<span class="n">our_notebook</span> <span class="o">=</span> <span class="n">nbformat</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="s2">&quot;day2-1-Jupyter-advanced-topics.ipynb&quot;</span><span class="p">,</span> <span class="n">as_version</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span>
+<span class="n">our_notebook</span><span class="o">.</span><span class="n">cells</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;cell_type&#39;: &#39;markdown&#39;,
+ &#39;metadata&#39;: {},
+ &#39;source&#39;: &#39;## InfoSec Jupyterthon Day 2\n\n---\n\n# 1. Jupyter Notebooks Advanced\n\nContents\n\n- [Jupyter is not just Python](#notjustpython)\n- [Jupyter Kernels &amp; Python environments](#kernels)\n- [Magics](#magics)\n- [Widgets introduction](#widgets)[\n- [Jupyter Extensions](#extensions)\n- [Using NBConvert to export and create notebooks](#nbconvert)\n- [Dev topics - Debugging and testing notebook code](#debugging)&#39;}
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="convert-a-notebook-to-html">
+<h3>Convert a notebook to HTML<a class="headerlink" href="#convert-a-notebook-to-html" title="Permalink to this headline">¶</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Import the exporter</span>
+<span class="kn">from</span> <span class="nn">nbconvert</span> <span class="kn">import</span> <span class="n">HTMLExporter</span><span class="p">,</span> <span class="n">PythonExporter</span>
+
+<span class="c1"># Instantiate the exporter</span>
+<span class="n">html_exporter</span> <span class="o">=</span> <span class="n">HTMLExporter</span><span class="p">()</span>
+<span class="n">html_exporter</span><span class="o">.</span><span class="n">template_name</span> <span class="o">=</span> <span class="s1">&#39;classic&#39;</span>
+
+<span class="c1"># Convert the notebook</span>
+<span class="p">(</span><span class="n">body</span><span class="p">,</span> <span class="n">resources</span><span class="p">)</span> <span class="o">=</span> <span class="n">html_exporter</span><span class="o">.</span><span class="n">from_notebook_node</span><span class="p">(</span><span class="n">our_notebook</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">body</span><span class="p">[:</span><span class="mi">200</span><span class="p">])</span>
+
+<span class="n">out_file</span> <span class="o">=</span> <span class="s2">&quot;day2-1-Jupyter-advanced-topics.html&quot;</span>
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">out_file</span><span class="p">,</span> <span class="s2">&quot;w&quot;</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s2">&quot;utf-8&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">nb_file</span><span class="p">:</span>
+    <span class="n">nb_file</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">body</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;&lt;meta charset=&quot;utf-8&quot; /&gt;
+&lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
+
+&lt;title&gt;Notebook&lt;/title&gt;&lt;script src=&quot;https://cdnjs.cloudflare.com/ajax/libs
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="convert-to-python-module">
+<h3>Convert to Python module<a class="headerlink" href="#convert-to-python-module" title="Permalink to this headline">¶</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># rst_exporter = RSTExporter()</span>
+<span class="n">py_exporter</span> <span class="o">=</span> <span class="n">PythonExporter</span><span class="p">()</span>
+
+<span class="c1"># rst_text, _ = rst_exporter.from_notebook_node(our_notebook)</span>
+<span class="n">py_text</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="n">py_exporter</span><span class="o">.</span><span class="n">from_notebook_node</span><span class="p">(</span><span class="n">our_notebook</span><span class="p">)</span>
+
+<span class="n">py_out_file</span> <span class="o">=</span> <span class="s2">&quot;day2-1-Jupyter-advanced-topics.py&quot;</span>
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">py_out_file</span><span class="p">,</span> <span class="s2">&quot;w&quot;</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s2">&quot;utf-8&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">nb_file</span><span class="p">:</span>
+    <span class="n">nb_file</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">py_text</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<hr class="docutils" />
+<div class="section" id="a-style-border-solid-padding-5pt-color-black-background-color-90caf9-name-debugging-dev-topics-debugging-and-testing-notebook-code-ian-a">
+<h1><a style="border: solid; padding:5pt; color:black; background-color:#90CAF9" name="debugging">Dev topics - Debugging and testing notebook code [Ian]</a><a class="headerlink" href="#a-style-border-solid-padding-5pt-color-black-background-color-90caf9-name-debugging-dev-topics-debugging-and-testing-notebook-code-ian-a" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="magics-and-errors-traceback-xmode-debug">
+<h2>Magics and errors – traceback, xmode, debug<a class="headerlink" href="#magics-and-errors-traceback-xmode-debug" title="Permalink to this headline">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Bad code example</span>
+
+<span class="k">def</span> <span class="nf">bad_func</span><span class="p">(</span><span class="n">param1</span><span class="p">,</span> <span class="n">param2</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;What could possibly go wrong.&quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="n">param1</span> <span class="o">+</span> <span class="n">param2</span>
+
+<span class="k">def</span> <span class="nf">func_in_middle</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;It&#39;s not my problem&quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="n">bad_func</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">hapless</span><span class="p">():</span>
+    <span class="sd">&quot;&quot;&quot;I&#39;m just hoping for the best.&quot;&quot;&quot;</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">func_in_middle</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">))</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">func_in_middle</span><span class="p">(</span><span class="s2">&quot;Hello&quot;</span><span class="p">,</span> <span class="s2">&quot;World&quot;</span><span class="p">))</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">func_in_middle</span><span class="p">(</span><span class="s2">&quot;Hello&quot;</span><span class="p">,</span> <span class="mi">1</span><span class="p">))</span>
+
+
+<span class="n">hapless</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>3
+HelloWorld
+</pre></div>
+</div>
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">TypeError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="o">~</span>\<span class="n">AppData</span>\<span class="n">Local</span>\<span class="n">Temp</span><span class="o">/</span><span class="n">ipykernel_44668</span><span class="o">/</span><span class="mf">4209713645.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="g g-Whitespace">     </span><span class="mi">16</span> 
+<span class="g g-Whitespace">     </span><span class="mi">17</span> 
+<span class="ne">---&gt; </span><span class="mi">18</span> <span class="n">hapless</span><span class="p">()</span>
+
+<span class="nn">~\AppData\Local\Temp/ipykernel_44668/4209713645.py</span> in <span class="ni">hapless</span><span class="nt">()</span>
+<span class="g g-Whitespace">     </span><span class="mi">13</span>     <span class="nb">print</span><span class="p">(</span><span class="n">func_in_middle</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">))</span>
+<span class="g g-Whitespace">     </span><span class="mi">14</span>     <span class="nb">print</span><span class="p">(</span><span class="n">func_in_middle</span><span class="p">(</span><span class="s2">&quot;Hello&quot;</span><span class="p">,</span> <span class="s2">&quot;World&quot;</span><span class="p">))</span>
+<span class="ne">---&gt; </span><span class="mi">15</span>     <span class="nb">print</span><span class="p">(</span><span class="n">func_in_middle</span><span class="p">(</span><span class="s2">&quot;Hello&quot;</span><span class="p">,</span> <span class="mi">1</span><span class="p">))</span>
+<span class="g g-Whitespace">     </span><span class="mi">16</span> 
+<span class="g g-Whitespace">     </span><span class="mi">17</span> 
+
+<span class="nn">~\AppData\Local\Temp/ipykernel_44668/4209713645.py</span> in <span class="ni">func_in_middle</span><span class="nt">(*args)</span>
+<span class="g g-Whitespace">      </span><span class="mi">7</span> <span class="k">def</span> <span class="nf">func_in_middle</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">):</span>
+<span class="g g-Whitespace">      </span><span class="mi">8</span>     <span class="sd">&quot;&quot;&quot;It&#39;s not my problem&quot;&quot;&quot;</span>
+<span class="ne">----&gt; </span><span class="mi">9</span>     <span class="k">return</span> <span class="n">bad_func</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">10</span> 
+<span class="g g-Whitespace">     </span><span class="mi">11</span> <span class="k">def</span> <span class="nf">hapless</span><span class="p">():</span>
+
+<span class="nn">~\AppData\Local\Temp/ipykernel_44668/4209713645.py</span> in <span class="ni">bad_func</span><span class="nt">(param1, param2)</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="k">def</span> <span class="nf">bad_func</span><span class="p">(</span><span class="n">param1</span><span class="p">,</span> <span class="n">param2</span><span class="p">):</span>
+<span class="g g-Whitespace">      </span><span class="mi">4</span>     <span class="sd">&quot;&quot;&quot;What could possibly go wrong.&quot;&quot;&quot;</span>
+<span class="ne">----&gt; </span><span class="mi">5</span>     <span class="k">return</span> <span class="n">param1</span> <span class="o">+</span> <span class="n">param2</span>
+<span class="g g-Whitespace">      </span><span class="mi">6</span> 
+<span class="g g-Whitespace">      </span><span class="mi">7</span> <span class="k">def</span> <span class="nf">func_in_middle</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">):</span>
+
+<span class="ne">TypeError</span>: can only concatenate str (not &quot;int&quot;) to str
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="use-tb-to-review-last-traceback">
+<h3>Use %tb to review last traceback<a class="headerlink" href="#use-tb-to-review-last-traceback" title="Permalink to this headline">¶</a></h3>
+<p style="font-family:consolas; font-size:15pt; color:green">
+%tb
+</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">tb</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">TypeError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="o">~</span>\<span class="n">AppData</span>\<span class="n">Local</span>\<span class="n">Temp</span><span class="o">/</span><span class="n">ipykernel_44668</span><span class="o">/</span><span class="mf">4209713645.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="g g-Whitespace">     </span><span class="mi">16</span> 
+<span class="g g-Whitespace">     </span><span class="mi">17</span> 
+<span class="ne">---&gt; </span><span class="mi">18</span> <span class="n">hapless</span><span class="p">()</span>
+
+<span class="nn">~\AppData\Local\Temp/ipykernel_44668/4209713645.py</span> in <span class="ni">hapless</span><span class="nt">()</span>
+<span class="g g-Whitespace">     </span><span class="mi">13</span>     <span class="nb">print</span><span class="p">(</span><span class="n">func_in_middle</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">))</span>
+<span class="g g-Whitespace">     </span><span class="mi">14</span>     <span class="nb">print</span><span class="p">(</span><span class="n">func_in_middle</span><span class="p">(</span><span class="s2">&quot;Hello&quot;</span><span class="p">,</span> <span class="s2">&quot;World&quot;</span><span class="p">))</span>
+<span class="ne">---&gt; </span><span class="mi">15</span>     <span class="nb">print</span><span class="p">(</span><span class="n">func_in_middle</span><span class="p">(</span><span class="s2">&quot;Hello&quot;</span><span class="p">,</span> <span class="mi">1</span><span class="p">))</span>
+<span class="g g-Whitespace">     </span><span class="mi">16</span> 
+<span class="g g-Whitespace">     </span><span class="mi">17</span> 
+
+<span class="nn">~\AppData\Local\Temp/ipykernel_44668/4209713645.py</span> in <span class="ni">func_in_middle</span><span class="nt">(*args)</span>
+<span class="g g-Whitespace">      </span><span class="mi">7</span> <span class="k">def</span> <span class="nf">func_in_middle</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">):</span>
+<span class="g g-Whitespace">      </span><span class="mi">8</span>     <span class="sd">&quot;&quot;&quot;It&#39;s not my problem&quot;&quot;&quot;</span>
+<span class="ne">----&gt; </span><span class="mi">9</span>     <span class="k">return</span> <span class="n">bad_func</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">10</span> 
+<span class="g g-Whitespace">     </span><span class="mi">11</span> <span class="k">def</span> <span class="nf">hapless</span><span class="p">():</span>
+
+<span class="nn">~\AppData\Local\Temp/ipykernel_44668/4209713645.py</span> in <span class="ni">bad_func</span><span class="nt">(param1, param2)</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="k">def</span> <span class="nf">bad_func</span><span class="p">(</span><span class="n">param1</span><span class="p">,</span> <span class="n">param2</span><span class="p">):</span>
+<span class="g g-Whitespace">      </span><span class="mi">4</span>     <span class="sd">&quot;&quot;&quot;What could possibly go wrong.&quot;&quot;&quot;</span>
+<span class="ne">----&gt; </span><span class="mi">5</span>     <span class="k">return</span> <span class="n">param1</span> <span class="o">+</span> <span class="n">param2</span>
+<span class="g g-Whitespace">      </span><span class="mi">6</span> 
+<span class="g g-Whitespace">      </span><span class="mi">7</span> <span class="k">def</span> <span class="nf">func_in_middle</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">):</span>
+
+<span class="ne">TypeError</span>: can only concatenate str (not &quot;int&quot;) to str
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="use-xmode-magic-to-include-parameter-values">
+<h3>Use <code class="docutils literal notranslate"><span class="pre">%xmode</span></code> magic to include parameter values<a class="headerlink" href="#use-xmode-magic-to-include-parameter-values" title="Permalink to this headline">¶</a></h3>
+<p style="font-family:consolas; font-size:15pt; color:green">
+%mode { Verbose | Context | Plain | Minimal }
+</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">xmode</span> verbose
+<span class="o">%</span><span class="k">tb</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Exception reporting mode: Verbose
+</pre></div>
+</div>
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">TypeError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="o">~</span>\<span class="n">AppData</span>\<span class="n">Local</span>\<span class="n">Temp</span><span class="o">/</span><span class="n">ipykernel_44668</span><span class="o">/</span><span class="mf">4209713645.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="g g-Whitespace">     </span><span class="mi">16</span> 
+<span class="g g-Whitespace">     </span><span class="mi">17</span> 
+<span class="ne">---&gt; </span><span class="mi">18</span> <span class="n">hapless</span><span class="p">()</span>
+        <span class="k">global</span> <span class="n">hapless</span> <span class="o">=</span> <span class="o">&lt;</span><span class="n">function</span> <span class="n">hapless</span> <span class="n">at</span> <span class="mh">0x000001A41C46AAF8</span><span class="o">&gt;</span>
+
+<span class="nn">~\AppData\Local\Temp/ipykernel_44668/4209713645.py</span> in <span class="ni">hapless</span><span class="nt">()</span>
+<span class="g g-Whitespace">     </span><span class="mi">13</span>     <span class="nb">print</span><span class="p">(</span><span class="n">func_in_middle</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">))</span>
+<span class="g g-Whitespace">     </span><span class="mi">14</span>     <span class="nb">print</span><span class="p">(</span><span class="n">func_in_middle</span><span class="p">(</span><span class="s2">&quot;Hello&quot;</span><span class="p">,</span> <span class="s2">&quot;World&quot;</span><span class="p">))</span>
+<span class="ne">---&gt; </span><span class="mi">15</span>     <span class="nb">print</span><span class="p">(</span><span class="n">func_in_middle</span><span class="p">(</span><span class="s2">&quot;Hello&quot;</span><span class="p">,</span> <span class="mi">1</span><span class="p">))</span>
+        <span class="k">global</span> <span class="nb">print</span> <span class="o">=</span> <span class="n">undefined</span>
+        <span class="k">global</span> <span class="n">func_in_middle</span> <span class="o">=</span> <span class="o">&lt;</span><span class="n">function</span> <span class="n">func_in_middle</span> <span class="n">at</span> <span class="mh">0x000001A41C46AB88</span><span class="o">&gt;</span>
+<span class="g g-Whitespace">     </span><span class="mi">16</span> 
+<span class="g g-Whitespace">     </span><span class="mi">17</span> 
+
+<span class="nn">~\AppData\Local\Temp/ipykernel_44668/4209713645.py</span> in <span class="ni">func_in_middle(*args=</span><span class="nt">(&#39;Hello&#39;, 1))</span>
+<span class="g g-Whitespace">      </span><span class="mi">7</span> <span class="k">def</span> <span class="nf">func_in_middle</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">):</span>
+<span class="g g-Whitespace">      </span><span class="mi">8</span>     <span class="sd">&quot;&quot;&quot;It&#39;s not my problem&quot;&quot;&quot;</span>
+<span class="ne">----&gt; </span><span class="mi">9</span>     <span class="k">return</span> <span class="n">bad_func</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">)</span>
+        <span class="k">global</span> <span class="n">bad_func</span> <span class="o">=</span> <span class="o">&lt;</span><span class="n">function</span> <span class="n">bad_func</span> <span class="n">at</span> <span class="mh">0x000001A41C46A3A8</span><span class="o">&gt;</span>
+        <span class="n">args</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;Hello&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">10</span> 
+<span class="g g-Whitespace">     </span><span class="mi">11</span> <span class="k">def</span> <span class="nf">hapless</span><span class="p">():</span>
+
+<span class="nn">~\AppData\Local\Temp/ipykernel_44668/4209713645.py</span> in <span class="ni">bad_func</span><span class="nt">(param1=&#39;Hello&#39;, param2=1)</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="k">def</span> <span class="nf">bad_func</span><span class="p">(</span><span class="n">param1</span><span class="p">,</span> <span class="n">param2</span><span class="p">):</span>
+<span class="g g-Whitespace">      </span><span class="mi">4</span>     <span class="sd">&quot;&quot;&quot;What could possibly go wrong.&quot;&quot;&quot;</span>
+<span class="ne">----&gt; </span><span class="mi">5</span>     <span class="k">return</span> <span class="n">param1</span> <span class="o">+</span> <span class="n">param2</span>
+        <span class="n">param1</span> <span class="o">=</span> <span class="s1">&#39;Hello&#39;</span>
+        <span class="n">param2</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="g g-Whitespace">      </span><span class="mi">6</span> 
+<span class="g g-Whitespace">      </span><span class="mi">7</span> <span class="k">def</span> <span class="nf">func_in_middle</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">):</span>
+
+<span class="ne">TypeError</span>: can only concatenate str (not &quot;int&quot;) to str
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">xmode</span> context
+<span class="o">%</span><span class="k">tb</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Exception reporting mode: Context
+</pre></div>
+</div>
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">TypeError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="o">~</span>\<span class="n">AppData</span>\<span class="n">Local</span>\<span class="n">Temp</span><span class="o">/</span><span class="n">ipykernel_44668</span><span class="o">/</span><span class="mf">4209713645.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="g g-Whitespace">     </span><span class="mi">16</span> 
+<span class="g g-Whitespace">     </span><span class="mi">17</span> 
+<span class="ne">---&gt; </span><span class="mi">18</span> <span class="n">hapless</span><span class="p">()</span>
+
+<span class="nn">~\AppData\Local\Temp/ipykernel_44668/4209713645.py</span> in <span class="ni">hapless</span><span class="nt">()</span>
+<span class="g g-Whitespace">     </span><span class="mi">13</span>     <span class="nb">print</span><span class="p">(</span><span class="n">func_in_middle</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">))</span>
+<span class="g g-Whitespace">     </span><span class="mi">14</span>     <span class="nb">print</span><span class="p">(</span><span class="n">func_in_middle</span><span class="p">(</span><span class="s2">&quot;Hello&quot;</span><span class="p">,</span> <span class="s2">&quot;World&quot;</span><span class="p">))</span>
+<span class="ne">---&gt; </span><span class="mi">15</span>     <span class="nb">print</span><span class="p">(</span><span class="n">func_in_middle</span><span class="p">(</span><span class="s2">&quot;Hello&quot;</span><span class="p">,</span> <span class="mi">1</span><span class="p">))</span>
+<span class="g g-Whitespace">     </span><span class="mi">16</span> 
+<span class="g g-Whitespace">     </span><span class="mi">17</span> 
+
+<span class="nn">~\AppData\Local\Temp/ipykernel_44668/4209713645.py</span> in <span class="ni">func_in_middle</span><span class="nt">(*args)</span>
+<span class="g g-Whitespace">      </span><span class="mi">7</span> <span class="k">def</span> <span class="nf">func_in_middle</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">):</span>
+<span class="g g-Whitespace">      </span><span class="mi">8</span>     <span class="sd">&quot;&quot;&quot;It&#39;s not my problem&quot;&quot;&quot;</span>
+<span class="ne">----&gt; </span><span class="mi">9</span>     <span class="k">return</span> <span class="n">bad_func</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">10</span> 
+<span class="g g-Whitespace">     </span><span class="mi">11</span> <span class="k">def</span> <span class="nf">hapless</span><span class="p">():</span>
+
+<span class="nn">~\AppData\Local\Temp/ipykernel_44668/4209713645.py</span> in <span class="ni">bad_func</span><span class="nt">(param1, param2)</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="k">def</span> <span class="nf">bad_func</span><span class="p">(</span><span class="n">param1</span><span class="p">,</span> <span class="n">param2</span><span class="p">):</span>
+<span class="g g-Whitespace">      </span><span class="mi">4</span>     <span class="sd">&quot;&quot;&quot;What could possibly go wrong.&quot;&quot;&quot;</span>
+<span class="ne">----&gt; </span><span class="mi">5</span>     <span class="k">return</span> <span class="n">param1</span> <span class="o">+</span> <span class="n">param2</span>
+<span class="g g-Whitespace">      </span><span class="mi">6</span> 
+<span class="g g-Whitespace">      </span><span class="mi">7</span> <span class="k">def</span> <span class="nf">func_in_middle</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">):</span>
+
+<span class="ne">TypeError</span>: can only concatenate str (not &quot;int&quot;) to str
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="exceptions-within-exceptions">
+<h3>Exceptions within Exceptions<a class="headerlink" href="#exceptions-within-exceptions" title="Permalink to this headline">¶</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">func_in_middle2</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;It&#39;s not my problem but let me try to fix things&quot;&quot;&quot;</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">bad_func</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">)</span>
+    <span class="k">except</span> <span class="ne">TypeError</span> <span class="k">as</span> <span class="n">err</span><span class="p">:</span>
+        <span class="k">return</span> <span class="s2">&quot;&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">args</span><span class="p">)</span>
+    <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">err</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">RuntimeError</span><span class="p">(</span><span class="s2">&quot;Something terrible happened&quot;</span><span class="p">)</span> <span class="kn">from</span> <span class="nn">err</span>
+
+<span class="k">def</span> <span class="nf">hapless2</span><span class="p">():</span>
+    <span class="sd">&quot;&quot;&quot;I&#39;m just hoping for the best.&quot;&quot;&quot;</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">func_in_middle</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">))</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">func_in_middle</span><span class="p">(</span><span class="s2">&quot;Hello&quot;</span><span class="p">,</span> <span class="s2">&quot;World&quot;</span><span class="p">))</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">func_in_middle2</span><span class="p">(</span><span class="s2">&quot;Hello&quot;</span><span class="p">,</span> <span class="mi">1</span><span class="p">))</span>
+
+
+<span class="n">hapless2</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>3
+HelloWorld
+</pre></div>
+</div>
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">TypeError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="nn">~\AppData\Local\Temp/ipykernel_44668/2464383407.py</span> in <span class="ni">func_in_middle2</span><span class="nt">(*args)</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span>     <span class="k">try</span><span class="p">:</span>
+<span class="ne">----&gt; </span><span class="mi">4</span>         <span class="k">return</span> <span class="n">bad_func</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">5</span>     <span class="k">except</span> <span class="ne">TypeError</span> <span class="k">as</span> <span class="n">err</span><span class="p">:</span>
+
+<span class="nn">~\AppData\Local\Temp/ipykernel_44668/4209713645.py</span> in <span class="ni">bad_func</span><span class="nt">(param1, param2)</span>
+<span class="g g-Whitespace">      </span><span class="mi">4</span>     <span class="sd">&quot;&quot;&quot;What could possibly go wrong.&quot;&quot;&quot;</span>
+<span class="ne">----&gt; </span><span class="mi">5</span>     <span class="k">return</span> <span class="n">param1</span> <span class="o">+</span> <span class="n">param2</span>
+<span class="g g-Whitespace">      </span><span class="mi">6</span> 
+
+<span class="ne">TypeError</span>: can only concatenate str (not &quot;int&quot;) to str
+
+<span class="n">During</span> <span class="n">handling</span> <span class="n">of</span> <span class="n">the</span> <span class="n">above</span> <span class="n">exception</span><span class="p">,</span> <span class="n">another</span> <span class="n">exception</span> <span class="n">occurred</span><span class="p">:</span>
+
+<span class="ne">TypeError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="o">~</span>\<span class="n">AppData</span>\<span class="n">Local</span>\<span class="n">Temp</span><span class="o">/</span><span class="n">ipykernel_44668</span><span class="o">/</span><span class="mf">2464383407.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="g g-Whitespace">     </span><span class="mi">15</span> 
+<span class="g g-Whitespace">     </span><span class="mi">16</span> 
+<span class="ne">---&gt; </span><span class="mi">17</span> <span class="n">hapless2</span><span class="p">()</span>
+
+<span class="nn">~\AppData\Local\Temp/ipykernel_44668/2464383407.py</span> in <span class="ni">hapless2</span><span class="nt">()</span>
+<span class="g g-Whitespace">     </span><span class="mi">12</span>     <span class="nb">print</span><span class="p">(</span><span class="n">func_in_middle</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">))</span>
+<span class="g g-Whitespace">     </span><span class="mi">13</span>     <span class="nb">print</span><span class="p">(</span><span class="n">func_in_middle</span><span class="p">(</span><span class="s2">&quot;Hello&quot;</span><span class="p">,</span> <span class="s2">&quot;World&quot;</span><span class="p">))</span>
+<span class="ne">---&gt; </span><span class="mi">14</span>     <span class="nb">print</span><span class="p">(</span><span class="n">func_in_middle2</span><span class="p">(</span><span class="s2">&quot;Hello&quot;</span><span class="p">,</span> <span class="mi">1</span><span class="p">))</span>
+<span class="g g-Whitespace">     </span><span class="mi">15</span> 
+<span class="g g-Whitespace">     </span><span class="mi">16</span> 
+
+<span class="nn">~\AppData\Local\Temp/ipykernel_44668/2464383407.py</span> in <span class="ni">func_in_middle2</span><span class="nt">(*args)</span>
+<span class="g g-Whitespace">      </span><span class="mi">4</span>         <span class="k">return</span> <span class="n">bad_func</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">5</span>     <span class="k">except</span> <span class="ne">TypeError</span> <span class="k">as</span> <span class="n">err</span><span class="p">:</span>
+<span class="ne">----&gt; </span><span class="mi">6</span>         <span class="k">return</span> <span class="s2">&quot;&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">args</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">7</span>     <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">err</span><span class="p">:</span>
+<span class="g g-Whitespace">      </span><span class="mi">8</span>         <span class="k">raise</span> <span class="ne">RuntimeError</span><span class="p">(</span><span class="s2">&quot;Something terrible happened&quot;</span><span class="p">)</span> <span class="kn">from</span> <span class="nn">err</span>
+
+<span class="ne">TypeError</span>: sequence item 1: expected str instance, int found
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="debugging-bare-handed">
+<h2>Debugging bare-handed<a class="headerlink" href="#debugging-bare-handed" title="Permalink to this headline">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%debug</span>
+<span class="n">hapless</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>NOTE: Enter &#39;c&#39; at the ipdb&gt;  prompt to continue execution.
+&gt; <span class=" -Color -Color-Bold -Color-Bold-Green">&lt;string&gt;</span>(2)<span class=" -Color -Color-Cyan">&lt;module&gt;</span><span class=" -Color -Color-Bold -Color-Bold-Blue">()</span>
+
+--Call--
+&gt; <span class=" -Color -Color-Bold -Color-Bold-Green">c:\users\ian\appdata\local\temp\ipykernel_58496\2490113558.py</span>(7)<span class=" -Color -Color-Cyan">happless</span><span class=" -Color -Color-Bold -Color-Bold-Blue">()</span>
+
+<span class=" -Color -Color-Bold -Color-Bold-Green">----&gt; 7 def</span> happless<span class=" -Color -Color-Bold -Color-Bold-Yellow">():</span>
+<span class=" -Color -Color-Green">      8 </span>
+<span class=" -Color -Color-Green">      9 </span>    print<span class=" -Color -Color-Bold -Color-Bold-Yellow">(</span>func_in_middle<span class=" -Color -Color-Bold -Color-Bold-Yellow">(</span><span class=" -Color -Color-Bold -Color-Bold-Cyan">1</span><span class=" -Color -Color-Bold -Color-Bold-Yellow">,</span> <span class=" -Color -Color-Bold -Color-Bold-Cyan">2</span><span class=" -Color -Color-Bold -Color-Bold-Yellow">))</span>
+<span class=" -Color -Color-Green">     10 </span>    print<span class=" -Color -Color-Bold -Color-Bold-Yellow">(</span>func_in_middle<span class=" -Color -Color-Bold -Color-Bold-Yellow">(</span><span class=" -Color -Color-Bold -Color-Bold-Blue">&quot;Hello&quot;</span><span class=" -Color -Color-Bold -Color-Bold-Yellow">,</span> <span class=" -Color -Color-Bold -Color-Bold-Blue">&quot;World&quot;</span><span class=" -Color -Color-Bold -Color-Bold-Yellow">))</span>
+<span class=" -Color -Color-Green">     11 </span>    print<span class=" -Color -Color-Bold -Color-Bold-Yellow">(</span>func_in_middle<span class=" -Color -Color-Bold -Color-Bold-Yellow">(</span><span class=" -Color -Color-Bold -Color-Bold-Blue">&quot;Hello&quot;</span><span class=" -Color -Color-Bold -Color-Bold-Yellow">,</span> <span class=" -Color -Color-Bold -Color-Bold-Cyan">1</span><span class=" -Color -Color-Bold -Color-Bold-Yellow">))</span>
+<span class=" -Color -Color-Green">     12 </span>
+
+&gt; <span class=" -Color -Color-Bold -Color-Bold-Green">c:\users\ian\appdata\local\temp\ipykernel_58496\2490113558.py</span>(9)<span class=" -Color -Color-Cyan">happless</span><span class=" -Color -Color-Bold -Color-Bold-Blue">()</span>
+
+--Call--
+&gt; <span class=" -Color -Color-Bold -Color-Bold-Green">c:\users\ian\appdata\local\temp\ipykernel_58496\4209713645.py</span>(7)<span class=" -Color -Color-Cyan">func_in_middle</span><span class=" -Color -Color-Bold -Color-Bold-Blue">()</span>
+
+&gt; <span class=" -Color -Color-Bold -Color-Bold-Green">c:\users\ian\appdata\local\temp\ipykernel_58496\4209713645.py</span>(9)<span class=" -Color -Color-Cyan">func_in_middle</span><span class=" -Color -Color-Bold -Color-Bold-Blue">()</span>
+
+<span class=" -Color -Color-Green">      4 </span>    <span class=" -Color -Color-Bold -Color-Bold-Blue">&quot;&quot;&quot;What could possibly go wrong.&quot;&quot;&quot;</span>
+<span class=" -Color -Color-Green">      5 </span>    <span class=" -Color -Color-Bold -Color-Bold-Green">return</span> param1 <span class=" -Color -Color-Bold -Color-Bold-Yellow">+</span> param2
+<span class=" -Color -Color-Green">      6 </span>
+<span class=" -Color -Color-Green">      7 </span><span class=" -Color -Color-Bold -Color-Bold-Green">def</span> func_in_middle<span class=" -Color -Color-Bold -Color-Bold-Yellow">(*</span>args<span class=" -Color -Color-Bold -Color-Bold-Yellow">):</span>
+<span class=" -Color -Color-Green">      8 </span>    <span class=" -Color -Color-Bold -Color-Bold-Blue">&quot;&quot;&quot;It&#39;s not my problem&quot;&quot;&quot;</span>
+<span class=" -Color -Color-Bold -Color-Bold-Green">----&gt; 9 </span><span class=" -Color -Color-Bold -Color-Bold-Yellow">    </span><span class=" -Color -Color-Bold -Color-Bold-Green">return</span> bad_func<span class=" -Color -Color-Bold -Color-Bold-Yellow">(*</span>args<span class=" -Color -Color-Bold -Color-Bold-Yellow">)</span>
+<span class=" -Color -Color-Green">     10 </span>
+<span class=" -Color -Color-Green">     11 </span><span class=" -Color -Color-Bold -Color-Bold-Green">def</span> hapless<span class=" -Color -Color-Bold -Color-Bold-Yellow">():</span>
+<span class=" -Color -Color-Green">     12 </span>    <span class=" -Color -Color-Bold -Color-Bold-Blue">&quot;&quot;&quot;I&#39;m just hoping for the best.&quot;&quot;&quot;</span>
+<span class=" -Color -Color-Green">     13 </span>    print<span class=" -Color -Color-Bold -Color-Bold-Yellow">(</span>func_in_middle<span class=" -Color -Color-Bold -Color-Bold-Yellow">(</span><span class=" -Color -Color-Bold -Color-Bold-Cyan">1</span><span class=" -Color -Color-Bold -Color-Bold-Yellow">,</span> <span class=" -Color -Color-Bold -Color-Bold-Cyan">2</span><span class=" -Color -Color-Bold -Color-Bold-Yellow">))</span>
+<span class=" -Color -Color-Green">     14 </span>    print<span class=" -Color -Color-Bold -Color-Bold-Yellow">(</span>func_in_middle<span class=" -Color -Color-Bold -Color-Bold-Yellow">(</span><span class=" -Color -Color-Bold -Color-Bold-Blue">&quot;Hello&quot;</span><span class=" -Color -Color-Bold -Color-Bold-Yellow">,</span> <span class=" -Color -Color-Bold -Color-Bold-Blue">&quot;World&quot;</span><span class=" -Color -Color-Bold -Color-Bold-Yellow">))</span>
+
+--Call--
+&gt; <span class=" -Color -Color-Bold -Color-Bold-Green">c:\users\ian\appdata\local\temp\ipykernel_58496\4209713645.py</span>(3)<span class=" -Color -Color-Cyan">bad_func</span><span class=" -Color -Color-Bold -Color-Bold-Blue">()</span>
+
+param1 = 1
+param2 = 2
+<span class=" -Color -Color-Green">      1 </span><span class=" -Color -Color-Bold -Color-Bold-Red"># Bad code example</span>
+<span class=" -Color -Color-Green">      2 </span>
+<span class=" -Color -Color-Bold -Color-Bold-Green">----&gt; 3 def</span> bad_func<span class=" -Color -Color-Bold -Color-Bold-Yellow">(</span>param1<span class=" -Color -Color-Bold -Color-Bold-Yellow">,</span> param2<span class=" -Color -Color-Bold -Color-Bold-Yellow">):</span>
+<span class=" -Color -Color-Green">      4 </span>    <span class=" -Color -Color-Bold -Color-Bold-Blue">&quot;&quot;&quot;What could possibly go wrong.&quot;&quot;&quot;</span>
+<span class=" -Color -Color-Green">      5 </span>    <span class=" -Color -Color-Bold -Color-Bold-Green">return</span> param1 <span class=" -Color -Color-Bold -Color-Bold-Yellow">+</span> param2
+<span class=" -Color -Color-Green">      6 </span>
+<span class=" -Color -Color-Green">      7 </span><span class=" -Color -Color-Bold -Color-Bold-Green">def</span> func_in_middle<span class=" -Color -Color-Bold -Color-Bold-Yellow">(*</span>args<span class=" -Color -Color-Bold -Color-Bold-Yellow">):</span>
+<span class=" -Color -Color-Green">      8 </span>    <span class=" -Color -Color-Bold -Color-Bold-Blue">&quot;&quot;&quot;It&#39;s not my problem&quot;&quot;&quot;</span>
+<span class=" -Color -Color-Green">      9 </span>    <span class=" -Color -Color-Bold -Color-Bold-Green">return</span> bad_func<span class=" -Color -Color-Bold -Color-Bold-Yellow">(*</span>args<span class=" -Color -Color-Bold -Color-Bold-Yellow">)</span>
+<span class=" -Color -Color-Green">     10 </span>
+<span class=" -Color -Color-Green">     11 </span><span class=" -Color -Color-Bold -Color-Bold-Green">def</span> hapless<span class=" -Color -Color-Bold -Color-Bold-Yellow">():</span>
+
+&gt; <span class=" -Color -Color-Bold -Color-Bold-Green">c:\users\ian\appdata\local\temp\ipykernel_58496\4209713645.py</span>(5)<span class=" -Color -Color-Cyan">bad_func</span><span class=" -Color -Color-Bold -Color-Bold-Blue">()</span>
+
+--Return--
+3
+&gt; <span class=" -Color -Color-Bold -Color-Bold-Green">c:\users\ian\appdata\local\temp\ipykernel_58496\4209713645.py</span>(5)<span class=" -Color -Color-Cyan">bad_func</span><span class=" -Color -Color-Bold -Color-Bold-Blue">()</span>
+
+1
+1
+2
+3
+HelloWorld
+<span class=" -Color -Color-Bold -Color-Bold-Red">---------------------------------------------------------------------------</span>
+<span class=" -Color -Color-Bold -Color-Bold-Red">TypeError</span>                                 Traceback (most recent call last)
+<span class=" -Color -Color-Bold -Color-Bold-Green">~\AppData\Local\Temp/ipykernel_58496/2490113558.py</span> in <span class=" -Color -Color-Cyan">happless</span><span class=" -Color -Color-Bold -Color-Bold-Blue">()</span>
+<span class=" -Color -Color-Green">      9</span>     print<span class=" -Color -Color-Bold -Color-Bold-Yellow">(</span>func_in_middle<span class=" -Color -Color-Bold -Color-Bold-Yellow">(</span><span class=" -Color -Color-Bold -Color-Bold-Cyan">1</span><span class=" -Color -Color-Bold -Color-Bold-Yellow">,</span> <span class=" -Color -Color-Bold -Color-Bold-Cyan">2</span><span class=" -Color -Color-Bold -Color-Bold-Yellow">))</span>
+<span class=" -Color -Color-Green">     10</span>     print<span class=" -Color -Color-Bold -Color-Bold-Yellow">(</span>func_in_middle<span class=" -Color -Color-Bold -Color-Bold-Yellow">(</span><span class=" -Color -Color-Bold -Color-Bold-Blue">&quot;Hello&quot;</span><span class=" -Color -Color-Bold -Color-Bold-Yellow">,</span> <span class=" -Color -Color-Bold -Color-Bold-Blue">&quot;World&quot;</span><span class=" -Color -Color-Bold -Color-Bold-Yellow">))</span>
+<span class=" -Color -Color-Bold -Color-Bold-Green">---&gt; 11</span><span class=" -Color -Color-Bold -Color-Bold-Yellow">     </span>print<span class=" -Color -Color-Bold -Color-Bold-Yellow">(</span>func_in_middle<span class=" -Color -Color-Bold -Color-Bold-Yellow">(</span><span class=" -Color -Color-Bold -Color-Bold-Blue">&quot;Hello&quot;</span><span class=" -Color -Color-Bold -Color-Bold-Yellow">,</span> <span class=" -Color -Color-Bold -Color-Bold-Cyan">1</span><span class=" -Color -Color-Bold -Color-Bold-Yellow">))</span>
+<span class=" -Color -Color-Green">     12</span> 
+<span class=" -Color -Color-Green">     13</span> 
+
+<span class=" -Color -Color-Bold -Color-Bold-Green">~\AppData\Local\Temp/ipykernel_58496/4209713645.py</span> in <span class=" -Color -Color-Cyan">func_in_middle</span><span class=" -Color -Color-Bold -Color-Bold-Blue">(*args)</span>
+<span class=" -Color -Color-Green">      7</span> <span class=" -Color -Color-Bold -Color-Bold-Green">def</span> func_in_middle<span class=" -Color -Color-Bold -Color-Bold-Yellow">(*</span>args<span class=" -Color -Color-Bold -Color-Bold-Yellow">):</span>
+<span class=" -Color -Color-Green">      8</span>     <span class=" -Color -Color-Bold -Color-Bold-Blue">&quot;&quot;&quot;It&#39;s not my problem&quot;&quot;&quot;</span>
+<span class=" -Color -Color-Bold -Color-Bold-Green">----&gt; 9</span><span class=" -Color -Color-Bold -Color-Bold-Yellow">     </span><span class=" -Color -Color-Bold -Color-Bold-Green">return</span> bad_func<span class=" -Color -Color-Bold -Color-Bold-Yellow">(*</span>args<span class=" -Color -Color-Bold -Color-Bold-Yellow">)</span>
+<span class=" -Color -Color-Green">     10</span> 
+<span class=" -Color -Color-Green">     11</span> <span class=" -Color -Color-Bold -Color-Bold-Green">def</span> hapless<span class=" -Color -Color-Bold -Color-Bold-Yellow">():</span>
+
+<span class=" -Color -Color-Bold -Color-Bold-Green">~\AppData\Local\Temp/ipykernel_58496/4209713645.py</span> in <span class=" -Color -Color-Cyan">bad_func</span><span class=" -Color -Color-Bold -Color-Bold-Blue">(param1, param2)</span>
+<span class=" -Color -Color-Green">      3</span> <span class=" -Color -Color-Bold -Color-Bold-Green">def</span> bad_func<span class=" -Color -Color-Bold -Color-Bold-Yellow">(</span>param1<span class=" -Color -Color-Bold -Color-Bold-Yellow">,</span> param2<span class=" -Color -Color-Bold -Color-Bold-Yellow">):</span>
+<span class=" -Color -Color-Green">      4</span>     <span class=" -Color -Color-Bold -Color-Bold-Blue">&quot;&quot;&quot;What could possibly go wrong.&quot;&quot;&quot;</span>
+<span class=" -Color -Color-Bold -Color-Bold-Green">----&gt; 5</span><span class=" -Color -Color-Bold -Color-Bold-Yellow">     </span><span class=" -Color -Color-Bold -Color-Bold-Green">return</span> param1 <span class=" -Color -Color-Bold -Color-Bold-Yellow">+</span> param2
+<span class=" -Color -Color-Green">      6</span> 
+<span class=" -Color -Color-Green">      7</span> <span class=" -Color -Color-Bold -Color-Bold-Green">def</span> func_in_middle<span class=" -Color -Color-Bold -Color-Bold-Yellow">(*</span>args<span class=" -Color -Color-Bold -Color-Bold-Yellow">):</span>
+
+<span class=" -Color -Color-Bold -Color-Bold-Red">TypeError</span>: can only concatenate str (not &quot;int&quot;) to str
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="debugging-from-a-comfy-chair">
+<h2>Debugging from a comfy chair<a class="headerlink" href="#debugging-from-a-comfy-chair" title="Permalink to this headline">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">hapless</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>3
+HelloWorld
+</pre></div>
+</div>
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">TypeError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="o">~</span>\<span class="n">AppData</span>\<span class="n">Local</span>\<span class="n">Temp</span><span class="o">/</span><span class="n">ipykernel_44668</span><span class="o">/</span><span class="mf">105905672.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">hapless</span><span class="p">()</span>
+
+<span class="nn">~\AppData\Local\Temp/ipykernel_44668/4209713645.py</span> in <span class="ni">hapless</span><span class="nt">()</span>
+<span class="g g-Whitespace">     </span><span class="mi">13</span>     <span class="nb">print</span><span class="p">(</span><span class="n">func_in_middle</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">))</span>
+<span class="g g-Whitespace">     </span><span class="mi">14</span>     <span class="nb">print</span><span class="p">(</span><span class="n">func_in_middle</span><span class="p">(</span><span class="s2">&quot;Hello&quot;</span><span class="p">,</span> <span class="s2">&quot;World&quot;</span><span class="p">))</span>
+<span class="ne">---&gt; </span><span class="mi">15</span>     <span class="nb">print</span><span class="p">(</span><span class="n">func_in_middle</span><span class="p">(</span><span class="s2">&quot;Hello&quot;</span><span class="p">,</span> <span class="mi">1</span><span class="p">))</span>
+<span class="g g-Whitespace">     </span><span class="mi">16</span> 
+<span class="g g-Whitespace">     </span><span class="mi">17</span> 
+
+<span class="nn">~\AppData\Local\Temp/ipykernel_44668/4209713645.py</span> in <span class="ni">func_in_middle</span><span class="nt">(*args)</span>
+<span class="g g-Whitespace">      </span><span class="mi">7</span> <span class="k">def</span> <span class="nf">func_in_middle</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">):</span>
+<span class="g g-Whitespace">      </span><span class="mi">8</span>     <span class="sd">&quot;&quot;&quot;It&#39;s not my problem&quot;&quot;&quot;</span>
+<span class="ne">----&gt; </span><span class="mi">9</span>     <span class="k">return</span> <span class="n">bad_func</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">10</span> 
+<span class="g g-Whitespace">     </span><span class="mi">11</span> <span class="k">def</span> <span class="nf">hapless</span><span class="p">():</span>
+
+<span class="nn">~\AppData\Local\Temp/ipykernel_44668/4209713645.py</span> in <span class="ni">bad_func</span><span class="nt">(param1, param2)</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="k">def</span> <span class="nf">bad_func</span><span class="p">(</span><span class="n">param1</span><span class="p">,</span> <span class="n">param2</span><span class="p">):</span>
+<span class="g g-Whitespace">      </span><span class="mi">4</span>     <span class="sd">&quot;&quot;&quot;What could possibly go wrong.&quot;&quot;&quot;</span>
+<span class="ne">----&gt; </span><span class="mi">5</span>     <span class="k">return</span> <span class="n">param1</span> <span class="o">+</span> <span class="n">param2</span>
+<span class="g g-Whitespace">      </span><span class="mi">6</span> 
+<span class="g g-Whitespace">      </span><span class="mi">7</span> <span class="k">def</span> <span class="nf">func_in_middle</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">):</span>
+
+<span class="ne">TypeError</span>: can only concatenate str (not &quot;int&quot;) to str
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="running-jupyter-notebooks-in-a-unit-test-ian">
+<h2>Running Jupyter notebooks in a unit test [Ian]<a class="headerlink" href="#running-jupyter-notebooks-in-a-unit-test-ian" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="why-quick-and-dirty-testing">
+<h3>Why? - Quick and dirty testing<a class="headerlink" href="#why-quick-and-dirty-testing" title="Permalink to this headline">¶</a></h3>
+<p>Caveats</p>
+<ul class="simple">
+<li><p>Only tests happy path</p></li>
+<li><p>(Obviously) only works if it’s a non-interactive notebook</p></li>
+</ul>
+<p>Good for:</p>
+<ul class="simple">
+<li><p>Quick coverage - esp if you been manually testing in a notebook</p></li>
+<li><p>Lazy programmers</p></li>
+<li><p>People with lots of notebooks to test</p></li>
+</ul>
+<p>The code to run a notebook from code.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">nbformat</span>
+<span class="kn">from</span> <span class="nn">nbconvert.preprocessors</span> <span class="kn">import</span> <span class="n">ExecutePreprocessor</span><span class="p">,</span> <span class="n">CellExecutionError</span>
+
+<span class="n">nb_path</span> <span class="o">=</span> <span class="s2">&quot;../data/broken_notebook.ipynb&quot;</span>
+
+<span class="k">def</span> <span class="nf">test_notebook</span><span class="p">():</span>
+
+    <span class="n">output_path</span> <span class="o">=</span> <span class="s2">&quot;../data&quot;</span>
+    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">nb_path</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+        <span class="n">nb</span> <span class="o">=</span> <span class="n">nbformat</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">as_version</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span>
+    <span class="n">ep</span> <span class="o">=</span> <span class="n">ExecutePreprocessor</span><span class="p">(</span><span class="n">timeout</span><span class="o">=</span><span class="mi">600</span><span class="p">,</span> <span class="n">kernel_name</span><span class="o">=</span><span class="s2">&quot;python3&quot;</span><span class="p">)</span>
+
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">ep</span><span class="o">.</span><span class="n">preprocess</span><span class="p">(</span><span class="n">nb</span><span class="p">,</span> <span class="p">{</span><span class="s2">&quot;metadata&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;path&quot;</span><span class="p">:</span> <span class="n">output_path</span><span class="p">}})</span>
+    <span class="k">except</span> <span class="n">CellExecutionError</span><span class="p">:</span>
+        <span class="n">nb_err</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">nb_path</span><span class="p">)</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;.ipynb&quot;</span><span class="p">,</span> <span class="s2">&quot;-err.ipynb&quot;</span><span class="p">)</span>
+        <span class="n">msg</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;Error executing the notebook &#39;</span><span class="si">{</span><span class="n">nb_path</span><span class="si">}</span><span class="s2">&#39;.</span><span class="se">\n</span><span class="s2">&quot;</span>
+        <span class="n">msg</span> <span class="o">+=</span> <span class="sa">f</span><span class="s2">&quot;See notebook &#39;</span><span class="si">{</span><span class="n">nb_err</span><span class="si">}</span><span class="s2">&#39; for the traceback.&quot;</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span>
+        <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">nb_err</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="s2">&quot;w&quot;</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s2">&quot;utf-8&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+            <span class="n">nbformat</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">nb</span><span class="p">,</span> <span class="n">f</span><span class="p">)</span>
+        <span class="k">raise</span>
+
+<span class="n">test_notebook</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Error executing the notebook &#39;../data/broken_notebook.ipynb&#39;.
+See notebook &#39;../data/broken_notebook-err.ipynb&#39; for the traceback.
+</pre></div>
+</div>
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">CellExecutionError</span><span class="g g-Whitespace">                        </span>Traceback (most recent call last)
+<span class="o">~</span>\<span class="n">AppData</span>\<span class="n">Local</span>\<span class="n">Temp</span><span class="o">/</span><span class="n">ipykernel_44668</span><span class="o">/</span><span class="mf">1337859874.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="g g-Whitespace">     </span><span class="mi">22</span>         <span class="k">raise</span>
+<span class="g g-Whitespace">     </span><span class="mi">23</span> 
+<span class="ne">---&gt; </span><span class="mi">24</span> <span class="n">test_notebook</span><span class="p">()</span>
+
+<span class="nn">~\AppData\Local\Temp/ipykernel_44668/1337859874.py</span> in <span class="ni">test_notebook</span><span class="nt">()</span>
+<span class="g g-Whitespace">     </span><span class="mi">12</span> 
+<span class="g g-Whitespace">     </span><span class="mi">13</span>     <span class="k">try</span><span class="p">:</span>
+<span class="ne">---&gt; </span><span class="mi">14</span>         <span class="n">ep</span><span class="o">.</span><span class="n">preprocess</span><span class="p">(</span><span class="n">nb</span><span class="p">,</span> <span class="p">{</span><span class="s2">&quot;metadata&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;path&quot;</span><span class="p">:</span> <span class="n">output_path</span><span class="p">}})</span>
+<span class="g g-Whitespace">     </span><span class="mi">15</span>     <span class="k">except</span> <span class="n">CellExecutionError</span><span class="p">:</span>
+<span class="g g-Whitespace">     </span><span class="mi">16</span>         <span class="n">nb_err</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">nb_path</span><span class="p">)</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;.ipynb&quot;</span><span class="p">,</span> <span class="s2">&quot;-err.ipynb&quot;</span><span class="p">)</span>
+
+<span class="nn">~\Anaconda3\envs\condadev\lib\site-packages\nbconvert\preprocessors\execute.py</span> in <span class="ni">preprocess</span><span class="nt">(self, nb, resources, km)</span>
+<span class="g g-Whitespace">     </span><span class="mi">77</span>         <span class="n">NotebookClient</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">nb</span><span class="p">,</span> <span class="n">km</span><span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">78</span>         <span class="bp">self</span><span class="o">.</span><span class="n">_check_assign_resources</span><span class="p">(</span><span class="n">resources</span><span class="p">)</span>
+<span class="ne">---&gt; </span><span class="mi">79</span>         <span class="bp">self</span><span class="o">.</span><span class="n">execute</span><span class="p">()</span>
+<span class="g g-Whitespace">     </span><span class="mi">80</span>         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">nb</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">resources</span>
+<span class="g g-Whitespace">     </span><span class="mi">81</span> 
+
+<span class="nn">~\Anaconda3\envs\condadev\lib\site-packages\nbclient\util.py</span> in <span class="ni">wrapped</span><span class="nt">(*args, **kwargs)</span>
+<span class="g g-Whitespace">     </span><span class="mi">72</span>     <span class="sd">&quot;&quot;&quot;</span>
+<span class="g g-Whitespace">     </span><span class="mi">73</span><span class="sd">     def wrapped(*args, **kwargs):</span>
+<span class="ne">---&gt; </span><span class="mi">74</span><span class="sd">         return just_run(coro(*args, **kwargs))</span>
+<span class="g g-Whitespace">     </span><span class="mi">75</span><span class="sd">     wrapped.__doc__ = coro.__doc__</span>
+<span class="g g-Whitespace">     </span><span class="mi">76</span><span class="sd">     return wrapped</span>
+
+<span class="nn">~\Anaconda3\envs\condadev\lib\site-packages\nbclient\util.py</span> in <span class="ni">just_run</span><span class="nt">(coro)</span>
+<span class="g g-Whitespace">     </span><span class="mi">51</span><span class="sd">         nest_asyncio.apply()</span>
+<span class="g g-Whitespace">     </span><span class="mi">52</span><span class="sd">         check_patch_tornado()</span>
+<span class="ne">---&gt; </span><span class="mi">53</span><span class="sd">     return loop.run_until_complete(coro)</span>
+<span class="g g-Whitespace">     </span><span class="mi">54</span><span class="sd"> </span>
+<span class="g g-Whitespace">     </span><span class="mi">55</span><span class="sd"> </span>
+
+<span class="nn">~\Anaconda3\envs\condadev\lib\site-packages\nest_asyncio.py</span> in <span class="ni">run_until_complete</span><span class="nt">(self, future)</span>
+<span class="g g-Whitespace">     </span><span class="mi">68</span><span class="sd">                 raise RuntimeError(</span>
+<span class="g g-Whitespace">     </span><span class="mi">69</span><span class="sd">                     &#39;Event loop stopped before Future completed.&#39;)</span>
+<span class="ne">---&gt; </span><span class="mi">70</span><span class="sd">             return f.result()</span>
+<span class="g g-Whitespace">     </span><span class="mi">71</span><span class="sd"> </span>
+<span class="g g-Whitespace">     </span><span class="mi">72</span><span class="sd">     def _run_once(self):</span>
+
+<span class="nn">~\Anaconda3\envs\condadev\lib\asyncio\futures.py</span> in <span class="ni">result</span><span class="nt">(self)</span>
+<span class="g g-Whitespace">    </span><span class="mi">179</span><span class="sd">         self.__log_traceback = False</span>
+<span class="g g-Whitespace">    </span><span class="mi">180</span><span class="sd">         if self._exception is not None:</span>
+<span class="ne">--&gt; </span><span class="mi">181</span><span class="sd">             raise self._exception</span>
+<span class="g g-Whitespace">    </span><span class="mi">182</span><span class="sd">         return self._result</span>
+<span class="g g-Whitespace">    </span><span class="mi">183</span><span class="sd"> </span>
+
+<span class="nn">~\Anaconda3\envs\condadev\lib\asyncio\tasks.py</span> in <span class="ni">__step</span><span class="nt">(***failed resolving arguments***)</span>
+<span class="g g-Whitespace">    </span><span class="mi">247</span><span class="sd">                 # We use the `send` method directly, because coroutines</span>
+<span class="g g-Whitespace">    </span><span class="mi">248</span><span class="sd">                 # don&#39;t have `__iter__` and `__next__` methods.</span>
+<span class="ne">--&gt; </span><span class="mi">249</span><span class="sd">                 result = coro.send(None)</span>
+<span class="g g-Whitespace">    </span><span class="mi">250</span><span class="sd">             else:</span>
+<span class="g g-Whitespace">    </span><span class="mi">251</span><span class="sd">                 result = coro.throw(exc)</span>
+
+<span class="nn">~\Anaconda3\envs\condadev\lib\site-packages\nbclient\client.py</span> in <span class="ni">async_execute</span><span class="nt">(self, reset_kc, **kwargs)</span>
+<span class="g g-Whitespace">    </span><span class="mi">552</span><span class="sd">                 # when store_history is False</span>
+<span class="g g-Whitespace">    </span><span class="mi">553</span><span class="sd">                 await self.async_execute_cell(</span>
+<span class="ne">--&gt; </span><span class="mi">554</span><span class="sd">                     cell, index, execution_count=self.code_cells_executed + 1</span>
+<span class="g g-Whitespace">    </span><span class="mi">555</span><span class="sd">                 )</span>
+<span class="g g-Whitespace">    </span><span class="mi">556</span><span class="sd">             self.set_widgets_metadata()</span>
+
+<span class="nn">~\Anaconda3\envs\condadev\lib\site-packages\nbconvert\preprocessors\execute.py</span> in <span class="ni">async_execute_cell</span><span class="nt">(self, cell, cell_index, execution_count, store_history)</span>
+<span class="g g-Whitespace">    </span><span class="mi">121</span><span class="sd">         # Copied and intercepted to allow for custom preprocess_cell contracts to be fullfilled</span>
+<span class="g g-Whitespace">    </span><span class="mi">122</span><span class="sd">         self.store_history = store_history</span>
+<span class="ne">--&gt; </span><span class="mi">123</span><span class="sd">         cell, resources = self.preprocess_cell(cell, self.resources, cell_index)</span>
+<span class="g g-Whitespace">    </span><span class="mi">124</span><span class="sd">         # Apply rules from nbclient for where to apply execution counts</span>
+<span class="g g-Whitespace">    </span><span class="mi">125</span><span class="sd">         if execution_count and cell.cell_type == &#39;code&#39; and cell.source.strip():</span>
+
+<span class="nn">~\Anaconda3\envs\condadev\lib\site-packages\nbconvert\preprocessors\execute.py</span> in <span class="ni">preprocess_cell</span><span class="nt">(self, cell, resources, index, **kwargs)</span>
+<span class="g g-Whitespace">    </span><span class="mi">144</span><span class="sd">         self._check_assign_resources(resources)</span>
+<span class="g g-Whitespace">    </span><span class="mi">145</span><span class="sd">         # Because nbclient is an async library, we need to wrap the parent async call to generate a syncronous version.</span>
+<span class="ne">--&gt; </span><span class="mi">146</span><span class="sd">         cell = run_sync(NotebookClient.async_execute_cell)(self, cell, index, store_history=self.store_history)</span>
+<span class="g g-Whitespace">    </span><span class="mi">147</span><span class="sd">         return cell, self.resources</span>
+
+<span class="nn">~\Anaconda3\envs\condadev\lib\site-packages\nbclient\util.py</span> in <span class="ni">wrapped</span><span class="nt">(*args, **kwargs)</span>
+<span class="g g-Whitespace">     </span><span class="mi">72</span><span class="sd">     &quot;&quot;&quot;</span>
+<span class="g g-Whitespace">     </span><span class="mi">73</span>     <span class="k">def</span> <span class="nf">wrapped</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+<span class="ne">---&gt; </span><span class="mi">74</span>         <span class="k">return</span> <span class="n">just_run</span><span class="p">(</span><span class="n">coro</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">))</span>
+<span class="g g-Whitespace">     </span><span class="mi">75</span>     <span class="n">wrapped</span><span class="o">.</span><span class="vm">__doc__</span> <span class="o">=</span> <span class="n">coro</span><span class="o">.</span><span class="vm">__doc__</span>
+<span class="g g-Whitespace">     </span><span class="mi">76</span>     <span class="k">return</span> <span class="n">wrapped</span>
+
+<span class="nn">~\Anaconda3\envs\condadev\lib\site-packages\nbclient\util.py</span> in <span class="ni">just_run</span><span class="nt">(coro)</span>
+<span class="g g-Whitespace">     </span><span class="mi">51</span>         <span class="n">nest_asyncio</span><span class="o">.</span><span class="n">apply</span><span class="p">()</span>
+<span class="g g-Whitespace">     </span><span class="mi">52</span>         <span class="n">check_patch_tornado</span><span class="p">()</span>
+<span class="ne">---&gt; </span><span class="mi">53</span>     <span class="k">return</span> <span class="n">loop</span><span class="o">.</span><span class="n">run_until_complete</span><span class="p">(</span><span class="n">coro</span><span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">54</span> 
+<span class="g g-Whitespace">     </span><span class="mi">55</span> 
+
+<span class="nn">~\Anaconda3\envs\condadev\lib\site-packages\nest_asyncio.py</span> in <span class="ni">run_until_complete</span><span class="nt">(self, future)</span>
+<span class="g g-Whitespace">     </span><span class="mi">68</span>                 <span class="k">raise</span> <span class="ne">RuntimeError</span><span class="p">(</span>
+<span class="g g-Whitespace">     </span><span class="mi">69</span>                     <span class="s1">&#39;Event loop stopped before Future completed.&#39;</span><span class="p">)</span>
+<span class="ne">---&gt; </span><span class="mi">70</span>             <span class="k">return</span> <span class="n">f</span><span class="o">.</span><span class="n">result</span><span class="p">()</span>
+<span class="g g-Whitespace">     </span><span class="mi">71</span> 
+<span class="g g-Whitespace">     </span><span class="mi">72</span>     <span class="k">def</span> <span class="nf">_run_once</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+
+<span class="nn">~\Anaconda3\envs\condadev\lib\asyncio\futures.py</span> in <span class="ni">result</span><span class="nt">(self)</span>
+<span class="g g-Whitespace">    </span><span class="mi">179</span>         <span class="bp">self</span><span class="o">.</span><span class="n">__log_traceback</span> <span class="o">=</span> <span class="kc">False</span>
+<span class="g g-Whitespace">    </span><span class="mi">180</span>         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_exception</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+<span class="ne">--&gt; </span><span class="mi">181</span>             <span class="k">raise</span> <span class="bp">self</span><span class="o">.</span><span class="n">_exception</span>
+<span class="g g-Whitespace">    </span><span class="mi">182</span>         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_result</span>
+<span class="g g-Whitespace">    </span><span class="mi">183</span> 
+
+<span class="nn">~\Anaconda3\envs\condadev\lib\asyncio\tasks.py</span> in <span class="ni">__step</span><span class="nt">(***failed resolving arguments***)</span>
+<span class="g g-Whitespace">    </span><span class="mi">247</span>                 <span class="c1"># We use the `send` method directly, because coroutines</span>
+<span class="g g-Whitespace">    </span><span class="mi">248</span>                 <span class="c1"># don&#39;t have `__iter__` and `__next__` methods.</span>
+<span class="ne">--&gt; </span><span class="mi">249</span>                 <span class="n">result</span> <span class="o">=</span> <span class="n">coro</span><span class="o">.</span><span class="n">send</span><span class="p">(</span><span class="kc">None</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">250</span>             <span class="k">else</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">251</span>                 <span class="n">result</span> <span class="o">=</span> <span class="n">coro</span><span class="o">.</span><span class="n">throw</span><span class="p">(</span><span class="n">exc</span><span class="p">)</span>
+
+<span class="nn">~\Anaconda3\envs\condadev\lib\site-packages\nbclient\client.py</span> in <span class="ni">async_execute_cell</span><span class="nt">(self, cell, cell_index, execution_count, store_history)</span>
+<span class="g g-Whitespace">    </span><span class="mi">855</span>         <span class="k">if</span> <span class="n">execution_count</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">856</span>             <span class="n">cell</span><span class="p">[</span><span class="s1">&#39;execution_count&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">execution_count</span>
+<span class="ne">--&gt; </span><span class="mi">857</span>         <span class="bp">self</span><span class="o">.</span><span class="n">_check_raise_for_error</span><span class="p">(</span><span class="n">cell</span><span class="p">,</span> <span class="n">exec_reply</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">858</span>         <span class="bp">self</span><span class="o">.</span><span class="n">nb</span><span class="p">[</span><span class="s1">&#39;cells&#39;</span><span class="p">][</span><span class="n">cell_index</span><span class="p">]</span> <span class="o">=</span> <span class="n">cell</span>
+<span class="g g-Whitespace">    </span><span class="mi">859</span>         <span class="k">return</span> <span class="n">cell</span>
+
+<span class="nn">~\Anaconda3\envs\condadev\lib\site-packages\nbclient\client.py</span> in <span class="ni">_check_raise_for_error</span><span class="nt">(self, cell, exec_reply)</span>
+<span class="g g-Whitespace">    </span><span class="mi">758</span> 
+<span class="g g-Whitespace">    </span><span class="mi">759</span>         <span class="k">if</span> <span class="ow">not</span> <span class="n">cell_allows_errors</span><span class="p">:</span>
+<span class="ne">--&gt; </span><span class="mi">760</span>             <span class="k">raise</span> <span class="n">CellExecutionError</span><span class="o">.</span><span class="n">from_cell_and_msg</span><span class="p">(</span><span class="n">cell</span><span class="p">,</span> <span class="n">exec_reply_content</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">761</span> 
+<span class="g g-Whitespace">    </span><span class="mi">762</span>     <span class="k">async</span> <span class="k">def</span> <span class="nf">async_execute_cell</span><span class="p">(</span>
+
+<span class="ne">CellExecutionError</span>: An error occurred while executing the following cell:
+<span class="gt">------------------</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Hello world&quot;</span><span class="p">)</span>
+
+<span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;I cannot go on&quot;</span><span class="p">)</span>
+<span class="gt">------------------</span>
+
+<span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">ValueError</span><span class="g g-Whitespace">                                </span>Traceback (most recent call last)
+<span class="o">~</span>\<span class="n">AppData</span>\<span class="n">Local</span>\<span class="n">Temp</span><span class="o">/</span><span class="n">ipykernel_39472</span><span class="o">/</span><span class="mf">2363916902.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Hello world&quot;</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> 
+<span class="ne">----&gt; </span><span class="mi">3</span> <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;I cannot go on&quot;</span><span class="p">)</span>
+
+<span class="ne">ValueError</span>: I cannot go on
+<span class="ne">ValueError</span>: I cannot go on
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="output-when-test-fails">
+<h3>Output when test fails<a class="headerlink" href="#output-when-test-fails" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>        <span class="k">if</span> <span class="ow">not</span> <span class="n">cell_allows_errors</span><span class="p">:</span>
+<span class="o">&gt;</span>           <span class="k">raise</span> <span class="n">CellExecutionError</span><span class="o">.</span><span class="n">from_cell_and_msg</span><span class="p">(</span><span class="n">cell</span><span class="p">,</span> <span class="n">exec_reply_content</span><span class="p">)</span>
+<span class="n">E</span>           <span class="n">nbclient</span><span class="o">.</span><span class="n">exceptions</span><span class="o">.</span><span class="n">CellExecutionError</span><span class="p">:</span> <span class="n">An</span> <span class="n">error</span> <span class="n">occurred</span> <span class="k">while</span> <span class="n">executing</span> <span class="n">the</span> <span class="n">following</span> <span class="n">cell</span><span class="p">:</span>
+<span class="n">E</span>           <span class="o">------------------</span>
+<span class="n">E</span>           <span class="k">if</span> <span class="ow">not</span> <span class="n">iplocation</span><span class="o">.</span><span class="n">settings</span><span class="o">.</span><span class="n">args</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;AuthKey&quot;</span><span class="p">)</span> <span class="ow">and</span> <span class="ow">not</span> <span class="n">ips_key</span><span class="o">.</span><span class="n">value</span><span class="p">:</span>
+<span class="n">E</span>               <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;No Authentication key in config/environment or supplied by user.&quot;</span><span class="p">)</span>
+<span class="n">E</span>           <span class="k">if</span> <span class="n">ips_key</span><span class="o">.</span><span class="n">value</span><span class="p">:</span>
+<span class="n">E</span>               <span class="n">iplocation</span> <span class="o">=</span> <span class="n">IPStackLookup</span><span class="p">(</span><span class="n">api_key</span><span class="o">=</span><span class="n">ips_key</span><span class="o">.</span><span class="n">value</span><span class="p">)</span>
+<span class="n">E</span>           <span class="n">loc_result</span><span class="p">,</span> <span class="n">ip_entity</span> <span class="o">=</span> <span class="n">iplocation</span><span class="o">.</span><span class="n">lookup_ip</span><span class="p">(</span><span class="n">ip_address</span><span class="o">=</span><span class="s1">&#39;90.156.201.97&#39;</span><span class="p">)</span>
+<span class="n">E</span>           <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Raw result&#39;</span><span class="p">)</span>
+<span class="n">E</span>           <span class="n">display</span><span class="p">(</span><span class="n">loc_result</span><span class="p">)</span>
+<span class="n">E</span>           
+<span class="n">E</span>           <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;IP Address Entity&#39;</span><span class="p">)</span>
+<span class="n">E</span>           <span class="n">display</span><span class="p">(</span><span class="n">ip_entity</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+<span class="n">E</span>           <span class="o">------------------</span>
+<span class="n">E</span>           
+<span class="n">E</span>           <span class="o">---------------------------------------------------------------------------</span>
+<span class="n">E</span>           <span class="ne">IndexError</span>                                <span class="n">Traceback</span> <span class="p">(</span><span class="n">most</span> <span class="n">recent</span> <span class="n">call</span> <span class="n">last</span><span class="p">)</span>
+<span class="n">E</span>           <span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">1</span><span class="o">-</span><span class="mi">9</span><span class="n">c719ea3ba7e</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="n">E</span>                 <span class="mi">8</span> 
+<span class="n">E</span>                 <span class="mi">9</span> <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;IP Address Entity&#39;</span><span class="p">)</span>
+<span class="n">E</span>           <span class="o">---&gt;</span> <span class="mi">10</span> <span class="n">display</span><span class="p">(</span><span class="n">ip_entity</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+<span class="n">E</span>           
+<span class="n">E</span>           <span class="ne">IndexError</span><span class="p">:</span> <span class="nb">list</span> <span class="n">index</span> <span class="n">out</span> <span class="n">of</span> <span class="nb">range</span>
+<span class="n">E</span>           <span class="ne">IndexError</span><span class="p">:</span> <span class="nb">list</span> <span class="n">index</span> <span class="n">out</span> <span class="n">of</span> <span class="nb">range</span>
+
+<span class="o">/</span><span class="n">opt</span><span class="o">/</span><span class="n">hostedtoolcache</span><span class="o">/</span><span class="n">Python</span><span class="o">/</span><span class="mf">3.6.15</span><span class="o">/</span><span class="n">x64</span><span class="o">/</span><span class="n">lib</span><span class="o">/</span><span class="n">python3</span><span class="mf">.6</span><span class="o">/</span><span class="n">site</span><span class="o">-</span><span class="n">packages</span><span class="o">/</span><span class="n">nbclient</span><span class="o">/</span><span class="n">client</span><span class="o">.</span><span class="n">py</span><span class="p">:</span><span class="mi">765</span><span class="p">:</span> <span class="n">CellExecutionError</span>
+<span class="o">-----------------------------</span> <span class="n">Captured</span> <span class="n">stdout</span> <span class="n">call</span> <span class="o">-----------------------------</span>
+<span class="n">Error</span> <span class="n">executing</span> <span class="n">the</span> <span class="n">notebook</span> <span class="s1">&#39;docs/notebooks/GeoIPLookups.ipynb&#39;</span><span class="o">.</span>
+<span class="n">See</span> <span class="n">notebook</span> <span class="s1">&#39;docs/notebooks/GeoIPLookups-err.ipynb&#39;</span> <span class="k">for</span> <span class="n">the</span> <span class="n">traceback</span><span class="o">.</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<hr class="docutils" />
+<div class="section" id="end-of-session">
+<h1>End of Session<a class="headerlink" href="#end-of-session" title="Permalink to this headline">¶</a></h1>
+</div>
+<div class="section" id="font-color-peru-break-5-minutes-font">
+<h1><font color=peru>Break: 5 Minutes</font><a class="headerlink" href="#font-color-peru-break-5-minutes-font" title="Permalink to this headline">¶</a></h1>
+<p><img alt="" src="../../_images/dog-leash-break.jpg" /></p>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./workshops\day2"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+        <div class='prev-next-bottom'>
+            
+    <a class='left-prev' id="prev-link" href="intro.html" title="previous page">Day 2</a>
+    <a class='right-next' id="next-link" href="day2-1-R-demo-notebook.html" title="next page">Workshop 2.1: <font color=peru>R Demo Notebook</font></a>
+
+        </div>
+        
+        </div>
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Roberto Rodriguez @Cyb3rWard0g<br/>
+        
+            &copy; Copyright 2021.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+
+  
+  </body>
+</html>
