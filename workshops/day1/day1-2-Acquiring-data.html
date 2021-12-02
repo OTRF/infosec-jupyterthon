@@ -436,7 +436,7 @@
         aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
     <div class="dropdown-buttons">
         
-        <a class="binder-button" href="https://mybinder.org/v2/gh/OTRF/infosec-jupyterthon/master?urlpath=tree/docs/workshops/day1/day1-2-Acquiring-data.ipynb"><button type="button"
+        <a class="binder-button" href="https://mybinder.org/v2/gh/OTRF/infosec-jupyterthon/master?urlpath=lab/tree/docs/workshops/day1/day1-2-Acquiring-data.ipynb"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
                 data-placement="left"><img class="binder-button-logo"
                     src="../../_static/images/logo_binder.svg"
@@ -478,6 +478,18 @@
      Elasticsearch
     </a>
    </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#font-color-hotpink-connect-to-elasticsearch-font-font-color-dimgray-elasticsearch-dsl-libraries-font">
+   <font color="hotpink">
+    Connect to Elasticsearch
+   </font>
+   <font color="dimgray">
+    (Elasticsearch DSL Libraries)
+   </font>
+  </a>
+  <ul class="visible nav section-nav flex-column">
    <li class="toc-h2 nav-item toc-entry">
     <a class="reference internal nav-link" href="#splunk">
      Splunk
@@ -672,6 +684,11 @@
 </div>
 </div>
 </div>
+</div>
+<div class="section" id="font-color-hotpink-connect-to-elasticsearch-font-font-color-dimgray-elasticsearch-dsl-libraries-font">
+<h1><font color=hotpink>Connect to Elasticsearch</font> <font color=dimgray>(Elasticsearch DSL Libraries)</font><a class="headerlink" href="#font-color-hotpink-connect-to-elasticsearch-font-font-color-dimgray-elasticsearch-dsl-libraries-font" title="Permalink to this headline">¶</a></h1>
+<p><img alt="" src="../../_images/elasticsearch-dsl-query1.png" /></p>
+<p>Reference: <a class="reference external" href="https://medium.com/threat-hunters-forge/jupyter-notebooks-from-sigma-rules-%EF%B8%8F-to-query-elasticsearch-31a74cc59b99">https://medium.com/threat-hunters-forge/jupyter-notebooks-from-sigma-rules-️-to-query-elasticsearch-31a74cc59b99</a></p>
 <div class="section" id="splunk">
 <h2>Splunk<a class="headerlink" href="#splunk" title="Permalink to this headline">¶</a></h2>
 <p><a class="reference external" href="https://github.com/target/huntlib">Huntlib - https://github.com/target/huntlib</a></p>
@@ -1057,15 +1074,97 @@ Done.
 </div>
 <div class="section" id="log-analytics-workspace">
 <h2>Log analytics workspace<a class="headerlink" href="#log-analytics-workspace" title="Permalink to this headline">¶</a></h2>
+<p><strong>Requirements</strong>:</p>
 <ul class="simple">
-<li><p>Importing libraries:</p></li>
+<li><p>Azure AD application</p>
+<ul>
+<li><p>Secret text (credentials)</p></li>
+<li><p>API permissions granted:</p>
+<ul>
+<li><p>Service: Log Analytics API</p></li>
+<li><p>Permission: Data.Read</p></li>
+<li><p>Type: AppRole</p></li>
 </ul>
+</li>
+</ul>
+</li>
+<li><p>Add application with <code class="docutils literal notranslate"><span class="pre">Log</span> <span class="pre">Analytics</span> <span class="pre">Reader</span></code> role to Log Analytic Workspace Access Control list.</p></li>
+</ul>
+<p><strong>Get OAUTH Access Token</strong></p>
+<ul class="simple">
+<li><p>Application ID</p></li>
+<li><p>Scope: <a class="reference external" href="https://api.loganalytics.io/.default">https://api.loganalytics.io/.default</a></p></li>
+<li><p>TenantId</p></li>
+<li><p>Application secret</p></li>
+</ul>
+<p><a class="reference external" href="https://securitydatasets.com/create/azureloganalyticsapi.html">https://securitydatasets.com/create/azureloganalyticsapi.html</a></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">requests</span>
+<span class="kn">import</span> <span class="nn">time</span>
+
+<span class="n">appId</span> <span class="o">=</span> <span class="s2">&quot;AppId&quot;</span>
+<span class="n">scope</span> <span class="o">=</span> <span class="s2">&quot;https://api.loganalytics.io/.default&quot;</span>
+<span class="n">tenantId</span> <span class="o">=</span> <span class="s2">&quot;TenantID&quot;</span>
+<span class="n">secret</span> <span class="o">=</span> <span class="s1">&#39;ApplicationSecret&#39;</span>
+
+<span class="n">endpoint</span> <span class="o">=</span> <span class="sa">f</span><span class="s1">&#39;https://login.microsoftonline.com/</span><span class="si">{</span><span class="n">tenantId</span><span class="si">}</span><span class="s1">/oauth2/v2.0/token&#39;</span>
+<span class="n">http_headers</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;Accept&#39;</span><span class="p">:</span> <span class="s1">&#39;application/json&#39;</span><span class="p">,</span><span class="s1">&#39;Content-Type&#39;</span><span class="p">:</span> <span class="s1">&#39;application/json&#39;</span><span class="p">}</span>
+<span class="n">data</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;scope&quot;</span> <span class="p">:</span> <span class="n">scope</span><span class="p">,</span> <span class="s1">&#39;grant_type&#39;</span> <span class="p">:</span> <span class="s1">&#39;client_credentials&#39;</span><span class="p">,</span> <span class="s1">&#39;client_id&#39;</span> <span class="p">:</span> <span class="n">appId</span><span class="p">,</span> <span class="s1">&#39;client_secret&#39;</span> <span class="p">:</span> <span class="n">secret</span><span class="p">}</span>
+<span class="n">results</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">endpoint</span><span class="p">,</span> <span class="n">json</span><span class="o">=</span><span class="n">data</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="n">http_headers</span><span class="p">,</span> <span class="n">stream</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
+
+<span class="n">access_token</span> <span class="o">=</span> <span class="n">results</span><span class="p">[</span><span class="s2">&quot;access_token&quot;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>Run Query</strong></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">workspaceId</span> <span class="o">=</span> <span class="s1">&#39;Workspace ID&#39;</span>
+<span class="n">apiUri</span> <span class="o">=</span> <span class="sa">f</span><span class="s1">&#39;https://api.loganalytics.io/v1/workspaces/</span><span class="si">{</span><span class="n">workspaceId</span><span class="si">}</span><span class="s1">/query&#39;</span>
+
+<span class="n">query</span> <span class="o">=</span> <span class="s1">&#39;query&#39;</span>
+
+<span class="n">HttpHeaders</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;Authorization&quot;</span> <span class="p">:</span> <span class="sa">f</span><span class="s1">&#39;Bearer </span><span class="si">{</span><span class="n">access_token</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">,</span> <span class="s1">&#39;Accept&#39;</span><span class="p">:</span> <span class="s1">&#39;application/json&#39;</span><span class="p">,</span><span class="s1">&#39;Content-Type&#39;</span><span class="p">:</span> <span class="s1">&#39;application/json&#39;</span><span class="p">}</span>
+<span class="n">data</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;query&#39;</span> <span class="p">:</span> <span class="n">query</span><span class="p">}</span>
+
+<span class="n">query_results</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">apiUri</span><span class="p">,</span> <span class="n">json</span><span class="o">=</span><span class="n">data</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="n">http_headers</span><span class="p">,</span> <span class="n">stream</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
 </div>
 <div class="section" id="m365-advanced-hunting-apis">
 <h2>M365 advanced hunting APIs<a class="headerlink" href="#m365-advanced-hunting-apis" title="Permalink to this headline">¶</a></h2>
+<p><strong>Requirements</strong>:</p>
 <ul class="simple">
-<li><p>Importing libraries:</p></li>
+<li><p>Azure AD application</p>
+<ul>
+<li><p>Secret text (credentials)</p></li>
+<li><p>API permissions granted:</p>
+<ul>
+<li><p>Service: Microsoft Threat Protection</p></li>
+<li><p>Permission:</p>
+<ul>
+<li><p>AdvancedHunting.Read.All</p></li>
+<li><p>Incident.Read.All</p></li>
 </ul>
+</li>
+<li><p>Type: AppRole</p></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p><strong>Get OAUTH Access Token</strong></p>
+<ul class="simple">
+<li><p>Application ID</p></li>
+<li><p>Scope: <a class="reference external" href="https://api.security.microsoft.com/.default">https://api.security.microsoft.com/.default</a></p></li>
+<li><p>TenantId</p></li>
+<li><p>Application secret</p></li>
+</ul>
+<p><a class="reference external" href="https://securitydatasets.com/create/m365defenderhuntapi.html">https://securitydatasets.com/create/m365defenderhuntapi.html</a></p>
 </div>
 <div class="section" id="msticpy-data-providers">
 <h2>MSTICPy Data Providers<a class="headerlink" href="#msticpy-data-providers" title="Permalink to this headline">¶</a></h2>

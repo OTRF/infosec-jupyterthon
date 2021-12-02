@@ -436,7 +436,7 @@
         aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
     <div class="dropdown-buttons">
         
-        <a class="binder-button" href="https://mybinder.org/v2/gh/OTRF/infosec-jupyterthon/master?urlpath=tree/docs/workshops/day1/day1-1-Jupyter-Introduction.ipynb"><button type="button"
+        <a class="binder-button" href="https://mybinder.org/v2/gh/OTRF/infosec-jupyterthon/master?urlpath=lab/tree/docs/workshops/day1/day1-1-Jupyter-Introduction.ipynb"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
                 data-placement="left"><img class="binder-button-logo"
                     src="../../_static/images/logo_binder.svg"
@@ -467,10 +467,10 @@
   </a>
  </li>
  <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#font-color-peru-overview-font">
-   <font color="peru">
-    Overview
-   </font>
+  <a class="reference internal nav-link" href="#a-style-border-solid-padding-5pt-color-black-background-color-90caf9-name-overview-jupyter-notebooks-overview-a">
+   <a name="overview" style="border: solid; padding:5pt; color:black; background-color:#90CAF9">
+    Jupyter Notebooks Overview
+   </a>
   </a>
  </li>
  <li class="toc-h1 nav-item toc-entry">
@@ -537,10 +537,10 @@
   </a>
  </li>
  <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#font-color-peru-architecture-font">
-   <font color="peru">
-    Architecture
-   </font>
+  <a class="reference internal nav-link" href="#a-style-border-solid-padding-5pt-color-black-background-color-90caf9-name-architecture-jupyter-notebook-architecture-a">
+   <a name="architecture" style="border: solid; padding:5pt; color:black; background-color:#90CAF9">
+    Jupyter Notebook Architecture
+   </a>
   </a>
  </li>
  <li class="toc-h1 nav-item toc-entry">
@@ -551,10 +551,10 @@
   </a>
  </li>
  <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#font-color-peru-installation-font">
-   <font color="peru">
-    Installation
-   </font>
+  <a class="reference internal nav-link" href="#a-style-border-solid-padding-5pt-color-black-background-color-90caf9-name-deployment-jupyter-notebook-deployments-a">
+   <a name="deployment" style="border: solid; padding:5pt; color:black; background-color:#90CAF9">
+    Jupyter Notebook Deployments
+   </a>
   </a>
  </li>
  <li class="toc-h1 nav-item toc-entry">
@@ -563,11 +563,51 @@
     Installing Jupyter Notebooks (Manually)
    </font>
   </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#classic-jupyter-notebook">
+     Classic Jupyter Notebook
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id2">
+   <font color="dimgray">
+    Installing Jupyter Notebooks (Manually)
+   </font>
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#jupyterlab">
+     JupyterLab
+    </a>
+   </li>
+  </ul>
  </li>
  <li class="toc-h1 nav-item toc-entry">
   <a class="reference internal nav-link" href="#font-color-dimgray-installing-jupyter-notebooks-docker-ce-font">
    <font color="dimgray">
     Installing Jupyter Notebooks (Docker CE)
+   </font>
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#running-the-jupyter-base-notebook">
+     Running the Jupyter Base Notebook
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#jupyterthon-otrf-docker-image">
+     Jupyterthon - OTRF Docker Image
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#font-color-dimgray-jupyter-hub-font">
+   <font color="dimgray">
+    Jupyter Hub
    </font>
   </a>
  </li>
@@ -600,16 +640,37 @@
   </a>
  </li>
  <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#font-color-peru-jupyter-flavors-font">
-   <font color="peru">
-    Jupyter Flavors
+  <a class="reference internal nav-link" href="#font-color-dimgray-jupyterlab-desktop-app-font">
+   <font color="dimgray">
+    JupyterLab Desktop App
    </font>
   </a>
  </li>
  <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#font-color-dimgray-enter-jupyter-book-font">
+  <a class="reference internal nav-link" href="#a-style-border-solid-padding-5pt-color-black-background-color-90caf9-name-flavors-jupyter-notebooks-flavors-a">
+   <a name="flavors" style="border: solid; padding:5pt; color:black; background-color:#90CAF9">
+    Jupyter Notebooks Flavors
+   </a>
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#font-color-dimgray-classic-jupyter-notebook-font">
    <font color="dimgray">
-    Enter Jupyter Book
+    Classic Jupyter Notebook
+   </font>
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#font-color-dimgray-jupyterlab-font">
+   <font color="dimgray">
+    JupyterLab
+   </font>
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#font-color-dimgray-vscode-jupyter-notebook-font">
+   <font color="dimgray">
+    VSCode Jupyter Notebook
    </font>
   </a>
  </li>
@@ -651,26 +712,26 @@
 </li>
 <li><p><strong>Agenda</strong>:</p>
 <ul>
-<li><p>Overview</p></li>
-<li><p>Architecture</p></li>
-<li><p>Deployment</p></li>
-<li><p>Jupyter Flavors</p></li>
+<li><p><a class="reference external" href="#overview">Overview</a></p></li>
+<li><p><a class="reference external" href="#architecture">Architecture</a></p></li>
+<li><p><a class="reference external" href="#deployment">Deployment</a></p></li>
+<li><p><a class="reference external" href="#flavors">Jupyter Flavors</a></p></li>
 </ul>
 </li>
-<li><p><strong>Notebook</strong>: <a class="reference external" href="https://infosecjupyterthon.com/introduction.html">https://infosecjupyterthon.com/introduction.html</a></p></li>
+<li><p><strong>Notebook</strong>: <a class="reference external" href="https://aka.ms/Jupyterthon-ws-1-1">https://aka.ms/Jupyterthon-ws-1-1</a></p></li>
 <li><p><strong>License</strong>: <a class="reference external" href="https://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International</a></p></li>
 </ul>
 </div>
-<div class="section" id="font-color-peru-overview-font">
-<h1><font color=peru>Overview</font><a class="headerlink" href="#font-color-peru-overview-font" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="a-style-border-solid-padding-5pt-color-black-background-color-90caf9-name-overview-jupyter-notebooks-overview-a">
+<h1><a style="border: solid; padding:5pt; color:black; background-color:#90CAF9" name="overview">Jupyter Notebooks Overview</a><a class="headerlink" href="#a-style-border-solid-padding-5pt-color-black-background-color-90caf9-name-overview-jupyter-notebooks-overview-a" title="Permalink to this headline">¶</a></h1>
 </div>
 <div class="section" id="font-color-dimgray-getting-up-to-speed-font">
 <h1><font color=dimgray>Getting up to speed..</font><a class="headerlink" href="#font-color-dimgray-getting-up-to-speed-font" title="Permalink to this headline">¶</a></h1>
-<p><img alt="" src="../../_images/timeline1.png" /></p>
+<p><img alt="" src="../../_images/timeline-2021.png" /></p>
 </div>
 <div class="section" id="id1">
 <h1><font color=dimgray>Getting up to speed..</font><a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
-<p><img alt="" src="../../_images/timeline-ipython1.png" /></p>
+<p><img alt="" src="../../_images/timeline-ipython-2021.png" /></p>
 </div>
 <div class="section" id="font-color-dimgray-what-is-interactive-computing-font">
 <h1><font color=dimgray>What is Interactive Computing?</font><a class="headerlink" href="#font-color-dimgray-what-is-interactive-computing-font" title="Permalink to this headline">¶</a></h1>
@@ -793,22 +854,28 @@ Reference: <a class="reference external" href="https://ipython.readthedocs.io/en
 </div>
 </div>
 </div>
+<p><img alt="" src="../../_images/jupyter-notebooks-classic.png" /></p>
 </div>
-<div class="section" id="font-color-peru-architecture-font">
-<h1><font color=peru>Architecture</font><a class="headerlink" href="#font-color-peru-architecture-font" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="a-style-border-solid-padding-5pt-color-black-background-color-90caf9-name-architecture-jupyter-notebook-architecture-a">
+<h1><a style="border: solid; padding:5pt; color:black; background-color:#90CAF9" name="architecture">Jupyter Notebook Architecture</a><a class="headerlink" href="#a-style-border-solid-padding-5pt-color-black-background-color-90caf9-name-architecture-jupyter-notebook-architecture-a" title="Permalink to this headline">¶</a></h1>
 </div>
 <div class="section" id="font-color-dimgray-architecture-interactive-protocol-font">
 <h1><font color=dimgray>Architecture (Interactive Protocol)</font><a class="headerlink" href="#font-color-dimgray-architecture-interactive-protocol-font" title="Permalink to this headline">¶</a></h1>
 <p><img alt="" src="../../_images/jupyter-notebooks-architecture1.png" /></p>
 </div>
-<div class="section" id="font-color-peru-installation-font">
-<h1><font color=peru>Installation</font><a class="headerlink" href="#font-color-peru-installation-font" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="a-style-border-solid-padding-5pt-color-black-background-color-90caf9-name-deployment-jupyter-notebook-deployments-a">
+<h1><a style="border: solid; padding:5pt; color:black; background-color:#90CAF9" name="deployment">Jupyter Notebook Deployments</a><a class="headerlink" href="#a-style-border-solid-padding-5pt-color-black-background-color-90caf9-name-deployment-jupyter-notebook-deployments-a" title="Permalink to this headline">¶</a></h1>
 </div>
 <div class="section" id="font-color-dimgray-installing-jupyter-notebooks-manually-font">
 <h1><font color=dimgray>Installing Jupyter Notebooks (Manually)</font><a class="headerlink" href="#font-color-dimgray-installing-jupyter-notebooks-manually-font" title="Permalink to this headline">¶</a></h1>
 <p><strong>Prerequisite</strong>: Python</p>
 <p>While Jupyter runs code in many programming languages, Python is a requirement (Python 3.3 or greater, or Python 2.7) for installing the JupyterLab or the classic Jupyter Notebook.</p>
-<p><strong>Using Conda</strong></p>
+<div class="section" id="classic-jupyter-notebook">
+<h2>Classic Jupyter Notebook<a class="headerlink" href="#classic-jupyter-notebook" title="Permalink to this headline">¶</a></h2>
+<p><strong>Using Mamba or Conda</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">mamba</span> <span class="n">install</span> <span class="o">-</span><span class="n">c</span> <span class="n">conda</span><span class="o">-</span><span class="n">forge</span> <span class="n">notebook</span>
+</pre></div>
+</div>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="n">install</span> <span class="o">-</span><span class="n">c</span> <span class="n">conda</span><span class="o">-</span><span class="n">forge</span> <span class="n">notebook</span>
 </pre></div>
 </div>
@@ -822,18 +889,69 @@ Reference: <a class="reference external" href="https://ipython.readthedocs.io/en
 </pre></div>
 </div>
 </div>
+</div>
+<div class="section" id="id2">
+<h1><font color=dimgray>Installing Jupyter Notebooks (Manually)</font><a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h1>
+<p><strong>Prerequisite</strong>: Python</p>
+<p>While Jupyter runs code in many programming languages, Python is a requirement (Python 3.3 or greater, or Python 2.7) for installing the JupyterLab or the classic Jupyter Notebook.</p>
+<div class="section" id="jupyterlab">
+<h2>JupyterLab<a class="headerlink" href="#jupyterlab" title="Permalink to this headline">¶</a></h2>
+<p><strong>Using Mamba or Conda</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">mamba</span> <span class="n">install</span> <span class="o">-</span><span class="n">c</span> <span class="n">conda</span><span class="o">-</span><span class="n">forge</span> <span class="n">jupyterlab</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="n">install</span> <span class="o">-</span><span class="n">c</span> <span class="n">conda</span><span class="o">-</span><span class="n">forge</span> <span class="n">jupyterlab</span>
+</pre></div>
+</div>
+<p><strong>Using PIP</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="n">jupyterlab</span>
+</pre></div>
+</div>
+<p>Once JupyterLab is installed, you can run it with the following command:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">jupyter</span><span class="o">-</span><span class="n">lab</span>
+
+</pre></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">YouTubeVideo</span>
+
+<span class="n">YouTubeVideo</span><span class="p">(</span><span class="s1">&#39;KcoYnFVw9Xs&#39;</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="mi">1000</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="mi">800</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html">
+<iframe
+    width="1000"
+    height="800"
+    src="https://www.youtube.com/embed/KcoYnFVw9Xs"
+    frameborder="0"
+    allowfullscreen
+></iframe>
+</div></div>
+</div>
+</div>
+</div>
 <div class="section" id="font-color-dimgray-installing-jupyter-notebooks-docker-ce-font">
 <h1><font color=dimgray>Installing Jupyter Notebooks (Docker CE)</font><a class="headerlink" href="#font-color-dimgray-installing-jupyter-notebooks-docker-ce-font" title="Permalink to this headline">¶</a></h1>
 <p><strong>Prerequisite</strong>: Docker CE</p>
-<p>You just have to install the community edition of Docker, so that you can pull and build ready-to-run Docker images containing Jupyter applications and interactive computing tools. You can use a stack image to do any of the following (and more):</p>
+<p>You just have to install the community edition of Docker, so that you can install JupyterLab from Docker images containing Jupyter applications and interactive computing tools.
+You can use a docker stack image to do any of the following (and more):</p>
 <ul class="simple">
 <li><p>Start a personal Jupyter Notebook server in a local Docker container</p></li>
 <li><p>Run JupyterLab servers for a team using JupyterHub</p></li>
 <li><p>Write your own project Dockerfile</p></li>
-<li><p>Jupyter Docker Stacks: <a class="reference external" href="https://github.com/jupyter/docker-stacks">https://github.com/jupyter/docker-stacks</a></p></li>
+</ul>
+<p>You can use <a class="reference external" href="https://github.com/jupyter/docker-stacks">ready-to-run Docker images</a> maintained by the Jupyter team:</p>
+<ul class="simple">
+<li><p>Jupyter Github Docker Stacks project: <a class="reference external" href="https://github.com/jupyter/docker-stacks">https://github.com/jupyter/docker-stacks</a></p></li>
+<li><p>Jupyter Docker registry: <a class="reference external" href="https://hub.docker.com/u/jupyter">https://hub.docker.com/u/jupyter</a></p></li>
 <li><p>Jupyter Docker Base Image: <a class="reference external" href="https://hub.docker.com/r/jupyter/base-notebook/">https://hub.docker.com/r/jupyter/base-notebook/</a></p></li>
 </ul>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>docker run -p 8888:8888 jupyter/minimal-notebook:3b1f4f5e6cc1```
+<div class="section" id="running-the-jupyter-base-notebook">
+<h2>Running the Jupyter Base Notebook<a class="headerlink" href="#running-the-jupyter-base-notebook" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">docker</span> <span class="n">run</span> <span class="o">-</span><span class="n">p</span> <span class="mi">8888</span><span class="p">:</span><span class="mi">8888</span> <span class="n">jupyter</span><span class="o">/</span><span class="n">minimal</span><span class="o">-</span><span class="n">notebook</span><span class="p">:</span><span class="mi">3</span><span class="n">b1f4f5e6cc1</span>
 </pre></div>
 </div>
 <div class="cell docutils container">
@@ -852,15 +970,32 @@ Reference: <a class="reference external" href="https://ipython.readthedocs.io/en
     src="https://www.youtube.com/embed/KVR1_cVlLRE"
     frameborder="0"
     allowfullscreen
-
 ></iframe>
 </div></div>
 </div>
 </div>
+<div class="section" id="jupyterthon-otrf-docker-image">
+<h2>Jupyterthon - OTRF Docker Image<a class="headerlink" href="#jupyterthon-otrf-docker-image" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">docker</span> <span class="n">run</span> <span class="o">-</span><span class="n">ti</span> <span class="o">--</span><span class="n">rm</span> <span class="o">-</span><span class="n">p</span> <span class="mi">8888</span><span class="p">:</span><span class="mi">8888</span> <span class="n">otrf</span><span class="o">/</span><span class="n">jupyterthon</span><span class="p">:</span><span class="mi">2021</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="font-color-dimgray-jupyter-hub-font">
+<h1><font color=dimgray>Jupyter Hub</font><a class="headerlink" href="#font-color-dimgray-jupyter-hub-font" title="Permalink to this headline">¶</a></h1>
+<p>JupyterHub is a set of processes that together provide a single user Jupyter Notebook server for each person in a group. Three major subsystems are started by the jupyterhub command line program:</p>
+<ul class="simple">
+<li><p><strong>Hub (Python/Tornado)</strong>: manages user accounts, authentication, and coordinates Single User Notebook Servers using a Spawner.</p></li>
+<li><p><strong>Proxy</strong>: the public facing part of JupyterHub that uses a dynamic proxy to route HTTP requests to the Hub and Single User Notebook Servers. configurable http proxy (node-http-proxy) is the default proxy.
+<strong>Single-User Notebook Server (Python/Tornado)</strong>: a dedicated, single-user, Jupyter Notebook server is started for each user on the system when the user logs in. The object that starts the single-user notebook servers is called a Spawner.</p></li>
+</ul>
+<p>Reference: <a class="reference external" href="https://jupyterhub.readthedocs.io/en/latest/reference/technical-overview.html">https://jupyterhub.readthedocs.io/en/latest/reference/technical-overview.html</a></p>
+<p><img alt="" src="../../_images/jupyter-hub-subsystems.png" /></p>
+</div>
 <div class="section" id="font-color-dimgray-enter-binder-project-font">
 <h1><font color=dimgray>Enter Binder Project</font><a class="headerlink" href="#font-color-dimgray-enter-binder-project-font" title="Permalink to this headline">¶</a></h1>
 <ul class="simple">
-<li><p>Released on May, 2016</p></li>
+<li><p>Released in May, 2016</p></li>
 <li><p>Updated 2.0 on November, 2019</p></li>
 <li><p>The Binder Project is an open community that makes it possible to create shareable, interactive, reproducible environments.</p></li>
 <li><p>The main technical product that the community creates is called BinderHub, and one deployment of a BinderHub exists at <a class="reference external" href="http://mybinder.org">mybinder.org</a>.</p></li>
@@ -893,13 +1028,72 @@ Reference: <a class="reference external" href="https://ipython.readthedocs.io/en
 <h1><font color=dimgray>Let’s Try it!</font><a class="headerlink" href="#font-color-dimgray-let-s-try-it-font" title="Permalink to this headline">¶</a></h1>
 <p><img alt="" src="../../_images/interactive-example1.png" /></p>
 </div>
-<div class="section" id="font-color-peru-jupyter-flavors-font">
-<h1><font color=peru>Jupyter Flavors</font><a class="headerlink" href="#font-color-peru-jupyter-flavors-font" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="font-color-dimgray-jupyterlab-desktop-app-font">
+<h1><font color=dimgray>JupyterLab Desktop App</font><a class="headerlink" href="#font-color-dimgray-jupyterlab-desktop-app-font" title="Permalink to this headline">¶</a></h1>
+<ul class="simple">
+<li><p>Released in September 2021.</p></li>
+<li><p>Cross-platform standalone application distribution of JupyterLab.</p></li>
+<li><p>Desktop app which bundles a Python environment (bundled conda Python env) with popular Python libraries (Numpy, scipy, pandas, ipywidgets and matplotlib).</p></li>
+<li><p>Based on Electron with a front-end of JupyterLab inside an embedded browser.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">YouTubeVideo</span>
+
+<span class="n">YouTubeVideo</span><span class="p">(</span><span class="s1">&#39;1g1c81YTONo&#39;</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="mi">1000</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="mi">800</span><span class="p">)</span>
+</pre></div>
 </div>
-<div class="section" id="font-color-dimgray-enter-jupyter-book-font">
-<h1><font color=dimgray>Enter Jupyter Book</font><a class="headerlink" href="#font-color-dimgray-enter-jupyter-book-font" title="Permalink to this headline">¶</a></h1>
-<p>Jupyter Book is an open source project for building beautiful, publication-quality books and documents from computational material.</p>
-<p><img alt="" src="workshops/day1/images/jupyter-book-jupyterthon.png" /></p>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html">
+<iframe
+    width="1000"
+    height="800"
+    src="https://www.youtube.com/embed/1g1c81YTONo"
+    frameborder="0"
+    allowfullscreen
+></iframe>
+</div></div>
+</div>
+</div>
+<div class="section" id="a-style-border-solid-padding-5pt-color-black-background-color-90caf9-name-flavors-jupyter-notebooks-flavors-a">
+<h1><a style="border: solid; padding:5pt; color:black; background-color:#90CAF9" name="flavors">Jupyter Notebooks Flavors</a><a class="headerlink" href="#a-style-border-solid-padding-5pt-color-black-background-color-90caf9-name-flavors-jupyter-notebooks-flavors-a" title="Permalink to this headline">¶</a></h1>
+</div>
+<div class="section" id="font-color-dimgray-classic-jupyter-notebook-font">
+<h1><font color=dimgray>Classic Jupyter Notebook</font><a class="headerlink" href="#font-color-dimgray-classic-jupyter-notebook-font" title="Permalink to this headline">¶</a></h1>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">docker</span> <span class="n">run</span> <span class="o">-</span><span class="n">ti</span> <span class="o">--</span><span class="n">rm</span> <span class="o">-</span><span class="n">p</span> <span class="mi">8888</span><span class="p">:</span><span class="mi">8888</span> <span class="n">otrf</span><span class="o">/</span><span class="n">jupyterthon</span><span class="p">:</span><span class="mi">2021</span>
+</pre></div>
+</div>
+<p><img alt="" src="../../_images/jupyter-notebook-classic.png" /></p>
+</div>
+<div class="section" id="font-color-dimgray-jupyterlab-font">
+<h1><font color=dimgray>JupyterLab</font><a class="headerlink" href="#font-color-dimgray-jupyterlab-font" title="Permalink to this headline">¶</a></h1>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">docker</span> <span class="n">run</span> <span class="o">-</span><span class="n">ti</span> <span class="o">--</span><span class="n">rm</span> <span class="o">-</span><span class="n">e</span> <span class="n">JUPYTER_ENABLE_LAB</span><span class="o">=</span><span class="n">yes</span> <span class="o">-</span><span class="n">p</span> <span class="mi">8888</span><span class="p">:</span><span class="mi">8888</span> <span class="n">otrf</span><span class="o">/</span><span class="n">jupyterthon</span><span class="p">:</span><span class="mi">2021</span>
+</pre></div>
+</div>
+<p><img alt="" src="../../_images/jupyterLab.png" /></p>
+</div>
+<div class="section" id="font-color-dimgray-vscode-jupyter-notebook-font">
+<h1><font color=dimgray>VSCode Jupyter Notebook</font><a class="headerlink" href="#font-color-dimgray-vscode-jupyter-notebook-font" title="Permalink to this headline">¶</a></h1>
+<ul class="simple">
+<li><p>Visual Studio Code</p></li>
+<li><p>Python Extension for Visual Studio Code</p></li>
+<li><p>Python Interpreter: you can find the steps to install it here.</p></li>
+</ul>
+<p><strong>References</strong>:</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://blog.openthreatresearch.com/first_jupyter_notebook_vscode">https://blog.openthreatresearch.com/first_jupyter_notebook_vscode</a></p></li>
+<li><p><a class="reference external" href="https://blog.openthreatresearch.com/installing_python_extension_vscode">https://blog.openthreatresearch.com/installing_python_extension_vscode</a></p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">YouTubeVideo</span>
+
+<span class="n">YouTubeVideo</span><span class="p">(</span><span class="s1">&#39;4LrBMHL69VI&#39;</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="mi">1000</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="mi">800</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
 </div>
 <div class="section" id="font-color-dimgray-resources-font">
 <h1><font color=dimgray>Resources</font><a class="headerlink" href="#font-color-dimgray-resources-font" title="Permalink to this headline">¶</a></h1>
@@ -912,6 +1106,15 @@ Reference: <a class="reference external" href="https://ipython.readthedocs.io/en
 <li><p><a class="reference external" href="https://blog.jupyter.org/rendering-notebooks-on-github-f7ac8736d686">https://blog.jupyter.org/rendering-notebooks-on-github-f7ac8736d686</a></p></li>
 <li><p><a class="reference external" href="https://blog.jupyter.org/binder-2-0-a-tech-guide-2017-fd40515a3a84">https://blog.jupyter.org/binder-2-0-a-tech-guide-2017-fd40515a3a84</a></p></li>
 <li><p><a class="reference external" href="https://jupyterbook.org/intro.html">https://jupyterbook.org/intro.html</a></p></li>
+<li><p><a class="reference external" href="https://jupyterlab.readthedocs.io/en/stable/getting_started/installation.html#pip">https://jupyterlab.readthedocs.io/en/stable/getting_started/installation.html#pip</a></p></li>
+<li><p><a class="reference external" href="https://github.com/jupyter/docker-stacks">https://github.com/jupyter/docker-stacks</a></p></li>
+<li><p><a class="reference external" href="http://ipython.org/news">http://ipython.org/news</a></p></li>
+<li><p><a class="reference external" href="https://pypi.org/project/jupyterlite/#history">https://pypi.org/project/jupyterlite/#history</a></p></li>
+<li><p><a class="reference external" href="https://blog.jupyter.org/jupyterlite-jupyter-%EF%B8%8F-webassembly-%EF%B8%8F-python-f6e2e41ab3fa">https://blog.jupyter.org/jupyterlite-jupyter-️-webassembly-️-python-f6e2e41ab3fa</a></p></li>
+<li><p><a class="reference external" href="https://github.com/jupyterlab/jupyterlab-desktop#download">https://github.com/jupyterlab/jupyterlab-desktop#download</a></p></li>
+<li><p><a class="reference external" href="https://blog.jupyter.org/jupyterlab-desktop-app-now-available-b8b661b17e9a">https://blog.jupyter.org/jupyterlab-desktop-app-now-available-b8b661b17e9a</a></p></li>
+<li><p><a class="reference external" href="https://elifesciences.org/labs/a7d53a88/toward-publishing-reproducible-computation-with-binder">https://elifesciences.org/labs/a7d53a88/toward-publishing-reproducible-computation-with-binder</a></p></li>
+<li><p><a class="reference external" href="https://tljh.jupyter.org/en/latest/">https://tljh.jupyter.org/en/latest/</a></p></li>
 </ul>
 </div>
 <div class="section" id="font-color-peru-break-5-minutes-font">
