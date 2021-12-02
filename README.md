@@ -20,9 +20,12 @@ An open community event for security researchers to share their experience and f
 ## Agenda
 * [https://infosecjupyterthon.com/2021/agenda.html](https://infosecjupyterthon.com/2021/agenda.html)
 
+
 ## Quick Information
-* **When?** December 2nd and 3rd, 2021 (10:00am-8:00pm Eastern Time)
-* **Where?** YouTube Live Stream - LINK SOON
+* **When?** December 2nd and 3rd, 2021 (8:30 AM - 5:30 PM (PST))
+* **Where?** YouTube Live Stream
+    * Day 1: [https://aka.ms/Jupyterthon2021Live1](https://aka.ms/Jupyterthon2021Live1)
+    * Day 2: [https://aka.ms/Jupyterthon2021Live2](https://aka.ms/Jupyterthon2021Live2)
 * **How Much?** FREE
 
 ## Registration
