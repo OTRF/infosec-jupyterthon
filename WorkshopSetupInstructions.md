@@ -6,7 +6,7 @@ There are several ways that you can follow along with the sessions
 with your own copies of the notebooks that you can experiment with.
 - Load our Docker image in Docker Desktop
 - Clone the https://github.com/OTRF/infosec-jupyterthon repo and use a local Jupyter server
-- Follow along with the GitHub rendering of the notebooks
+- Follow along with JupyterBook rendering of the notebooks on the InfoSecJupterthon site.
 - Use nbviewer to get a high-fidelity rendering that retains some interactivity
 
 We'll cover each of these - our recommendation is to use the Docker container with Docker Desktop
@@ -105,13 +105,15 @@ jupyter lab
 The workshop notebooks are in the docs/workshop subfolder.
 
 
-# Use GitHub native notebook rendering
+# Use the Infosec-Jupterthon JupyterBook
 
-This is the simplest but least interactive option.
-Open https://github.com/OTRF/infosec-jupyterthon
+This is the simplest, but less interactive, option.
+Open https://infosec-jupyterthon.com/workshops
 
-1. Navigate to docs/workshop/day1 or day2.
-2. Click on the notebook to open
+1. Navigate to day1 or day2.
+2. Click on the workshop page to open
+
+The JupyterBook pages have the option to run in mybinder.org (launch the notebook with the rocket icon).
 
 # Use nbviewer
 
