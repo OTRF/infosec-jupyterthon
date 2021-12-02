@@ -9,7 +9,7 @@ speaker:
       Previously, I was working as a cybersecurity researcher at the National Cybersecurity Institute of Spain, supporting law enforcement in cyber investigations.
       Prior to this I served as a systems administrator in the Military Emergency Unit for over 9 years.
 date: '2021-12-02'
-time: '14:15'
+time: '14:50'
 abstract: >-
   Log analysis is a big problem in incident response.  It is common for an incident to have to analyze gigabytes of events, usually in unhelpful formats.
   During the presentation, a proposal for the parsing, filtering and analysis of these events will be shown.  In the same way, it will talk about the limitations of pandas for the analysis of large amounts of data and how these situations can be handled.
