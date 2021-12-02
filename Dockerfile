@@ -111,6 +111,7 @@ RUN jupyter nbextension enable --py widgetsnbextension --sys-prefix && \
     jupyter labextension enable git && \
     jupyter lab build --dev-build=False
 
+COPY docs/2020/notebooks ${HOME}/docs/2020/notebooks
 COPY docs/${YEAR}/sessions ${HOME}/docs/${YEAR}/sessions
 COPY docs/workshops ${HOME}/docs/workshops
 
