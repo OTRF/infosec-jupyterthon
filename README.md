@@ -49,7 +49,7 @@ If you are using Jupyter notebooks for any use case applied to Infosec, we want 
 
 Thanks to the [@mybinderteam](https://twitter.com/mybinderteam), **all the material that can be tested at home for this event** will be shared and run in their public BinderHub environment. This website was built with the awesome project [Jupyter Book](https://github.com/executablebooks/jupyter-book) and it is already integrated with [Binder](https://mybinder.org/). Therefore, you could use this site to know about the event, but also use it during the event to follow most of the notebooks shared by the community! You will be able to run most of the notebooks interactively without installing anything in your computer.
 
-<img src="docs/content/images/binderhub-process.png" width=700 alt="Cyb3rWard0g">
+<img src="docs/images/binderhub-process.png" width=700 alt="Cyb3rWard0g">
 
 ## What is a Notebook?
 Think of a notebook as a document that you can access via a web interface that allows you to save input (i.e. live code) and output (i.e. code execution results / evaluated code output) of interactive sessions as well as important notes needed to explain the methodology and steps taken to perform specific tasks (i.e data analysis).
