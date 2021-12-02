@@ -6,6 +6,9 @@ parts:
   - file: 2021/agenda
     title: 2021 Edition
     sections:
+    - file: 2021/sessions/intro
+      sections:
+      - file: 2021/sessions/day1-0-welcome
     - file: 2021/speakers/intro
       sections:
       - file: 2021/speakers/pete_bryan
@@ -34,3 +37,20 @@ parts:
     - file: 2020/notebooks/2_Jupyterthon_Cyb3rPandaH_2020
     - file: 2020/notebooks/6_OSQuery-Tables-interactive_Jupyterthon
     - file: 2020/notebooks/12_Jupyterthon-TimeSeries-Demo
+- caption: Workshops
+  chapters:
+  - file: workshops/day1/intro
+    title: Day 1
+    sections:
+    - file: workshops/day1/day1-1-Jupyter-Introduction
+    - file: workshops/day1/day1-2-Acquiring-data
+      title: Workshop 1.2 Acquiring Data
+    - file: workshops/day1/day1-3-Data-Analysis-with-Pandas Intro
+  - file: workshops/day2/intro
+    title: Day 2
+    sections:
+    - file: workshops/day2/day2-1-Jupyter-advanced-topics
+    - file: workshops/day2/day2-1-R-demo-notebook
+    - file: workshops/day2/day2-2-Visualization
+    - file: workshops/day2/day2-3-Advanced-pandas
+    - file: workshops/day2/day2-4-MSTICPy

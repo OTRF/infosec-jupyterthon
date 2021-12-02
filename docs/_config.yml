@@ -2,7 +2,7 @@
 # Book settings
 title                       : '' # The title of the book. Will be placed in the left navbar.
 author                      : Roberto Rodriguez @Cyb3rWard0g # The author of the book
-copyright                   : "2020"  # Copyright year to be placed in the footer
+copyright                   : "2021"  # Copyright year to be placed in the footer
 logo                        : "images/logo/logo.png"  # A path to the book logo
 exclude_patterns            : []  # Patterns to skip when building the book. Can be glob-style (e.g. "*skip.ipynb")
 description: >- # this means to ignore newlines until "baseurl:"
