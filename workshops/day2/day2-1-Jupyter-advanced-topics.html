@@ -648,15 +648,15 @@
   </ul>
  </li>
  <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#a-style-border-solid-padding-5pt-color-black-background-color-90caf9-name-nbconvert-using-nbconvert-to-export-and-create-notebooks-a">
+  <a class="reference internal nav-link" href="#a-style-border-solid-padding-5pt-color-black-background-color-90caf9-name-nbconvert-export-and-create-notebooks-a">
    <a name="nbconvert" style="border: solid; padding:5pt; color:black; background-color:#90CAF9">
-    Using NBConvert to export and create notebooks
+    Export and create notebooks
    </a>
   </a>
   <ul class="visible nav section-nav flex-column">
    <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#nbconvert-create-a-notebook-programmatically-roberto">
-     NBConvert - Create a notebook programmatically [Roberto]
+    <a class="reference internal nav-link" href="#nbformat-create-a-notebook-programmatically-roberto">
+     NBFormat - Create a notebook programmatically [Roberto]
     </a>
    </li>
    <li class="toc-h2 nav-item toc-entry">
@@ -797,7 +797,7 @@
 <li><p><a class="reference external" href="#magics">Magics</a></p></li>
 <li><p><a class="reference external" href="#widgets">Widgets introduction</a>[</p></li>
 <li><p><a class="reference external" href="#extensions">Jupyter Extensions</a></p></li>
-<li><p><a class="reference external" href="#nbconvert">Using NBConvert to export and create notebooks</a></p></li>
+<li><p><a class="reference external" href="#nbconvert">Export and create notebooks</a></p></li>
 <li><p><a class="reference external" href="#debugging">Dev topics - Debugging and testing notebook code</a>
 <br><br></p></li>
 </ul>
@@ -1573,10 +1573,96 @@ File will be created in ‘~/.jupyter/jupyter_lab_config.py’</p>
 <p><img alt="Snippets example" src="https://elyra.readthedocs.io/en/latest/_images/code-snippet-expanded.png" /></p>
 </div>
 </div>
-<div class="section" id="a-style-border-solid-padding-5pt-color-black-background-color-90caf9-name-nbconvert-using-nbconvert-to-export-and-create-notebooks-a">
-<h1><a style="border: solid; padding:5pt; color:black; background-color:#90CAF9" name="nbconvert">Using NBConvert to export and create notebooks</a><a class="headerlink" href="#a-style-border-solid-padding-5pt-color-black-background-color-90caf9-name-nbconvert-using-nbconvert-to-export-and-create-notebooks-a" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="nbconvert-create-a-notebook-programmatically-roberto">
-<h2>NBConvert - Create a notebook programmatically [Roberto]<a class="headerlink" href="#nbconvert-create-a-notebook-programmatically-roberto" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="a-style-border-solid-padding-5pt-color-black-background-color-90caf9-name-nbconvert-export-and-create-notebooks-a">
+<h1><a style="border: solid; padding:5pt; color:black; background-color:#90CAF9" name="nbconvert">Export and create notebooks</a><a class="headerlink" href="#a-style-border-solid-padding-5pt-color-black-background-color-90caf9-name-nbconvert-export-and-create-notebooks-a" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="nbformat-create-a-notebook-programmatically-roberto">
+<h2>NBFormat - Create a notebook programmatically [Roberto]<a class="headerlink" href="#nbformat-create-a-notebook-programmatically-roberto" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>Jupyter notebook files are simple JSON documents, containing text, source code, rich media output, and metadata.</p></li>
+<li><p>Each segment of the document is stored in a cell.</p></li>
+<li><p>We can use the <a class="reference external" href="https://nbformat.readthedocs.io/en/latest/api.html">nbformat</a> Python APIs to create notebook markdown and code cells.</p></li>
+</ul>
+<p><strong>Create a Notebook Object</strong></p>
+<ul class="simple">
+<li><p>Import nbformat library</p></li>
+<li><p>Create a new notebook object</p></li>
+<li><p>Initialize notebook cells as an empty list</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">nbformat</span> <span class="k">as</span> <span class="nn">nbf</span>
+<span class="n">nb</span> <span class="o">=</span> <span class="n">nbf</span><span class="o">.</span><span class="n">v4</span><span class="o">.</span><span class="n">new_notebook</span><span class="p">()</span>
+<span class="n">nb</span><span class="p">[</span><span class="s1">&#39;cells&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">[]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>Create a Markdown Cell</strong></p>
+<ul class="simple">
+<li><p>Use the <a class="reference external" href="https://nbformat.readthedocs.io/en/latest/api.html#nbformat.v4.new_markdown_cell">nbformat.v4.new_markdown_cell API</a> to create a new markdown cell</p></li>
+<li><p>Append the results to the notebooks cells list</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">nb</span><span class="p">[</span><span class="s1">&#39;cells&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">nbf</span><span class="o">.</span><span class="n">v4</span><span class="o">.</span><span class="n">new_markdown_cell</span><span class="p">(</span><span class="s2">&quot;# Remote Service Creation&quot;</span><span class="p">))</span>
+<span class="n">nb</span><span class="p">[</span><span class="s1">&#39;cells&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[{&#39;id&#39;: &#39;95abf033&#39;,
+  &#39;cell_type&#39;: &#39;markdown&#39;,
+  &#39;source&#39;: &#39;# Remote Service Creation&#39;,
+  &#39;metadata&#39;: {}}]
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>Create a Code Cell</strong></p>
+<ul class="simple">
+<li><p>Use the <a class="reference external" href="https://nbformat.readthedocs.io/en/latest/api.html#nbformat.v4.new_code_cell">nbformat.v4.new_code_cell API</a> to create a new code cell</p></li>
+<li><p>Append the results to the notebooks cells list</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">nb</span><span class="p">[</span><span class="s1">&#39;cells&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">nbf</span><span class="o">.</span><span class="n">v4</span><span class="o">.</span><span class="n">new_code_cell</span><span class="p">(</span><span class="s2">&quot;&quot;&quot;from openhunt.mordorutils import *</span>
+<span class="s2">spark = get_spark()&quot;&quot;&quot;</span>
+<span class="p">))</span>
+<span class="n">nb</span><span class="p">[</span><span class="s1">&#39;cells&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[{&#39;id&#39;: &#39;95abf033&#39;,
+  &#39;cell_type&#39;: &#39;markdown&#39;,
+  &#39;source&#39;: &#39;# Remote Service Creation&#39;,
+  &#39;metadata&#39;: {}},
+ {&#39;id&#39;: &#39;bb39946a&#39;,
+  &#39;cell_type&#39;: &#39;code&#39;,
+  &#39;metadata&#39;: {},
+  &#39;execution_count&#39;: None,
+  &#39;source&#39;: &#39;from openhunt.mordorutils import *\nspark = get_spark()&#39;,
+  &#39;outputs&#39;: []}]
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>Write Noteook File</strong>
+Use the <a class="reference external" href="https://nbformat.readthedocs.io/en/latest/api.html#nbformat.write">nbformat.write API</a> to write the notebook object to a file.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">nbf</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">nb</span><span class="p">,</span> <span class="s2">&quot;test.ipynb&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p><img alt="" src="../../_images/nbformat-write-notebook.png" /></p>
+<p><strong>Examples: Document research and detection logic in notebooks programmatically</strong></p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://medium.com/threat-hunters-forge/writing-an-interactive-book-over-the-threat-hunter-playbook-with-the-help-of-the-jupyter-book-3ff37a3123c7">An interactive Book over the Threat Hunter Playbook</a></p></li>
+<li><p><a class="reference external" href="https://medium.com/threat-hunters-forge/jupyter-notebooks-from-sigma-rules-%EF%B8%8F-to-query-elasticsearch-31a74cc59b99">Jupyter Notebooks 📓 from SIGMA Rules 🛡⚔️ to Query Elasticsearch 🏹</a></p></li>
+<li><p><a class="reference external" href="https://github.com/OTRF/Security-Datasets">Seurity Datasets project: YAML -&gt; Notebooks</a></p></li>
+</ul>
 </div>
 <div class="section" id="nbconvert-exporting-and-converting-to-other-formats-ian">
 <h2>NBConvert - Exporting and converting to other formats [Ian]<a class="headerlink" href="#nbconvert-exporting-and-converting-to-other-formats-ian" title="Permalink to this headline">¶</a></h2>

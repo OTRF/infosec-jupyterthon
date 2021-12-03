@@ -534,7 +534,7 @@
 </div>
 <div class="section" id="font-color-dimgray-roberto-rodriguez-font-font-color-cadetblue-cyb3rward0g-font">
 <h1><font color=dimgray>Roberto Rodriguez</font> <font color=cadetblue>&#64;Cyb3rWard0g</font><a class="headerlink" href="#font-color-dimgray-roberto-rodriguez-font-font-color-cadetblue-cyb3rward0g-font" title="Permalink to this headline">¶</a></h1>
-<img src="../media/day1/roberto.jpg" align="right"/>
+<img src="media/day1/roberto.jpg" align="right"/>
 <ul class="simple">
 <li><p>Microsoft Threat Intelligence Center (MSTIC) R&amp;D</p></li>
 <li><p>I ❤️ Open Source</p></li>
@@ -556,7 +556,7 @@
 <span class="kn">import</span> <span class="nn">altair</span> <span class="k">as</span> <span class="nn">alt</span>
 <span class="n">alt</span><span class="o">.</span><span class="n">renderers</span><span class="o">.</span><span class="n">enable</span><span class="p">(</span><span class="s1">&#39;default&#39;</span><span class="p">)</span>
 
-<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;../data/InfosecJupyterthon2021-Stats.csv&quot;</span><span class="p">)</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;data/InfosecJupyterthon2021-Stats.csv&quot;</span><span class="p">)</span>
 <span class="n">top_10</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;Industry&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()[:</span><span class="mi">10</span><span class="p">]</span><span class="o">.</span><span class="n">to_frame</span><span class="p">()</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()</span>
 
 <span class="n">bars</span> <span class="o">=</span> <span class="n">alt</span><span class="o">.</span><span class="n">Chart</span><span class="p">(</span><span class="n">top_10</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s1">&#39;Industry 2021&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">mark_bar</span><span class="p">()</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span>
@@ -633,7 +633,7 @@
 <span class="kn">from</span> <span class="nn">matplotlib</span> <span class="kn">import</span> <span class="n">pyplot</span> <span class="k">as</span> <span class="n">plt</span>
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 
-<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;../data/InfosecJupyterthon2021-Stats.csv&quot;</span><span class="p">)</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;data/InfosecJupyterthon2021-Stats.csv&quot;</span><span class="p">)</span>
 <span class="n">top_10</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;JupyterNotebookLevel&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()[:</span><span class="mi">10</span><span class="p">]</span><span class="o">.</span><span class="n">to_frame</span><span class="p">()</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()</span>
 <span class="n">colors</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;tab:blue&#39;</span><span class="p">,</span> <span class="s1">&#39;tab:cyan&#39;</span><span class="p">,</span> <span class="s1">&#39;tab:gray&#39;</span><span class="p">,</span> <span class="s1">&#39;tab:orange&#39;</span><span class="p">,</span> <span class="s1">&#39;tab:red&#39;</span><span class="p">]</span>
 
@@ -665,7 +665,7 @@
 <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
 <span class="kn">from</span> <span class="nn">wordcloud</span> <span class="kn">import</span> <span class="n">WordCloud</span><span class="p">,</span> <span class="n">STOPWORDS</span>
 
-<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;../data/InfosecJupyterthon2021-Stats.csv&quot;</span><span class="p">)</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;data/InfosecJupyterthon2021-Stats.csv&quot;</span><span class="p">)</span>
 <span class="n">expectations</span><span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;Expectations&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">dropna</span><span class="p">()</span><span class="o">.</span><span class="n">values</span>
 
 <span class="n">tokens</span> <span class="o">=</span> <span class="nb">list</span><span class="p">()</span>
@@ -744,7 +744,7 @@
 <div class="section" id="font-color-dimgray-interactive-talks-font">
 <h1><font color=dimgray>Interactive Talks</font><a class="headerlink" href="#font-color-dimgray-interactive-talks-font" title="Permalink to this headline">¶</a></h1>
 <p>Keep an eye on the Binder badge next to each talk title in the agenda!</p>
-<p><img alt="" src="2021/media/day1/interactive-example.png" /></p>
+<p><img alt="" src="../../_images/interactive-example2.png" /></p>
 </div>
 <div class="section" id="font-color-dimgray-https-infosecjupyterthon-com-2021-agenda-html-font">
 <h1><font color=dimgray><a class="reference external" href="https://infosecjupyterthon.com/2021/agenda.html">https://infosecjupyterthon.com/2021/agenda.html</a></font><a class="headerlink" href="#font-color-dimgray-https-infosecjupyterthon-com-2021-agenda-html-font" title="Permalink to this headline">¶</a></h1>
