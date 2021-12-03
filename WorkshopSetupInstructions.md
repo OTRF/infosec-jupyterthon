@@ -31,10 +31,10 @@ Docker Desktop is an easy-to-install application for your Mac or Windows environ
 
 ## How to start/run Docker Image
 
- 1. Pull OTRF\Jupyterthon image from Docker directly.
+ 1. Pull OTRF\Jupyterthon:2021 image from Docker directly.
 
     ```bash
-    docker run -p 8888:8888 -e JUPYTER_ENABLE_LAB=yes otrf/jupyterthon
+    docker run -p 8888:8888 -e JUPYTER_ENABLE_LAB=yes otrf/jupyterthon:2021
     ```
 
 The following works with a relative path to an image into a subfolder next to the document:
