@@ -115,6 +115,9 @@ COPY docs/2020/notebooks ${HOME}/docs/2020/notebooks
 COPY docs/${YEAR}/sessions ${HOME}/docs/${YEAR}/sessions
 COPY docs/workshops ${HOME}/docs/workshops
 
+USER root
+RUN fix-permissions ${HOME}/docs
+
 USER ${NB_UID}
 
 WORKDIR "${HOME}"

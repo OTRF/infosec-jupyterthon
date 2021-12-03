@@ -36,6 +36,15 @@ print("Hola Infosec Jovyan!")
 #     * Day 2: [https://aka.ms/Jupyterthon2021Live2](https://aka.ms/Jupyterthon2021Live2)
 # * **How Much?** FREE
 # 
+# ## Discord - Conference chat and Q&A
+# * [Session Q&A - https://discord.gg/tFsRKR72](https://discord.gg/tFsRKR72)
+# 
+# **Stay connected after the conference**
+# * [Join the OTR Jupyter community - https://discord.gg/EmxzWZV8](https://discord.gg/EmxzWZV8)
+# 
+# ## Follow Infosec Jupyterthon on twitter
+# * [@jupyterthon](https://twitter.com/jupyterthon)
+# 
 # ## Registration
 # * **Form** [https://aka.ms/Jupyterthon2021Registration](https://aka.ms/Jupyterthon2021Registration)
 # 
