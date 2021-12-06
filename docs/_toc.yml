@@ -9,6 +9,7 @@ parts:
     - file: 2021/sessions/intro
       sections:
       - file: 2021/sessions/day1-0-welcome
+      - file: 2021/sessions/day2-5-C2_Beaconing_Detection_using_Statistical_Analysis
     - file: 2021/speakers/intro
       sections:
       - file: 2021/speakers/pete_bryan
