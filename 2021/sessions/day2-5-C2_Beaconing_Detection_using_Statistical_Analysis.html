@@ -1,0 +1,2405 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>C2 Beaconing Detection using Statistical Analysis</title>
+    
+  <link href="../../_static/css/theme.css" rel="stylesheet" />
+  <link href="../../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+
+    
+  <link rel="stylesheet"
+    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/sphinx-book-theme.acff12b8f9c144ce68a297486a2fa670.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/tabs.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/tabs.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../../_static/js/index.1c5a1a01449ed65a7b51.js">
+
+    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script src="../../_static/tabs.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <link rel="canonical" href="https://infosecjupyterthon.com/2021/sessions/day2-5-C2_Beaconing_Detection_using_Statistical_Analysis.html" />
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../../index.html">
+      
+      <img src="../../_static/logo.png" class="logo" alt="logo">
+      
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <div class="bd-toc-item active">
+        <p class="caption">
+ <span class="caption-text">
+  Editions
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../agenda.html">
+   2021 Edition
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="intro.html">
+     Sessions
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+    <label for="toctree-checkbox-2">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="day1-0-welcome.html">
+       <font color="peru">
+        Welcome to the InfoSec Jupyterthon 2021!
+       </font>
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../speakers/intro.html">
+     Speakers
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+    <label for="toctree-checkbox-3">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../speakers/pete_bryan.html">
+       Pete Bryan
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../speakers/roberto_rodriguez.html">
+       Roberto Rodriguez
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../speakers/jose_rodriguez.html">
+       Jose Rodriguez
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../speakers/ian_hellen.html">
+       Ian Hellen
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../speakers/ashwin_patil.html">
+       Ashwin Patil
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../speakers/luis_f_monge.html">
+       Luis F Monge
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../speakers/mehmet_ergene.html">
+       Mehmet Ergene
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../speakers/leo_meyerovich.html">
+       Leo Meyerovich
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../speakers/joe_petroske.html">
+       Joe Petroske
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../speakers/john_lambert.html">
+       John Lambert
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../speakers/neil_desai.html">
+       Neil Desai
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../speakers/neal_shenk.html">
+       Neal Shenk
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../speakers/sil_han.html">
+       Sil Han
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../speakers/natanela_brod.html">
+       Natanela Brod
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../speakers/xiaokui_shu.html">
+       Xiaokui Shu
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../speakers/mark_kendrick.html">
+       Mark Kendrick
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../speakers/shachar_roitman.html">
+       Shachar Roitman
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../speakers/elisabeth_weber.html">
+       Elisabeth Weber
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../2020/agenda.html">
+   2020 Edition
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+  <label for="toctree-checkbox-4">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../2020/notebooks/0_banner.html">
+     Infosec Jupyterthon 2020!
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../2020/notebooks/1_what_about_notebooks.html">
+     <font color="peru">
+      Welcome Infosec Community!
+     </font>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../2020/notebooks/2_Jupyterthon_Cyb3rPandaH_2020.html">
+     ATT&amp;CK - APT29 Evals Datasets
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../2020/notebooks/6_OSQuery-Tables-interactive_Jupyterthon.html">
+     Untangling the Osquery❓ tables web🕸 using Jupyter Notebooks📓
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../2020/notebooks/12_Jupyterthon-TimeSeries-Demo.html">
+     Anomaly detection and visualization using Time Series Decomposition
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Workshops
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../workshops/day1/intro.html">
+   Day 1
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+  <label for="toctree-checkbox-5">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../workshops/day1/day1-1-Jupyter-Introduction.html">
+     Workshop 1.1:
+     <font color="peru">
+      Jupyter Notebooks Introduction
+     </font>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../workshops/day1/day1-2-Acquiring-data.html">
+     Workshop 1.2:
+     <font color="peru">
+      Acquiring Data
+     </font>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../workshops/day1/day1-3-Data-Analysis-with-Pandas%20Intro.html">
+     Workshop 1.3:
+     <font color="peru">
+      Basics of Data Analysis with Pandas
+     </font>
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../workshops/day2/intro.html">
+   Day 2
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
+  <label for="toctree-checkbox-6">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../workshops/day2/day2-1-Jupyter-advanced-topics.html">
+     Workshop 2.1:
+     <font color="peru">
+      Jupyter Notebooks Advanced
+     </font>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../workshops/day2/day2-1-R-demo-notebook.html">
+     Workshop 2.1:
+     <font color="peru">
+      R Demo Notebook
+     </font>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../workshops/day2/day2-2-Visualization.html">
+     Workshop 2.2:
+     <font color="peru">
+      Visualization in Jupyter Notebooks
+     </font>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../workshops/day2/day2-3-Advanced-pandas.html">
+     Workshop 2.3:
+     <font color="peru">
+      Advanced Pandas
+     </font>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../workshops/day2/day2-4-MSTICPy.html">
+     Workshop 2.4:
+     <font color="peru">
+      MSTICPy
+     </font>
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../../_sources/2021/sessions/day2-5-C2_Beaconing_Detection_using_Statistical_Analysis.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        
+        
+        <a class="edit-button" href="https://github.com/OTRF/infosec-jupyterthon/edit/master/docs/2021/sessions/day2-5-C2_Beaconing_Detection_using_Statistical_Analysis.ipynb"><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Edit this page"><i class="fas fa-pencil-alt"></i>suggest edit</button></a>
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/OTRF/infosec-jupyterthon/master?urlpath=lab/tree/docs/2021/sessions/day2-5-C2_Beaconing_Detection_using_Statistical_Analysis.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   C2 Beaconing Detection using Statistical Analysis
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#mehmet-ergene-cyb3rmonk">
+   Mehmet Ergene @Cyb3rMonk
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#whoami">
+   $whoami
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id1">
+   Mehmet Ergene @Cyb3rMonk
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#statistics-101">
+   Statistics 101
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#median">
+     Median:
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#median-absolute-deviation">
+     Median Absolute Deviation:
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#skewness">
+     Skewness
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#regular-user-traffic-vs-beacon-traffic">
+   Regular user traffic vs. Beacon traffic
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#users-randomly-visit-refresh-the-same-web-page">
+     Users randomly visit/refresh the same web page
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#beacon-traffic-300-time-deltas-each-between-240-360-seconds">
+     Beacon traffic: 300 time deltas, each between 240-360 seconds
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#user-traffic-300-time-deltas-each-between-60-600-seconds-assumption">
+     User traffic: 300 time deltas, each between 60-600 seconds (assumption)
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#what-does-it-mean">
+     What does it mean?
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#how-can-we-detect-beaconing-traffic-using-this-method">
+     How can we detect beaconing traffic using this method?
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#rita-real-intelligence-threat-analytics">
+   RITA (Real Intelligence Threat Analytics)
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#how-rita-works">
+     How RITA works
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#time-delta-distribution">
+     1. Time delta distribution
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#median-absolute-deviation-of-time-delta">
+     2. Median Absolute Deviation of time delta
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#connection-count">
+     3. Connection Count
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#implementing-the-algorithm-using-jupyter-notebook">
+   Implementing the algorithm using Jupyter notebook
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#rita-j">
+   RITA-J
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#rita-in-jupyter-notebook">
+     RITA in Jupyter Notebook
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#steps">
+     Steps:
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#preparing-the-data">
+     Preparing the Data
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#loading-the-data">
+       Loading the data
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#filtering-required-columns">
+       Filtering Required Columns
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#fixing-the-timestamp-column-type">
+       Fixing the Timestamp Column Type
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#analysing-the-data">
+     Analysing the Data
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#grouping-the-connections">
+       Grouping the Connections
+      </a>
+      <ul class="nav section-nav flex-column">
+       <li class="toc-h4 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#reseting-the-index">
+         Reseting the index
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#calculating-connection-count">
+       Calculating Connection Count
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#remove-short-sessions">
+       Remove short sessions
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#sorting-the-timestamps">
+       Sorting the Timestamps
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#calculating-time-delta">
+       Calculating Time Delta
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#generate-variables">
+       Generate variables
+      </a>
+      <ul class="nav section-nav flex-column">
+       <li class="toc-h4 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#variables-for-time-delta-dispersion">
+         Variables for time delta dispersion
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#calculating-the-score">
+       Calculating the score
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#validation">
+   Validation
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#time-delta-distribution-graph-of-some-beacons">
+     Time Delta Distribution Graph of some Beacons
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="c2-beaconing-detection-using-statistical-analysis">
+<h1>C2 Beaconing Detection using Statistical Analysis<a class="headerlink" href="#c2-beaconing-detection-using-statistical-analysis" title="Permalink to this headline">¶</a></h1>
+<br>
+<br>
+<br>
+<br>
+</div>
+<div class="section" id="mehmet-ergene-cyb3rmonk">
+<h1>Mehmet Ergene <a class="reference external" href="https://twitter.com/Cyb3rMonk">&#64;Cyb3rMonk</a><a class="headerlink" href="#mehmet-ergene-cyb3rmonk" title="Permalink to this headline">¶</a></h1>
+<p><strong>Project repo:</strong>  <strong><a class="reference external" href="https://github.com/Cyb3r-Monk/RITA-J">https://github.com/Cyb3r-Monk/RITA-J</a></strong></p>
+</div>
+<hr class="docutils" />
+<div class="section" id="whoami">
+<h1>$whoami<a class="headerlink" href="#whoami" title="Permalink to this headline">¶</a></h1>
+</div>
+<div class="section" id="id1">
+<h1>Mehmet Ergene <a class="reference external" href="https://twitter.com/Cyb3rMonk">&#64;Cyb3rMonk</a><a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
+<ul class="simple">
+<li><p>Threat Hunter</p></li>
+<li><p>Microsoft MVP</p></li>
+<li><p>I ❤️ Anomalies &amp; Behavior</p></li>
+<li><p>Blog: <a class="reference external" href="https://posts.bluraven.io">https://posts.bluraven.io</a></p></li>
+<li><p>GitHub: <a class="reference external" href="https://github.com/Cyb3r-Monk">https://github.com/Cyb3r-Monk</a></p></li>
+<li><p>Non-tech:</p>
+<ul>
+<li><p>Lindy hopper</p></li>
+<li><p>Handpan player</p></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="statistics-101">
+<h1>Statistics 101<a class="headerlink" href="#statistics-101" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="median">
+<h2>Median:<a class="headerlink" href="#median" title="Permalink to this headline">¶</a></h2>
+<p>The median of a finite list of numbers is the “middle” number, when those numbers are listed in order from smallest to greatest.
+For example, the median value of the data (1, 1, 2, 2, 4, 6, 9) is 2</p>
+</div>
+<div class="section" id="median-absolute-deviation">
+<h2>Median Absolute Deviation:<a class="headerlink" href="#median-absolute-deviation" title="Permalink to this headline">¶</a></h2>
+<p>MAD is a measurement of how wide or narrow the distribution of the values is.
+Consider the data (1, 1, 2, 2, 4, 6, 9). It has a median value of 2. The absolute deviations about 2 are (1, 1, 0, 0, 2, 4, 7) which in turn have a median value of 1 (because the sorted absolute deviations are (0, 0, 1, 1, 2, 4, 7)). So the median absolute deviation for this data is 1.</p>
+</div>
+<div class="section" id="skewness">
+<h2>Skewness<a class="headerlink" href="#skewness" title="Permalink to this headline">¶</a></h2>
+<p>Skewness is a measure of the asymmetry of the distribution of a real-valued random variable about its mean(average)</p>
+<p><img alt="skewness" src="../../_images/day2-5-skewness.png" /></p>
+</div>
+</div>
+<div class="section" id="regular-user-traffic-vs-beacon-traffic">
+<h1>Regular user traffic vs. Beacon traffic<a class="headerlink" href="#regular-user-traffic-vs-beacon-traffic" title="Permalink to this headline">¶</a></h1>
+<p>Sample beacon config:</p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Sleep</p></th>
+<th class="head"><p>Jitter</p></th>
+<th class="head"><p>Sleep interval</p></th>
+<th class="head"><p>CS Sleep interval</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>300 seconds</p></td>
+<td><p>20%</p></td>
+<td><p>240-360 seconds</p></td>
+<td><p>240-300 seconds</p></td>
+</tr>
+</tbody>
+</table>
+<p>~300 connections in 24 hours.<br />
+*Sleep = time delta</p>
+<div class="section" id="users-randomly-visit-refresh-the-same-web-page">
+<h2>Users randomly visit/refresh the same web page<a class="headerlink" href="#users-randomly-visit-refresh-the-same-web-page" title="Permalink to this headline">¶</a></h2>
+</div>
+<hr class="docutils" />
+<div class="section" id="beacon-traffic-300-time-deltas-each-between-240-360-seconds">
+<h2>Beacon traffic: 300 time deltas, each between 240-360 seconds<a class="headerlink" href="#beacon-traffic-300-time-deltas-each-between-240-360-seconds" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="user-traffic-300-time-deltas-each-between-60-600-seconds-assumption">
+<h2>User traffic: 300 time deltas, each between 60-600 seconds (assumption)<a class="headerlink" href="#user-traffic-300-time-deltas-each-between-60-600-seconds-assumption" title="Permalink to this headline">¶</a></h2>
+<p><img alt="Normal-vs-Beacon" src="../../_images/day2-5-Normal-vs-Beacon.png" /></p>
+<ul class="simple">
+<li><p>Median of time delta of beacon traffic: 319</p></li>
+<li><p>Median of time delta of user traffic: 236</p></li>
+<li><p>MAD of time delta of beacon traffic: 21</p></li>
+<li><p>MAD of time delta of user traffic: 95</p></li>
+</ul>
+<p>MAD = Median absolute deviation</p>
+</div>
+<div class="section" id="what-does-it-mean">
+<h2>What does it mean?<a class="headerlink" href="#what-does-it-mean" title="Permalink to this headline">¶</a></h2>
+<p>Simply put:</p>
+<ul class="simple">
+<li><p>If beacon traffic ==&gt; <strong>uniform</strong> distribution and <strong>small</strong> Median Absolute Deviation</p></li>
+<li><p>If user traffic ==&gt; <strong>skewed</strong> distribution and <strong>large</strong> Median Absolute Deviation</p></li>
+</ul>
+</div>
+<div class="section" id="how-can-we-detect-beaconing-traffic-using-this-method">
+<h2>How can we detect beaconing traffic using this method?<a class="headerlink" href="#how-can-we-detect-beaconing-traffic-using-this-method" title="Permalink to this headline">¶</a></h2>
+</div>
+</div>
+<div class="section" id="rita-real-intelligence-threat-analytics">
+<h1>RITA (Real Intelligence Threat Analytics)<a class="headerlink" href="#rita-real-intelligence-threat-analytics" title="Permalink to this headline">¶</a></h1>
+<p><img alt="RITA Logo" src="../../_images/day2-5-rita-logo.png" /></p>
+<p>Sponsored by <a class="reference external" href="https://activecountermeasures.com/">Active Countermeasures</a>.</p>
+<p>RITA is an open source framework for network traffic analysis.</p>
+<p>The framework ingests <a class="reference external" href="https://www.zeek.org/">Zeek Logs</a> in TSV format, and currently supports the following major features:</p>
+<ul class="simple">
+<li><p><strong>Beaconing Detection</strong>: Search for signs of beaconing behavior in and out of your network</p></li>
+<li><p><strong>DNS Tunneling Detection</strong> Search for signs of DNS based covert channels</p></li>
+<li><p><strong>Blacklist Checking</strong>: Query blacklists to search for suspicious domains and hosts</p></li>
+</ul>
+<div class="section" id="how-rita-works">
+<h2>How RITA works<a class="headerlink" href="#how-rita-works" title="Permalink to this headline">¶</a></h2>
+<p>RITA analyzes time delta size distribution and data size(sent bytes) distribution of a traffic between the same source and the destination and calculates an overall score for time delta and data size. For now, we’ll focus only on the time delta.</p>
+<p>RITA calculates an overal score from 3 different scores based on time delta.</p>
+</div>
+<div class="section" id="time-delta-distribution">
+<h2>1. Time delta distribution<a class="headerlink" href="#time-delta-distribution" title="Permalink to this headline">¶</a></h2>
+<p>Perfect beacons should have symmetric delta time distribution. Bowley skewness measure is used to check symmetry.</p>
+</div>
+<div class="section" id="median-absolute-deviation-of-time-delta">
+<h2>2. Median Absolute Deviation of time delta<a class="headerlink" href="#median-absolute-deviation-of-time-delta" title="Permalink to this headline">¶</a></h2>
+<p>Perfect beacons should have very low dispersion around the median of their delta times. Median Absolute Deviation is used to check dispersion.</p>
+</div>
+<div class="section" id="connection-count">
+<h2>3. Connection Count<a class="headerlink" href="#connection-count" title="Permalink to this headline">¶</a></h2>
+<p>If the total connection count of traffic is high, it’s more likely a beacon and vice versa.</p>
+</div>
+</div>
+<div class="section" id="implementing-the-algorithm-using-jupyter-notebook">
+<h1>Implementing the algorithm using Jupyter notebook<a class="headerlink" href="#implementing-the-algorithm-using-jupyter-notebook" title="Permalink to this headline">¶</a></h1>
+</div>
+<div class="section" id="rita-j">
+<h1>RITA-J<a class="headerlink" href="#rita-j" title="Permalink to this headline">¶</a></h1>
+<img src="./media/day2-5-show-time.jpg" align="right" />
+<div class="section" id="rita-in-jupyter-notebook">
+<h2>RITA in Jupyter Notebook<a class="headerlink" href="#rita-in-jupyter-notebook" title="Permalink to this headline">¶</a></h2>
+<p><strong><a class="reference external" href="https://github.com/Cyb3r-Monk/RITA-J">https://github.com/Cyb3r-Monk/RITA-J</a></strong></p>
+<p>We will:</p>
+<ul class="simple">
+<li><p>Implement RITA beacon analyzer in Jupyter Notebook</p>
+<ul>
+<li><p>Use dataset shared by Ali Alwashali (<a class="reference external" href="https://twitter.com/ali_alwashali">&#64;ali_alwashali</a>)</p>
+<ul>
+<li><p>Zeek logs from “<a class="reference external" href="http://malware-traffic-analysis.net">malware-traffic-analysis.net</a>” PCAP files, from 2013 to 2021</p></li>
+<li><p>Suricata alerts triggered by the PCAP analysis</p></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p>RITA beacon analyzer code: <a class="reference external" href="https://github.com/activecm/rita/blob/master/pkg/beacon/analyzer.go">https://github.com/activecm/rita/blob/master/pkg/beacon/analyzer.go</a></p>
+</div>
+<div class="section" id="steps">
+<h2>Steps:<a class="headerlink" href="#steps" title="Permalink to this headline">¶</a></h2>
+<ol class="simple">
+<li><p>Prepare data</p></li>
+<li><p>Group connections between the same hosts and aggregate timestamps into a list</p></li>
+<li><p>Calculate connection count and remove short sessions</p></li>
+<li><p>Sort the connection timestamp ascending</p></li>
+<li><p>Calculate time deltas</p></li>
+<li><p>Generate variables required for score calculation</p></li>
+<li><p>Calculate the score</p></li>
+<li><p>Validation with Suricata alerts</p></li>
+</ol>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">math</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">warnings</span>
+<span class="c1"># Disable warnings</span>
+<span class="n">warnings</span><span class="o">.</span><span class="n">filterwarnings</span><span class="p">(</span><span class="s1">&#39;ignore&#39;</span><span class="p">)</span>
+<span class="n">warnings</span><span class="o">.</span><span class="n">simplefilter</span><span class="p">(</span><span class="s1">&#39;ignore&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="preparing-the-data">
+<h2>Preparing the Data<a class="headerlink" href="#preparing-the-data" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="loading-the-data">
+<h3>Loading the data<a class="headerlink" href="#loading-the-data" title="Permalink to this headline">¶</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">http_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;http-dataset.log&#39;</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s1">&#39;</span><span class="se">\t</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="n">http_df</span><span class="o">.</span><span class="n">info</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;class &#39;pandas.core.frame.DataFrame&#39;&gt;
+RangeIndex: 108967 entries, 0 to 108966
+Data columns (total 30 columns):
+ #   Column             Non-Null Count   Dtype  
+---  ------             --------------   -----  
+ 0   ts                 108967 non-null  float64
+ 1   uid                108967 non-null  object 
+ 2   id.orig_h          108967 non-null  object 
+ 3   id.orig_p          108967 non-null  int64  
+ 4   id.resp_h          108967 non-null  object 
+ 5   id.resp_p          108967 non-null  int64  
+ 6   trans_depth        108967 non-null  int64  
+ 7   method             108967 non-null  object 
+ 8   host               108967 non-null  object 
+ 9   uri                108967 non-null  object 
+ 10  referrer           108967 non-null  object 
+ 11  version            108967 non-null  object 
+ 12  user_agent         108967 non-null  object 
+ 13  origin             108949 non-null  object 
+ 14  request_body_len   108967 non-null  int64  
+ 15  response_body_len  108967 non-null  int64  
+ 16  status_code        108967 non-null  object 
+ 17  status_msg         108966 non-null  object 
+ 18  info_code          108967 non-null  object 
+ 19  info_msg           108967 non-null  object 
+ 20  tags               108967 non-null  object 
+ 21  username           108967 non-null  object 
+ 22  password           108967 non-null  object 
+ 23  proxied            108967 non-null  object 
+ 24  orig_fuids         108967 non-null  object 
+ 25  orig_filenames     108967 non-null  object 
+ 26  orig_mime_types    108967 non-null  object 
+ 27  resp_fuids         108967 non-null  object 
+ 28  resp_filenames     108967 non-null  object 
+ 29  resp_mime_types    108967 non-null  object 
+dtypes: float64(1), int64(5), object(24)
+memory usage: 24.9+ MB
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="filtering-required-columns">
+<h3>Filtering Required Columns<a class="headerlink" href="#filtering-required-columns" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">first_row_index</span><span class="p">:</span><span class="n">last_row_index</span> <span class="p">,</span> <span class="p">[</span><span class="s1">&#39;column1&#39;</span><span class="p">,</span> <span class="s1">&#39;column3&#39;</span><span class="p">]]</span>
+</pre></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># get all rows and only the required colums</span>
+<span class="n">http_df</span> <span class="o">=</span> <span class="n">http_df</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,[</span><span class="s1">&#39;ts&#39;</span><span class="p">,</span> <span class="s1">&#39;id.orig_h&#39;</span><span class="p">,</span> <span class="s1">&#39;id.resp_h&#39;</span><span class="p">,</span> <span class="s1">&#39;id.resp_p&#39;</span><span class="p">,</span> <span class="s1">&#39;host&#39;</span><span class="p">,</span> <span class="s1">&#39;method&#39;</span><span class="p">]]</span>
+<span class="n">http_df</span><span class="o">.</span><span class="n">info</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;class &#39;pandas.core.frame.DataFrame&#39;&gt;
+RangeIndex: 108967 entries, 0 to 108966
+Data columns (total 6 columns):
+ #   Column     Non-Null Count   Dtype  
+---  ------     --------------   -----  
+ 0   ts         108967 non-null  float64
+ 1   id.orig_h  108967 non-null  object 
+ 2   id.resp_h  108967 non-null  object 
+ 3   id.resp_p  108967 non-null  int64  
+ 4   host       108967 non-null  object 
+ 5   method     108967 non-null  object 
+dtypes: float64(1), int64(1), object(4)
+memory usage: 5.0+ MB
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="fixing-the-timestamp-column-type">
+<h3>Fixing the Timestamp Column Type<a class="headerlink" href="#fixing-the-timestamp-column-type" title="Permalink to this headline">¶</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">http_df</span><span class="p">[</span><span class="s1">&#39;ts&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">to_datetime</span><span class="p">(</span><span class="n">http_df</span><span class="p">[</span><span class="s1">&#39;ts&#39;</span><span class="p">],</span> <span class="n">unit</span><span class="o">=</span><span class="s1">&#39;s&#39;</span><span class="p">)</span>
+<span class="n">http_df</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>ts</th>
+      <th>id.orig_h</th>
+      <th>id.resp_h</th>
+      <th>id.resp_p</th>
+      <th>host</th>
+      <th>method</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>2013-06-19 00:25:23.332814848</td>
+      <td>192.168.122.178</td>
+      <td>173.247.253.210</td>
+      <td>80</td>
+      <td>www.insightcrime.org</td>
+      <td>GET</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>2013-06-19 00:25:23.961981184</td>
+      <td>192.168.122.178</td>
+      <td>93.171.172.220</td>
+      <td>80</td>
+      <td>93.171.172.220</td>
+      <td>GET</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+</div>
+</div>
+<div class="section" id="analysing-the-data">
+<h2>Analysing the Data<a class="headerlink" href="#analysing-the-data" title="Permalink to this headline">¶</a></h2>
+<p>Now the data is ready for statistical analysis.</p>
+<div class="section" id="grouping-the-connections">
+<h3>Grouping the Connections<a class="headerlink" href="#grouping-the-connections" title="Permalink to this headline">¶</a></h3>
+<p>We can group the connections between the same hosts and aggregate the timestamps into a list. This way, we can use <strong>pd.Series().diff</strong> to easily calculate time deltas.<br />
+First, let’s group the traffic and aggregate.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># If you have a large dateset, using groupby and aggregate(list) might be slow. </span>
+<span class="n">http_df</span> <span class="o">=</span> <span class="n">http_df</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s1">&#39;id.orig_h&#39;</span><span class="p">,</span> <span class="s1">&#39;id.resp_h&#39;</span><span class="p">,</span> <span class="s1">&#39;id.resp_p&#39;</span><span class="p">,</span> <span class="s1">&#39;host&#39;</span><span class="p">,</span> <span class="s1">&#39;method&#39;</span><span class="p">])</span><span class="o">.</span><span class="n">agg</span><span class="p">(</span><span class="nb">list</span><span class="p">)</span>
+<span class="n">http_df</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th>ts</th>
+    </tr>
+    <tr>
+      <th>id.orig_h</th>
+      <th>id.resp_h</th>
+      <th>id.resp_p</th>
+      <th>host</th>
+      <th>method</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th rowspan="5" valign="top">1.8.31.101</th>
+      <th>104.168.98.206</th>
+      <th>80</th>
+      <th>104.168.98.206</th>
+      <th>GET</th>
+      <td>[2019-08-31 13:07:54.941824, 2019-08-31 13:08:...</td>
+    </tr>
+    <tr>
+      <th>13.107.4.50</th>
+      <th>80</th>
+      <th>www.download.windowsupdate.com</th>
+      <th>GET</th>
+      <td>[2019-08-31 13:00:38.149271040]</td>
+    </tr>
+    <tr>
+      <th>147.135.15.186</th>
+      <th>80</th>
+      <th>ip-api.com</th>
+      <th>POST</th>
+      <td>[2019-08-31 12:44:03.817665024]</td>
+    </tr>
+    <tr>
+      <th>170.238.117.187</th>
+      <th>8082</th>
+      <th>170.238.117.187</th>
+      <th>POST</th>
+      <td>[2019-08-31 13:07:53.975055872, 2019-08-31 13:...</td>
+    </tr>
+    <tr>
+      <th>172.217.12.228</th>
+      <th>80</th>
+      <th>www.google.com</th>
+      <th>GET</th>
+      <td>[2019-08-31 12:44:28.299268864, 2019-08-31 12:...</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="section" id="reseting-the-index">
+<h4>Reseting the index<a class="headerlink" href="#reseting-the-index" title="Permalink to this headline">¶</a></h4>
+<p>We need to reset the index to use all the columns since groupby operation indexes all the grouped columns together.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">http_df</span><span class="o">.</span><span class="n">reset_index</span><span class="p">(</span><span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">http_df</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>id.orig_h</th>
+      <th>id.resp_h</th>
+      <th>id.resp_p</th>
+      <th>host</th>
+      <th>method</th>
+      <th>ts</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>1.8.31.101</td>
+      <td>104.168.98.206</td>
+      <td>80</td>
+      <td>104.168.98.206</td>
+      <td>GET</td>
+      <td>[2019-08-31 13:07:54.941824, 2019-08-31 13:08:...</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>1.8.31.101</td>
+      <td>13.107.4.50</td>
+      <td>80</td>
+      <td>www.download.windowsupdate.com</td>
+      <td>GET</td>
+      <td>[2019-08-31 13:00:38.149271040]</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+</div>
+</div>
+<div class="section" id="calculating-connection-count">
+<h3>Calculating Connection Count<a class="headerlink" href="#calculating-connection-count" title="Permalink to this headline">¶</a></h3>
+<p>Length of the timestamp list (‘ts’) = connection count (since we grouped the traffic and aggregated the timestamp into a list)</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># create a new column &#39;conn_count&#39;, and for each row in the &#39;ts&#39; column, apply a function and assign the returned value to the &#39;conn_count&#39; column</span>
+<span class="n">http_df</span><span class="p">[</span><span class="s1">&#39;conn_count&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">http_df</span><span class="p">[</span><span class="s1">&#39;ts&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="nb">len</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
+<span class="n">http_df</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>id.orig_h</th>
+      <th>id.resp_h</th>
+      <th>id.resp_p</th>
+      <th>host</th>
+      <th>method</th>
+      <th>ts</th>
+      <th>conn_count</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>1.8.31.101</td>
+      <td>104.168.98.206</td>
+      <td>80</td>
+      <td>104.168.98.206</td>
+      <td>GET</td>
+      <td>[2019-08-31 13:07:54.941824, 2019-08-31 13:08:...</td>
+      <td>3</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>1.8.31.101</td>
+      <td>13.107.4.50</td>
+      <td>80</td>
+      <td>www.download.windowsupdate.com</td>
+      <td>GET</td>
+      <td>[2019-08-31 13:00:38.149271040]</td>
+      <td>1</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+</div>
+<div class="section" id="remove-short-sessions">
+<h3>Remove short sessions<a class="headerlink" href="#remove-short-sessions" title="Permalink to this headline">¶</a></h3>
+<p>Filter out traffic where the connection count is quite small</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">http_df</span> <span class="o">=</span> <span class="n">http_df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">http_df</span><span class="p">[</span><span class="s1">&#39;conn_count&#39;</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mi">20</span><span class="p">]</span>
+<span class="n">http_df</span><span class="o">.</span><span class="n">shape</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(433, 7)
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="sorting-the-timestamps">
+<h3>Sorting the Timestamps<a class="headerlink" href="#sorting-the-timestamps" title="Permalink to this headline">¶</a></h3>
+<p>Apply a lambda function to each row on the specified columns.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">http_df</span><span class="p">[</span><span class="s1">&#39;ts&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">http_df</span><span class="p">[</span><span class="s1">&#39;ts&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
+<span class="n">http_df</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>id.orig_h</th>
+      <th>id.resp_h</th>
+      <th>id.resp_p</th>
+      <th>host</th>
+      <th>method</th>
+      <th>ts</th>
+      <th>conn_count</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>41</th>
+      <td>10.0.0.102</td>
+      <td>46.29.183.211</td>
+      <td>8080</td>
+      <td>46.29.183.211</td>
+      <td>POST</td>
+      <td>[2019-10-25 16:30:30.652640, 2019-10-25 16:30:...</td>
+      <td>35</td>
+    </tr>
+    <tr>
+      <th>49</th>
+      <td>10.0.0.134</td>
+      <td>5.252.177.17</td>
+      <td>80</td>
+      <td>5.252.177.17</td>
+      <td>GET</td>
+      <td>[2021-06-15 15:08:54.879534848, 2021-06-15 15:...</td>
+      <td>25</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+</div>
+<div class="section" id="calculating-time-delta">
+<h3>Calculating Time Delta<a class="headerlink" href="#calculating-time-delta" title="Permalink to this headline">¶</a></h3>
+<p>Apply <strong>pd.Series.diff()</strong> to the ‘ts’ column, which is sorted, and assign the resulting list into a new column</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Convert list into a Series object, get time delta, convert the result back into a list and assign it to the &#39;deltas&#39; column</span>
+<span class="n">http_df</span><span class="p">[</span><span class="s1">&#39;deltas&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">http_df</span><span class="p">[</span><span class="s1">&#39;ts&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">.</span><span class="n">diff</span><span class="p">()</span><span class="o">.</span><span class="n">dt</span><span class="o">.</span><span class="n">seconds</span><span class="o">.</span><span class="n">dropna</span><span class="p">()</span><span class="o">.</span><span class="n">tolist</span><span class="p">())</span>
+<span class="n">http_df</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>id.orig_h</th>
+      <th>id.resp_h</th>
+      <th>id.resp_p</th>
+      <th>host</th>
+      <th>method</th>
+      <th>ts</th>
+      <th>conn_count</th>
+      <th>deltas</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>41</th>
+      <td>10.0.0.102</td>
+      <td>46.29.183.211</td>
+      <td>8080</td>
+      <td>46.29.183.211</td>
+      <td>POST</td>
+      <td>[2019-10-25 16:30:30.652640, 2019-10-25 16:30:...</td>
+      <td>35</td>
+      <td>[2.0, 831.0, 880.0, 8.0, 862.0, 3.0, 120.0, 80...</td>
+    </tr>
+    <tr>
+      <th>49</th>
+      <td>10.0.0.134</td>
+      <td>5.252.177.17</td>
+      <td>80</td>
+      <td>5.252.177.17</td>
+      <td>GET</td>
+      <td>[2021-06-15 15:08:54.879534848, 2021-06-15 15:...</td>
+      <td>25</td>
+      <td>[60.0, 60.0, 61.0, 60.0, 60.0, 60.0, 60.0, 60....</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+</div>
+<div class="section" id="generate-variables">
+<h3>Generate variables<a class="headerlink" href="#generate-variables" title="Permalink to this headline">¶</a></h3>
+<p>We need to generate the required variables to analyze time delta distribution, median absolute deviation, and connection count.</p>
+<div class="section" id="variables-for-time-delta-dispersion">
+<h4>Variables for time delta dispersion<a class="headerlink" href="#variables-for-time-delta-dispersion" title="Permalink to this headline">¶</a></h4>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">http_df</span><span class="p">[</span><span class="s1">&#39;tsLow&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">http_df</span><span class="p">[</span><span class="s1">&#39;deltas&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">percentile</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">x</span><span class="p">),</span> <span class="mi">20</span><span class="p">))</span>
+<span class="n">http_df</span><span class="p">[</span><span class="s1">&#39;tsMid&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">http_df</span><span class="p">[</span><span class="s1">&#39;deltas&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">percentile</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">x</span><span class="p">),</span> <span class="mi">50</span><span class="p">))</span>
+<span class="n">http_df</span><span class="p">[</span><span class="s1">&#39;tsHigh&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">http_df</span><span class="p">[</span><span class="s1">&#39;deltas&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">percentile</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">x</span><span class="p">),</span> <span class="mi">80</span><span class="p">))</span>
+<span class="n">http_df</span><span class="p">[</span><span class="s1">&#39;tsBowleyNum&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">http_df</span><span class="p">[</span><span class="s1">&#39;tsLow&#39;</span><span class="p">]</span> <span class="o">+</span> <span class="n">http_df</span><span class="p">[</span><span class="s1">&#39;tsHigh&#39;</span><span class="p">]</span> <span class="o">-</span> <span class="mi">2</span><span class="o">*</span><span class="n">http_df</span><span class="p">[</span><span class="s1">&#39;tsMid&#39;</span><span class="p">]</span>
+<span class="n">http_df</span><span class="p">[</span><span class="s1">&#39;tsBowleyDen&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">http_df</span><span class="p">[</span><span class="s1">&#39;tsHigh&#39;</span><span class="p">]</span> <span class="o">-</span> <span class="n">http_df</span><span class="p">[</span><span class="s1">&#39;tsLow&#39;</span><span class="p">]</span>
+<span class="n">http_df</span><span class="p">[</span><span class="s1">&#39;tsSkew&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">http_df</span><span class="p">[[</span><span class="s1">&#39;tsLow&#39;</span><span class="p">,</span><span class="s1">&#39;tsMid&#39;</span><span class="p">,</span><span class="s1">&#39;tsHigh&#39;</span><span class="p">,</span><span class="s1">&#39;tsBowleyNum&#39;</span><span class="p">,</span><span class="s1">&#39;tsBowleyDen&#39;</span><span class="p">]]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span>
+    <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="p">[</span><span class="s1">&#39;tsBowleyNum&#39;</span><span class="p">]</span> <span class="o">/</span> <span class="n">x</span><span class="p">[</span><span class="s1">&#39;tsBowleyDen&#39;</span><span class="p">]</span> <span class="k">if</span> <span class="n">x</span><span class="p">[</span><span class="s1">&#39;tsBowleyDen&#39;</span><span class="p">]</span> <span class="o">!=</span> <span class="mi">0</span> <span class="ow">and</span> <span class="n">x</span><span class="p">[</span><span class="s1">&#39;tsMid&#39;</span><span class="p">]</span> <span class="o">!=</span> <span class="n">x</span><span class="p">[</span><span class="s1">&#39;tsLow&#39;</span><span class="p">]</span> <span class="ow">and</span> <span class="n">x</span><span class="p">[</span><span class="s1">&#39;tsMid&#39;</span><span class="p">]</span> <span class="o">!=</span> <span class="n">x</span><span class="p">[</span><span class="s1">&#39;tsHigh&#39;</span><span class="p">]</span> <span class="k">else</span> <span class="mf">0.0</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span>
+    <span class="p">)</span>
+<span class="n">http_df</span><span class="p">[</span><span class="s1">&#39;tsMadm&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">http_df</span><span class="p">[</span><span class="s1">&#39;deltas&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">median</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">absolute</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">-</span> <span class="n">np</span><span class="o">.</span><span class="n">median</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">x</span><span class="p">)))))</span>
+<span class="n">http_df</span><span class="p">[</span><span class="s1">&#39;tsConnDiv&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">http_df</span><span class="p">[</span><span class="s1">&#39;ts&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="p">(</span><span class="n">x</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">to_pydatetime</span><span class="p">()</span> <span class="o">-</span> <span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">to_pydatetime</span><span class="p">())</span><span class="o">.</span><span class="n">seconds</span> <span class="o">/</span> <span class="mi">10</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">http_df</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>id.orig_h</th>
+      <th>id.resp_h</th>
+      <th>id.resp_p</th>
+      <th>host</th>
+      <th>method</th>
+      <th>ts</th>
+      <th>conn_count</th>
+      <th>deltas</th>
+      <th>tsLow</th>
+      <th>tsMid</th>
+      <th>tsHigh</th>
+      <th>tsBowleyNum</th>
+      <th>tsBowleyDen</th>
+      <th>tsSkew</th>
+      <th>tsMadm</th>
+      <th>tsConnDiv</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>41</th>
+      <td>10.0.0.102</td>
+      <td>46.29.183.211</td>
+      <td>8080</td>
+      <td>46.29.183.211</td>
+      <td>POST</td>
+      <td>[2019-10-25 16:30:30.652640, 2019-10-25 16:30:...</td>
+      <td>35</td>
+      <td>[2.0, 831.0, 880.0, 8.0, 862.0, 3.0, 120.0, 80...</td>
+      <td>2.6</td>
+      <td>824.5</td>
+      <td>880.0</td>
+      <td>-766.4</td>
+      <td>877.4</td>
+      <td>-0.87349</td>
+      <td>74.5</td>
+      <td>1758.0</td>
+    </tr>
+    <tr>
+      <th>49</th>
+      <td>10.0.0.134</td>
+      <td>5.252.177.17</td>
+      <td>80</td>
+      <td>5.252.177.17</td>
+      <td>GET</td>
+      <td>[2021-06-15 15:08:54.879534848, 2021-06-15 15:...</td>
+      <td>25</td>
+      <td>[60.0, 60.0, 61.0, 60.0, 60.0, 60.0, 60.0, 60....</td>
+      <td>60.0</td>
+      <td>60.0</td>
+      <td>60.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.00000</td>
+      <td>0.0</td>
+      <td>145.8</td>
+    </tr>
+    <tr>
+      <th>50</th>
+      <td>10.0.0.134</td>
+      <td>5.252.177.17</td>
+      <td>443</td>
+      <td>5.252.177.17</td>
+      <td>GET</td>
+      <td>[2021-06-15 15:08:55.172674816, 2021-06-15 15:...</td>
+      <td>1689</td>
+      <td>[60.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 0.0,...</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.00000</td>
+      <td>0.0</td>
+      <td>150.1</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+</div>
+</div>
+<div class="section" id="calculating-the-score">
+<h3>Calculating the score<a class="headerlink" href="#calculating-the-score" title="Permalink to this headline">¶</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">http_df</span><span class="p">[</span><span class="s1">&#39;tsSkewScore&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mf">1.0</span> <span class="o">-</span> <span class="nb">abs</span><span class="p">(</span><span class="n">http_df</span><span class="p">[</span><span class="s1">&#39;tsSkew&#39;</span><span class="p">])</span>
+<span class="n">http_df</span><span class="p">[</span><span class="s1">&#39;tsMadmScore&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mf">1.0</span> <span class="o">-</span> <span class="n">http_df</span><span class="p">[</span><span class="s1">&#39;tsMadm&#39;</span><span class="p">]</span><span class="o">/</span><span class="mf">30.0</span>
+<span class="n">http_df</span><span class="p">[</span><span class="s1">&#39;tsMadmScore&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">http_df</span><span class="p">[</span><span class="s1">&#39;tsMadmScore&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="mi">0</span> <span class="k">if</span> <span class="n">x</span> <span class="o">&lt;</span> <span class="mi">0</span> <span class="k">else</span> <span class="n">x</span><span class="p">)</span>
+<span class="n">http_df</span><span class="p">[</span><span class="s1">&#39;tsConnCountScore&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="n">http_df</span><span class="p">[</span><span class="s1">&#39;conn_count&#39;</span><span class="p">])</span> <span class="o">/</span> <span class="n">http_df</span><span class="p">[</span><span class="s1">&#39;tsConnDiv&#39;</span><span class="p">]</span>
+<span class="n">http_df</span><span class="p">[</span><span class="s1">&#39;tsConnCountScore&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">http_df</span><span class="p">[</span><span class="s1">&#39;tsConnCountScore&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="mf">1.0</span> <span class="k">if</span> <span class="n">x</span> <span class="o">&gt;</span> <span class="mf">1.0</span> <span class="k">else</span> <span class="n">x</span><span class="p">)</span>
+<span class="n">http_df</span><span class="p">[</span><span class="s1">&#39;tsScore&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">(((</span><span class="n">http_df</span><span class="p">[</span><span class="s1">&#39;tsSkewScore&#39;</span><span class="p">]</span> <span class="o">+</span> <span class="n">http_df</span><span class="p">[</span><span class="s1">&#39;tsMadmScore&#39;</span><span class="p">]</span> <span class="o">+</span> <span class="n">http_df</span><span class="p">[</span><span class="s1">&#39;tsConnCountScore&#39;</span><span class="p">])</span> <span class="o">/</span> <span class="mf">3.0</span><span class="p">)</span> <span class="o">*</span> <span class="mi">1000</span><span class="p">)</span> <span class="o">/</span> <span class="mi">1000</span>
+<span class="n">http_df</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">by</span><span class="o">=</span> <span class="s1">&#39;tsScore&#39;</span><span class="p">,</span> <span class="n">ascending</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">ignore_index</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">http_df</span><span class="p">[[</span><span class="s1">&#39;tsScore&#39;</span><span class="p">,</span><span class="s1">&#39;conn_count&#39;</span><span class="p">,</span><span class="s1">&#39;id.orig_h&#39;</span><span class="p">,</span><span class="s1">&#39;id.resp_h&#39;</span><span class="p">,</span><span class="s1">&#39;id.resp_p&#39;</span><span class="p">,</span> <span class="s1">&#39;host&#39;</span><span class="p">,</span> <span class="s1">&#39;method&#39;</span><span class="p">,</span><span class="s1">&#39;deltas&#39;</span><span class="p">]]</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">30</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>tsScore</th>
+      <th>conn_count</th>
+      <th>id.orig_h</th>
+      <th>id.resp_h</th>
+      <th>id.resp_p</th>
+      <th>host</th>
+      <th>method</th>
+      <th>deltas</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>1.0</td>
+      <td>21</td>
+      <td>192.168.204.145</td>
+      <td>69.174.53.234</td>
+      <td>80</td>
+      <td>www.techo-bloc.com</td>
+      <td>GET</td>
+      <td>[0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, ...</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>1.0</td>
+      <td>81</td>
+      <td>192.168.204.148</td>
+      <td>188.95.248.45</td>
+      <td>80</td>
+      <td>www.divxatope.com</td>
+      <td>GET</td>
+      <td>[1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, ...</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>1.0</td>
+      <td>21</td>
+      <td>10.6.25.102</td>
+      <td>62.76.188.61</td>
+      <td>80</td>
+      <td>cerberhhyed5frqa.xmfir0.top</td>
+      <td>GET</td>
+      <td>[0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, ...</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>1.0</td>
+      <td>21</td>
+      <td>10.6.26.101</td>
+      <td>103.208.86.43</td>
+      <td>80</td>
+      <td>cerberhhyed5frqa.raress.win</td>
+      <td>GET</td>
+      <td>[1.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, ...</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>1.0</td>
+      <td>158</td>
+      <td>192.168.1.43</td>
+      <td>192.157.76.194</td>
+      <td>80</td>
+      <td>www.knowyourteeth.com</td>
+      <td>GET</td>
+      <td>[0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, ...</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>1.0</td>
+      <td>106</td>
+      <td>10.6.28.101</td>
+      <td>50.233.80.221</td>
+      <td>80</td>
+      <td>www.thetechhaus.com</td>
+      <td>GET</td>
+      <td>[0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, ...</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>1.0</td>
+      <td>26</td>
+      <td>192.168.1.138</td>
+      <td>188.116.34.246</td>
+      <td>80</td>
+      <td>www1.v5ipk3gc8hug1du9459.4pu.com</td>
+      <td>GET</td>
+      <td>[0.0, 1.0, 0.0, 4.0, 0.0, 0.0, 0.0, 0.0, 0.0, ...</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>1.0</td>
+      <td>24</td>
+      <td>192.168.204.151</td>
+      <td>67.215.234.26</td>
+      <td>80</td>
+      <td>womenshealthhelp.net</td>
+      <td>GET</td>
+      <td>[0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 1.0, 0.0, ...</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>1.0</td>
+      <td>36</td>
+      <td>192.168.204.151</td>
+      <td>64.12.245.3</td>
+      <td>80</td>
+      <td>l.5min.com</td>
+      <td>GET</td>
+      <td>[0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 5.0, ...</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>1.0</td>
+      <td>26</td>
+      <td>192.168.204.150</td>
+      <td>184.72.236.84</td>
+      <td>80</td>
+      <td>www.programmersheaven.com</td>
+      <td>GET</td>
+      <td>[0.0, 0.0, 0.0, 0.0, 0.0, 4.0, 0.0, 0.0, 0.0, ...</td>
+    </tr>
+    <tr>
+      <th>10</th>
+      <td>1.0</td>
+      <td>25</td>
+      <td>192.168.204.148</td>
+      <td>23.215.61.58</td>
+      <td>80</td>
+      <td>cache2-www.sportium.es</td>
+      <td>GET</td>
+      <td>[0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 2.0, ...</td>
+    </tr>
+    <tr>
+      <th>11</th>
+      <td>1.0</td>
+      <td>24</td>
+      <td>10.6.9.102</td>
+      <td>188.68.221.239</td>
+      <td>80</td>
+      <td>snnmnkxdhflwgthqismb.com</td>
+      <td>POST</td>
+      <td>[0.0, 3.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 1.0, ...</td>
+    </tr>
+    <tr>
+      <th>12</th>
+      <td>1.0</td>
+      <td>24</td>
+      <td>192.168.1.107</td>
+      <td>66.45.56.109</td>
+      <td>80</td>
+      <td>searchnet.blinkxcore.com</td>
+      <td>GET</td>
+      <td>[0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, ...</td>
+    </tr>
+    <tr>
+      <th>13</th>
+      <td>1.0</td>
+      <td>21</td>
+      <td>10.7.11.101</td>
+      <td>104.232.35.123</td>
+      <td>80</td>
+      <td>pmenboeqhyrpvomq.132z80.top</td>
+      <td>GET</td>
+      <td>[7.0, 2.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, ...</td>
+    </tr>
+    <tr>
+      <th>14</th>
+      <td>1.0</td>
+      <td>22</td>
+      <td>10.7.16.101</td>
+      <td>208.95.112.1</td>
+      <td>80</td>
+      <td>ip-api.com</td>
+      <td>GET</td>
+      <td>[0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, ...</td>
+    </tr>
+    <tr>
+      <th>15</th>
+      <td>1.0</td>
+      <td>87</td>
+      <td>192.168.204.148</td>
+      <td>216.206.30.10</td>
+      <td>80</td>
+      <td>www.hindustantimes.com</td>
+      <td>GET</td>
+      <td>[0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 5.0, 0.0, ...</td>
+    </tr>
+    <tr>
+      <th>16</th>
+      <td>1.0</td>
+      <td>33</td>
+      <td>192.168.1.107</td>
+      <td>5.45.65.142</td>
+      <td>80</td>
+      <td>cc9966.com</td>
+      <td>GET</td>
+      <td>[0.0, 0.0, 14.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0,...</td>
+    </tr>
+    <tr>
+      <th>17</th>
+      <td>1.0</td>
+      <td>24</td>
+      <td>192.168.1.103</td>
+      <td>84.124.94.27</td>
+      <td>80</td>
+      <td>musculosysexo.com</td>
+      <td>GET</td>
+      <td>[0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, ...</td>
+    </tr>
+    <tr>
+      <th>18</th>
+      <td>1.0</td>
+      <td>35</td>
+      <td>10.7.2.101</td>
+      <td>37.59.68.215</td>
+      <td>443</td>
+      <td>37.59.68.215</td>
+      <td>GET</td>
+      <td>[8.0, 5.0, 5.0, 5.0, 5.0, 5.0, 5.0, 5.0, 5.0, ...</td>
+    </tr>
+    <tr>
+      <th>19</th>
+      <td>1.0</td>
+      <td>23</td>
+      <td>192.168.1.107</td>
+      <td>212.83.191.241</td>
+      <td>8000</td>
+      <td>du8siun.frapdays.com</td>
+      <td>GET</td>
+      <td>[0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, ...</td>
+    </tr>
+    <tr>
+      <th>20</th>
+      <td>1.0</td>
+      <td>3489</td>
+      <td>10.7.22.101</td>
+      <td>31.44.184.33</td>
+      <td>80</td>
+      <td>31.44.184.33</td>
+      <td>GET</td>
+      <td>[1.0, 60.0, 60.0, 60.0, 60.0, 60.0, 60.0, 60.0...</td>
+    </tr>
+    <tr>
+      <th>21</th>
+      <td>1.0</td>
+      <td>21</td>
+      <td>192.168.204.147</td>
+      <td>77.78.104.96</td>
+      <td>80</td>
+      <td>xh2cqhmv5u4ifvht8j99d7r.consejeros.com.bo</td>
+      <td>GET</td>
+      <td>[2.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, ...</td>
+    </tr>
+    <tr>
+      <th>22</th>
+      <td>1.0</td>
+      <td>11133</td>
+      <td>10.7.25.101</td>
+      <td>31.44.184.33</td>
+      <td>80</td>
+      <td>31.44.184.33</td>
+      <td>GET</td>
+      <td>[0.0, 0.0, 0.0, 60.0, 0.0, 0.0, 0.0, 0.0, 0.0,...</td>
+    </tr>
+    <tr>
+      <th>23</th>
+      <td>1.0</td>
+      <td>28</td>
+      <td>10.7.25.105</td>
+      <td>158.69.99.213</td>
+      <td>80</td>
+      <td>www.ruthless.sexy</td>
+      <td>GET</td>
+      <td>[0.0, 0.0, 0.0, 0.0, 8.0, 2.0, 0.0, 0.0, 0.0, ...</td>
+    </tr>
+    <tr>
+      <th>24</th>
+      <td>1.0</td>
+      <td>21</td>
+      <td>10.7.5.101</td>
+      <td>216.189.148.182</td>
+      <td>80</td>
+      <td>27lelchgcvs2wpm7.asd3r3.top</td>
+      <td>GET</td>
+      <td>[0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, ...</td>
+    </tr>
+    <tr>
+      <th>25</th>
+      <td>1.0</td>
+      <td>248</td>
+      <td>10.7.5.133</td>
+      <td>80.209.242.9</td>
+      <td>80</td>
+      <td>80.209.242.9</td>
+      <td>GET</td>
+      <td>[0.0, 60.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0,...</td>
+    </tr>
+    <tr>
+      <th>26</th>
+      <td>1.0</td>
+      <td>108</td>
+      <td>10.7.5.5</td>
+      <td>198.12.71.157</td>
+      <td>443</td>
+      <td>198.12.71.157</td>
+      <td>GET</td>
+      <td>[6.0, 5.0, 5.0, 5.0, 5.0, 5.0, 5.0, 5.0, 5.0, ...</td>
+    </tr>
+    <tr>
+      <th>27</th>
+      <td>1.0</td>
+      <td>22</td>
+      <td>192.168.204.147</td>
+      <td>67.20.109.225</td>
+      <td>80</td>
+      <td>www.focusofswfltv.com</td>
+      <td>GET</td>
+      <td>[1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 1.0, 0.0, ...</td>
+    </tr>
+    <tr>
+      <th>28</th>
+      <td>1.0</td>
+      <td>31</td>
+      <td>192.168.1.107</td>
+      <td>184.107.129.74</td>
+      <td>80</td>
+      <td>184.107.129.74</td>
+      <td>GET</td>
+      <td>[1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, ...</td>
+    </tr>
+    <tr>
+      <th>29</th>
+      <td>1.0</td>
+      <td>49</td>
+      <td>192.168.1.106</td>
+      <td>174.120.21.157</td>
+      <td>80</td>
+      <td>stockmarketsage.com</td>
+      <td>GET</td>
+      <td>[3.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, ...</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">http_df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">http_df</span><span class="p">[</span><span class="s1">&#39;tsScore&#39;</span><span class="p">]</span> <span class="o">&lt;</span> <span class="mf">1.0</span><span class="p">,</span> <span class="p">[</span><span class="s1">&#39;tsScore&#39;</span><span class="p">,</span><span class="s1">&#39;conn_count&#39;</span><span class="p">,</span><span class="s1">&#39;id.orig_h&#39;</span><span class="p">,</span><span class="s1">&#39;id.resp_h&#39;</span><span class="p">,</span><span class="s1">&#39;id.resp_p&#39;</span><span class="p">,</span> <span class="s1">&#39;host&#39;</span><span class="p">,</span> <span class="s1">&#39;method&#39;</span><span class="p">,</span><span class="s1">&#39;deltas&#39;</span><span class="p">]]</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">20</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>tsScore</th>
+      <th>conn_count</th>
+      <th>id.orig_h</th>
+      <th>id.resp_h</th>
+      <th>id.resp_p</th>
+      <th>host</th>
+      <th>method</th>
+      <th>deltas</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>241</th>
+      <td>0.988889</td>
+      <td>21</td>
+      <td>172.16.2.169</td>
+      <td>193.33.134.7</td>
+      <td>80</td>
+      <td>www.floordelig.nl</td>
+      <td>GET</td>
+      <td>[0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 2.0, 3.0, 2.0, ...</td>
+    </tr>
+    <tr>
+      <th>242</th>
+      <td>0.988889</td>
+      <td>31</td>
+      <td>192.168.204.230</td>
+      <td>31.184.192.202</td>
+      <td>80</td>
+      <td>cd5c5c.com</td>
+      <td>GET</td>
+      <td>[6.0, 6.0, 4.0, 4.0, 5.0, 6.0, 3.0, 5.0, 5.0, ...</td>
+    </tr>
+    <tr>
+      <th>243</th>
+      <td>0.988889</td>
+      <td>27</td>
+      <td>10.10.19.103</td>
+      <td>107.181.187.14</td>
+      <td>80</td>
+      <td>mulseartmoretto.com</td>
+      <td>POST</td>
+      <td>[4.0, 3.0, 4.0, 3.0, 5.0, 6.0, 4.0, 3.0, 3.0, ...</td>
+    </tr>
+    <tr>
+      <th>244</th>
+      <td>0.977778</td>
+      <td>30</td>
+      <td>172.16.223.15</td>
+      <td>5.149.222.125</td>
+      <td>80</td>
+      <td>chanse-leaf.com</td>
+      <td>GET</td>
+      <td>[4.0, 2.0, 1.0, 0.0, 4.0, 0.0, 2.0, 3.0, 2.0, ...</td>
+    </tr>
+    <tr>
+      <th>245</th>
+      <td>0.961131</td>
+      <td>25</td>
+      <td>172.16.3.122</td>
+      <td>172.217.1.162</td>
+      <td>80</td>
+      <td>pagead2.googlesyndication.com</td>
+      <td>GET</td>
+      <td>[0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 104.0, 0.0...</td>
+    </tr>
+    <tr>
+      <th>246</th>
+      <td>0.951081</td>
+      <td>25</td>
+      <td>10.3.14.134</td>
+      <td>217.12.208.17</td>
+      <td>80</td>
+      <td>p27dokhpz2n7nvgr.1nmrtq.top</td>
+      <td>GET</td>
+      <td>[124.0, 0.0, 0.0, 1.0, 0.0, 1.0, 0.0, 1.0, 1.0...</td>
+    </tr>
+    <tr>
+      <th>247</th>
+      <td>0.940928</td>
+      <td>26</td>
+      <td>172.16.3.122</td>
+      <td>104.36.115.111</td>
+      <td>80</td>
+      <td>hbopenbid.pubmatic.com</td>
+      <td>POST</td>
+      <td>[1.0, 17.0, 11.0, 0.0, 4.0, 15.0, 9.0, 0.0, 6....</td>
+    </tr>
+    <tr>
+      <th>248</th>
+      <td>0.932826</td>
+      <td>21</td>
+      <td>10.6.25.102</td>
+      <td>84.38.183.162</td>
+      <td>80</td>
+      <td>snnmnkxdhflwgthqismb.com</td>
+      <td>POST</td>
+      <td>[1.0, 2.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, ...</td>
+    </tr>
+    <tr>
+      <th>249</th>
+      <td>0.930946</td>
+      <td>31</td>
+      <td>192.168.122.52</td>
+      <td>119.160.243.163</td>
+      <td>80</td>
+      <td>au.search.yahoo.com</td>
+      <td>GET</td>
+      <td>[11.0, 332.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0....</td>
+    </tr>
+    <tr>
+      <th>250</th>
+      <td>0.925826</td>
+      <td>39</td>
+      <td>10.0.1.95</td>
+      <td>35.198.166.240</td>
+      <td>80</td>
+      <td>amellet.bit</td>
+      <td>POST</td>
+      <td>[41.0, 14.0, 1.0, 2.0, 2.0, 1.0, 1.0, 2.0, 2.0...</td>
+    </tr>
+    <tr>
+      <th>251</th>
+      <td>0.925099</td>
+      <td>59</td>
+      <td>139.199.184.166</td>
+      <td>10.12.25.101</td>
+      <td>80</td>
+      <td>-</td>
+      <td>-</td>
+      <td>[0.0, 0.0, 1.0, 0.0, 1.0, 350.0, 1.0, 0.0, 0.0...</td>
+    </tr>
+    <tr>
+      <th>252</th>
+      <td>0.916667</td>
+      <td>27</td>
+      <td>10.1.25.119</td>
+      <td>191.234.5.80</td>
+      <td>80</td>
+      <td>api.bing.com</td>
+      <td>GET</td>
+      <td>[0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 64.0, 0.0,...</td>
+    </tr>
+    <tr>
+      <th>253</th>
+      <td>0.914016</td>
+      <td>21</td>
+      <td>172.16.3.122</td>
+      <td>74.119.119.69</td>
+      <td>80</td>
+      <td>bidder.criteo.com</td>
+      <td>POST</td>
+      <td>[0.0, 0.0, 26.0, 0.0, 0.0, 27.0, 0.0, 0.0, 45....</td>
+    </tr>
+    <tr>
+      <th>254</th>
+      <td>0.904263</td>
+      <td>34</td>
+      <td>10.9.22.101</td>
+      <td>144.217.64.68</td>
+      <td>80</td>
+      <td>fritas.cheddarmcmelt.top</td>
+      <td>POST</td>
+      <td>[454.0, 1.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0...</td>
+    </tr>
+    <tr>
+      <th>255</th>
+      <td>0.889597</td>
+      <td>21</td>
+      <td>172.16.3.122</td>
+      <td>23.74.28.9</td>
+      <td>80</td>
+      <td>as.casalemedia.com</td>
+      <td>GET</td>
+      <td>[16.0, 16.0, 15.0, 16.0, 15.0, 15.0, 15.0, 15....</td>
+    </tr>
+    <tr>
+      <th>256</th>
+      <td>0.889597</td>
+      <td>21</td>
+      <td>172.16.3.122</td>
+      <td>23.74.28.9</td>
+      <td>80</td>
+      <td>as.casalemedia.com</td>
+      <td>POST</td>
+      <td>[16.0, 16.0, 15.0, 16.0, 15.0, 15.0, 15.0, 15....</td>
+    </tr>
+    <tr>
+      <th>257</th>
+      <td>0.887108</td>
+      <td>33</td>
+      <td>192.168.1.95</td>
+      <td>185.68.93.18</td>
+      <td>80</td>
+      <td>185.68.93.18</td>
+      <td>POST</td>
+      <td>[11.0, 0.0, 16.0, 16.0, 16.0, 16.0, 16.0, 16.0...</td>
+    </tr>
+    <tr>
+      <th>258</th>
+      <td>0.879795</td>
+      <td>25</td>
+      <td>192.168.122.52</td>
+      <td>119.160.254.197</td>
+      <td>80</td>
+      <td>l.yimg.com</td>
+      <td>GET</td>
+      <td>[0.0, 2.0, 0.0, 5.0, 0.0, 0.0, 1.0, 0.0, 0.0, ...</td>
+    </tr>
+    <tr>
+      <th>259</th>
+      <td>0.879659</td>
+      <td>40</td>
+      <td>192.168.1.109</td>
+      <td>69.16.143.110</td>
+      <td>80</td>
+      <td>www.h8adioigud.su</td>
+      <td>POST</td>
+      <td>[2.0, 7.0, 2.0, 7.0, 2.0, 7.0, 2.0, 7.0, 2.0, ...</td>
+    </tr>
+    <tr>
+      <th>260</th>
+      <td>0.877778</td>
+      <td>42</td>
+      <td>10.4.19.101</td>
+      <td>104.254.150.37</td>
+      <td>80</td>
+      <td>ib.adnxs.com</td>
+      <td>GET</td>
+      <td>[3.0, 3.0, 1.0, 1.0, 5.0, 8.0, 0.0, 0.0, 1.0, ...</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="validation">
+<h1>Validation<a class="headerlink" href="#validation" title="Permalink to this headline">¶</a></h1>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">suricata_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;suricata alerts.csv&#39;</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s1">&#39;,&#39;</span><span class="p">)</span>
+<span class="n">suricata_df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">suricata_df</span><span class="p">[</span><span class="s1">&#39;dest_ip&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">isin</span><span class="p">([</span><span class="s1">&#39;107.181.187.14&#39;</span><span class="p">,</span><span class="s1">&#39;5.199.162.3&#39;</span><span class="p">,</span><span class="s1">&#39;23.74.28.9&#39;</span><span class="p">,</span><span class="s1">&#39;35.198.166.240&#39;</span><span class="p">,</span>
+                                             <span class="s1">&#39;193.33.134.7&#39;</span><span class="p">,</span><span class="s1">&#39;31.184.192.202&#39;</span><span class="p">,</span><span class="s1">&#39;5.149.222.125&#39;</span><span class="p">,</span><span class="s1">&#39;185.180.198.24&#39;</span><span class="p">,</span>
+                                             <span class="s1">&#39;173.254.231.111&#39;</span><span class="p">,</span><span class="s1">&#39;139.60.161.74&#39;</span><span class="p">,</span><span class="s1">&#39;192.254.79.71&#39;</span><span class="p">,</span><span class="s1">&#39;185.68.93.18&#39;</span><span class="p">,</span>
+                                             <span class="s1">&#39;69.16.143.110&#39;</span><span class="p">,</span><span class="s1">&#39;37.59.68.215&#39;</span><span class="p">,</span><span class="s1">&#39;31.44.184.33&#39;</span><span class="p">]),</span>
+                                             <span class="p">[</span><span class="s1">&#39;src_ip&#39;</span><span class="p">,</span><span class="s1">&#39;dest_ip&#39;</span><span class="p">,</span><span class="s1">&#39;alert.signature&#39;</span><span class="p">]]</span><span class="o">.</span><span class="n">drop_duplicates</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>src_ip</th>
+      <th>dest_ip</th>
+      <th>alert.signature</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>1392</th>
+      <td>10.17.6.93</td>
+      <td>139.60.161.74</td>
+      <td>ET MALWARE Cobalt Strike Beacon Observed</td>
+    </tr>
+    <tr>
+      <th>1772</th>
+      <td>10.17.6.93</td>
+      <td>139.60.161.74</td>
+      <td>ET HUNTING GENERIC SUSPICIOUS POST to Dotted Q...</td>
+    </tr>
+    <tr>
+      <th>8151</th>
+      <td>10.5.26.4</td>
+      <td>5.199.162.3</td>
+      <td>ET MALWARE Cobalt Strike Malleable C2 Profile ...</td>
+    </tr>
+    <tr>
+      <th>11403</th>
+      <td>10.2.2.101</td>
+      <td>192.254.79.71</td>
+      <td>ET MALWARE Cobalt Strike Beacon Observed</td>
+    </tr>
+    <tr>
+      <th>11433</th>
+      <td>10.2.2.101</td>
+      <td>192.254.79.71</td>
+      <td>ET JA3 Hash - [Abuse.ch] Possible Dridex</td>
+    </tr>
+    <tr>
+      <th>13811</th>
+      <td>10.2.2.101</td>
+      <td>192.254.79.71</td>
+      <td>ET HUNTING GENERIC SUSPICIOUS POST to Dotted Q...</td>
+    </tr>
+    <tr>
+      <th>20123</th>
+      <td>10.2.2.101</td>
+      <td>192.254.79.71</td>
+      <td>ET ADWARE_PUP Fun Web Products Spyware User-Ag...</td>
+    </tr>
+    <tr>
+      <th>62016</th>
+      <td>10.7.25.101</td>
+      <td>31.44.184.33</td>
+      <td>ET MALWARE Cobalt Strike Beacon Observed</td>
+    </tr>
+    <tr>
+      <th>72576</th>
+      <td>10.7.25.101</td>
+      <td>31.44.184.33</td>
+      <td>ET HUNTING GENERIC SUSPICIOUS POST to Dotted Q...</td>
+    </tr>
+    <tr>
+      <th>73327</th>
+      <td>10.7.22.101</td>
+      <td>31.44.184.33</td>
+      <td>ET HUNTING GENERIC SUSPICIOUS POST to Dotted Q...</td>
+    </tr>
+    <tr>
+      <th>73329</th>
+      <td>10.7.22.101</td>
+      <td>31.44.184.33</td>
+      <td>ET MALWARE Cobalt Strike Beacon Observed</td>
+    </tr>
+    <tr>
+      <th>78256</th>
+      <td>10.0.90.109</td>
+      <td>31.44.184.33</td>
+      <td>ET HUNTING GENERIC SUSPICIOUS POST to Dotted Q...</td>
+    </tr>
+    <tr>
+      <th>78257</th>
+      <td>10.0.90.109</td>
+      <td>31.44.184.33</td>
+      <td>ET MALWARE Cobalt Strike Beacon Observed</td>
+    </tr>
+    <tr>
+      <th>78387</th>
+      <td>10.7.2.102</td>
+      <td>31.44.184.33</td>
+      <td>ET MALWARE Cobalt Strike Beacon Observed</td>
+    </tr>
+    <tr>
+      <th>78467</th>
+      <td>10.7.2.101</td>
+      <td>37.59.68.215</td>
+      <td>ET MALWARE Suspected Powershell Empire GET M1</td>
+    </tr>
+    <tr>
+      <th>78468</th>
+      <td>10.7.2.101</td>
+      <td>37.59.68.215</td>
+      <td>ET MALWARE Possible PowerShell Empire Activity...</td>
+    </tr>
+    <tr>
+      <th>78545</th>
+      <td>10.7.2.101</td>
+      <td>37.59.68.215</td>
+      <td>ET MALWARE Suspected Powershell Empire POST M1</td>
+    </tr>
+    <tr>
+      <th>78546</th>
+      <td>10.7.2.101</td>
+      <td>37.59.68.215</td>
+      <td>ET POLICY HTTP traffic on port 443 (POST)</td>
+    </tr>
+    <tr>
+      <th>90582</th>
+      <td>192.168.1.95</td>
+      <td>185.68.93.18</td>
+      <td>ET HUNTING GENERIC SUSPICIOUS POST to Dotted Q...</td>
+    </tr>
+    <tr>
+      <th>125008</th>
+      <td>10.14.106.192</td>
+      <td>173.254.231.111</td>
+      <td>ET INFO HTTP Request to a *.top domain</td>
+    </tr>
+    <tr>
+      <th>142742</th>
+      <td>172.16.165.153</td>
+      <td>31.184.192.202</td>
+      <td>ET MALWARE Poweliks Clickfraud CnC M1</td>
+    </tr>
+    <tr>
+      <th>142764</th>
+      <td>172.16.165.153</td>
+      <td>31.184.192.202</td>
+      <td>ET MALWARE Win32/Poweliks GET Request</td>
+    </tr>
+    <tr>
+      <th>143818</th>
+      <td>192.168.204.230</td>
+      <td>31.184.192.202</td>
+      <td>ET MALWARE Poweliks Clickfraud CnC M1</td>
+    </tr>
+    <tr>
+      <th>144482</th>
+      <td>192.168.204.230</td>
+      <td>31.184.192.202</td>
+      <td>ET MALWARE Win32/Poweliks GET Request</td>
+    </tr>
+    <tr>
+      <th>150584</th>
+      <td>192.168.1.109</td>
+      <td>69.16.143.110</td>
+      <td>ET MALWARE Zbot POST Request to C2</td>
+    </tr>
+    <tr>
+      <th>150585</th>
+      <td>192.168.1.109</td>
+      <td>69.16.143.110</td>
+      <td>ET POLICY HTTP Request to .su TLD (Soviet Unio...</td>
+    </tr>
+    <tr>
+      <th>150613</th>
+      <td>192.168.1.109</td>
+      <td>69.16.143.110</td>
+      <td>ET MALWARE Citadel Checkin</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="section" id="time-delta-distribution-graph-of-some-beacons">
+<h2>Time Delta Distribution Graph of some Beacons<a class="headerlink" href="#time-delta-distribution-graph-of-some-beacons" title="Permalink to this headline">¶</a></h2>
+<p><img alt="results" src="../../_images/day2-5-result_graph.png" /></p>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./2021\sessions"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+        <div class='prev-next-bottom'>
+            
+
+        </div>
+        
+        </div>
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Roberto Rodriguez @Cyb3rWard0g<br/>
+        
+            &copy; Copyright 2021.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+
+  
+  </body>
+</html>
