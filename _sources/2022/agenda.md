@@ -1,14 +1,14 @@
 # Agenda (Pacific Timezone)
 
 
-````{tabbed} Friday (December 2)
+````{tab} Friday (December 2)
 |Time|Session|
 | :---| :---|
 |TBD|TBD|
 ````
 
 
-````{tabbed} Saturday (December 3)
+````{tab} Saturday (December 3)
 |Time|Session|
 | :---| :---|
 |TBD|TBD|
