@@ -109,6 +109,11 @@ If you are using Jupyter notebooks for any use case applied to Infosec, we want 
             <img src="docs/images/collaborators/Pete-Bryan.png" alt="Pete Bryan">
         </a>
     </td>
+    <td>
+        <a href="https://infosecjupyterthon.com/collaborators/Jose-Rodriguez.html">
+            <img src="docs/images/collaborators/Jose-Rodriguez.png" alt="Jose Rodriguez">
+        </a>
+    </td>
   </tr>
 </table>
 

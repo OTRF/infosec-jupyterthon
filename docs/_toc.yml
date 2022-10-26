@@ -13,6 +13,7 @@ parts:
     - file: collaborators/Ashwin-Patil
     - file: collaborators/Thomas-Roccia
     - file: collaborators/Pete-Bryan
+    - file: collaborators/Jose-Rodriguez
 - caption: 2022 Edition
   chapters:
   - file: 2022/agenda
