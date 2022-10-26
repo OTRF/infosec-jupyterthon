@@ -36,7 +36,7 @@ https://aka.ms/Jupyterthon22Registration
 ## Call For Notebooks
 If you are using Jupyter notebooks for any use case applied to Infosec, we want to hear from you! Presentation slides are not required. You and a notebook is enough!.
 
-* **CFN form:** https://aka.ms/Jupyterthon22CFP
+* **CFN form:** https://aka.ms/Jupyterthon22CFN
 * **CFN starts:** October 25th, 2022
 * **CFN ends:** November 28th, 2022
 
