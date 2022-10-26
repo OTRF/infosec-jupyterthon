@@ -1,3 +1,0 @@
-# Joe Petroske
-
-Joe Petroske is a Cyber Threat Hunter for Target's Cyber Defense Team. A 15-year security veteran with experience in the retail and agribusiness sectors, he works to find weird signals in all the noise. Joe holds the CISSP, GCIA, GCIH, GCFA, and CREA certifications, and a master’s degree in Software Engineering and Computer Security from the University of St. Thomas in St. Paul, Minnesota.

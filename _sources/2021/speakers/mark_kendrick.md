@@ -1,3 +1,0 @@
-# Mark Kendrick
-
-Mark has been helping network defenders fight the good fight for much of his nearly two-decade professional career, initially with a top DNS & Whois threat intel provider, then at RiskIQ, a leader in attack surface management and threat actor infrastructure mapping, and most recently at Microsoft. He is always coding, even when that's not really his job, and he's passionate about placing powerful technology in the hands of mere mortals, especially when it enables them to thwart malicious use of the Internet and abuse of trust. Mark lives in a condo with an over-engineered, Python-enabled, mostly-functional home automation setup somewhere in the greater Seattle area.

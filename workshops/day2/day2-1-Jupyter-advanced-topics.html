@@ -7,8 +7,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Workshop 2.1: Jupyter Notebooks Advanced</title>
     
-  <link href="../../_static/css/theme.css" rel="stylesheet" />
-  <link href="../../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
 
     
   <link rel="stylesheet"
@@ -18,39 +19,38 @@
   <link rel="preload" as="font" type="font/woff2" crossorigin
     href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
 
-    
-      
-
-    
-    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="../../_static/sphinx-book-theme.acff12b8f9c144ce68a297486a2fa670.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" href="../../_static/styles/sphinx-book-theme.css?digest=62ba249389abaaa9ffc34bf36a076bdc1d65ee18" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/tabs.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/tabs.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
     
-  <link rel="preload" as="script" href="../../_static/js/index.1c5a1a01449ed65a7b51.js">
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
 
-    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
     <script src="../../_static/jquery.js"></script>
     <script src="../../_static/underscore.js"></script>
     <script src="../../_static/doctools.js"></script>
-    <script src="../../_static/togglebutton.js"></script>
     <script src="../../_static/clipboard.min.js"></script>
     <script src="../../_static/copybutton.js"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?digest=f31d14ad54b65d19161ba51d4ffff3a77ae00456"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js"></script>
     <script src="../../_static/tabs.js"></script>
-    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="../../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
-    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
-    <script >
-        const thebe_selector = ".thebe"
-        const thebe_selector_input = "pre"
-        const thebe_selector_output = ".output"
-    </script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
     <link rel="canonical" href="https://infosecjupyterthon.com/workshops/day2/day2-1-Jupyter-advanced-topics.html" />
     <link rel="shortcut icon" href="../../_static/favicon.ico"/>
@@ -59,10 +59,27 @@
     <link rel="next" title="Workshop 2.1: R Demo Notebook" href="day2-1-R-demo-notebook.html" />
     <link rel="prev" title="Day 2" href="intro.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="docsearch:language" content="en" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
     
   </head>
-  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
     
     <div class="container-fluid" id="banner"></div>
 
@@ -71,10 +88,15 @@
     <div class="container-xl">
       <div class="row">
           
-<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
-    
-        <div class="navbar-brand-box">
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
     <a class="navbar-brand text-wrap" href="../../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
       
       <img src="../../_static/logo.png" class="logo" alt="logo">
       
@@ -83,17 +105,22 @@
 </div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
   <i class="icon fas fa-search"></i>
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
-</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item active">
-        <p class="caption">
+        <p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
-  Editions
+  Getting Started
  </span>
 </p>
 <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../conduct.html">
+   Code of Conduct
+  </a>
+ </li>
  <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../../2021/agenda.html">
-   2021 Edition
+  <a class="reference internal" href="../../collaborators/intro.html">
+   Collaborators
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
   <label for="toctree-checkbox-1">
@@ -101,170 +128,57 @@
    </i>
   </label>
   <ul>
-   <li class="toctree-l2 has-children">
-    <a class="reference internal" href="../../2021/sessions/intro.html">
-     Sessions
-    </a>
-    <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
-    <label for="toctree-checkbox-2">
-     <i class="fas fa-chevron-down">
-     </i>
-    </label>
-    <ul>
-     <li class="toctree-l3">
-      <a class="reference internal" href="../../2021/sessions/day1-0-welcome.html">
-       <font color="peru">
-        Welcome to the InfoSec Jupyterthon 2021!
-       </font>
-      </a>
-     </li>
-    </ul>
-   </li>
-   <li class="toctree-l2 has-children">
-    <a class="reference internal" href="../../2021/speakers/intro.html">
-     Speakers
-    </a>
-    <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
-    <label for="toctree-checkbox-3">
-     <i class="fas fa-chevron-down">
-     </i>
-    </label>
-    <ul>
-     <li class="toctree-l3">
-      <a class="reference internal" href="../../2021/speakers/pete_bryan.html">
-       Pete Bryan
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="../../2021/speakers/roberto_rodriguez.html">
-       Roberto Rodriguez
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="../../2021/speakers/jose_rodriguez.html">
-       Jose Rodriguez
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="../../2021/speakers/ian_hellen.html">
-       Ian Hellen
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="../../2021/speakers/ashwin_patil.html">
-       Ashwin Patil
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="../../2021/speakers/luis_f_monge.html">
-       Luis F Monge
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="../../2021/speakers/mehmet_ergene.html">
-       Mehmet Ergene
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="../../2021/speakers/leo_meyerovich.html">
-       Leo Meyerovich
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="../../2021/speakers/joe_petroske.html">
-       Joe Petroske
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="../../2021/speakers/john_lambert.html">
-       John Lambert
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="../../2021/speakers/neil_desai.html">
-       Neil Desai
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="../../2021/speakers/neal_shenk.html">
-       Neal Shenk
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="../../2021/speakers/sil_han.html">
-       Sil Han
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="../../2021/speakers/natanela_brod.html">
-       Natanela Brod
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="../../2021/speakers/xiaokui_shu.html">
-       Xiaokui Shu
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="../../2021/speakers/mark_kendrick.html">
-       Mark Kendrick
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="../../2021/speakers/shachar_roitman.html">
-       Shachar Roitman
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="../../2021/speakers/elisabeth_weber.html">
-       Elisabeth Weber
-      </a>
-     </li>
-    </ul>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../../2020/agenda.html">
-   2020 Edition
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
-  <label for="toctree-checkbox-4">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
    <li class="toctree-l2">
-    <a class="reference internal" href="../../2020/notebooks/0_banner.html">
-     Infosec Jupyterthon 2020!
+    <a class="reference internal" href="../../collaborators/Roberto-Rodriguez.html">
+     Roberto Rodriguez
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../../2020/notebooks/1_what_about_notebooks.html">
-     <font color="peru">
-      Welcome Infosec Community!
-     </font>
+    <a class="reference internal" href="../../collaborators/Chi-Nguyen.html">
+     Chi Nguyen
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../../2020/notebooks/2_Jupyterthon_Cyb3rPandaH_2020.html">
-     ATT&amp;CK - APT29 Evals Datasets
+    <a class="reference internal" href="../../collaborators/Ian-Hellen.html">
+     Ian Hellen
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../../2020/notebooks/6_OSQuery-Tables-interactive_Jupyterthon.html">
-     Untangling the Osquery❓ tables web🕸 using Jupyter Notebooks📓
+    <a class="reference internal" href="../../collaborators/Joyce-Bacic.html">
+     Joyce Bacic
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../../2020/notebooks/12_Jupyterthon-TimeSeries-Demo.html">
-     Anomaly detection and visualization using Time Series Decomposition
+    <a class="reference internal" href="../../collaborators/Ashwin-Patil.html">
+     Ashwin Patil
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../collaborators/Thomas-Roccia.html">
+     Thomas Roccia
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../collaborators/Pete-Bryan.html">
+     Pete Bryan
     </a>
    </li>
   </ul>
  </li>
 </ul>
-<p class="caption">
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  2022 Edition
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../2022/agenda.html">
+   agenda
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Workshops
  </span>
@@ -274,8 +188,8 @@
   <a class="reference internal" href="../day1/intro.html">
    Day 1
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
-  <label for="toctree-checkbox-5">
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
    <i class="fas fa-chevron-down">
    </i>
   </label>
@@ -310,8 +224,8 @@
   <a class="reference internal" href="intro.html">
    Day 2
   </a>
-  <input checked="" class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
-  <label for="toctree-checkbox-6">
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
    <i class="fas fa-chevron-down">
    </i>
   </label>
@@ -361,103 +275,177 @@
 </ul>
 
     </div>
-</nav> <!-- To handle the deprecated key -->
-
-<div class="navbar_extra_footer">
-  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
-</div>
-
-</div>
-
-
-          
-
-
-          
-<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
-    
-    <div class="topbar container-xl fixed-top">
-    <div class="topbar-contents row">
-        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
-        <div class="col pl-md-4 topbar-main">
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
             
-            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
-                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
-                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
-                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
-                <i class="fas fa-bars"></i>
-                <i class="fas fa-arrow-left"></i>
-                <i class="fas fa-arrow-up"></i>
-            </button>
-            
-            
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
-            class="fas fa-download"></i></button>
-
-    <div class="dropdown-buttons">
-        <!-- ipynb file if we had a myst markdown file -->
-        
-        <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../../_sources/workshops/day2/day2-1-Jupyter-advanced-topics.ipynb"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
-                data-placement="left">.ipynb</button></a>
-        <!-- Download PDF via print -->
-        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
-            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
-    </div>
-</div>
-
-            <!-- Source interaction buttons -->
-
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
-        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
-    <div class="dropdown-buttons sourcebuttons">
-        
-        
-        <a class="edit-button" href="https://github.com/OTRF/infosec-jupyterthon/edit/master/docs/workshops/day2/day2-1-Jupyter-advanced-topics.ipynb"><button
-                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
-                title="Edit this page"><i class="fas fa-pencil-alt"></i>suggest edit</button></a>
-    </div>
-</div>
-
-            <!-- Full screen (wrap in <a> to have style consistency -->
-
-<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
-        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
-        title="Fullscreen mode"><i
-            class="fas fa-expand"></i></button></a>
-
-            <!-- Launch buttons -->
-
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
-        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
-    <div class="dropdown-buttons">
-        
-        <a class="binder-button" href="https://mybinder.org/v2/gh/OTRF/infosec-jupyterthon/master?urlpath=lab/tree/docs/workshops/day2/day2-1-Jupyter-advanced-topics.ipynb"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
-                data-placement="left"><img class="binder-button-logo"
-                    src="../../_static/images/logo_binder.svg"
-                    alt="Interact on binder">Binder</button></a>
-        
-        
-        
-        
-    </div>
-</div>
-
-        </div>
-
-        <!-- Table of contents -->
-        <div class="d-none d-md-block col-md-2 bd-toc show">
-            
-            <div class="tocsection onthispage pt-5 pb-3">
-                <i class="fas fa-list"></i> Contents
+            <div class="navbar_extra_footer">
+            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
             </div>
-            <nav id="bd-toc-nav">
-                <ul class="visible nav section-nav flex-column">
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<div class="menu-dropdown menu-dropdown-launch-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Launch interactive content">
+      <i class="fas fa-rocket"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://mybinder.org/v2/gh/OTRF/infosec-jupyterthon/master?urlpath=lab/tree/docs/workshops/day2/day2-1-Jupyter-advanced-topics.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on Binder"
+>
+  
+
+<span class="headerbtn__icon-container">
+  
+    <img src="../../_static/images/logo_binder.svg">
+  </span>
+<span class="headerbtn__text-container">Binder</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+<a href="https://github.com/OTRF/infosec-jupyterthon/edit/master/docs/workshops/day2/day2-1-Jupyter-advanced-topics.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="bottom"
+title="Edit this page"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-pencil-alt"></i>
+  </span>
+
+</a>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="../../_sources/workshops/day2/day2-1-Jupyter-advanced-topics.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.ipynb</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
  <li class="toc-h1 nav-item toc-entry">
   <a class="reference internal nav-link" href="#">
    Workshop 2.1:
@@ -768,19 +756,345 @@
  </li>
 </ul>
 
-            </nav>
-        </div>
-    </div>
+    </nav>
 </div>
-    <div id="main-content" class="row">
-        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
-        
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Workshop 2.1: <font color=peru>Jupyter Notebooks Advanced</font></h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   Workshop 2.1:
+   <font color="peru">
+    Jupyter Notebooks Advanced
+   </font>
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#a-style-border-solid-padding-5pt-color-black-background-color-90caf9-name-notjustpython-jupyter-is-not-just-python-ashwin-a">
+   <a name="notjustpython" style="border: solid; padding:5pt; color:black; background-color:#90CAF9">
+    Jupyter is not just Python [Ashwin]
+   </a>
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#a-style-border-solid-padding-5pt-color-black-background-color-90caf9-name-kernels-jupyter-kernels-python-environments-a">
+   <a name="kernels" style="border: solid; padding:5pt; color:black; background-color:#90CAF9">
+    Jupyter Kernels &amp; Python environments
+   </a>
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#using-different-python-kernels-with-jupyter">
+     Using different Python Kernels with Jupyter
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#to-remove-unwanted-kernels">
+       To remove unwanted kernels
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#a-style-border-solid-padding-5pt-color-black-background-color-90caf9-name-magics-magics-ian-a">
+   <a name="magics" style="border: solid; padding:5pt; color:black; background-color:#90CAF9">
+    Magics [Ian]
+   </a>
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#what-are-they">
+     What are they?
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#line-magics-single">
+       Line magics - single %
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#cell-magics-double">
+       Cell magics - double %%
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#popular-magics">
+     Popular magics -
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#get-or-set-environment-variables">
+       Get or set environment variables
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#run-pip">
+       Run pip
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#write-or-append-the-contents-of-a-cell-to-a-file">
+       Write (or append) the contents of a cell to a file
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#run-a-python-script">
+       Run a Python script
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#invoking-shell-commands">
+     Invoking shell commands
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#creating-magics">
+     Creating Magics
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#magic-example">
+       Magic example
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#a-style-border-solid-padding-5pt-color-black-background-color-90caf9-name-widgets-widgets-introduction-luis-a">
+   <a name="widgets" style="border: solid; padding:5pt; color:black; background-color:#90CAF9">
+    Widgets introduction [Luis]
+   </a>
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#integer-slider">
+     Integer Slider
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#intenger-range-slider">
+     Intenger Range Slider
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#integer-progress-bar">
+     Integer Progress Bar
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#dropdown">
+     Dropdown
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#multiselector">
+     Multiselector
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#data-picker">
+     Data Picker
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#file-uploader">
+     File Uploader
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#more-sophisticated-file-folder-chooser">
+     More sophisticated file/folder chooser
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#a-style-border-solid-padding-5pt-color-black-background-color-90caf9-name-notjustpython-jupyter-extensions-luis-a">
+   <a name="notjustpython" style="border: solid; padding:5pt; color:black; background-color:#90CAF9">
+    Jupyter Extensions [Luis]
+   </a>
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#creating-config-file">
+     Creating config file
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#jupyterlab-system-monitor">
+     JupyterLab System Monitor
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#git">
+     Git
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#jupyterlab-templates">
+     JupyterLab Templates
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#code-snippets-elyra">
+     Code Snippets (Elyra)
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#a-style-border-solid-padding-5pt-color-black-background-color-90caf9-name-nbconvert-export-and-create-notebooks-a">
+   <a name="nbconvert" style="border: solid; padding:5pt; color:black; background-color:#90CAF9">
+    Export and create notebooks
+   </a>
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#nbformat-create-a-notebook-programmatically-roberto">
+     NBFormat - Create a notebook programmatically [Roberto]
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#nbconvert-exporting-and-converting-to-other-formats-ian">
+     NBConvert - Exporting and converting to other formats [Ian]
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#from-the-command-line">
+       From the command line
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#in-code">
+     In code
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#convert-a-notebook-to-html">
+       Convert a notebook to HTML
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#convert-to-python-module">
+       Convert to Python module
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#a-style-border-solid-padding-5pt-color-black-background-color-90caf9-name-debugging-dev-topics-debugging-and-testing-notebook-code-ian-a">
+   <a name="debugging" style="border: solid; padding:5pt; color:black; background-color:#90CAF9">
+    Dev topics - Debugging and testing notebook code [Ian]
+   </a>
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#magics-and-errors-traceback-xmode-debug">
+     Magics and errors – traceback, xmode, debug
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#use-tb-to-review-last-traceback">
+       Use %tb to review last traceback
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#use-xmode-magic-to-include-parameter-values">
+       Use
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         %xmode
+        </span>
+       </code>
+       magic to include parameter values
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#exceptions-within-exceptions">
+       Exceptions within Exceptions
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#debugging-bare-handed">
+     Debugging bare-handed
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#debugging-from-a-comfy-chair">
+     Debugging from a comfy chair
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#running-jupyter-notebooks-in-a-unit-test-ian">
+     Running Jupyter notebooks in a unit test [Ian]
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#why-quick-and-dirty-testing">
+       Why? - Quick and dirty testing
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#output-when-test-fails">
+       Output when test fails
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#end-of-session">
+   End of Session
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#font-color-peru-break-5-minutes-font">
+   <font color="peru">
+    Break: 5 Minutes
+   </font>
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
+                
               <div>
                 
   <p><img alt="Banner" src="../../_images/banner2.png" /></p>
 <hr class="docutils" />
-<div class="section" id="workshop-2-1-font-color-peru-jupyter-notebooks-advanced-font">
-<h1>Workshop 2.1: <font color=peru>Jupyter Notebooks Advanced</font><a class="headerlink" href="#workshop-2-1-font-color-peru-jupyter-notebooks-advanced-font" title="Permalink to this headline">¶</a></h1>
+<div class="tex2jax_ignore mathjax_ignore section" id="workshop-2-1-font-color-peru-jupyter-notebooks-advanced-font">
+<h1>Workshop 2.1: <font color=peru>Jupyter Notebooks Advanced</font><a class="headerlink" href="#workshop-2-1-font-color-peru-jupyter-notebooks-advanced-font" title="Permalink to this headline">#</a></h1>
 <ul class="simple">
 <li><p><strong>Contributors</strong>:</p>
 <ul>
@@ -808,16 +1122,16 @@
 </ul>
 </div>
 <hr class="docutils" />
-<div class="section" id="a-style-border-solid-padding-5pt-color-black-background-color-90caf9-name-notjustpython-jupyter-is-not-just-python-ashwin-a">
-<h1><a style="border: solid; padding:5pt; color:black; background-color:#90CAF9" name="notjustpython">Jupyter is not just Python [Ashwin]</a><a class="headerlink" href="#a-style-border-solid-padding-5pt-color-black-background-color-90caf9-name-notjustpython-jupyter-is-not-just-python-ashwin-a" title="Permalink to this headline">¶</a></h1>
+<div class="tex2jax_ignore mathjax_ignore section" id="a-style-border-solid-padding-5pt-color-black-background-color-90caf9-name-notjustpython-jupyter-is-not-just-python-ashwin-a">
+<h1><a style="border: solid; padding:5pt; color:black; background-color:#90CAF9" name="notjustpython">Jupyter is not just Python [Ashwin]</a><a class="headerlink" href="#a-style-border-solid-padding-5pt-color-black-background-color-90caf9-name-notjustpython-jupyter-is-not-just-python-ashwin-a" title="Permalink to this headline">#</a></h1>
 <ul class="simple">
 <li><p>Powershell kernel</p></li>
 <li><p>R kernel</p></li>
 </ul>
 </div>
 <hr class="docutils" />
-<div class="section" id="a-style-border-solid-padding-5pt-color-black-background-color-90caf9-name-kernels-jupyter-kernels-python-environments-a">
-<h1><a style="border: solid; padding:5pt; color:black; background-color:#90CAF9" name="kernels">Jupyter Kernels &amp; Python environments</a><a class="headerlink" href="#a-style-border-solid-padding-5pt-color-black-background-color-90caf9-name-kernels-jupyter-kernels-python-environments-a" title="Permalink to this headline">¶</a></h1>
+<div class="tex2jax_ignore mathjax_ignore section" id="a-style-border-solid-padding-5pt-color-black-background-color-90caf9-name-kernels-jupyter-kernels-python-environments-a">
+<h1><a style="border: solid; padding:5pt; color:black; background-color:#90CAF9" name="kernels">Jupyter Kernels &amp; Python environments</a><a class="headerlink" href="#a-style-border-solid-padding-5pt-color-black-background-color-90caf9-name-kernels-jupyter-kernels-python-environments-a" title="Permalink to this headline">#</a></h1>
 <p>Python environments let you create “isolated” installations with independent versions of packages.</p>
 <p>This is usually <strong>A VERY GOOD IDEA</strong>!</p>
 <p>Linux</p>
@@ -840,7 +1154,7 @@ pip install msticpy
 </pre></div>
 </div>
 <div class="section" id="using-different-python-kernels-with-jupyter">
-<h2>Using different Python Kernels with Jupyter<a class="headerlink" href="#using-different-python-kernels-with-jupyter" title="Permalink to this headline">¶</a></h2>
+<h2>Using different Python Kernels with Jupyter<a class="headerlink" href="#using-different-python-kernels-with-jupyter" title="Permalink to this headline">#</a></h2>
 <p>Note: VSCode seems to be able to use Python or Conda environments anyway but installing a dedicated ipykernel is needed for debugging.</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python -m ipykernel install --user --name MyNewCondaEnv --display-name <span class="s2">&quot;Python3 (MyNewCondaEnv)&quot;</span>
 </pre></div>
@@ -848,7 +1162,7 @@ pip install msticpy
 <p><img alt="Kernels1" src="../../_images/JLab_kernels1.png" />
 <img alt="Kernels2" src="../../_images/JLab_kernels2.png" /></p>
 <div class="section" id="to-remove-unwanted-kernels">
-<h3>To remove unwanted kernels<a class="headerlink" href="#to-remove-unwanted-kernels" title="Permalink to this headline">¶</a></h3>
+<h3>To remove unwanted kernels<a class="headerlink" href="#to-remove-unwanted-kernels" title="Permalink to this headline">#</a></h3>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">jupyter</span> <span class="n">kernelspec</span> <span class="n">remove</span> <span class="n">KERNELNAME</span>
 
 </pre></div>
@@ -883,22 +1197,22 @@ Remove 1 kernel specs [y/N]: y
 </div>
 </div>
 <hr class="docutils" />
-<div class="section" id="a-style-border-solid-padding-5pt-color-black-background-color-90caf9-name-magics-magics-ian-a">
-<h1><a style="border: solid; padding:5pt; color:black; background-color:#90CAF9" name="magics">Magics [Ian]</a><a class="headerlink" href="#a-style-border-solid-padding-5pt-color-black-background-color-90caf9-name-magics-magics-ian-a" title="Permalink to this headline">¶</a></h1>
+<div class="tex2jax_ignore mathjax_ignore section" id="a-style-border-solid-padding-5pt-color-black-background-color-90caf9-name-magics-magics-ian-a">
+<h1><a style="border: solid; padding:5pt; color:black; background-color:#90CAF9" name="magics">Magics [Ian]</a><a class="headerlink" href="#a-style-border-solid-padding-5pt-color-black-background-color-90caf9-name-magics-magics-ian-a" title="Permalink to this headline">#</a></h1>
 <p><a class="reference external" href="https://ipython.readthedocs.io/en/stable/interactive/magics.html">https://ipython.readthedocs.io/en/stable/interactive/magics.html</a></p>
 <div class="section" id="what-are-they">
-<h2>What are they?<a class="headerlink" href="#what-are-they" title="Permalink to this headline">¶</a></h2>
+<h2>What are they?<a class="headerlink" href="#what-are-they" title="Permalink to this headline">#</a></h2>
 <p>Magics are a kind of macro/function that allows you to invoke functionality
 of the notebook or OS independent of the kernel language.</p>
 <div class="section" id="line-magics-single">
-<h3>Line magics - single %<a class="headerlink" href="#line-magics-single" title="Permalink to this headline">¶</a></h3>
+<h3>Line magics - single %<a class="headerlink" href="#line-magics-single" title="Permalink to this headline">#</a></h3>
 <ul class="simple">
 <li><p>Only operate on the arguments on the remainder of the line</p></li>
 <li><p>Can be mixed with other code</p></li>
 </ul>
 </div>
 <div class="section" id="cell-magics-double">
-<h3>Cell magics - double %%<a class="headerlink" href="#cell-magics-double" title="Permalink to this headline">¶</a></h3>
+<h3>Cell magics - double %%<a class="headerlink" href="#cell-magics-double" title="Permalink to this headline">#</a></h3>
 <ul class="simple">
 <li><p>Operate on whole cell contents</p></li>
 <li><p>Must be in their own cell and at the start of the cell (even comments!)</p></li>
@@ -906,12 +1220,12 @@ of the notebook or OS independent of the kernel language.</p>
 </div>
 </div>
 <div class="section" id="popular-magics">
-<h2>Popular magics -<a class="headerlink" href="#popular-magics" title="Permalink to this headline">¶</a></h2>
+<h2>Popular magics -<a class="headerlink" href="#popular-magics" title="Permalink to this headline">#</a></h2>
 <p style="font-family:consolas; font-size:15pt; color:green">
 %magic %env %writefile %js %hmtl %pip %logstart 
 </p>
 <div class="section" id="get-or-set-environment-variables">
-<h3>Get or set environment variables<a class="headerlink" href="#get-or-set-environment-variables" title="Permalink to this headline">¶</a></h3>
+<h3>Get or set environment variables<a class="headerlink" href="#get-or-set-environment-variables" title="Permalink to this headline">#</a></h3>
 <p style="font-family:consolas; font-size:15pt; color:green">
 %env
 </p><div class="cell docutils container">
@@ -939,7 +1253,7 @@ of the notebook or OS independent of the kernel language.</p>
 </div>
 </div>
 <div class="section" id="run-pip">
-<h3>Run pip<a class="headerlink" href="#run-pip" title="Permalink to this headline">¶</a></h3>
+<h3>Run pip<a class="headerlink" href="#run-pip" title="Permalink to this headline">#</a></h3>
 <p style="font-family:consolas; font-size:15pt; color:green">
 %pip 
 </p>
@@ -1028,7 +1342,7 @@ Hello Jupyterthon!
 </div>
 </div>
 <div class="section" id="write-or-append-the-contents-of-a-cell-to-a-file">
-<h3>Write (or append) the contents of a cell to a file<a class="headerlink" href="#write-or-append-the-contents-of-a-cell-to-a-file" title="Permalink to this headline">¶</a></h3>
+<h3>Write (or append) the contents of a cell to a file<a class="headerlink" href="#write-or-append-the-contents-of-a-cell-to-a-file" title="Permalink to this headline">#</a></h3>
 <p>** Note - cell magic! **</p>
 <p style="font-family:consolas; font-size:15pt; color:green">
 %%writefile <i>file_name</i><br>
@@ -1050,7 +1364,7 @@ Hello Jupyterthon!
 </div>
 </div>
 <div class="section" id="run-a-python-script">
-<h3>Run a Python script<a class="headerlink" href="#run-a-python-script" title="Permalink to this headline">¶</a></h3>
+<h3>Run a Python script<a class="headerlink" href="#run-a-python-script" title="Permalink to this headline">#</a></h3>
 <p style="font-family:consolas; font-size:15pt; color:green">
 %run <i>py_file_name</i>
 </p>
@@ -1071,7 +1385,7 @@ win32
 </div>
 </div>
 <div class="section" id="invoking-shell-commands">
-<h2>Invoking shell commands<a class="headerlink" href="#invoking-shell-commands" title="Permalink to this headline">¶</a></h2>
+<h2>Invoking shell commands<a class="headerlink" href="#invoking-shell-commands" title="Permalink to this headline">#</a></h2>
 <p>Prefix with !</p>
 <p>These are not magics - they directly invoke underlying OS commands.</p>
 <p>Like line magics, can use these mixed with other code</p>
@@ -1121,7 +1435,7 @@ win32
 </div>
 </div>
 <div class="section" id="creating-magics">
-<h2>Creating Magics<a class="headerlink" href="#creating-magics" title="Permalink to this headline">¶</a></h2>
+<h2>Creating Magics<a class="headerlink" href="#creating-magics" title="Permalink to this headline">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">IPython.core.magic</span> <span class="kn">import</span> <span class="n">register_line_magic</span>
@@ -1151,7 +1465,7 @@ win32
 </div>
 </div>
 <div class="section" id="magic-example">
-<h3>Magic example<a class="headerlink" href="#magic-example" title="Permalink to this headline">¶</a></h3>
+<h3>Magic example<a class="headerlink" href="#magic-example" title="Permalink to this headline">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">msticpy</span>
@@ -1203,8 +1517,8 @@ FileHash-SHA256	9c345ee65032ec38e1a29bf6b645cde468e3ded2e87b0c9c4a93c517d465e70d
 </div>
 </div>
 <hr class="docutils" />
-<div class="section" id="a-style-border-solid-padding-5pt-color-black-background-color-90caf9-name-widgets-widgets-introduction-luis-a">
-<h1><a style="border: solid; padding:5pt; color:black; background-color:#90CAF9" name="widgets">Widgets introduction [Luis]</a><a class="headerlink" href="#a-style-border-solid-padding-5pt-color-black-background-color-90caf9-name-widgets-widgets-introduction-luis-a" title="Permalink to this headline">¶</a></h1>
+<div class="tex2jax_ignore mathjax_ignore section" id="a-style-border-solid-padding-5pt-color-black-background-color-90caf9-name-widgets-widgets-introduction-luis-a">
+<h1><a style="border: solid; padding:5pt; color:black; background-color:#90CAF9" name="widgets">Widgets introduction [Luis]</a><a class="headerlink" href="#a-style-border-solid-padding-5pt-color-black-background-color-90caf9-name-widgets-widgets-introduction-luis-a" title="Permalink to this headline">#</a></h1>
 <p>Interactive HTML widgets for Jupyter Notebooks and IPython kernel.<br />
 Easy way to avoid input errors, types mismatch, date fortmat errors…</p>
 <div class="cell docutils container">
@@ -1237,7 +1551,7 @@ Required-by: qtconsole, notebook, jupyter, jupyter-console, ipywidgets
 </div>
 </div>
 <div class="section" id="integer-slider">
-<h2>Integer Slider<a class="headerlink" href="#integer-slider" title="Permalink to this headline">¶</a></h2>
+<h2>Integer Slider<a class="headerlink" href="#integer-slider" title="Permalink to this headline">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">w</span> <span class="o">=</span> <span class="n">widgets</span><span class="o">.</span><span class="n">IntSlider</span><span class="p">()</span>
@@ -1259,7 +1573,7 @@ Required-by: qtconsole, notebook, jupyter, jupyter-console, ipywidgets
 </div>
 </div>
 <div class="section" id="intenger-range-slider">
-<h2>Intenger Range Slider<a class="headerlink" href="#intenger-range-slider" title="Permalink to this headline">¶</a></h2>
+<h2>Intenger Range Slider<a class="headerlink" href="#intenger-range-slider" title="Permalink to this headline">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">widgets</span><span class="o">.</span><span class="n">IntRangeSlider</span><span class="p">(</span><span class="n">value</span><span class="o">=</span><span class="p">[</span><span class="mi">5</span><span class="p">,</span> <span class="mi">7</span><span class="p">],</span> <span class="nb">min</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="nb">max</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
@@ -1273,7 +1587,7 @@ Required-by: qtconsole, notebook, jupyter, jupyter-console, ipywidgets
 </div>
 </div>
 <div class="section" id="integer-progress-bar">
-<h2>Integer Progress Bar<a class="headerlink" href="#integer-progress-bar" title="Permalink to this headline">¶</a></h2>
+<h2>Integer Progress Bar<a class="headerlink" href="#integer-progress-bar" title="Permalink to this headline">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">p</span> <span class="o">=</span> <span class="n">widgets</span><span class="o">.</span><span class="n">IntProgress</span><span class="p">(</span>
@@ -1312,7 +1626,7 @@ Required-by: qtconsole, notebook, jupyter, jupyter-console, ipywidgets
 </div>
 </div>
 <div class="section" id="dropdown">
-<h2>Dropdown<a class="headerlink" href="#dropdown" title="Permalink to this headline">¶</a></h2>
+<h2>Dropdown<a class="headerlink" href="#dropdown" title="Permalink to this headline">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">widgets</span><span class="o">.</span><span class="n">Dropdown</span><span class="p">(</span>
@@ -1330,7 +1644,7 @@ Required-by: qtconsole, notebook, jupyter, jupyter-console, ipywidgets
 </div>
 </div>
 <div class="section" id="multiselector">
-<h2>Multiselector<a class="headerlink" href="#multiselector" title="Permalink to this headline">¶</a></h2>
+<h2>Multiselector<a class="headerlink" href="#multiselector" title="Permalink to this headline">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sm</span> <span class="o">=</span> <span class="n">widgets</span><span class="o">.</span><span class="n">SelectMultiple</span><span class="p">(</span>
@@ -1362,7 +1676,7 @@ Required-by: qtconsole, notebook, jupyter, jupyter-console, ipywidgets
 </div>
 </div>
 <div class="section" id="data-picker">
-<h2>Data Picker<a class="headerlink" href="#data-picker" title="Permalink to this headline">¶</a></h2>
+<h2>Data Picker<a class="headerlink" href="#data-picker" title="Permalink to this headline">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">widgets</span><span class="o">.</span><span class="n">DatePicker</span><span class="p">(</span>
@@ -1379,7 +1693,7 @@ Required-by: qtconsole, notebook, jupyter, jupyter-console, ipywidgets
 </div>
 </div>
 <div class="section" id="file-uploader">
-<h2>File Uploader<a class="headerlink" href="#file-uploader" title="Permalink to this headline">¶</a></h2>
+<h2>File Uploader<a class="headerlink" href="#file-uploader" title="Permalink to this headline">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fu</span> <span class="o">=</span> <span class="n">widgets</span><span class="o">.</span><span class="n">FileUpload</span><span class="p">(</span>
@@ -1397,7 +1711,7 @@ Required-by: qtconsole, notebook, jupyter, jupyter-console, ipywidgets
 </div>
 </div>
 <div class="section" id="more-sophisticated-file-folder-chooser">
-<h2>More sophisticated file/folder chooser<a class="headerlink" href="#more-sophisticated-file-folder-chooser" title="Permalink to this headline">¶</a></h2>
+<h2>More sophisticated file/folder chooser<a class="headerlink" href="#more-sophisticated-file-folder-chooser" title="Permalink to this headline">#</a></h2>
 <p><a class="reference external" href="https://github.com/crahan/ipyfilechooser">ipyfilechooser Project</a></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1490,12 +1804,12 @@ Note: you may need to restart the kernel to use updated packages.
 </div>
 </div>
 <hr class="docutils" />
-<div class="section" id="a-style-border-solid-padding-5pt-color-black-background-color-90caf9-name-notjustpython-jupyter-extensions-luis-a">
-<h1><a style="border: solid; padding:5pt; color:black; background-color:#90CAF9" name="notjustpython">Jupyter Extensions [Luis]</a><a class="headerlink" href="#a-style-border-solid-padding-5pt-color-black-background-color-90caf9-name-notjustpython-jupyter-extensions-luis-a" title="Permalink to this headline">¶</a></h1>
+<div class="tex2jax_ignore mathjax_ignore section" id="a-style-border-solid-padding-5pt-color-black-background-color-90caf9-name-notjustpython-jupyter-extensions-luis-a">
+<h1><a style="border: solid; padding:5pt; color:black; background-color:#90CAF9" name="notjustpython">Jupyter Extensions [Luis]</a><a class="headerlink" href="#a-style-border-solid-padding-5pt-color-black-background-color-90caf9-name-notjustpython-jupyter-extensions-luis-a" title="Permalink to this headline">#</a></h1>
 <p>Extension are client-specific, most only Jupyter classic. In this section we will talk about JupyterLab extensions.</p>
 <p>Fundamentally, JupyterLab is designed as an extensible environment. JupyterLab extensions can customize or enhance any part of JupyterLab. They can provide new themes, file viewers and editors, or renderers for rich outputs in notebooks. Extensions can add items to the menu or command palette, keyboard shortcuts, or settings in the settings system. Extensions can provide an API for other extensions to use and can depend on other extensions. In fact, the whole of JupyterLab itself is simply a collection of extensions that are no more powerful or privileged than any custom extension.</p>
 <div class="section" id="creating-config-file">
-<h2>Creating config file<a class="headerlink" href="#creating-config-file" title="Permalink to this headline">¶</a></h2>
+<h2>Creating config file<a class="headerlink" href="#creating-config-file" title="Permalink to this headline">#</a></h2>
 <p>This file will be used to keep extensions configurations.<br />
 File will be created in ‘~/.jupyter/jupyter_lab_config.py’</p>
 <div class="cell docutils container">
@@ -1507,7 +1821,7 @@ File will be created in ‘~/.jupyter/jupyter_lab_config.py’</p>
 </div>
 </div>
 <div class="section" id="jupyterlab-system-monitor">
-<h2>JupyterLab System Monitor<a class="headerlink" href="#jupyterlab-system-monitor" title="Permalink to this headline">¶</a></h2>
+<h2>JupyterLab System Monitor<a class="headerlink" href="#jupyterlab-system-monitor" title="Permalink to this headline">#</a></h2>
 <p>JupyterLab extension to display system information (memory and cpu usage). <a class="reference external" href="https://github.com/jtpio/jupyterlab-system-monitor">Project</a></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1526,7 +1840,7 @@ File will be created in ‘~/.jupyter/jupyter_lab_config.py’</p>
 <p><img alt="Sysmonitor" src="https://github.com/jtpio/jupyterlab-system-monitor/raw/main/doc/screencast.gif" /></p>
 </div>
 <div class="section" id="git">
-<h2>Git<a class="headerlink" href="#git" title="Permalink to this headline">¶</a></h2>
+<h2>Git<a class="headerlink" href="#git" title="Permalink to this headline">#</a></h2>
 <p>A JupyterLab extension for version control using Git. <a class="reference external" href="https://github.com/jupyterlab/jupyterlab-git">Project</a></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1538,7 +1852,7 @@ File will be created in ‘~/.jupyter/jupyter_lab_config.py’</p>
 <p><img alt="Git" src="https://raw.githubusercontent.com/jupyterlab/jupyterlab-git/master/docs/figs/preview.gif" /></p>
 </div>
 <div class="section" id="jupyterlab-templates">
-<h2>JupyterLab Templates<a class="headerlink" href="#jupyterlab-templates" title="Permalink to this headline">¶</a></h2>
+<h2>JupyterLab Templates<a class="headerlink" href="#jupyterlab-templates" title="Permalink to this headline">#</a></h2>
 <p>Support for jupyter notebook templates in jupyterlab. <a class="reference external" href="https://github.com/jpmorganchase/jupyterlab_templates">Project</a></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1559,7 +1873,7 @@ File will be created in ‘~/.jupyter/jupyter_lab_config.py’</p>
 <p><img alt="Templates" src="https://raw.githubusercontent.com/jpmorganchase/jupyterlab_templates/main/docs/example1.gif" /></p>
 </div>
 <div class="section" id="code-snippets-elyra">
-<h2>Code Snippets (Elyra)<a class="headerlink" href="#code-snippets-elyra" title="Permalink to this headline">¶</a></h2>
+<h2>Code Snippets (Elyra)<a class="headerlink" href="#code-snippets-elyra" title="Permalink to this headline">#</a></h2>
 <p>The ability to reuse pieces of code allows users to avoid doing repetitive work, making the programming workflow more simple and productive. Elyra supports custom code snippets that can be added to the file editor. <a class="reference external" href="https://elyra.readthedocs.io/en/latest/getting_started/overview.html#reusable-code-snippets">Project</a></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1573,10 +1887,10 @@ File will be created in ‘~/.jupyter/jupyter_lab_config.py’</p>
 <p><img alt="Snippets example" src="https://elyra.readthedocs.io/en/latest/_images/code-snippet-expanded.png" /></p>
 </div>
 </div>
-<div class="section" id="a-style-border-solid-padding-5pt-color-black-background-color-90caf9-name-nbconvert-export-and-create-notebooks-a">
-<h1><a style="border: solid; padding:5pt; color:black; background-color:#90CAF9" name="nbconvert">Export and create notebooks</a><a class="headerlink" href="#a-style-border-solid-padding-5pt-color-black-background-color-90caf9-name-nbconvert-export-and-create-notebooks-a" title="Permalink to this headline">¶</a></h1>
+<div class="tex2jax_ignore mathjax_ignore section" id="a-style-border-solid-padding-5pt-color-black-background-color-90caf9-name-nbconvert-export-and-create-notebooks-a">
+<h1><a style="border: solid; padding:5pt; color:black; background-color:#90CAF9" name="nbconvert">Export and create notebooks</a><a class="headerlink" href="#a-style-border-solid-padding-5pt-color-black-background-color-90caf9-name-nbconvert-export-and-create-notebooks-a" title="Permalink to this headline">#</a></h1>
 <div class="section" id="nbformat-create-a-notebook-programmatically-roberto">
-<h2>NBFormat - Create a notebook programmatically [Roberto]<a class="headerlink" href="#nbformat-create-a-notebook-programmatically-roberto" title="Permalink to this headline">¶</a></h2>
+<h2>NBFormat - Create a notebook programmatically [Roberto]<a class="headerlink" href="#nbformat-create-a-notebook-programmatically-roberto" title="Permalink to this headline">#</a></h2>
 <ul class="simple">
 <li><p>Jupyter notebook files are simple JSON documents, containing text, source code, rich media output, and metadata.</p></li>
 <li><p>Each segment of the document is stored in a cell.</p></li>
@@ -1665,9 +1979,9 @@ Use the <a class="reference external" href="https://nbformat.readthedocs.io/en/l
 </ul>
 </div>
 <div class="section" id="nbconvert-exporting-and-converting-to-other-formats-ian">
-<h2>NBConvert - Exporting and converting to other formats [Ian]<a class="headerlink" href="#nbconvert-exporting-and-converting-to-other-formats-ian" title="Permalink to this headline">¶</a></h2>
+<h2>NBConvert - Exporting and converting to other formats [Ian]<a class="headerlink" href="#nbconvert-exporting-and-converting-to-other-formats-ian" title="Permalink to this headline">#</a></h2>
 <div class="section" id="from-the-command-line">
-<h3>From the command line<a class="headerlink" href="#from-the-command-line" title="Permalink to this headline">¶</a></h3>
+<h3>From the command line<a class="headerlink" href="#from-the-command-line" title="Permalink to this headline">#</a></h3>
 <p style="font-family:consolas; font-size:15pt; color:green">
 jupyter nbconvert --to <i>FORMAT</i> input_notebook.ipynb
 </p>
@@ -1687,7 +2001,7 @@ jupyter nbconvert --to <i>FORMAT</i> input_notebook.ipynb
 </div>
 </div>
 <div class="section" id="in-code">
-<h2>In code<a class="headerlink" href="#in-code" title="Permalink to this headline">¶</a></h2>
+<h2>In code<a class="headerlink" href="#in-code" title="Permalink to this headline">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">nbformat</span>
@@ -1707,7 +2021,7 @@ jupyter nbconvert --to <i>FORMAT</i> input_notebook.ipynb
 </div>
 </div>
 <div class="section" id="convert-a-notebook-to-html">
-<h3>Convert a notebook to HTML<a class="headerlink" href="#convert-a-notebook-to-html" title="Permalink to this headline">¶</a></h3>
+<h3>Convert a notebook to HTML<a class="headerlink" href="#convert-a-notebook-to-html" title="Permalink to this headline">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Import the exporter</span>
@@ -1741,7 +2055,7 @@ jupyter nbconvert --to <i>FORMAT</i> input_notebook.ipynb
 </div>
 </div>
 <div class="section" id="convert-to-python-module">
-<h3>Convert to Python module<a class="headerlink" href="#convert-to-python-module" title="Permalink to this headline">¶</a></h3>
+<h3>Convert to Python module<a class="headerlink" href="#convert-to-python-module" title="Permalink to this headline">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># rst_exporter = RSTExporter()</span>
@@ -1761,10 +2075,10 @@ jupyter nbconvert --to <i>FORMAT</i> input_notebook.ipynb
 </div>
 </div>
 <hr class="docutils" />
-<div class="section" id="a-style-border-solid-padding-5pt-color-black-background-color-90caf9-name-debugging-dev-topics-debugging-and-testing-notebook-code-ian-a">
-<h1><a style="border: solid; padding:5pt; color:black; background-color:#90CAF9" name="debugging">Dev topics - Debugging and testing notebook code [Ian]</a><a class="headerlink" href="#a-style-border-solid-padding-5pt-color-black-background-color-90caf9-name-debugging-dev-topics-debugging-and-testing-notebook-code-ian-a" title="Permalink to this headline">¶</a></h1>
+<div class="tex2jax_ignore mathjax_ignore section" id="a-style-border-solid-padding-5pt-color-black-background-color-90caf9-name-debugging-dev-topics-debugging-and-testing-notebook-code-ian-a">
+<h1><a style="border: solid; padding:5pt; color:black; background-color:#90CAF9" name="debugging">Dev topics - Debugging and testing notebook code [Ian]</a><a class="headerlink" href="#a-style-border-solid-padding-5pt-color-black-background-color-90caf9-name-debugging-dev-topics-debugging-and-testing-notebook-code-ian-a" title="Permalink to this headline">#</a></h1>
 <div class="section" id="magics-and-errors-traceback-xmode-debug">
-<h2>Magics and errors – traceback, xmode, debug<a class="headerlink" href="#magics-and-errors-traceback-xmode-debug" title="Permalink to this headline">¶</a></h2>
+<h2>Magics and errors – traceback, xmode, debug<a class="headerlink" href="#magics-and-errors-traceback-xmode-debug" title="Permalink to this headline">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Bad code example</span>
@@ -1827,7 +2141,7 @@ HelloWorld
 </div>
 </div>
 <div class="section" id="use-tb-to-review-last-traceback">
-<h3>Use %tb to review last traceback<a class="headerlink" href="#use-tb-to-review-last-traceback" title="Permalink to this headline">¶</a></h3>
+<h3>Use %tb to review last traceback<a class="headerlink" href="#use-tb-to-review-last-traceback" title="Permalink to this headline">#</a></h3>
 <p style="font-family:consolas; font-size:15pt; color:green">
 %tb
 </p>
@@ -1873,7 +2187,7 @@ HelloWorld
 </div>
 </div>
 <div class="section" id="use-xmode-magic-to-include-parameter-values">
-<h3>Use <code class="docutils literal notranslate"><span class="pre">%xmode</span></code> magic to include parameter values<a class="headerlink" href="#use-xmode-magic-to-include-parameter-values" title="Permalink to this headline">¶</a></h3>
+<h3>Use <code class="docutils literal notranslate"><span class="pre">%xmode</span></code> magic to include parameter values<a class="headerlink" href="#use-xmode-magic-to-include-parameter-values" title="Permalink to this headline">#</a></h3>
 <p style="font-family:consolas; font-size:15pt; color:green">
 %mode { Verbose | Context | Plain | Minimal }
 </p>
@@ -1974,7 +2288,7 @@ HelloWorld
 </div>
 </div>
 <div class="section" id="exceptions-within-exceptions">
-<h3>Exceptions within Exceptions<a class="headerlink" href="#exceptions-within-exceptions" title="Permalink to this headline">¶</a></h3>
+<h3>Exceptions within Exceptions<a class="headerlink" href="#exceptions-within-exceptions" title="Permalink to this headline">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">func_in_middle2</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">):</span>
@@ -2046,7 +2360,7 @@ HelloWorld
 </div>
 </div>
 <div class="section" id="debugging-bare-handed">
-<h2>Debugging bare-handed<a class="headerlink" href="#debugging-bare-handed" title="Permalink to this headline">¶</a></h2>
+<h2>Debugging bare-handed<a class="headerlink" href="#debugging-bare-handed" title="Permalink to this headline">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%debug</span>
@@ -2145,7 +2459,7 @@ HelloWorld
 </div>
 </div>
 <div class="section" id="debugging-from-a-comfy-chair">
-<h2>Debugging from a comfy chair<a class="headerlink" href="#debugging-from-a-comfy-chair" title="Permalink to this headline">¶</a></h2>
+<h2>Debugging from a comfy chair<a class="headerlink" href="#debugging-from-a-comfy-chair" title="Permalink to this headline">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">hapless</span><span class="p">()</span>
@@ -2190,9 +2504,9 @@ HelloWorld
 </div>
 </div>
 <div class="section" id="running-jupyter-notebooks-in-a-unit-test-ian">
-<h2>Running Jupyter notebooks in a unit test [Ian]<a class="headerlink" href="#running-jupyter-notebooks-in-a-unit-test-ian" title="Permalink to this headline">¶</a></h2>
+<h2>Running Jupyter notebooks in a unit test [Ian]<a class="headerlink" href="#running-jupyter-notebooks-in-a-unit-test-ian" title="Permalink to this headline">#</a></h2>
 <div class="section" id="why-quick-and-dirty-testing">
-<h3>Why? - Quick and dirty testing<a class="headerlink" href="#why-quick-and-dirty-testing" title="Permalink to this headline">¶</a></h3>
+<h3>Why? - Quick and dirty testing<a class="headerlink" href="#why-quick-and-dirty-testing" title="Permalink to this headline">#</a></h3>
 <p>Caveats</p>
 <ul class="simple">
 <li><p>Only tests happy path</p></li>
@@ -2386,7 +2700,7 @@ See notebook &#39;../data/broken_notebook-err.ipynb&#39; for the traceback.
 </div>
 </div>
 <div class="section" id="output-when-test-fails">
-<h3>Output when test fails<a class="headerlink" href="#output-when-test-fails" title="Permalink to this headline">¶</a></h3>
+<h3>Output when test fails<a class="headerlink" href="#output-when-test-fails" title="Permalink to this headline">#</a></h3>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>        <span class="k">if</span> <span class="ow">not</span> <span class="n">cell_allows_errors</span><span class="p">:</span>
 <span class="o">&gt;</span>           <span class="k">raise</span> <span class="n">CellExecutionError</span><span class="o">.</span><span class="n">from_cell_and_msg</span><span class="p">(</span><span class="n">cell</span><span class="p">,</span> <span class="n">exec_reply_content</span><span class="p">)</span>
 <span class="n">E</span>           <span class="n">nbclient</span><span class="o">.</span><span class="n">exceptions</span><span class="o">.</span><span class="n">CellExecutionError</span><span class="p">:</span> <span class="n">An</span> <span class="n">error</span> <span class="n">occurred</span> <span class="k">while</span> <span class="n">executing</span> <span class="n">the</span> <span class="n">following</span> <span class="n">cell</span><span class="p">:</span>
@@ -2423,11 +2737,11 @@ See notebook &#39;../data/broken_notebook-err.ipynb&#39; for the traceback.
 </div>
 </div>
 <hr class="docutils" />
-<div class="section" id="end-of-session">
-<h1>End of Session<a class="headerlink" href="#end-of-session" title="Permalink to this headline">¶</a></h1>
+<div class="tex2jax_ignore mathjax_ignore section" id="end-of-session">
+<h1>End of Session<a class="headerlink" href="#end-of-session" title="Permalink to this headline">#</a></h1>
 </div>
-<div class="section" id="font-color-peru-break-5-minutes-font">
-<h1><font color=peru>Break: 5 Minutes</font><a class="headerlink" href="#font-color-peru-break-5-minutes-font" title="Permalink to this headline">¶</a></h1>
+<div class="tex2jax_ignore mathjax_ignore section" id="font-color-peru-break-5-minutes-font">
+<h1><font color=peru>Break: 5 Minutes</font><a class="headerlink" href="#font-color-peru-break-5-minutes-font" title="Permalink to this headline">#</a></h1>
 <p><img alt="" src="../../_images/dog-leash-break.jpg" /></p>
 </div>
 
@@ -2453,34 +2767,48 @@ See notebook &#39;../data/broken_notebook-err.ipynb&#39; for the traceback.
 
               </div>
               
-        
-        <div class='prev-next-bottom'>
-            
-    <a class='left-prev' id="prev-link" href="intro.html" title="previous page">Day 2</a>
-    <a class='right-next' id="next-link" href="day2-1-R-demo-notebook.html" title="next page">Workshop 2.1: <font color=peru>R Demo Notebook</font></a>
-
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+    <a class='left-prev' id="prev-link" href="intro.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Day 2</p>
         </div>
-        
+    </a>
+    <a class='right-next' id="next-link" href="day2-1-R-demo-notebook.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Workshop 2.1: <font color=peru>R Demo Notebook</font></p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            </footer>
         </div>
     </div>
-    <footer class="footer mt-5 mt-md-0">
-    <div class="container">
-      <p>
-        
-          By Roberto Rodriguez @Cyb3rWard0g<br/>
-        
-            &copy; Copyright 2021.<br/>
-      </p>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By Roberto Rodriguez @Cyb3rWard0g<br/>
+  
+      &copy; Copyright 2022.<br/>
+</p>
+        </footer>
     </div>
-  </footer>
-</main>
+    
+</div>
 
 
       </div>
     </div>
   
-  <script src="../../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
 
-  
+
   </body>
 </html>

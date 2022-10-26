@@ -7,8 +7,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Workshop 2.4: MSTICPy</title>
     
-  <link href="../../_static/css/theme.css" rel="stylesheet" />
-  <link href="../../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
 
     
   <link rel="stylesheet"
@@ -18,39 +19,38 @@
   <link rel="preload" as="font" type="font/woff2" crossorigin
     href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
 
-    
-      
-
-    
-    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="../../_static/sphinx-book-theme.acff12b8f9c144ce68a297486a2fa670.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" href="../../_static/styles/sphinx-book-theme.css?digest=62ba249389abaaa9ffc34bf36a076bdc1d65ee18" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/tabs.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/tabs.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
     
-  <link rel="preload" as="script" href="../../_static/js/index.1c5a1a01449ed65a7b51.js">
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
 
-    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
     <script src="../../_static/jquery.js"></script>
     <script src="../../_static/underscore.js"></script>
     <script src="../../_static/doctools.js"></script>
-    <script src="../../_static/togglebutton.js"></script>
     <script src="../../_static/clipboard.min.js"></script>
     <script src="../../_static/copybutton.js"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?digest=f31d14ad54b65d19161ba51d4ffff3a77ae00456"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js"></script>
     <script src="../../_static/tabs.js"></script>
-    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="../../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
-    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
-    <script >
-        const thebe_selector = ".thebe"
-        const thebe_selector_input = "pre"
-        const thebe_selector_output = ".output"
-    </script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
     <link rel="canonical" href="https://infosecjupyterthon.com/workshops/day2/day2-4-MSTICPy.html" />
     <link rel="shortcut icon" href="../../_static/favicon.ico"/>
@@ -58,10 +58,27 @@
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="prev" title="Workshop 2.3: Advanced Pandas" href="day2-3-Advanced-pandas.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="docsearch:language" content="en" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
     
   </head>
-  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
     
     <div class="container-fluid" id="banner"></div>
 
@@ -70,10 +87,15 @@
     <div class="container-xl">
       <div class="row">
           
-<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
-    
-        <div class="navbar-brand-box">
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
     <a class="navbar-brand text-wrap" href="../../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
       
       <img src="../../_static/logo.png" class="logo" alt="logo">
       
@@ -82,17 +104,22 @@
 </div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
   <i class="icon fas fa-search"></i>
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
-</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item active">
-        <p class="caption">
+        <p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
-  Editions
+  Getting Started
  </span>
 </p>
 <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../conduct.html">
+   Code of Conduct
+  </a>
+ </li>
  <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../../2021/agenda.html">
-   2021 Edition
+  <a class="reference internal" href="../../collaborators/intro.html">
+   Collaborators
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
   <label for="toctree-checkbox-1">
@@ -100,170 +127,57 @@
    </i>
   </label>
   <ul>
-   <li class="toctree-l2 has-children">
-    <a class="reference internal" href="../../2021/sessions/intro.html">
-     Sessions
-    </a>
-    <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
-    <label for="toctree-checkbox-2">
-     <i class="fas fa-chevron-down">
-     </i>
-    </label>
-    <ul>
-     <li class="toctree-l3">
-      <a class="reference internal" href="../../2021/sessions/day1-0-welcome.html">
-       <font color="peru">
-        Welcome to the InfoSec Jupyterthon 2021!
-       </font>
-      </a>
-     </li>
-    </ul>
-   </li>
-   <li class="toctree-l2 has-children">
-    <a class="reference internal" href="../../2021/speakers/intro.html">
-     Speakers
-    </a>
-    <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
-    <label for="toctree-checkbox-3">
-     <i class="fas fa-chevron-down">
-     </i>
-    </label>
-    <ul>
-     <li class="toctree-l3">
-      <a class="reference internal" href="../../2021/speakers/pete_bryan.html">
-       Pete Bryan
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="../../2021/speakers/roberto_rodriguez.html">
-       Roberto Rodriguez
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="../../2021/speakers/jose_rodriguez.html">
-       Jose Rodriguez
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="../../2021/speakers/ian_hellen.html">
-       Ian Hellen
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="../../2021/speakers/ashwin_patil.html">
-       Ashwin Patil
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="../../2021/speakers/luis_f_monge.html">
-       Luis F Monge
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="../../2021/speakers/mehmet_ergene.html">
-       Mehmet Ergene
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="../../2021/speakers/leo_meyerovich.html">
-       Leo Meyerovich
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="../../2021/speakers/joe_petroske.html">
-       Joe Petroske
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="../../2021/speakers/john_lambert.html">
-       John Lambert
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="../../2021/speakers/neil_desai.html">
-       Neil Desai
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="../../2021/speakers/neal_shenk.html">
-       Neal Shenk
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="../../2021/speakers/sil_han.html">
-       Sil Han
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="../../2021/speakers/natanela_brod.html">
-       Natanela Brod
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="../../2021/speakers/xiaokui_shu.html">
-       Xiaokui Shu
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="../../2021/speakers/mark_kendrick.html">
-       Mark Kendrick
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="../../2021/speakers/shachar_roitman.html">
-       Shachar Roitman
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="../../2021/speakers/elisabeth_weber.html">
-       Elisabeth Weber
-      </a>
-     </li>
-    </ul>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../../2020/agenda.html">
-   2020 Edition
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
-  <label for="toctree-checkbox-4">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
    <li class="toctree-l2">
-    <a class="reference internal" href="../../2020/notebooks/0_banner.html">
-     Infosec Jupyterthon 2020!
+    <a class="reference internal" href="../../collaborators/Roberto-Rodriguez.html">
+     Roberto Rodriguez
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../../2020/notebooks/1_what_about_notebooks.html">
-     <font color="peru">
-      Welcome Infosec Community!
-     </font>
+    <a class="reference internal" href="../../collaborators/Chi-Nguyen.html">
+     Chi Nguyen
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../../2020/notebooks/2_Jupyterthon_Cyb3rPandaH_2020.html">
-     ATT&amp;CK - APT29 Evals Datasets
+    <a class="reference internal" href="../../collaborators/Ian-Hellen.html">
+     Ian Hellen
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../../2020/notebooks/6_OSQuery-Tables-interactive_Jupyterthon.html">
-     Untangling the Osquery❓ tables web🕸 using Jupyter Notebooks📓
+    <a class="reference internal" href="../../collaborators/Joyce-Bacic.html">
+     Joyce Bacic
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../../2020/notebooks/12_Jupyterthon-TimeSeries-Demo.html">
-     Anomaly detection and visualization using Time Series Decomposition
+    <a class="reference internal" href="../../collaborators/Ashwin-Patil.html">
+     Ashwin Patil
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../collaborators/Thomas-Roccia.html">
+     Thomas Roccia
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../collaborators/Pete-Bryan.html">
+     Pete Bryan
     </a>
    </li>
   </ul>
  </li>
 </ul>
-<p class="caption">
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  2022 Edition
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../2022/agenda.html">
+   agenda
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Workshops
  </span>
@@ -273,8 +187,8 @@
   <a class="reference internal" href="../day1/intro.html">
    Day 1
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
-  <label for="toctree-checkbox-5">
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
    <i class="fas fa-chevron-down">
    </i>
   </label>
@@ -309,8 +223,8 @@
   <a class="reference internal" href="intro.html">
    Day 2
   </a>
-  <input checked="" class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
-  <label for="toctree-checkbox-6">
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
    <i class="fas fa-chevron-down">
    </i>
   </label>
@@ -360,103 +274,177 @@
 </ul>
 
     </div>
-</nav> <!-- To handle the deprecated key -->
-
-<div class="navbar_extra_footer">
-  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
-</div>
-
-</div>
-
-
-          
-
-
-          
-<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
-    
-    <div class="topbar container-xl fixed-top">
-    <div class="topbar-contents row">
-        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
-        <div class="col pl-md-4 topbar-main">
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
             
-            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
-                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
-                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
-                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
-                <i class="fas fa-bars"></i>
-                <i class="fas fa-arrow-left"></i>
-                <i class="fas fa-arrow-up"></i>
-            </button>
-            
-            
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
-            class="fas fa-download"></i></button>
-
-    <div class="dropdown-buttons">
-        <!-- ipynb file if we had a myst markdown file -->
-        
-        <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../../_sources/workshops/day2/day2-4-MSTICPy.ipynb"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
-                data-placement="left">.ipynb</button></a>
-        <!-- Download PDF via print -->
-        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
-            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
-    </div>
-</div>
-
-            <!-- Source interaction buttons -->
-
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
-        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
-    <div class="dropdown-buttons sourcebuttons">
-        
-        
-        <a class="edit-button" href="https://github.com/OTRF/infosec-jupyterthon/edit/master/docs/workshops/day2/day2-4-MSTICPy.ipynb"><button
-                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
-                title="Edit this page"><i class="fas fa-pencil-alt"></i>suggest edit</button></a>
-    </div>
-</div>
-
-            <!-- Full screen (wrap in <a> to have style consistency -->
-
-<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
-        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
-        title="Fullscreen mode"><i
-            class="fas fa-expand"></i></button></a>
-
-            <!-- Launch buttons -->
-
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
-        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
-    <div class="dropdown-buttons">
-        
-        <a class="binder-button" href="https://mybinder.org/v2/gh/OTRF/infosec-jupyterthon/master?urlpath=lab/tree/docs/workshops/day2/day2-4-MSTICPy.ipynb"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
-                data-placement="left"><img class="binder-button-logo"
-                    src="../../_static/images/logo_binder.svg"
-                    alt="Interact on binder">Binder</button></a>
-        
-        
-        
-        
-    </div>
-</div>
-
-        </div>
-
-        <!-- Table of contents -->
-        <div class="d-none d-md-block col-md-2 bd-toc show">
-            
-            <div class="tocsection onthispage pt-5 pb-3">
-                <i class="fas fa-list"></i> Contents
+            <div class="navbar_extra_footer">
+            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
             </div>
-            <nav id="bd-toc-nav">
-                <ul class="visible nav section-nav flex-column">
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<div class="menu-dropdown menu-dropdown-launch-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Launch interactive content">
+      <i class="fas fa-rocket"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://mybinder.org/v2/gh/OTRF/infosec-jupyterthon/master?urlpath=lab/tree/docs/workshops/day2/day2-4-MSTICPy.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on Binder"
+>
+  
+
+<span class="headerbtn__icon-container">
+  
+    <img src="../../_static/images/logo_binder.svg">
+  </span>
+<span class="headerbtn__text-container">Binder</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+<a href="https://github.com/OTRF/infosec-jupyterthon/edit/master/docs/workshops/day2/day2-4-MSTICPy.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="bottom"
+title="Edit this page"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-pencil-alt"></i>
+  </span>
+
+</a>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="../../_sources/workshops/day2/day2-4-MSTICPy.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.ipynb</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
  <li class="toc-h1 nav-item toc-entry">
   <a class="reference internal nav-link" href="#">
    Workshop 2.4:
@@ -670,19 +658,248 @@
  </li>
 </ul>
 
-            </nav>
-        </div>
-    </div>
+    </nav>
 </div>
-    <div id="main-content" class="row">
-        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
-        
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Workshop 2.4: <font color=peru>MSTICPy</font></h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   Workshop 2.4:
+   <font color="peru">
+    MSTICPy
+   </font>
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#a-style-border-solid-padding-5pt-color-black-background-color-90caf9-name-basics-basics-installing-and-configuring-a">
+   <a name="basics" style="border: solid; padding:5pt; color:black; background-color:#90CAF9">
+    Basics - installing and configuring
+   </a>
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#configuration">
+     Configuration
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#msticpy-s-config-file">
+       MSTICPy’s config file
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#a-style-border-solid-padding-5pt-color-black-background-color-90caf9-name-widgets-msticpy-widgets-a">
+   <a name="widgets" style="border: solid; padding:5pt; color:black; background-color:#90CAF9">
+    MSTICPy Widgets
+   </a>
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#a-style-border-solid-padding-5pt-color-black-background-color-90caf9-name-query-provs-query-providers-revisited-ian-a">
+   <a name="query_provs" style="border: solid; padding:5pt; color:black; background-color:#90CAF9">
+    Query providers revisited [Ian]
+   </a>
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#supported-providers">
+     Supported providers
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#list-queries-and-running-a-query">
+     list_queries and running a query
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#query-time-ranges">
+     Query time ranges
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#query-parameters">
+     Query parameters
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#datetime-parameters-are-special">
+       DateTime parameters are special
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#add-query-items-parameter">
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         add_query_items
+        </span>
+       </code>
+       parameter
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#splitting-queries">
+       Splitting queries
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#creating-custom-queries-basic-format">
+     Creating Custom queries - Basic format
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#kusto-log-analytics-example">
+       Kusto/Log Analytics example
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#splunk-example">
+       Splunk example
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#odata-example">
+       OData Example
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#specifying-custom-path-for-queries">
+       Specifying custom path for queries
+      </a>
+      <ul class="nav section-nav flex-column">
+       <li class="toc-h4 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#msticpyconfig-yaml">
+         <code class="docutils literal notranslate">
+          <span class="pre">
+           msticpyconfig.yaml
+          </span>
+         </code>
+        </a>
+       </li>
+      </ul>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#a-style-border-solid-padding-5pt-color-black-background-color-90caf9-name-ti-enrichment-threat-intelligence-a">
+   <a name="ti" style="border: solid; padding:5pt; color:black; background-color:#90CAF9">
+    Enrichment - Threat intelligence
+   </a>
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#a-style-border-solid-padding-5pt-color-black-background-color-90caf9-name-enrich-enrichment-other-enrichment-pete-a">
+   <a name="enrich" style="border: solid; padding:5pt; color:black; background-color:#90CAF9">
+    Enrichment - Other enrichment [Pete]
+   </a>
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#ip-tools">
+     IP Tools
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#domain-tools">
+     Domain Tools
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#azure-data-enrichment">
+     Azure Data Enrichment
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#a-style-border-solid-padding-5pt-color-black-background-color-90caf9-name-pivots-pivot-functions-ian-a">
+   <a name="pivots" style="border: solid; padding:5pt; color:black; background-color:#90CAF9">
+    Pivot functions [Ian]
+   </a>
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#motivation">
+     Motivation
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#access-functionality-from-entities">
+     Access functionality from entities
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#inputs-can-be-single-values-lists-or-dataframes">
+     Inputs can be single values, lists or DataFrames
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#creating-pivot-pipelines">
+     Creating Pivot pipelines
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#a-style-border-solid-padding-5pt-color-black-background-color-90caf9-name-notebooklets-notebooklets-macros-for-notebooks-ian-a">
+   <a name="notebooklets" style="border: solid; padding:5pt; color:black; background-color:#90CAF9">
+    Notebooklets - “Macros” for Notebooks [Ian]
+   </a>
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#a-style-border-solid-padding-5pt-color-black-background-color-90caf9-name-mp-hack-msticpy-community-sprint-jan-2022-a">
+   <a name="mp_hack" style="border: solid; padding:5pt; color:black; background-color:#90CAF9">
+    MSTICPy Community Sprint - Jan 2022
+   </a>
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#end-of-session-end-of-the-workshop">
+   End of Session, End of the Workshop!!!
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#font-color-peru-lunch-break-45-minutes-font">
+   <font color="peru">
+    Lunch break: 45 Minutes
+   </font>
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
+                
               <div>
                 
   <p><img alt="Banner" src="../../_images/banner2.png" /></p>
 <hr class="docutils" />
-<div class="section" id="workshop-2-4-font-color-peru-msticpy-font">
-<h1>Workshop 2.4: <font color=peru>MSTICPy</font><a class="headerlink" href="#workshop-2-4-font-color-peru-msticpy-font" title="Permalink to this headline">¶</a></h1>
+<div class="tex2jax_ignore mathjax_ignore section" id="workshop-2-4-font-color-peru-msticpy-font">
+<h1>Workshop 2.4: <font color=peru>MSTICPy</font><a class="headerlink" href="#workshop-2-4-font-color-peru-msticpy-font" title="Permalink to this headline">#</a></h1>
 <br>
 <span style="font-size:18pt"> - Microsoft Threat Intelligence Center Jupyter & Python Security Tools</span>
 </span></h1>
@@ -723,8 +940,8 @@ Python Package: <a class="reference external" href="https://pypi.org/project/mst
 Docs: <a class="reference external" href="https://msticpy.readthedocs.io/en/latest/">https://msticpy.readthedocs.io/en/latest/</a></p>
 </div>
 <hr class="docutils" />
-<div class="section" id="a-style-border-solid-padding-5pt-color-black-background-color-90caf9-name-basics-basics-installing-and-configuring-a">
-<h1><a style="border: solid; padding:5pt; color:black; background-color:#90CAF9" name="basics">Basics - installing and configuring</a><a class="headerlink" href="#a-style-border-solid-padding-5pt-color-black-background-color-90caf9-name-basics-basics-installing-and-configuring-a" title="Permalink to this headline">¶</a></h1>
+<div class="tex2jax_ignore mathjax_ignore section" id="a-style-border-solid-padding-5pt-color-black-background-color-90caf9-name-basics-basics-installing-and-configuring-a">
+<h1><a style="border: solid; padding:5pt; color:black; background-color:#90CAF9" name="basics">Basics - installing and configuring</a><a class="headerlink" href="#a-style-border-solid-padding-5pt-color-black-background-color-90caf9-name-basics-basics-installing-and-configuring-a" title="Permalink to this headline">#</a></h1>
 <p>To use any library in Python you first need to install the pacakge and import it.
 There are several ways to do this depending on how you want to access the library, however the simplest and easiest is using pip. <a class="reference external" href="https://pypi.org/project/pip/">Pip</a> is the pacakge installer for Python and makes finding and installing Python pacakges simple.
 You can use pip to install packages via the command line, or if you are using a notebook, directly in a notebook cell. Azure ML compute come with Pip installed already but if you are running your notebook elsewhere you may need to install pip first.</p>
@@ -947,7 +1164,7 @@ Requirement already satisfied: async-generator in c:\users\ian\anaconda3\envs\co
 </div>
 </div>
 <div class="section" id="configuration">
-<h2>Configuration<a class="headerlink" href="#configuration" title="Permalink to this headline">¶</a></h2>
+<h2>Configuration<a class="headerlink" href="#configuration" title="Permalink to this headline">#</a></h2>
 <p>Once installed MSTICPy can be imported in the same way as any other Python library, however to make things a bit easier we have created the <code class="docutils literal notranslate"><span class="pre">init_notebook</span></code> function that will automatically import the library and configure it for use in a Jupyter Notebook.</p>
 <p style="border: solid; padding: 5pt; color: white; background-color: DarkOliveGreen"><b>Note:</b>
 Passing `globals()` lets the init function import stuff into the notebook top-level namespace
@@ -965,7 +1182,7 @@ Passing `globals()` lets the init function import stuff into the notebook top-le
 </div>
 </div>
 <div class="section" id="msticpy-s-config-file">
-<h3>MSTICPy’s config file<a class="headerlink" href="#msticpy-s-config-file" title="Permalink to this headline">¶</a></h3>
+<h3>MSTICPy’s config file<a class="headerlink" href="#msticpy-s-config-file" title="Permalink to this headline">#</a></h3>
 <p>MSTICPy can handle connections to a variety of data sources and services, including Azure Sentinel.</p>
 <p>To make it easier to manage and re-use the configuration and credentials fo these things MSTICPy has its own config file that holds these items - <code class="docutils literal notranslate"><span class="pre">msticpyconfig.yaml</span></code></p>
 <p>If you didn’t have a <code class="docutils literal notranslate"><span class="pre">msticpyconfig.yaml</span></code> file in your workspace folder (which is likely if this is your first use of MSTICPY), the <code class="docutils literal notranslate"><span class="pre">init_notebook</span></code> function should have created one for you and populated it file structure you are in.</p>
@@ -1014,8 +1231,8 @@ msticpy:
 </div>
 </div>
 <hr class="docutils" />
-<div class="section" id="a-style-border-solid-padding-5pt-color-black-background-color-90caf9-name-widgets-msticpy-widgets-a">
-<h1><a style="border: solid; padding:5pt; color:black; background-color:#90CAF9" name="widgets">MSTICPy Widgets</a><a class="headerlink" href="#a-style-border-solid-padding-5pt-color-black-background-color-90caf9-name-widgets-msticpy-widgets-a" title="Permalink to this headline">¶</a></h1>
+<div class="tex2jax_ignore mathjax_ignore section" id="a-style-border-solid-padding-5pt-color-black-background-color-90caf9-name-widgets-msticpy-widgets-a">
+<h1><a style="border: solid; padding:5pt; color:black; background-color:#90CAF9" name="widgets">MSTICPy Widgets</a><a class="headerlink" href="#a-style-border-solid-padding-5pt-color-black-background-color-90caf9-name-widgets-msticpy-widgets-a" title="Permalink to this headline">#</a></h1>
 <p>MSTICPy include a series of Notebook widgets to make interacting with data easier, especially for users without a programming background.</p>
 <p>The widgets are designed to fulfil a number of common tasks that a user might need to interact with a notebook such as select items from returned data, or set a timeframe for a query.</p>
 <p>The widgets themselves are build in ipywidgets and are available in the <code class="docutils literal notranslate"><span class="pre">msticpy.nbtools.nbwidgets</span></code> module.</p>
@@ -1274,10 +1491,10 @@ This can be done by simply creating a widget with the same parameters as previou
 <p>More details on MSTICPy’s widgets can be found here: <a class="reference external" href="https://msticpy.readthedocs.io/en/latest/visualization/NotebookWidgets.html">https://msticpy.readthedocs.io/en/latest/visualization/NotebookWidgets.html</a></p>
 </div>
 <hr class="docutils" />
-<div class="section" id="a-style-border-solid-padding-5pt-color-black-background-color-90caf9-name-query-provs-query-providers-revisited-ian-a">
-<h1><a style="border: solid; padding:5pt; color:black; background-color:#90CAF9" name="query_provs">Query providers revisited [Ian]</a><a class="headerlink" href="#a-style-border-solid-padding-5pt-color-black-background-color-90caf9-name-query-provs-query-providers-revisited-ian-a" title="Permalink to this headline">¶</a></h1>
+<div class="tex2jax_ignore mathjax_ignore section" id="a-style-border-solid-padding-5pt-color-black-background-color-90caf9-name-query-provs-query-providers-revisited-ian-a">
+<h1><a style="border: solid; padding:5pt; color:black; background-color:#90CAF9" name="query_provs">Query providers revisited [Ian]</a><a class="headerlink" href="#a-style-border-solid-padding-5pt-color-black-background-color-90caf9-name-query-provs-query-providers-revisited-ian-a" title="Permalink to this headline">#</a></h1>
 <div class="section" id="supported-providers">
-<h2>Supported providers<a class="headerlink" href="#supported-providers" title="Permalink to this headline">¶</a></h2>
+<h2>Supported providers<a class="headerlink" href="#supported-providers" title="Permalink to this headline">#</a></h2>
 <ul class="simple">
 <li><p>Microsoft Sentinel</p></li>
 <li><p>Microsoft Defender/Defender for Endpoint</p></li>
@@ -1313,7 +1530,7 @@ Warning: Custom query definitions path data not found
 </div>
 </div>
 <div class="section" id="list-queries-and-running-a-query">
-<h2>list_queries and running a query<a class="headerlink" href="#list-queries-and-running-a-query" title="Permalink to this headline">¶</a></h2>
+<h2>list_queries and running a query<a class="headerlink" href="#list-queries-and-running-a-query" title="Permalink to this headline">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">qry_prov_az</span><span class="o">.</span><span class="n">list_queries</span><span class="p">()[:</span><span class="mi">10</span><span class="p">]</span>
@@ -1373,7 +1590,7 @@ of the given arguments and keywords.
 </div>
 </div>
 <div class="section" id="query-time-ranges">
-<h2>Query time ranges<a class="headerlink" href="#query-time-ranges" title="Permalink to this headline">¶</a></h2>
+<h2>Query time ranges<a class="headerlink" href="#query-time-ranges" title="Permalink to this headline">#</a></h2>
 <p>Each provider has a built-in (modifiable) time range.</p>
 <p>This supplies time parameters:</p>
 <ul class="simple">
@@ -1394,7 +1611,7 @@ of the given arguments and keywords.
 </div>
 </div>
 <div class="section" id="query-parameters">
-<h2>Query parameters<a class="headerlink" href="#query-parameters" title="Permalink to this headline">¶</a></h2>
+<h2>Query parameters<a class="headerlink" href="#query-parameters" title="Permalink to this headline">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">qry_prov_az</span><span class="o">.</span><span class="n">browse</span><span class="p">()</span>
@@ -1685,7 +1902,7 @@ of the given arguments and keywords.
 </div></div></div>
 </div>
 <div class="section" id="datetime-parameters-are-special">
-<h3>DateTime parameters are special<a class="headerlink" href="#datetime-parameters-are-special" title="Permalink to this headline">¶</a></h3>
+<h3>DateTime parameters are special<a class="headerlink" href="#datetime-parameters-are-special" title="Permalink to this headline">#</a></h3>
 <p>Can supply:</p>
 <ul class="simple">
 <li><p>Python datetimes</p></li>
@@ -1897,7 +2114,7 @@ of the given arguments and keywords.
 </div>
 </div>
 <div class="section" id="add-query-items-parameter">
-<h3><code class="docutils literal notranslate"><span class="pre">add_query_items</span></code> parameter<a class="headerlink" href="#add-query-items-parameter" title="Permalink to this headline">¶</a></h3>
+<h3><code class="docutils literal notranslate"><span class="pre">add_query_items</span></code> parameter<a class="headerlink" href="#add-query-items-parameter" title="Permalink to this headline">#</a></h3>
 <p>Add arbitrary query statements</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1958,7 +2175,7 @@ of the given arguments and keywords.
 </div>
 </div>
 <div class="section" id="splitting-queries">
-<h3>Splitting queries<a class="headerlink" href="#splitting-queries" title="Permalink to this headline">¶</a></h3>
+<h3>Splitting queries<a class="headerlink" href="#splitting-queries" title="Permalink to this headline">#</a></h3>
 <p>Divide queries into equal time chunks.
 Useful for queries that exceed timeouts or data limits</p>
 <p>Caveats:</p>
@@ -2035,10 +2252,10 @@ Useful for queries that exceed timeouts or data limits</p>
 </div>
 </div>
 <div class="section" id="creating-custom-queries-basic-format">
-<h2>Creating Custom queries - Basic format<a class="headerlink" href="#creating-custom-queries-basic-format" title="Permalink to this headline">¶</a></h2>
+<h2>Creating Custom queries - Basic format<a class="headerlink" href="#creating-custom-queries-basic-format" title="Permalink to this headline">#</a></h2>
 <p>YAML files</p>
 <div class="section" id="kusto-log-analytics-example">
-<h3>Kusto/Log Analytics example<a class="headerlink" href="#kusto-log-analytics-example" title="Permalink to this headline">¶</a></h3>
+<h3>Kusto/Log Analytics example<a class="headerlink" href="#kusto-log-analytics-example" title="Permalink to this headline">#</a></h3>
 <div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">metadata</span><span class="p">:</span>
   <span class="nt">version</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">1</span>
   <span class="nt">description</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Linux Syslog Host Activity Queries</span>
@@ -2088,7 +2305,7 @@ Useful for queries that exceed timeouts or data limits</p>
 </div>
 </div>
 <div class="section" id="splunk-example">
-<h3>Splunk example<a class="headerlink" href="#splunk-example" title="Permalink to this headline">¶</a></h3>
+<h3>Splunk example<a class="headerlink" href="#splunk-example" title="Permalink to this headline">#</a></h3>
 <div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">list_all_alerts</span><span class="p">:</span>
     <span class="nt">description</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Retrieves all configured alerts</span>
     <span class="nt">metadata</span><span class="p">:</span>
@@ -2103,7 +2320,7 @@ Useful for queries that exceed timeouts or data limits</p>
 </div>
 </div>
 <div class="section" id="odata-example">
-<h3>OData Example<a class="headerlink" href="#odata-example" title="Permalink to this headline">¶</a></h3>
+<h3>OData Example<a class="headerlink" href="#odata-example" title="Permalink to this headline">#</a></h3>
 <div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">list_alerts_for_user</span><span class="p">:</span>
     <span class="nt">description</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Retrieves list of alerts for a user account</span>
     <span class="nt">metadata</span><span class="p">:</span>
@@ -2119,7 +2336,7 @@ Useful for queries that exceed timeouts or data limits</p>
 </div>
 </div>
 <div class="section" id="specifying-custom-path-for-queries">
-<h3>Specifying custom path for queries<a class="headerlink" href="#specifying-custom-path-for-queries" title="Permalink to this headline">¶</a></h3>
+<h3>Specifying custom path for queries<a class="headerlink" href="#specifying-custom-path-for-queries" title="Permalink to this headline">#</a></h3>
 <p>At runtime or in config</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -2129,7 +2346,7 @@ Useful for queries that exceed timeouts or data limits</p>
 </div>
 </div>
 <div class="section" id="msticpyconfig-yaml">
-<h4><code class="docutils literal notranslate"><span class="pre">msticpyconfig.yaml</span></code><a class="headerlink" href="#msticpyconfig-yaml" title="Permalink to this headline">¶</a></h4>
+<h4><code class="docutils literal notranslate"><span class="pre">msticpyconfig.yaml</span></code><a class="headerlink" href="#msticpyconfig-yaml" title="Permalink to this headline">#</a></h4>
 <div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">QueryDefinitions</span><span class="p">:</span>
   <span class="nt">Custom</span><span class="p">:</span>
     <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">~/my_queries</span>
@@ -2141,8 +2358,8 @@ Useful for queries that exceed timeouts or data limits</p>
 </div>
 </div>
 <hr class="docutils" />
-<div class="section" id="a-style-border-solid-padding-5pt-color-black-background-color-90caf9-name-ti-enrichment-threat-intelligence-a">
-<h1><a style="border: solid; padding:5pt; color:black; background-color:#90CAF9" name="ti">Enrichment - Threat intelligence</a><a class="headerlink" href="#a-style-border-solid-padding-5pt-color-black-background-color-90caf9-name-ti-enrichment-threat-intelligence-a" title="Permalink to this headline">¶</a></h1>
+<div class="tex2jax_ignore mathjax_ignore section" id="a-style-border-solid-padding-5pt-color-black-background-color-90caf9-name-ti-enrichment-threat-intelligence-a">
+<h1><a style="border: solid; padding:5pt; color:black; background-color:#90CAF9" name="ti">Enrichment - Threat intelligence</a><a class="headerlink" href="#a-style-border-solid-padding-5pt-color-black-background-color-90caf9-name-ti-enrichment-threat-intelligence-a" title="Permalink to this headline">#</a></h1>
 <p style="border: solid; padding: 5pt; color: black; background-color: Orange"><b>Note:</b>
 These sections will use a number of live services, you may not have credentials for these services so they may not run correctly for you.</p>
 <p>A very common element of security investigations is to enrich data with Threat Intelligence data from external parties. To support his MSTICPy has integrations with a number of Threat Intelligence providers including:</p>
@@ -2406,8 +2623,8 @@ This library uses services provided by ipstack.
 <p>More details on Threat Intelligence lookups in MSTICPy can be found in the documenation: <a class="reference external" href="https://msticpy.readthedocs.io/en/latest/data_acquisition/TIProviders.html">https://msticpy.readthedocs.io/en/latest/data_acquisition/TIProviders.html</a></p>
 </div>
 <hr class="docutils" />
-<div class="section" id="a-style-border-solid-padding-5pt-color-black-background-color-90caf9-name-enrich-enrichment-other-enrichment-pete-a">
-<h1><a style="border: solid; padding:5pt; color:black; background-color:#90CAF9" name="enrich">Enrichment - Other enrichment [Pete]</a><a class="headerlink" href="#a-style-border-solid-padding-5pt-color-black-background-color-90caf9-name-enrich-enrichment-other-enrichment-pete-a" title="Permalink to this headline">¶</a></h1>
+<div class="tex2jax_ignore mathjax_ignore section" id="a-style-border-solid-padding-5pt-color-black-background-color-90caf9-name-enrich-enrichment-other-enrichment-pete-a">
+<h1><a style="border: solid; padding:5pt; color:black; background-color:#90CAF9" name="enrich">Enrichment - Other enrichment [Pete]</a><a class="headerlink" href="#a-style-border-solid-padding-5pt-color-black-background-color-90caf9-name-enrich-enrichment-other-enrichment-pete-a" title="Permalink to this headline">#</a></h1>
 <p>Another key feature of MSTICPy is the ability to enrich your core security log data with additional data sources that help provide additional information and context to a security analyst.<br>
 There are a number of data enrichments avaliable including:<br></p>
 <ul class="simple">
@@ -2416,7 +2633,7 @@ There are a number of data enrichments avaliable including:<br></p>
 <li><p>Azure API data to provide additional data on Azure resources.</p></li>
 </ul>
 <div class="section" id="ip-tools">
-<h2>IP Tools<a class="headerlink" href="#ip-tools" title="Permalink to this headline">¶</a></h2>
+<h2>IP Tools<a class="headerlink" href="#ip-tools" title="Permalink to this headline">#</a></h2>
 <p>MSTICPy contains a number of IP related enrichments the are grouped under the IPAddress entity type.
 GeoIP is a useful feature to enrich your data with information about the location of an IP address and provide context about whether the IP address shoudl be considered suspicious or not.<br>
 MSTICPy supports getting GeoIP data from tow key sources, MaxMind’s GeoIPLite service, and the IPStack Geo service.</p>
@@ -2451,7 +2668,7 @@ Both of these GeoIP services require an API key - more details can be found in t
 </div>
 </div>
 <div class="section" id="domain-tools">
-<h2>Domain Tools<a class="headerlink" href="#domain-tools" title="Permalink to this headline">¶</a></h2>
+<h2>Domain Tools<a class="headerlink" href="#domain-tools" title="Permalink to this headline">#</a></h2>
 <p>Similar enrichments exist for other common entity types such as domains (under the Dns entity type):</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -2523,7 +2740,7 @@ Screenshots are enabled by the <a href="https://browshot.com/">Browshot</a> serv
 </div>
 </div>
 <div class="section" id="azure-data-enrichment">
-<h2>Azure Data Enrichment<a class="headerlink" href="#azure-data-enrichment" title="Permalink to this headline">¶</a></h2>
+<h2>Azure Data Enrichment<a class="headerlink" href="#azure-data-enrichment" title="Permalink to this headline">#</a></h2>
 <p>MSTICPy also includes a number of Azure API integrations that can be used to enrich your data with additional data about Azure Resources. These are avaliable in two fromats, via the <code class="docutils literal notranslate"><span class="pre">AzureData</span></code> feature of MSTICPy and also via the new Azure Resource Graph data connector.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -3295,8 +3512,8 @@ Attempting to sign-in with environment variable credentials...
 </div>
 </div>
 <hr class="docutils" />
-<div class="section" id="a-style-border-solid-padding-5pt-color-black-background-color-90caf9-name-pivots-pivot-functions-ian-a">
-<h1><a style="border: solid; padding:5pt; color:black; background-color:#90CAF9" name="pivots">Pivot functions [Ian]</a><a class="headerlink" href="#a-style-border-solid-padding-5pt-color-black-background-color-90caf9-name-pivots-pivot-functions-ian-a" title="Permalink to this headline">¶</a></h1>
+<div class="tex2jax_ignore mathjax_ignore section" id="a-style-border-solid-padding-5pt-color-black-background-color-90caf9-name-pivots-pivot-functions-ian-a">
+<h1><a style="border: solid; padding:5pt; color:black; background-color:#90CAF9" name="pivots">Pivot functions [Ian]</a><a class="headerlink" href="#a-style-border-solid-padding-5pt-color-black-background-color-90caf9-name-pivots-pivot-functions-ian-a" title="Permalink to this headline">#</a></h1>
 <p>Pivot functions are methods of entities that provide:</p>
 <ul class="simple">
 <li><p>data queries related to an entity</p></li>
@@ -3305,7 +3522,7 @@ Attempting to sign-in with environment variable credentials...
 <p>Pivot functions are dynamically attached to entities. We created this
 framework to make it easier to find which functions you can use for which entity type.</p>
 <div class="section" id="motivation">
-<h2>Motivation<a class="headerlink" href="#motivation" title="Permalink to this headline">¶</a></h2>
+<h2>Motivation<a class="headerlink" href="#motivation" title="Permalink to this headline">#</a></h2>
 <ul class="simple">
 <li><p>We had built a lot of functionality in MSTICPy for querying and enrichment</p></li>
 <li><p>A lot of the functions had inconsistent type/parameter signatures</p></li>
@@ -3314,7 +3531,7 @@ framework to make it easier to find which functions you can use for which entity
 </ul>
 </div>
 <div class="section" id="access-functionality-from-entities">
-<h2>Access functionality from entities<a class="headerlink" href="#access-functionality-from-entities" title="Permalink to this headline">¶</a></h2>
+<h2>Access functionality from entities<a class="headerlink" href="#access-functionality-from-entities" title="Permalink to this headline">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pivot</span> <span class="o">=</span> <span class="n">Pivot</span><span class="p">(</span><span class="n">namespace</span><span class="o">=</span><span class="nb">globals</span><span class="p">())</span>
@@ -3445,7 +3662,7 @@ framework to make it easier to find which functions you can use for which entity
 </div>
 </div>
 <div class="section" id="inputs-can-be-single-values-lists-or-dataframes">
-<h2>Inputs can be single values, lists or DataFrames<a class="headerlink" href="#inputs-can-be-single-values-lists-or-dataframes" title="Permalink to this headline">¶</a></h2>
+<h2>Inputs can be single values, lists or DataFrames<a class="headerlink" href="#inputs-can-be-single-values-lists-or-dataframes" title="Permalink to this headline">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">ioc</span> --out ip_list
@@ -3722,7 +3939,7 @@ framework to make it easier to find which functions you can use for which entity
 </div>
 </div>
 <div class="section" id="creating-pivot-pipelines">
-<h2>Creating Pivot pipelines<a class="headerlink" href="#creating-pivot-pipelines" title="Permalink to this headline">¶</a></h2>
+<h2>Creating Pivot pipelines<a class="headerlink" href="#creating-pivot-pipelines" title="Permalink to this headline">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">list</span><span class="p">(</span><span class="n">ip_list</span><span class="p">[</span><span class="s2">&quot;ipv4&quot;</span><span class="p">])[:</span><span class="mi">4</span><span class="p">]</span>
@@ -3749,8 +3966,8 @@ framework to make it easier to find which functions you can use for which entity
 </div>
 </div>
 <hr class="docutils" />
-<div class="section" id="a-style-border-solid-padding-5pt-color-black-background-color-90caf9-name-notebooklets-notebooklets-macros-for-notebooks-ian-a">
-<h1><a style="border: solid; padding:5pt; color:black; background-color:#90CAF9" name="notebooklets">Notebooklets - “Macros” for Notebooks [Ian]</a><a class="headerlink" href="#a-style-border-solid-padding-5pt-color-black-background-color-90caf9-name-notebooklets-notebooklets-macros-for-notebooks-ian-a" title="Permalink to this headline">¶</a></h1>
+<div class="tex2jax_ignore mathjax_ignore section" id="a-style-border-solid-padding-5pt-color-black-background-color-90caf9-name-notebooklets-notebooklets-macros-for-notebooks-ian-a">
+<h1><a style="border: solid; padding:5pt; color:black; background-color:#90CAF9" name="notebooklets">Notebooklets - “Macros” for Notebooks [Ian]</a><a class="headerlink" href="#a-style-border-solid-padding-5pt-color-black-background-color-90caf9-name-notebooklets-notebooklets-macros-for-notebooks-ian-a" title="Permalink to this headline">#</a></h1>
 <p>We built notebooklets because life is too short keep writing (copy/pasting) the same code over and over again.</p>
 <p>The Notebooklets (MSTICNB) package multiple notebook cells for common investigation routines into simple functions</p>
 <p><a style="font-family: consolas; font-size:15pt"
@@ -3813,8 +4030,8 @@ framework to make it easier to find which functions you can use for which entity
 </div>
 </div>
 <hr class="docutils" />
-<div class="section" id="a-style-border-solid-padding-5pt-color-black-background-color-90caf9-name-mp-hack-msticpy-community-sprint-jan-2022-a">
-<h1><a style="border: solid; padding:5pt; color:black; background-color:#90CAF9" name="mp_hack">MSTICPy Community Sprint - Jan 2022</a><a class="headerlink" href="#a-style-border-solid-padding-5pt-color-black-background-color-90caf9-name-mp-hack-msticpy-community-sprint-jan-2022-a" title="Permalink to this headline">¶</a></h1>
+<div class="tex2jax_ignore mathjax_ignore section" id="a-style-border-solid-padding-5pt-color-black-background-color-90caf9-name-mp-hack-msticpy-community-sprint-jan-2022-a">
+<h1><a style="border: solid; padding:5pt; color:black; background-color:#90CAF9" name="mp_hack">MSTICPy Community Sprint - Jan 2022</a><a class="headerlink" href="#a-style-border-solid-padding-5pt-color-black-background-color-90caf9-name-mp-hack-msticpy-community-sprint-jan-2022-a" title="Permalink to this headline">#</a></h1>
 <p><img alt="Hackathon Logo" src="https://techcommunity.microsoft.com/t5/image/serverpage/image-id/330538iE56905C1481518D3/image-size/large?v=v2&amp;px=999" /></p>
 <p>MSTICPy is always open to contributions from the community, whether this be fixes to the current code base, feature additions, or just new ideas and suggestions.
 However, we know that contributing to an Open Source project can be a bit daunting, especially if it’s not something you have done before.</p>
@@ -3831,11 +4048,11 @@ We will provide:</p>
 <p>Or follow us on twitter for news: &#64;ianhellen, &#64;MSSPete, &#64;AshwinPatil</p>
 </div>
 <hr class="docutils" />
-<div class="section" id="end-of-session-end-of-the-workshop">
-<h1>End of Session, End of the Workshop!!!<a class="headerlink" href="#end-of-session-end-of-the-workshop" title="Permalink to this headline">¶</a></h1>
+<div class="tex2jax_ignore mathjax_ignore section" id="end-of-session-end-of-the-workshop">
+<h1>End of Session, End of the Workshop!!!<a class="headerlink" href="#end-of-session-end-of-the-workshop" title="Permalink to this headline">#</a></h1>
 </div>
-<div class="section" id="font-color-peru-lunch-break-45-minutes-font">
-<h1><font color=peru>Lunch break: 45 Minutes</font><a class="headerlink" href="#font-color-peru-lunch-break-45-minutes-font" title="Permalink to this headline">¶</a></h1>
+<div class="tex2jax_ignore mathjax_ignore section" id="font-color-peru-lunch-break-45-minutes-font">
+<h1><font color=peru>Lunch break: 45 Minutes</font><a class="headerlink" href="#font-color-peru-lunch-break-45-minutes-font" title="Permalink to this headline">#</a></h1>
 <p><img alt="" src="../../_images/dog-leash-break.jpg" /></p>
 </div>
 
@@ -3861,33 +4078,41 @@ We will provide:</p>
 
               </div>
               
-        
-        <div class='prev-next-bottom'>
-            
-    <a class='left-prev' id="prev-link" href="day2-3-Advanced-pandas.html" title="previous page">Workshop 2.3: <font color=peru>Advanced Pandas</font></a>
-
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+    <a class='left-prev' id="prev-link" href="day2-3-Advanced-pandas.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Workshop 2.3: <font color=peru>Advanced Pandas</font></p>
         </div>
-        
+    </a>
+</div>
+            </footer>
         </div>
     </div>
-    <footer class="footer mt-5 mt-md-0">
-    <div class="container">
-      <p>
-        
-          By Roberto Rodriguez @Cyb3rWard0g<br/>
-        
-            &copy; Copyright 2021.<br/>
-      </p>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By Roberto Rodriguez @Cyb3rWard0g<br/>
+  
+      &copy; Copyright 2022.<br/>
+</p>
+        </footer>
     </div>
-  </footer>
-</main>
+    
+</div>
 
 
       </div>
     </div>
   
-  <script src="../../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
 
-  
+
   </body>
 </html>

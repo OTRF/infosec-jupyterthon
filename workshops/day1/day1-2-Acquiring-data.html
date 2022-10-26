@@ -7,8 +7,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Workshop 1.2: Acquiring Data</title>
     
-  <link href="../../_static/css/theme.css" rel="stylesheet" />
-  <link href="../../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
 
     
   <link rel="stylesheet"
@@ -18,39 +19,38 @@
   <link rel="preload" as="font" type="font/woff2" crossorigin
     href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
 
-    
-      
-
-    
-    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="../../_static/sphinx-book-theme.acff12b8f9c144ce68a297486a2fa670.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" href="../../_static/styles/sphinx-book-theme.css?digest=62ba249389abaaa9ffc34bf36a076bdc1d65ee18" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/tabs.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/tabs.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
     
-  <link rel="preload" as="script" href="../../_static/js/index.1c5a1a01449ed65a7b51.js">
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
 
-    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
     <script src="../../_static/jquery.js"></script>
     <script src="../../_static/underscore.js"></script>
     <script src="../../_static/doctools.js"></script>
-    <script src="../../_static/togglebutton.js"></script>
     <script src="../../_static/clipboard.min.js"></script>
     <script src="../../_static/copybutton.js"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?digest=f31d14ad54b65d19161ba51d4ffff3a77ae00456"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js"></script>
     <script src="../../_static/tabs.js"></script>
-    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="../../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
-    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
-    <script >
-        const thebe_selector = ".thebe"
-        const thebe_selector_input = "pre"
-        const thebe_selector_output = ".output"
-    </script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
     <link rel="canonical" href="https://infosecjupyterthon.com/workshops/day1/day1-2-Acquiring-data.html" />
     <link rel="shortcut icon" href="../../_static/favicon.ico"/>
@@ -59,10 +59,27 @@
     <link rel="next" title="Workshop 1.3: Basics of Data Analysis with Pandas" href="day1-3-Data-Analysis-with-Pandas%20Intro.html" />
     <link rel="prev" title="Workshop 1.1: Jupyter Notebooks Introduction" href="day1-1-Jupyter-Introduction.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="docsearch:language" content="en" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
     
   </head>
-  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
     
     <div class="container-fluid" id="banner"></div>
 
@@ -71,10 +88,15 @@
     <div class="container-xl">
       <div class="row">
           
-<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
-    
-        <div class="navbar-brand-box">
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
     <a class="navbar-brand text-wrap" href="../../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
       
       <img src="../../_static/logo.png" class="logo" alt="logo">
       
@@ -83,17 +105,22 @@
 </div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
   <i class="icon fas fa-search"></i>
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
-</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item active">
-        <p class="caption">
+        <p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
-  Editions
+  Getting Started
  </span>
 </p>
 <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../conduct.html">
+   Code of Conduct
+  </a>
+ </li>
  <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../../2021/agenda.html">
-   2021 Edition
+  <a class="reference internal" href="../../collaborators/intro.html">
+   Collaborators
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
   <label for="toctree-checkbox-1">
@@ -101,170 +128,57 @@
    </i>
   </label>
   <ul>
-   <li class="toctree-l2 has-children">
-    <a class="reference internal" href="../../2021/sessions/intro.html">
-     Sessions
-    </a>
-    <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
-    <label for="toctree-checkbox-2">
-     <i class="fas fa-chevron-down">
-     </i>
-    </label>
-    <ul>
-     <li class="toctree-l3">
-      <a class="reference internal" href="../../2021/sessions/day1-0-welcome.html">
-       <font color="peru">
-        Welcome to the InfoSec Jupyterthon 2021!
-       </font>
-      </a>
-     </li>
-    </ul>
-   </li>
-   <li class="toctree-l2 has-children">
-    <a class="reference internal" href="../../2021/speakers/intro.html">
-     Speakers
-    </a>
-    <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
-    <label for="toctree-checkbox-3">
-     <i class="fas fa-chevron-down">
-     </i>
-    </label>
-    <ul>
-     <li class="toctree-l3">
-      <a class="reference internal" href="../../2021/speakers/pete_bryan.html">
-       Pete Bryan
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="../../2021/speakers/roberto_rodriguez.html">
-       Roberto Rodriguez
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="../../2021/speakers/jose_rodriguez.html">
-       Jose Rodriguez
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="../../2021/speakers/ian_hellen.html">
-       Ian Hellen
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="../../2021/speakers/ashwin_patil.html">
-       Ashwin Patil
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="../../2021/speakers/luis_f_monge.html">
-       Luis F Monge
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="../../2021/speakers/mehmet_ergene.html">
-       Mehmet Ergene
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="../../2021/speakers/leo_meyerovich.html">
-       Leo Meyerovich
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="../../2021/speakers/joe_petroske.html">
-       Joe Petroske
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="../../2021/speakers/john_lambert.html">
-       John Lambert
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="../../2021/speakers/neil_desai.html">
-       Neil Desai
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="../../2021/speakers/neal_shenk.html">
-       Neal Shenk
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="../../2021/speakers/sil_han.html">
-       Sil Han
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="../../2021/speakers/natanela_brod.html">
-       Natanela Brod
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="../../2021/speakers/xiaokui_shu.html">
-       Xiaokui Shu
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="../../2021/speakers/mark_kendrick.html">
-       Mark Kendrick
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="../../2021/speakers/shachar_roitman.html">
-       Shachar Roitman
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="../../2021/speakers/elisabeth_weber.html">
-       Elisabeth Weber
-      </a>
-     </li>
-    </ul>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../../2020/agenda.html">
-   2020 Edition
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
-  <label for="toctree-checkbox-4">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
    <li class="toctree-l2">
-    <a class="reference internal" href="../../2020/notebooks/0_banner.html">
-     Infosec Jupyterthon 2020!
+    <a class="reference internal" href="../../collaborators/Roberto-Rodriguez.html">
+     Roberto Rodriguez
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../../2020/notebooks/1_what_about_notebooks.html">
-     <font color="peru">
-      Welcome Infosec Community!
-     </font>
+    <a class="reference internal" href="../../collaborators/Chi-Nguyen.html">
+     Chi Nguyen
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../../2020/notebooks/2_Jupyterthon_Cyb3rPandaH_2020.html">
-     ATT&amp;CK - APT29 Evals Datasets
+    <a class="reference internal" href="../../collaborators/Ian-Hellen.html">
+     Ian Hellen
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../../2020/notebooks/6_OSQuery-Tables-interactive_Jupyterthon.html">
-     Untangling the Osquery❓ tables web🕸 using Jupyter Notebooks📓
+    <a class="reference internal" href="../../collaborators/Joyce-Bacic.html">
+     Joyce Bacic
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../../2020/notebooks/12_Jupyterthon-TimeSeries-Demo.html">
-     Anomaly detection and visualization using Time Series Decomposition
+    <a class="reference internal" href="../../collaborators/Ashwin-Patil.html">
+     Ashwin Patil
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../collaborators/Thomas-Roccia.html">
+     Thomas Roccia
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../collaborators/Pete-Bryan.html">
+     Pete Bryan
     </a>
    </li>
   </ul>
  </li>
 </ul>
-<p class="caption">
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  2022 Edition
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../2022/agenda.html">
+   agenda
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Workshops
  </span>
@@ -274,8 +188,8 @@
   <a class="reference internal" href="intro.html">
    Day 1
   </a>
-  <input checked="" class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
-  <label for="toctree-checkbox-5">
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
    <i class="fas fa-chevron-down">
    </i>
   </label>
@@ -310,8 +224,8 @@
   <a class="reference internal" href="../day2/intro.html">
    Day 2
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
-  <label for="toctree-checkbox-6">
+  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
    <i class="fas fa-chevron-down">
    </i>
   </label>
@@ -361,103 +275,177 @@
 </ul>
 
     </div>
-</nav> <!-- To handle the deprecated key -->
-
-<div class="navbar_extra_footer">
-  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
-</div>
-
-</div>
-
-
-          
-
-
-          
-<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
-    
-    <div class="topbar container-xl fixed-top">
-    <div class="topbar-contents row">
-        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
-        <div class="col pl-md-4 topbar-main">
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
             
-            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
-                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
-                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
-                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
-                <i class="fas fa-bars"></i>
-                <i class="fas fa-arrow-left"></i>
-                <i class="fas fa-arrow-up"></i>
-            </button>
-            
-            
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
-            class="fas fa-download"></i></button>
-
-    <div class="dropdown-buttons">
-        <!-- ipynb file if we had a myst markdown file -->
-        
-        <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../../_sources/workshops/day1/day1-2-Acquiring-data.ipynb"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
-                data-placement="left">.ipynb</button></a>
-        <!-- Download PDF via print -->
-        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
-            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
-    </div>
-</div>
-
-            <!-- Source interaction buttons -->
-
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
-        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
-    <div class="dropdown-buttons sourcebuttons">
-        
-        
-        <a class="edit-button" href="https://github.com/OTRF/infosec-jupyterthon/edit/master/docs/workshops/day1/day1-2-Acquiring-data.ipynb"><button
-                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
-                title="Edit this page"><i class="fas fa-pencil-alt"></i>suggest edit</button></a>
-    </div>
-</div>
-
-            <!-- Full screen (wrap in <a> to have style consistency -->
-
-<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
-        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
-        title="Fullscreen mode"><i
-            class="fas fa-expand"></i></button></a>
-
-            <!-- Launch buttons -->
-
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
-        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
-    <div class="dropdown-buttons">
-        
-        <a class="binder-button" href="https://mybinder.org/v2/gh/OTRF/infosec-jupyterthon/master?urlpath=lab/tree/docs/workshops/day1/day1-2-Acquiring-data.ipynb"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
-                data-placement="left"><img class="binder-button-logo"
-                    src="../../_static/images/logo_binder.svg"
-                    alt="Interact on binder">Binder</button></a>
-        
-        
-        
-        
-    </div>
-</div>
-
-        </div>
-
-        <!-- Table of contents -->
-        <div class="d-none d-md-block col-md-2 bd-toc show">
-            
-            <div class="tocsection onthispage pt-5 pb-3">
-                <i class="fas fa-list"></i> Contents
+            <div class="navbar_extra_footer">
+            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
             </div>
-            <nav id="bd-toc-nav">
-                <ul class="visible nav section-nav flex-column">
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<div class="menu-dropdown menu-dropdown-launch-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Launch interactive content">
+      <i class="fas fa-rocket"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://mybinder.org/v2/gh/OTRF/infosec-jupyterthon/master?urlpath=lab/tree/docs/workshops/day1/day1-2-Acquiring-data.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on Binder"
+>
+  
+
+<span class="headerbtn__icon-container">
+  
+    <img src="../../_static/images/logo_binder.svg">
+  </span>
+<span class="headerbtn__text-container">Binder</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+<a href="https://github.com/OTRF/infosec-jupyterthon/edit/master/docs/workshops/day1/day1-2-Acquiring-data.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="bottom"
+title="Edit this page"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-pencil-alt"></i>
+  </span>
+
+</a>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="../../_sources/workshops/day1/day1-2-Acquiring-data.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.ipynb</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
  <li class="toc-h1 nav-item toc-entry">
   <a class="reference internal nav-link" href="#">
    Workshop 1.2:
@@ -584,19 +572,161 @@
  </li>
 </ul>
 
-            </nav>
-        </div>
-    </div>
+    </nav>
 </div>
-    <div id="main-content" class="row">
-        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
-        
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Workshop 1.2: <font color=peru>Acquiring Data</font></h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   Workshop 1.2:
+   <font color="peru">
+    Acquiring Data
+   </font>
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#a-style-border-solid-padding-5pt-color-black-background-color-90caf9-name-reading-reading-from-siems-and-databases-a">
+   <a name="reading" style="border: solid; padding:5pt; color:black; background-color:#90CAF9">
+    Reading from SIEMs and Databases
+   </a>
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#elasticsearch">
+     Elasticsearch
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#font-color-hotpink-connect-to-elasticsearch-font-font-color-dimgray-elasticsearch-dsl-libraries-font">
+   <font color="hotpink">
+    Connect to Elasticsearch
+   </font>
+   <font color="dimgray">
+    (Elasticsearch DSL Libraries)
+   </font>
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#splunk">
+     Splunk
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#sqlite">
+     Sqlite
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#log-analytics-workspace">
+     Log analytics workspace
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#m365-advanced-hunting-apis">
+     M365 advanced hunting APIs
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#msticpy-data-providers">
+     MSTICPy Data Providers
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#accessing-queries-as-functions">
+       Accessing queries as functions
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#a-style-border-solid-padding-5pt-color-black-background-color-90caf9-name-mordor-otr-security-datasets-aka-mordor-a">
+   <a name="mordor" style="border: solid; padding:5pt; color:black; background-color:#90CAF9">
+    OTR Security Datasets (aka Mordor)
+   </a>
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#reading-otr-securitydatasets-from-code">
+     Reading OTR-SecurityDatasets from code
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#using-msticpy-to-access-security-datasets">
+     Using MSTICPy to access Security Datasets
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#security-datasets-browser">
+       Security Datasets Browser
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#downloaded-data-available-in-browser-current-dataset">
+       Downloaded data available in
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         browser.current_dataset
+        </span>
+       </code>
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#cached-datasets-available-in-browser-datasets">
+       Cached datasets available in
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         browser.datasets
+        </span>
+       </code>
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#end-of-session">
+   End of Session
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#font-color-peru-break-5-minutes-font">
+   <font color="peru">
+    Break: 5 Minutes
+   </font>
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
+                
               <div>
                 
-  <p><img alt="Banner" src="../../_images/banner11.png" /></p>
+  <p><img alt="Banner" src="../../_images/banner1.png" /></p>
 <hr class="docutils" />
-<div class="section" id="workshop-1-2-font-color-peru-acquiring-data-font">
-<h1>Workshop 1.2: <font color=peru>Acquiring Data</font><a class="headerlink" href="#workshop-1-2-font-color-peru-acquiring-data-font" title="Permalink to this headline">¶</a></h1>
+<div class="tex2jax_ignore mathjax_ignore section" id="workshop-1-2-font-color-peru-acquiring-data-font">
+<h1>Workshop 1.2: <font color=peru>Acquiring Data</font><a class="headerlink" href="#workshop-1-2-font-color-peru-acquiring-data-font" title="Permalink to this headline">#</a></h1>
 <ul class="simple">
 <li><p><strong>Contributors</strong>:</p>
 <ul>
@@ -619,10 +749,10 @@
 </ul>
 </div>
 <hr class="docutils" />
-<div class="section" id="a-style-border-solid-padding-5pt-color-black-background-color-90caf9-name-reading-reading-from-siems-and-databases-a">
-<h1><a style="border: solid; padding:5pt; color:black; background-color:#90CAF9" name="reading">Reading from SIEMs and Databases</a><a class="headerlink" href="#a-style-border-solid-padding-5pt-color-black-background-color-90caf9-name-reading-reading-from-siems-and-databases-a" title="Permalink to this headline">¶</a></h1>
+<div class="tex2jax_ignore mathjax_ignore section" id="a-style-border-solid-padding-5pt-color-black-background-color-90caf9-name-reading-reading-from-siems-and-databases-a">
+<h1><a style="border: solid; padding:5pt; color:black; background-color:#90CAF9" name="reading">Reading from SIEMs and Databases</a><a class="headerlink" href="#a-style-border-solid-padding-5pt-color-black-background-color-90caf9-name-reading-reading-from-siems-and-databases-a" title="Permalink to this headline">#</a></h1>
 <div class="section" id="elasticsearch">
-<h2>Elasticsearch<a class="headerlink" href="#elasticsearch" title="Permalink to this headline">¶</a></h2>
+<h2>Elasticsearch<a class="headerlink" href="#elasticsearch" title="Permalink to this headline">#</a></h2>
 <p><a class="reference external" href="https://elasticsearch-py.readthedocs.io/">https://elasticsearch-py.readthedocs.io/</a></p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">python</span> <span class="o">-</span><span class="n">m</span> <span class="n">pip</span> <span class="n">install</span> <span class="n">elasticsearch</span>
 </pre></div>
@@ -685,12 +815,12 @@
 </div>
 </div>
 </div>
-<div class="section" id="font-color-hotpink-connect-to-elasticsearch-font-font-color-dimgray-elasticsearch-dsl-libraries-font">
-<h1><font color=hotpink>Connect to Elasticsearch</font> <font color=dimgray>(Elasticsearch DSL Libraries)</font><a class="headerlink" href="#font-color-hotpink-connect-to-elasticsearch-font-font-color-dimgray-elasticsearch-dsl-libraries-font" title="Permalink to this headline">¶</a></h1>
-<p><img alt="" src="../../_images/elasticsearch-dsl-query1.png" /></p>
+<div class="tex2jax_ignore mathjax_ignore section" id="font-color-hotpink-connect-to-elasticsearch-font-font-color-dimgray-elasticsearch-dsl-libraries-font">
+<h1><font color=hotpink>Connect to Elasticsearch</font> <font color=dimgray>(Elasticsearch DSL Libraries)</font><a class="headerlink" href="#font-color-hotpink-connect-to-elasticsearch-font-font-color-dimgray-elasticsearch-dsl-libraries-font" title="Permalink to this headline">#</a></h1>
+<p><img alt="" src="../../_images/elasticsearch-dsl-query.png" /></p>
 <p>Reference: <a class="reference external" href="https://medium.com/threat-hunters-forge/jupyter-notebooks-from-sigma-rules-%EF%B8%8F-to-query-elasticsearch-31a74cc59b99">https://medium.com/threat-hunters-forge/jupyter-notebooks-from-sigma-rules-️-to-query-elasticsearch-31a74cc59b99</a></p>
 <div class="section" id="splunk">
-<h2>Splunk<a class="headerlink" href="#splunk" title="Permalink to this headline">¶</a></h2>
+<h2>Splunk<a class="headerlink" href="#splunk" title="Permalink to this headline">#</a></h2>
 <p><a class="reference external" href="https://github.com/target/huntlib">Huntlib - https://github.com/target/huntlib</a></p>
 <p>Also</p>
 <p><a class="reference external" href="https://github.com/splunk/splunk-sdk-python">SplunkSDK - https://github.com/splunk/splunk-sdk-python</a></p>
@@ -720,7 +850,7 @@
 </div>
 </div>
 <div class="section" id="sqlite">
-<h2>Sqlite<a class="headerlink" href="#sqlite" title="Permalink to this headline">¶</a></h2>
+<h2>Sqlite<a class="headerlink" href="#sqlite" title="Permalink to this headline">#</a></h2>
 <ul class="simple">
 <li><p>Importing libraries:</p></li>
 </ul>
@@ -1073,7 +1203,7 @@ Done.
 </div>
 </div>
 <div class="section" id="log-analytics-workspace">
-<h2>Log analytics workspace<a class="headerlink" href="#log-analytics-workspace" title="Permalink to this headline">¶</a></h2>
+<h2>Log analytics workspace<a class="headerlink" href="#log-analytics-workspace" title="Permalink to this headline">#</a></h2>
 <p><strong>Requirements</strong>:</p>
 <ul class="simple">
 <li><p>Azure AD application</p>
@@ -1136,7 +1266,7 @@ Done.
 </div>
 </div>
 <div class="section" id="m365-advanced-hunting-apis">
-<h2>M365 advanced hunting APIs<a class="headerlink" href="#m365-advanced-hunting-apis" title="Permalink to this headline">¶</a></h2>
+<h2>M365 advanced hunting APIs<a class="headerlink" href="#m365-advanced-hunting-apis" title="Permalink to this headline">#</a></h2>
 <p><strong>Requirements</strong>:</p>
 <ul class="simple">
 <li><p>Azure AD application</p>
@@ -1167,7 +1297,7 @@ Done.
 <p><a class="reference external" href="https://securitydatasets.com/create/m365defenderhuntapi.html">https://securitydatasets.com/create/m365defenderhuntapi.html</a></p>
 </div>
 <div class="section" id="msticpy-data-providers">
-<h2>MSTICPy Data Providers<a class="headerlink" href="#msticpy-data-providers" title="Permalink to this headline">¶</a></h2>
+<h2>MSTICPy Data Providers<a class="headerlink" href="#msticpy-data-providers" title="Permalink to this headline">#</a></h2>
 <p>There’s a later session devoted to MSTICPy</p>
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">pip</span> install msticpy
 </pre></div>
@@ -1213,7 +1343,7 @@ Done.
 </div>
 </div>
 <div class="section" id="accessing-queries-as-functions">
-<h3>Accessing queries as functions<a class="headerlink" href="#accessing-queries-as-functions" title="Permalink to this headline">¶</a></h3>
+<h3>Accessing queries as functions<a class="headerlink" href="#accessing-queries-as-functions" title="Permalink to this headline">#</a></h3>
 <p>(usually need to connect before running one)</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1461,10 +1591,10 @@ Done.
 </div>
 </div>
 <hr class="docutils" />
-<div class="section" id="a-style-border-solid-padding-5pt-color-black-background-color-90caf9-name-mordor-otr-security-datasets-aka-mordor-a">
-<h1><a style="border: solid; padding:5pt; color:black; background-color:#90CAF9" name="mordor">OTR Security Datasets (aka Mordor)</a><a class="headerlink" href="#a-style-border-solid-padding-5pt-color-black-background-color-90caf9-name-mordor-otr-security-datasets-aka-mordor-a" title="Permalink to this headline">¶</a></h1>
+<div class="tex2jax_ignore mathjax_ignore section" id="a-style-border-solid-padding-5pt-color-black-background-color-90caf9-name-mordor-otr-security-datasets-aka-mordor-a">
+<h1><a style="border: solid; padding:5pt; color:black; background-color:#90CAF9" name="mordor">OTR Security Datasets (aka Mordor)</a><a class="headerlink" href="#a-style-border-solid-padding-5pt-color-black-background-color-90caf9-name-mordor-otr-security-datasets-aka-mordor-a" title="Permalink to this headline">#</a></h1>
 <div class="section" id="reading-otr-securitydatasets-from-code">
-<h2>Reading OTR-SecurityDatasets from code<a class="headerlink" href="#reading-otr-securitydatasets-from-code" title="Permalink to this headline">¶</a></h2>
+<h2>Reading OTR-SecurityDatasets from code<a class="headerlink" href="#reading-otr-securitydatasets-from-code" title="Permalink to this headline">#</a></h2>
 <p>The <a class="reference external" href="https://securitydatasets.com/introduction.html">Security Datasets project</a> is an open-source initiatve that contributes pre-recorded datasets that describe malicious activity, from different platforms, to the infosec community to expedite data analysis and threat research.</p>
 <p>We will consider the following steps to access Security Datasets:</p>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>- Importing required Python Libraries
@@ -1685,7 +1815,7 @@ Done.
 </div>
 </div>
 <div class="section" id="using-msticpy-to-access-security-datasets">
-<h2>Using MSTICPy to access Security Datasets<a class="headerlink" href="#using-msticpy-to-access-security-datasets" title="Permalink to this headline">¶</a></h2>
+<h2>Using MSTICPy to access Security Datasets<a class="headerlink" href="#using-msticpy-to-access-security-datasets" title="Permalink to this headline">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#%pip install msticpy</span>
@@ -2287,7 +2417,7 @@ Extracting empire_shell_net_localgroup_administrators_2020-09-21191843.json
 </div></div>
 </div>
 <div class="section" id="security-datasets-browser">
-<h3>Security Datasets Browser<a class="headerlink" href="#security-datasets-browser" title="Permalink to this headline">¶</a></h3>
+<h3>Security Datasets Browser<a class="headerlink" href="#security-datasets-browser" title="Permalink to this headline">#</a></h3>
 <ul class="simple">
 <li><p>Browser properties</p></li>
 <li><p>Filter by MITRE Tactic/Technique</p></li>
@@ -2621,7 +2751,7 @@ Retrieving Mordor data...
 </div>
 </div>
 <div class="section" id="downloaded-data-available-in-browser-current-dataset">
-<h3>Downloaded data available in <code class="docutils literal notranslate"><span class="pre">browser.current_dataset</span></code><a class="headerlink" href="#downloaded-data-available-in-browser-current-dataset" title="Permalink to this headline">¶</a></h3>
+<h3>Downloaded data available in <code class="docutils literal notranslate"><span class="pre">browser.current_dataset</span></code><a class="headerlink" href="#downloaded-data-available-in-browser-current-dataset" title="Permalink to this headline">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">m_browser</span><span class="o">.</span><span class="n">current_dataset</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
@@ -2750,7 +2880,7 @@ Retrieving Mordor data...
 </div>
 </div>
 <div class="section" id="cached-datasets-available-in-browser-datasets">
-<h3>Cached datasets available in <code class="docutils literal notranslate"><span class="pre">browser.datasets</span></code><a class="headerlink" href="#cached-datasets-available-in-browser-datasets" title="Permalink to this headline">¶</a></h3>
+<h3>Cached datasets available in <code class="docutils literal notranslate"><span class="pre">browser.datasets</span></code><a class="headerlink" href="#cached-datasets-available-in-browser-datasets" title="Permalink to this headline">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">m_browser</span><span class="o">.</span><span class="n">datasets</span>
@@ -2858,11 +2988,11 @@ Retrieving Mordor data...
 </div>
 </div>
 <hr class="docutils" />
-<div class="section" id="end-of-session">
-<h1>End of Session<a class="headerlink" href="#end-of-session" title="Permalink to this headline">¶</a></h1>
+<div class="tex2jax_ignore mathjax_ignore section" id="end-of-session">
+<h1>End of Session<a class="headerlink" href="#end-of-session" title="Permalink to this headline">#</a></h1>
 </div>
-<div class="section" id="font-color-peru-break-5-minutes-font">
-<h1><font color=peru>Break: 5 Minutes</font><a class="headerlink" href="#font-color-peru-break-5-minutes-font" title="Permalink to this headline">¶</a></h1>
+<div class="tex2jax_ignore mathjax_ignore section" id="font-color-peru-break-5-minutes-font">
+<h1><font color=peru>Break: 5 Minutes</font><a class="headerlink" href="#font-color-peru-break-5-minutes-font" title="Permalink to this headline">#</a></h1>
 <p><img alt="" src="../../_images/dog-leash-break.jpg" /></p>
 </div>
 
@@ -2888,34 +3018,48 @@ Retrieving Mordor data...
 
               </div>
               
-        
-        <div class='prev-next-bottom'>
-            
-    <a class='left-prev' id="prev-link" href="day1-1-Jupyter-Introduction.html" title="previous page">Workshop 1.1: <font color=peru>Jupyter Notebooks Introduction</font></a>
-    <a class='right-next' id="next-link" href="day1-3-Data-Analysis-with-Pandas%20Intro.html" title="next page">Workshop 1.3: <font color=peru>Basics of Data Analysis with Pandas</font></a>
-
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+    <a class='left-prev' id="prev-link" href="day1-1-Jupyter-Introduction.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Workshop 1.1: <font color=peru>Jupyter Notebooks Introduction</font></p>
         </div>
-        
+    </a>
+    <a class='right-next' id="next-link" href="day1-3-Data-Analysis-with-Pandas%20Intro.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Workshop 1.3: <font color=peru>Basics of Data Analysis with Pandas</font></p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            </footer>
         </div>
     </div>
-    <footer class="footer mt-5 mt-md-0">
-    <div class="container">
-      <p>
-        
-          By Roberto Rodriguez @Cyb3rWard0g<br/>
-        
-            &copy; Copyright 2021.<br/>
-      </p>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By Roberto Rodriguez @Cyb3rWard0g<br/>
+  
+      &copy; Copyright 2022.<br/>
+</p>
+        </footer>
     </div>
-  </footer>
-</main>
+    
+</div>
 
 
       </div>
     </div>
   
-  <script src="../../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
 
-  
+
   </body>
 </html>

@@ -1,3 +1,0 @@
-# Xiaokui Shu
-
-Xiaokui Shu is a Research Staff Member at IBM Research and a member of the ACM Future of Computing Academy. Dr. Shu leads the cyber reasoning initiative at IBM Research including projects Kestrel, τ-calculus, and GNN-based graph reasoning. He is an advocate of open security and believes knowledge composition, reuse, and sharing is the key to reactive and proactive security with zero trust, as he explained in "The Pursuit of Speed in Cybersecurity" (interview with ACM) and "Unleashing Cyber Reasoning: DARPA Transparent Computing Threat Hunting Retrospective" (talk at ACSAC'20).

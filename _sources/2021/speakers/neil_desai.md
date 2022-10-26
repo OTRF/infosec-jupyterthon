@@ -1,3 +1,0 @@
-# Neil Desai
-
-Neil Desai is a Principal Security Strategist for Elastic. He has over two decades of information security experience. In past roles, he built Security Operations Centers (SOCs) and architected defensible and monitorable infrastructures for Fortune 500 US financial institutions. Outside of work he was a part of 1@stPlace, winners of DEFCON's CTF in 2006 and 2007, and is a current member of C3X (https://www.thec3x.com/).

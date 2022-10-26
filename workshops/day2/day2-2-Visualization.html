@@ -7,8 +7,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Workshop 2.2: Visualization in Jupyter Notebooks</title>
     
-  <link href="../../_static/css/theme.css" rel="stylesheet" />
-  <link href="../../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
 
     
   <link rel="stylesheet"
@@ -18,39 +19,38 @@
   <link rel="preload" as="font" type="font/woff2" crossorigin
     href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
 
-    
-      
-
-    
-    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="../../_static/sphinx-book-theme.acff12b8f9c144ce68a297486a2fa670.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" href="../../_static/styles/sphinx-book-theme.css?digest=62ba249389abaaa9ffc34bf36a076bdc1d65ee18" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/tabs.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/tabs.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
     
-  <link rel="preload" as="script" href="../../_static/js/index.1c5a1a01449ed65a7b51.js">
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
 
-    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
     <script src="../../_static/jquery.js"></script>
     <script src="../../_static/underscore.js"></script>
     <script src="../../_static/doctools.js"></script>
-    <script src="../../_static/togglebutton.js"></script>
     <script src="../../_static/clipboard.min.js"></script>
     <script src="../../_static/copybutton.js"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?digest=f31d14ad54b65d19161ba51d4ffff3a77ae00456"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js"></script>
     <script src="../../_static/tabs.js"></script>
-    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="../../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
-    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
-    <script >
-        const thebe_selector = ".thebe"
-        const thebe_selector_input = "pre"
-        const thebe_selector_output = ".output"
-    </script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
     <link rel="canonical" href="https://infosecjupyterthon.com/workshops/day2/day2-2-Visualization.html" />
     <link rel="shortcut icon" href="../../_static/favicon.ico"/>
@@ -59,10 +59,27 @@
     <link rel="next" title="Workshop 2.3: Advanced Pandas" href="day2-3-Advanced-pandas.html" />
     <link rel="prev" title="Workshop 2.1: R Demo Notebook" href="day2-1-R-demo-notebook.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="docsearch:language" content="en" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
     
   </head>
-  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
     
     <div class="container-fluid" id="banner"></div>
 
@@ -71,10 +88,15 @@
     <div class="container-xl">
       <div class="row">
           
-<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
-    
-        <div class="navbar-brand-box">
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
     <a class="navbar-brand text-wrap" href="../../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
       
       <img src="../../_static/logo.png" class="logo" alt="logo">
       
@@ -83,17 +105,22 @@
 </div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
   <i class="icon fas fa-search"></i>
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
-</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item active">
-        <p class="caption">
+        <p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
-  Editions
+  Getting Started
  </span>
 </p>
 <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../conduct.html">
+   Code of Conduct
+  </a>
+ </li>
  <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../../2021/agenda.html">
-   2021 Edition
+  <a class="reference internal" href="../../collaborators/intro.html">
+   Collaborators
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
   <label for="toctree-checkbox-1">
@@ -101,175 +128,57 @@
    </i>
   </label>
   <ul>
-   <li class="toctree-l2 has-children">
-    <a class="reference internal" href="../../2021/sessions/intro.html">
-     Sessions
-    </a>
-    <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
-    <label for="toctree-checkbox-2">
-     <i class="fas fa-chevron-down">
-     </i>
-    </label>
-    <ul>
-     <li class="toctree-l3">
-      <a class="reference internal" href="../../2021/sessions/day1-0-welcome.html">
-       <font color="peru">
-        Welcome to the InfoSec Jupyterthon 2021!
-       </font>
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="../../2021/sessions/day2-5-C2_Beaconing_Detection_using_Statistical_Analysis.html">
-       C2 Beaconing Detection using Statistical Analysis
-      </a>
-     </li>
-    </ul>
-   </li>
-   <li class="toctree-l2 has-children">
-    <a class="reference internal" href="../../2021/speakers/intro.html">
-     Speakers
-    </a>
-    <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
-    <label for="toctree-checkbox-3">
-     <i class="fas fa-chevron-down">
-     </i>
-    </label>
-    <ul>
-     <li class="toctree-l3">
-      <a class="reference internal" href="../../2021/speakers/pete_bryan.html">
-       Pete Bryan
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="../../2021/speakers/roberto_rodriguez.html">
-       Roberto Rodriguez
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="../../2021/speakers/jose_rodriguez.html">
-       Jose Rodriguez
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="../../2021/speakers/ian_hellen.html">
-       Ian Hellen
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="../../2021/speakers/ashwin_patil.html">
-       Ashwin Patil
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="../../2021/speakers/luis_f_monge.html">
-       Luis F Monge
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="../../2021/speakers/mehmet_ergene.html">
-       Mehmet Ergene
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="../../2021/speakers/leo_meyerovich.html">
-       Leo Meyerovich
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="../../2021/speakers/joe_petroske.html">
-       Joe Petroske
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="../../2021/speakers/john_lambert.html">
-       John Lambert
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="../../2021/speakers/neil_desai.html">
-       Neil Desai
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="../../2021/speakers/neal_shenk.html">
-       Neal Shenk
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="../../2021/speakers/sil_han.html">
-       Sil Han
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="../../2021/speakers/natanela_brod.html">
-       Natanela Brod
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="../../2021/speakers/xiaokui_shu.html">
-       Xiaokui Shu
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="../../2021/speakers/mark_kendrick.html">
-       Mark Kendrick
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="../../2021/speakers/shachar_roitman.html">
-       Shachar Roitman
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="../../2021/speakers/elisabeth_weber.html">
-       Elisabeth Weber
-      </a>
-     </li>
-    </ul>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../../2020/agenda.html">
-   2020 Edition
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
-  <label for="toctree-checkbox-4">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
    <li class="toctree-l2">
-    <a class="reference internal" href="../../2020/notebooks/0_banner.html">
-     Infosec Jupyterthon 2020!
+    <a class="reference internal" href="../../collaborators/Roberto-Rodriguez.html">
+     Roberto Rodriguez
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../../2020/notebooks/1_what_about_notebooks.html">
-     <font color="peru">
-      Welcome Infosec Community!
-     </font>
+    <a class="reference internal" href="../../collaborators/Chi-Nguyen.html">
+     Chi Nguyen
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../../2020/notebooks/2_Jupyterthon_Cyb3rPandaH_2020.html">
-     ATT&amp;CK - APT29 Evals Datasets
+    <a class="reference internal" href="../../collaborators/Ian-Hellen.html">
+     Ian Hellen
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../../2020/notebooks/6_OSQuery-Tables-interactive_Jupyterthon.html">
-     Untangling the Osquery❓ tables web🕸 using Jupyter Notebooks📓
+    <a class="reference internal" href="../../collaborators/Joyce-Bacic.html">
+     Joyce Bacic
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../../2020/notebooks/12_Jupyterthon-TimeSeries-Demo.html">
-     Anomaly detection and visualization using Time Series Decomposition
+    <a class="reference internal" href="../../collaborators/Ashwin-Patil.html">
+     Ashwin Patil
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../collaborators/Thomas-Roccia.html">
+     Thomas Roccia
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../collaborators/Pete-Bryan.html">
+     Pete Bryan
     </a>
    </li>
   </ul>
  </li>
 </ul>
-<p class="caption">
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  2022 Edition
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../2022/agenda.html">
+   agenda
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Workshops
  </span>
@@ -279,8 +188,8 @@
   <a class="reference internal" href="../day1/intro.html">
    Day 1
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
-  <label for="toctree-checkbox-5">
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
    <i class="fas fa-chevron-down">
    </i>
   </label>
@@ -315,8 +224,8 @@
   <a class="reference internal" href="intro.html">
    Day 2
   </a>
-  <input checked="" class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
-  <label for="toctree-checkbox-6">
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
    <i class="fas fa-chevron-down">
    </i>
   </label>
@@ -366,103 +275,177 @@
 </ul>
 
     </div>
-</nav> <!-- To handle the deprecated key -->
-
-<div class="navbar_extra_footer">
-  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
-</div>
-
-</div>
-
-
-          
-
-
-          
-<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
-    
-    <div class="topbar container-xl fixed-top">
-    <div class="topbar-contents row">
-        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
-        <div class="col pl-md-4 topbar-main">
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
             
-            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
-                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
-                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
-                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
-                <i class="fas fa-bars"></i>
-                <i class="fas fa-arrow-left"></i>
-                <i class="fas fa-arrow-up"></i>
-            </button>
-            
-            
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
-            class="fas fa-download"></i></button>
-
-    <div class="dropdown-buttons">
-        <!-- ipynb file if we had a myst markdown file -->
-        
-        <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../../_sources/workshops/day2/day2-2-Visualization.ipynb"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
-                data-placement="left">.ipynb</button></a>
-        <!-- Download PDF via print -->
-        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
-            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
-    </div>
-</div>
-
-            <!-- Source interaction buttons -->
-
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
-        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
-    <div class="dropdown-buttons sourcebuttons">
-        
-        
-        <a class="edit-button" href="https://github.com/OTRF/infosec-jupyterthon/edit/master/docs/workshops/day2/day2-2-Visualization.ipynb"><button
-                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
-                title="Edit this page"><i class="fas fa-pencil-alt"></i>suggest edit</button></a>
-    </div>
-</div>
-
-            <!-- Full screen (wrap in <a> to have style consistency -->
-
-<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
-        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
-        title="Fullscreen mode"><i
-            class="fas fa-expand"></i></button></a>
-
-            <!-- Launch buttons -->
-
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
-        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
-    <div class="dropdown-buttons">
-        
-        <a class="binder-button" href="https://mybinder.org/v2/gh/OTRF/infosec-jupyterthon/master?urlpath=lab/tree/docs/workshops/day2/day2-2-Visualization.ipynb"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
-                data-placement="left"><img class="binder-button-logo"
-                    src="../../_static/images/logo_binder.svg"
-                    alt="Interact on binder">Binder</button></a>
-        
-        
-        
-        
-    </div>
-</div>
-
-        </div>
-
-        <!-- Table of contents -->
-        <div class="d-none d-md-block col-md-2 bd-toc show">
-            
-            <div class="tocsection onthispage pt-5 pb-3">
-                <i class="fas fa-list"></i> Contents
+            <div class="navbar_extra_footer">
+            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
             </div>
-            <nav id="bd-toc-nav">
-                <ul class="visible nav section-nav flex-column">
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<div class="menu-dropdown menu-dropdown-launch-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Launch interactive content">
+      <i class="fas fa-rocket"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://mybinder.org/v2/gh/OTRF/infosec-jupyterthon/master?urlpath=lab/tree/docs/workshops/day2/day2-2-Visualization.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on Binder"
+>
+  
+
+<span class="headerbtn__icon-container">
+  
+    <img src="../../_static/images/logo_binder.svg">
+  </span>
+<span class="headerbtn__text-container">Binder</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+<a href="https://github.com/OTRF/infosec-jupyterthon/edit/master/docs/workshops/day2/day2-2-Visualization.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="bottom"
+title="Edit this page"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-pencil-alt"></i>
+  </span>
+
+</a>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="../../_sources/workshops/day2/day2-2-Visualization.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.ipynb</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
  <li class="toc-h1 nav-item toc-entry">
   <a class="reference internal nav-link" href="#">
    Workshop 2.2:
@@ -641,19 +624,213 @@
  </li>
 </ul>
 
-            </nav>
-        </div>
-    </div>
+    </nav>
 </div>
-    <div id="main-content" class="row">
-        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
-        
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Workshop 2.2: <font color=peru>Visualization in Jupyter Notebooks</font></h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   Workshop 2.2:
+   <font color="peru">
+    Visualization in Jupyter Notebooks
+   </font>
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#disclaimer">
+     Disclaimer:
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#a-style-border-solid-padding-5pt-color-black-background-color-90caf9-name-pandas-basic-plotting-with-pandas-using-matplotlib-a">
+   <a name="pandas" style="border: solid; padding:5pt; color:black; background-color:#90CAF9">
+    Basic plotting with pandas using Matplotlib
+   </a>
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#matplotlib-cheatsheets">
+     Matplotlib Cheatsheets
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#bar-charts">
+     Bar charts
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#line-charts">
+     Line charts
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#customizations">
+     Customizations
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#a-style-border-solid-padding-5pt-color-black-background-color-90caf9-name-hvplot-hvplot-bokeh-made-easy-ier-a">
+   <a name="hvplot" style="border: solid; padding:5pt; color:black; background-color:#90CAF9">
+    Hvplot, Bokeh made easy(ier)
+   </a>
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#bokeh">
+     Bokeh
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#holoviews">
+     HoloViews
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#hvplot-hv-holoviews">
+     HVplot (HV == Holoviews)
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#installing-and-loading">
+     Installing and loading
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#examples">
+     Examples
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#subplots">
+     Subplots
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#combining-plots">
+     Combining plots
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#a-style-border-solid-padding-5pt-color-black-background-color-90caf9-name-seaborn-seaborn-for-specialized-stats-plots-a">
+   <a name="seaborn" style="border: solid; padding:5pt; color:black; background-color:#90CAF9">
+    Seaborn for specialized stats plots
+   </a>
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#a-style-border-solid-padding-5pt-color-black-background-color-90caf9-name-plotly-plotly-a">
+   <a name="plotly" style="border: solid; padding:5pt; color:black; background-color:#90CAF9">
+    Plotly
+   </a>
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#data-visualization-using-plotly-pythons-visualization-library">
+     <strong>
+      Data Visualization Using Plotly: Python’s Visualization Library
+     </strong>
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#plotly-express">
+     <strong>
+      Plotly Express
+     </strong>
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#a-style-border-solid-padding-5pt-color-black-background-color-90caf9-name-msticpy-msticpy-visualizations-a">
+   <a name="msticpy" style="border: solid; padding:5pt; color:black; background-color:#90CAF9">
+    MSTICPy visualizations
+   </a>
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#event-timeline">
+     Event timeline
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#basic-plots">
+       Basic plots
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#grouping">
+       Grouping
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#more-parameters">
+       More parameters
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#event-duration">
+       Event duration
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#matrix-plots">
+     Matrix plots
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#process-trees">
+     Process Trees
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#end-of-session">
+   End of Session
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#font-color-peru-break-15-minutes-font">
+   <font color="peru">
+    Break: 15 Minutes
+   </font>
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
+                
               <div>
                 
   <p><img alt="Banner" src="../../_images/banner2.png" /></p>
 <hr class="docutils" />
-<div class="section" id="workshop-2-2-font-color-peru-visualization-in-jupyter-notebooks-font">
-<h1>Workshop 2.2: <font color=peru>Visualization in Jupyter Notebooks</font><a class="headerlink" href="#workshop-2-2-font-color-peru-visualization-in-jupyter-notebooks-font" title="Permalink to this headline">¶</a></h1>
+<div class="tex2jax_ignore mathjax_ignore section" id="workshop-2-2-font-color-peru-visualization-in-jupyter-notebooks-font">
+<h1>Workshop 2.2: <font color=peru>Visualization in Jupyter Notebooks</font><a class="headerlink" href="#workshop-2-2-font-color-peru-visualization-in-jupyter-notebooks-font" title="Permalink to this headline">#</a></h1>
 <ul class="simple">
 <li><p><strong>Contributors</strong>:</p>
 <ul>
@@ -678,7 +855,7 @@
 <li><p><strong>Q&amp;A</strong> - OTR Discord <strong>#Jupyterthon #WORKSHOP DAY 2 - VISUALIZING DATA</strong></p></li>
 </ul>
 <div class="section" id="disclaimer">
-<h2>Disclaimer:<a class="headerlink" href="#disclaimer" title="Permalink to this headline">¶</a></h2>
+<h2>Disclaimer:<a class="headerlink" href="#disclaimer" title="Permalink to this headline">#</a></h2>
 <p>This is not intended to be a comprehensive overview of Visualization in
 Python/Jupyter. There are many libraries and techniques not covered here.
 These are just a few options that we’ve used and liked and give you
@@ -686,8 +863,8 @@ a lot of scope.</p>
 </div>
 </div>
 <hr class="docutils" />
-<div class="section" id="a-style-border-solid-padding-5pt-color-black-background-color-90caf9-name-pandas-basic-plotting-with-pandas-using-matplotlib-a">
-<h1><a style="border: solid; padding:5pt; color:black; background-color:#90CAF9" name="pandas">Basic plotting with pandas using Matplotlib</a><a class="headerlink" href="#a-style-border-solid-padding-5pt-color-black-background-color-90caf9-name-pandas-basic-plotting-with-pandas-using-matplotlib-a" title="Permalink to this headline">¶</a></h1>
+<div class="tex2jax_ignore mathjax_ignore section" id="a-style-border-solid-padding-5pt-color-black-background-color-90caf9-name-pandas-basic-plotting-with-pandas-using-matplotlib-a">
+<h1><a style="border: solid; padding:5pt; color:black; background-color:#90CAF9" name="pandas">Basic plotting with pandas using Matplotlib</a><a class="headerlink" href="#a-style-border-solid-padding-5pt-color-black-background-color-90caf9-name-pandas-basic-plotting-with-pandas-using-matplotlib-a" title="Permalink to this headline">#</a></h1>
 <p><strong>Resources:</strong></p>
 <ul class="simple">
 <li><p><a class="reference external" href="https://pandas.pydata.org/pandas-docs/version/0.13/visualization.html">Plotting with matplotlib</a></p></li>
@@ -702,11 +879,11 @@ a lot of scope.</p>
 </ul>
 <p><img alt="" src="https://matplotlib.org/stable/_static/logo2.svg" /></p>
 <div class="section" id="matplotlib-cheatsheets">
-<h2>Matplotlib Cheatsheets<a class="headerlink" href="#matplotlib-cheatsheets" title="Permalink to this headline">¶</a></h2>
+<h2>Matplotlib Cheatsheets<a class="headerlink" href="#matplotlib-cheatsheets" title="Permalink to this headline">#</a></h2>
 <p><img alt="" src="https://matplotlib.org/cheatsheets/_images/cheatsheets-1.png" /></p>
 </div>
 <div class="section" id="bar-charts">
-<h2>Bar charts<a class="headerlink" href="#bar-charts" title="Permalink to this headline">¶</a></h2>
+<h2>Bar charts<a class="headerlink" href="#bar-charts" title="Permalink to this headline">#</a></h2>
 <p>Refer <a class="reference external" href="https://pandas.pydata.org/pandas-docs/version/0.13/visualization.html#bar-plots">Bar Plots</a> section for more examples and options to customize</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -891,7 +1068,7 @@ Name: Account, dtype: int64
 </div>
 </div>
 <div class="section" id="line-charts">
-<h2>Line charts<a class="headerlink" href="#line-charts" title="Permalink to this headline">¶</a></h2>
+<h2>Line charts<a class="headerlink" href="#line-charts" title="Permalink to this headline">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Preprocess dataframe by </span>
@@ -927,7 +1104,7 @@ Freq: D, Name: Account, dtype: int64
 </div>
 </div>
 <div class="section" id="customizations">
-<h2>Customizations<a class="headerlink" href="#customizations" title="Permalink to this headline">¶</a></h2>
+<h2>Customizations<a class="headerlink" href="#customizations" title="Permalink to this headline">#</a></h2>
 <p>Annotate your charts by adding texts, labels and other customizations.</p>
 <p>Docs:</p>
 <ul class="simple">
@@ -960,26 +1137,26 @@ Freq: D, Name: Account, dtype: int64
 </div>
 </div>
 <hr class="docutils" />
-<div class="section" id="a-style-border-solid-padding-5pt-color-black-background-color-90caf9-name-hvplot-hvplot-bokeh-made-easy-ier-a">
-<h1><a style="border: solid; padding:5pt; color:black; background-color:#90CAF9" name="hvplot">Hvplot, Bokeh made easy(ier)</a><a class="headerlink" href="#a-style-border-solid-padding-5pt-color-black-background-color-90caf9-name-hvplot-hvplot-bokeh-made-easy-ier-a" title="Permalink to this headline">¶</a></h1>
+<div class="tex2jax_ignore mathjax_ignore section" id="a-style-border-solid-padding-5pt-color-black-background-color-90caf9-name-hvplot-hvplot-bokeh-made-easy-ier-a">
+<h1><a style="border: solid; padding:5pt; color:black; background-color:#90CAF9" name="hvplot">Hvplot, Bokeh made easy(ier)</a><a class="headerlink" href="#a-style-border-solid-padding-5pt-color-black-background-color-90caf9-name-hvplot-hvplot-bokeh-made-easy-ier-a" title="Permalink to this headline">#</a></h1>
 <p><img alt="Holoviews" src="../../_images/Holoviews.png" /></p>
 <div class="section" id="bokeh">
-<h2>Bokeh<a class="headerlink" href="#bokeh" title="Permalink to this headline">¶</a></h2>
+<h2>Bokeh<a class="headerlink" href="#bokeh" title="Permalink to this headline">#</a></h2>
 <p>is a very flexible JS visualization framework. Beautiful interactive charts but somewhat complex.</p>
 <p>Example <a class="reference external" href="https://docs.bokeh.org/en/latest/docs/gallery/ridgeplot.html">Bokeh Ridge plot</a></p>
 </div>
 <div class="section" id="holoviews">
-<h2>HoloViews<a class="headerlink" href="#holoviews" title="Permalink to this headline">¶</a></h2>
+<h2>HoloViews<a class="headerlink" href="#holoviews" title="Permalink to this headline">#</a></h2>
 <p>is a higherlevel, declarative layer built on top of Bokeh (or MatplotLib)</p>
 <p>Example <a class="reference external" href="https://holoviews.org/gallery/demos/bokeh/energy_sankey.html#demos-bokeh-gallery-energy-sankey">Holoviews Violin plot</a></p>
 </div>
 <div class="section" id="hvplot-hv-holoviews">
-<h2>HVplot (HV == Holoviews)<a class="headerlink" href="#hvplot-hv-holoviews" title="Permalink to this headline">¶</a></h2>
+<h2>HVplot (HV == Holoviews)<a class="headerlink" href="#hvplot-hv-holoviews" title="Permalink to this headline">#</a></h2>
 <p>is some of Holoviews functionality implemented
 as a pandas extension.</p>
 </div>
 <div class="section" id="installing-and-loading">
-<h2>Installing and loading<a class="headerlink" href="#installing-and-loading" title="Permalink to this headline">¶</a></h2>
+<h2>Installing and loading<a class="headerlink" href="#installing-and-loading" title="Permalink to this headline">#</a></h2>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="n">install</span> <span class="o">-</span><span class="n">c</span> <span class="n">pyviz</span> <span class="n">hvplot</span>
 </pre></div>
 </div>
@@ -988,7 +1165,7 @@ as a pandas extension.</p>
 </div>
 </div>
 <div class="section" id="examples">
-<h2>Examples<a class="headerlink" href="#examples" title="Permalink to this headline">¶</a></h2>
+<h2>Examples<a class="headerlink" href="#examples" title="Permalink to this headline">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">hvplot.pandas</span>
@@ -2668,7 +2845,7 @@ if (window.Jupyter !== undefined) {
 </div>
 </div>
 <div class="section" id="subplots">
-<h2>Subplots<a class="headerlink" href="#subplots" title="Permalink to this headline">¶</a></h2>
+<h2>Subplots<a class="headerlink" href="#subplots" title="Permalink to this headline">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plot_df</span><span class="o">.</span><span class="n">hvplot</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">y</span><span class="o">=</span><span class="s2">&quot;HourOfDay&quot;</span><span class="p">,</span> <span class="n">by</span><span class="o">=</span><span class="s2">&quot;Account&quot;</span><span class="p">,</span> <span class="n">subplots</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="mi">400</span><span class="p">)</span><span class="o">.</span><span class="n">cols</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
@@ -2842,7 +3019,7 @@ if (window.Jupyter !== undefined) {
 </div>
 </div>
 <div class="section" id="combining-plots">
-<h2>Combining plots<a class="headerlink" href="#combining-plots" title="Permalink to this headline">¶</a></h2>
+<h2>Combining plots<a class="headerlink" href="#combining-plots" title="Permalink to this headline">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plot_df</span> <span class="o">=</span> <span class="p">(</span>
@@ -2991,8 +3168,8 @@ if (window.Jupyter !== undefined) {
 </div>
 </div>
 <hr class="docutils" />
-<div class="section" id="a-style-border-solid-padding-5pt-color-black-background-color-90caf9-name-seaborn-seaborn-for-specialized-stats-plots-a">
-<h1><a style="border: solid; padding:5pt; color:black; background-color:#90CAF9" name="seaborn">Seaborn for specialized stats plots</a><a class="headerlink" href="#a-style-border-solid-padding-5pt-color-black-background-color-90caf9-name-seaborn-seaborn-for-specialized-stats-plots-a" title="Permalink to this headline">¶</a></h1>
+<div class="tex2jax_ignore mathjax_ignore section" id="a-style-border-solid-padding-5pt-color-black-background-color-90caf9-name-seaborn-seaborn-for-specialized-stats-plots-a">
+<h1><a style="border: solid; padding:5pt; color:black; background-color:#90CAF9" name="seaborn">Seaborn for specialized stats plots</a><a class="headerlink" href="#a-style-border-solid-padding-5pt-color-black-background-color-90caf9-name-seaborn-seaborn-for-specialized-stats-plots-a" title="Permalink to this headline">#</a></h1>
 <p><img alt="" src="https://seaborn.pydata.org/_images/logo-wide-lightbg.svg" /></p>
 <p><strong>Intro:</strong>
 Seaborn is a Python data visualization library based on matplotlib. It provides a high-level interface for drawing attractive and informative statistical graphics.</p>
@@ -3116,11 +3293,11 @@ Seaborn is a Python data visualization library based on matplotlib. It provides 
 </div>
 </div>
 <hr class="docutils" />
-<div class="section" id="a-style-border-solid-padding-5pt-color-black-background-color-90caf9-name-plotly-plotly-a">
-<h1><a style="border: solid; padding:5pt; color:black; background-color:#90CAF9" name="plotly">Plotly</a><a class="headerlink" href="#a-style-border-solid-padding-5pt-color-black-background-color-90caf9-name-plotly-plotly-a" title="Permalink to this headline">¶</a></h1>
+<div class="tex2jax_ignore mathjax_ignore section" id="a-style-border-solid-padding-5pt-color-black-background-color-90caf9-name-plotly-plotly-a">
+<h1><a style="border: solid; padding:5pt; color:black; background-color:#90CAF9" name="plotly">Plotly</a><a class="headerlink" href="#a-style-border-solid-padding-5pt-color-black-background-color-90caf9-name-plotly-plotly-a" title="Permalink to this headline">#</a></h1>
 <p><img alt="" src="workshops/media/Plotly_Logo.png" /></p>
 <div class="section" id="data-visualization-using-plotly-pythons-visualization-library">
-<h2><strong><a class="reference external" href="https://k21academy.com/datascience/python/data-visualization-using-plotly/">Data Visualization Using Plotly: Python’s Visualization Library</a></strong><a class="headerlink" href="#data-visualization-using-plotly-pythons-visualization-library" title="Permalink to this headline">¶</a></h2>
+<h2><strong><a class="reference external" href="https://k21academy.com/datascience/python/data-visualization-using-plotly/">Data Visualization Using Plotly: Python’s Visualization Library</a></strong><a class="headerlink" href="#data-visualization-using-plotly-pythons-visualization-library" title="Permalink to this headline">#</a></h2>
 <p>By Meenal Sarda.</p>
 <p>Plotly is an open-source library that provides a whole set of chart types as well as tools to create dynamic dashboards. You can think of Plotly as a suite of tools as it integrates or extends with libraries such as Dash or Chart Studio to provide interactive dashboards. Plotly’s Python graphing library makes interactive, publication-quality graphs.</p>
 <p><strong>Plotly supports dynamic charts and animations as a first principle and this is the main difference between other visualization libraries like matplotlib or seaborn</strong>.</p>
@@ -3137,7 +3314,7 @@ Seaborn is a Python data visualization library based on matplotlib. It provides 
 </ul>
 </div>
 <div class="section" id="plotly-express">
-<h2><strong><a class="reference external" href="https://plotly.com/python/plotly-express/">Plotly Express</a></strong><a class="headerlink" href="#plotly-express" title="Permalink to this headline">¶</a></h2>
+<h2><strong><a class="reference external" href="https://plotly.com/python/plotly-express/">Plotly Express</a></strong><a class="headerlink" href="#plotly-express" title="Permalink to this headline">#</a></h2>
 <p>The plotly.express module (usually imported as px) contains functions that can create entire figures at once, and is referred to as Plotly Express or PX. Plotly Express is a built-in part of the plotly library, and is the recommended starting point for creating most common figures.</p>
 <ul class="simple">
 <li><p>Let’s import Plotly Express:</p></li>
@@ -3392,12 +3569,12 @@ Seaborn is a Python data visualization library based on matplotlib. It provides 
 </div>
 </div>
 <hr class="docutils" />
-<div class="section" id="a-style-border-solid-padding-5pt-color-black-background-color-90caf9-name-msticpy-msticpy-visualizations-a">
-<h1><a style="border: solid; padding:5pt; color:black; background-color:#90CAF9" name="msticpy">MSTICPy visualizations</a><a class="headerlink" href="#a-style-border-solid-padding-5pt-color-black-background-color-90caf9-name-msticpy-msticpy-visualizations-a" title="Permalink to this headline">¶</a></h1>
+<div class="tex2jax_ignore mathjax_ignore section" id="a-style-border-solid-padding-5pt-color-black-background-color-90caf9-name-msticpy-msticpy-visualizations-a">
+<h1><a style="border: solid; padding:5pt; color:black; background-color:#90CAF9" name="msticpy">MSTICPy visualizations</a><a class="headerlink" href="#a-style-border-solid-padding-5pt-color-black-background-color-90caf9-name-msticpy-msticpy-visualizations-a" title="Permalink to this headline">#</a></h1>
 <div class="section" id="event-timeline">
-<h2>Event timeline<a class="headerlink" href="#event-timeline" title="Permalink to this headline">¶</a></h2>
+<h2>Event timeline<a class="headerlink" href="#event-timeline" title="Permalink to this headline">#</a></h2>
 <div class="section" id="basic-plots">
-<h3>Basic plots<a class="headerlink" href="#basic-plots" title="Permalink to this headline">¶</a></h3>
+<h3>Basic plots<a class="headerlink" href="#basic-plots" title="Permalink to this headline">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">msticpy.vis.mp_pandas_plot</span>
@@ -4118,7 +4295,7 @@ Seaborn is a Python data visualization library based on matplotlib. It provides 
 </div>
 </div>
 <div class="section" id="grouping">
-<h3>Grouping<a class="headerlink" href="#grouping" title="Permalink to this headline">¶</a></h3>
+<h3>Grouping<a class="headerlink" href="#grouping" title="Permalink to this headline">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">net_data</span><span class="o">.</span><span class="n">mp_plot</span><span class="o">.</span><span class="n">timeline</span><span class="p">(</span>
@@ -4481,7 +4658,7 @@ Seaborn is a Python data visualization library based on matplotlib. It provides 
 </div>
 </div>
 <div class="section" id="more-parameters">
-<h3>More parameters<a class="headerlink" href="#more-parameters" title="Permalink to this headline">¶</a></h3>
+<h3>More parameters<a class="headerlink" href="#more-parameters" title="Permalink to this headline">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">help</span><span class="p">(</span><span class="n">net_data</span><span class="o">.</span><span class="n">mp_plot</span><span class="o">.</span><span class="n">timeline</span><span class="p">)</span>
@@ -4562,7 +4739,7 @@ timeline(**kwargs) -&gt; bokeh.models.layouts.LayoutDOM method of msticpy.vis.mp
 </div>
 </div>
 <div class="section" id="event-duration">
-<h3>Event duration<a class="headerlink" href="#event-duration" title="Permalink to this headline">¶</a></h3>
+<h3>Event duration<a class="headerlink" href="#event-duration" title="Permalink to this headline">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">net_data</span><span class="o">.</span><span class="n">mp_plot</span><span class="o">.</span><span class="n">timeline_duration</span><span class="p">(</span><span class="n">group_by</span><span class="o">=</span><span class="s2">&quot;L7Protocol&quot;</span><span class="p">)</span>
@@ -4922,7 +5099,7 @@ timeline(**kwargs) -&gt; bokeh.models.layouts.LayoutDOM method of msticpy.vis.mp
 </div>
 </div>
 <div class="section" id="matrix-plots">
-<h2>Matrix plots<a class="headerlink" href="#matrix-plots" title="Permalink to this headline">¶</a></h2>
+<h2>Matrix plots<a class="headerlink" href="#matrix-plots" title="Permalink to this headline">#</a></h2>
 <p>Simple interactions</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -5998,7 +6175,7 @@ timeline(**kwargs) -&gt; bokeh.models.layouts.LayoutDOM method of msticpy.vis.mp
 </div>
 </div>
 <div class="section" id="process-trees">
-<h2>Process Trees<a class="headerlink" href="#process-trees" title="Permalink to this headline">¶</a></h2>
+<h2>Process Trees<a class="headerlink" href="#process-trees" title="Permalink to this headline">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">process_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_pickle</span><span class="p">(</span><span class="s2">&quot;../data/processes_test.pkl&quot;</span><span class="p">)</span>
@@ -6347,11 +6524,11 @@ timeline(**kwargs) -&gt; bokeh.models.layouts.LayoutDOM method of msticpy.vis.mp
 </div>
 </div>
 <hr class="docutils" />
-<div class="section" id="end-of-session">
-<h1>End of Session<a class="headerlink" href="#end-of-session" title="Permalink to this headline">¶</a></h1>
+<div class="tex2jax_ignore mathjax_ignore section" id="end-of-session">
+<h1>End of Session<a class="headerlink" href="#end-of-session" title="Permalink to this headline">#</a></h1>
 </div>
-<div class="section" id="font-color-peru-break-15-minutes-font">
-<h1><font color=peru>Break: 15 Minutes</font><a class="headerlink" href="#font-color-peru-break-15-minutes-font" title="Permalink to this headline">¶</a></h1>
+<div class="tex2jax_ignore mathjax_ignore section" id="font-color-peru-break-15-minutes-font">
+<h1><font color=peru>Break: 15 Minutes</font><a class="headerlink" href="#font-color-peru-break-15-minutes-font" title="Permalink to this headline">#</a></h1>
 <p><img alt="" src="../../_images/dog-leash-break.jpg" /></p>
 </div>
 
@@ -6377,34 +6554,48 @@ timeline(**kwargs) -&gt; bokeh.models.layouts.LayoutDOM method of msticpy.vis.mp
 
               </div>
               
-        
-        <div class='prev-next-bottom'>
-            
-    <a class='left-prev' id="prev-link" href="day2-1-R-demo-notebook.html" title="previous page">Workshop 2.1: <font color=peru>R Demo Notebook</font></a>
-    <a class='right-next' id="next-link" href="day2-3-Advanced-pandas.html" title="next page">Workshop 2.3: <font color=peru>Advanced Pandas</font></a>
-
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+    <a class='left-prev' id="prev-link" href="day2-1-R-demo-notebook.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Workshop 2.1: <font color=peru>R Demo Notebook</font></p>
         </div>
-        
+    </a>
+    <a class='right-next' id="next-link" href="day2-3-Advanced-pandas.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Workshop 2.3: <font color=peru>Advanced Pandas</font></p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            </footer>
         </div>
     </div>
-    <footer class="footer mt-5 mt-md-0">
-    <div class="container">
-      <p>
-        
-          By Roberto Rodriguez @Cyb3rWard0g<br/>
-        
-            &copy; Copyright 2021.<br/>
-      </p>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By Roberto Rodriguez @Cyb3rWard0g<br/>
+  
+      &copy; Copyright 2022.<br/>
+</p>
+        </footer>
     </div>
-  </footer>
-</main>
+    
+</div>
 
 
       </div>
     </div>
   
-  <script src="../../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
 
-  
+
   </body>
 </html>
