@@ -14,7 +14,7 @@
 
 :::{grid-item}
 :columns: 7
-Joyce Bacic ...
+Joyce Bacic is a sofware engineer...
 
 **Twitter:**
 :::
