@@ -26,6 +26,8 @@ html:
   google_analytics_id       : ""  # A GA id that can be used to track book views.
   home_page_in_navbar       : false  # Whether to include your home page in the left Navigation Bar
   use_edit_page_button      : true  # Whether to add an "edit this page" button to pages. If `true`, repository information in repository: must be filled in
+  use_repository_button     : true
+  use_issues_button         : true
   baseurl                   :  https://infosecjupyterthon.com/
   
 #######################################################################################

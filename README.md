@@ -20,11 +20,11 @@
 
 An open community event for security researchers to share their experience and favorite [notebooks](https://jupyter.org/) with the InfoSec community. We meet virtually, share notebooks, and have fun learning more about Jupyter notebooks applied to the InfoSec field. A great place to meet other Infosec [Jovyans!](#what-is-a-jovyan-🪐)
 
+<a rel="noopener" target="_blank" href="https://infosecjupyterthon.com/2022/Jupyterthon22.ics" class="cta btn-yellow" style="background-color: #F4D66C; font-size: 18px; font-family: Helvetica, Arial, sans-serif; font-weight:bold; text-decoration: none; padding: 14px 20px; color: #1D2025; border-radius: 5px; display:inline-block; mso-padding-alt:0; box-shadow:0 3px 6px rgba(0,0,0,.2);"><!--[if mso]><i style="letter-spacing: 25px;mso-font-width:-100%;mso-text-raise:30pt"> </i><![endif]--><span style="mso-text-raise:15pt;">Add to your Calendar</span><!--[if mso]><i style="letter-spacing: 25px;mso-font-width:-100%"> </i><![endif]--></a>
+
 ## Web Site: https://infosecjupyterthon.com
 
 ## Quick Information
-
-<a rel="noopener" target="_blank" href="https://infosecjupyterthon.com/2022/Jupyterthon22.ics" class="cta btn-yellow" style="background-color: #F4D66C; font-size: 18px; font-family: Helvetica, Arial, sans-serif; font-weight:bold; text-decoration: none; padding: 14px 20px; color: #1D2025; border-radius: 5px; display:inline-block; mso-padding-alt:0; box-shadow:0 3px 6px rgba(0,0,0,.2);"><!--[if mso]><i style="letter-spacing: 25px;mso-font-width:-100%;mso-text-raise:30pt"> </i><![endif]--><span style="mso-text-raise:15pt;">Add to your Calendar</span><!--[if mso]><i style="letter-spacing: 25px;mso-font-width:-100%"> </i><![endif]--></a>
 
 * **When?** December 2nd and 3rd, 2022
 * **Where?** Live Stream
