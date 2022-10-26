@@ -1,4 +1,4 @@
 
 .DS_Store
-docs/_build/
+docs/_build/*
 docs/_build/.doctrees/environment.pickle

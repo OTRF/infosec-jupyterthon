@@ -1,43 +1,22 @@
 format: jb-book
 root: introduction
 parts:
-- caption: Editions
+- caption: Getting Started
   chapters:
-  - file: 2021/agenda
-    title: 2021 Edition
+  - file: conduct
+  - file: collaborators/intro
     sections:
-    - file: 2021/sessions/intro
-      sections:
-      - file: 2021/sessions/day1-0-welcome
-      - file: 2021/sessions/day2-5-C2_Beaconing_Detection_using_Statistical_Analysis
-    - file: 2021/speakers/intro
-      sections:
-      - file: 2021/speakers/pete_bryan
-      - file: 2021/speakers/roberto_rodriguez
-      - file: 2021/speakers/jose_rodriguez
-      - file: 2021/speakers/ian_hellen
-      - file: 2021/speakers/ashwin_patil
-      - file: 2021/speakers/luis_f_monge
-      - file: 2021/speakers/mehmet_ergene
-      - file: 2021/speakers/leo_meyerovich
-      - file: 2021/speakers/joe_petroske
-      - file: 2021/speakers/john_lambert
-      - file: 2021/speakers/neil_desai
-      - file: 2021/speakers/neal_shenk
-      - file: 2021/speakers/sil_han
-      - file: 2021/speakers/natanela_brod
-      - file: 2021/speakers/xiaokui_shu
-      - file: 2021/speakers/mark_kendrick
-      - file: 2021/speakers/shachar_roitman
-      - file: 2021/speakers/elisabeth_weber
-  - file: 2020/agenda
-    title: 2020 Edition
-    sections:
-    - file: 2020/notebooks/0_banner
-    - file: 2020/notebooks/1_what_about_notebooks
-    - file: 2020/notebooks/2_Jupyterthon_Cyb3rPandaH_2020
-    - file: 2020/notebooks/6_OSQuery-Tables-interactive_Jupyterthon
-    - file: 2020/notebooks/12_Jupyterthon-TimeSeries-Demo
+    - file: collaborators/Roberto-Rodriguez
+    - file: collaborators/Chi-Nguyen
+    - file: collaborators/Ian-Hellen
+    - file: collaborators/Joyce-Bacic
+    - file: collaborators/Ashwin-Patil
+    - file: collaborators/Thomas-Roccia
+    - file: collaborators/Pete-Bryan
+- caption: 2022 Edition
+  chapters:
+  - file: 2022/agenda
+    title: agenda
 - caption: Workshops
   chapters:
   - file: workshops/day1/intro
