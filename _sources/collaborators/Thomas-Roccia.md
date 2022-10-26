@@ -1,11 +1,5 @@
 # Thomas Roccia
 
-<img style="float: right;" src="https://github.com/OTRF/infosec-jupyterthon/raw/master/docs/images/collaborators/Thomas-Roccia.png">
-
-Thomas Roccia ...
-
-
-
 ::::{grid} 2 2 2 2
 
 :::{grid-item}
