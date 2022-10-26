@@ -47,11 +47,14 @@ If you are using Jupyter notebooks for any use case applied to Infosec, we want 
 * **CFN ends:** November 28th, 2022
 
 ### A few submission guidelines
-* Well documented notebook with enough context (e.g. Markdown text) to tell the story behind the code.
+* Well documented notebook with enough context (e.g. Markdown text) to tell the story behind your research.
 * A well defined step by step process to go from basic to advanced skills.
 * Use of open source code (e.g pandas) to allow attendees to replicate the research at home.
-* Notebook and data must be freely releasable
-* 30-45mins notebook presentation.
+* Notebook and data should be freely releasable if possible.
+* Talk types:
+    * Lightning Talk - 5 minutes (i.e., Quick Idea, Favorite Notebook, Tips and Tricks)
+    * Short Presentation - 15 minutes
+    * Long Presentation - 30 minutes
 
 ## Sponsors
 
