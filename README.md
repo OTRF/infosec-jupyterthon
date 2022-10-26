@@ -7,7 +7,7 @@
   <a href="#sponsors">Sponsors</a> •
   <a href="#community-collaborators">Collaborators</a> •
   <a href="https://infosecjupyterthon.com/conduct.html">Conduct</a> •
-  <a href="#contact">Contact</a>
+  <a href="#previous-editions">Previously</a>
 </p>
 
 ---
@@ -109,6 +109,15 @@ If you are using Jupyter notebooks for any use case applied to Infosec, we want 
   </tr>
 </table>
 
+## Previous Editions
+
+### 2021 YouTube Recorded Streams
+
+![](docs/images/Jupyterthon-2021.png)
+
+* Day 1: https://youtu.be/nMnHBnYfIaI?t=37
+* Day 2: https://youtu.be/2Rb5B_RPDBc?t=19
+
 ## What is a Jovyan 🪐
 
 You may see the word Jovyan used in Jupyter tools (such as the user ID in the Jupyter Docker stacks or referenced in conversations. But what is a Jovyan?
@@ -116,11 +125,3 @@ You may see the word Jovyan used in Jupyter tools (such as the user ID in the Ju
 In astronomical terms, the word “Jovian” means “like Jupiter”. It describes several planets that share Jupyter-like properties.
 
 Much like the planet Jupiter and our solar system, the Jupyter community is large, distributed, and nebulous. We like to use the word Jovyan to describe members of this community. Jovyans are fellow open enthusiasts that use, develop, promote, teach, learn, and otherwise enjoy tools in Jupyter’s orbit. They make up the Jupyter community. If you’re not sure whether you’re a Jovyan, you probably are :-)
-
-## References
-
-* https://mybinder.readthedocs.io/en/latest/
-* https://medium.com/threat-hunters-forge/writing-an-interactive-book-over-the-threat-hunter-playbook-with-the-help-of-the-jupyter-book-3ff37a3123c7
-* https://medium.com/threat-hunters-forge/threat-hunter-playbook-mordor-datasets-binderhub-open-infrastructure-for-open-8c8aee3d8b4
-* https://jupyter.readthedocs.io/en/latest/community/content-community.html#what-is-a-jovyan
-* https://discover-cookbook.numfocus.org/
