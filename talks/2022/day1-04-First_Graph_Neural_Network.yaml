@@ -1,0 +1,25 @@
+title: 'Your first graph neural network: Detecting suspicious logins with link prediction'
+speaker:
+  - name: Leo Meyerovich
+    job_title: CEO & Founder
+    company: Graphistry
+    twitter: "@lmeyerov"
+    bio: >-
+      Leo Meyerovich is the founder & CEO of Graphistry, the first GPU-accelerated visual graph intelligence platform.
+      Federal, enterprise, science, and tech teams use Graphistry on problems like threat hunting, anti-fraud, and cancer genomics.
+      Leo's past research at UC Berkeley (PhD) and Brown (ScB) in high performance computing, security, and programming language design received the SIGPLAN 10 Year Test of Time award, multiple best paper awards, and is published in CACM, Security & Privacy, WWW, and others.
+      Several of the ideas are now common in browsers (parallelization), web frameworks (functional reactivity), and cloud infrastructure providers (security verification).
+      As part of Graphistry, he helped start the GPU dataframe ecosystem, the initial Apache Arrow implementation, and the medical anti-misinformation open AI effort Project Domino.
+date: '2022-12-02'
+time: '11:35'
+abstract: >-
+  Graph neural networks are Science's official breakthrough of the year, and we can now use them to automatically answer basic behavior questions like which user login events are suspicious. Especially exciting, new graph autoML libraries let us use these techniques with just a bit of knowledge of Python and Pandas. We will use winlogs data as an example to walk through, and describe how to use the same idea on other user logs:
+  - What a graph neural network is and what problems they are good for
+  - How to automatically transform logs to graphs with hypergraphs
+  - Automatically visualizing the event graph, and as a bonus, as UMAP embeddings auto-tuned to whatever features we are examining
+  - Preparing the graph for AI using automatic feature engineering… in one line of code
+  - Training a GNN link prediction model on the graph using a prebuilt popular architecture
+  - Scoring historic and new log events based on the model
+  - Using the scores to visually understand typical behavior and visually audit surprises
+  - How the same GNN process can be applied to other common cybersecurity and anti-fraud scenarios like account takeovers and suspicious transactions
+  The notebook and workflow will use free OSS tools (Pandas, DGL/PyG, PyGraphistry[AI]) on free data. For participants with access to GPU notebooks, the workflow is accelerated on GPUs, and CPU-only will work too.

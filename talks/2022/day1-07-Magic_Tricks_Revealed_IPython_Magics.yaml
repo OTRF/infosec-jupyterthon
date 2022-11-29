@@ -1,0 +1,13 @@
+title: 'Magic Tricks Revealed: Demystifying IPython Magics'
+speaker:
+  - name: Ryan Marcotte Cobb
+    job_title: Principal Security Researcher
+    company: SecureWorks
+    twitter: "@detectdotdev"
+    bio:
+date: '2022-12-02'
+time: '13:30'
+abstract: >-
+  Jupyter notebooks support a feature called "magic commands" (aka "IPython magics") that use a special syntax (`%`) for calling utility functions.
+  This talk explains how magics work and how to write custom magics that make security analysis and research tasks more efficient.
+  The live demo is a proof-of-concept magic command that integrates the Azure CLI with `pandas` for convenient evidence collection and analysis in Jupyter notebooks. The PoC code will be open-sourced under the MIT license prior to the talk.

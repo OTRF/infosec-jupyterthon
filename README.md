@@ -16,7 +16,7 @@
 [![Open_Threat_Research Community](https://img.shields.io/badge/Open_Threat_Research-Community-brightgreen.svg)](https://twitter.com/OTR_Community)
 [![Open Source Love](https://badges.frapsoft.com/os/v3/open-source.svg?v=103)](https://github.com/ellerbrock/open-source-badges/)
 
-<img src="docs/images/infosec-jupyterthon-main.png" width=700 alt="This image was created by Scriberia for The Turing Way community and is used under a CC-BY licence">
+<img src="docs/images/infosec-jupyterthon-banner-dark.jpg" width=700 alt="This image was created by Scriberia for The Turing Way community and is used under a CC-BY licence">
 
 An open community event for security researchers to share their experience and favorite [notebooks](https://jupyter.org/) with the InfoSec community. We meet virtually, share notebooks, and have fun learning more about Jupyter notebooks applied to the InfoSec field. A great place to meet other Infosec [Jovyans!](#what-is-a-jovyan-🪐)
 

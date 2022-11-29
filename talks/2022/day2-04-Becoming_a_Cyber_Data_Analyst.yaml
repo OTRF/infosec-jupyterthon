@@ -1,0 +1,23 @@
+title: 'Becoming a Cyber Data Analyst: My First Machine Learning Model'
+speaker:
+  - name: Jose Rodriguez
+    job_title: Researcher
+    company: MITRE ATT&CK
+    twitter: "@Cyb3rPandah"
+    bio: >-
+      Jose is a cyber threat researcher collaborating with the ATT&CK team to improve the data sources aspect of the framework.
+      He is interested in applying data science into cybersecurity to develop effective cyber threat hunting campaigns.
+      He is one of the founders of the Open Threat Research (OTR) community.
+date: '2022-12-03'
+time: '11:35'
+abstract: >-
+  When developing detection analytics, we usually follow a reactive approach after the public disclosure of a vulnerability related to technology used by our organization.
+  We understand the adversary behavior, the impact on the resources, and we finally conduct queries in our telemetry database to validate if an adversary has abused a vulnerability in our systems.
+  But how can we complement this approach? How can we move to a more proactive-like detection analytics? One way to do this is by adding data science knowledge to our data analysis tool kit, especially predictive algorithms.
+  In fact, the use of predictive analytics can help us to add more security insights and support our decisions when tagging events as malicious or not malicious.
+  The next question would be, what do we need to learn about predictive analytics? The National Initiative for Cybersecurity Education (NICE) workforce framework provides us with a good reference of data science knowledge, skills, and abilities that we need to understand to analyze data and provide security and privacy insights to our organization such as developing data models, data encoding, performing regression and classification analysis, and identifying hidden patterns or relationships.
+  In this presentation, we will use a sample dataset to guide you through the taught process of developing and evaluating predictive models to identify malicious network behavior following the CRISP-DM (Cross Industry Standard Process for Data Mining) methodology.
+  We will use R and Jupyter Notebooks to tell the story behind the whole process and understand how the data collected from our networks will define the activities that we need to perform and define the proper predictive model to use.
+  Some of the models we will discuss are Logistic Regression, Support Vector Machines, and Neural Networks.
+  Don't be afraid of the Math required for these techniques, R will help us with that.
+  We will focus more on the advantages and disadvantages of the model and what metrics can we use to pick the best one.

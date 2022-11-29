@@ -1,0 +1,3 @@
+# Thomas Roccia
+
+Thomas Roccia is Senior Security Researcher at Microsoft. He works in the Defender team to improve detection and research novel techniques. Previously Thomas was working at McAfee in the Advanced Threat Research team. He worked on threat intelligence, tracking cybercrime campaigns, and collaborated with law enforcement agencies. He performed worldwide incident response, malware hunting, and helped customers during major outbreaks. He speaks regularly at security conferences.

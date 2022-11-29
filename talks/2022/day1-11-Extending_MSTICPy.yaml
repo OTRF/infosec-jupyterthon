@@ -1,0 +1,17 @@
+title: 'Extending MSTICPy - building your own queries and pivot functions'
+speaker:
+  - name: Ian Hellen
+    job_title: Principal Developer and Security Engineer
+    company: Microsoft
+    twitter: "@ianhellen"
+    bio: >-
+      Ian is a Principal Software Engineer in the Microsoft Intelligence Center.
+      Mainly working in Python and Jupyter notebooks, he is the original author and current co-author/maintainer of [MSTICPy](https://github.com/microsoft/msticpy) (with Pete Bryan and Ashwin Patil). Together, we also contribute a lot of Jupyter notebooks to [Microsoft Sentinel](https://github.com/Azure/Azure-Sentinel-Notebooks).
+      When not working on security projects, he likes: music, skiing, scuba diving, hiking, raspberry PIs, science and NYTimes Sunday crosswords.
+date: '2022-12-02'
+time: '15:30'
+abstract: >-
+  Alongside public/common data sources like VirusTotal, MS Sentinel, etc.
+  SOC analysts use their own crafted queries, Python scripts and external packages to support their workflows.
+  This session gives a quick introduction into extending MSTICPy to support this by: adding custom queries, then and adding these queries as well as custom and third-party Python functions as entity-based Pivot functions.
+  mp.IpAddress.your_function_here()

@@ -73,17 +73,15 @@ for speaker in speakers_list:
 
     # Update toc file
     for caption in toc_yaml['parts']:
-        if caption['caption'] == 'Editions':
+        if f'{todays_year} Edition' in caption['caption']:
             for chapter in caption['chapters']:
-                if todays_year in chapter['file']:
-                    for section in chapter['sections']:
-                        if 'speakers' in section['file']:
-                            if 'sections' not in section.keys():
-                                section['sections'] = list()
-                            speaker_dict = dict()
-                            speaker_dict['file'] = todays_year + '/speakers/' + str(file_name.split('.md')[0])
-                            if speaker_dict not in section['sections']:
-                                section['sections'].append(speaker_dict)
+                if 'speakers' in chapter['file']:
+                    if 'sections' not in chapter.keys():
+                        chapter['sections'] = list()
+                    speaker_dict = dict()
+                    speaker_dict['file'] = todays_year + '/speakers/' + str(file_name.split('.md')[0])
+                    if speaker_dict not in chapter['sections']:
+                        chapter['sections'].append(speaker_dict)
 
 print("[+] Writing final TOC file for Jupyter book..")
 with open(toc_file, 'w') as file:

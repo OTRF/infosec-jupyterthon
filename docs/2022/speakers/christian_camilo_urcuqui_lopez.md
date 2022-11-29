@@ -1,0 +1,3 @@
+# Christian Camilo Urcuqui Lopez
+
+Cybersecurity data scientist with more than 9 years in the software industry, with several projects developed for public and private institutions. He has a Master's in computer science, Software Engineer, Specialist in Deep Learning and Natural Language Processing. He is interested in threat detection, adversarial machine learning, responsible AI, and ethical hacking. Christian is the author of the books "Cybersecurity: An Approach Based on Data Science" and "Cybersecurity: Data Holds the Answer" published by Editorial ICESI in 2018 and 2022, respectively, and multiple works in security, data science, and e-health.

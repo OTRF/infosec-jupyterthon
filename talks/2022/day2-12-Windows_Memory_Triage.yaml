@@ -1,0 +1,13 @@
+title: Windows Memory Triage 
+speaker:
+  - name: Janantha Marasinghe
+    job_title: CIR Specialist
+    company:
+    twitter:
+    bio:
+date: '2022-12-03'
+time: '15:55'
+abstract: >-
+  Carrying out forensic analysis of memory images is a challenging task. Especially when you need enrichment inbuilt.
+  A Jupyter notebook named "memOptix" https://github.com/blueteam0ps/memOptix was created so that triage can be carried out in a consistent manner.
+  It also harnesses the power of msticpy for data enrichment and visualisation to aid the analysts.

@@ -1,0 +1,23 @@
+title: 'Will it embed?: A UMAP-based introduction to making and visualizing embeddings for event and entity data'
+speaker:
+  - name: Alex Morrise
+    job_title: Head of Graph Data Science
+    company: Graphistry
+    twitter:
+    bio:
+date: '2022-12-03'
+time: '12:15'
+abstract: >-
+  The lingua franca for working with modern AI is embeddings, which are low-dimensional representations of data that are used to make many AI tasks fast, easy, and composable.
+  Especially effective in problems like cybersecurity and fraud log data, UMAP (universal manifold approximation and project) tools can automatically generate high-quality embeddings.
+  This session looks at the problem of alert fatigue and shows how to treat alert tasks like grouping, visualization, outlier detection, and prioritization as embedding problems.
+  While this may sound complicated, we will show, with modern tools like Pandas and the PyData ecosystem, working with embeddings can be quite simple yet powerful.
+  We will walk through:
+  - What an embedding is and where UMAP fits in the historical timeline
+  - How to quickly run UMAP on any event or entity data, including examples from our own investigations in areas like anti-fraud, human trafficking, alerts, and tickets
+  - Automatically visualizing UMAP - and going well beyond the typical scatterplot!
+  - Quickly improve embeddings through automatic feature engineering and supervision
+  - Some of our favorite parameters
+  - Using the embedding for tasks like visually summarizing the day's incidents, bucketing alerts into prioritized incident groups,  automatically finding related incidents, and detecting outliers
+  - Emerging patterns for how to go from notebook experiments to embedding into team tools & pipelines
+  The notebook and workflow will use free OSS tools (Pandas, umap_learn/cuML, PyGraphistry[AI]) on free data. For participants with access to GPU notebooks, the workflow can also run on GPUs, and CPU-only will work too.

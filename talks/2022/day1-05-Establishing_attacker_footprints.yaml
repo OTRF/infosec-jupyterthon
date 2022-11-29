@@ -1,0 +1,33 @@
+title: Establish attacker footprint with Microsoft Defender Threat Intelligence
+speaker:
+  - name: Chi Nguyen
+    job_title: Product Manager
+    company: Microsoft
+    twitter:
+    bio: >-
+      Chi Nguyen is a Product Manager in the Microsoft Sentinel product group.
+      She currently focuses on a few core Threat Hunting feature areas including Jupyter Notebooks integrations, data summarization for high query performance on large data sets, and federated search on external data.
+      Chi has been involved in different Jupyter InfoSec communities both internal and external and hope to be able to connect to and learn from many of other Jupyter enthusiasts.
+  - name: Amritpal Singh
+    job_title:
+    company: Microsoft
+    twitter:
+    bio:
+  - name: Vijay Punja
+    job_title:
+    company: Microsoft
+    twitter:
+    bio:
+  - name: James Duncan
+    job_title:
+    company: Microsoft
+    twitter:
+    bio:
+date: '2022-12-02'
+time: '12:15'
+abstract: >-
+  Microsoft Defender for Threat Intelligence, formerly RiskIQ, is a Threat Intelligence Engine that collects masses of data from the internet and crawls the internet to derive additional data creating a dense interconnected web of internet observations that can be used as signals in the art of threat intelligence, this gives the ability to see a lot of how the attacker operates.
+  Investigations on this data are incredibly powerful allowing the discovery of infrastructure connections that could not have been seen or considered before.
+  This visibility makes it harder for the attacker to go unidentified and theoretically making the playing field of the attacker bigger and the goal smaller!
+  So how do you limit this scope and classify what belongs to an attacker or not? Especially when the attacker is using the same infrastructure that a normal company may use to support their needs. How do we make this large, interconnected web of threat intelligence actionable to an analyst?
+  In this talk, we will present a notebook that address this challenge: Walking in the footsteps of attackers - Profiling compromised infrastructure using Machine Learning.

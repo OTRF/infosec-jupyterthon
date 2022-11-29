@@ -1,0 +1,20 @@
+title: 'Sharing is Caring: Sharing Threat Intelligence Notebook Edition'
+speaker:
+  - name: Thomas Roccia
+    job_title: Senior Security Researcher
+    company: Microsoft
+    twitter: "@fr0gger_"
+    bio: >-
+      Thomas Roccia is Senior Security Researcher at Microsoft.
+      He works in the Defender team to improve detection and research novel techniques.
+      Previously Thomas was working at McAfee in the Advanced Threat Research team.
+      He worked on threat intelligence, tracking cybercrime campaigns, and collaborated with law enforcement agencies.
+      He performed worldwide incident response, malware hunting, and helped customers during major outbreaks. He speaks regularly at security conferences.
+date: '2022-12-03'
+time: '10:45'
+abstract: >-
+  You can derive value from threat intelligence in a number of ways, including a complete threat intelligence platform, ingesting threat feeds, or simply leveraging threat intelligence capabilities found in popular security tools.
+  One less common way to leverage threat intelligence is by sharing practical information with others.
+  Sharing the methods of analysis and derived conclusions is of value for the infosec community as it demonstrates a practical and reproducible procedure.
+  Notebooks are all about sharing tools and workflow, they provide a perfect way to exchange knowledge and to improve the capabilities of your team.
+  Share your hunting and defense techniques - the more you share, the harder it is for bad guys.

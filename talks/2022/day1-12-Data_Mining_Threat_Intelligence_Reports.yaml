@@ -1,0 +1,14 @@
+title: Data Mining Threat Intelligence Reports
+speaker:
+  - name: Pete Bryan
+    job_title: Something about security
+    company: Microsoft
+    twitter: "@MSSPete"
+    bio: >-
+      Pete works as a security research at Microsoft Threat Intelligence Center (MSTIC) - he is a regular notebook user and a co-author of the MSTICPy Python security tool package.
+date: '2022-12-02'
+time: '15:55'
+abstract: >-
+  There is an ever-increasing set of threat intelligence reports produced by an ever wider number of providers.
+  Keeping up with these reports can be a full-time job - understanding the value they provide, extracting the relevant elements and applying those to the defence of an organization an even bigger ask.
+  In this talk we will cover how we can use Notebooks to help automate this task for us - from parsing reports, to extracting data of value, to validating it, and operationalizing it. 

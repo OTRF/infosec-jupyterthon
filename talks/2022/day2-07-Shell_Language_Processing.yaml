@@ -1,0 +1,12 @@
+title: 'Shell Language Processing: Modelling Linux Commands with Machine Learning'
+speaker:
+  - name: Dmitrijs Trizna
+    job_title: Senior Software Engineer
+    company: Microsoft
+    twitter: '@ditrizna'
+    bio:
+date: '2022-12-03'
+time: '13:30'
+abstract: >-
+  In this talk, we will discuss techniques that can be used to efficiently model Linux auditd telemetry with machine learning techniques. We will investigate how security specialists can use execve process creation events with machine learning modeling to perform both (a) supervised malicious activity detection and (b) unsupervised baseline definition with consequent anomaly detection.
+  We will evaluate different preprocessing methods like TF-IDF and hashing trick, as well as various machine learning models like gradient-boosted decision trees and isolation forest. Additionally, we will evaluate the adversarial robustness of such machine learning solutions for detection heuristics and consider how attackers may bypass these techniques.

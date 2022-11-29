@@ -1,0 +1,21 @@
+title: 'Exploratory Threat Analytics using Jupyter Notebooks'
+speaker:
+  - name: Saksham Tushar
+    job_title: Threat Detection Engineer
+    company:
+    twitter:
+    bio:
+date: '2022-12-02'
+time: '14:10'
+abstract: >-
+  Using Jupyter notebooks to Conduct Data analysis and tie different Actions & Tools Together.This Talk aims to Demonstrate how Notebooks could be used as a Canvas to paint your analytics/research over data and Complete a lifecycle of Alert-Investigation or Threat Analytics Objectives:
+  1. Calling Alerts/Data from SIEM (Elasticsearch)
+  2. Utilizing Data Analysis Frameworks and Libraries like Pyspark/Pandas
+  3. Utilizing APIs of Different Tools (EDR/Case management) all from a single Place.
+  4. Call VirusTotal/OSINT APIs for Reputation and Other Data Enrichment functions
+  5. Exploratory Analysis and Visualization Capabilities using Frameworks like Plotly
+  6. Create a Case for Escalated Incident-Response action
+  As end result shows how this cycle has produced
+  An Investigation Report.
+  An Exploratory Hunt-Notebook
+  A Repetitive Notebook as Re-usable component.

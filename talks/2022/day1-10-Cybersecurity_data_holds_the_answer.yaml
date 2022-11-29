@@ -1,0 +1,21 @@
+title: 'Cybersecurity: data holds the answer'
+speaker:
+  - name: Christian Camilo Urcuqui Lopez
+    job_title: Data Scientist
+    company:
+    twitter:
+    bio: >-
+      Cybersecurity data scientist with more than 9 years in the software industry, with several projects developed for public and private institutions.
+      He has a Master's in computer science, Software Engineer, Specialist in Deep Learning and Natural Language Processing.
+      He is interested in threat detection, adversarial machine learning, responsible AI, and ethical hacking.
+      Christian is the author of the books "Cybersecurity: An Approach Based on Data Science" and "Cybersecurity: Data Holds the Answer" published by Editorial ICESI in 2018 and 2022, respectively, and multiple works in security, data science, and e-health.
+date: '2022-12-02'
+time: '15:05'
+abstract: >-
+  The talk is about our new book "Cybersecurity: data holds the answer" which has our latest findings in cybersecurity data science.
+  The book contains a set of eight research projects, which seek to guide the reader on how to use artificial intelligence in defensive and offensive perspectives.
+  On the defensive approximation, the book includes precise experiments to develop models for detecting malware on Android devices, cryptojacking, deepfakes, and malicious botnets.
+  In the offensive approach, models for the generation of non-legitimate multimedia content are explored, and the concept of secure learning and the application of adversarial machine learning is introduced as an approach to find the values that allow biasing the results of a machine learning model.
+  Each project was done using Jupyter notebooks and a research methodology that allows the person to replicate the results.
+  Finally, the code and the results can be found in the next URL https://github.com/i2tResearch/Ciberseguridad_web
+  URL book: https://www.icesi.edu.co/editorial/ciberseguridad-datos/
