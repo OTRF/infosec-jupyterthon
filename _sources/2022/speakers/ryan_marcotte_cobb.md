@@ -1,3 +1,3 @@
 # Ryan Marcotte Cobb
 
-None
+Ryan Marcotte Cobb is a principal information security researcher in the Secureworks Counter Threat Unit (CTU). Ryan joined Secureworks in 2012 as a consultant on the Incident Response team, where he led complex intrusion investigations including novel cyberattacks from hostile state actors. He has a B.A. in Philosophy and a Graduate Certificate in Digital Forensics from the University of Rhode Island.
