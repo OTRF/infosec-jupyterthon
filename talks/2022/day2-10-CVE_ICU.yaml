@@ -4,7 +4,10 @@ speaker:
     job_title: Director Of Security Research
     company: Cisco
     twitter: "@jgamblin"
-    bio:
+    bio: >-
+      Jerry Gamblin is an influential security researcher and analyst, focusing on enterprise networks and application security with over 20 years of experience.
+      His research has been presented on numerous blogs, podcasts, and security conferences.
+      When not at work, his personal research focuses on IoT & embedded automotive systems.
 date: '2022-12-03'
 time: '15:05'
 abstract: >-
