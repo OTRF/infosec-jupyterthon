@@ -24,7 +24,7 @@ speaker:
     twitter:
     bio:
 date: '2022-12-02'
-time: '12:15'
+time: '14:10'
 abstract: >-
   Microsoft Defender for Threat Intelligence, formerly RiskIQ, is a Threat Intelligence Engine that collects masses of data from the internet and crawls the internet to derive additional data creating a dense interconnected web of internet observations that can be used as signals in the art of threat intelligence, this gives the ability to see a lot of how the attacker operates.
   Investigations on this data are incredibly powerful allowing the discovery of infrastructure connections that could not have been seen or considered before.

@@ -6,7 +6,7 @@ speaker:
     twitter:
     bio:
 date: '2022-12-02'
-time: '14:10'
+time: '12:15'
 abstract: >-
   Using Jupyter notebooks to Conduct Data analysis and tie different Actions & Tools Together.This Talk aims to Demonstrate how Notebooks could be used as a Canvas to paint your analytics/research over data and Complete a lifecycle of Alert-Investigation or Threat Analytics Objectives:
   1. Calling Alerts/Data from SIEM (Elasticsearch)
