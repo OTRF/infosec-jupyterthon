@@ -1,0 +1,3 @@
+# Roberto Rodriguez
+
+Roberto Rodriquez is a Principal Threat Researcher and Security engineer at the Microsoft Security Research organization. He is the founder of the Open Threat Research (OTR) community and author of several open source projects, such as the Threat Hunter Playbook, OSSEM, SimuLand, Cloud Katana, ATT&CK Python Client, and more. OTR GitHub Open Organization: https://github.com/OTRF.
