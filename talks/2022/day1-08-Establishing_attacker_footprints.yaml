@@ -9,10 +9,14 @@ speaker:
       She currently focuses on a few core Threat Hunting feature areas including Jupyter Notebooks integrations, data summarization for high query performance on large data sets, and federated search on external data.
       Chi has been involved in different Jupyter InfoSec communities both internal and external and hope to be able to connect to and learn from many of other Jupyter enthusiasts.
   - name: Amritpal Singh
-    job_title:
+    job_title: Security Data Scientist
     company: Microsoft
     twitter:
-    bio:
+    bio: >-
+      Amritpal is as a security data scientist in the Microsoft Threat Intelligence Center (MSTIC) R&D team.
+      He works on researching and developing machine learning techniques for threat intelligence, hunting and detection.
+      Amritpal has previously worked on mathematics and security research in both industry and government.
+      He has a master's degree in mathematics from the University of Oxford.
   - name: Vijay Punja
     job_title:
     company: Microsoft
