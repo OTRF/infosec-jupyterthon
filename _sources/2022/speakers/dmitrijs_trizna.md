@@ -1,3 +1,3 @@
 # Dmitrijs Trizna
 
-None
+Dmitrijs come from Latvia, has ~10 years of experience in information security, works ar Sr. Software Engineer in Micorosft, but in past worked as Red Team Engineer and Security Data Scientist. Dmitrijs is pursuing his Ph.D. in the intersection of Artificial Intelligence and Cybersecurity, and has two Master's Degrees. He has publications at DefCon AI Village, Black Hat USA and on scientific venues like CAMLIS and ACM CCS AISec, held membership in NATO CCDCOE cybersecurity events, certified: OSCP, SANS (GREM, GDAT), Stanford Online, etc.  More personal note: central free time dilemma is whether to beat deity AI in Civilization 6 or read Methods of Rationality (HPMOR) for the fourth time. But there is practically no free time since I am raising a 3-year-old neural network.

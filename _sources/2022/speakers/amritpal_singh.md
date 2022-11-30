@@ -1,3 +1,3 @@
 # Amritpal Singh
 
-None
+Amritpal is as a security data scientist in the Microsoft Threat Intelligence Center (MSTIC) R&D team. He works on researching and developing machine learning techniques for threat intelligence, hunting and detection. Amritpal has previously worked on mathematics and security research in both industry and government. He has a master's degree in mathematics from the University of Oxford.
