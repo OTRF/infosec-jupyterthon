@@ -1,0 +1,20 @@
+title: Fun with securitydatasets.com and the Kestrel PowerShell Deobfuscator
+speaker:
+  - name: Paul Coccoli
+    job_title: Senior Software Engineer
+    company: IBM
+    twitter:
+    bio:
+date: '2022-12-02'
+time: '17:00'
+abstract: >-
+  The Kestrel Threat Hunting Language provides a composable way for conceiving and sharing threat hunts. We will walk the audience through the procedure to create huntbooks in a public Kestrel cloud sandbox (binder environment) and conduct threat hunting on data from securitydatasets.com.
+  In this session, we will first introduce the basic Kestrel concepts and how to use the Kestrel cloud sandbox.
+  Then we will start a Jupyter notebook using the Kestrel language kernel and exercise the Kestrel PowerShell Deobfuscator using adversarial emulation logs from securitydatasets.com.
+  We will hunt step-by-step and explain the analytics used in the hunt. Next, we will (maybe another huntbook?).
+  Lastly, we will show how to integrate Kestrel into existing workflows by using its Python API in a Python notebook.
+  References:
+  - Kestrel home repo: https://github.com/opencybersecurityalliance/kestrel-lang
+  - Kestrel huntbooks: https://github.com/opencybersecurityalliance/kestrel-huntbook
+  - OCA blog on Kestrel cloud sandbox: https://opencybersecurityalliance.org/try-kestrel-in-a-cloud-sandbox/
+  - OCA blog on PowerShell Deobfuscator: https://opencybersecurityalliance.org/fun-with-securitydatasets-com-and-the-kestrel-powershell-deobfuscator/

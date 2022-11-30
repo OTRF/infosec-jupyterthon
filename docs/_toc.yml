@@ -40,6 +40,7 @@ parts:
     - file: 2022/speakers/jerry_gamblin
     - file: 2022/speakers/balaji_sampath
     - file: 2022/speakers/janantha_marasinghe
+    - file: 2022/speakers/paul_coccoli
 - caption: Workshops
   chapters:
   - file: workshops/day1/intro
