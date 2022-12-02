@@ -47,7 +47,9 @@ parts:
     sections:
     - file: 2022/sessions/day1-01-Opening_Remarks
       title: Opening Remarks
+    - file: 2022/sessions/day1-05-Exploratory_Data_I_mean_Threat_Analytics_using_Jupyter_Notebooks
     - file: 2022/sessions/day1-11-Extending_MSTICPy
+      title: Extending MSTICPy with Pivot functions
 - caption: Workshops
   chapters:
   - file: workshops/day1/intro
