@@ -1,3 +1,3 @@
 # James Duncan
 
-None
+James is a Security Cloud Solutions Architect (CSA) at Microsoft, working alongside customers to help improve their security in the cloud by providing architectural and technical support. He works primarily in Azure but has wide ranging interests in security and development including Adversarial Machine Learning and data science. He has a BSc in Computer Science from the University of Hull. 

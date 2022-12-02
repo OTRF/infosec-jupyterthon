@@ -7,6 +7,11 @@ speaker:
     bio: >-
       Balaji Sampath has been doing perimeter security for the last couple of years and have been with Arbor Networks, AWS, Fidelity in the past.
       He is now part of Banyan Security, a company that provides Zero Trust Network Access solutions for various businesses.
+  - name: Brayan Mena
+    job_title: Intern
+    company: Banyan Security
+    twitter:
+    bio:
 date: '2022-12-03'
 time: '15:30'
 abstract: >-

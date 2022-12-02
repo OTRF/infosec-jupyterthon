@@ -17,16 +17,14 @@ speaker:
       He works on researching and developing machine learning techniques for threat intelligence, hunting and detection.
       Amritpal has previously worked on mathematics and security research in both industry and government.
       He has a master's degree in mathematics from the University of Oxford.
-  - name: Vijay Punja
-    job_title:
-    company: Microsoft
-    twitter:
-    bio:
   - name: James Duncan
-    job_title:
+    job_title: Security Cloud Solutions Architect
     company: Microsoft
     twitter:
-    bio:
+    bio: >-
+      James is a Security Cloud Solutions Architect (CSA) at Microsoft, working alongside customers to help improve their security in the cloud by providing architectural and technical support.
+      He works primarily in Azure but has wide ranging interests in security and development including Adversarial Machine Learning and data science.
+      He has a BSc in Computer Science from the University of Hull. 
 date: '2022-12-02'
 time: '14:10'
 abstract: >-
