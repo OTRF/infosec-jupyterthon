@@ -1,3 +1,3 @@
 # Paul Coccoli
 
-None
+Paul Coccoli is a Senior Software Engineer at IBM with rich experience in network analytics. After working on signals intelligence systems and innovative networking technologies, Paul joined Internet Security Systems (now IBM) in 2004. Since then, he has worked on the research and development of many security products from inception to production, including Network Intrusion Prevention systems (IPS), Extended Detection and Response (XDR), Watson for Cybersecurity, and Cloud Pak for Security. Paul received a Bachelor's of Science degree in Applied Mathematics at the State University of New York at Buffalo.
