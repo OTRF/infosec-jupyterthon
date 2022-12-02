@@ -1,0 +1,18 @@
+title: CVEData - Data Scientist Pretender Dives into CVEs for Infosec Insight
+speaker:
+  - name: John Mac
+    job_title: Data Scientist Pretender / Infosec Enthusiast
+    company:
+    twitter: "@clearbluejar"
+    bio: 
+date: '2022-12-03'
+time: '16:35'
+abstract: >-
+  Cvedata is a python package is caught somewhere between a data collection tool and a CVE data API. It is much more the former than the latter.
+  https://clearbluejar.github.io/cvedata/README.html
+  The quick talk will cover how cvedata leverages Jupyter notebooks and books to:
+  - Automate package documentation
+  - Auto create source data Jupyter notebooks and display results within Javascript Datatables
+  - Explore CVE public data
+  - Analysis of MSRC CVEs, Updates, and File Info
+  - Rank Security Researchers by CVEs
