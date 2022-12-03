@@ -1,3 +1,3 @@
 # John Mac
 
-None
+Independent Security Researcher in Canada who enjoys learning, coding, and writing about InfoSec.
