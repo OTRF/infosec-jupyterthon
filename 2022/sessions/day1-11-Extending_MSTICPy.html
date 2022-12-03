@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Ian Hellen (@ianhellen Twitter/ @ianhelle GitHub)</title>
+    <title>Extending MSTICPy with Pivot functions</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -330,15 +330,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2 current active">
     <a class="current reference internal" href="#">
-     Ian Hellen (
-     <span style="color: blue">
-      @ianhellen
-     </span>
-     Twitter/
-     <span style="color: blue">
-      @ianhelle
-     </span>
-     GitHub)
+     Extending MSTICPy with Pivot functions
     </a>
    </li>
   </ul>
@@ -661,8 +653,8 @@ title="Print to PDF"
     </div>
     <nav id="bd-toc-nav" aria-label="Page">
         <ul class="visible nav section-nav flex-column">
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#ian-hellen-span-style-color-blue-ianhellen-span-twitter-span-style-color-blue-ianhelle-span-github">
    Ian Hellen (
    <span style="color: blue">
     @ianhellen
@@ -674,12 +666,12 @@ title="Print to PDF"
    GitHub)
   </a>
  </li>
- <li class="toc-h1 nav-item toc-entry">
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#here-is-the-function-that-we-want-to-add-to-some-entities">
    Here is the function that we want to add to some entities
   </a>
  </li>
- <li class="toc-h1 nav-item toc-entry">
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#call-pivot-add-pivot-function-to-add-the-function-to-a-couple-of-entities">
    Call
    <code class="docutils literal notranslate">
@@ -690,12 +682,12 @@ title="Print to PDF"
    to add the function to a couple of entities
   </a>
  </li>
- <li class="toc-h1 nav-item toc-entry">
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#now-we-can-defang-ip-addresses-and-dns-names">
    Now we can defang IP addresses and DNS names
   </a>
  </li>
- <li class="toc-h1 nav-item toc-entry">
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#for-urls-we-want-to-also-set-the-ioc-type-parameter">
    For URLs we want to also set the
    <code class="docutils literal notranslate">
@@ -706,34 +698,34 @@ title="Print to PDF"
    parameter
   </a>
  </li>
- <li class="toc-h1 nav-item toc-entry">
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#define-a-python-module-and-write-it-to-a-file">
    Define a Python module and write it to a file
   </a>
  </li>
- <li class="toc-h1 nav-item toc-entry">
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#pivot-definition-file">
    Pivot definition file
   </a>
-  <ul class="visible nav section-nav flex-column">
-   <li class="toc-h2 nav-item toc-entry">
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#works-with-functions-from-other-libraries">
      Works with functions from other libraries
     </a>
    </li>
   </ul>
  </li>
- <li class="toc-h1 nav-item toc-entry">
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#entity-specific-functionality-all-in-one-place-no-searching-no-imports">
    1. Entity-specific functionality all in one place - no searching, no imports
   </a>
  </li>
- <li class="toc-h1 nav-item toc-entry">
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#flexible-input-types">
    2. Flexible input types
   </a>
-  <ul class="visible nav section-nav flex-column">
-   <li class="toc-h2 nav-item toc-entry">
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#can-also-wrap-functions-that-expect-list-or-dataframe-input">
      - Can also wrap functions that expect
      <code class="docutils literal notranslate">
@@ -752,46 +744,46 @@ title="Print to PDF"
    </li>
   </ul>
  </li>
- <li class="toc-h1 nav-item toc-entry">
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#standardized-output-types">
    3. Standardized output types
   </a>
-  <ul class="visible nav section-nav flex-column">
-   <li class="toc-h2 nav-item toc-entry">
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#starting-query">
      Starting Query
     </a>
    </li>
   </ul>
  </li>
- <li class="toc-h1 nav-item toc-entry">
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#parameterize-the-query">
    Parameterize the query
   </a>
  </li>
- <li class="toc-h1 nav-item toc-entry">
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#example-query-definition-file">
    Example query definition file
   </a>
  </li>
- <li class="toc-h1 nav-item toc-entry">
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#add-query-to-query-definition-file">
    Add query to query definition file
   </a>
-  <ul class="visible nav section-nav flex-column">
-   <li class="toc-h2 nav-item toc-entry">
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#write-our-query-definitions-to-a-file">
      Write our query definitions to a file
     </a>
    </li>
-   <li class="toc-h2 nav-item toc-entry">
+   <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#create-a-query-provider-br-and-tell-it-to-look-in-the-queries-folder-for-additional-queries">
      Create a query provider
      <br/>
      and tell it to look in the ./queries folder for additional queries
     </a>
    </li>
-   <li class="toc-h2 nav-item toc-entry">
+   <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#since-it-has-a-host-name-parameter-it-should-also-be-br-available-as-a-pivot-function-on-the-host-class">
      Since it has a “host_name” parameter it should also be
      <br/>
@@ -800,12 +792,12 @@ title="Print to PDF"
    </li>
   </ul>
  </li>
- <li class="toc-h1 nav-item toc-entry">
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#pivot-functions">
    Pivot Functions
   </a>
  </li>
- <li class="toc-h1 nav-item toc-entry">
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#msticpy-queries">
    MSTICPy Queries
   </a>
@@ -819,7 +811,7 @@ title="Print to PDF"
         <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Ian Hellen (<span style="color: blue">@ianhellen</span> Twitter/ <span style="color: blue">@ianhelle</span> GitHub)</h1>
+                <h1>Extending MSTICPy with Pivot functions</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -829,8 +821,8 @@ title="Print to PDF"
                         </div>
                         <nav aria-label="Page">
                             <ul class="visible nav section-nav flex-column">
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#ian-hellen-span-style-color-blue-ianhellen-span-twitter-span-style-color-blue-ianhelle-span-github">
    Ian Hellen (
    <span style="color: blue">
     @ianhellen
@@ -842,12 +834,12 @@ title="Print to PDF"
    GitHub)
   </a>
  </li>
- <li class="toc-h1 nav-item toc-entry">
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#here-is-the-function-that-we-want-to-add-to-some-entities">
    Here is the function that we want to add to some entities
   </a>
  </li>
- <li class="toc-h1 nav-item toc-entry">
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#call-pivot-add-pivot-function-to-add-the-function-to-a-couple-of-entities">
    Call
    <code class="docutils literal notranslate">
@@ -858,12 +850,12 @@ title="Print to PDF"
    to add the function to a couple of entities
   </a>
  </li>
- <li class="toc-h1 nav-item toc-entry">
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#now-we-can-defang-ip-addresses-and-dns-names">
    Now we can defang IP addresses and DNS names
   </a>
  </li>
- <li class="toc-h1 nav-item toc-entry">
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#for-urls-we-want-to-also-set-the-ioc-type-parameter">
    For URLs we want to also set the
    <code class="docutils literal notranslate">
@@ -874,34 +866,34 @@ title="Print to PDF"
    parameter
   </a>
  </li>
- <li class="toc-h1 nav-item toc-entry">
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#define-a-python-module-and-write-it-to-a-file">
    Define a Python module and write it to a file
   </a>
  </li>
- <li class="toc-h1 nav-item toc-entry">
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#pivot-definition-file">
    Pivot definition file
   </a>
-  <ul class="visible nav section-nav flex-column">
-   <li class="toc-h2 nav-item toc-entry">
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#works-with-functions-from-other-libraries">
      Works with functions from other libraries
     </a>
    </li>
   </ul>
  </li>
- <li class="toc-h1 nav-item toc-entry">
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#entity-specific-functionality-all-in-one-place-no-searching-no-imports">
    1. Entity-specific functionality all in one place - no searching, no imports
   </a>
  </li>
- <li class="toc-h1 nav-item toc-entry">
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#flexible-input-types">
    2. Flexible input types
   </a>
-  <ul class="visible nav section-nav flex-column">
-   <li class="toc-h2 nav-item toc-entry">
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#can-also-wrap-functions-that-expect-list-or-dataframe-input">
      - Can also wrap functions that expect
      <code class="docutils literal notranslate">
@@ -920,46 +912,46 @@ title="Print to PDF"
    </li>
   </ul>
  </li>
- <li class="toc-h1 nav-item toc-entry">
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#standardized-output-types">
    3. Standardized output types
   </a>
-  <ul class="visible nav section-nav flex-column">
-   <li class="toc-h2 nav-item toc-entry">
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#starting-query">
      Starting Query
     </a>
    </li>
   </ul>
  </li>
- <li class="toc-h1 nav-item toc-entry">
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#parameterize-the-query">
    Parameterize the query
   </a>
  </li>
- <li class="toc-h1 nav-item toc-entry">
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#example-query-definition-file">
    Example query definition file
   </a>
  </li>
- <li class="toc-h1 nav-item toc-entry">
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#add-query-to-query-definition-file">
    Add query to query definition file
   </a>
-  <ul class="visible nav section-nav flex-column">
-   <li class="toc-h2 nav-item toc-entry">
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#write-our-query-definitions-to-a-file">
      Write our query definitions to a file
     </a>
    </li>
-   <li class="toc-h2 nav-item toc-entry">
+   <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#create-a-query-provider-br-and-tell-it-to-look-in-the-queries-folder-for-additional-queries">
      Create a query provider
      <br/>
      and tell it to look in the ./queries folder for additional queries
     </a>
    </li>
-   <li class="toc-h2 nav-item toc-entry">
+   <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#since-it-has-a-host-name-parameter-it-should-also-be-br-available-as-a-pivot-function-on-the-host-class">
      Since it has a “host_name” parameter it should also be
      <br/>
@@ -968,12 +960,12 @@ title="Print to PDF"
    </li>
   </ul>
  </li>
- <li class="toc-h1 nav-item toc-entry">
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#pivot-functions">
    Pivot Functions
   </a>
  </li>
- <li class="toc-h1 nav-item toc-entry">
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#msticpy-queries">
    MSTICPy Queries
   </a>
@@ -988,12 +980,14 @@ title="Print to PDF"
                 
               <div>
                 
-  <h1 style="border: solid; padding: 5pt; color: goldenrod; background-color: darkblue">
+  <div class="tex2jax_ignore mathjax_ignore section" id="extending-msticpy-with-pivot-functions">
+<h1>Extending MSTICPy with Pivot functions<a class="headerlink" href="#extending-msticpy-with-pivot-functions" title="Permalink to this headline">#</a></h1>
+<h1 style="border: solid; padding: 5pt; color: goldenrod; background-color: darkblue">
 Extending MSTICPy with Pivot functions
 </h1>
 <h2 style="color: blue; font-style: italic">Infosec Jupyterthon 2022</h2>
 <div class="section" id="ian-hellen-span-style-color-blue-ianhellen-span-twitter-span-style-color-blue-ianhelle-span-github">
-<h1>Ian Hellen (<span style="color: blue">&#64;ianhellen</span> Twitter/ <span style="color: blue">&#64;ianhelle</span> GitHub)<a class="headerlink" href="#ian-hellen-span-style-color-blue-ianhellen-span-twitter-span-style-color-blue-ianhelle-span-github" title="Permalink to this headline">#</a></h1>
+<h2>Ian Hellen (<span style="color: blue">&#64;ianhellen</span> Twitter/ <span style="color: blue">&#64;ianhelle</span> GitHub)<a class="headerlink" href="#ian-hellen-span-style-color-blue-ianhellen-span-twitter-span-style-color-blue-ianhelle-span-github" title="Permalink to this headline">#</a></h2>
 <p>Principal Software Engineer<br>
 <b>Microsoft Security Research</b></p>
 <hr class="docutils" />
@@ -1080,7 +1074,7 @@ Examples:<br>
 </div>
 </div>
 <div class="section" id="here-is-the-function-that-we-want-to-add-to-some-entities">
-<h1>Here is the function that we want to add to some entities<a class="headerlink" href="#here-is-the-function-that-we-want-to-add-to-some-entities" title="Permalink to this headline">#</a></h1>
+<h2>Here is the function that we want to add to some entities<a class="headerlink" href="#here-is-the-function-that-we-want-to-add-to-some-entities" title="Permalink to this headline">#</a></h2>
 <p>Note it takes a string parameter for the entity value input and returns a string</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1126,7 +1120,7 @@ Examples:<br>
 </div>
 </div>
 <div class="section" id="call-pivot-add-pivot-function-to-add-the-function-to-a-couple-of-entities">
-<h1>Call <code class="docutils literal notranslate"><span class="pre">Pivot.add_pivot_function</span></code> to add the function to a couple of entities<a class="headerlink" href="#call-pivot-add-pivot-function-to-add-the-function-to-a-couple-of-entities" title="Permalink to this headline">#</a></h1>
+<h2>Call <code class="docutils literal notranslate"><span class="pre">Pivot.add_pivot_function</span></code> to add the function to a couple of entities<a class="headerlink" href="#call-pivot-add-pivot-function-to-add-the-function-to-a-couple-of-entities" title="Permalink to this headline">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mp</span><span class="o">.</span><span class="n">Pivot</span><span class="o">.</span><span class="n">add_pivot_function</span><span class="p">(</span>
@@ -1146,7 +1140,7 @@ Examples:<br>
 </div>
 </div>
 <div class="section" id="now-we-can-defang-ip-addresses-and-dns-names">
-<h1>Now we can defang IP addresses and DNS names<a class="headerlink" href="#now-we-can-defang-ip-addresses-and-dns-names" title="Permalink to this headline">#</a></h1>
+<h2>Now we can defang IP addresses and DNS names<a class="headerlink" href="#now-we-can-defang-ip-addresses-and-dns-names" title="Permalink to this headline">#</a></h2>
 <div style="border: solid; padding: 5pt">
 Note - even though the input and output of our original function was a string,<br> it accepts lists and DataFrames as inputs.
 </div><div class="cell docutils container">
@@ -1280,7 +1274,7 @@ Note - even though the input and output of our original function was a string,<b
 </div>
 </div>
 <div class="section" id="for-urls-we-want-to-also-set-the-ioc-type-parameter">
-<h1>For URLs we want to also set the <code class="docutils literal notranslate"><span class="pre">ioc_type</span></code> parameter<a class="headerlink" href="#for-urls-we-want-to-also-set-the-ioc-type-parameter" title="Permalink to this headline">#</a></h1>
+<h2>For URLs we want to also set the <code class="docutils literal notranslate"><span class="pre">ioc_type</span></code> parameter<a class="headerlink" href="#for-urls-we-want-to-also-set-the-ioc-type-parameter" title="Permalink to this headline">#</a></h2>
 <p>We can add that as a registration parameter - <code class="docutils literal notranslate"><span class="pre">func_static_params</span></code>.</p>
 <p>This is a dict of <code class="docutils literal notranslate"><span class="pre">{param_name:</span> <span class="pre">param_value}</span></code></p>
 <div class="cell docutils container">
@@ -1347,7 +1341,7 @@ Note - even though the input and output of our original function was a string,<b
 2. Adding functions from modules and packages
 </h2></div>
 <div class="section" id="define-a-python-module-and-write-it-to-a-file">
-<h1>Define a Python module and write it to a file<a class="headerlink" href="#define-a-python-module-and-write-it-to-a-file" title="Permalink to this headline">#</a></h1>
+<h2>Define a Python module and write it to a file<a class="headerlink" href="#define-a-python-module-and-write-it-to-a-file" title="Permalink to this headline">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%writefile</span> ioc_utils.py
@@ -1405,7 +1399,7 @@ Note - even though the input and output of our original function was a string,<b
 </div>
 </div>
 <div class="section" id="pivot-definition-file">
-<h1>Pivot definition file<a class="headerlink" href="#pivot-definition-file" title="Permalink to this headline">#</a></h1>
+<h2>Pivot definition file<a class="headerlink" href="#pivot-definition-file" title="Permalink to this headline">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%writefile</span> pivot_funcs.yaml
@@ -1680,7 +1674,7 @@ Also supports passing lists and other iterables
 </div></div></div>
 </div>
 <div class="section" id="works-with-functions-from-other-libraries">
-<h2>Works with functions from other libraries<a class="headerlink" href="#works-with-functions-from-other-libraries" title="Permalink to this headline">#</a></h2>
+<h3>Works with functions from other libraries<a class="headerlink" href="#works-with-functions-from-other-libraries" title="Permalink to this headline">#</a></h3>
 <p>Python’s <code class="docutils literal notranslate"><span class="pre">urllib.parse.quote</span></code> function</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1729,20 +1723,20 @@ What are the benefits?
 </div>
 </div>
 <div class="section" id="entity-specific-functionality-all-in-one-place-no-searching-no-imports">
-<h1>1. Entity-specific functionality all in one place - no searching, no imports<a class="headerlink" href="#entity-specific-functionality-all-in-one-place-no-searching-no-imports" title="Permalink to this headline">#</a></h1>
+<h2>1. Entity-specific functionality all in one place - no searching, no imports<a class="headerlink" href="#entity-specific-functionality-all-in-one-place-no-searching-no-imports" title="Permalink to this headline">#</a></h2>
 </div>
 <div class="section" id="flexible-input-types">
-<h1>2. Flexible input types<a class="headerlink" href="#flexible-input-types" title="Permalink to this headline">#</a></h1>
+<h2>2. Flexible input types<a class="headerlink" href="#flexible-input-types" title="Permalink to this headline">#</a></h2>
 <div class="section" id="can-also-wrap-functions-that-expect-list-or-dataframe-input">
-<h2>    - Can also wrap functions that expect <code class="docutils literal notranslate"><span class="pre">list</span></code> or <code class="docutils literal notranslate"><span class="pre">dataframe</span></code> input<a class="headerlink" href="#can-also-wrap-functions-that-expect-list-or-dataframe-input" title="Permalink to this headline">#</a></h2>
+<h3>    - Can also wrap functions that expect <code class="docutils literal notranslate"><span class="pre">list</span></code> or <code class="docutils literal notranslate"><span class="pre">dataframe</span></code> input<a class="headerlink" href="#can-also-wrap-functions-that-expect-list-or-dataframe-input" title="Permalink to this headline">#</a></h3>
 </div>
 </div>
 <div class="section" id="standardized-output-types">
-<h1>3. Standardized output types<a class="headerlink" href="#standardized-output-types" title="Permalink to this headline">#</a></h1>
+<h2>3. Standardized output types<a class="headerlink" href="#standardized-output-types" title="Permalink to this headline">#</a></h2>
 <h2 style="border: solid; padding: 5pt; color: goldenrod; background-color: #333333">
 3. Queries as Pivot functions
 </h2><div class="section" id="starting-query">
-<h2>Starting Query<a class="headerlink" href="#starting-query" title="Permalink to this headline">#</a></h2>
+<h3>Starting Query<a class="headerlink" href="#starting-query" title="Permalink to this headline">#</a></h3>
 <hr class="docutils" />
 <div class="highlight-kql notranslate"><div class="highlight"><pre><span></span>SecurityEvent
 | where TimeGenerated &gt; ago(1d)
@@ -1753,7 +1747,7 @@ What are the benefits?
 </div>
 </div>
 <div class="section" id="parameterize-the-query">
-<h1>Parameterize the query<a class="headerlink" href="#parameterize-the-query" title="Permalink to this headline">#</a></h1>
+<h2>Parameterize the query<a class="headerlink" href="#parameterize-the-query" title="Permalink to this headline">#</a></h2>
 <hr class="docutils" />
 <div class="highlight-kql notranslate"><div class="highlight"><pre><span></span>SecurityEvent
 | where TimeGenerated between (datetime({start}) .. datetime({end}))
@@ -1763,10 +1757,10 @@ What are the benefits?
 </div>
 </div>
 <div class="section" id="example-query-definition-file">
-<h1>Example query definition file<a class="headerlink" href="#example-query-definition-file" title="Permalink to this headline">#</a></h1>
+<h2>Example query definition file<a class="headerlink" href="#example-query-definition-file" title="Permalink to this headline">#</a></h2>
 </div>
 <div class="section" id="add-query-to-query-definition-file">
-<h1>Add query to query definition file<a class="headerlink" href="#add-query-to-query-definition-file" title="Permalink to this headline">#</a></h1>
+<h2>Add query to query definition file<a class="headerlink" href="#add-query-to-query-definition-file" title="Permalink to this headline">#</a></h2>
 <hr class="docutils" />
 <div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">metadata</span><span class="p">:</span>
   <span class="nt">version</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">1</span>
@@ -1816,7 +1810,7 @@ What are the benefits?
 </div>
 </div>
 <div class="section" id="write-our-query-definitions-to-a-file">
-<h2>Write our query definitions to a file<a class="headerlink" href="#write-our-query-definitions-to-a-file" title="Permalink to this headline">#</a></h2>
+<h3>Write our query definitions to a file<a class="headerlink" href="#write-our-query-definitions-to-a-file" title="Permalink to this headline">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%writefile</span> queries/my_queries.yaml
@@ -1864,7 +1858,7 @@ What are the benefits?
 </div>
 </div>
 <div class="section" id="create-a-query-provider-br-and-tell-it-to-look-in-the-queries-folder-for-additional-queries">
-<h2>Create a query provider<br> and tell it to look in the ./queries folder for additional queries<a class="headerlink" href="#create-a-query-provider-br-and-tell-it-to-look-in-the-queries-folder-for-additional-queries" title="Permalink to this headline">#</a></h2>
+<h3>Create a query provider<br> and tell it to look in the ./queries folder for additional queries<a class="headerlink" href="#create-a-query-provider-br-and-tell-it-to-look-in-the-queries-folder-for-additional-queries" title="Permalink to this headline">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">qry_prov</span> <span class="o">=</span> <span class="n">mp</span><span class="o">.</span><span class="n">QueryProvider</span><span class="p">(</span><span class="s2">&quot;MSSentinel&quot;</span><span class="p">,</span> <span class="n">query_paths</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;./queries&quot;</span><span class="p">])</span>
@@ -1910,7 +1904,7 @@ Query:
 </div>
 </div>
 <div class="section" id="since-it-has-a-host-name-parameter-it-should-also-be-br-available-as-a-pivot-function-on-the-host-class">
-<h2>Since it has a “host_name” parameter it should also be<br>available as a pivot function on the Host class.<a class="headerlink" href="#since-it-has-a-host-name-parameter-it-should-also-be-br-available-as-a-pivot-function-on-the-host-class" title="Permalink to this headline">#</a></h2>
+<h3>Since it has a “host_name” parameter it should also be<br>available as a pivot function on the Host class.<a class="headerlink" href="#since-it-has-a-host-name-parameter-it-should-also-be-br-available-as-a-pivot-function-on-the-host-class" title="Permalink to this headline">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Host.MSSentinel_cybersecuritysoc()</span>
@@ -2219,7 +2213,7 @@ References
 </div>
 </div>
 <div class="section" id="pivot-functions">
-<h1>Pivot Functions<a class="headerlink" href="#pivot-functions" title="Permalink to this headline">#</a></h1>
+<h2>Pivot Functions<a class="headerlink" href="#pivot-functions" title="Permalink to this headline">#</a></h2>
 <p><a class="reference external" href="https://msticpy.readthedocs.io/en/latest/data_analysis/PivotFunctions.html">https://msticpy.readthedocs.io/en/latest/data_analysis/PivotFunctions.html</a></p>
 <p>Entity to parameter mapping<br>
 <a class="reference external" href="https://msticpy.readthedocs.io/en/latest/data_analysis/PivotFunctions.html#how-are-queries-assigned-to-specific-entities">https://msticpy.readthedocs.io/en/latest/data_analysis/PivotFunctions.html#how-are-queries-assigned-to-specific-entities</a></p>
@@ -2227,10 +2221,11 @@ References
 <a class="reference external" href="https://msticpy.readthedocs.io/en/latest/data_analysis/PivotFunctions.html#customizing-and-managing-pivots">https://msticpy.readthedocs.io/en/latest/data_analysis/PivotFunctions.html#customizing-and-managing-pivots</a></p>
 </div>
 <div class="section" id="msticpy-queries">
-<h1>MSTICPy Queries<a class="headerlink" href="#msticpy-queries" title="Permalink to this headline">#</a></h1>
+<h2>MSTICPy Queries<a class="headerlink" href="#msticpy-queries" title="Permalink to this headline">#</a></h2>
 <p><a class="reference external" href="https://msticpy.readthedocs.io/en/latest/data_acquisition/DataProviders.html">https://msticpy.readthedocs.io/en/latest/data_acquisition/DataProviders.html</a></p>
 <p>Creating custom queries<br>
 <a class="reference external" href="https://msticpy.readthedocs.io/en/latest/data_acquisition/DataProviders.html#creating-new-queries">https://msticpy.readthedocs.io/en/latest/data_acquisition/DataProviders.html#creating-new-queries</a></p>
+</div>
 </div>
 
     <script type="text/x-thebe-config">
