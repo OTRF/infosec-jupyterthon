@@ -2,7 +2,7 @@
 # Book settings
 title                       : '' # The title of the book. Will be placed in the left navbar.
 author                      : Open Threat Research @OTR_Community # The author of the book
-copyright                   : "2022"  # Copyright year to be placed in the footer
+copyright                   : "2023"  # Copyright year to be placed in the footer
 logo                        : "images/logo/logo.png"  # A path to the book logo
 only_build_toc_files        : true # Disable building files that aren’t in the Table of Contents
 exclude_patterns            : []  # Patterns to skip when building the book. Can be glob-style (e.g. "*skip.ipynb")
@@ -19,7 +19,7 @@ execute:
 #######################################################################################
 # HTML-specific settings
 html:
-  announcement: "💖 The InfoSec Jupyterthon is back! December 2nd and 3rd, 2022 🚀"
+  announcement: "💖 The InfoSec Jupyterthon is back! February, 2024 🚀"
   favicon                   : "images/logo/favicon.jpg"  # A path to a favicon image
   navbar_number_sections    : false  # Add a number to each section in your left navbar
   navbar_footer_text        : 'Powered by <a href="https://jupyterbook.org">Jupyter Book</a>'  # Will be displayed underneath the left navbar.

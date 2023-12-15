@@ -1,4 +1,4 @@
-# Infosec Jupyterthon! (Dec 2-3, 2022)
+# Infosec Jupyterthon! (February, 2024)
 
 <p align="center">
   <a href="https://infosecjupyterthon.com/2022/agenda.html">Agenda</a> •
@@ -26,10 +26,10 @@ An open community event for security researchers to share their experience and f
 
 ## Quick Information
 
-* **When?** December 2nd and 3rd, 2022
+* **When?** February 2024 (Exact Dates TBD)
 * **Where?** Live Stream
-    * Day 1: https://aka.ms/Jupyterthon22Live1
-    * Day 2: https://aka.ms/Jupyterthon22Live2
+    * Day 1: TBD
+    * Day 2: TBD
 * **How Much?** FREE
 * **Discord Server**
     * Invite Link: https://aka.ms/JupyterthonDiscord
@@ -37,14 +37,14 @@ An open community event for security researchers to share their experience and f
 
 ## Registration 
 
-https://aka.ms/Jupyterthon22Registration
+Link - TBD
 
 ## Call For Notebooks
 If you are using Jupyter notebooks for any use case applied to Infosec, we want to hear from you! Presentation slides are not required. You and a notebook is enough!.
 
-* **CFN form:** https://aka.ms/Jupyterthon22CFN
-* **CFN starts:** October 25th, 2022
-* **CFN ends:** November 28th, 2022
+* **CFN form:** https://forms.office.com/r/bKAyTRjjas
+* **CFN starts:** December 15th, 2023
+* **CFN ends:** January 15th, 2024
 
 ### A few submission guidelines
 * Well documented notebook with enough context (e.g. Markdown text) to tell the story behind your research.
@@ -119,9 +119,14 @@ If you are using Jupyter notebooks for any use case applied to Infosec, we want 
 
 ## Previous Editions
 
-### 2021 YouTube Recorded Streams
-
 ![](docs/images/Jupyterthon-2021.png)
+
+### 2022 YouTube Recorded Streams
+
+* Day 1: https://www.youtube.com/watch?v=8Mw1yyYkeqM
+* Day 2: https://www.youtube.com/watch?v=h7BN5_BK0J8
+
+### 2021 YouTube Recorded Streams
 
 * Day 1: https://youtu.be/nMnHBnYfIaI?t=37
 * Day 2: https://youtu.be/2Rb5B_RPDBc?t=19
