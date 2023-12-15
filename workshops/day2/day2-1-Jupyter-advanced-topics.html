@@ -1,49 +1,61 @@
 
+
 <!DOCTYPE html>
 
-<html>
+
+<html lang="en" >
+
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Workshop 2.1: Jupyter Notebooks Advanced</title>
-    
-  <!-- Loaded before other Sphinx assets -->
-  <link href="../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
-<link href="../../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    
-  <link rel="stylesheet"
-    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
-  <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
-  <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+    <title>Workshop 2.1: Jupyter Notebooks Advanced</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+
+  
+  <link href="../../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
 
     <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
-    <link rel="stylesheet" href="../../_static/styles/sphinx-book-theme.css?digest=62ba249389abaaa9ffc34bf36a076bdc1d65ee18" type="text/css" />
+    <link rel="stylesheet" href="../../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/tabs.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
-    
+    <link rel="stylesheet" type="text/css" href="../../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
 
     <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
     <script src="../../_static/jquery.js"></script>
     <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../../_static/doctools.js"></script>
     <script src="../../_static/clipboard.min.js"></script>
     <script src="../../_static/copybutton.js"></script>
-    <script src="../../_static/scripts/sphinx-book-theme.js?digest=f31d14ad54b65d19161ba51d4ffff3a77ae00456"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
     <script src="../../_static/tabs.js"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
     <script src="../../_static/togglebutton.js"></script>
-    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script src="../../_static/design-tabs.js"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
 const thebe_selector = ".thebe,.cell"
@@ -51,1260 +63,600 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'workshops/day2/day2-1-Jupyter-advanced-topics';</script>
     <link rel="canonical" href="https://infosecjupyterthon.com/workshops/day2/day2-1-Jupyter-advanced-topics.html" />
     <link rel="shortcut icon" href="../../_static/favicon.jpg"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="Workshop 2.1: R Demo Notebook" href="day2-1-R-demo-notebook.html" />
     <link rel="prev" title="Day 2" href="intro.html" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="docsearch:language" content="None">
-    
-
-    <!-- Google Analytics -->
-    
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
   </head>
-  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
-<!-- Checkboxes to toggle the left sidebar -->
-<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
-<label class="overlay overlay-navbar" for="__navigation">
-    <div class="visually-hidden">Toggle navigation sidebar</div>
-</label>
-<!-- Checkboxes to toggle the in-page toc -->
-<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
-<label class="overlay overlay-pagetoc" for="__page-toc">
-    <div class="visually-hidden">Toggle in-page Table of Contents</div>
-</label>
-<!-- Headers at the top -->
-<div class="announcement header-item noprint">💖 The InfoSec Jupyterthon is back! December 2nd and 3rd, 2022 🚀</div>
-<div class="header header-item noprint"></div>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
 
-    
-    <div class="container-fluid" id="banner"></div>
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
 
-    
 
-    <div class="container-xl">
-      <div class="row">
-          
-<!-- Sidebar -->
-<div class="bd-sidebar noprint" id="site-navigation">
-    <div class="bd-sidebar__content">
-        <div class="bd-sidebar__top"><div class="navbar-brand-box">
-    <a class="navbar-brand text-wrap" href="../../index.html">
+  <div class="bd-header-announcement container-fluid bd-header-announcement">
+    <div class="bd-header-announcement__content">💖 The InfoSec Jupyterthon is back! February, 2024 🚀</div>
+  </div>
+
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
       
-        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+      <div class="bd-sidebar-primary bd-sidebar">
         
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
+
+<a class="navbar-brand logo" href="../../introduction.html">
+  
+  
+  
+  
+    
+    
       
-      
-      <img src="../../_static/logo.png" class="logo" alt="logo">
-      
-      
-    </a>
-</div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
-  <i class="icon fas fa-search"></i>
-  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
-</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
-    <div class="bd-toc-item active">
-        <p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Getting Started
- </span>
-</p>
+    
+    
+    <img src="../../_static/logo.png" class="logo__image only-light" alt="Logo image"/>
+    <script>document.write(`<img src="../../_static/logo.png" class="logo__image only-dark" alt="Logo image"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Getting Started</span></p>
 <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../../conduct.html">
-   Code of Conduct
-  </a>
- </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../../collaborators/intro.html">
-   Collaborators
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
-  <label for="toctree-checkbox-1">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../collaborators/Roberto-Rodriguez.html">
-     Roberto Rodriguez
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../collaborators/Chi-Nguyen.html">
-     Chi Nguyen
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../collaborators/Ian-Hellen.html">
-     Ian Hellen
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../collaborators/Joyce-Bacic.html">
-     Joyce Bacic
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../collaborators/Ashwin-Patil.html">
-     Ashwin Patil
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../collaborators/Thomas-Roccia.html">
-     Thomas Roccia
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../collaborators/Pete-Bryan.html">
-     Pete Bryan
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../collaborators/Jose-Rodriguez.html">
-     Jose Rodriguez
-    </a>
-   </li>
-  </ul>
- </li>
+<li class="toctree-l1"><a class="reference internal" href="../../conduct.html">Code of Conduct</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../collaborators/intro.html">Collaborators</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../collaborators/Roberto-Rodriguez.html">Roberto Rodriguez</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../collaborators/Chi-Nguyen.html">Chi Nguyen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../collaborators/Ian-Hellen.html">Ian Hellen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../collaborators/Joyce-Bacic.html">Joyce Bacic</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../collaborators/Ashwin-Patil.html">Ashwin Patil</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../collaborators/Thomas-Roccia.html">Thomas Roccia</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../collaborators/Pete-Bryan.html">Pete Bryan</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../collaborators/Jose-Rodriguez.html">Jose Rodriguez</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  2022 Edition
- </span>
-</p>
+</li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">2022 Edition</span></p>
 <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../../2022/agenda.html">
-   Agenda
-  </a>
- </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../../2022/speakers/intro.html">
-   Speakers
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
-  <label for="toctree-checkbox-2">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../2022/speakers/roberto_rodriguez.html">
-     Roberto Rodriguez
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../2022/speakers/ian_hellen.html">
-     Ian Hellen
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../2022/speakers/leo_meyerovich.html">
-     Leo Meyerovich
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../2022/speakers/chi_nguyen.html">
-     Chi Nguyen
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../2022/speakers/amritpal_singh.html">
-     Amritpal Singh
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../2022/speakers/vijay_punja.html">
-     Vijay Punja
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../2022/speakers/james_duncan.html">
-     James Duncan
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../2022/speakers/ryan_marcotte_cobb.html">
-     Ryan Marcotte Cobb
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../2022/speakers/saksham_tushar.html">
-     Saksham Tushar
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../2022/speakers/christian_camilo_urcuqui_lopez.html">
-     Christian Camilo Urcuqui Lopez
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../2022/speakers/pete_bryan.html">
-     Pete Bryan
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../2022/speakers/ashwin_patil.html">
-     Ashwin Patil
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../2022/speakers/thomas_roccia.html">
-     Thomas Roccia
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../2022/speakers/jose_rodriguez.html">
-     Jose Rodriguez
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../2022/speakers/alex_morrise.html">
-     Alex Morrise
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../2022/speakers/dmitrijs_trizna.html">
-     Dmitrijs Trizna
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../2022/speakers/mehmet_ergene.html">
-     Mehmet Ergene
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../2022/speakers/jerry_gamblin.html">
-     Jerry Gamblin
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../2022/speakers/balaji_sampath.html">
-     Balaji Sampath
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../2022/speakers/janantha_marasinghe.html">
-     Janantha Marasinghe
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../2022/speakers/paul_coccoli.html">
-     Paul Coccoli
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../2022/speakers/brayan_mena.html">
-     Brayan Mena
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../2022/speakers/john_mac.html">
-     John Mac
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../../2022/sessions/intro.html">
-   Sessions
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
-  <label for="toctree-checkbox-3">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../2022/sessions/day1-01-Opening_Remarks.html">
-     Opening Remarks
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../2022/sessions/day1-11-Extending_MSTICPy.html">
-     Ian Hellen (
-     <span style="color: blue">
-      @ianhellen
-     </span>
-     Twitter/
-     <span style="color: blue">
-      @ianhelle
-     </span>
-     GitHub)
-    </a>
-   </li>
-  </ul>
- </li>
+<li class="toctree-l1"><a class="reference internal" href="../../2022/agenda.html">Agenda</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../2022/speakers/intro.html">Speakers</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../2022/speakers/roberto_rodriguez.html">Roberto Rodriguez</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../2022/speakers/ian_hellen.html">Ian Hellen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../2022/speakers/leo_meyerovich.html">Leo Meyerovich</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../2022/speakers/chi_nguyen.html">Chi Nguyen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../2022/speakers/amritpal_singh.html">Amritpal Singh</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../2022/speakers/vijay_punja.html">Vijay Punja</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../2022/speakers/james_duncan.html">James Duncan</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../2022/speakers/ryan_marcotte_cobb.html">Ryan Marcotte Cobb</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../2022/speakers/saksham_tushar.html">Saksham Tushar</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../2022/speakers/christian_camilo_urcuqui_lopez.html">Christian Camilo Urcuqui Lopez</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../2022/speakers/pete_bryan.html">Pete Bryan</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../2022/speakers/ashwin_patil.html">Ashwin Patil</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../2022/speakers/thomas_roccia.html">Thomas Roccia</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../2022/speakers/jose_rodriguez.html">Jose Rodriguez</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../2022/speakers/alex_morrise.html">Alex Morrise</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../2022/speakers/dmitrijs_trizna.html">Dmitrijs Trizna</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../2022/speakers/mehmet_ergene.html">Mehmet Ergene</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../2022/speakers/jerry_gamblin.html">Jerry Gamblin</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../2022/speakers/balaji_sampath.html">Balaji Sampath</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../2022/speakers/janantha_marasinghe.html">Janantha Marasinghe</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../2022/speakers/paul_coccoli.html">Paul Coccoli</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../2022/speakers/brayan_mena.html">Brayan Mena</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../2022/speakers/john_mac.html">John Mac</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Workshops
- </span>
-</p>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../2022/sessions/intro.html">Sessions</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../2022/sessions/day1-01-Opening_Remarks.html">Opening Remarks</a></li>
+
+
+
+
+
+
+
+<li class="toctree-l2"><a class="reference internal" href="../../2022/sessions/day1-05-Exploratory_Data_I_mean_Threat_Analytics_using_Jupyter_Notebooks.html">Exploratory Threat Analytics using Jupyter Notebooks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../2022/sessions/day1-11-Extending_MSTICPy.html">Extending MSTICPy with Pivot functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../2022/sessions/day2-08-Shell-Language-Processing.html">Shell Language Processing</a></li>
+
+
+
+
+
+
+
+
+</ul>
+</li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Workshops</span></p>
 <ul class="current nav bd-sidenav">
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../day1/intro.html">
-   Day 1
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
-  <label for="toctree-checkbox-4">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../day1/day1-1-Jupyter-Introduction.html">
-     Workshop 1.1:
-     <font color="peru">
-      Jupyter Notebooks Introduction
-     </font>
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../day1/day1-2-Acquiring-data.html">
-     Workshop 1.2:
-     <font color="peru">
-      Acquiring Data
-     </font>
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../day1/day1-3-Data-Analysis-with-Pandas%20Intro.html">
-     Workshop 1.3:
-     <font color="peru">
-      Basics of Data Analysis with Pandas
-     </font>
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l1 current active has-children">
-  <a class="reference internal" href="intro.html">
-   Day 2
-  </a>
-  <input checked="" class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
-  <label for="toctree-checkbox-5">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul class="current">
-   <li class="toctree-l2 current active">
-    <a class="current reference internal" href="#">
-     Workshop 2.1:
-     <font color="peru">
-      Jupyter Notebooks Advanced
-     </font>
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="day2-1-R-demo-notebook.html">
-     Workshop 2.1:
-     <font color="peru">
-      R Demo Notebook
-     </font>
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="day2-2-Visualization.html">
-     Workshop 2.2:
-     <font color="peru">
-      Visualization in Jupyter Notebooks
-     </font>
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="day2-3-Advanced-pandas.html">
-     Workshop 2.3:
-     <font color="peru">
-      Advanced Pandas
-     </font>
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="day2-4-MSTICPy.html">
-     Workshop 2.4:
-     <font color="peru">
-      MSTICPy
-     </font>
-    </a>
-   </li>
-  </ul>
- </li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../day1/intro.html">Day 1</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../day1/day1-1-Jupyter-Introduction.html">Workshop 1.1: <font color="peru">Jupyter Notebooks Introduction</font></a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li class="toctree-l2"><a class="reference internal" href="../day1/day1-2-Acquiring-data.html">Workshop 1.2: <font color="peru">Acquiring Data</font></a></li>
+
+
+
+
+
+<li class="toctree-l2"><a class="reference internal" href="../day1/day1-3-Data-Analysis-with-Pandas%20Intro.html">Workshop 1.3: <font color="peru">Basics of Data Analysis with Pandas</font></a></li>
+
+
+
+
+
+
+
+
+
+
+
+</ul>
+</li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="intro.html">Day 2</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Workshop 2.1: <font color="peru">Jupyter Notebooks Advanced</font></a></li>
+
+
+
+
+
+
+
+
+
+<li class="toctree-l2"><a class="reference internal" href="day2-1-R-demo-notebook.html">Workshop 2.1: <font color="peru">R Demo Notebook</font></a></li>
+
+
+<li class="toctree-l2"><a class="reference internal" href="day2-2-Visualization.html">Workshop 2.2: <font color="peru">Visualization in Jupyter Notebooks</font></a></li>
+
+
+
+
+
+
+
+<li class="toctree-l2"><a class="reference internal" href="day2-3-Advanced-pandas.html">Workshop 2.3: <font color="peru">Advanced Pandas</font></a></li>
+
+
+
+
+
+
+
+
+<li class="toctree-l2"><a class="reference internal" href="day2-4-MSTICPy.html">Workshop 2.4: <font color="peru">MSTICPy</font></a></li>
+
+
+
+
+
+
+
+
+
+
+</ul>
+</li>
 </ul>
 
     </div>
 </nav></div>
-        <div class="bd-sidebar__bottom">
-             <!-- To handle the deprecated key -->
-            
-            <div class="navbar_extra_footer">
-            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
-            </div>
-            
-        </div>
     </div>
-    <div id="rtd-footer-container"></div>
-</div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
 
 
-          
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
 
-
-          
-<!-- A tiny helper pixel to detect if we've scrolled -->
 <div class="sbt-scroll-pixel-helper"></div>
-<!-- Main content -->
-<div class="col py-0 content-container">
-    
-    <div class="header-article row sticky-top noprint">
-        
 
-
-
-<div class="col py-1 d-flex header-article-main">
-    <div class="header-article__left">
-        
-        <label for="__navigation"
-  class="headerbtn"
-  data-toggle="tooltip"
-data-placement="right"
-title="Toggle navigation"
->
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
   
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-bars"></i>
-  </span>
-
-</label>
-
-        
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
     </div>
-    <div class="header-article__right">
-<div class="menu-dropdown menu-dropdown-launch-buttons">
-  <button class="headerbtn menu-dropdown__trigger"
-      aria-label="Launch interactive content">
-      <i class="fas fa-rocket"></i>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
   </button>
-  <div class="menu-dropdown__content">
-    <ul>
-      <li>
-        <a href="https://mybinder.org/v2/gh/OTRF/infosec-jupyterthon/master?urlpath=lab/tree/docs/workshops/day2/day2-1-Jupyter-advanced-topics.ipynb"
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Launch on Binder"
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://mybinder.org/v2/gh/OTRF/infosec-jupyterthon/master?urlpath=lab/tree/docs/workshops/day2/day2-1-Jupyter-advanced-topics.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch onBinder"
+   data-bs-placement="left" data-bs-toggle="tooltip"
 >
   
 
-<span class="headerbtn__icon-container">
+<span class="btn__icon-container">
   
     <img src="../../_static/images/logo_binder.svg">
   </span>
-<span class="headerbtn__text-container">Binder</span>
+<span class="btn__text-container">Binder</span>
 </a>
-
-      </li>
+</li>
       
-    </ul>
-  </div>
+  </ul>
 </div>
 
-<button onclick="toggleFullScreen()"
-  class="headerbtn"
-  data-toggle="tooltip"
-data-placement="bottom"
-title="Fullscreen mode"
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/OTRF/infosec-jupyterthon" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
 >
   
 
-<span class="headerbtn__icon-container">
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/OTRF/infosec-jupyterthon/edit/master/docs/workshops/day2/day2-1-Jupyter-advanced-topics.ipynb" target="_blank"
+   class="btn btn-sm btn-source-edit-button dropdown-item"
+   title="Suggest edit"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-pencil-alt"></i>
+  </span>
+<span class="btn__text-container">Suggest edit</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/OTRF/infosec-jupyterthon/issues/new?title=Issue%20on%20page%20%2Fworkshops/day2/day2-1-Jupyter-advanced-topics.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../_sources/workshops/day2/day2-1-Jupyter-advanced-topics.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
   <i class="fas fa-expand"></i>
   </span>
 
 </button>
 
-<div class="menu-dropdown menu-dropdown-repository-buttons">
-  <button class="headerbtn menu-dropdown__trigger"
-      aria-label="Source repositories">
-      <i class="fab fa-github"></i>
+
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
   </button>
-  <div class="menu-dropdown__content">
-    <ul>
-      <li>
-        <a href="https://github.com/OTRF/infosec-jupyterthon"
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Source repository"
->
-  
+`);
+</script>
 
-<span class="headerbtn__icon-container">
-  <i class="fab fa-github"></i>
-  </span>
-<span class="headerbtn__text-container">repository</span>
-</a>
-
-      </li>
-      
-      <li>
-        <a href="https://github.com/OTRF/infosec-jupyterthon/issues/new?title=Issue%20on%20page%20%2Fworkshops/day2/day2-1-Jupyter-advanced-topics.html&body=Your%20issue%20content%20here."
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Open an issue"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-lightbulb"></i>
-  </span>
-<span class="headerbtn__text-container">open issue</span>
-</a>
-
-      </li>
-      
-      <li>
-        <a href="https://github.com/OTRF/infosec-jupyterthon/edit/master/docs/workshops/day2/day2-1-Jupyter-advanced-topics.ipynb"
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Edit this page"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-pencil-alt"></i>
-  </span>
-<span class="headerbtn__text-container">suggest edit</span>
-</a>
-
-      </li>
-      
-    </ul>
-  </div>
-</div>
-
-<div class="menu-dropdown menu-dropdown-download-buttons">
-  <button class="headerbtn menu-dropdown__trigger"
-      aria-label="Download this page">
-      <i class="fas fa-download"></i>
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
   </button>
-  <div class="menu-dropdown__content">
-    <ul>
-      <li>
-        <a href="../../_sources/workshops/day2/day2-1-Jupyter-advanced-topics.ipynb"
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Download source file"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-file"></i>
-  </span>
-<span class="headerbtn__text-container">.ipynb</span>
-</a>
-
-      </li>
-      
-      <li>
-        
-<button onclick="printPdf(this)"
-  class="headerbtn"
-  data-toggle="tooltip"
-data-placement="left"
-title="Print to PDF"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-file-pdf"></i>
-  </span>
-<span class="headerbtn__text-container">.pdf</span>
-</button>
-
-      </li>
-      
-    </ul>
-  </div>
-</div>
-<label for="__page-toc"
-  class="headerbtn headerbtn-page-toc"
-  
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-list"></i>
-  </span>
-
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
 </label>
-
+</div></div>
+      
     </div>
+  
 </div>
-
-<!-- Table of contents -->
-<div class="col-md-3 bd-toc show noprint">
-    <div class="tocsection onthispage pt-5 pb-3">
-        <i class="fas fa-list"></i> Contents
-    </div>
-    <nav id="bd-toc-nav" aria-label="Page">
-        <ul class="visible nav section-nav flex-column">
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#">
-   Workshop 2.1:
-   <font color="peru">
-    Jupyter Notebooks Advanced
-   </font>
-  </a>
- </li>
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#a-style-border-solid-padding-5pt-color-black-background-color-90caf9-name-notjustpython-jupyter-is-not-just-python-ashwin-a">
-   <a name="notjustpython" style="border: solid; padding:5pt; color:black; background-color:#90CAF9">
-    Jupyter is not just Python [Ashwin]
-   </a>
-  </a>
- </li>
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#a-style-border-solid-padding-5pt-color-black-background-color-90caf9-name-kernels-jupyter-kernels-python-environments-a">
-   <a name="kernels" style="border: solid; padding:5pt; color:black; background-color:#90CAF9">
-    Jupyter Kernels &amp; Python environments
-   </a>
-  </a>
-  <ul class="visible nav section-nav flex-column">
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#using-different-python-kernels-with-jupyter">
-     Using different Python Kernels with Jupyter
-    </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#to-remove-unwanted-kernels">
-       To remove unwanted kernels
-      </a>
-     </li>
-    </ul>
-   </li>
-  </ul>
- </li>
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#a-style-border-solid-padding-5pt-color-black-background-color-90caf9-name-magics-magics-ian-a">
-   <a name="magics" style="border: solid; padding:5pt; color:black; background-color:#90CAF9">
-    Magics [Ian]
-   </a>
-  </a>
-  <ul class="visible nav section-nav flex-column">
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#what-are-they">
-     What are they?
-    </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#line-magics-single">
-       Line magics - single %
-      </a>
-     </li>
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#cell-magics-double">
-       Cell magics - double %%
-      </a>
-     </li>
-    </ul>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#popular-magics">
-     Popular magics -
-    </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#get-or-set-environment-variables">
-       Get or set environment variables
-      </a>
-     </li>
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#run-pip">
-       Run pip
-      </a>
-     </li>
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#write-or-append-the-contents-of-a-cell-to-a-file">
-       Write (or append) the contents of a cell to a file
-      </a>
-     </li>
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#run-a-python-script">
-       Run a Python script
-      </a>
-     </li>
-    </ul>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#invoking-shell-commands">
-     Invoking shell commands
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#creating-magics">
-     Creating Magics
-    </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#magic-example">
-       Magic example
-      </a>
-     </li>
-    </ul>
-   </li>
-  </ul>
- </li>
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#a-style-border-solid-padding-5pt-color-black-background-color-90caf9-name-widgets-widgets-introduction-luis-a">
-   <a name="widgets" style="border: solid; padding:5pt; color:black; background-color:#90CAF9">
-    Widgets introduction [Luis]
-   </a>
-  </a>
-  <ul class="visible nav section-nav flex-column">
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#integer-slider">
-     Integer Slider
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#intenger-range-slider">
-     Intenger Range Slider
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#integer-progress-bar">
-     Integer Progress Bar
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#dropdown">
-     Dropdown
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#multiselector">
-     Multiselector
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#data-picker">
-     Data Picker
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#file-uploader">
-     File Uploader
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#more-sophisticated-file-folder-chooser">
-     More sophisticated file/folder chooser
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#a-style-border-solid-padding-5pt-color-black-background-color-90caf9-name-notjustpython-jupyter-extensions-luis-a">
-   <a name="notjustpython" style="border: solid; padding:5pt; color:black; background-color:#90CAF9">
-    Jupyter Extensions [Luis]
-   </a>
-  </a>
-  <ul class="visible nav section-nav flex-column">
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#creating-config-file">
-     Creating config file
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#jupyterlab-system-monitor">
-     JupyterLab System Monitor
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#git">
-     Git
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#jupyterlab-templates">
-     JupyterLab Templates
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#code-snippets-elyra">
-     Code Snippets (Elyra)
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#a-style-border-solid-padding-5pt-color-black-background-color-90caf9-name-nbconvert-export-and-create-notebooks-a">
-   <a name="nbconvert" style="border: solid; padding:5pt; color:black; background-color:#90CAF9">
-    Export and create notebooks
-   </a>
-  </a>
-  <ul class="visible nav section-nav flex-column">
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#nbformat-create-a-notebook-programmatically-roberto">
-     NBFormat - Create a notebook programmatically [Roberto]
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#nbconvert-exporting-and-converting-to-other-formats-ian">
-     NBConvert - Exporting and converting to other formats [Ian]
-    </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#from-the-command-line">
-       From the command line
-      </a>
-     </li>
-    </ul>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#in-code">
-     In code
-    </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#convert-a-notebook-to-html">
-       Convert a notebook to HTML
-      </a>
-     </li>
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#convert-to-python-module">
-       Convert to Python module
-      </a>
-     </li>
-    </ul>
-   </li>
-  </ul>
- </li>
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#a-style-border-solid-padding-5pt-color-black-background-color-90caf9-name-debugging-dev-topics-debugging-and-testing-notebook-code-ian-a">
-   <a name="debugging" style="border: solid; padding:5pt; color:black; background-color:#90CAF9">
-    Dev topics - Debugging and testing notebook code [Ian]
-   </a>
-  </a>
-  <ul class="visible nav section-nav flex-column">
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#magics-and-errors-traceback-xmode-debug">
-     Magics and errors – traceback, xmode, debug
-    </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#use-tb-to-review-last-traceback">
-       Use %tb to review last traceback
-      </a>
-     </li>
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#use-xmode-magic-to-include-parameter-values">
-       Use
-       <code class="docutils literal notranslate">
-        <span class="pre">
-         %xmode
-        </span>
-       </code>
-       magic to include parameter values
-      </a>
-     </li>
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#exceptions-within-exceptions">
-       Exceptions within Exceptions
-      </a>
-     </li>
-    </ul>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#debugging-bare-handed">
-     Debugging bare-handed
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#debugging-from-a-comfy-chair">
-     Debugging from a comfy chair
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#running-jupyter-notebooks-in-a-unit-test-ian">
-     Running Jupyter notebooks in a unit test [Ian]
-    </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#why-quick-and-dirty-testing">
-       Why? - Quick and dirty testing
-      </a>
-     </li>
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#output-when-test-fails">
-       Output when test fails
-      </a>
-     </li>
-    </ul>
-   </li>
-  </ul>
- </li>
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#end-of-session">
-   End of Session
-  </a>
- </li>
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#font-color-peru-break-5-minutes-font">
-   <font color="peru">
-    Break: 5 Minutes
-   </font>
-  </a>
- </li>
-</ul>
-
-    </nav>
 </div>
-    </div>
-    <div class="article row">
-        <div class="col pl-md-3 pl-lg-5 content-container">
-            <!-- Table of contents that is only displayed when printing the page -->
-            <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Workshop 2.1: <font color=peru>Jupyter Notebooks Advanced</font></h1>
-                <!-- Table of contents -->
-                <div id="print-main-content">
-                    <div id="jb-print-toc">
-                        
-                        <div>
-                            <h2> Contents </h2>
-                        </div>
-                        <nav aria-label="Page">
-                            <ul class="visible nav section-nav flex-column">
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#">
-   Workshop 2.1:
-   <font color="peru">
-    Jupyter Notebooks Advanced
-   </font>
-  </a>
- </li>
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#a-style-border-solid-padding-5pt-color-black-background-color-90caf9-name-notjustpython-jupyter-is-not-just-python-ashwin-a">
-   <a name="notjustpython" style="border: solid; padding:5pt; color:black; background-color:#90CAF9">
-    Jupyter is not just Python [Ashwin]
-   </a>
-  </a>
- </li>
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#a-style-border-solid-padding-5pt-color-black-background-color-90caf9-name-kernels-jupyter-kernels-python-environments-a">
-   <a name="kernels" style="border: solid; padding:5pt; color:black; background-color:#90CAF9">
-    Jupyter Kernels &amp; Python environments
-   </a>
-  </a>
-  <ul class="visible nav section-nav flex-column">
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#using-different-python-kernels-with-jupyter">
-     Using different Python Kernels with Jupyter
-    </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#to-remove-unwanted-kernels">
-       To remove unwanted kernels
-      </a>
-     </li>
-    </ul>
-   </li>
-  </ul>
- </li>
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#a-style-border-solid-padding-5pt-color-black-background-color-90caf9-name-magics-magics-ian-a">
-   <a name="magics" style="border: solid; padding:5pt; color:black; background-color:#90CAF9">
-    Magics [Ian]
-   </a>
-  </a>
-  <ul class="visible nav section-nav flex-column">
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#what-are-they">
-     What are they?
-    </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#line-magics-single">
-       Line magics - single %
-      </a>
-     </li>
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#cell-magics-double">
-       Cell magics - double %%
-      </a>
-     </li>
-    </ul>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#popular-magics">
-     Popular magics -
-    </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#get-or-set-environment-variables">
-       Get or set environment variables
-      </a>
-     </li>
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#run-pip">
-       Run pip
-      </a>
-     </li>
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#write-or-append-the-contents-of-a-cell-to-a-file">
-       Write (or append) the contents of a cell to a file
-      </a>
-     </li>
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#run-a-python-script">
-       Run a Python script
-      </a>
-     </li>
-    </ul>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#invoking-shell-commands">
-     Invoking shell commands
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#creating-magics">
-     Creating Magics
-    </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#magic-example">
-       Magic example
-      </a>
-     </li>
-    </ul>
-   </li>
-  </ul>
- </li>
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#a-style-border-solid-padding-5pt-color-black-background-color-90caf9-name-widgets-widgets-introduction-luis-a">
-   <a name="widgets" style="border: solid; padding:5pt; color:black; background-color:#90CAF9">
-    Widgets introduction [Luis]
-   </a>
-  </a>
-  <ul class="visible nav section-nav flex-column">
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#integer-slider">
-     Integer Slider
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#intenger-range-slider">
-     Intenger Range Slider
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#integer-progress-bar">
-     Integer Progress Bar
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#dropdown">
-     Dropdown
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#multiselector">
-     Multiselector
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#data-picker">
-     Data Picker
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#file-uploader">
-     File Uploader
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#more-sophisticated-file-folder-chooser">
-     More sophisticated file/folder chooser
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#a-style-border-solid-padding-5pt-color-black-background-color-90caf9-name-notjustpython-jupyter-extensions-luis-a">
-   <a name="notjustpython" style="border: solid; padding:5pt; color:black; background-color:#90CAF9">
-    Jupyter Extensions [Luis]
-   </a>
-  </a>
-  <ul class="visible nav section-nav flex-column">
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#creating-config-file">
-     Creating config file
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#jupyterlab-system-monitor">
-     JupyterLab System Monitor
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#git">
-     Git
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#jupyterlab-templates">
-     JupyterLab Templates
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#code-snippets-elyra">
-     Code Snippets (Elyra)
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#a-style-border-solid-padding-5pt-color-black-background-color-90caf9-name-nbconvert-export-and-create-notebooks-a">
-   <a name="nbconvert" style="border: solid; padding:5pt; color:black; background-color:#90CAF9">
-    Export and create notebooks
-   </a>
-  </a>
-  <ul class="visible nav section-nav flex-column">
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#nbformat-create-a-notebook-programmatically-roberto">
-     NBFormat - Create a notebook programmatically [Roberto]
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#nbconvert-exporting-and-converting-to-other-formats-ian">
-     NBConvert - Exporting and converting to other formats [Ian]
-    </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#from-the-command-line">
-       From the command line
-      </a>
-     </li>
-    </ul>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#in-code">
-     In code
-    </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#convert-a-notebook-to-html">
-       Convert a notebook to HTML
-      </a>
-     </li>
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#convert-to-python-module">
-       Convert to Python module
-      </a>
-     </li>
-    </ul>
-   </li>
-  </ul>
- </li>
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#a-style-border-solid-padding-5pt-color-black-background-color-90caf9-name-debugging-dev-topics-debugging-and-testing-notebook-code-ian-a">
-   <a name="debugging" style="border: solid; padding:5pt; color:black; background-color:#90CAF9">
-    Dev topics - Debugging and testing notebook code [Ian]
-   </a>
-  </a>
-  <ul class="visible nav section-nav flex-column">
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#magics-and-errors-traceback-xmode-debug">
-     Magics and errors – traceback, xmode, debug
-    </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#use-tb-to-review-last-traceback">
-       Use %tb to review last traceback
-      </a>
-     </li>
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#use-xmode-magic-to-include-parameter-values">
-       Use
-       <code class="docutils literal notranslate">
-        <span class="pre">
-         %xmode
-        </span>
-       </code>
-       magic to include parameter values
-      </a>
-     </li>
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#exceptions-within-exceptions">
-       Exceptions within Exceptions
-      </a>
-     </li>
-    </ul>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#debugging-bare-handed">
-     Debugging bare-handed
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#debugging-from-a-comfy-chair">
-     Debugging from a comfy chair
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#running-jupyter-notebooks-in-a-unit-test-ian">
-     Running Jupyter notebooks in a unit test [Ian]
-    </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#why-quick-and-dirty-testing">
-       Why? - Quick and dirty testing
-      </a>
-     </li>
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#output-when-test-fails">
-       Output when test fails
-      </a>
-     </li>
-    </ul>
-   </li>
-  </ul>
- </li>
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#end-of-session">
-   End of Session
-  </a>
- </li>
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#font-color-peru-break-5-minutes-font">
-   <font color="peru">
-    Break: 5 Minutes
-   </font>
-  </a>
- </li>
-</ul>
+              
+              
 
-                        </nav>
-                    </div>
-                </div>
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Workshop 2.1: <font color=peru>Jupyter Notebooks Advanced</font></h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
             </div>
-            <main id="main-content" role="main">
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Workshop 2.1: <font color="peru">Jupyter Notebooks Advanced</font></a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#a-style-border-solid-padding-5pt-color-black-background-color-90caf9-name-notjustpython-jupyter-is-not-just-python-ashwin-a"><a name="notjustpython" style="border: solid; padding:5pt; color:black; background-color:#90CAF9">Jupyter is not just Python [Ashwin]</a></a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#a-style-border-solid-padding-5pt-color-black-background-color-90caf9-name-kernels-jupyter-kernels-python-environments-a"><a name="kernels" style="border: solid; padding:5pt; color:black; background-color:#90CAF9">Jupyter Kernels &amp; Python environments</a></a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#using-different-python-kernels-with-jupyter">Using different Python Kernels with Jupyter</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#to-remove-unwanted-kernels">To remove unwanted kernels</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#a-style-border-solid-padding-5pt-color-black-background-color-90caf9-name-magics-magics-ian-a"><a name="magics" style="border: solid; padding:5pt; color:black; background-color:#90CAF9">Magics [Ian]</a></a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-are-they">What are they?</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#line-magics-single">Line magics - single %</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#cell-magics-double">Cell magics - double %%</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#popular-magics">Popular magics -</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#get-or-set-environment-variables">Get or set environment variables</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#run-pip">Run pip</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#write-or-append-the-contents-of-a-cell-to-a-file">Write (or append) the contents of a cell to a file</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#run-a-python-script">Run a Python script</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#invoking-shell-commands">Invoking shell commands</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#creating-magics">Creating Magics</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#magic-example">Magic example</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#a-style-border-solid-padding-5pt-color-black-background-color-90caf9-name-widgets-widgets-introduction-luis-a"><a name="widgets" style="border: solid; padding:5pt; color:black; background-color:#90CAF9">Widgets introduction [Luis]</a></a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#integer-slider">Integer Slider</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#intenger-range-slider">Intenger Range Slider</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#integer-progress-bar">Integer Progress Bar</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dropdown">Dropdown</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#multiselector">Multiselector</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#data-picker">Data Picker</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#file-uploader">File Uploader</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#more-sophisticated-file-folder-chooser">More sophisticated file/folder chooser</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#a-style-border-solid-padding-5pt-color-black-background-color-90caf9-name-notjustpython-jupyter-extensions-luis-a"><a name="notjustpython" style="border: solid; padding:5pt; color:black; background-color:#90CAF9">Jupyter Extensions [Luis]</a></a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#creating-config-file">Creating config file</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#jupyterlab-system-monitor">JupyterLab System Monitor</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#git">Git</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#jupyterlab-templates">JupyterLab Templates</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#code-snippets-elyra">Code Snippets (Elyra)</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#a-style-border-solid-padding-5pt-color-black-background-color-90caf9-name-nbconvert-export-and-create-notebooks-a"><a name="nbconvert" style="border: solid; padding:5pt; color:black; background-color:#90CAF9">Export and create notebooks</a></a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#nbformat-create-a-notebook-programmatically-roberto">NBFormat - Create a notebook programmatically [Roberto]</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#nbconvert-exporting-and-converting-to-other-formats-ian">NBConvert - Exporting and converting to other formats [Ian]</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#from-the-command-line">From the command line</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#in-code">In code</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#convert-a-notebook-to-html">Convert a notebook to HTML</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#convert-to-python-module">Convert to Python module</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#a-style-border-solid-padding-5pt-color-black-background-color-90caf9-name-debugging-dev-topics-debugging-and-testing-notebook-code-ian-a"><a name="debugging" style="border: solid; padding:5pt; color:black; background-color:#90CAF9">Dev topics - Debugging and testing notebook code [Ian]</a></a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#magics-and-errors-traceback-xmode-debug">Magics and errors – traceback, xmode, debug</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#use-tb-to-review-last-traceback">Use %tb to review last traceback</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#use-xmode-magic-to-include-parameter-values">Use <code class="docutils literal notranslate"><span class="pre">%xmode</span></code> magic to include parameter values</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exceptions-within-exceptions">Exceptions within Exceptions</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#debugging-bare-handed">Debugging bare-handed</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#debugging-from-a-comfy-chair">Debugging from a comfy chair</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#running-jupyter-notebooks-in-a-unit-test-ian">Running Jupyter notebooks in a unit test [Ian]</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#why-quick-and-dirty-testing">Why? - Quick and dirty testing</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#output-when-test-fails">Output when test fails</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#end-of-session">End of Session</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#font-color-peru-break-5-minutes-font"><font color="peru">Break: 5 Minutes</font></a></li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
                 
-              <div>
-                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
   <p><img alt="Banner" src="../../_images/banner2.png" /></p>
 <hr class="docutils" />
-<div class="tex2jax_ignore mathjax_ignore section" id="workshop-2-1-font-color-peru-jupyter-notebooks-advanced-font">
-<h1>Workshop 2.1: <font color=peru>Jupyter Notebooks Advanced</font><a class="headerlink" href="#workshop-2-1-font-color-peru-jupyter-notebooks-advanced-font" title="Permalink to this headline">#</a></h1>
+<section class="tex2jax_ignore mathjax_ignore" id="workshop-2-1-font-color-peru-jupyter-notebooks-advanced-font">
+<h1>Workshop 2.1: <font color=peru>Jupyter Notebooks Advanced</font><a class="headerlink" href="#workshop-2-1-font-color-peru-jupyter-notebooks-advanced-font" title="Permalink to this heading">#</a></h1>
 <ul class="simple">
 <li><p><strong>Contributors</strong>:</p>
 <ul>
@@ -1316,13 +668,13 @@ title="Print to PDF"
 </li>
 <li><p><strong>Agenda</strong>:</p>
 <ul>
-<li><p><a class="reference external" href="#notjustpython">Jupyter is not just Python</a></p></li>
-<li><p><a class="reference external" href="#kernels">Jupyter Kernels &amp; Python environments</a></p></li>
-<li><p><a class="reference external" href="#magics">Magics</a></p></li>
-<li><p><a class="reference external" href="#widgets">Widgets introduction</a>[</p></li>
-<li><p><a class="reference external" href="#extensions">Jupyter Extensions</a></p></li>
-<li><p><a class="reference external" href="#nbconvert">Export and create notebooks</a></p></li>
-<li><p><a class="reference external" href="#debugging">Dev topics - Debugging and testing notebook code</a>
+<li><p><span class="xref myst">Jupyter is not just Python</span></p></li>
+<li><p><span class="xref myst">Jupyter Kernels &amp; Python environments</span></p></li>
+<li><p><span class="xref myst">Magics</span></p></li>
+<li><p><span class="xref myst">Widgets introduction</span>[</p></li>
+<li><p><span class="xref myst">Jupyter Extensions</span></p></li>
+<li><p><span class="xref myst">Export and create notebooks</span></p></li>
+<li><p><span class="xref myst">Dev topics - Debugging and testing notebook code</span>
 <br><br></p></li>
 </ul>
 </li>
@@ -1330,24 +682,24 @@ title="Print to PDF"
 <li><p><strong>License</strong>: <a class="reference external" href="https://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International</a></p></li>
 <li><p><strong>Q&amp;A</strong> - OTR Discord <strong>#Jupyterthon #WORKSHOP DAY 2 - JUPYTER ADVANCED</strong></p></li>
 </ul>
-</div>
+</section>
 <hr class="docutils" />
-<div class="tex2jax_ignore mathjax_ignore section" id="a-style-border-solid-padding-5pt-color-black-background-color-90caf9-name-notjustpython-jupyter-is-not-just-python-ashwin-a">
-<h1><a style="border: solid; padding:5pt; color:black; background-color:#90CAF9" name="notjustpython">Jupyter is not just Python [Ashwin]</a><a class="headerlink" href="#a-style-border-solid-padding-5pt-color-black-background-color-90caf9-name-notjustpython-jupyter-is-not-just-python-ashwin-a" title="Permalink to this headline">#</a></h1>
+<section class="tex2jax_ignore mathjax_ignore" id="a-style-border-solid-padding-5pt-color-black-background-color-90caf9-name-notjustpython-jupyter-is-not-just-python-ashwin-a">
+<h1><a style="border: solid; padding:5pt; color:black; background-color:#90CAF9" name="notjustpython">Jupyter is not just Python [Ashwin]</a><a class="headerlink" href="#a-style-border-solid-padding-5pt-color-black-background-color-90caf9-name-notjustpython-jupyter-is-not-just-python-ashwin-a" title="Permalink to this heading">#</a></h1>
 <ul class="simple">
 <li><p>Powershell kernel</p></li>
 <li><p>R kernel</p></li>
 </ul>
-</div>
+</section>
 <hr class="docutils" />
-<div class="tex2jax_ignore mathjax_ignore section" id="a-style-border-solid-padding-5pt-color-black-background-color-90caf9-name-kernels-jupyter-kernels-python-environments-a">
-<h1><a style="border: solid; padding:5pt; color:black; background-color:#90CAF9" name="kernels">Jupyter Kernels &amp; Python environments</a><a class="headerlink" href="#a-style-border-solid-padding-5pt-color-black-background-color-90caf9-name-kernels-jupyter-kernels-python-environments-a" title="Permalink to this headline">#</a></h1>
+<section class="tex2jax_ignore mathjax_ignore" id="a-style-border-solid-padding-5pt-color-black-background-color-90caf9-name-kernels-jupyter-kernels-python-environments-a">
+<h1><a style="border: solid; padding:5pt; color:black; background-color:#90CAF9" name="kernels">Jupyter Kernels &amp; Python environments</a><a class="headerlink" href="#a-style-border-solid-padding-5pt-color-black-background-color-90caf9-name-kernels-jupyter-kernels-python-environments-a" title="Permalink to this heading">#</a></h1>
 <p>Python environments let you create “isolated” installations with independent versions of packages.</p>
 <p>This is usually <strong>A VERY GOOD IDEA</strong>!</p>
 <p>Linux</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python -m venv MyNewEnv
-<span class="nb">source</span> ./MyNewEnv/Scripts/activate
-pip install msticpy
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python<span class="w"> </span>-m<span class="w"> </span>venv<span class="w"> </span>MyNewEnv
+<span class="nb">source</span><span class="w"> </span>./MyNewEnv/Scripts/activate
+pip<span class="w"> </span>install<span class="w"> </span>msticpy
 </pre></div>
 </div>
 <p>Windows</p>
@@ -1357,22 +709,22 @@ pip install msticpy
 </pre></div>
 </div>
 <p>Conda</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>conda create -n MyNewCondaEnv
-conda activate MyNewCondaEnv
-conda install pip
-pip install msticpy
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>conda<span class="w"> </span>create<span class="w"> </span>-n<span class="w"> </span>MyNewCondaEnv
+conda<span class="w"> </span>activate<span class="w"> </span>MyNewCondaEnv
+conda<span class="w"> </span>install<span class="w"> </span>pip
+pip<span class="w"> </span>install<span class="w"> </span>msticpy
 </pre></div>
 </div>
-<div class="section" id="using-different-python-kernels-with-jupyter">
-<h2>Using different Python Kernels with Jupyter<a class="headerlink" href="#using-different-python-kernels-with-jupyter" title="Permalink to this headline">#</a></h2>
+<section id="using-different-python-kernels-with-jupyter">
+<h2>Using different Python Kernels with Jupyter<a class="headerlink" href="#using-different-python-kernels-with-jupyter" title="Permalink to this heading">#</a></h2>
 <p>Note: VSCode seems to be able to use Python or Conda environments anyway but installing a dedicated ipykernel is needed for debugging.</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python -m ipykernel install --user --name MyNewCondaEnv --display-name <span class="s2">&quot;Python3 (MyNewCondaEnv)&quot;</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python<span class="w"> </span>-m<span class="w"> </span>ipykernel<span class="w"> </span>install<span class="w"> </span>--user<span class="w"> </span>--name<span class="w"> </span>MyNewCondaEnv<span class="w"> </span>--display-name<span class="w"> </span><span class="s2">&quot;Python3 (MyNewCondaEnv)&quot;</span>
 </pre></div>
 </div>
 <p><img alt="Kernels1" src="../../_images/JLab_kernels1.png" />
 <img alt="Kernels2" src="../../_images/JLab_kernels2.png" /></p>
-<div class="section" id="to-remove-unwanted-kernels">
-<h3>To remove unwanted kernels<a class="headerlink" href="#to-remove-unwanted-kernels" title="Permalink to this headline">#</a></h3>
+<section id="to-remove-unwanted-kernels">
+<h3>To remove unwanted kernels<a class="headerlink" href="#to-remove-unwanted-kernels" title="Permalink to this heading">#</a></h3>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">jupyter</span> <span class="n">kernelspec</span> <span class="n">remove</span> <span class="n">KERNELNAME</span>
 
 </pre></div>
@@ -1403,39 +755,39 @@ Remove 1 kernel specs [y/N]: y
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="n">remove</span> <span class="o">--</span><span class="nb">all</span> <span class="o">-</span><span class="n">n</span> <span class="n">MyNewCondaEnv</span>
 </pre></div>
 </div>
-</div>
-</div>
-</div>
+</section>
+</section>
+</section>
 <hr class="docutils" />
-<div class="tex2jax_ignore mathjax_ignore section" id="a-style-border-solid-padding-5pt-color-black-background-color-90caf9-name-magics-magics-ian-a">
-<h1><a style="border: solid; padding:5pt; color:black; background-color:#90CAF9" name="magics">Magics [Ian]</a><a class="headerlink" href="#a-style-border-solid-padding-5pt-color-black-background-color-90caf9-name-magics-magics-ian-a" title="Permalink to this headline">#</a></h1>
+<section class="tex2jax_ignore mathjax_ignore" id="a-style-border-solid-padding-5pt-color-black-background-color-90caf9-name-magics-magics-ian-a">
+<h1><a style="border: solid; padding:5pt; color:black; background-color:#90CAF9" name="magics">Magics [Ian]</a><a class="headerlink" href="#a-style-border-solid-padding-5pt-color-black-background-color-90caf9-name-magics-magics-ian-a" title="Permalink to this heading">#</a></h1>
 <p><a class="reference external" href="https://ipython.readthedocs.io/en/stable/interactive/magics.html">https://ipython.readthedocs.io/en/stable/interactive/magics.html</a></p>
-<div class="section" id="what-are-they">
-<h2>What are they?<a class="headerlink" href="#what-are-they" title="Permalink to this headline">#</a></h2>
+<section id="what-are-they">
+<h2>What are they?<a class="headerlink" href="#what-are-they" title="Permalink to this heading">#</a></h2>
 <p>Magics are a kind of macro/function that allows you to invoke functionality
 of the notebook or OS independent of the kernel language.</p>
-<div class="section" id="line-magics-single">
-<h3>Line magics - single %<a class="headerlink" href="#line-magics-single" title="Permalink to this headline">#</a></h3>
+<section id="line-magics-single">
+<h3>Line magics - single %<a class="headerlink" href="#line-magics-single" title="Permalink to this heading">#</a></h3>
 <ul class="simple">
 <li><p>Only operate on the arguments on the remainder of the line</p></li>
 <li><p>Can be mixed with other code</p></li>
 </ul>
-</div>
-<div class="section" id="cell-magics-double">
-<h3>Cell magics - double %%<a class="headerlink" href="#cell-magics-double" title="Permalink to this headline">#</a></h3>
+</section>
+<section id="cell-magics-double">
+<h3>Cell magics - double %%<a class="headerlink" href="#cell-magics-double" title="Permalink to this heading">#</a></h3>
 <ul class="simple">
 <li><p>Operate on whole cell contents</p></li>
 <li><p>Must be in their own cell and at the start of the cell (even comments!)</p></li>
 </ul>
-</div>
-</div>
-<div class="section" id="popular-magics">
-<h2>Popular magics -<a class="headerlink" href="#popular-magics" title="Permalink to this headline">#</a></h2>
+</section>
+</section>
+<section id="popular-magics">
+<h2>Popular magics -<a class="headerlink" href="#popular-magics" title="Permalink to this heading">#</a></h2>
 <p style="font-family:consolas; font-size:15pt; color:green">
 %magic %env %writefile %js %hmtl %pip %logstart 
 </p>
-<div class="section" id="get-or-set-environment-variables">
-<h3>Get or set environment variables<a class="headerlink" href="#get-or-set-environment-variables" title="Permalink to this headline">#</a></h3>
+<section id="get-or-set-environment-variables">
+<h3>Get or set environment variables<a class="headerlink" href="#get-or-set-environment-variables" title="Permalink to this heading">#</a></h3>
 <p style="font-family:consolas; font-size:15pt; color:green">
 %env
 </p><div class="cell docutils container">
@@ -1461,9 +813,9 @@ of the notebook or OS independent of the kernel language.</p>
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="run-pip">
-<h3>Run pip<a class="headerlink" href="#run-pip" title="Permalink to this headline">#</a></h3>
+</section>
+<section id="run-pip">
+<h3>Run pip<a class="headerlink" href="#run-pip" title="Permalink to this heading">#</a></h3>
 <p style="font-family:consolas; font-size:15pt; color:green">
 %pip 
 </p>
@@ -1550,9 +902,9 @@ Hello Jupyterthon!
 </p>
 </div></div>
 </div>
-</div>
-<div class="section" id="write-or-append-the-contents-of-a-cell-to-a-file">
-<h3>Write (or append) the contents of a cell to a file<a class="headerlink" href="#write-or-append-the-contents-of-a-cell-to-a-file" title="Permalink to this headline">#</a></h3>
+</section>
+<section id="write-or-append-the-contents-of-a-cell-to-a-file">
+<h3>Write (or append) the contents of a cell to a file<a class="headerlink" href="#write-or-append-the-contents-of-a-cell-to-a-file" title="Permalink to this heading">#</a></h3>
 <p>** Note - cell magic! **</p>
 <p style="font-family:consolas; font-size:15pt; color:green">
 %%writefile <i>file_name</i><br>
@@ -1572,9 +924,9 @@ Hello Jupyterthon!
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="run-a-python-script">
-<h3>Run a Python script<a class="headerlink" href="#run-a-python-script" title="Permalink to this headline">#</a></h3>
+</section>
+<section id="run-a-python-script">
+<h3>Run a Python script<a class="headerlink" href="#run-a-python-script" title="Permalink to this heading">#</a></h3>
 <p style="font-family:consolas; font-size:15pt; color:green">
 %run <i>py_file_name</i>
 </p>
@@ -1592,10 +944,10 @@ win32
 </div>
 </div>
 </div>
-</div>
-</div>
-<div class="section" id="invoking-shell-commands">
-<h2>Invoking shell commands<a class="headerlink" href="#invoking-shell-commands" title="Permalink to this headline">#</a></h2>
+</section>
+</section>
+<section id="invoking-shell-commands">
+<h2>Invoking shell commands<a class="headerlink" href="#invoking-shell-commands" title="Permalink to this heading">#</a></h2>
 <p>Prefix with !</p>
 <p>These are not magics - they directly invoke underlying OS commands.</p>
 <p>Like line magics, can use these mixed with other code</p>
@@ -1643,9 +995,9 @@ win32
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="creating-magics">
-<h2>Creating Magics<a class="headerlink" href="#creating-magics" title="Permalink to this headline">#</a></h2>
+</section>
+<section id="creating-magics">
+<h2>Creating Magics<a class="headerlink" href="#creating-magics" title="Permalink to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">IPython.core.magic</span> <span class="kn">import</span> <span class="n">register_line_magic</span>
@@ -1655,7 +1007,7 @@ win32
 <span class="nd">@register_line_magic</span>
 <span class="k">def</span> <span class="nf">ian_is</span><span class="p">(</span><span class="n">line</span><span class="p">):</span>
     <span class="s2">&quot;my line magic&quot;</span>
-    <span class="k">return</span> <span class="sa">f</span><span class="s2">&quot;Ian is </span><span class="si">{</span><span class="s1">&#39; &#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">word</span><span class="o">.</span><span class="n">capitalize</span><span class="p">()</span> <span class="k">for</span> <span class="n">word</span> <span class="ow">in</span> <span class="n">line</span><span class="o">.</span><span class="n">split</span><span class="p">())</span><span class="si">}</span><span class="s2">&quot;</span>
+    <span class="k">return</span> <span class="sa">f</span><span class="s2">&quot;Ian is </span><span class="si">{</span><span class="s1">&#39; &#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">word</span><span class="o">.</span><span class="n">capitalize</span><span class="p">()</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="n">word</span><span class="w"> </span><span class="ow">in</span><span class="w"> </span><span class="n">line</span><span class="o">.</span><span class="n">split</span><span class="p">())</span><span class="si">}</span><span class="s2">&quot;</span>
 
 <span class="k">del</span> <span class="n">ian_is</span>
 </pre></div>
@@ -1674,8 +1026,8 @@ win32
 </div>
 </div>
 </div>
-<div class="section" id="magic-example">
-<h3>Magic example<a class="headerlink" href="#magic-example" title="Permalink to this headline">#</a></h3>
+<section id="magic-example">
+<h3>Magic example<a class="headerlink" href="#magic-example" title="Permalink to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">msticpy</span>
@@ -1723,17 +1075,17 @@ FileHash-SHA256	9c345ee65032ec38e1a29bf6b645cde468e3ded2e87b0c9c4a93c517d465e70d
 </div>
 </div>
 </div>
-</div>
-</div>
-</div>
+</section>
+</section>
+</section>
 <hr class="docutils" />
-<div class="tex2jax_ignore mathjax_ignore section" id="a-style-border-solid-padding-5pt-color-black-background-color-90caf9-name-widgets-widgets-introduction-luis-a">
-<h1><a style="border: solid; padding:5pt; color:black; background-color:#90CAF9" name="widgets">Widgets introduction [Luis]</a><a class="headerlink" href="#a-style-border-solid-padding-5pt-color-black-background-color-90caf9-name-widgets-widgets-introduction-luis-a" title="Permalink to this headline">#</a></h1>
+<section class="tex2jax_ignore mathjax_ignore" id="a-style-border-solid-padding-5pt-color-black-background-color-90caf9-name-widgets-widgets-introduction-luis-a">
+<h1><a style="border: solid; padding:5pt; color:black; background-color:#90CAF9" name="widgets">Widgets introduction [Luis]</a><a class="headerlink" href="#a-style-border-solid-padding-5pt-color-black-background-color-90caf9-name-widgets-widgets-introduction-luis-a" title="Permalink to this heading">#</a></h1>
 <p>Interactive HTML widgets for Jupyter Notebooks and IPython kernel.<br />
 Easy way to avoid input errors, types mismatch, date fortmat errors…</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>pip show ipykernel
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>pip<span class="w"> </span>show<span class="w"> </span>ipykernel
 <span class="c1">#It&#39;s neccessary to select an ipykernel to work with ipywidgets</span>
 </pre></div>
 </div>
@@ -1760,8 +1112,8 @@ Required-by: qtconsole, notebook, jupyter, jupyter-console, ipywidgets
 </div>
 </div>
 </div>
-<div class="section" id="integer-slider">
-<h2>Integer Slider<a class="headerlink" href="#integer-slider" title="Permalink to this headline">#</a></h2>
+<section id="integer-slider">
+<h2>Integer Slider<a class="headerlink" href="#integer-slider" title="Permalink to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">w</span> <span class="o">=</span> <span class="n">widgets</span><span class="o">.</span><span class="n">IntSlider</span><span class="p">()</span>
@@ -1770,9 +1122,7 @@ Required-by: qtconsole, notebook, jupyter, jupyter-console, ipywidgets
 </div>
 </div>
 <div class="cell_output docutils container">
-<script type="application/vnd.jupyter.widget-view+json">
-{"model_id": "8039dc289b9f4ffc85ee8d833060dd7f", "version_major": 2, "version_minor": 0}
-</script></div>
+<script type="application/vnd.jupyter.widget-view+json">{"model_id": "8039dc289b9f4ffc85ee8d833060dd7f", "version_major": 2, "version_minor": 0}</script></div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1781,9 +1131,9 @@ Required-by: qtconsole, notebook, jupyter, jupyter-console, ipywidgets
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="intenger-range-slider">
-<h2>Intenger Range Slider<a class="headerlink" href="#intenger-range-slider" title="Permalink to this headline">#</a></h2>
+</section>
+<section id="intenger-range-slider">
+<h2>Intenger Range Slider<a class="headerlink" href="#intenger-range-slider" title="Permalink to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">widgets</span><span class="o">.</span><span class="n">IntRangeSlider</span><span class="p">(</span><span class="n">value</span><span class="o">=</span><span class="p">[</span><span class="mi">5</span><span class="p">,</span> <span class="mi">7</span><span class="p">],</span> <span class="nb">min</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="nb">max</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
@@ -1791,13 +1141,11 @@ Required-by: qtconsole, notebook, jupyter, jupyter-console, ipywidgets
 </div>
 </div>
 <div class="cell_output docutils container">
-<script type="application/vnd.jupyter.widget-view+json">
-{"model_id": "ea2473ab24d54c0fbbb6a5c38b68c16e", "version_major": 2, "version_minor": 0}
-</script></div>
+<script type="application/vnd.jupyter.widget-view+json">{"model_id": "ea2473ab24d54c0fbbb6a5c38b68c16e", "version_major": 2, "version_minor": 0}</script></div>
 </div>
-</div>
-<div class="section" id="integer-progress-bar">
-<h2>Integer Progress Bar<a class="headerlink" href="#integer-progress-bar" title="Permalink to this headline">#</a></h2>
+</section>
+<section id="integer-progress-bar">
+<h2>Integer Progress Bar<a class="headerlink" href="#integer-progress-bar" title="Permalink to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">p</span> <span class="o">=</span> <span class="n">widgets</span><span class="o">.</span><span class="n">IntProgress</span><span class="p">(</span>
@@ -1829,14 +1177,12 @@ Required-by: qtconsole, notebook, jupyter, jupyter-console, ipywidgets
 </div>
 </div>
 <div class="cell_output docutils container">
-<script type="application/vnd.jupyter.widget-view+json">
-{"model_id": "150bf939604f4a368c7fb73b404f0c81", "version_major": 2, "version_minor": 0}
-</script><p><em><strong>Finished!</strong></em></p>
+<script type="application/vnd.jupyter.widget-view+json">{"model_id": "150bf939604f4a368c7fb73b404f0c81", "version_major": 2, "version_minor": 0}</script><p><em><strong>Finished!</strong></em></p>
 </div>
 </div>
-</div>
-<div class="section" id="dropdown">
-<h2>Dropdown<a class="headerlink" href="#dropdown" title="Permalink to this headline">#</a></h2>
+</section>
+<section id="dropdown">
+<h2>Dropdown<a class="headerlink" href="#dropdown" title="Permalink to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">widgets</span><span class="o">.</span><span class="n">Dropdown</span><span class="p">(</span>
@@ -1848,13 +1194,11 @@ Required-by: qtconsole, notebook, jupyter, jupyter-console, ipywidgets
 </div>
 </div>
 <div class="cell_output docutils container">
-<script type="application/vnd.jupyter.widget-view+json">
-{"model_id": "7e5b58a3a5fd49799b066ebfa4961709", "version_major": 2, "version_minor": 0}
-</script></div>
+<script type="application/vnd.jupyter.widget-view+json">{"model_id": "7e5b58a3a5fd49799b066ebfa4961709", "version_major": 2, "version_minor": 0}</script></div>
 </div>
-</div>
-<div class="section" id="multiselector">
-<h2>Multiselector<a class="headerlink" href="#multiselector" title="Permalink to this headline">#</a></h2>
+</section>
+<section id="multiselector">
+<h2>Multiselector<a class="headerlink" href="#multiselector" title="Permalink to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sm</span> <span class="o">=</span> <span class="n">widgets</span><span class="o">.</span><span class="n">SelectMultiple</span><span class="p">(</span>
@@ -1868,9 +1212,7 @@ Required-by: qtconsole, notebook, jupyter, jupyter-console, ipywidgets
 </div>
 </div>
 <div class="cell_output docutils container">
-<script type="application/vnd.jupyter.widget-view+json">
-{"model_id": "64f91bd72cb94f03aa637bef5fd6d84f", "version_major": 2, "version_minor": 0}
-</script></div>
+<script type="application/vnd.jupyter.widget-view+json">{"model_id": "64f91bd72cb94f03aa637bef5fd6d84f", "version_major": 2, "version_minor": 0}</script></div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1884,9 +1226,9 @@ Required-by: qtconsole, notebook, jupyter, jupyter-console, ipywidgets
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="data-picker">
-<h2>Data Picker<a class="headerlink" href="#data-picker" title="Permalink to this headline">#</a></h2>
+</section>
+<section id="data-picker">
+<h2>Data Picker<a class="headerlink" href="#data-picker" title="Permalink to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">widgets</span><span class="o">.</span><span class="n">DatePicker</span><span class="p">(</span>
@@ -1897,13 +1239,11 @@ Required-by: qtconsole, notebook, jupyter, jupyter-console, ipywidgets
 </div>
 </div>
 <div class="cell_output docutils container">
-<script type="application/vnd.jupyter.widget-view+json">
-{"model_id": "d85315d8cdc74171abfff61ea68ae936", "version_major": 2, "version_minor": 0}
-</script></div>
+<script type="application/vnd.jupyter.widget-view+json">{"model_id": "d85315d8cdc74171abfff61ea68ae936", "version_major": 2, "version_minor": 0}</script></div>
 </div>
-</div>
-<div class="section" id="file-uploader">
-<h2>File Uploader<a class="headerlink" href="#file-uploader" title="Permalink to this headline">#</a></h2>
+</section>
+<section id="file-uploader">
+<h2>File Uploader<a class="headerlink" href="#file-uploader" title="Permalink to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fu</span> <span class="o">=</span> <span class="n">widgets</span><span class="o">.</span><span class="n">FileUpload</span><span class="p">(</span>
@@ -1915,13 +1255,11 @@ Required-by: qtconsole, notebook, jupyter, jupyter-console, ipywidgets
 </div>
 </div>
 <div class="cell_output docutils container">
-<script type="application/vnd.jupyter.widget-view+json">
-{"model_id": "9df96c89a0b34677b24febbc08155fd5", "version_major": 2, "version_minor": 0}
-</script></div>
+<script type="application/vnd.jupyter.widget-view+json">{"model_id": "9df96c89a0b34677b24febbc08155fd5", "version_major": 2, "version_minor": 0}</script></div>
 </div>
-</div>
-<div class="section" id="more-sophisticated-file-folder-chooser">
-<h2>More sophisticated file/folder chooser<a class="headerlink" href="#more-sophisticated-file-folder-chooser" title="Permalink to this headline">#</a></h2>
+</section>
+<section id="more-sophisticated-file-folder-chooser">
+<h2>More sophisticated file/folder chooser<a class="headerlink" href="#more-sophisticated-file-folder-chooser" title="Permalink to this heading">#</a></h2>
 <p><a class="reference external" href="https://github.com/crahan/ipyfilechooser">ipyfilechooser Project</a></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -2006,36 +1344,34 @@ Note: you may need to restart the kernel to use updated packages.
 </div>
 </div>
 <div class="cell_output docutils container">
-<script type="application/vnd.jupyter.widget-view+json">
-{"model_id": "4ac9d78f969947c5bf2492965a66fea0", "version_major": 2, "version_minor": 0}
-</script></div>
+<script type="application/vnd.jupyter.widget-view+json">{"model_id": "4ac9d78f969947c5bf2492965a66fea0", "version_major": 2, "version_minor": 0}</script></div>
 </div>
 <p>MSTICPy also includes a number of advanced widgets. You can find out more about them in the workshop session on MSTICPy later today.</p>
-</div>
-</div>
+</section>
+</section>
 <hr class="docutils" />
-<div class="tex2jax_ignore mathjax_ignore section" id="a-style-border-solid-padding-5pt-color-black-background-color-90caf9-name-notjustpython-jupyter-extensions-luis-a">
-<h1><a style="border: solid; padding:5pt; color:black; background-color:#90CAF9" name="notjustpython">Jupyter Extensions [Luis]</a><a class="headerlink" href="#a-style-border-solid-padding-5pt-color-black-background-color-90caf9-name-notjustpython-jupyter-extensions-luis-a" title="Permalink to this headline">#</a></h1>
+<section class="tex2jax_ignore mathjax_ignore" id="a-style-border-solid-padding-5pt-color-black-background-color-90caf9-name-notjustpython-jupyter-extensions-luis-a">
+<h1><a style="border: solid; padding:5pt; color:black; background-color:#90CAF9" name="notjustpython">Jupyter Extensions [Luis]</a><a class="headerlink" href="#a-style-border-solid-padding-5pt-color-black-background-color-90caf9-name-notjustpython-jupyter-extensions-luis-a" title="Permalink to this heading">#</a></h1>
 <p>Extension are client-specific, most only Jupyter classic. In this section we will talk about JupyterLab extensions.</p>
 <p>Fundamentally, JupyterLab is designed as an extensible environment. JupyterLab extensions can customize or enhance any part of JupyterLab. They can provide new themes, file viewers and editors, or renderers for rich outputs in notebooks. Extensions can add items to the menu or command palette, keyboard shortcuts, or settings in the settings system. Extensions can provide an API for other extensions to use and can depend on other extensions. In fact, the whole of JupyterLab itself is simply a collection of extensions that are no more powerful or privileged than any custom extension.</p>
-<div class="section" id="creating-config-file">
-<h2>Creating config file<a class="headerlink" href="#creating-config-file" title="Permalink to this headline">#</a></h2>
+<section id="creating-config-file">
+<h2>Creating config file<a class="headerlink" href="#creating-config-file" title="Permalink to this heading">#</a></h2>
 <p>This file will be used to keep extensions configurations.<br />
 File will be created in ‘~/.jupyter/jupyter_lab_config.py’</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>jupyter lab --generate-config
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>jupyter<span class="w"> </span>lab<span class="w"> </span>--generate-config
 </pre></div>
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="jupyterlab-system-monitor">
-<h2>JupyterLab System Monitor<a class="headerlink" href="#jupyterlab-system-monitor" title="Permalink to this headline">#</a></h2>
+</section>
+<section id="jupyterlab-system-monitor">
+<h2>JupyterLab System Monitor<a class="headerlink" href="#jupyterlab-system-monitor" title="Permalink to this heading">#</a></h2>
 <p>JupyterLab extension to display system information (memory and cpu usage). <a class="reference external" href="https://github.com/jtpio/jupyterlab-system-monitor">Project</a></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>pip install jupyterlab-system-monitor
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>pip<span class="w"> </span>install<span class="w"> </span>jupyterlab-system-monitor
 </pre></div>
 </div>
 </div>
@@ -2048,27 +1384,27 @@ File will be created in ‘~/.jupyter/jupyter_lab_config.py’</p>
 </pre></div>
 </div>
 <p><img alt="Sysmonitor" src="https://github.com/jtpio/jupyterlab-system-monitor/raw/main/doc/screencast.gif" /></p>
-</div>
-<div class="section" id="git">
-<h2>Git<a class="headerlink" href="#git" title="Permalink to this headline">#</a></h2>
+</section>
+<section id="git">
+<h2>Git<a class="headerlink" href="#git" title="Permalink to this heading">#</a></h2>
 <p>A JupyterLab extension for version control using Git. <a class="reference external" href="https://github.com/jupyterlab/jupyterlab-git">Project</a></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>pip install jupyterlab-git
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>pip<span class="w"> </span>install<span class="w"> </span>jupyterlab-git
 </pre></div>
 </div>
 </div>
 </div>
 <p><img alt="Git" src="https://raw.githubusercontent.com/jupyterlab/jupyterlab-git/master/docs/figs/preview.gif" /></p>
-</div>
-<div class="section" id="jupyterlab-templates">
-<h2>JupyterLab Templates<a class="headerlink" href="#jupyterlab-templates" title="Permalink to this headline">#</a></h2>
+</section>
+<section id="jupyterlab-templates">
+<h2>JupyterLab Templates<a class="headerlink" href="#jupyterlab-templates" title="Permalink to this heading">#</a></h2>
 <p>Support for jupyter notebook templates in jupyterlab. <a class="reference external" href="https://github.com/jpmorganchase/jupyterlab_templates">Project</a></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>pip install jupyterlab_templates
-<span class="o">!</span>jupyter labextension install jupyterlab_templates
-<span class="o">!</span>jupyter serverextension <span class="nb">enable</span> --py jupyterlab_templates
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>pip<span class="w"> </span>install<span class="w"> </span>jupyterlab_templates
+<span class="o">!</span>jupyter<span class="w"> </span>labextension<span class="w"> </span>install<span class="w"> </span>jupyterlab_templates
+<span class="o">!</span>jupyter<span class="w"> </span>serverextension<span class="w"> </span><span class="nb">enable</span><span class="w"> </span>--py<span class="w"> </span>jupyterlab_templates
 </pre></div>
 </div>
 </div>
@@ -2081,26 +1417,26 @@ File will be created in ‘~/.jupyter/jupyter_lab_config.py’</p>
 </div>
 <p><strong>Tip</strong>: It’s necessary to put the templates inside a folder inside indicated folder.</p>
 <p><img alt="Templates" src="https://raw.githubusercontent.com/jpmorganchase/jupyterlab_templates/main/docs/example1.gif" /></p>
-</div>
-<div class="section" id="code-snippets-elyra">
-<h2>Code Snippets (Elyra)<a class="headerlink" href="#code-snippets-elyra" title="Permalink to this headline">#</a></h2>
+</section>
+<section id="code-snippets-elyra">
+<h2>Code Snippets (Elyra)<a class="headerlink" href="#code-snippets-elyra" title="Permalink to this heading">#</a></h2>
 <p>The ability to reuse pieces of code allows users to avoid doing repetitive work, making the programming workflow more simple and productive. Elyra supports custom code snippets that can be added to the file editor. <a class="reference external" href="https://elyra.readthedocs.io/en/latest/getting_started/overview.html#reusable-code-snippets">Project</a></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>pip install elyra-code-snippet-extension
-<span class="o">!</span>pip install -U <span class="s2">&quot;nbclassic&gt;=0.2.8&quot;</span>
-<span class="o">!</span>jupyter lab build
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>pip<span class="w"> </span>install<span class="w"> </span>elyra-code-snippet-extension
+<span class="o">!</span>pip<span class="w"> </span>install<span class="w"> </span>-U<span class="w"> </span><span class="s2">&quot;nbclassic&gt;=0.2.8&quot;</span>
+<span class="o">!</span>jupyter<span class="w"> </span>lab<span class="w"> </span>build
 </pre></div>
 </div>
 </div>
 </div>
 <p><img alt="Snippets example" src="https://elyra.readthedocs.io/en/latest/_images/code-snippet-expanded.png" /></p>
-</div>
-</div>
-<div class="tex2jax_ignore mathjax_ignore section" id="a-style-border-solid-padding-5pt-color-black-background-color-90caf9-name-nbconvert-export-and-create-notebooks-a">
-<h1><a style="border: solid; padding:5pt; color:black; background-color:#90CAF9" name="nbconvert">Export and create notebooks</a><a class="headerlink" href="#a-style-border-solid-padding-5pt-color-black-background-color-90caf9-name-nbconvert-export-and-create-notebooks-a" title="Permalink to this headline">#</a></h1>
-<div class="section" id="nbformat-create-a-notebook-programmatically-roberto">
-<h2>NBFormat - Create a notebook programmatically [Roberto]<a class="headerlink" href="#nbformat-create-a-notebook-programmatically-roberto" title="Permalink to this headline">#</a></h2>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="a-style-border-solid-padding-5pt-color-black-background-color-90caf9-name-nbconvert-export-and-create-notebooks-a">
+<h1><a style="border: solid; padding:5pt; color:black; background-color:#90CAF9" name="nbconvert">Export and create notebooks</a><a class="headerlink" href="#a-style-border-solid-padding-5pt-color-black-background-color-90caf9-name-nbconvert-export-and-create-notebooks-a" title="Permalink to this heading">#</a></h1>
+<section id="nbformat-create-a-notebook-programmatically-roberto">
+<h2>NBFormat - Create a notebook programmatically [Roberto]<a class="headerlink" href="#nbformat-create-a-notebook-programmatically-roberto" title="Permalink to this heading">#</a></h2>
 <ul class="simple">
 <li><p>Jupyter notebook files are simple JSON documents, containing text, source code, rich media output, and metadata.</p></li>
 <li><p>Each segment of the document is stored in a cell.</p></li>
@@ -2187,17 +1523,17 @@ Use the <a class="reference external" href="https://nbformat.readthedocs.io/en/l
 <li><p><a class="reference external" href="https://medium.com/threat-hunters-forge/jupyter-notebooks-from-sigma-rules-%EF%B8%8F-to-query-elasticsearch-31a74cc59b99">Jupyter Notebooks 📓 from SIGMA Rules 🛡⚔️ to Query Elasticsearch 🏹</a></p></li>
 <li><p><a class="reference external" href="https://github.com/OTRF/Security-Datasets">Seurity Datasets project: YAML -&gt; Notebooks</a></p></li>
 </ul>
-</div>
-<div class="section" id="nbconvert-exporting-and-converting-to-other-formats-ian">
-<h2>NBConvert - Exporting and converting to other formats [Ian]<a class="headerlink" href="#nbconvert-exporting-and-converting-to-other-formats-ian" title="Permalink to this headline">#</a></h2>
-<div class="section" id="from-the-command-line">
-<h3>From the command line<a class="headerlink" href="#from-the-command-line" title="Permalink to this headline">#</a></h3>
+</section>
+<section id="nbconvert-exporting-and-converting-to-other-formats-ian">
+<h2>NBConvert - Exporting and converting to other formats [Ian]<a class="headerlink" href="#nbconvert-exporting-and-converting-to-other-formats-ian" title="Permalink to this heading">#</a></h2>
+<section id="from-the-command-line">
+<h3>From the command line<a class="headerlink" href="#from-the-command-line" title="Permalink to this heading">#</a></h3>
 <p style="font-family:consolas; font-size:15pt; color:green">
 jupyter nbconvert --to <i>FORMAT</i> input_notebook.ipynb
 </p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>jupyter nbconvert --to RST day2-1-Jupyter-advanced-topics.ipynb
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>jupyter<span class="w"> </span>nbconvert<span class="w"> </span>--to<span class="w"> </span>RST<span class="w"> </span>day2-1-Jupyter-advanced-topics.ipynb
 </pre></div>
 </div>
 </div>
@@ -2208,10 +1544,10 @@ jupyter nbconvert --to <i>FORMAT</i> input_notebook.ipynb
 </div>
 </div>
 </div>
-</div>
-</div>
-<div class="section" id="in-code">
-<h2>In code<a class="headerlink" href="#in-code" title="Permalink to this headline">#</a></h2>
+</section>
+</section>
+<section id="in-code">
+<h2>In code<a class="headerlink" href="#in-code" title="Permalink to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">nbformat</span>
@@ -2230,8 +1566,8 @@ jupyter nbconvert --to <i>FORMAT</i> input_notebook.ipynb
 </div>
 </div>
 </div>
-<div class="section" id="convert-a-notebook-to-html">
-<h3>Convert a notebook to HTML<a class="headerlink" href="#convert-a-notebook-to-html" title="Permalink to this headline">#</a></h3>
+<section id="convert-a-notebook-to-html">
+<h3>Convert a notebook to HTML<a class="headerlink" href="#convert-a-notebook-to-html" title="Permalink to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Import the exporter</span>
@@ -2263,9 +1599,9 @@ jupyter nbconvert --to <i>FORMAT</i> input_notebook.ipynb
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="convert-to-python-module">
-<h3>Convert to Python module<a class="headerlink" href="#convert-to-python-module" title="Permalink to this headline">#</a></h3>
+</section>
+<section id="convert-to-python-module">
+<h3>Convert to Python module<a class="headerlink" href="#convert-to-python-module" title="Permalink to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># rst_exporter = RSTExporter()</span>
@@ -2281,28 +1617,28 @@ jupyter nbconvert --to <i>FORMAT</i> input_notebook.ipynb
 </div>
 </div>
 </div>
-</div>
-</div>
-</div>
+</section>
+</section>
+</section>
 <hr class="docutils" />
-<div class="tex2jax_ignore mathjax_ignore section" id="a-style-border-solid-padding-5pt-color-black-background-color-90caf9-name-debugging-dev-topics-debugging-and-testing-notebook-code-ian-a">
-<h1><a style="border: solid; padding:5pt; color:black; background-color:#90CAF9" name="debugging">Dev topics - Debugging and testing notebook code [Ian]</a><a class="headerlink" href="#a-style-border-solid-padding-5pt-color-black-background-color-90caf9-name-debugging-dev-topics-debugging-and-testing-notebook-code-ian-a" title="Permalink to this headline">#</a></h1>
-<div class="section" id="magics-and-errors-traceback-xmode-debug">
-<h2>Magics and errors – traceback, xmode, debug<a class="headerlink" href="#magics-and-errors-traceback-xmode-debug" title="Permalink to this headline">#</a></h2>
+<section class="tex2jax_ignore mathjax_ignore" id="a-style-border-solid-padding-5pt-color-black-background-color-90caf9-name-debugging-dev-topics-debugging-and-testing-notebook-code-ian-a">
+<h1><a style="border: solid; padding:5pt; color:black; background-color:#90CAF9" name="debugging">Dev topics - Debugging and testing notebook code [Ian]</a><a class="headerlink" href="#a-style-border-solid-padding-5pt-color-black-background-color-90caf9-name-debugging-dev-topics-debugging-and-testing-notebook-code-ian-a" title="Permalink to this heading">#</a></h1>
+<section id="magics-and-errors-traceback-xmode-debug">
+<h2>Magics and errors – traceback, xmode, debug<a class="headerlink" href="#magics-and-errors-traceback-xmode-debug" title="Permalink to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Bad code example</span>
 
 <span class="k">def</span> <span class="nf">bad_func</span><span class="p">(</span><span class="n">param1</span><span class="p">,</span> <span class="n">param2</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;What could possibly go wrong.&quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;What could possibly go wrong.&quot;&quot;&quot;</span>
     <span class="k">return</span> <span class="n">param1</span> <span class="o">+</span> <span class="n">param2</span>
 
 <span class="k">def</span> <span class="nf">func_in_middle</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;It&#39;s not my problem&quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;It&#39;s not my problem&quot;&quot;&quot;</span>
     <span class="k">return</span> <span class="n">bad_func</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">)</span>
 
 <span class="k">def</span> <span class="nf">hapless</span><span class="p">():</span>
-    <span class="sd">&quot;&quot;&quot;I&#39;m just hoping for the best.&quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;I&#39;m just hoping for the best.&quot;&quot;&quot;</span>
     <span class="nb">print</span><span class="p">(</span><span class="n">func_in_middle</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">))</span>
     <span class="nb">print</span><span class="p">(</span><span class="n">func_in_middle</span><span class="p">(</span><span class="s2">&quot;Hello&quot;</span><span class="p">,</span> <span class="s2">&quot;World&quot;</span><span class="p">))</span>
     <span class="nb">print</span><span class="p">(</span><span class="n">func_in_middle</span><span class="p">(</span><span class="s2">&quot;Hello&quot;</span><span class="p">,</span> <span class="mi">1</span><span class="p">))</span>
@@ -2333,14 +1669,14 @@ HelloWorld
 
 <span class="nn">~\AppData\Local\Temp/ipykernel_44668/4209713645.py</span> in <span class="ni">func_in_middle</span><span class="nt">(*args)</span>
 <span class="g g-Whitespace">      </span><span class="mi">7</span> <span class="k">def</span> <span class="nf">func_in_middle</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">):</span>
-<span class="g g-Whitespace">      </span><span class="mi">8</span>     <span class="sd">&quot;&quot;&quot;It&#39;s not my problem&quot;&quot;&quot;</span>
+<span class="g g-Whitespace">      </span><span class="mi">8</span><span class="w">     </span><span class="sd">&quot;&quot;&quot;It&#39;s not my problem&quot;&quot;&quot;</span>
 <span class="ne">----&gt; </span><span class="mi">9</span>     <span class="k">return</span> <span class="n">bad_func</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">)</span>
 <span class="g g-Whitespace">     </span><span class="mi">10</span> 
 <span class="g g-Whitespace">     </span><span class="mi">11</span> <span class="k">def</span> <span class="nf">hapless</span><span class="p">():</span>
 
 <span class="nn">~\AppData\Local\Temp/ipykernel_44668/4209713645.py</span> in <span class="ni">bad_func</span><span class="nt">(param1, param2)</span>
 <span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="k">def</span> <span class="nf">bad_func</span><span class="p">(</span><span class="n">param1</span><span class="p">,</span> <span class="n">param2</span><span class="p">):</span>
-<span class="g g-Whitespace">      </span><span class="mi">4</span>     <span class="sd">&quot;&quot;&quot;What could possibly go wrong.&quot;&quot;&quot;</span>
+<span class="g g-Whitespace">      </span><span class="mi">4</span><span class="w">     </span><span class="sd">&quot;&quot;&quot;What could possibly go wrong.&quot;&quot;&quot;</span>
 <span class="ne">----&gt; </span><span class="mi">5</span>     <span class="k">return</span> <span class="n">param1</span> <span class="o">+</span> <span class="n">param2</span>
 <span class="g g-Whitespace">      </span><span class="mi">6</span> 
 <span class="g g-Whitespace">      </span><span class="mi">7</span> <span class="k">def</span> <span class="nf">func_in_middle</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">):</span>
@@ -2350,8 +1686,8 @@ HelloWorld
 </div>
 </div>
 </div>
-<div class="section" id="use-tb-to-review-last-traceback">
-<h3>Use %tb to review last traceback<a class="headerlink" href="#use-tb-to-review-last-traceback" title="Permalink to this headline">#</a></h3>
+<section id="use-tb-to-review-last-traceback">
+<h3>Use %tb to review last traceback<a class="headerlink" href="#use-tb-to-review-last-traceback" title="Permalink to this heading">#</a></h3>
 <p style="font-family:consolas; font-size:15pt; color:green">
 %tb
 </p>
@@ -2378,14 +1714,14 @@ HelloWorld
 
 <span class="nn">~\AppData\Local\Temp/ipykernel_44668/4209713645.py</span> in <span class="ni">func_in_middle</span><span class="nt">(*args)</span>
 <span class="g g-Whitespace">      </span><span class="mi">7</span> <span class="k">def</span> <span class="nf">func_in_middle</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">):</span>
-<span class="g g-Whitespace">      </span><span class="mi">8</span>     <span class="sd">&quot;&quot;&quot;It&#39;s not my problem&quot;&quot;&quot;</span>
+<span class="g g-Whitespace">      </span><span class="mi">8</span><span class="w">     </span><span class="sd">&quot;&quot;&quot;It&#39;s not my problem&quot;&quot;&quot;</span>
 <span class="ne">----&gt; </span><span class="mi">9</span>     <span class="k">return</span> <span class="n">bad_func</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">)</span>
 <span class="g g-Whitespace">     </span><span class="mi">10</span> 
 <span class="g g-Whitespace">     </span><span class="mi">11</span> <span class="k">def</span> <span class="nf">hapless</span><span class="p">():</span>
 
 <span class="nn">~\AppData\Local\Temp/ipykernel_44668/4209713645.py</span> in <span class="ni">bad_func</span><span class="nt">(param1, param2)</span>
 <span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="k">def</span> <span class="nf">bad_func</span><span class="p">(</span><span class="n">param1</span><span class="p">,</span> <span class="n">param2</span><span class="p">):</span>
-<span class="g g-Whitespace">      </span><span class="mi">4</span>     <span class="sd">&quot;&quot;&quot;What could possibly go wrong.&quot;&quot;&quot;</span>
+<span class="g g-Whitespace">      </span><span class="mi">4</span><span class="w">     </span><span class="sd">&quot;&quot;&quot;What could possibly go wrong.&quot;&quot;&quot;</span>
 <span class="ne">----&gt; </span><span class="mi">5</span>     <span class="k">return</span> <span class="n">param1</span> <span class="o">+</span> <span class="n">param2</span>
 <span class="g g-Whitespace">      </span><span class="mi">6</span> 
 <span class="g g-Whitespace">      </span><span class="mi">7</span> <span class="k">def</span> <span class="nf">func_in_middle</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">):</span>
@@ -2395,9 +1731,9 @@ HelloWorld
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="use-xmode-magic-to-include-parameter-values">
-<h3>Use <code class="docutils literal notranslate"><span class="pre">%xmode</span></code> magic to include parameter values<a class="headerlink" href="#use-xmode-magic-to-include-parameter-values" title="Permalink to this headline">#</a></h3>
+</section>
+<section id="use-xmode-magic-to-include-parameter-values">
+<h3>Use <code class="docutils literal notranslate"><span class="pre">%xmode</span></code> magic to include parameter values<a class="headerlink" href="#use-xmode-magic-to-include-parameter-values" title="Permalink to this heading">#</a></h3>
 <p style="font-family:consolas; font-size:15pt; color:green">
 %mode { Verbose | Context | Plain | Minimal }
 </p>
@@ -2431,7 +1767,7 @@ HelloWorld
 
 <span class="nn">~\AppData\Local\Temp/ipykernel_44668/4209713645.py</span> in <span class="ni">func_in_middle(*args=</span><span class="nt">(&#39;Hello&#39;, 1))</span>
 <span class="g g-Whitespace">      </span><span class="mi">7</span> <span class="k">def</span> <span class="nf">func_in_middle</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">):</span>
-<span class="g g-Whitespace">      </span><span class="mi">8</span>     <span class="sd">&quot;&quot;&quot;It&#39;s not my problem&quot;&quot;&quot;</span>
+<span class="g g-Whitespace">      </span><span class="mi">8</span><span class="w">     </span><span class="sd">&quot;&quot;&quot;It&#39;s not my problem&quot;&quot;&quot;</span>
 <span class="ne">----&gt; </span><span class="mi">9</span>     <span class="k">return</span> <span class="n">bad_func</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">)</span>
         <span class="k">global</span> <span class="n">bad_func</span> <span class="o">=</span> <span class="o">&lt;</span><span class="n">function</span> <span class="n">bad_func</span> <span class="n">at</span> <span class="mh">0x000001A41C46A3A8</span><span class="o">&gt;</span>
         <span class="n">args</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;Hello&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
@@ -2440,7 +1776,7 @@ HelloWorld
 
 <span class="nn">~\AppData\Local\Temp/ipykernel_44668/4209713645.py</span> in <span class="ni">bad_func</span><span class="nt">(param1=&#39;Hello&#39;, param2=1)</span>
 <span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="k">def</span> <span class="nf">bad_func</span><span class="p">(</span><span class="n">param1</span><span class="p">,</span> <span class="n">param2</span><span class="p">):</span>
-<span class="g g-Whitespace">      </span><span class="mi">4</span>     <span class="sd">&quot;&quot;&quot;What could possibly go wrong.&quot;&quot;&quot;</span>
+<span class="g g-Whitespace">      </span><span class="mi">4</span><span class="w">     </span><span class="sd">&quot;&quot;&quot;What could possibly go wrong.&quot;&quot;&quot;</span>
 <span class="ne">----&gt; </span><span class="mi">5</span>     <span class="k">return</span> <span class="n">param1</span> <span class="o">+</span> <span class="n">param2</span>
         <span class="n">param1</span> <span class="o">=</span> <span class="s1">&#39;Hello&#39;</span>
         <span class="n">param2</span> <span class="o">=</span> <span class="mi">1</span>
@@ -2479,14 +1815,14 @@ HelloWorld
 
 <span class="nn">~\AppData\Local\Temp/ipykernel_44668/4209713645.py</span> in <span class="ni">func_in_middle</span><span class="nt">(*args)</span>
 <span class="g g-Whitespace">      </span><span class="mi">7</span> <span class="k">def</span> <span class="nf">func_in_middle</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">):</span>
-<span class="g g-Whitespace">      </span><span class="mi">8</span>     <span class="sd">&quot;&quot;&quot;It&#39;s not my problem&quot;&quot;&quot;</span>
+<span class="g g-Whitespace">      </span><span class="mi">8</span><span class="w">     </span><span class="sd">&quot;&quot;&quot;It&#39;s not my problem&quot;&quot;&quot;</span>
 <span class="ne">----&gt; </span><span class="mi">9</span>     <span class="k">return</span> <span class="n">bad_func</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">)</span>
 <span class="g g-Whitespace">     </span><span class="mi">10</span> 
 <span class="g g-Whitespace">     </span><span class="mi">11</span> <span class="k">def</span> <span class="nf">hapless</span><span class="p">():</span>
 
 <span class="nn">~\AppData\Local\Temp/ipykernel_44668/4209713645.py</span> in <span class="ni">bad_func</span><span class="nt">(param1, param2)</span>
 <span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="k">def</span> <span class="nf">bad_func</span><span class="p">(</span><span class="n">param1</span><span class="p">,</span> <span class="n">param2</span><span class="p">):</span>
-<span class="g g-Whitespace">      </span><span class="mi">4</span>     <span class="sd">&quot;&quot;&quot;What could possibly go wrong.&quot;&quot;&quot;</span>
+<span class="g g-Whitespace">      </span><span class="mi">4</span><span class="w">     </span><span class="sd">&quot;&quot;&quot;What could possibly go wrong.&quot;&quot;&quot;</span>
 <span class="ne">----&gt; </span><span class="mi">5</span>     <span class="k">return</span> <span class="n">param1</span> <span class="o">+</span> <span class="n">param2</span>
 <span class="g g-Whitespace">      </span><span class="mi">6</span> 
 <span class="g g-Whitespace">      </span><span class="mi">7</span> <span class="k">def</span> <span class="nf">func_in_middle</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">):</span>
@@ -2496,13 +1832,13 @@ HelloWorld
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="exceptions-within-exceptions">
-<h3>Exceptions within Exceptions<a class="headerlink" href="#exceptions-within-exceptions" title="Permalink to this headline">#</a></h3>
+</section>
+<section id="exceptions-within-exceptions">
+<h3>Exceptions within Exceptions<a class="headerlink" href="#exceptions-within-exceptions" title="Permalink to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">func_in_middle2</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;It&#39;s not my problem but let me try to fix things&quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;It&#39;s not my problem but let me try to fix things&quot;&quot;&quot;</span>
     <span class="k">try</span><span class="p">:</span>
         <span class="k">return</span> <span class="n">bad_func</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">)</span>
     <span class="k">except</span> <span class="ne">TypeError</span> <span class="k">as</span> <span class="n">err</span><span class="p">:</span>
@@ -2511,7 +1847,7 @@ HelloWorld
         <span class="k">raise</span> <span class="ne">RuntimeError</span><span class="p">(</span><span class="s2">&quot;Something terrible happened&quot;</span><span class="p">)</span> <span class="kn">from</span> <span class="nn">err</span>
 
 <span class="k">def</span> <span class="nf">hapless2</span><span class="p">():</span>
-    <span class="sd">&quot;&quot;&quot;I&#39;m just hoping for the best.&quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;I&#39;m just hoping for the best.&quot;&quot;&quot;</span>
     <span class="nb">print</span><span class="p">(</span><span class="n">func_in_middle</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">))</span>
     <span class="nb">print</span><span class="p">(</span><span class="n">func_in_middle</span><span class="p">(</span><span class="s2">&quot;Hello&quot;</span><span class="p">,</span> <span class="s2">&quot;World&quot;</span><span class="p">))</span>
     <span class="nb">print</span><span class="p">(</span><span class="n">func_in_middle2</span><span class="p">(</span><span class="s2">&quot;Hello&quot;</span><span class="p">,</span> <span class="mi">1</span><span class="p">))</span>
@@ -2534,7 +1870,7 @@ HelloWorld
 <span class="g g-Whitespace">      </span><span class="mi">5</span>     <span class="k">except</span> <span class="ne">TypeError</span> <span class="k">as</span> <span class="n">err</span><span class="p">:</span>
 
 <span class="nn">~\AppData\Local\Temp/ipykernel_44668/4209713645.py</span> in <span class="ni">bad_func</span><span class="nt">(param1, param2)</span>
-<span class="g g-Whitespace">      </span><span class="mi">4</span>     <span class="sd">&quot;&quot;&quot;What could possibly go wrong.&quot;&quot;&quot;</span>
+<span class="g g-Whitespace">      </span><span class="mi">4</span><span class="w">     </span><span class="sd">&quot;&quot;&quot;What could possibly go wrong.&quot;&quot;&quot;</span>
 <span class="ne">----&gt; </span><span class="mi">5</span>     <span class="k">return</span> <span class="n">param1</span> <span class="o">+</span> <span class="n">param2</span>
 <span class="g g-Whitespace">      </span><span class="mi">6</span> 
 
@@ -2567,10 +1903,10 @@ HelloWorld
 </div>
 </div>
 </div>
-</div>
-</div>
-<div class="section" id="debugging-bare-handed">
-<h2>Debugging bare-handed<a class="headerlink" href="#debugging-bare-handed" title="Permalink to this headline">#</a></h2>
+</section>
+</section>
+<section id="debugging-bare-handed">
+<h2>Debugging bare-handed<a class="headerlink" href="#debugging-bare-handed" title="Permalink to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%debug</span>
@@ -2667,9 +2003,9 @@ HelloWorld
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="debugging-from-a-comfy-chair">
-<h2>Debugging from a comfy chair<a class="headerlink" href="#debugging-from-a-comfy-chair" title="Permalink to this headline">#</a></h2>
+</section>
+<section id="debugging-from-a-comfy-chair">
+<h2>Debugging from a comfy chair<a class="headerlink" href="#debugging-from-a-comfy-chair" title="Permalink to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">hapless</span><span class="p">()</span>
@@ -2695,14 +2031,14 @@ HelloWorld
 
 <span class="nn">~\AppData\Local\Temp/ipykernel_44668/4209713645.py</span> in <span class="ni">func_in_middle</span><span class="nt">(*args)</span>
 <span class="g g-Whitespace">      </span><span class="mi">7</span> <span class="k">def</span> <span class="nf">func_in_middle</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">):</span>
-<span class="g g-Whitespace">      </span><span class="mi">8</span>     <span class="sd">&quot;&quot;&quot;It&#39;s not my problem&quot;&quot;&quot;</span>
+<span class="g g-Whitespace">      </span><span class="mi">8</span><span class="w">     </span><span class="sd">&quot;&quot;&quot;It&#39;s not my problem&quot;&quot;&quot;</span>
 <span class="ne">----&gt; </span><span class="mi">9</span>     <span class="k">return</span> <span class="n">bad_func</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">)</span>
 <span class="g g-Whitespace">     </span><span class="mi">10</span> 
 <span class="g g-Whitespace">     </span><span class="mi">11</span> <span class="k">def</span> <span class="nf">hapless</span><span class="p">():</span>
 
 <span class="nn">~\AppData\Local\Temp/ipykernel_44668/4209713645.py</span> in <span class="ni">bad_func</span><span class="nt">(param1, param2)</span>
 <span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="k">def</span> <span class="nf">bad_func</span><span class="p">(</span><span class="n">param1</span><span class="p">,</span> <span class="n">param2</span><span class="p">):</span>
-<span class="g g-Whitespace">      </span><span class="mi">4</span>     <span class="sd">&quot;&quot;&quot;What could possibly go wrong.&quot;&quot;&quot;</span>
+<span class="g g-Whitespace">      </span><span class="mi">4</span><span class="w">     </span><span class="sd">&quot;&quot;&quot;What could possibly go wrong.&quot;&quot;&quot;</span>
 <span class="ne">----&gt; </span><span class="mi">5</span>     <span class="k">return</span> <span class="n">param1</span> <span class="o">+</span> <span class="n">param2</span>
 <span class="g g-Whitespace">      </span><span class="mi">6</span> 
 <span class="g g-Whitespace">      </span><span class="mi">7</span> <span class="k">def</span> <span class="nf">func_in_middle</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">):</span>
@@ -2712,11 +2048,11 @@ HelloWorld
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="running-jupyter-notebooks-in-a-unit-test-ian">
-<h2>Running Jupyter notebooks in a unit test [Ian]<a class="headerlink" href="#running-jupyter-notebooks-in-a-unit-test-ian" title="Permalink to this headline">#</a></h2>
-<div class="section" id="why-quick-and-dirty-testing">
-<h3>Why? - Quick and dirty testing<a class="headerlink" href="#why-quick-and-dirty-testing" title="Permalink to this headline">#</a></h3>
+</section>
+<section id="running-jupyter-notebooks-in-a-unit-test-ian">
+<h2>Running Jupyter notebooks in a unit test [Ian]<a class="headerlink" href="#running-jupyter-notebooks-in-a-unit-test-ian" title="Permalink to this heading">#</a></h2>
+<section id="why-quick-and-dirty-testing">
+<h3>Why? - Quick and dirty testing<a class="headerlink" href="#why-quick-and-dirty-testing" title="Permalink to this heading">#</a></h3>
 <p>Caveats</p>
 <ul class="simple">
 <li><p>Only tests happy path</p></li>
@@ -2782,10 +2118,10 @@ See notebook &#39;../data/broken_notebook-err.ipynb&#39; for the traceback.
 <span class="g g-Whitespace">     </span><span class="mi">78</span>         <span class="bp">self</span><span class="o">.</span><span class="n">_check_assign_resources</span><span class="p">(</span><span class="n">resources</span><span class="p">)</span>
 <span class="ne">---&gt; </span><span class="mi">79</span>         <span class="bp">self</span><span class="o">.</span><span class="n">execute</span><span class="p">()</span>
 <span class="g g-Whitespace">     </span><span class="mi">80</span>         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">nb</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">resources</span>
-<span class="g g-Whitespace">     </span><span class="mi">81</span> 
+<span class="g g-Whitespace">     </span><span class="mi">81</span><span class="w"> </span>
 
 <span class="nn">~\Anaconda3\envs\condadev\lib\site-packages\nbclient\util.py</span> in <span class="ni">wrapped</span><span class="nt">(*args, **kwargs)</span>
-<span class="g g-Whitespace">     </span><span class="mi">72</span>     <span class="sd">&quot;&quot;&quot;</span>
+<span class="g g-Whitespace">     </span><span class="mi">72</span><span class="w">     </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="g g-Whitespace">     </span><span class="mi">73</span><span class="sd">     def wrapped(*args, **kwargs):</span>
 <span class="ne">---&gt; </span><span class="mi">74</span><span class="sd">         return just_run(coro(*args, **kwargs))</span>
 <span class="g g-Whitespace">     </span><span class="mi">75</span><span class="sd">     wrapped.__doc__ = coro.__doc__</span>
@@ -2908,9 +2244,9 @@ See notebook &#39;../data/broken_notebook-err.ipynb&#39; for the traceback.
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="output-when-test-fails">
-<h3>Output when test fails<a class="headerlink" href="#output-when-test-fails" title="Permalink to this headline">#</a></h3>
+</section>
+<section id="output-when-test-fails">
+<h3>Output when test fails<a class="headerlink" href="#output-when-test-fails" title="Permalink to this heading">#</a></h3>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>        <span class="k">if</span> <span class="ow">not</span> <span class="n">cell_allows_errors</span><span class="p">:</span>
 <span class="o">&gt;</span>           <span class="k">raise</span> <span class="n">CellExecutionError</span><span class="o">.</span><span class="n">from_cell_and_msg</span><span class="p">(</span><span class="n">cell</span><span class="p">,</span> <span class="n">exec_reply_content</span><span class="p">)</span>
 <span class="n">E</span>           <span class="n">nbclient</span><span class="o">.</span><span class="n">exceptions</span><span class="o">.</span><span class="n">CellExecutionError</span><span class="p">:</span> <span class="n">An</span> <span class="n">error</span> <span class="n">occurred</span> <span class="k">while</span> <span class="n">executing</span> <span class="n">the</span> <span class="n">following</span> <span class="n">cell</span><span class="p">:</span>
@@ -2943,17 +2279,17 @@ See notebook &#39;../data/broken_notebook-err.ipynb&#39; for the traceback.
 <span class="n">See</span> <span class="n">notebook</span> <span class="s1">&#39;docs/notebooks/GeoIPLookups-err.ipynb&#39;</span> <span class="k">for</span> <span class="n">the</span> <span class="n">traceback</span><span class="o">.</span>
 </pre></div>
 </div>
-</div>
-</div>
-</div>
+</section>
+</section>
+</section>
 <hr class="docutils" />
-<div class="tex2jax_ignore mathjax_ignore section" id="end-of-session">
-<h1>End of Session<a class="headerlink" href="#end-of-session" title="Permalink to this headline">#</a></h1>
-</div>
-<div class="tex2jax_ignore mathjax_ignore section" id="font-color-peru-break-5-minutes-font">
-<h1><font color=peru>Break: 5 Minutes</font><a class="headerlink" href="#font-color-peru-break-5-minutes-font" title="Permalink to this headline">#</a></h1>
+<section class="tex2jax_ignore mathjax_ignore" id="end-of-session">
+<h1>End of Session<a class="headerlink" href="#end-of-session" title="Permalink to this heading">#</a></h1>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="font-color-peru-break-5-minutes-font">
+<h1><font color=peru>Break: 5 Minutes</font><a class="headerlink" href="#font-color-peru-break-5-minutes-font" title="Permalink to this heading">#</a></h1>
 <p><img alt="" src="../../_images/dog-leash-break.jpg" /></p>
-</div>
+</section>
 
     <script type="text/x-thebe-config">
     {
@@ -2967,7 +2303,7 @@ See notebook &#39;../data/broken_notebook-err.ipynb&#39; for the traceback.
             mode: "python"
         },
         kernelOptions: {
-            kernelName: "python3",
+            name: "python3",
             path: "./workshops\day2"
         },
         predefinedOutput: true
@@ -2975,50 +2311,184 @@ See notebook &#39;../data/broken_notebook-err.ipynb&#39; for the traceback.
     </script>
     <script>kernelName = 'python3'</script>
 
-              </div>
+                </article>
               
-            </main>
-            <footer class="footer-article noprint">
-                
-    <!-- Previous / next buttons -->
-<div class='prev-next-area'>
-    <a class='left-prev' id="prev-link" href="intro.html" title="previous page">
-        <i class="fas fa-angle-left"></i>
-        <div class="prev-next-info">
-            <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">Day 2</p>
-        </div>
+
+              
+              
+                <footer class="bd-footer-article">
+                  
+<div class="footer-article-items footer-article__inner">
+  
+    <div class="footer-article-item"><!-- Previous / next buttons -->
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="intro.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Day 2</p>
+      </div>
     </a>
-    <a class='right-next' id="next-link" href="day2-1-R-demo-notebook.html" title="next page">
-    <div class="prev-next-info">
+    <a class="right-next"
+       href="day2-1-R-demo-notebook.html"
+       title="next page">
+      <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
         <p class="prev-next-title">Workshop 2.1: <font color=peru>R Demo Notebook</font></p>
-    </div>
-    <i class="fas fa-angle-right"></i>
-    </a>
-</div>
-            </footer>
-        </div>
-    </div>
-    <div class="footer-content row">
-        <footer class="col footer"><p>
-  
-    By Open Threat Research @OTR_Community<br/>
-  
-      &copy; Copyright 2022.<br/>
-</p>
-        </footer>
-    </div>
-    
-</div>
-
-
       </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div></div>
+  
+</div>
+
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Workshop 2.1: <font color="peru">Jupyter Notebooks Advanced</font></a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#a-style-border-solid-padding-5pt-color-black-background-color-90caf9-name-notjustpython-jupyter-is-not-just-python-ashwin-a"><a name="notjustpython" style="border: solid; padding:5pt; color:black; background-color:#90CAF9">Jupyter is not just Python [Ashwin]</a></a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#a-style-border-solid-padding-5pt-color-black-background-color-90caf9-name-kernels-jupyter-kernels-python-environments-a"><a name="kernels" style="border: solid; padding:5pt; color:black; background-color:#90CAF9">Jupyter Kernels &amp; Python environments</a></a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#using-different-python-kernels-with-jupyter">Using different Python Kernels with Jupyter</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#to-remove-unwanted-kernels">To remove unwanted kernels</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#a-style-border-solid-padding-5pt-color-black-background-color-90caf9-name-magics-magics-ian-a"><a name="magics" style="border: solid; padding:5pt; color:black; background-color:#90CAF9">Magics [Ian]</a></a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-are-they">What are they?</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#line-magics-single">Line magics - single %</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#cell-magics-double">Cell magics - double %%</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#popular-magics">Popular magics -</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#get-or-set-environment-variables">Get or set environment variables</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#run-pip">Run pip</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#write-or-append-the-contents-of-a-cell-to-a-file">Write (or append) the contents of a cell to a file</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#run-a-python-script">Run a Python script</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#invoking-shell-commands">Invoking shell commands</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#creating-magics">Creating Magics</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#magic-example">Magic example</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#a-style-border-solid-padding-5pt-color-black-background-color-90caf9-name-widgets-widgets-introduction-luis-a"><a name="widgets" style="border: solid; padding:5pt; color:black; background-color:#90CAF9">Widgets introduction [Luis]</a></a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#integer-slider">Integer Slider</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#intenger-range-slider">Intenger Range Slider</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#integer-progress-bar">Integer Progress Bar</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dropdown">Dropdown</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#multiselector">Multiselector</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#data-picker">Data Picker</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#file-uploader">File Uploader</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#more-sophisticated-file-folder-chooser">More sophisticated file/folder chooser</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#a-style-border-solid-padding-5pt-color-black-background-color-90caf9-name-notjustpython-jupyter-extensions-luis-a"><a name="notjustpython" style="border: solid; padding:5pt; color:black; background-color:#90CAF9">Jupyter Extensions [Luis]</a></a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#creating-config-file">Creating config file</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#jupyterlab-system-monitor">JupyterLab System Monitor</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#git">Git</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#jupyterlab-templates">JupyterLab Templates</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#code-snippets-elyra">Code Snippets (Elyra)</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#a-style-border-solid-padding-5pt-color-black-background-color-90caf9-name-nbconvert-export-and-create-notebooks-a"><a name="nbconvert" style="border: solid; padding:5pt; color:black; background-color:#90CAF9">Export and create notebooks</a></a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#nbformat-create-a-notebook-programmatically-roberto">NBFormat - Create a notebook programmatically [Roberto]</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#nbconvert-exporting-and-converting-to-other-formats-ian">NBConvert - Exporting and converting to other formats [Ian]</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#from-the-command-line">From the command line</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#in-code">In code</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#convert-a-notebook-to-html">Convert a notebook to HTML</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#convert-to-python-module">Convert to Python module</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#a-style-border-solid-padding-5pt-color-black-background-color-90caf9-name-debugging-dev-topics-debugging-and-testing-notebook-code-ian-a"><a name="debugging" style="border: solid; padding:5pt; color:black; background-color:#90CAF9">Dev topics - Debugging and testing notebook code [Ian]</a></a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#magics-and-errors-traceback-xmode-debug">Magics and errors – traceback, xmode, debug</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#use-tb-to-review-last-traceback">Use %tb to review last traceback</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#use-xmode-magic-to-include-parameter-values">Use <code class="docutils literal notranslate"><span class="pre">%xmode</span></code> magic to include parameter values</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exceptions-within-exceptions">Exceptions within Exceptions</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#debugging-bare-handed">Debugging bare-handed</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#debugging-from-a-comfy-chair">Debugging from a comfy chair</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#running-jupyter-notebooks-in-a-unit-test-ian">Running Jupyter notebooks in a unit test [Ian]</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#why-quick-and-dirty-testing">Why? - Quick and dirty testing</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#output-when-test-fails">Output when test fails</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#end-of-session">End of Session</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#font-color-peru-break-5-minutes-font"><font color="peru">Break: 5 Minutes</font></a></li>
+</ul>
+
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Open Threat Research @OTR_Community
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
     </div>
+  </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+  <script src="../../_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
 
-
+  <footer class="bd-footer">
+  </footer>
   </body>
 </html>

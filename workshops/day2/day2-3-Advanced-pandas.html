@@ -1,49 +1,61 @@
 
+
 <!DOCTYPE html>
 
-<html>
+
+<html lang="en" >
+
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Workshop 2.3: Advanced Pandas</title>
-    
-  <!-- Loaded before other Sphinx assets -->
-  <link href="../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
-<link href="../../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    
-  <link rel="stylesheet"
-    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
-  <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
-  <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+    <title>Workshop 2.3: Advanced Pandas</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+
+  
+  <link href="../../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
 
     <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
-    <link rel="stylesheet" href="../../_static/styles/sphinx-book-theme.css?digest=62ba249389abaaa9ffc34bf36a076bdc1d65ee18" type="text/css" />
+    <link rel="stylesheet" href="../../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/tabs.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
-    
+    <link rel="stylesheet" type="text/css" href="../../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
 
     <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
     <script src="../../_static/jquery.js"></script>
     <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../../_static/doctools.js"></script>
     <script src="../../_static/clipboard.min.js"></script>
     <script src="../../_static/copybutton.js"></script>
-    <script src="../../_static/scripts/sphinx-book-theme.js?digest=f31d14ad54b65d19161ba51d4ffff3a77ae00456"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
     <script src="../../_static/tabs.js"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
     <script src="../../_static/togglebutton.js"></script>
-    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script src="../../_static/design-tabs.js"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
 const thebe_selector = ".thebe,.cell"
@@ -51,1228 +63,591 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'workshops/day2/day2-3-Advanced-pandas';</script>
     <link rel="canonical" href="https://infosecjupyterthon.com/workshops/day2/day2-3-Advanced-pandas.html" />
     <link rel="shortcut icon" href="../../_static/favicon.jpg"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="Workshop 2.4: MSTICPy" href="day2-4-MSTICPy.html" />
     <link rel="prev" title="Workshop 2.2: Visualization in Jupyter Notebooks" href="day2-2-Visualization.html" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="docsearch:language" content="None">
-    
-
-    <!-- Google Analytics -->
-    
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
   </head>
-  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
-<!-- Checkboxes to toggle the left sidebar -->
-<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
-<label class="overlay overlay-navbar" for="__navigation">
-    <div class="visually-hidden">Toggle navigation sidebar</div>
-</label>
-<!-- Checkboxes to toggle the in-page toc -->
-<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
-<label class="overlay overlay-pagetoc" for="__page-toc">
-    <div class="visually-hidden">Toggle in-page Table of Contents</div>
-</label>
-<!-- Headers at the top -->
-<div class="announcement header-item noprint">💖 The InfoSec Jupyterthon is back! December 2nd and 3rd, 2022 🚀</div>
-<div class="header header-item noprint"></div>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
 
-    
-    <div class="container-fluid" id="banner"></div>
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
 
-    
 
-    <div class="container-xl">
-      <div class="row">
-          
-<!-- Sidebar -->
-<div class="bd-sidebar noprint" id="site-navigation">
-    <div class="bd-sidebar__content">
-        <div class="bd-sidebar__top"><div class="navbar-brand-box">
-    <a class="navbar-brand text-wrap" href="../../index.html">
+  <div class="bd-header-announcement container-fluid bd-header-announcement">
+    <div class="bd-header-announcement__content">💖 The InfoSec Jupyterthon is back! February, 2024 🚀</div>
+  </div>
+
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
       
-        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+      <div class="bd-sidebar-primary bd-sidebar">
         
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
+
+<a class="navbar-brand logo" href="../../introduction.html">
+  
+  
+  
+  
+    
+    
       
-      
-      <img src="../../_static/logo.png" class="logo" alt="logo">
-      
-      
-    </a>
-</div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
-  <i class="icon fas fa-search"></i>
-  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
-</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
-    <div class="bd-toc-item active">
-        <p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Getting Started
- </span>
-</p>
+    
+    
+    <img src="../../_static/logo.png" class="logo__image only-light" alt="Logo image"/>
+    <script>document.write(`<img src="../../_static/logo.png" class="logo__image only-dark" alt="Logo image"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Getting Started</span></p>
 <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../../conduct.html">
-   Code of Conduct
-  </a>
- </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../../collaborators/intro.html">
-   Collaborators
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
-  <label for="toctree-checkbox-1">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../collaborators/Roberto-Rodriguez.html">
-     Roberto Rodriguez
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../collaborators/Chi-Nguyen.html">
-     Chi Nguyen
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../collaborators/Ian-Hellen.html">
-     Ian Hellen
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../collaborators/Joyce-Bacic.html">
-     Joyce Bacic
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../collaborators/Ashwin-Patil.html">
-     Ashwin Patil
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../collaborators/Thomas-Roccia.html">
-     Thomas Roccia
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../collaborators/Pete-Bryan.html">
-     Pete Bryan
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../collaborators/Jose-Rodriguez.html">
-     Jose Rodriguez
-    </a>
-   </li>
-  </ul>
- </li>
+<li class="toctree-l1"><a class="reference internal" href="../../conduct.html">Code of Conduct</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../collaborators/intro.html">Collaborators</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../collaborators/Roberto-Rodriguez.html">Roberto Rodriguez</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../collaborators/Chi-Nguyen.html">Chi Nguyen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../collaborators/Ian-Hellen.html">Ian Hellen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../collaborators/Joyce-Bacic.html">Joyce Bacic</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../collaborators/Ashwin-Patil.html">Ashwin Patil</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../collaborators/Thomas-Roccia.html">Thomas Roccia</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../collaborators/Pete-Bryan.html">Pete Bryan</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../collaborators/Jose-Rodriguez.html">Jose Rodriguez</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  2022 Edition
- </span>
-</p>
+</li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">2022 Edition</span></p>
 <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../../2022/agenda.html">
-   Agenda
-  </a>
- </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../../2022/speakers/intro.html">
-   Speakers
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
-  <label for="toctree-checkbox-2">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../2022/speakers/roberto_rodriguez.html">
-     Roberto Rodriguez
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../2022/speakers/ian_hellen.html">
-     Ian Hellen
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../2022/speakers/leo_meyerovich.html">
-     Leo Meyerovich
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../2022/speakers/chi_nguyen.html">
-     Chi Nguyen
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../2022/speakers/amritpal_singh.html">
-     Amritpal Singh
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../2022/speakers/vijay_punja.html">
-     Vijay Punja
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../2022/speakers/james_duncan.html">
-     James Duncan
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../2022/speakers/ryan_marcotte_cobb.html">
-     Ryan Marcotte Cobb
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../2022/speakers/saksham_tushar.html">
-     Saksham Tushar
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../2022/speakers/christian_camilo_urcuqui_lopez.html">
-     Christian Camilo Urcuqui Lopez
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../2022/speakers/pete_bryan.html">
-     Pete Bryan
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../2022/speakers/ashwin_patil.html">
-     Ashwin Patil
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../2022/speakers/thomas_roccia.html">
-     Thomas Roccia
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../2022/speakers/jose_rodriguez.html">
-     Jose Rodriguez
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../2022/speakers/alex_morrise.html">
-     Alex Morrise
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../2022/speakers/dmitrijs_trizna.html">
-     Dmitrijs Trizna
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../2022/speakers/mehmet_ergene.html">
-     Mehmet Ergene
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../2022/speakers/jerry_gamblin.html">
-     Jerry Gamblin
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../2022/speakers/balaji_sampath.html">
-     Balaji Sampath
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../2022/speakers/janantha_marasinghe.html">
-     Janantha Marasinghe
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../2022/speakers/paul_coccoli.html">
-     Paul Coccoli
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../2022/speakers/brayan_mena.html">
-     Brayan Mena
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../2022/speakers/john_mac.html">
-     John Mac
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../../2022/sessions/intro.html">
-   Sessions
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
-  <label for="toctree-checkbox-3">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../2022/sessions/day1-01-Opening_Remarks.html">
-     Opening Remarks
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../2022/sessions/day1-11-Extending_MSTICPy.html">
-     Ian Hellen (
-     <span style="color: blue">
-      @ianhellen
-     </span>
-     Twitter/
-     <span style="color: blue">
-      @ianhelle
-     </span>
-     GitHub)
-    </a>
-   </li>
-  </ul>
- </li>
+<li class="toctree-l1"><a class="reference internal" href="../../2022/agenda.html">Agenda</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../2022/speakers/intro.html">Speakers</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../2022/speakers/roberto_rodriguez.html">Roberto Rodriguez</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../2022/speakers/ian_hellen.html">Ian Hellen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../2022/speakers/leo_meyerovich.html">Leo Meyerovich</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../2022/speakers/chi_nguyen.html">Chi Nguyen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../2022/speakers/amritpal_singh.html">Amritpal Singh</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../2022/speakers/vijay_punja.html">Vijay Punja</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../2022/speakers/james_duncan.html">James Duncan</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../2022/speakers/ryan_marcotte_cobb.html">Ryan Marcotte Cobb</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../2022/speakers/saksham_tushar.html">Saksham Tushar</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../2022/speakers/christian_camilo_urcuqui_lopez.html">Christian Camilo Urcuqui Lopez</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../2022/speakers/pete_bryan.html">Pete Bryan</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../2022/speakers/ashwin_patil.html">Ashwin Patil</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../2022/speakers/thomas_roccia.html">Thomas Roccia</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../2022/speakers/jose_rodriguez.html">Jose Rodriguez</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../2022/speakers/alex_morrise.html">Alex Morrise</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../2022/speakers/dmitrijs_trizna.html">Dmitrijs Trizna</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../2022/speakers/mehmet_ergene.html">Mehmet Ergene</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../2022/speakers/jerry_gamblin.html">Jerry Gamblin</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../2022/speakers/balaji_sampath.html">Balaji Sampath</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../2022/speakers/janantha_marasinghe.html">Janantha Marasinghe</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../2022/speakers/paul_coccoli.html">Paul Coccoli</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../2022/speakers/brayan_mena.html">Brayan Mena</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../2022/speakers/john_mac.html">John Mac</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Workshops
- </span>
-</p>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../2022/sessions/intro.html">Sessions</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../2022/sessions/day1-01-Opening_Remarks.html">Opening Remarks</a></li>
+
+
+
+
+
+
+
+<li class="toctree-l2"><a class="reference internal" href="../../2022/sessions/day1-05-Exploratory_Data_I_mean_Threat_Analytics_using_Jupyter_Notebooks.html">Exploratory Threat Analytics using Jupyter Notebooks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../2022/sessions/day1-11-Extending_MSTICPy.html">Extending MSTICPy with Pivot functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../2022/sessions/day2-08-Shell-Language-Processing.html">Shell Language Processing</a></li>
+
+
+
+
+
+
+
+
+</ul>
+</li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Workshops</span></p>
 <ul class="current nav bd-sidenav">
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../day1/intro.html">
-   Day 1
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
-  <label for="toctree-checkbox-4">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../day1/day1-1-Jupyter-Introduction.html">
-     Workshop 1.1:
-     <font color="peru">
-      Jupyter Notebooks Introduction
-     </font>
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../day1/day1-2-Acquiring-data.html">
-     Workshop 1.2:
-     <font color="peru">
-      Acquiring Data
-     </font>
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../day1/day1-3-Data-Analysis-with-Pandas%20Intro.html">
-     Workshop 1.3:
-     <font color="peru">
-      Basics of Data Analysis with Pandas
-     </font>
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l1 current active has-children">
-  <a class="reference internal" href="intro.html">
-   Day 2
-  </a>
-  <input checked="" class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
-  <label for="toctree-checkbox-5">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul class="current">
-   <li class="toctree-l2">
-    <a class="reference internal" href="day2-1-Jupyter-advanced-topics.html">
-     Workshop 2.1:
-     <font color="peru">
-      Jupyter Notebooks Advanced
-     </font>
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="day2-1-R-demo-notebook.html">
-     Workshop 2.1:
-     <font color="peru">
-      R Demo Notebook
-     </font>
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="day2-2-Visualization.html">
-     Workshop 2.2:
-     <font color="peru">
-      Visualization in Jupyter Notebooks
-     </font>
-    </a>
-   </li>
-   <li class="toctree-l2 current active">
-    <a class="current reference internal" href="#">
-     Workshop 2.3:
-     <font color="peru">
-      Advanced Pandas
-     </font>
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="day2-4-MSTICPy.html">
-     Workshop 2.4:
-     <font color="peru">
-      MSTICPy
-     </font>
-    </a>
-   </li>
-  </ul>
- </li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../day1/intro.html">Day 1</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../day1/day1-1-Jupyter-Introduction.html">Workshop 1.1: <font color="peru">Jupyter Notebooks Introduction</font></a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li class="toctree-l2"><a class="reference internal" href="../day1/day1-2-Acquiring-data.html">Workshop 1.2: <font color="peru">Acquiring Data</font></a></li>
+
+
+
+
+
+<li class="toctree-l2"><a class="reference internal" href="../day1/day1-3-Data-Analysis-with-Pandas%20Intro.html">Workshop 1.3: <font color="peru">Basics of Data Analysis with Pandas</font></a></li>
+
+
+
+
+
+
+
+
+
+
+
+</ul>
+</li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="intro.html">Day 2</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="day2-1-Jupyter-advanced-topics.html">Workshop 2.1: <font color="peru">Jupyter Notebooks Advanced</font></a></li>
+
+
+
+
+
+
+
+
+
+<li class="toctree-l2"><a class="reference internal" href="day2-1-R-demo-notebook.html">Workshop 2.1: <font color="peru">R Demo Notebook</font></a></li>
+
+
+<li class="toctree-l2"><a class="reference internal" href="day2-2-Visualization.html">Workshop 2.2: <font color="peru">Visualization in Jupyter Notebooks</font></a></li>
+
+
+
+
+
+
+
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Workshop 2.3: <font color="peru">Advanced Pandas</font></a></li>
+
+
+
+
+
+
+
+
+<li class="toctree-l2"><a class="reference internal" href="day2-4-MSTICPy.html">Workshop 2.4: <font color="peru">MSTICPy</font></a></li>
+
+
+
+
+
+
+
+
+
+
+</ul>
+</li>
 </ul>
 
     </div>
 </nav></div>
-        <div class="bd-sidebar__bottom">
-             <!-- To handle the deprecated key -->
-            
-            <div class="navbar_extra_footer">
-            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
-            </div>
-            
-        </div>
     </div>
-    <div id="rtd-footer-container"></div>
-</div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
 
 
-          
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
 
-
-          
-<!-- A tiny helper pixel to detect if we've scrolled -->
 <div class="sbt-scroll-pixel-helper"></div>
-<!-- Main content -->
-<div class="col py-0 content-container">
-    
-    <div class="header-article row sticky-top noprint">
-        
 
-
-
-<div class="col py-1 d-flex header-article-main">
-    <div class="header-article__left">
-        
-        <label for="__navigation"
-  class="headerbtn"
-  data-toggle="tooltip"
-data-placement="right"
-title="Toggle navigation"
->
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
   
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-bars"></i>
-  </span>
-
-</label>
-
-        
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
     </div>
-    <div class="header-article__right">
-<div class="menu-dropdown menu-dropdown-launch-buttons">
-  <button class="headerbtn menu-dropdown__trigger"
-      aria-label="Launch interactive content">
-      <i class="fas fa-rocket"></i>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
   </button>
-  <div class="menu-dropdown__content">
-    <ul>
-      <li>
-        <a href="https://mybinder.org/v2/gh/OTRF/infosec-jupyterthon/master?urlpath=lab/tree/docs/workshops/day2/day2-3-Advanced-pandas.ipynb"
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Launch on Binder"
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://mybinder.org/v2/gh/OTRF/infosec-jupyterthon/master?urlpath=lab/tree/docs/workshops/day2/day2-3-Advanced-pandas.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch onBinder"
+   data-bs-placement="left" data-bs-toggle="tooltip"
 >
   
 
-<span class="headerbtn__icon-container">
+<span class="btn__icon-container">
   
     <img src="../../_static/images/logo_binder.svg">
   </span>
-<span class="headerbtn__text-container">Binder</span>
+<span class="btn__text-container">Binder</span>
 </a>
-
-      </li>
+</li>
       
-    </ul>
-  </div>
+  </ul>
 </div>
 
-<button onclick="toggleFullScreen()"
-  class="headerbtn"
-  data-toggle="tooltip"
-data-placement="bottom"
-title="Fullscreen mode"
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/OTRF/infosec-jupyterthon" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
 >
   
 
-<span class="headerbtn__icon-container">
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/OTRF/infosec-jupyterthon/edit/master/docs/workshops/day2/day2-3-Advanced-pandas.ipynb" target="_blank"
+   class="btn btn-sm btn-source-edit-button dropdown-item"
+   title="Suggest edit"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-pencil-alt"></i>
+  </span>
+<span class="btn__text-container">Suggest edit</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/OTRF/infosec-jupyterthon/issues/new?title=Issue%20on%20page%20%2Fworkshops/day2/day2-3-Advanced-pandas.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../_sources/workshops/day2/day2-3-Advanced-pandas.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
   <i class="fas fa-expand"></i>
   </span>
 
 </button>
 
-<div class="menu-dropdown menu-dropdown-repository-buttons">
-  <button class="headerbtn menu-dropdown__trigger"
-      aria-label="Source repositories">
-      <i class="fab fa-github"></i>
+
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
   </button>
-  <div class="menu-dropdown__content">
-    <ul>
-      <li>
-        <a href="https://github.com/OTRF/infosec-jupyterthon"
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Source repository"
->
-  
+`);
+</script>
 
-<span class="headerbtn__icon-container">
-  <i class="fab fa-github"></i>
-  </span>
-<span class="headerbtn__text-container">repository</span>
-</a>
-
-      </li>
-      
-      <li>
-        <a href="https://github.com/OTRF/infosec-jupyterthon/issues/new?title=Issue%20on%20page%20%2Fworkshops/day2/day2-3-Advanced-pandas.html&body=Your%20issue%20content%20here."
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Open an issue"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-lightbulb"></i>
-  </span>
-<span class="headerbtn__text-container">open issue</span>
-</a>
-
-      </li>
-      
-      <li>
-        <a href="https://github.com/OTRF/infosec-jupyterthon/edit/master/docs/workshops/day2/day2-3-Advanced-pandas.ipynb"
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Edit this page"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-pencil-alt"></i>
-  </span>
-<span class="headerbtn__text-container">suggest edit</span>
-</a>
-
-      </li>
-      
-    </ul>
-  </div>
-</div>
-
-<div class="menu-dropdown menu-dropdown-download-buttons">
-  <button class="headerbtn menu-dropdown__trigger"
-      aria-label="Download this page">
-      <i class="fas fa-download"></i>
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
   </button>
-  <div class="menu-dropdown__content">
-    <ul>
-      <li>
-        <a href="../../_sources/workshops/day2/day2-3-Advanced-pandas.ipynb"
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Download source file"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-file"></i>
-  </span>
-<span class="headerbtn__text-container">.ipynb</span>
-</a>
-
-      </li>
-      
-      <li>
-        
-<button onclick="printPdf(this)"
-  class="headerbtn"
-  data-toggle="tooltip"
-data-placement="left"
-title="Print to PDF"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-file-pdf"></i>
-  </span>
-<span class="headerbtn__text-container">.pdf</span>
-</button>
-
-      </li>
-      
-    </ul>
-  </div>
-</div>
-<label for="__page-toc"
-  class="headerbtn headerbtn-page-toc"
-  
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-list"></i>
-  </span>
-
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
 </label>
-
+</div></div>
+      
     </div>
+  
 </div>
-
-<!-- Table of contents -->
-<div class="col-md-3 bd-toc show noprint">
-    <div class="tocsection onthispage pt-5 pb-3">
-        <i class="fas fa-list"></i> Contents
-    </div>
-    <nav id="bd-toc-nav" aria-label="Page">
-        <ul class="visible nav section-nav flex-column">
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#">
-   Workshop 2.3:
-   <font color="peru">
-    Advanced Pandas
-   </font>
-  </a>
- </li>
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#a-style-border-solid-padding-5pt-color-black-background-color-90caf9-name-joins-joins-and-merges-ashwin-a">
-   <a name="joins" style="border: solid; padding:5pt; color:black; background-color:#90CAF9">
-    Joins and merges [Ashwin]
-   </a>
-  </a>
-  <ul class="visible nav section-nav flex-column">
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#load-some-data-and-normalize-it-into">
-     Load some data and normalize it into:
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#joining-on-index-using-pd-concat">
-     Joining on Index using pd.concat
-    </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#pd-concat-with-axis-columns-or-axis-1-joins-column-wise-horizontally">
-       pd.concat with
-       <code class="docutils literal notranslate">
-        <span class="pre">
-         axis="columns"
-        </span>
-       </code>
-       or
-       <code class="docutils literal notranslate">
-        <span class="pre">
-         axis=1
-        </span>
-       </code>
-       joins column-wise (horizontally)
-      </a>
-     </li>
-    </ul>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#key-based-joins">
-     Key-based Joins
-    </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#simple-merge-on-common-key">
-       Simple merge on common key
-      </a>
-     </li>
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#left-joins-also-right-and-outer">
-       Left joins (also right and outer)
-      </a>
-     </li>
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#joins-where-no-common-key">
-       Joins where no common key
-      </a>
-     </li>
-    </ul>
-   </li>
-  </ul>
- </li>
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#a-style-border-solid-padding-5pt-color-black-background-color-90caf9-name-styles-using-styles-ian-a">
-   <a name="styles" style="border: solid; padding:5pt; color:black; background-color:#90CAF9">
-    Using Styles [Ian]
-   </a>
-  </a>
-  <ul class="visible nav section-nav flex-column">
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#highlight-max-highlight-mix">
-     highlight_max/highlight_mix
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#color-gradients">
-     Color gradients
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#inline-bars">
-     Inline bars
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#a-style-border-solid-padding-5pt-color-black-background-color-90caf9-name-reshaping-reshaping-preprocessing-data-ian-a">
-   <a name="reshaping" style="border: solid; padding:5pt; color:black; background-color:#90CAF9">
-    Reshaping/preprocessing data? [Ian]
-   </a>
-  </a>
-  <ul class="visible nav section-nav flex-column">
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#dealing-with-nulls-nas">
-     Dealing with nulls/NAs
-    </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#which-columns-have-nas">
-       Which columns have NAs?
-      </a>
-     </li>
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#filtering-to-see-which-columns-have-nans">
-       Filtering to see which columns have NaNs
-      </a>
-     </li>
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#removing-nans-with-dropna">
-       Removing NaNs with
-       <code class="docutils literal notranslate">
-        <span class="pre">
-         .dropna
-        </span>
-       </code>
-      </a>
-     </li>
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#replacing-nans-with-values">
-       Replacing NaNs with values
-      </a>
-     </li>
-    </ul>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#type-conversion">
-     Type Conversion
-    </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#convert-using-explicit-pandas-function">
-       Convert using explicit pandas function
-      </a>
-     </li>
-    </ul>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#renaming-columns">
-     Renaming columns
-    </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#statically-rename-using-assignment">
-       Statically rename using assignment
-      </a>
-     </li>
-    </ul>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#pandas-operations-melt-explode-transpose-indexing-stack-unstack-ashwin">
-     Pandas operations: melt, explode, transpose, indexing/stack/unstack [Ashwin]
-    </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#dealing-with-complex-python-objects-explode">
-       Dealing with complex Python objects - explode
-      </a>
-     </li>
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#tidy-data-melt">
-       Tidy data - melt
-      </a>
-     </li>
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#transpose">
-       Transpose
-      </a>
-     </li>
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#indexing-stack-and-unstack">
-       Indexing, Stack and Unstack
-      </a>
-     </li>
-    </ul>
-   </li>
-  </ul>
- </li>
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#a-style-border-solid-padding-5pt-color-black-background-color-90caf9-name-pivot-pivoting-pivot-tables-ashwin-a">
-   <a name="pivot" style="border: solid; padding:5pt; color:black; background-color:#90CAF9">
-    Pivoting/pivot tables [Ashwin]
-   </a>
-  </a>
-  <ul class="visible nav section-nav flex-column">
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#reshaping-and-pivot-tables">
-     Reshaping and Pivot Tables
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#a-style-border-solid-padding-5pt-color-black-background-color-90caf9-name-time-time-manipulation-ashwin-a">
-   <a name="time" style="border: solid; padding:5pt; color:black; background-color:#90CAF9">
-    Time manipulation [Ashwin]
-   </a>
-  </a>
-  <ul class="visible nav section-nav flex-column">
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#timezone-considerations">
-     Timezone considerations
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#grouping-by-time">
-     Grouping by time
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#a-style-border-solid-padding-5pt-color-black-background-color-90caf9-name-otherops-other-useful-operations-ian-a">
-   <a name="otherops" style="border: solid; padding:5pt; color:black; background-color:#90CAF9">
-    Other Useful operations [Ian]
-   </a>
-  </a>
-  <ul class="visible nav section-nav flex-column">
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#chaining-multiple-operations-with">
-     Chaining multiple operations with “.”
-    </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#use-parentheses-to-let-you-stack-the-functions-vertically">
-       Use parentheses to let you stack the functions vertically
-      </a>
-     </li>
-    </ul>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#external-functions-with-pipe">
-     External functions with
-     <code class="docutils literal notranslate">
-      <span class="pre">
-       .pipe
-      </span>
-     </code>
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#external-functions-with-apply">
-     External functions with
-     <code class="docutils literal notranslate">
-      <span class="pre">
-       .apply
-      </span>
-     </code>
-    </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#apply-and-pandas-series">
-       <code class="docutils literal notranslate">
-        <span class="pre">
-         .apply
-        </span>
-       </code>
-       and pandas series
-      </a>
-     </li>
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#apply-and-dataframes">
-       <code class="docutils literal notranslate">
-        <span class="pre">
-         .apply
-        </span>
-       </code>
-       and DataFrames
-      </a>
-     </li>
-    </ul>
-   </li>
-  </ul>
- </li>
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#end-of-session">
-   End of Session
-  </a>
- </li>
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#font-color-peru-break-5-minutes-font">
-   <font color="peru">
-    Break: 5 Minutes
-   </font>
-  </a>
- </li>
-</ul>
-
-    </nav>
 </div>
-    </div>
-    <div class="article row">
-        <div class="col pl-md-3 pl-lg-5 content-container">
-            <!-- Table of contents that is only displayed when printing the page -->
-            <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Workshop 2.3: <font color=peru>Advanced Pandas</font></h1>
-                <!-- Table of contents -->
-                <div id="print-main-content">
-                    <div id="jb-print-toc">
-                        
-                        <div>
-                            <h2> Contents </h2>
-                        </div>
-                        <nav aria-label="Page">
-                            <ul class="visible nav section-nav flex-column">
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#">
-   Workshop 2.3:
-   <font color="peru">
-    Advanced Pandas
-   </font>
-  </a>
- </li>
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#a-style-border-solid-padding-5pt-color-black-background-color-90caf9-name-joins-joins-and-merges-ashwin-a">
-   <a name="joins" style="border: solid; padding:5pt; color:black; background-color:#90CAF9">
-    Joins and merges [Ashwin]
-   </a>
-  </a>
-  <ul class="visible nav section-nav flex-column">
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#load-some-data-and-normalize-it-into">
-     Load some data and normalize it into:
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#joining-on-index-using-pd-concat">
-     Joining on Index using pd.concat
-    </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#pd-concat-with-axis-columns-or-axis-1-joins-column-wise-horizontally">
-       pd.concat with
-       <code class="docutils literal notranslate">
-        <span class="pre">
-         axis="columns"
-        </span>
-       </code>
-       or
-       <code class="docutils literal notranslate">
-        <span class="pre">
-         axis=1
-        </span>
-       </code>
-       joins column-wise (horizontally)
-      </a>
-     </li>
-    </ul>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#key-based-joins">
-     Key-based Joins
-    </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#simple-merge-on-common-key">
-       Simple merge on common key
-      </a>
-     </li>
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#left-joins-also-right-and-outer">
-       Left joins (also right and outer)
-      </a>
-     </li>
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#joins-where-no-common-key">
-       Joins where no common key
-      </a>
-     </li>
-    </ul>
-   </li>
-  </ul>
- </li>
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#a-style-border-solid-padding-5pt-color-black-background-color-90caf9-name-styles-using-styles-ian-a">
-   <a name="styles" style="border: solid; padding:5pt; color:black; background-color:#90CAF9">
-    Using Styles [Ian]
-   </a>
-  </a>
-  <ul class="visible nav section-nav flex-column">
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#highlight-max-highlight-mix">
-     highlight_max/highlight_mix
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#color-gradients">
-     Color gradients
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#inline-bars">
-     Inline bars
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#a-style-border-solid-padding-5pt-color-black-background-color-90caf9-name-reshaping-reshaping-preprocessing-data-ian-a">
-   <a name="reshaping" style="border: solid; padding:5pt; color:black; background-color:#90CAF9">
-    Reshaping/preprocessing data? [Ian]
-   </a>
-  </a>
-  <ul class="visible nav section-nav flex-column">
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#dealing-with-nulls-nas">
-     Dealing with nulls/NAs
-    </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#which-columns-have-nas">
-       Which columns have NAs?
-      </a>
-     </li>
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#filtering-to-see-which-columns-have-nans">
-       Filtering to see which columns have NaNs
-      </a>
-     </li>
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#removing-nans-with-dropna">
-       Removing NaNs with
-       <code class="docutils literal notranslate">
-        <span class="pre">
-         .dropna
-        </span>
-       </code>
-      </a>
-     </li>
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#replacing-nans-with-values">
-       Replacing NaNs with values
-      </a>
-     </li>
-    </ul>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#type-conversion">
-     Type Conversion
-    </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#convert-using-explicit-pandas-function">
-       Convert using explicit pandas function
-      </a>
-     </li>
-    </ul>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#renaming-columns">
-     Renaming columns
-    </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#statically-rename-using-assignment">
-       Statically rename using assignment
-      </a>
-     </li>
-    </ul>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#pandas-operations-melt-explode-transpose-indexing-stack-unstack-ashwin">
-     Pandas operations: melt, explode, transpose, indexing/stack/unstack [Ashwin]
-    </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#dealing-with-complex-python-objects-explode">
-       Dealing with complex Python objects - explode
-      </a>
-     </li>
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#tidy-data-melt">
-       Tidy data - melt
-      </a>
-     </li>
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#transpose">
-       Transpose
-      </a>
-     </li>
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#indexing-stack-and-unstack">
-       Indexing, Stack and Unstack
-      </a>
-     </li>
-    </ul>
-   </li>
-  </ul>
- </li>
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#a-style-border-solid-padding-5pt-color-black-background-color-90caf9-name-pivot-pivoting-pivot-tables-ashwin-a">
-   <a name="pivot" style="border: solid; padding:5pt; color:black; background-color:#90CAF9">
-    Pivoting/pivot tables [Ashwin]
-   </a>
-  </a>
-  <ul class="visible nav section-nav flex-column">
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#reshaping-and-pivot-tables">
-     Reshaping and Pivot Tables
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#a-style-border-solid-padding-5pt-color-black-background-color-90caf9-name-time-time-manipulation-ashwin-a">
-   <a name="time" style="border: solid; padding:5pt; color:black; background-color:#90CAF9">
-    Time manipulation [Ashwin]
-   </a>
-  </a>
-  <ul class="visible nav section-nav flex-column">
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#timezone-considerations">
-     Timezone considerations
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#grouping-by-time">
-     Grouping by time
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#a-style-border-solid-padding-5pt-color-black-background-color-90caf9-name-otherops-other-useful-operations-ian-a">
-   <a name="otherops" style="border: solid; padding:5pt; color:black; background-color:#90CAF9">
-    Other Useful operations [Ian]
-   </a>
-  </a>
-  <ul class="visible nav section-nav flex-column">
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#chaining-multiple-operations-with">
-     Chaining multiple operations with “.”
-    </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#use-parentheses-to-let-you-stack-the-functions-vertically">
-       Use parentheses to let you stack the functions vertically
-      </a>
-     </li>
-    </ul>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#external-functions-with-pipe">
-     External functions with
-     <code class="docutils literal notranslate">
-      <span class="pre">
-       .pipe
-      </span>
-     </code>
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#external-functions-with-apply">
-     External functions with
-     <code class="docutils literal notranslate">
-      <span class="pre">
-       .apply
-      </span>
-     </code>
-    </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#apply-and-pandas-series">
-       <code class="docutils literal notranslate">
-        <span class="pre">
-         .apply
-        </span>
-       </code>
-       and pandas series
-      </a>
-     </li>
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#apply-and-dataframes">
-       <code class="docutils literal notranslate">
-        <span class="pre">
-         .apply
-        </span>
-       </code>
-       and DataFrames
-      </a>
-     </li>
-    </ul>
-   </li>
-  </ul>
- </li>
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#end-of-session">
-   End of Session
-  </a>
- </li>
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#font-color-peru-break-5-minutes-font">
-   <font color="peru">
-    Break: 5 Minutes
-   </font>
-  </a>
- </li>
-</ul>
+              
+              
 
-                        </nav>
-                    </div>
-                </div>
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Workshop 2.3: <font color=peru>Advanced Pandas</font></h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
             </div>
-            <main id="main-content" role="main">
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Workshop 2.3: <font color="peru">Advanced Pandas</font></a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#a-style-border-solid-padding-5pt-color-black-background-color-90caf9-name-joins-joins-and-merges-ashwin-a"><a name="joins" style="border: solid; padding:5pt; color:black; background-color:#90CAF9">Joins and merges [Ashwin]</a></a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#load-some-data-and-normalize-it-into">Load some data and normalize it into:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#joining-on-index-using-pd-concat">Joining on Index using pd.concat</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pd-concat-with-axis-columns-or-axis-1-joins-column-wise-horizontally">pd.concat with <code class="docutils literal notranslate"><span class="pre">axis="columns"</span></code> or <code class="docutils literal notranslate"><span class="pre">axis=1</span></code> joins column-wise (horizontally)</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#key-based-joins">Key-based Joins</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#simple-merge-on-common-key">Simple merge on common key</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#left-joins-also-right-and-outer">Left joins (also right and outer)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#joins-where-no-common-key">Joins where no common key</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#a-style-border-solid-padding-5pt-color-black-background-color-90caf9-name-styles-using-styles-ian-a"><a name="styles" style="border: solid; padding:5pt; color:black; background-color:#90CAF9">Using Styles [Ian]</a></a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#highlight-max-highlight-mix">highlight_max/highlight_mix</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#color-gradients">Color gradients</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#inline-bars">Inline bars</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#a-style-border-solid-padding-5pt-color-black-background-color-90caf9-name-reshaping-reshaping-preprocessing-data-ian-a"><a name="reshaping" style="border: solid; padding:5pt; color:black; background-color:#90CAF9">Reshaping/preprocessing data? [Ian]</a></a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dealing-with-nulls-nas">Dealing with nulls/NAs</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#which-columns-have-nas">Which columns have NAs?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#filtering-to-see-which-columns-have-nans">Filtering to see which columns have NaNs</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#removing-nans-with-dropna">Removing NaNs with <code class="docutils literal notranslate"><span class="pre">.dropna</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#replacing-nans-with-values">Replacing NaNs with values</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#type-conversion">Type Conversion</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#convert-using-explicit-pandas-function">Convert using explicit pandas function</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#renaming-columns">Renaming columns</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#statically-rename-using-assignment">Statically rename using assignment</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pandas-operations-melt-explode-transpose-indexing-stack-unstack-ashwin">Pandas operations: melt, explode, transpose, indexing/stack/unstack [Ashwin]</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dealing-with-complex-python-objects-explode">Dealing with complex Python objects - explode</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#tidy-data-melt">Tidy data - melt</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#transpose">Transpose</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#indexing-stack-and-unstack">Indexing, Stack and Unstack</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#a-style-border-solid-padding-5pt-color-black-background-color-90caf9-name-pivot-pivoting-pivot-tables-ashwin-a"><a name="pivot" style="border: solid; padding:5pt; color:black; background-color:#90CAF9">Pivoting/pivot tables [Ashwin]</a></a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#reshaping-and-pivot-tables">Reshaping and Pivot Tables</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#a-style-border-solid-padding-5pt-color-black-background-color-90caf9-name-time-time-manipulation-ashwin-a"><a name="time" style="border: solid; padding:5pt; color:black; background-color:#90CAF9">Time manipulation [Ashwin]</a></a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#timezone-considerations">Timezone considerations</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#grouping-by-time">Grouping by time</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#a-style-border-solid-padding-5pt-color-black-background-color-90caf9-name-otherops-other-useful-operations-ian-a"><a name="otherops" style="border: solid; padding:5pt; color:black; background-color:#90CAF9">Other Useful operations [Ian]</a></a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#chaining-multiple-operations-with">Chaining multiple operations with “.”</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#use-parentheses-to-let-you-stack-the-functions-vertically">Use parentheses to let you stack the functions vertically</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#external-functions-with-pipe">External functions with <code class="docutils literal notranslate"><span class="pre">.pipe</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#external-functions-with-apply">External functions with <code class="docutils literal notranslate"><span class="pre">.apply</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#apply-and-pandas-series"><code class="docutils literal notranslate"><span class="pre">.apply</span></code> and pandas series</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#apply-and-dataframes"><code class="docutils literal notranslate"><span class="pre">.apply</span></code> and DataFrames</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#end-of-session">End of Session</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#font-color-peru-break-5-minutes-font"><font color="peru">Break: 5 Minutes</font></a></li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
                 
-              <div>
-                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
   <p><img alt="Banner" src="../../_images/banner2.png" /></p>
 <hr class="docutils" />
-<div class="tex2jax_ignore mathjax_ignore section" id="workshop-2-3-font-color-peru-advanced-pandas-font">
-<h1>Workshop 2.3: <font color=peru>Advanced Pandas</font><a class="headerlink" href="#workshop-2-3-font-color-peru-advanced-pandas-font" title="Permalink to this headline">#</a></h1>
+<section class="tex2jax_ignore mathjax_ignore" id="workshop-2-3-font-color-peru-advanced-pandas-font">
+<h1>Workshop 2.3: <font color=peru>Advanced Pandas</font><a class="headerlink" href="#workshop-2-3-font-color-peru-advanced-pandas-font" title="Permalink to this heading">#</a></h1>
 <ul class="simple">
 <li><p><strong>Contributors</strong>:</p>
 <ul>
@@ -1285,12 +660,12 @@ title="Print to PDF"
 </li>
 <li><p><strong>Agenda</strong>:</p>
 <ul>
-<li><p><a class="reference external" href="#joins">Joins and merges</a></p></li>
-<li><p><a class="reference external" href="#styles">Using styles</a></p></li>
-<li><p><a class="reference external" href="#reshaping">Reshaping/preprocessing data</a></p></li>
-<li><p><a class="reference external" href="#pivots">Pivot tables</a></p></li>
-<li><p><a class="reference external" href="#time">Time manipulation</a></p></li>
-<li><p><a class="reference external" href="#otherops">Other useful operations</a>
+<li><p><span class="xref myst">Joins and merges</span></p></li>
+<li><p><span class="xref myst">Using styles</span></p></li>
+<li><p><span class="xref myst">Reshaping/preprocessing data</span></p></li>
+<li><p><span class="xref myst">Pivot tables</span></p></li>
+<li><p><span class="xref myst">Time manipulation</span></p></li>
+<li><p><span class="xref myst">Other useful operations</span>
 <br><br></p></li>
 </ul>
 </li>
@@ -1298,13 +673,13 @@ title="Print to PDF"
 <li><p><strong>License</strong>: <a class="reference external" href="https://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International</a></p></li>
 <li><p><strong>Q&amp;A</strong> - OTR Discord <strong>#Jupyterthon #WORKSHOP DAY 2 - ADVANCED PANDAS</strong></p></li>
 </ul>
-</div>
+</section>
 <hr class="docutils" />
-<div class="tex2jax_ignore mathjax_ignore section" id="a-style-border-solid-padding-5pt-color-black-background-color-90caf9-name-joins-joins-and-merges-ashwin-a">
-<h1><a style="border: solid; padding:5pt; color:black; background-color:#90CAF9" name="joins">Joins and merges [Ashwin]</a><a class="headerlink" href="#a-style-border-solid-padding-5pt-color-black-background-color-90caf9-name-joins-joins-and-merges-ashwin-a" title="Permalink to this headline">#</a></h1>
+<section class="tex2jax_ignore mathjax_ignore" id="a-style-border-solid-padding-5pt-color-black-background-color-90caf9-name-joins-joins-and-merges-ashwin-a">
+<h1><a style="border: solid; padding:5pt; color:black; background-color:#90CAF9" name="joins">Joins and merges [Ashwin]</a><a class="headerlink" href="#a-style-border-solid-padding-5pt-color-black-background-color-90caf9-name-joins-joins-and-merges-ashwin-a" title="Permalink to this heading">#</a></h1>
 <p><strong>Pandas UserGuide :</strong> <a class="reference external" href="https://pandas.pydata.org/pandas-docs/stable/user_guide/merging.html">Merge, join, concatenate and compare</a></p>
-<div class="section" id="load-some-data-and-normalize-it-into">
-<h2>Load some data and normalize it into:<a class="headerlink" href="#load-some-data-and-normalize-it-into" title="Permalink to this headline">#</a></h2>
+<section id="load-some-data-and-normalize-it-into">
+<h2>Load some data and normalize it into:<a class="headerlink" href="#load-some-data-and-normalize-it-into" title="Permalink to this heading">#</a></h2>
 <ul class="simple">
 <li><p>Processes</p></li>
 <li><p>ParentProcesses</p></li>
@@ -1480,9 +855,9 @@ users 2
 </table>
 </div></div></div>
 </div>
-</div>
-<div class="section" id="joining-on-index-using-pd-concat">
-<h2>Joining on Index using pd.concat<a class="headerlink" href="#joining-on-index-using-pd-concat" title="Permalink to this headline">#</a></h2>
+</section>
+<section id="joining-on-index-using-pd-concat">
+<h2>Joining on Index using pd.concat<a class="headerlink" href="#joining-on-index-using-pd-concat" title="Permalink to this heading">#</a></h2>
 <p style="font-family:consolas; font-size:15pt; color:green">
 pd.concat([df1, df2...])
 </p>
@@ -1546,8 +921,8 @@ pd.concat([df1, df2...])
 </table>
 </div></div></div>
 </div>
-<div class="section" id="pd-concat-with-axis-columns-or-axis-1-joins-column-wise-horizontally">
-<h3>pd.concat with <code class="docutils literal notranslate"><span class="pre">axis=&quot;columns&quot;</span></code> or <code class="docutils literal notranslate"><span class="pre">axis=1</span></code> joins column-wise (horizontally)<a class="headerlink" href="#pd-concat-with-axis-columns-or-axis-1-joins-column-wise-horizontally" title="Permalink to this headline">#</a></h3>
+<section id="pd-concat-with-axis-columns-or-axis-1-joins-column-wise-horizontally">
+<h3>pd.concat with <code class="docutils literal notranslate"><span class="pre">axis=&quot;columns&quot;</span></code> or <code class="docutils literal notranslate"><span class="pre">axis=1</span></code> joins column-wise (horizontally)<a class="headerlink" href="#pd-concat-with-axis-columns-or-axis-1-joins-column-wise-horizontally" title="Permalink to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="p">(</span>
@@ -1653,10 +1028,10 @@ pd.concat([df1, df2...])
 </table>
 </div></div></div>
 </div>
-</div>
-</div>
-<div class="section" id="key-based-joins">
-<h2>Key-based Joins<a class="headerlink" href="#key-based-joins" title="Permalink to this headline">#</a></h2>
+</section>
+</section>
+<section id="key-based-joins">
+<h2>Key-based Joins<a class="headerlink" href="#key-based-joins" title="Permalink to this heading">#</a></h2>
 <p style="font-family:consolas; font-size:15pt; color:green">
 df1.merge(df2, ...)<br>
 df1.join(df2, ...)
@@ -1784,8 +1159,8 @@ df1.join(df2, ...)
 </table>
 </div></div></div>
 </div>
-<div class="section" id="simple-merge-on-common-key">
-<h3>Simple merge on common key<a class="headerlink" href="#simple-merge-on-common-key" title="Permalink to this headline">#</a></h3>
+<section id="simple-merge-on-common-key">
+<h3>Simple merge on common key<a class="headerlink" href="#simple-merge-on-common-key" title="Permalink to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">procs</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">users</span><span class="p">,</span> <span class="n">on</span><span class="o">=</span><span class="s2">&quot;SubjectUserSid&quot;</span><span class="p">)</span>
@@ -1948,9 +1323,9 @@ df1.join(df2, ...)
 <p>117 rows × 8 columns</p>
 </div></div></div>
 </div>
-</div>
-<div class="section" id="left-joins-also-right-and-outer">
-<h3>Left joins (also right and outer)<a class="headerlink" href="#left-joins-also-right-and-outer" title="Permalink to this headline">#</a></h3>
+</section>
+<section id="left-joins-also-right-and-outer">
+<h3>Left joins (also right and outer)<a class="headerlink" href="#left-joins-also-right-and-outer" title="Permalink to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">procs</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">users</span><span class="p">[</span><span class="mi">1</span><span class="p">:],</span> <span class="n">on</span><span class="o">=</span><span class="s2">&quot;SubjectUserSid&quot;</span><span class="p">)</span>
@@ -2164,9 +1539,9 @@ df1.join(df2, ...)
 <p>117 rows × 8 columns</p>
 </div></div></div>
 </div>
-</div>
-<div class="section" id="joins-where-no-common-key">
-<h3>Joins where no common key<a class="headerlink" href="#joins-where-no-common-key" title="Permalink to this headline">#</a></h3>
+</section>
+<section id="joins-where-no-common-key">
+<h3>Joins where no common key<a class="headerlink" href="#joins-where-no-common-key" title="Permalink to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="p">(</span>
@@ -2248,12 +1623,12 @@ df1.join(df2, ...)
 </table>
 </div></div></div>
 </div>
-</div>
-</div>
-</div>
+</section>
+</section>
+</section>
 <hr class="docutils" />
-<div class="tex2jax_ignore mathjax_ignore section" id="a-style-border-solid-padding-5pt-color-black-background-color-90caf9-name-styles-using-styles-ian-a">
-<h1><a style="border: solid; padding:5pt; color:black; background-color:#90CAF9" name="styles">Using Styles [Ian]</a><a class="headerlink" href="#a-style-border-solid-padding-5pt-color-black-background-color-90caf9-name-styles-using-styles-ian-a" title="Permalink to this headline">#</a></h1>
+<section class="tex2jax_ignore mathjax_ignore" id="a-style-border-solid-padding-5pt-color-black-background-color-90caf9-name-styles-using-styles-ian-a">
+<h1><a style="border: solid; padding:5pt; color:black; background-color:#90CAF9" name="styles">Using Styles [Ian]</a><a class="headerlink" href="#a-style-border-solid-padding-5pt-color-black-background-color-90caf9-name-styles-using-styles-ian-a" title="Permalink to this heading">#</a></h1>
 <ul class="simple">
 <li><p>Max/min values</p></li>
 <li><p>Value coloring</p></li>
@@ -2387,8 +1762,8 @@ df.style(...)
 </table>
 </div></div></div>
 </div>
-<div class="section" id="highlight-max-highlight-mix">
-<h2>highlight_max/highlight_mix<a class="headerlink" href="#highlight-max-highlight-mix" title="Permalink to this headline">#</a></h2>
+<section id="highlight-max-highlight-mix">
+<h2>highlight_max/highlight_mix<a class="headerlink" href="#highlight-max-highlight-mix" title="Permalink to this heading">#</a></h2>
 <p style="font-family:consolas; font-size:15pt; color:green">
 df.style.highlight_max(...)
 </p><div class="cell docutils container">
@@ -2477,9 +1852,9 @@ df.style.highlight_max(...)
             </tr>
     </tbody></table></div></div>
 </div>
-</div>
-<div class="section" id="color-gradients">
-<h2>Color gradients<a class="headerlink" href="#color-gradients" title="Permalink to this headline">#</a></h2>
+</section>
+<section id="color-gradients">
+<h2>Color gradients<a class="headerlink" href="#color-gradients" title="Permalink to this heading">#</a></h2>
 <p style="font-family:consolas; font-size:15pt; color:green">
 df.style.background_gradient(...)
 </p><div class="cell docutils container">
@@ -2629,9 +2004,9 @@ df.style.background_gradient(...)
             </tr>
     </tbody></table></div></div>
 </div>
-</div>
-<div class="section" id="inline-bars">
-<h2>Inline bars<a class="headerlink" href="#inline-bars" title="Permalink to this headline">#</a></h2>
+</section>
+<section id="inline-bars">
+<h2>Inline bars<a class="headerlink" href="#inline-bars" title="Permalink to this heading">#</a></h2>
 <p style="font-family:consolas; font-size:15pt; color:green">
 df.style.bar(...)
 </p>
@@ -2908,11 +2283,11 @@ df.style.bar(...)
             </tr>
     </tbody></table></div></div>
 </div>
-</div>
-</div>
+</section>
+</section>
 <hr class="docutils" />
-<div class="tex2jax_ignore mathjax_ignore section" id="a-style-border-solid-padding-5pt-color-black-background-color-90caf9-name-reshaping-reshaping-preprocessing-data-ian-a">
-<h1><a style="border: solid; padding:5pt; color:black; background-color:#90CAF9" name="reshaping">Reshaping/preprocessing data? [Ian]</a><a class="headerlink" href="#a-style-border-solid-padding-5pt-color-black-background-color-90caf9-name-reshaping-reshaping-preprocessing-data-ian-a" title="Permalink to this headline">#</a></h1>
+<section class="tex2jax_ignore mathjax_ignore" id="a-style-border-solid-padding-5pt-color-black-background-color-90caf9-name-reshaping-reshaping-preprocessing-data-ian-a">
+<h1><a style="border: solid; padding:5pt; color:black; background-color:#90CAF9" name="reshaping">Reshaping/preprocessing data? [Ian]</a><a class="headerlink" href="#a-style-border-solid-padding-5pt-color-black-background-color-90caf9-name-reshaping-reshaping-preprocessing-data-ian-a" title="Permalink to this heading">#</a></h1>
 <ul class="simple">
 <li><p>Dealing with nulls/NAs</p></li>
 <li><p>Type conversion</p></li>
@@ -2921,8 +2296,8 @@ df.style.bar(...)
 <li><p>Dealing with complex Python objects - explode</p></li>
 <li><p>Tidy data - melt</p></li>
 </ul>
-<div class="section" id="dealing-with-nulls-nas">
-<h2>Dealing with nulls/NAs<a class="headerlink" href="#dealing-with-nulls-nas" title="Permalink to this headline">#</a></h2>
+<section id="dealing-with-nulls-nas">
+<h2>Dealing with nulls/NAs<a class="headerlink" href="#dealing-with-nulls-nas" title="Permalink to this heading">#</a></h2>
 <p><a class="reference external" href="https://pandas.pydata.org/pandas-docs/stable/user_guide/missing_data.html#missing-data">Working with missing data</a></p>
 <p>pandas primarily uses <code class="docutils literal notranslate"><span class="pre">NaN</span></code> to represent missing data which is of <code class="docutils literal notranslate"><span class="pre">floattype</span></code>.
 IEEE 754 floating point representation of Not a Number (NaN).</p>
@@ -2948,7 +2323,7 @@ to be a string or other object type). This is very likely due NaNs in your data.
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Null elements in DataFrame: </span><span class="si">{</span><span class="n">net_df</span><span class="o">.</span><span class="n">isnull</span><span class="p">()</span><span class="o">.</span><span class="n">values</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span><span class="si">}</span><span class="s2"> </span><span class="se">\n\</span>
-<span class="s2">Rows with null elements: </span><span class="si">{</span><span class="n">net_df</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">-</span> <span class="n">net_df</span><span class="o">.</span><span class="n">dropna</span><span class="p">()</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="s2">Rows with null elements: </span><span class="si">{</span><span class="n">net_df</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">net_df</span><span class="o">.</span><span class="n">dropna</span><span class="p">()</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -2959,8 +2334,8 @@ Rows with null elements: 8
 </div>
 </div>
 </div>
-<div class="section" id="which-columns-have-nas">
-<h3>Which columns have NAs?<a class="headerlink" href="#which-columns-have-nas" title="Permalink to this headline">#</a></h3>
+<section id="which-columns-have-nas">
+<h3>Which columns have NAs?<a class="headerlink" href="#which-columns-have-nas" title="Permalink to this heading">#</a></h3>
 <p style="font-family:consolas; font-size:15pt; color:green">
 df.isna()<br>
 series.isna()
@@ -3012,9 +2387,9 @@ Name: ResourceGroup, dtype: int64
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="filtering-to-see-which-columns-have-nans">
-<h3>Filtering to see which columns have NaNs<a class="headerlink" href="#filtering-to-see-which-columns-have-nans" title="Permalink to this headline">#</a></h3>
+</section>
+<section id="filtering-to-see-which-columns-have-nans">
+<h3>Filtering to see which columns have NaNs<a class="headerlink" href="#filtering-to-see-which-columns-have-nans" title="Permalink to this heading">#</a></h3>
 <p>You can use <code class="docutils literal notranslate"><span class="pre">.isna()</span></code> on the whole DataFrame or a single column.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -3262,9 +2637,9 @@ Name: ResourceGroup, dtype: int64
 <p>8 rows × 23 columns</p>
 </div></div></div>
 </div>
-</div>
-<div class="section" id="removing-nans-with-dropna">
-<h3>Removing NaNs with <code class="docutils literal notranslate"><span class="pre">.dropna</span></code><a class="headerlink" href="#removing-nans-with-dropna" title="Permalink to this headline">#</a></h3>
+</section>
+<section id="removing-nans-with-dropna">
+<h3>Removing NaNs with <code class="docutils literal notranslate"><span class="pre">.dropna</span></code><a class="headerlink" href="#removing-nans-with-dropna" title="Permalink to this heading">#</a></h3>
 <p style="font-family:consolas; font-size:15pt; color:red">
 df.dropna()        # removes all rows with ANY NaNs<br>
 df.dropna(axis=1)     # removes all columns with ANY NaNs
@@ -3286,9 +2661,9 @@ df.dropna(axis=1, how="all") # removes all cols that are ALL NaNs<br>
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="replacing-nans-with-values">
-<h3>Replacing NaNs with values<a class="headerlink" href="#replacing-nans-with-values" title="Permalink to this headline">#</a></h3>
+</section>
+<section id="replacing-nans-with-values">
+<h3>Replacing NaNs with values<a class="headerlink" href="#replacing-nans-with-values" title="Permalink to this heading">#</a></h3>
 <p style="font-family:consolas; font-size:15pt; color:green">
 df.fillna(<i>replacement</i>)           # replace NaNs with 'replacement'<br><br>
 df[column] = df[column].fillna(<i>replacement</i>)  # replace NaNs in a single column
@@ -3314,10 +2689,10 @@ Name: ResourceGroup, dtype: int64
 </div>
 </div>
 </div>
-</div>
-</div>
-<div class="section" id="type-conversion">
-<h2>Type Conversion<a class="headerlink" href="#type-conversion" title="Permalink to this headline">#</a></h2>
+</section>
+</section>
+<section id="type-conversion">
+<h2>Type Conversion<a class="headerlink" href="#type-conversion" title="Permalink to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">net_df</span><span class="o">.</span><span class="n">dtypes</span>
@@ -3384,8 +2759,8 @@ df.column.astype(<i>target|{col1: type1, col2, type2...}</i>)  # convert multipl
 </div>
 </div>
 </div>
-<div class="section" id="convert-using-explicit-pandas-function">
-<h3>Convert using explicit pandas function<a class="headerlink" href="#convert-using-explicit-pandas-function" title="Permalink to this headline">#</a></h3>
+<section id="convert-using-explicit-pandas-function">
+<h3>Convert using explicit pandas function<a class="headerlink" href="#convert-using-explicit-pandas-function" title="Permalink to this heading">#</a></h3>
 <p>Gives you more control over specific conversions (esp for DateTime)</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -3408,10 +2783,10 @@ df.column.astype(<i>target|{col1: type1, col2, type2...}</i>)  # convert multipl
 </div>
 </div>
 </div>
-</div>
-</div>
-<div class="section" id="renaming-columns">
-<h2>Renaming columns<a class="headerlink" href="#renaming-columns" title="Permalink to this headline">#</a></h2>
+</section>
+</section>
+<section id="renaming-columns">
+<h2>Renaming columns<a class="headerlink" href="#renaming-columns" title="Permalink to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">net_df</span><span class="o">.</span><span class="n">columns</span>
@@ -3489,8 +2864,8 @@ df.rename(<i>func</i>, axis='columns')
 </div>
 </div>
 </div>
-<div class="section" id="statically-rename-using-assignment">
-<h3>Statically rename using assignment<a class="headerlink" href="#statically-rename-using-assignment" title="Permalink to this headline">#</a></h3>
+<section id="statically-rename-using-assignment">
+<h3>Statically rename using assignment<a class="headerlink" href="#statically-rename-using-assignment" title="Permalink to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">net_df</span><span class="o">.</span><span class="n">columns</span> <span class="o">=</span> <span class="p">[</span>
@@ -3522,12 +2897,12 @@ df.rename(<i>func</i>, axis='columns')
 </div>
 </div>
 </div>
-</div>
-</div>
-<div class="section" id="pandas-operations-melt-explode-transpose-indexing-stack-unstack-ashwin">
-<h2>Pandas operations: melt, explode, transpose, indexing/stack/unstack [Ashwin]<a class="headerlink" href="#pandas-operations-melt-explode-transpose-indexing-stack-unstack-ashwin" title="Permalink to this headline">#</a></h2>
-<div class="section" id="dealing-with-complex-python-objects-explode">
-<h3>Dealing with complex Python objects - explode<a class="headerlink" href="#dealing-with-complex-python-objects-explode" title="Permalink to this headline">#</a></h3>
+</section>
+</section>
+<section id="pandas-operations-melt-explode-transpose-indexing-stack-unstack-ashwin">
+<h2>Pandas operations: melt, explode, transpose, indexing/stack/unstack [Ashwin]<a class="headerlink" href="#pandas-operations-melt-explode-transpose-indexing-stack-unstack-ashwin" title="Permalink to this heading">#</a></h2>
+<section id="dealing-with-complex-python-objects-explode">
+<h3>Dealing with complex Python objects - explode<a class="headerlink" href="#dealing-with-complex-python-objects-explode" title="Permalink to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">net_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_pickle</span><span class="p">(</span><span class="s2">&quot;../data/az_net_comms_df.pkl&quot;</span><span class="p">)</span>
@@ -3604,9 +2979,9 @@ Name: PublicIPs, dtype: object
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="tidy-data-melt">
-<h3>Tidy data - melt<a class="headerlink" href="#tidy-data-melt" title="Permalink to this headline">#</a></h3>
+</section>
+<section id="tidy-data-melt">
+<h3>Tidy data - melt<a class="headerlink" href="#tidy-data-melt" title="Permalink to this heading">#</a></h3>
 <p>Pandas.melt() unpivots a DataFrame from wide format to long format.<br />
 melt() function is useful to message a DataFrame into a format where one or more columns are identifier variables, while all other columns, considered measured variables, are unpivoted to the row axis, leaving just two non-identifier columns, variable and value.</p>
 <div class="cell docutils container">
@@ -3719,9 +3094,9 @@ melt() function is useful to message a DataFrame into a format where one or more
 <p>2720 rows × 3 columns</p>
 </div></div></div>
 </div>
-</div>
-<div class="section" id="transpose">
-<h3>Transpose<a class="headerlink" href="#transpose" title="Permalink to this headline">#</a></h3>
+</section>
+<section id="transpose">
+<h3>Transpose<a class="headerlink" href="#transpose" title="Permalink to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">net_df_min</span><span class="o">.</span><span class="n">head</span><span class="p">()</span><span class="o">.</span><span class="n">T</span>
@@ -3783,9 +3158,9 @@ melt() function is useful to message a DataFrame into a format where one or more
 </table>
 </div></div></div>
 </div>
-</div>
-<div class="section" id="indexing-stack-and-unstack">
-<h3>Indexing, Stack and Unstack<a class="headerlink" href="#indexing-stack-and-unstack" title="Permalink to this headline">#</a></h3>
+</section>
+<section id="indexing-stack-and-unstack">
+<h3>Indexing, Stack and Unstack<a class="headerlink" href="#indexing-stack-and-unstack" title="Permalink to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">net_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_pickle</span><span class="p">(</span><span class="s2">&quot;../data/az_net_comms_df.pkl&quot;</span><span class="p">)</span>
@@ -4285,14 +3660,14 @@ Name: mean, Length: 125, dtype: float64
 </table>
 </div></div></div>
 </div>
-</div>
-</div>
-</div>
+</section>
+</section>
+</section>
 <hr class="docutils" />
-<div class="tex2jax_ignore mathjax_ignore section" id="a-style-border-solid-padding-5pt-color-black-background-color-90caf9-name-pivot-pivoting-pivot-tables-ashwin-a">
-<h1><a style="border: solid; padding:5pt; color:black; background-color:#90CAF9" name="pivot">Pivoting/pivot tables [Ashwin]</a><a class="headerlink" href="#a-style-border-solid-padding-5pt-color-black-background-color-90caf9-name-pivot-pivoting-pivot-tables-ashwin-a" title="Permalink to this headline">#</a></h1>
-<div class="section" id="reshaping-and-pivot-tables">
-<h2><a class="reference external" href="https://pandas.pydata.org/pandas-docs/stable/user_guide/reshaping.html">Reshaping and Pivot Tables</a><a class="headerlink" href="#reshaping-and-pivot-tables" title="Permalink to this headline">#</a></h2>
+<section class="tex2jax_ignore mathjax_ignore" id="a-style-border-solid-padding-5pt-color-black-background-color-90caf9-name-pivot-pivoting-pivot-tables-ashwin-a">
+<h1><a style="border: solid; padding:5pt; color:black; background-color:#90CAF9" name="pivot">Pivoting/pivot tables [Ashwin]</a><a class="headerlink" href="#a-style-border-solid-padding-5pt-color-black-background-color-90caf9-name-pivot-pivoting-pivot-tables-ashwin-a" title="Permalink to this heading">#</a></h1>
+<section id="reshaping-and-pivot-tables">
+<h2><a class="reference external" href="https://pandas.pydata.org/pandas-docs/stable/user_guide/reshaping.html">Reshaping and Pivot Tables</a><a class="headerlink" href="#reshaping-and-pivot-tables" title="Permalink to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">net_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_pickle</span><span class="p">(</span><span class="s2">&quot;../data/az_net_comms_df.pkl&quot;</span><span class="p">)</span>
@@ -4643,11 +4018,11 @@ Name: mean, Length: 125, dtype: float64
 <p>141 rows × 3 columns</p>
 </div></div></div>
 </div>
-</div>
-</div>
+</section>
+</section>
 <hr class="docutils" />
-<div class="tex2jax_ignore mathjax_ignore section" id="a-style-border-solid-padding-5pt-color-black-background-color-90caf9-name-time-time-manipulation-ashwin-a">
-<h1><a style="border: solid; padding:5pt; color:black; background-color:#90CAF9" name="time">Time manipulation [Ashwin]</a><a class="headerlink" href="#a-style-border-solid-padding-5pt-color-black-background-color-90caf9-name-time-time-manipulation-ashwin-a" title="Permalink to this headline">#</a></h1>
+<section class="tex2jax_ignore mathjax_ignore" id="a-style-border-solid-padding-5pt-color-black-background-color-90caf9-name-time-time-manipulation-ashwin-a">
+<h1><a style="border: solid; padding:5pt; color:black; background-color:#90CAF9" name="time">Time manipulation [Ashwin]</a><a class="headerlink" href="#a-style-border-solid-padding-5pt-color-black-background-color-90caf9-name-time-time-manipulation-ashwin-a" title="Permalink to this heading">#</a></h1>
 <ul class="simple">
 <li><p>Timezone conversions</p></li>
 <li><p>Resample - Grouping by time</p></li>
@@ -4827,8 +4202,8 @@ Name: mean, Length: 125, dtype: float64
 <p>5 rows × 23 columns</p>
 </div></div></div>
 </div>
-<div class="section" id="timezone-considerations">
-<h2>Timezone considerations<a class="headerlink" href="#timezone-considerations" title="Permalink to this headline">#</a></h2>
+<section id="timezone-considerations">
+<h2>Timezone considerations<a class="headerlink" href="#timezone-considerations" title="Permalink to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">dti</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">to_datetime</span><span class="p">(</span><span class="n">net_df</span><span class="p">[</span><span class="s1">&#39;TimeGenerated&#39;</span><span class="p">])</span>
@@ -4878,9 +4253,9 @@ Name: TimeGenerated, Length: 1360, dtype: datetime64[ns, US/Pacific]
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="grouping-by-time">
-<h2>Grouping by time<a class="headerlink" href="#grouping-by-time" title="Permalink to this headline">#</a></h2>
+</section>
+<section id="grouping-by-time">
+<h2>Grouping by time<a class="headerlink" href="#grouping-by-time" title="Permalink to this heading">#</a></h2>
 <p><a class="reference external" href="https://pandas.pydata.org/pandas-docs/stable/user_guide/timeseries.html#resampling">Resampling</a> - <code class="docutils literal notranslate"><span class="pre">resample()</span></code> time-based groupby</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -4906,18 +4281,18 @@ Freq: H, Name: FlowType, Length: 169, dtype: int64
 </div>
 </div>
 </div>
-</div>
-</div>
+</section>
+</section>
 <hr class="docutils" />
-<div class="tex2jax_ignore mathjax_ignore section" id="a-style-border-solid-padding-5pt-color-black-background-color-90caf9-name-otherops-other-useful-operations-ian-a">
-<h1><a style="border: solid; padding:5pt; color:black; background-color:#90CAF9" name="otherops">Other Useful operations [Ian]</a><a class="headerlink" href="#a-style-border-solid-padding-5pt-color-black-background-color-90caf9-name-otherops-other-useful-operations-ian-a" title="Permalink to this headline">#</a></h1>
+<section class="tex2jax_ignore mathjax_ignore" id="a-style-border-solid-padding-5pt-color-black-background-color-90caf9-name-otherops-other-useful-operations-ian-a">
+<h1><a style="border: solid; padding:5pt; color:black; background-color:#90CAF9" name="otherops">Other Useful operations [Ian]</a><a class="headerlink" href="#a-style-border-solid-padding-5pt-color-black-background-color-90caf9-name-otherops-other-useful-operations-ian-a" title="Permalink to this heading">#</a></h1>
 <ul class="simple">
 <li><p>Chaining multiple operations with “.”</p></li>
 <li><p>Including external functions with pipe</p></li>
 <li><p>Apply, assign, others ???</p></li>
 </ul>
-<div class="section" id="chaining-multiple-operations-with">
-<h2>Chaining multiple operations with “.”<a class="headerlink" href="#chaining-multiple-operations-with" title="Permalink to this headline">#</a></h2>
+<section id="chaining-multiple-operations-with">
+<h2>Chaining multiple operations with “.”<a class="headerlink" href="#chaining-multiple-operations-with" title="Permalink to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">net_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_pickle</span><span class="p">(</span><span class="s2">&quot;../data/az_net_comms_df.pkl&quot;</span><span class="p">)</span>
@@ -5257,8 +4632,8 @@ Freq: H, Name: FlowType, Length: 169, dtype: int64
 <p>125 rows × 1 columns</p>
 </div></div></div>
 </div>
-<div class="section" id="use-parentheses-to-let-you-stack-the-functions-vertically">
-<h3>Use parentheses to let you stack the functions vertically<a class="headerlink" href="#use-parentheses-to-let-you-stack-the-functions-vertically" title="Permalink to this headline">#</a></h3>
+<section id="use-parentheses-to-let-you-stack-the-functions-vertically">
+<h3>Use parentheses to let you stack the functions vertically<a class="headerlink" href="#use-parentheses-to-let-you-stack-the-functions-vertically" title="Permalink to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="p">(</span>
@@ -5435,10 +4810,10 @@ Freq: H, Name: FlowType, Length: 169, dtype: int64
 </div>
 </div>
 </div>
-</div>
-</div>
-<div class="section" id="external-functions-with-pipe">
-<h2>External functions with <code class="docutils literal notranslate"><span class="pre">.pipe</span></code><a class="headerlink" href="#external-functions-with-pipe" title="Permalink to this headline">#</a></h2>
+</section>
+</section>
+<section id="external-functions-with-pipe">
+<h2>External functions with <code class="docutils literal notranslate"><span class="pre">.pipe</span></code><a class="headerlink" href="#external-functions-with-pipe" title="Permalink to this heading">#</a></h2>
 <p style="font-family:consolas; font-size:15pt; color:green">
 df.pipe(function)<br>
 </p>
@@ -5720,12 +5095,12 @@ The function must take a DataFrame as the first parameter and return a DataFrame
 </table>
 </div></div></div>
 </div>
-</div>
-<div class="section" id="external-functions-with-apply">
-<h2>External functions with <code class="docutils literal notranslate"><span class="pre">.apply</span></code><a class="headerlink" href="#external-functions-with-apply" title="Permalink to this headline">#</a></h2>
+</section>
+<section id="external-functions-with-apply">
+<h2>External functions with <code class="docutils literal notranslate"><span class="pre">.apply</span></code><a class="headerlink" href="#external-functions-with-apply" title="Permalink to this heading">#</a></h2>
 <p>apply is very inefficient but necessary sometimes.</p>
-<div class="section" id="apply-and-pandas-series">
-<h3><code class="docutils literal notranslate"><span class="pre">.apply</span></code> and pandas series<a class="headerlink" href="#apply-and-pandas-series" title="Permalink to this headline">#</a></h3>
+<section id="apply-and-pandas-series">
+<h3><code class="docutils literal notranslate"><span class="pre">.apply</span></code> and pandas series<a class="headerlink" href="#apply-and-pandas-series" title="Permalink to this heading">#</a></h3>
 <p style="font-family:consolas; font-size:15pt; color:green">
 series.apply(function)<br>
 df.column_name.apply(function)<br>
@@ -5818,9 +5193,9 @@ Name: AllExtIPs, dtype: object
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="apply-and-dataframes">
-<h3><code class="docutils literal notranslate"><span class="pre">.apply</span></code> and DataFrames<a class="headerlink" href="#apply-and-dataframes" title="Permalink to this headline">#</a></h3>
+</section>
+<section id="apply-and-dataframes">
+<h3><code class="docutils literal notranslate"><span class="pre">.apply</span></code> and DataFrames<a class="headerlink" href="#apply-and-dataframes" title="Permalink to this heading">#</a></h3>
 <p style="font-family:consolas; font-size:15pt; color:green">
 df.apply(function, axis=1)  # apply by row<br>
 df.apply(function [, axis=0])  # apply by column<br>
@@ -6000,17 +5375,17 @@ dtype: object
 <p>1360 rows × 5 columns</p>
 </div></div></div>
 </div>
-</div>
-</div>
-</div>
+</section>
+</section>
+</section>
 <hr class="docutils" />
-<div class="tex2jax_ignore mathjax_ignore section" id="end-of-session">
-<h1>End of Session<a class="headerlink" href="#end-of-session" title="Permalink to this headline">#</a></h1>
-</div>
-<div class="tex2jax_ignore mathjax_ignore section" id="font-color-peru-break-5-minutes-font">
-<h1><font color=peru>Break: 5 Minutes</font><a class="headerlink" href="#font-color-peru-break-5-minutes-font" title="Permalink to this headline">#</a></h1>
+<section class="tex2jax_ignore mathjax_ignore" id="end-of-session">
+<h1>End of Session<a class="headerlink" href="#end-of-session" title="Permalink to this heading">#</a></h1>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="font-color-peru-break-5-minutes-font">
+<h1><font color=peru>Break: 5 Minutes</font><a class="headerlink" href="#font-color-peru-break-5-minutes-font" title="Permalink to this heading">#</a></h1>
 <p><img alt="" src="../../_images/dog-leash-break.jpg" /></p>
-</div>
+</section>
 
     <script type="text/x-thebe-config">
     {
@@ -6024,7 +5399,7 @@ dtype: object
             mode: "python"
         },
         kernelOptions: {
-            kernelName: "python3",
+            name: "python3",
             path: "./workshops\day2"
         },
         predefinedOutput: true
@@ -6032,50 +5407,175 @@ dtype: object
     </script>
     <script>kernelName = 'python3'</script>
 
-              </div>
+                </article>
               
-            </main>
-            <footer class="footer-article noprint">
-                
-    <!-- Previous / next buttons -->
-<div class='prev-next-area'>
-    <a class='left-prev' id="prev-link" href="day2-2-Visualization.html" title="previous page">
-        <i class="fas fa-angle-left"></i>
-        <div class="prev-next-info">
-            <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">Workshop 2.2: <font color=peru>Visualization in Jupyter Notebooks</font></p>
-        </div>
+
+              
+              
+                <footer class="bd-footer-article">
+                  
+<div class="footer-article-items footer-article__inner">
+  
+    <div class="footer-article-item"><!-- Previous / next buttons -->
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="day2-2-Visualization.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Workshop 2.2: <font color=peru>Visualization in Jupyter Notebooks</font></p>
+      </div>
     </a>
-    <a class='right-next' id="next-link" href="day2-4-MSTICPy.html" title="next page">
-    <div class="prev-next-info">
+    <a class="right-next"
+       href="day2-4-MSTICPy.html"
+       title="next page">
+      <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
         <p class="prev-next-title">Workshop 2.4: <font color=peru>MSTICPy</font></p>
-    </div>
-    <i class="fas fa-angle-right"></i>
-    </a>
-</div>
-            </footer>
-        </div>
-    </div>
-    <div class="footer-content row">
-        <footer class="col footer"><p>
-  
-    By Open Threat Research @OTR_Community<br/>
-  
-      &copy; Copyright 2022.<br/>
-</p>
-        </footer>
-    </div>
-    
-</div>
-
-
       </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div></div>
+  
+</div>
+
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Workshop 2.3: <font color="peru">Advanced Pandas</font></a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#a-style-border-solid-padding-5pt-color-black-background-color-90caf9-name-joins-joins-and-merges-ashwin-a"><a name="joins" style="border: solid; padding:5pt; color:black; background-color:#90CAF9">Joins and merges [Ashwin]</a></a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#load-some-data-and-normalize-it-into">Load some data and normalize it into:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#joining-on-index-using-pd-concat">Joining on Index using pd.concat</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pd-concat-with-axis-columns-or-axis-1-joins-column-wise-horizontally">pd.concat with <code class="docutils literal notranslate"><span class="pre">axis="columns"</span></code> or <code class="docutils literal notranslate"><span class="pre">axis=1</span></code> joins column-wise (horizontally)</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#key-based-joins">Key-based Joins</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#simple-merge-on-common-key">Simple merge on common key</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#left-joins-also-right-and-outer">Left joins (also right and outer)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#joins-where-no-common-key">Joins where no common key</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#a-style-border-solid-padding-5pt-color-black-background-color-90caf9-name-styles-using-styles-ian-a"><a name="styles" style="border: solid; padding:5pt; color:black; background-color:#90CAF9">Using Styles [Ian]</a></a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#highlight-max-highlight-mix">highlight_max/highlight_mix</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#color-gradients">Color gradients</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#inline-bars">Inline bars</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#a-style-border-solid-padding-5pt-color-black-background-color-90caf9-name-reshaping-reshaping-preprocessing-data-ian-a"><a name="reshaping" style="border: solid; padding:5pt; color:black; background-color:#90CAF9">Reshaping/preprocessing data? [Ian]</a></a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dealing-with-nulls-nas">Dealing with nulls/NAs</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#which-columns-have-nas">Which columns have NAs?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#filtering-to-see-which-columns-have-nans">Filtering to see which columns have NaNs</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#removing-nans-with-dropna">Removing NaNs with <code class="docutils literal notranslate"><span class="pre">.dropna</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#replacing-nans-with-values">Replacing NaNs with values</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#type-conversion">Type Conversion</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#convert-using-explicit-pandas-function">Convert using explicit pandas function</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#renaming-columns">Renaming columns</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#statically-rename-using-assignment">Statically rename using assignment</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pandas-operations-melt-explode-transpose-indexing-stack-unstack-ashwin">Pandas operations: melt, explode, transpose, indexing/stack/unstack [Ashwin]</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dealing-with-complex-python-objects-explode">Dealing with complex Python objects - explode</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#tidy-data-melt">Tidy data - melt</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#transpose">Transpose</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#indexing-stack-and-unstack">Indexing, Stack and Unstack</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#a-style-border-solid-padding-5pt-color-black-background-color-90caf9-name-pivot-pivoting-pivot-tables-ashwin-a"><a name="pivot" style="border: solid; padding:5pt; color:black; background-color:#90CAF9">Pivoting/pivot tables [Ashwin]</a></a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#reshaping-and-pivot-tables">Reshaping and Pivot Tables</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#a-style-border-solid-padding-5pt-color-black-background-color-90caf9-name-time-time-manipulation-ashwin-a"><a name="time" style="border: solid; padding:5pt; color:black; background-color:#90CAF9">Time manipulation [Ashwin]</a></a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#timezone-considerations">Timezone considerations</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#grouping-by-time">Grouping by time</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#a-style-border-solid-padding-5pt-color-black-background-color-90caf9-name-otherops-other-useful-operations-ian-a"><a name="otherops" style="border: solid; padding:5pt; color:black; background-color:#90CAF9">Other Useful operations [Ian]</a></a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#chaining-multiple-operations-with">Chaining multiple operations with “.”</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#use-parentheses-to-let-you-stack-the-functions-vertically">Use parentheses to let you stack the functions vertically</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#external-functions-with-pipe">External functions with <code class="docutils literal notranslate"><span class="pre">.pipe</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#external-functions-with-apply">External functions with <code class="docutils literal notranslate"><span class="pre">.apply</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#apply-and-pandas-series"><code class="docutils literal notranslate"><span class="pre">.apply</span></code> and pandas series</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#apply-and-dataframes"><code class="docutils literal notranslate"><span class="pre">.apply</span></code> and DataFrames</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#end-of-session">End of Session</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#font-color-peru-break-5-minutes-font"><font color="peru">Break: 5 Minutes</font></a></li>
+</ul>
+
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Open Threat Research @OTR_Community
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
     </div>
+  </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+  <script src="../../_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
 
-
+  <footer class="bd-footer">
+  </footer>
   </body>
 </html>

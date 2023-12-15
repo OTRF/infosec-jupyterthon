@@ -1,49 +1,61 @@
 
+
 <!DOCTYPE html>
 
-<html>
+
+<html lang="en" >
+
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Shell Language Processing</title>
-    
-  <!-- Loaded before other Sphinx assets -->
-  <link href="../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
-<link href="../../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    
-  <link rel="stylesheet"
-    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
-  <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
-  <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+    <title>Shell Language Processing</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+
+  
+  <link href="../../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
 
     <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
-    <link rel="stylesheet" href="../../_static/styles/sphinx-book-theme.css?digest=62ba249389abaaa9ffc34bf36a076bdc1d65ee18" type="text/css" />
+    <link rel="stylesheet" href="../../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/tabs.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
-    
+    <link rel="stylesheet" type="text/css" href="../../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
 
     <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
     <script src="../../_static/jquery.js"></script>
     <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../../_static/doctools.js"></script>
     <script src="../../_static/clipboard.min.js"></script>
     <script src="../../_static/copybutton.js"></script>
-    <script src="../../_static/scripts/sphinx-book-theme.js?digest=f31d14ad54b65d19161ba51d4ffff3a77ae00456"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
     <script src="../../_static/tabs.js"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
     <script src="../../_static/togglebutton.js"></script>
-    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script src="../../_static/design-tabs.js"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
 const thebe_selector = ".thebe,.cell"
@@ -53,942 +65,558 @@ const thebe_selector_output = ".output, .cell_output"
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '2022/sessions/day2-08-Shell-Language-Processing';</script>
     <link rel="canonical" href="https://infosecjupyterthon.com/2022/sessions/day2-08-Shell-Language-Processing.html" />
     <link rel="shortcut icon" href="../../_static/favicon.jpg"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="Day 1" href="../../workshops/day1/intro.html" />
     <link rel="prev" title="Extending MSTICPy with Pivot functions" href="day1-11-Extending_MSTICPy.html" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="docsearch:language" content="None">
-    
-
-    <!-- Google Analytics -->
-    
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
   </head>
-  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
-<!-- Checkboxes to toggle the left sidebar -->
-<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
-<label class="overlay overlay-navbar" for="__navigation">
-    <div class="visually-hidden">Toggle navigation sidebar</div>
-</label>
-<!-- Checkboxes to toggle the in-page toc -->
-<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
-<label class="overlay overlay-pagetoc" for="__page-toc">
-    <div class="visually-hidden">Toggle in-page Table of Contents</div>
-</label>
-<!-- Headers at the top -->
-<div class="announcement header-item noprint">💖 The InfoSec Jupyterthon is back! December 2nd and 3rd, 2022 🚀</div>
-<div class="header header-item noprint"></div>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
 
-    
-    <div class="container-fluid" id="banner"></div>
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
 
-    
 
-    <div class="container-xl">
-      <div class="row">
-          
-<!-- Sidebar -->
-<div class="bd-sidebar noprint" id="site-navigation">
-    <div class="bd-sidebar__content">
-        <div class="bd-sidebar__top"><div class="navbar-brand-box">
-    <a class="navbar-brand text-wrap" href="../../index.html">
+  <div class="bd-header-announcement container-fluid bd-header-announcement">
+    <div class="bd-header-announcement__content">💖 The InfoSec Jupyterthon is back! February, 2024 🚀</div>
+  </div>
+
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
       
-        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+      <div class="bd-sidebar-primary bd-sidebar">
         
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
+
+<a class="navbar-brand logo" href="../../introduction.html">
+  
+  
+  
+  
+    
+    
       
-      
-      <img src="../../_static/logo.png" class="logo" alt="logo">
-      
-      
-    </a>
-</div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
-  <i class="icon fas fa-search"></i>
-  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
-</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
-    <div class="bd-toc-item active">
-        <p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Getting Started
- </span>
-</p>
+    
+    
+    <img src="../../_static/logo.png" class="logo__image only-light" alt="Logo image"/>
+    <script>document.write(`<img src="../../_static/logo.png" class="logo__image only-dark" alt="Logo image"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Getting Started</span></p>
 <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../../conduct.html">
-   Code of Conduct
-  </a>
- </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../../collaborators/intro.html">
-   Collaborators
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
-  <label for="toctree-checkbox-1">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../collaborators/Roberto-Rodriguez.html">
-     Roberto Rodriguez
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../collaborators/Chi-Nguyen.html">
-     Chi Nguyen
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../collaborators/Ian-Hellen.html">
-     Ian Hellen
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../collaborators/Joyce-Bacic.html">
-     Joyce Bacic
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../collaborators/Ashwin-Patil.html">
-     Ashwin Patil
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../collaborators/Thomas-Roccia.html">
-     Thomas Roccia
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../collaborators/Pete-Bryan.html">
-     Pete Bryan
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../collaborators/Jose-Rodriguez.html">
-     Jose Rodriguez
-    </a>
-   </li>
-  </ul>
- </li>
+<li class="toctree-l1"><a class="reference internal" href="../../conduct.html">Code of Conduct</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../collaborators/intro.html">Collaborators</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../collaborators/Roberto-Rodriguez.html">Roberto Rodriguez</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../collaborators/Chi-Nguyen.html">Chi Nguyen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../collaborators/Ian-Hellen.html">Ian Hellen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../collaborators/Joyce-Bacic.html">Joyce Bacic</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../collaborators/Ashwin-Patil.html">Ashwin Patil</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../collaborators/Thomas-Roccia.html">Thomas Roccia</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../collaborators/Pete-Bryan.html">Pete Bryan</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../collaborators/Jose-Rodriguez.html">Jose Rodriguez</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  2022 Edition
- </span>
-</p>
+</li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">2022 Edition</span></p>
 <ul class="current nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../agenda.html">
-   Agenda
-  </a>
- </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../speakers/intro.html">
-   Speakers
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
-  <label for="toctree-checkbox-2">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../speakers/roberto_rodriguez.html">
-     Roberto Rodriguez
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../speakers/ian_hellen.html">
-     Ian Hellen
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../speakers/leo_meyerovich.html">
-     Leo Meyerovich
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../speakers/chi_nguyen.html">
-     Chi Nguyen
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../speakers/amritpal_singh.html">
-     Amritpal Singh
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../speakers/vijay_punja.html">
-     Vijay Punja
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../speakers/james_duncan.html">
-     James Duncan
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../speakers/ryan_marcotte_cobb.html">
-     Ryan Marcotte Cobb
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../speakers/saksham_tushar.html">
-     Saksham Tushar
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../speakers/christian_camilo_urcuqui_lopez.html">
-     Christian Camilo Urcuqui Lopez
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../speakers/pete_bryan.html">
-     Pete Bryan
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../speakers/ashwin_patil.html">
-     Ashwin Patil
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../speakers/thomas_roccia.html">
-     Thomas Roccia
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../speakers/jose_rodriguez.html">
-     Jose Rodriguez
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../speakers/alex_morrise.html">
-     Alex Morrise
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../speakers/dmitrijs_trizna.html">
-     Dmitrijs Trizna
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../speakers/mehmet_ergene.html">
-     Mehmet Ergene
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../speakers/jerry_gamblin.html">
-     Jerry Gamblin
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../speakers/balaji_sampath.html">
-     Balaji Sampath
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../speakers/janantha_marasinghe.html">
-     Janantha Marasinghe
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../speakers/paul_coccoli.html">
-     Paul Coccoli
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../speakers/brayan_mena.html">
-     Brayan Mena
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../speakers/john_mac.html">
-     John Mac
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l1 current active has-children">
-  <a class="reference internal" href="intro.html">
-   Sessions
-  </a>
-  <input checked="" class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
-  <label for="toctree-checkbox-3">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul class="current">
-   <li class="toctree-l2">
-    <a class="reference internal" href="day1-01-Opening_Remarks.html">
-     Opening Remarks
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="day1-05-Exploratory_Data_I_mean_Threat_Analytics_using_Jupyter_Notebooks.html">
-     Exploratory Threat Analytics using Jupyter Notebooks
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="day1-11-Extending_MSTICPy.html">
-     Extending MSTICPy with Pivot functions
-    </a>
-   </li>
-   <li class="toctree-l2 current active">
-    <a class="current reference internal" href="#">
-     Shell Language Processing
-    </a>
-   </li>
-  </ul>
- </li>
+<li class="toctree-l1"><a class="reference internal" href="../agenda.html">Agenda</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../speakers/intro.html">Speakers</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../speakers/roberto_rodriguez.html">Roberto Rodriguez</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../speakers/ian_hellen.html">Ian Hellen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../speakers/leo_meyerovich.html">Leo Meyerovich</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../speakers/chi_nguyen.html">Chi Nguyen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../speakers/amritpal_singh.html">Amritpal Singh</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../speakers/vijay_punja.html">Vijay Punja</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../speakers/james_duncan.html">James Duncan</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../speakers/ryan_marcotte_cobb.html">Ryan Marcotte Cobb</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../speakers/saksham_tushar.html">Saksham Tushar</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../speakers/christian_camilo_urcuqui_lopez.html">Christian Camilo Urcuqui Lopez</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../speakers/pete_bryan.html">Pete Bryan</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../speakers/ashwin_patil.html">Ashwin Patil</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../speakers/thomas_roccia.html">Thomas Roccia</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../speakers/jose_rodriguez.html">Jose Rodriguez</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../speakers/alex_morrise.html">Alex Morrise</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../speakers/dmitrijs_trizna.html">Dmitrijs Trizna</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../speakers/mehmet_ergene.html">Mehmet Ergene</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../speakers/jerry_gamblin.html">Jerry Gamblin</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../speakers/balaji_sampath.html">Balaji Sampath</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../speakers/janantha_marasinghe.html">Janantha Marasinghe</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../speakers/paul_coccoli.html">Paul Coccoli</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../speakers/brayan_mena.html">Brayan Mena</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../speakers/john_mac.html">John Mac</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Workshops
- </span>
-</p>
+</li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="intro.html">Sessions</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="day1-01-Opening_Remarks.html">Opening Remarks</a></li>
+
+
+
+
+
+
+
+<li class="toctree-l2"><a class="reference internal" href="day1-05-Exploratory_Data_I_mean_Threat_Analytics_using_Jupyter_Notebooks.html">Exploratory Threat Analytics using Jupyter Notebooks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day1-11-Extending_MSTICPy.html">Extending MSTICPy with Pivot functions</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Shell Language Processing</a></li>
+
+
+
+
+
+
+
+
+</ul>
+</li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Workshops</span></p>
 <ul class="nav bd-sidenav">
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../../workshops/day1/intro.html">
-   Day 1
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
-  <label for="toctree-checkbox-4">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../workshops/day1/day1-1-Jupyter-Introduction.html">
-     Workshop 1.1:
-     <font color="peru">
-      Jupyter Notebooks Introduction
-     </font>
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../workshops/day1/day1-2-Acquiring-data.html">
-     Workshop 1.2:
-     <font color="peru">
-      Acquiring Data
-     </font>
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../workshops/day1/day1-3-Data-Analysis-with-Pandas%20Intro.html">
-     Workshop 1.3:
-     <font color="peru">
-      Basics of Data Analysis with Pandas
-     </font>
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../../workshops/day2/intro.html">
-   Day 2
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
-  <label for="toctree-checkbox-5">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../workshops/day2/day2-1-Jupyter-advanced-topics.html">
-     Workshop 2.1:
-     <font color="peru">
-      Jupyter Notebooks Advanced
-     </font>
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../workshops/day2/day2-1-R-demo-notebook.html">
-     Workshop 2.1:
-     <font color="peru">
-      R Demo Notebook
-     </font>
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../workshops/day2/day2-2-Visualization.html">
-     Workshop 2.2:
-     <font color="peru">
-      Visualization in Jupyter Notebooks
-     </font>
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../workshops/day2/day2-3-Advanced-pandas.html">
-     Workshop 2.3:
-     <font color="peru">
-      Advanced Pandas
-     </font>
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../workshops/day2/day2-4-MSTICPy.html">
-     Workshop 2.4:
-     <font color="peru">
-      MSTICPy
-     </font>
-    </a>
-   </li>
-  </ul>
- </li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../workshops/day1/intro.html">Day 1</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../workshops/day1/day1-1-Jupyter-Introduction.html">Workshop 1.1: <font color="peru">Jupyter Notebooks Introduction</font></a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li class="toctree-l2"><a class="reference internal" href="../../workshops/day1/day1-2-Acquiring-data.html">Workshop 1.2: <font color="peru">Acquiring Data</font></a></li>
+
+
+
+
+
+<li class="toctree-l2"><a class="reference internal" href="../../workshops/day1/day1-3-Data-Analysis-with-Pandas%20Intro.html">Workshop 1.3: <font color="peru">Basics of Data Analysis with Pandas</font></a></li>
+
+
+
+
+
+
+
+
+
+
+
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../workshops/day2/intro.html">Day 2</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../workshops/day2/day2-1-Jupyter-advanced-topics.html">Workshop 2.1: <font color="peru">Jupyter Notebooks Advanced</font></a></li>
+
+
+
+
+
+
+
+
+
+<li class="toctree-l2"><a class="reference internal" href="../../workshops/day2/day2-1-R-demo-notebook.html">Workshop 2.1: <font color="peru">R Demo Notebook</font></a></li>
+
+
+<li class="toctree-l2"><a class="reference internal" href="../../workshops/day2/day2-2-Visualization.html">Workshop 2.2: <font color="peru">Visualization in Jupyter Notebooks</font></a></li>
+
+
+
+
+
+
+
+<li class="toctree-l2"><a class="reference internal" href="../../workshops/day2/day2-3-Advanced-pandas.html">Workshop 2.3: <font color="peru">Advanced Pandas</font></a></li>
+
+
+
+
+
+
+
+
+<li class="toctree-l2"><a class="reference internal" href="../../workshops/day2/day2-4-MSTICPy.html">Workshop 2.4: <font color="peru">MSTICPy</font></a></li>
+
+
+
+
+
+
+
+
+
+
+</ul>
+</li>
 </ul>
 
     </div>
 </nav></div>
-        <div class="bd-sidebar__bottom">
-             <!-- To handle the deprecated key -->
-            
-            <div class="navbar_extra_footer">
-            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
-            </div>
-            
-        </div>
     </div>
-    <div id="rtd-footer-container"></div>
-</div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
 
 
-          
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
 
-
-          
-<!-- A tiny helper pixel to detect if we've scrolled -->
 <div class="sbt-scroll-pixel-helper"></div>
-<!-- Main content -->
-<div class="col py-0 content-container">
-    
-    <div class="header-article row sticky-top noprint">
-        
 
-
-
-<div class="col py-1 d-flex header-article-main">
-    <div class="header-article__left">
-        
-        <label for="__navigation"
-  class="headerbtn"
-  data-toggle="tooltip"
-data-placement="right"
-title="Toggle navigation"
->
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
   
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-bars"></i>
-  </span>
-
-</label>
-
-        
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
     </div>
-    <div class="header-article__right">
-<div class="menu-dropdown menu-dropdown-launch-buttons">
-  <button class="headerbtn menu-dropdown__trigger"
-      aria-label="Launch interactive content">
-      <i class="fas fa-rocket"></i>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
   </button>
-  <div class="menu-dropdown__content">
-    <ul>
-      <li>
-        <a href="https://mybinder.org/v2/gh/OTRF/infosec-jupyterthon/master?urlpath=lab/tree/docs/2022/sessions/day2-08-Shell-Language-Processing.ipynb"
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Launch on Binder"
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://mybinder.org/v2/gh/OTRF/infosec-jupyterthon/master?urlpath=lab/tree/docs/2022/sessions/day2-08-Shell-Language-Processing.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch onBinder"
+   data-bs-placement="left" data-bs-toggle="tooltip"
 >
   
 
-<span class="headerbtn__icon-container">
+<span class="btn__icon-container">
   
     <img src="../../_static/images/logo_binder.svg">
   </span>
-<span class="headerbtn__text-container">Binder</span>
+<span class="btn__text-container">Binder</span>
 </a>
-
-      </li>
+</li>
       
-    </ul>
-  </div>
+  </ul>
 </div>
 
-<button onclick="toggleFullScreen()"
-  class="headerbtn"
-  data-toggle="tooltip"
-data-placement="bottom"
-title="Fullscreen mode"
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/OTRF/infosec-jupyterthon" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
 >
   
 
-<span class="headerbtn__icon-container">
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/OTRF/infosec-jupyterthon/edit/master/docs/2022/sessions/day2-08-Shell-Language-Processing.ipynb" target="_blank"
+   class="btn btn-sm btn-source-edit-button dropdown-item"
+   title="Suggest edit"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-pencil-alt"></i>
+  </span>
+<span class="btn__text-container">Suggest edit</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/OTRF/infosec-jupyterthon/issues/new?title=Issue%20on%20page%20%2F2022/sessions/day2-08-Shell-Language-Processing.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../_sources/2022/sessions/day2-08-Shell-Language-Processing.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
   <i class="fas fa-expand"></i>
   </span>
 
 </button>
 
-<div class="menu-dropdown menu-dropdown-repository-buttons">
-  <button class="headerbtn menu-dropdown__trigger"
-      aria-label="Source repositories">
-      <i class="fab fa-github"></i>
+
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
   </button>
-  <div class="menu-dropdown__content">
-    <ul>
-      <li>
-        <a href="https://github.com/OTRF/infosec-jupyterthon"
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Source repository"
->
-  
+`);
+</script>
 
-<span class="headerbtn__icon-container">
-  <i class="fab fa-github"></i>
-  </span>
-<span class="headerbtn__text-container">repository</span>
-</a>
-
-      </li>
-      
-      <li>
-        <a href="https://github.com/OTRF/infosec-jupyterthon/issues/new?title=Issue%20on%20page%20%2F2022/sessions/day2-08-Shell-Language-Processing.html&body=Your%20issue%20content%20here."
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Open an issue"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-lightbulb"></i>
-  </span>
-<span class="headerbtn__text-container">open issue</span>
-</a>
-
-      </li>
-      
-      <li>
-        <a href="https://github.com/OTRF/infosec-jupyterthon/edit/master/docs/2022/sessions/day2-08-Shell-Language-Processing.ipynb"
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Edit this page"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-pencil-alt"></i>
-  </span>
-<span class="headerbtn__text-container">suggest edit</span>
-</a>
-
-      </li>
-      
-    </ul>
-  </div>
-</div>
-
-<div class="menu-dropdown menu-dropdown-download-buttons">
-  <button class="headerbtn menu-dropdown__trigger"
-      aria-label="Download this page">
-      <i class="fas fa-download"></i>
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
   </button>
-  <div class="menu-dropdown__content">
-    <ul>
-      <li>
-        <a href="../../_sources/2022/sessions/day2-08-Shell-Language-Processing.ipynb"
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Download source file"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-file"></i>
-  </span>
-<span class="headerbtn__text-container">.ipynb</span>
-</a>
-
-      </li>
-      
-      <li>
-        
-<button onclick="printPdf(this)"
-  class="headerbtn"
-  data-toggle="tooltip"
-data-placement="left"
-title="Print to PDF"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-file-pdf"></i>
-  </span>
-<span class="headerbtn__text-container">.pdf</span>
-</button>
-
-      </li>
-      
-    </ul>
-  </div>
-</div>
-<label for="__page-toc"
-  class="headerbtn headerbtn-page-toc"
-  
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-list"></i>
-  </span>
-
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
 </label>
-
+</div></div>
+      
     </div>
+  
 </div>
-
-<!-- Table of contents -->
-<div class="col-md-3 bd-toc show noprint">
-    <div class="tocsection onthispage pt-5 pb-3">
-        <i class="fas fa-list"></i> Contents
-    </div>
-    <nav id="bd-toc-nav" aria-label="Page">
-        <ul class="visible nav section-nav flex-column">
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#">
-   Shell Language Processing
-  </a>
-  <ul class="visible nav section-nav flex-column">
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#parsing-unix-commands-for-machine-learning">
-     Parsing Unix Commands For Machine Learning
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#unreleased-data-potential">
-   Unreleased data potential
-  </a>
- </li>
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#loading-data">
-   Loading data
-  </a>
- </li>
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#data-preprocessing-for-machine-learning-ml-model">
-   Data preprocessing for Machine Learning (ML) model
-  </a>
-  <ul class="visible nav section-nav flex-column">
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#tokenization">
-     Tokenization
-    </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#utilization-of-argc-and-ax-values-in-auditd-logging">
-       1. Utilization of
-       <code class="docutils literal notranslate">
-        <span class="pre">
-         argc
-        </span>
-       </code>
-       and
-       <code class="docutils literal notranslate">
-        <span class="pre">
-         aX
-        </span>
-       </code>
-       values in
-       <code class="docutils literal notranslate">
-        <span class="pre">
-         auditd
-        </span>
-       </code>
-       logging
-      </a>
-     </li>
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#dedicated-tokenizer-for-commands">
-       2. Dedicated Tokenizer for commands
-      </a>
-     </li>
-    </ul>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#encoding">
-     Encoding
-    </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#sklearn-library-with-custom-tokenizer">
-       <strong>
-        sklearn
-       </strong>
-       library with custom tokenizer:
-      </a>
-     </li>
-    </ul>
-   </li>
-  </ul>
- </li>
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#supervised-learning-example-classification-with-cross-validation">
-   Supervised learning example: classification with cross-validation
-  </a>
-  <ul class="visible nav section-nav flex-column">
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#cross-validation">
-     Cross-Validation
-    </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#more-on-evaluation-of-ml-models-in-infosec-roc-and-detection-rate-at-fixed-false-positive-threshold">
-       More on evaluation of ML models in infosec - ROC and detection rate at fixed False Positive threshold
-      </a>
-     </li>
-    </ul>
-   </li>
-  </ul>
- </li>
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#heavy-imbalance-representative-situation-for-security-problems">
-   Heavy Imbalance: representative situation for security problems
-  </a>
-  <ul class="visible nav section-nav flex-column">
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#supervised-learning-recap">
-     Supervised learning - recap:
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#unsupervised-learning-anomaly-detection">
-   Unsupervised learning: Anomaly Detection
-  </a>
-  <ul class="visible nav section-nav flex-column">
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#dimensionality-reduction">
-     Dimensionality reduction
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#bad-questions-for-unsupervised-machine-learning">
-     <strong>
-      Bad
-     </strong>
-     questions for unsupervised machine learning:
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#good-questions-for-unsupervised-machine-learning-focus-on-specific-ttps">
-     <strong>
-      Good
-     </strong>
-     questions for unsupervised machine learning focus on specific TTPs:
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#adversarial-input-evasion-of-ml-heuristics">
-   Adversarial Input - evasion of ML heuristics
-  </a>
- </li>
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#summary-and-final-thoughts">
-   Summary and final thoughts
-  </a>
- </li>
-</ul>
-
-    </nav>
 </div>
-    </div>
-    <div class="article row">
-        <div class="col pl-md-3 pl-lg-5 content-container">
-            <!-- Table of contents that is only displayed when printing the page -->
-            <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Shell Language Processing</h1>
-                <!-- Table of contents -->
-                <div id="print-main-content">
-                    <div id="jb-print-toc">
-                        
-                        <div>
-                            <h2> Contents </h2>
-                        </div>
-                        <nav aria-label="Page">
-                            <ul class="visible nav section-nav flex-column">
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#">
-   Shell Language Processing
-  </a>
-  <ul class="visible nav section-nav flex-column">
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#parsing-unix-commands-for-machine-learning">
-     Parsing Unix Commands For Machine Learning
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#unreleased-data-potential">
-   Unreleased data potential
-  </a>
- </li>
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#loading-data">
-   Loading data
-  </a>
- </li>
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#data-preprocessing-for-machine-learning-ml-model">
-   Data preprocessing for Machine Learning (ML) model
-  </a>
-  <ul class="visible nav section-nav flex-column">
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#tokenization">
-     Tokenization
-    </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#utilization-of-argc-and-ax-values-in-auditd-logging">
-       1. Utilization of
-       <code class="docutils literal notranslate">
-        <span class="pre">
-         argc
-        </span>
-       </code>
-       and
-       <code class="docutils literal notranslate">
-        <span class="pre">
-         aX
-        </span>
-       </code>
-       values in
-       <code class="docutils literal notranslate">
-        <span class="pre">
-         auditd
-        </span>
-       </code>
-       logging
-      </a>
-     </li>
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#dedicated-tokenizer-for-commands">
-       2. Dedicated Tokenizer for commands
-      </a>
-     </li>
-    </ul>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#encoding">
-     Encoding
-    </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#sklearn-library-with-custom-tokenizer">
-       <strong>
-        sklearn
-       </strong>
-       library with custom tokenizer:
-      </a>
-     </li>
-    </ul>
-   </li>
-  </ul>
- </li>
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#supervised-learning-example-classification-with-cross-validation">
-   Supervised learning example: classification with cross-validation
-  </a>
-  <ul class="visible nav section-nav flex-column">
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#cross-validation">
-     Cross-Validation
-    </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#more-on-evaluation-of-ml-models-in-infosec-roc-and-detection-rate-at-fixed-false-positive-threshold">
-       More on evaluation of ML models in infosec - ROC and detection rate at fixed False Positive threshold
-      </a>
-     </li>
-    </ul>
-   </li>
-  </ul>
- </li>
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#heavy-imbalance-representative-situation-for-security-problems">
-   Heavy Imbalance: representative situation for security problems
-  </a>
-  <ul class="visible nav section-nav flex-column">
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#supervised-learning-recap">
-     Supervised learning - recap:
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#unsupervised-learning-anomaly-detection">
-   Unsupervised learning: Anomaly Detection
-  </a>
-  <ul class="visible nav section-nav flex-column">
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#dimensionality-reduction">
-     Dimensionality reduction
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#bad-questions-for-unsupervised-machine-learning">
-     <strong>
-      Bad
-     </strong>
-     questions for unsupervised machine learning:
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#good-questions-for-unsupervised-machine-learning-focus-on-specific-ttps">
-     <strong>
-      Good
-     </strong>
-     questions for unsupervised machine learning focus on specific TTPs:
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#adversarial-input-evasion-of-ml-heuristics">
-   Adversarial Input - evasion of ML heuristics
-  </a>
- </li>
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#summary-and-final-thoughts">
-   Summary and final thoughts
-  </a>
- </li>
-</ul>
+              
+              
 
-                        </nav>
-                    </div>
-                </div>
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Shell Language Processing</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
             </div>
-            <main id="main-content" role="main">
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Shell Language Processing</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#parsing-unix-commands-for-machine-learning">Parsing Unix Commands For Machine Learning</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#unreleased-data-potential">Unreleased data potential</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#loading-data">Loading data</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#data-preprocessing-for-machine-learning-ml-model">Data preprocessing for Machine Learning (ML) model</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tokenization">Tokenization</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#utilization-of-argc-and-ax-values-in-auditd-logging">1. Utilization of <code class="docutils literal notranslate"><span class="pre">argc</span></code> and <code class="docutils literal notranslate"><span class="pre">aX</span></code> values in <code class="docutils literal notranslate"><span class="pre">auditd</span></code> logging</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dedicated-tokenizer-for-commands">2. Dedicated Tokenizer for commands</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#encoding">Encoding</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#sklearn-library-with-custom-tokenizer"><strong>sklearn</strong> library with custom tokenizer:</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#supervised-learning-example-classification-with-cross-validation">Supervised learning example: classification with cross-validation</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cross-validation">Cross-Validation</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#more-on-evaluation-of-ml-models-in-infosec-roc-and-detection-rate-at-fixed-false-positive-threshold">More on evaluation of ML models in infosec - ROC and detection rate at fixed False Positive threshold</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#heavy-imbalance-representative-situation-for-security-problems">Heavy Imbalance: representative situation for security problems</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#supervised-learning-recap">Supervised learning - recap:</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#unsupervised-learning-anomaly-detection">Unsupervised learning: Anomaly Detection</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dimensionality-reduction">Dimensionality reduction</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bad-questions-for-unsupervised-machine-learning"><strong>Bad</strong> questions for unsupervised machine learning:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#good-questions-for-unsupervised-machine-learning-focus-on-specific-ttps"><strong>Good</strong> questions for unsupervised machine learning focus on specific TTPs:</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#adversarial-input-evasion-of-ml-heuristics">Adversarial Input - evasion of ML heuristics</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#summary-and-final-thoughts">Summary and final thoughts</a></li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
                 
-              <div>
-                
-  <div class="tex2jax_ignore mathjax_ignore section" id="shell-language-processing">
-<h1>Shell Language Processing<a class="headerlink" href="#shell-language-processing" title="Permalink to this headline">#</a></h1>
-<div class="section" id="parsing-unix-commands-for-machine-learning">
-<h2>Parsing Unix Commands For Machine Learning<a class="headerlink" href="#parsing-unix-commands-for-machine-learning" title="Permalink to this headline">#</a></h2>
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="shell-language-processing">
+<h1>Shell Language Processing<a class="headerlink" href="#shell-language-processing" title="Permalink to this heading">#</a></h1>
+<section id="parsing-unix-commands-for-machine-learning">
+<h2>Parsing Unix Commands For Machine Learning<a class="headerlink" href="#parsing-unix-commands-for-machine-learning" title="Permalink to this heading">#</a></h2>
 <p>Author:</p>
 <p><strong>Dmitrijs Trizna</strong><br />
 Sr. Software Engineer &#64; Microsoft<br />
@@ -998,10 +626,10 @@ Blog: <a class="reference external" href="https://ditrizna.medium.com">https://d
 <center><img src="../img/Tux_wordcloud.png" width=350></center>
 <p>Disclaimer:</p>
 <p>Artificial Intelligence (AI) is <strong>not</strong> a silver bullet - it is a powerful <strong>tool</strong> that needs a human supervision, and those who master this tool will have an advantage.</p>
-</div>
-</div>
-<div class="tex2jax_ignore mathjax_ignore section" id="unreleased-data-potential">
-<h1>Unreleased data potential<a class="headerlink" href="#unreleased-data-potential" title="Permalink to this headline">#</a></h1>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="unreleased-data-potential">
+<h1>Unreleased data potential<a class="headerlink" href="#unreleased-data-potential" title="Permalink to this heading">#</a></h1>
 <p>We encounter numerous log collection hubs that lack enough analytics to infer necessary visibility out of acquired data. Often, TB of logs are collected to perform only a basic analytics, and considered to be used in an <em>ad hoc</em>, reactive manner - if investiagtion is needed. Example of valuable data without enough processing attention - auditd’s <code class="docutils literal notranslate"><span class="pre">execve</span></code> syscall containing shell commandlines:</p>
 <a class="reference internal image-reference" href="2022/img/auditd_elastic_screen.png"><img alt="2022/img/auditd_elastic_screen.png" src="2022/img/auditd_elastic_screen.png" style="width: 750px;" /></a>
 <p>In this practice we will <strong>not</strong>:</p>
@@ -1026,9 +654,9 @@ Blog: <a class="reference external" href="https://ditrizna.medium.com">https://d
 <li><p>familiarity with conventional security and administration concepts, e.g. Linux environment, auditd telemetry</p></li>
 <li><p>Python fundamentals</p></li>
 </ul>
-</div>
-<div class="tex2jax_ignore mathjax_ignore section" id="loading-data">
-<h1>Loading data<a class="headerlink" href="#loading-data" title="Permalink to this headline">#</a></h1>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="loading-data">
+<h1>Loading data<a class="headerlink" href="#loading-data" title="Permalink to this heading">#</a></h1>
 <p>Let’s load sample data used for this demo and take a look on it:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1134,12 +762,12 @@ Blog: <a class="reference external" href="https://ditrizna.medium.com">https://d
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/day2-08-Shell-Language-Processing_9_0.png" src="../../_images/day2-08-Shell-Language-Processing_9_0.png" />
+<img alt="../../_images/28c1055de844e2b3339cf8694025eac1a7cb64c8138c235c7b1c91f54c5761b2.png" src="../../_images/28c1055de844e2b3339cf8694025eac1a7cb64c8138c235c7b1c91f54c5761b2.png" />
 </div>
 </div>
-</div>
-<div class="tex2jax_ignore mathjax_ignore section" id="data-preprocessing-for-machine-learning-ml-model">
-<h1>Data preprocessing for Machine Learning (ML) model<a class="headerlink" href="#data-preprocessing-for-machine-learning-ml-model" title="Permalink to this headline">#</a></h1>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="data-preprocessing-for-machine-learning-ml-model">
+<h1>Data preprocessing for Machine Learning (ML) model<a class="headerlink" href="#data-preprocessing-for-machine-learning-ml-model" title="Permalink to this heading">#</a></h1>
 <p>In machine learning scientific community it is assumed to use <span class="math notranslate nohighlight">\(X\)</span> as a notation for input data. When supervised algorithms are used, we need to specify label of data denoted by <span class="math notranslate nohighlight">\(y\)</span> to train model. In this case we assign label <span class="math notranslate nohighlight">\(0\)</span> to benign entries, and label <span class="math notranslate nohighlight">\(1\)</span> to represent maliciousness:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1158,8 +786,8 @@ Blog: <a class="reference external" href="https://ditrizna.medium.com">https://d
 <p>Arguably, shell commandlines do not need a <em>cleaning</em> out of punctuation like many NLP applications, since shell syntax embeds large portion of epistemic knowledge within punctuation. However, you still might need to perform a different type of cleaning based on telemetry you receive, e.g. <em>normalization of domain names, IP addresses, usernames</em>.</p>
 <p>Crucial steps for processing textual data as a feature vectors are <strong>Tokenization</strong> and <strong>Encoding</strong>, which we discuss in detail below.</p>
 <p>Worth mentioning that over the years classical NLP applications developed many other techniques which are less relevant for shell telemetry and we ommit them for the purpose of this exercise.</p>
-<div class="section" id="tokenization">
-<h2>Tokenization<a class="headerlink" href="#tokenization" title="Permalink to this headline">#</a></h2>
+<section id="tokenization">
+<h2>Tokenization<a class="headerlink" href="#tokenization" title="Permalink to this heading">#</a></h2>
 <p>Pre-processing and encoding of data is highly dependant on field and specific data source. Tokenization represents an idea of <em>dividing any continuous sequence to an elemental parts</em> called tokens. Tokenization applied on shell syntax is significantly harder from what we see in natural languages and posses several challenges:</p>
 <ul class="simple">
 <li><p>spaces are not always elemental separators</p></li>
@@ -1168,12 +796,12 @@ Blog: <a class="reference external" href="https://ditrizna.medium.com">https://d
 </ul>
 <a class="reference internal image-reference" href="2022/img/commmand_tokenization_ambiguity.png"><img alt="2022/img/commmand_tokenization_ambiguity.png" src="2022/img/commmand_tokenization_ambiguity.png" style="width: 700px;" /></a>
 <p>There are two ways to approach this problem:</p>
-<ol class="simple">
+<ol class="arabic simple">
 <li><p>use built-in <code class="docutils literal notranslate"><span class="pre">argc</span></code> segregation in <code class="docutils literal notranslate"><span class="pre">auditd</span></code> <code class="docutils literal notranslate"><span class="pre">EXECVE</span></code> syscall logging</p></li>
 <li><p>utilize custom tokenizer to do a data parsing involving a domain knowledge</p></li>
 </ol>
-<div class="section" id="utilization-of-argc-and-ax-values-in-auditd-logging">
-<h3>1. Utilization of <code class="docutils literal notranslate"><span class="pre">argc</span></code> and <code class="docutils literal notranslate"><span class="pre">aX</span></code> values in <code class="docutils literal notranslate"><span class="pre">auditd</span></code> logging<a class="headerlink" href="#utilization-of-argc-and-ax-values-in-auditd-logging" title="Permalink to this headline">#</a></h3>
+<section id="utilization-of-argc-and-ax-values-in-auditd-logging">
+<h3>1. Utilization of <code class="docutils literal notranslate"><span class="pre">argc</span></code> and <code class="docutils literal notranslate"><span class="pre">aX</span></code> values in <code class="docutils literal notranslate"><span class="pre">auditd</span></code> logging<a class="headerlink" href="#utilization-of-argc-and-ax-values-in-auditd-logging" title="Permalink to this heading">#</a></h3>
 <p>Below is a sample of <code class="docutils literal notranslate"><span class="pre">auditd</span></code> telemetry, specifically <code class="docutils literal notranslate"><span class="pre">execve</span></code> call, representing an executed commands on the target machine:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1218,9 +846,9 @@ Blog: <a class="reference external" href="https://ditrizna.medium.com">https://d
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="dedicated-tokenizer-for-commands">
-<h3>2. Dedicated Tokenizer for commands<a class="headerlink" href="#dedicated-tokenizer-for-commands" title="Permalink to this headline">#</a></h3>
+</section>
+<section id="dedicated-tokenizer-for-commands">
+<h3>2. Dedicated Tokenizer for commands<a class="headerlink" href="#dedicated-tokenizer-for-commands" title="Permalink to this heading">#</a></h3>
 <p>However, in cases when we have commands as a continuous strings or we are not happy with <code class="docutils literal notranslate"><span class="pre">auditd</span></code> built-in partitioning, we need a different approach. We suggest using our own Tokenizer. Consider data in a format we received our data sets:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1250,7 +878,7 @@ Blog: <a class="reference external" href="https://ditrizna.medium.com">https://d
   <span class="n">IN_COLAB</span> <span class="o">=</span> <span class="kc">False</span>
 
 <span class="k">if</span> <span class="n">IN_COLAB</span><span class="p">:</span>
-    <span class="o">!</span>pip install bashlex
+    <span class="o">!</span>pip<span class="w"> </span>install<span class="w"> </span>bashlex
 <span class="k">else</span><span class="p">:</span>
   <span class="n">code</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">system</span><span class="p">(</span><span class="s2">&quot;python3 -m pip install bashlex&quot;</span><span class="p">)</span>
   <span class="k">if</span> <span class="n">code</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">:</span>
@@ -1291,10 +919,10 @@ For example, <code class="docutils literal notranslate"><span class="pre">openss
 </div>
 </div>
 <p>We have proven that using a dedicated tokenizer for Shell commmandlines noticeably increase performance of Machine Learning pipelines. For more details, refer to our paper: <a class="reference external" href="https://arxiv.org/abs/2107.02438">arxiv.org/abs/2107.02438</a></p>
-</div>
-</div>
-<div class="section" id="encoding">
-<h2>Encoding<a class="headerlink" href="#encoding" title="Permalink to this headline">#</a></h2>
+</section>
+</section>
+<section id="encoding">
+<h2>Encoding<a class="headerlink" href="#encoding" title="Permalink to this heading">#</a></h2>
 <p>Once we received a tokenized sequence of commands, we can proceed to represention of these sequences in a some way. There are multiple conventional ways to represent sequence of textual tokens as a numeric array, we will consider:</p>
 <ul class="simple">
 <li><p>One-Hot</p></li>
@@ -1319,8 +947,8 @@ For example, <code class="docutils literal notranslate"><span class="pre">openss
 <p>In our sample dataset this would result in:</p>
 <a class="reference internal image-reference" href="2022/img/enc_tfidf.png"><img alt="2022/img/enc_tfidf.png" src="2022/img/enc_tfidf.png" style="width: 500px;" /></a>
 <p>TF-IDF on the contrary to One-Hot and BoW allows to emphasize tokens representative for current document and de-emphasize common tokens.</p>
-<div class="section" id="sklearn-library-with-custom-tokenizer">
-<h3><strong>sklearn</strong> library with custom tokenizer:<a class="headerlink" href="#sklearn-library-with-custom-tokenizer" title="Permalink to this headline">#</a></h3>
+<section id="sklearn-library-with-custom-tokenizer">
+<h3><strong>sklearn</strong> library with custom tokenizer:<a class="headerlink" href="#sklearn-library-with-custom-tokenizer" title="Permalink to this heading">#</a></h3>
 <p><strong>TfIdfVectorizer</strong> example:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1441,11 +1069,11 @@ For example, <code class="docutils literal notranslate"><span class="pre">openss
 </div>
 </div>
 </div>
-</div>
-</div>
-</div>
-<div class="tex2jax_ignore mathjax_ignore section" id="supervised-learning-example-classification-with-cross-validation">
-<h1>Supervised learning example: classification with cross-validation<a class="headerlink" href="#supervised-learning-example-classification-with-cross-validation" title="Permalink to this headline">#</a></h1>
+</section>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="supervised-learning-example-classification-with-cross-validation">
+<h1>Supervised learning example: classification with cross-validation<a class="headerlink" href="#supervised-learning-example-classification-with-cross-validation" title="Permalink to this heading">#</a></h1>
 <p>At this point Encoded data is ready to be processed by many Machine Learning models. So we should feed the data to the Neural Networks?</p>
 <center><img src="https://c.tenor.com/gqsU87kq4PoAAAAM/no-no-please.gif"></center>
 <p>Don’t go Neural Nets unless you know why you need Deep Learning. Deep Learning brings problems that usually blocks them to be deployed in production environment:</p>
@@ -1460,8 +1088,8 @@ For example, <code class="docutils literal notranslate"><span class="pre">openss
 <p>Digging deeper on GBDT if you are interested: <a class="reference external" href="https://en.wikipedia.org/wiki/Gradient_boosting">1. Wiki.</a> <a class="reference external" href="https://arogozhnikov.github.io/2016/06/24/gradient_boosting_explained.html">2. Intuition &amp; visualisations.</a> Shortly:</p>
 <p><a class="reference internal" href="2022/img/gbdt.png"><img alt="2022/img/gbdt.png" src="2022/img/gbdt.png" style="width: 600px;" /></a><br></p>
 <a class="reference internal image-reference" href="2022/img/ml_ifelse.png"><img alt="2022/img/ml_ifelse.png" src="2022/img/ml_ifelse.png" style="width: 600px;" /></a>
-<div class="section" id="cross-validation">
-<h2>Cross-Validation<a class="headerlink" href="#cross-validation" title="Permalink to this headline">#</a></h2>
+<section id="cross-validation">
+<h2>Cross-Validation<a class="headerlink" href="#cross-validation" title="Permalink to this heading">#</a></h2>
 <p>Cross-Validation represents a training setup under constraints of dataset size to evaluate performance of model.</p>
 <p>Generally, model training and evaluation on large datasets happens with the following data split:</p>
 <ul class="simple">
@@ -1516,7 +1144,7 @@ TfIdfVectorizer WPT:
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="kn">import</span> <span class="n">accuracy_score</span>
 <span class="n">always_benign</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">y</span><span class="p">))</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Predicting &#39;always benign&#39; (y==0) yields </span><span class="si">{</span><span class="n">accuracy_score</span><span class="p">(</span><span class="n">y</span><span class="p">,</span> <span class="n">always_benign</span><span class="p">)</span><span class="o">*</span><span class="mi">100</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">% accuracy.&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Predicting &#39;always benign&#39; (y==0) yields </span><span class="si">{</span><span class="n">accuracy_score</span><span class="p">(</span><span class="n">y</span><span class="p">,</span><span class="w"> </span><span class="n">always_benign</span><span class="p">)</span><span class="o">*</span><span class="mi">100</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">% accuracy.&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -1534,8 +1162,8 @@ TfIdfVectorizer WPT:
 <p>F1-score is a “harmonic mean” between precision and recall and is calculated as follows:</p>
 <div class="math notranslate nohighlight">
 \[ F1 = 2\cdot\dfrac{\texttt{precision}\cdot\texttt{recall}}{\texttt{precision}+\texttt{recall}}\]</div>
-<div class="section" id="more-on-evaluation-of-ml-models-in-infosec-roc-and-detection-rate-at-fixed-false-positive-threshold">
-<h3>More on evaluation of ML models in infosec - ROC and detection rate at fixed False Positive threshold<a class="headerlink" href="#more-on-evaluation-of-ml-models-in-infosec-roc-and-detection-rate-at-fixed-false-positive-threshold" title="Permalink to this headline">#</a></h3>
+<section id="more-on-evaluation-of-ml-models-in-infosec-roc-and-detection-rate-at-fixed-false-positive-threshold">
+<h3>More on evaluation of ML models in infosec - ROC and detection rate at fixed False Positive threshold<a class="headerlink" href="#more-on-evaluation-of-ml-models-in-infosec-roc-and-detection-rate-at-fixed-false-positive-threshold" title="Permalink to this heading">#</a></h3>
 <p>Oftentimes in security domain representing model’s performance with F1-score or accuracy is too shallow. The best way to communicate performance of the model is to evaluate it given a fixed False Positive rate, to understand its practical utility. For that we will use <a class="reference external" href="https://en.wikipedia.org/wiki/Receiver_operating_characteristic">Receiver Operating Characteristic (ROC)</a> and <a class="reference external" href="https://scikit-learn.org/stable/auto_examples/model_selection/plot_det.html">Detection Error Tradeoff (DET)</a> curves.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1608,7 +1236,7 @@ TfIdfVectorizer WPT:
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/day2-08-Shell-Language-Processing_35_0.png" src="../../_images/day2-08-Shell-Language-Processing_35_0.png" />
+<img alt="../../_images/765a897cbad99d2c7f54079d0f090e2e89c4d8e7f8eb24cb8fbe75c4217f63c5.png" src="../../_images/765a897cbad99d2c7f54079d0f090e2e89c4d8e7f8eb24cb8fbe75c4217f63c5.png" />
 </div>
 </div>
 <p>Varying False Positive rate is possible with defining a probability threshold, based on which we consider sample to be malicious, since output of model is not a binary, it is a probability in range <span class="math notranslate nohighlight">\(p \in [0,1]\)</span>:</p>
@@ -1651,7 +1279,7 @@ TfIdfVectorizer WPT:
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/day2-08-Shell-Language-Processing_39_0.png" src="../../_images/day2-08-Shell-Language-Processing_39_0.png" />
+<img alt="../../_images/fa6f1f2f26cb3ba99b2118ce6dcedd03e845d83b8d8f9d2c43ea6756506378bb.png" src="../../_images/fa6f1f2f26cb3ba99b2118ce6dcedd03e845d83b8d8f9d2c43ea6756506378bb.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -1686,17 +1314,17 @@ TfIdfVectorizer WPT:
 </div>
 </div>
 </div>
-</div>
-</div>
-</div>
-<div class="tex2jax_ignore mathjax_ignore section" id="heavy-imbalance-representative-situation-for-security-problems">
-<h1>Heavy Imbalance: representative situation for security problems<a class="headerlink" href="#heavy-imbalance-representative-situation-for-security-problems" title="Permalink to this headline">#</a></h1>
+</section>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="heavy-imbalance-representative-situation-for-security-problems">
+<h1>Heavy Imbalance: representative situation for security problems<a class="headerlink" href="#heavy-imbalance-representative-situation-for-security-problems" title="Permalink to this heading">#</a></h1>
 <p>It is common to have a heavily imbalanced dataset when ML methods are applied to security problem. It is much harder to acquire well generalized distribution of malicious activity in common enterprise infrastucture. On the contrary, benign activity is abundant, and is easy to acquire.</p>
 <p>In such cases predicting <span class="math notranslate nohighlight">\(y==0\)</span>, i.e. “always benign” allows to achieve high accuracy:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">always_benign</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">y</span><span class="p">))</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Predicting &#39;always benign&#39; yields </span><span class="si">{</span><span class="n">accuracy_score</span><span class="p">(</span><span class="n">y</span><span class="p">,</span> <span class="n">always_benign</span><span class="p">)</span><span class="o">*</span><span class="mi">100</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">% accuracy.&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Predicting &#39;always benign&#39; yields </span><span class="si">{</span><span class="n">accuracy_score</span><span class="p">(</span><span class="n">y</span><span class="p">,</span><span class="w"> </span><span class="n">always_benign</span><span class="p">)</span><span class="o">*</span><span class="mi">100</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">% accuracy.&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -1726,7 +1354,7 @@ TfIdfVectorizer WPT:
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/day2-08-Shell-Language-Processing_43_0.png" src="../../_images/day2-08-Shell-Language-Processing_43_0.png" />
+<img alt="../../_images/dfe00afcb7ddf96d1c9ea6e7244e10e99bfba9ebb3444f0b5ffb7d27039bea02.png" src="../../_images/dfe00afcb7ddf96d1c9ea6e7244e10e99bfba9ebb3444f0b5ffb7d27039bea02.png" />
 </div>
 </div>
 <p>It is clearly seen that number of malicious samples is too small.</p>
@@ -1751,17 +1379,17 @@ TfIdfVectorizer WPT:
 </div>
 <p>This is a decent approach that allows to acquire model much more ready for production deployment.</p>
 <p>For the purpose of this exercise, however, we will implement only oversampling - greedy increase of minority class to even class occurences:</p>
-<div class="section" id="supervised-learning-recap">
-<h2>Supervised learning - recap:<a class="headerlink" href="#supervised-learning-recap" title="Permalink to this headline">#</a></h2>
+<section id="supervised-learning-recap">
+<h2>Supervised learning - recap:<a class="headerlink" href="#supervised-learning-recap" title="Permalink to this heading">#</a></h2>
 <ul class="simple">
 <li><p>Do not got for Deep Learning models unless you know <strong>why</strong> you need that. Otherwise, choose other more bulletproof ML algorithms like decision tree based models.</p></li>
 <li><p>Evaluation of ML solution for security needs is not a single question, and for production deployments <strong>detection rate with fixed False Positive threshold</strong> is the best representation.</p></li>
 <li><p>Security problems are often represented by imbalanced data, therefore additional techniques like data oversampling or better <strong>augmentation</strong> are needed.</p></li>
 </ul>
-</div>
-</div>
-<div class="tex2jax_ignore mathjax_ignore section" id="unsupervised-learning-anomaly-detection">
-<h1>Unsupervised learning: Anomaly Detection<a class="headerlink" href="#unsupervised-learning-anomaly-detection" title="Permalink to this headline">#</a></h1>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="unsupervised-learning-anomaly-detection">
+<h1>Unsupervised learning: Anomaly Detection<a class="headerlink" href="#unsupervised-learning-anomaly-detection" title="Permalink to this heading">#</a></h1>
 <p>There are wide range of anomaly detection approaches known, each with their pros and cons. Here is a brief visualisation on several algorithms implemented in sklearn, respectively <a class="reference external" href="https://scikit-learn.org/0.20/modules/generated/sklearn.covariance.EllipticEnvelope.html#sklearn.covariance.EllipticEnvelope">EllipticEnvelope</a>, <a class="reference external" href="https://scikit-learn.org/0.20/modules/generated/sklearn.svm.OneClassSVM.html#sklearn.svm.OneClassSVM">OneClassSVM</a>, <a class="reference external" href="https://scikit-learn.org/0.20/modules/generated/sklearn.ensemble.IsolationForest.html#sklearn.ensemble.IsolationForest">IsolationForest</a> and <a class="reference external" href="https://scikit-learn.org/0.20/modules/generated/sklearn.neighbors.LocalOutlierFactor.html#sklearn.neighbors.LocalOutlierFactor">LocalOutlierFactor</a> <a class="reference external" href="https://scikit-learn.org/0.20/auto_examples/plot_anomaly_comparison.html">[source]</a>:</p>
 <a class="reference internal image-reference" href="2022/img/sklearn_ad_comparison.png"><img alt="2022/img/sklearn_ad_comparison.png" src="2022/img/sklearn_ad_comparison.png" style="width: 600px;" /></a>
 <p>We will not dig in describing Isolation Forest details due to time constraints, but intuition behind single run of outlier detection on 2-dimensional data is visualised below, with good explanation behind this <a class="reference external" href="https://quantdare.com/isolation-forest-algorithm/">source</a>:</p>
@@ -1817,8 +1445,8 @@ TfIdfVectorizer WPT:
 </div>
 </div>
 <p>Before jumping to conlcusions about results of this anomaly detection round, let’s try to visualize anomalies. We have one problem - our data has 500 dimensions…</p>
-<div class="section" id="dimensionality-reduction">
-<h2>Dimensionality reduction<a class="headerlink" href="#dimensionality-reduction" title="Permalink to this headline">#</a></h2>
+<section id="dimensionality-reduction">
+<h2>Dimensionality reduction<a class="headerlink" href="#dimensionality-reduction" title="Permalink to this heading">#</a></h2>
 <p>We can apply dimensionality reduction techniques to visualise anomalies.</p>
 <p>For example, here is visual intuition on how to apply dimensionality reduction from 2 dimensions to 1 dimension <a class="reference external" href="https://ethen8181.github.io/machine-learning/">[Source]</a>:</p>
 <a class="reference internal image-reference" href="2022/img/pca2.png"><img alt="2022/img/pca2.png" src="2022/img/pca2.png" style="width: 700px;" /></a>
@@ -1858,7 +1486,7 @@ TfIdfVectorizer WPT:
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/day2-08-Shell-Language-Processing_50_0.png" src="../../_images/day2-08-Shell-Language-Processing_50_0.png" />
+<img alt="../../_images/c7fee822dd695abfa2b530a6bb66edbab9f61ff89da1bf5380559e78119b398c.png" src="../../_images/c7fee822dd695abfa2b530a6bb66edbab9f61ff89da1bf5380559e78119b398c.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -1904,17 +1532,17 @@ TfIdfVectorizer WPT:
 </div>
 </div>
 <p>Plot allows to see that too many samples in dataset appear to be an “anomaly” in some sense. Therefore, it is wrong to seek for anomalies in your environment - too many aspects of everyday operation are anomalous based on some characteristics of data.</p>
-</div>
-<div class="section" id="bad-questions-for-unsupervised-machine-learning">
-<h2><strong>Bad</strong> questions for unsupervised machine learning:<a class="headerlink" href="#bad-questions-for-unsupervised-machine-learning" title="Permalink to this headline">#</a></h2>
+</section>
+<section id="bad-questions-for-unsupervised-machine-learning">
+<h2><strong>Bad</strong> questions for unsupervised machine learning:<a class="headerlink" href="#bad-questions-for-unsupervised-machine-learning" title="Permalink to this heading">#</a></h2>
 <ul class="simple">
 <li><p>anomalous commandlines (so I can spot APTs) - your telemetry have hunderds anomalous commandlines a week</p></li>
 <li><p>anomalous network traffic - happens dozens of time every day in production environment</p></li>
 <li><p>anomalous process binary - hello <code class="docutils literal notranslate"><span class="pre">jre1.8.0_311\bin\java.exe</span></code>, <code class="docutils literal notranslate"><span class="pre">~/.tmp/c65631efd85f890604dc3cd8dbd717/vs_setup_bootstrapper.exe</span></code>, etc.</p></li>
 </ul>
-</div>
-<div class="section" id="good-questions-for-unsupervised-machine-learning-focus-on-specific-ttps">
-<h2><strong>Good</strong> questions for unsupervised machine learning focus on specific TTPs:<a class="headerlink" href="#good-questions-for-unsupervised-machine-learning-focus-on-specific-ttps" title="Permalink to this headline">#</a></h2>
+</section>
+<section id="good-questions-for-unsupervised-machine-learning-focus-on-specific-ttps">
+<h2><strong>Good</strong> questions for unsupervised machine learning focus on specific TTPs:<a class="headerlink" href="#good-questions-for-unsupervised-machine-learning-focus-on-specific-ttps" title="Permalink to this heading">#</a></h2>
 <p>Linux world:</p>
 <ul class="simple">
 <li><p>anomalous python/perl/ruby process (execution via scripting interpreter, <a class="reference external" href="https://attack.mitre.org/techniques/T1059/006/">T1059.006</a>)</p></li>
@@ -1966,12 +1594,12 @@ TfIdfVectorizer WPT:
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[!] Number of anomalous commands: 1
 </pre></div>
 </div>
-<img alt="../../_images/day2-08-Shell-Language-Processing_55_2.png" src="../../_images/day2-08-Shell-Language-Processing_55_2.png" />
+<img alt="../../_images/8a9da1d7c4fb2200825067a8f91ab4cca863bd69786c8d7df90a2580c5f89510.png" src="../../_images/8a9da1d7c4fb2200825067a8f91ab4cca863bd69786c8d7df90a2580c5f89510.png" />
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Anomalous command:</span><span class="se">\n\n</span><span class="si">{</span><span class="p">[</span><span class="n">X_python_raw</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">outlier_index_python</span><span class="p">[</span><span class="mi">0</span><span class="p">]][</span><span class="mi">0</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Anomalous command:</span><span class="se">\n\n</span><span class="si">{</span><span class="p">[</span><span class="n">X_python_raw</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="ow">in</span><span class="w"> </span><span class="n">outlier_index_python</span><span class="p">[</span><span class="mi">0</span><span class="p">]][</span><span class="mi">0</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -1983,10 +1611,10 @@ python -c &#39;import socket,subprocess,os,pty;s=socket.socket(socket.AF_INET6,s
 </div>
 </div>
 </div>
-</div>
-</div>
-<div class="tex2jax_ignore mathjax_ignore section" id="adversarial-input-evasion-of-ml-heuristics">
-<h1>Adversarial Input - evasion of ML heuristics<a class="headerlink" href="#adversarial-input-evasion-of-ml-heuristics" title="Permalink to this headline">#</a></h1>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="adversarial-input-evasion-of-ml-heuristics">
+<h1>Adversarial Input - evasion of ML heuristics<a class="headerlink" href="#adversarial-input-evasion-of-ml-heuristics" title="Permalink to this heading">#</a></h1>
 <p>How to perform an evasion of baseline analyzer? Add parts representative for baseline activity to your input!</p>
 <p>This is general rule for many ML evasions – <em>add properties representative for a desired class to your input</em>.</p>
 <p>Let’s see what for <code class="docutils literal notranslate"><span class="pre">python</span></code> is used in benign dataset:</p>
@@ -2047,7 +1675,7 @@ python -c &#39;import socket,subprocess,os,pty;s=socket.socket(socket.AF_INET6,s
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[!] Number of anomalous commands: 0
 </pre></div>
 </div>
-<img alt="../../_images/day2-08-Shell-Language-Processing_60_2.png" src="../../_images/day2-08-Shell-Language-Processing_60_2.png" />
+<img alt="../../_images/9498b00b6686fb059db402b80a60d65aff48dbb5b915638af986095edb2fa211.png" src="../../_images/9498b00b6686fb059db402b80a60d65aff48dbb5b915638af986095edb2fa211.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -2062,9 +1690,9 @@ python -c &#39;import socket,subprocess,os,pty;s=socket.socket(socket.AF_INET6,s
 </div>
 </div>
 </div>
-</div>
-<div class="tex2jax_ignore mathjax_ignore section" id="summary-and-final-thoughts">
-<h1>Summary and final thoughts<a class="headerlink" href="#summary-and-final-thoughts" title="Permalink to this headline">#</a></h1>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="summary-and-final-thoughts">
+<h1>Summary and final thoughts<a class="headerlink" href="#summary-and-final-thoughts" title="Permalink to this heading">#</a></h1>
 <ul class="simple">
 <li><p>Machine Learning (ML) is <strong>not</strong> a silver bullet - it will not substitute analysts, humans will not lose their jobs. <strong>Machine Learning is a tool</strong>, and those who master this tool will have an edge in Threat Hunting.</p></li>
 <li><p>For many cases you do not need ML at all. Consider:</p>
@@ -2088,7 +1716,7 @@ python -c &#39;import socket,subprocess,os,pty;s=socket.socket(socket.AF_INET6,s
 </li>
 <li><p>Imbalanced data is a common problem in security domain. Be ready to manualy <strong>augment data</strong> to allow models generalize better.</p></li>
 </ul>
-</div>
+</section>
 
     <script type="text/x-thebe-config">
     {
@@ -2102,7 +1730,7 @@ python -c &#39;import socket,subprocess,os,pty;s=socket.socket(socket.AF_INET6,s
             mode: "python"
         },
         kernelOptions: {
-            kernelName: "python3",
+            name: "python3",
             path: "./2022\sessions"
         },
         predefinedOutput: true
@@ -2110,50 +1738,142 @@ python -c &#39;import socket,subprocess,os,pty;s=socket.socket(socket.AF_INET6,s
     </script>
     <script>kernelName = 'python3'</script>
 
-              </div>
+                </article>
               
-            </main>
-            <footer class="footer-article noprint">
-                
-    <!-- Previous / next buttons -->
-<div class='prev-next-area'>
-    <a class='left-prev' id="prev-link" href="day1-11-Extending_MSTICPy.html" title="previous page">
-        <i class="fas fa-angle-left"></i>
-        <div class="prev-next-info">
-            <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">Extending MSTICPy with Pivot functions</p>
-        </div>
+
+              
+              
+                <footer class="bd-footer-article">
+                  
+<div class="footer-article-items footer-article__inner">
+  
+    <div class="footer-article-item"><!-- Previous / next buttons -->
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="day1-11-Extending_MSTICPy.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Extending MSTICPy with Pivot functions</p>
+      </div>
     </a>
-    <a class='right-next' id="next-link" href="../../workshops/day1/intro.html" title="next page">
-    <div class="prev-next-info">
+    <a class="right-next"
+       href="../../workshops/day1/intro.html"
+       title="next page">
+      <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
         <p class="prev-next-title">Day 1</p>
-    </div>
-    <i class="fas fa-angle-right"></i>
-    </a>
-</div>
-            </footer>
-        </div>
-    </div>
-    <div class="footer-content row">
-        <footer class="col footer"><p>
-  
-    By Open Threat Research @OTR_Community<br/>
-  
-      &copy; Copyright 2022.<br/>
-</p>
-        </footer>
-    </div>
-    
-</div>
-
-
       </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div></div>
+  
+</div>
+
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Shell Language Processing</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#parsing-unix-commands-for-machine-learning">Parsing Unix Commands For Machine Learning</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#unreleased-data-potential">Unreleased data potential</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#loading-data">Loading data</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#data-preprocessing-for-machine-learning-ml-model">Data preprocessing for Machine Learning (ML) model</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tokenization">Tokenization</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#utilization-of-argc-and-ax-values-in-auditd-logging">1. Utilization of <code class="docutils literal notranslate"><span class="pre">argc</span></code> and <code class="docutils literal notranslate"><span class="pre">aX</span></code> values in <code class="docutils literal notranslate"><span class="pre">auditd</span></code> logging</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dedicated-tokenizer-for-commands">2. Dedicated Tokenizer for commands</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#encoding">Encoding</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#sklearn-library-with-custom-tokenizer"><strong>sklearn</strong> library with custom tokenizer:</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#supervised-learning-example-classification-with-cross-validation">Supervised learning example: classification with cross-validation</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cross-validation">Cross-Validation</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#more-on-evaluation-of-ml-models-in-infosec-roc-and-detection-rate-at-fixed-false-positive-threshold">More on evaluation of ML models in infosec - ROC and detection rate at fixed False Positive threshold</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#heavy-imbalance-representative-situation-for-security-problems">Heavy Imbalance: representative situation for security problems</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#supervised-learning-recap">Supervised learning - recap:</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#unsupervised-learning-anomaly-detection">Unsupervised learning: Anomaly Detection</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dimensionality-reduction">Dimensionality reduction</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bad-questions-for-unsupervised-machine-learning"><strong>Bad</strong> questions for unsupervised machine learning:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#good-questions-for-unsupervised-machine-learning-focus-on-specific-ttps"><strong>Good</strong> questions for unsupervised machine learning focus on specific TTPs:</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#adversarial-input-evasion-of-ml-heuristics">Adversarial Input - evasion of ML heuristics</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#summary-and-final-thoughts">Summary and final thoughts</a></li>
+</ul>
+
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Open Threat Research @OTR_Community
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
     </div>
+  </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+  <script src="../../_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
 
-
+  <footer class="bd-footer">
+  </footer>
   </body>
 </html>

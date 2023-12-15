@@ -1,49 +1,61 @@
 
+
 <!DOCTYPE html>
 
-<html>
+
+<html lang="en" >
+
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Workshop 1.1: Jupyter Notebooks Introduction</title>
-    
-  <!-- Loaded before other Sphinx assets -->
-  <link href="../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
-<link href="../../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    
-  <link rel="stylesheet"
-    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
-  <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
-  <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+    <title>Workshop 1.1: Jupyter Notebooks Introduction</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+
+  
+  <link href="../../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
 
     <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
-    <link rel="stylesheet" href="../../_static/styles/sphinx-book-theme.css?digest=62ba249389abaaa9ffc34bf36a076bdc1d65ee18" type="text/css" />
+    <link rel="stylesheet" href="../../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/tabs.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
-    
+    <link rel="stylesheet" type="text/css" href="../../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
 
     <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
     <script src="../../_static/jquery.js"></script>
     <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../../_static/doctools.js"></script>
     <script src="../../_static/clipboard.min.js"></script>
     <script src="../../_static/copybutton.js"></script>
-    <script src="../../_static/scripts/sphinx-book-theme.js?digest=f31d14ad54b65d19161ba51d4ffff3a77ae00456"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
     <script src="../../_static/tabs.js"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
     <script src="../../_static/togglebutton.js"></script>
-    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script src="../../_static/design-tabs.js"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
 const thebe_selector = ".thebe,.cell"
@@ -51,1104 +63,560 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'workshops/day1/day1-1-Jupyter-Introduction';</script>
     <link rel="canonical" href="https://infosecjupyterthon.com/workshops/day1/day1-1-Jupyter-Introduction.html" />
     <link rel="shortcut icon" href="../../_static/favicon.jpg"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="Workshop 1.2: Acquiring Data" href="day1-2-Acquiring-data.html" />
     <link rel="prev" title="Day 1" href="intro.html" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="docsearch:language" content="None">
-    
-
-    <!-- Google Analytics -->
-    
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
   </head>
-  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
-<!-- Checkboxes to toggle the left sidebar -->
-<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
-<label class="overlay overlay-navbar" for="__navigation">
-    <div class="visually-hidden">Toggle navigation sidebar</div>
-</label>
-<!-- Checkboxes to toggle the in-page toc -->
-<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
-<label class="overlay overlay-pagetoc" for="__page-toc">
-    <div class="visually-hidden">Toggle in-page Table of Contents</div>
-</label>
-<!-- Headers at the top -->
-<div class="announcement header-item noprint">💖 The InfoSec Jupyterthon is back! December 2nd and 3rd, 2022 🚀</div>
-<div class="header header-item noprint"></div>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
 
-    
-    <div class="container-fluid" id="banner"></div>
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
 
-    
 
-    <div class="container-xl">
-      <div class="row">
-          
-<!-- Sidebar -->
-<div class="bd-sidebar noprint" id="site-navigation">
-    <div class="bd-sidebar__content">
-        <div class="bd-sidebar__top"><div class="navbar-brand-box">
-    <a class="navbar-brand text-wrap" href="../../index.html">
+  <div class="bd-header-announcement container-fluid bd-header-announcement">
+    <div class="bd-header-announcement__content">💖 The InfoSec Jupyterthon is back! February, 2024 🚀</div>
+  </div>
+
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
       
-        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+      <div class="bd-sidebar-primary bd-sidebar">
         
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
+
+<a class="navbar-brand logo" href="../../introduction.html">
+  
+  
+  
+  
+    
+    
       
-      
-      <img src="../../_static/logo.png" class="logo" alt="logo">
-      
-      
-    </a>
-</div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
-  <i class="icon fas fa-search"></i>
-  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
-</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
-    <div class="bd-toc-item active">
-        <p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Getting Started
- </span>
-</p>
+    
+    
+    <img src="../../_static/logo.png" class="logo__image only-light" alt="Logo image"/>
+    <script>document.write(`<img src="../../_static/logo.png" class="logo__image only-dark" alt="Logo image"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Getting Started</span></p>
 <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../../conduct.html">
-   Code of Conduct
-  </a>
- </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../../collaborators/intro.html">
-   Collaborators
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
-  <label for="toctree-checkbox-1">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../collaborators/Roberto-Rodriguez.html">
-     Roberto Rodriguez
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../collaborators/Chi-Nguyen.html">
-     Chi Nguyen
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../collaborators/Ian-Hellen.html">
-     Ian Hellen
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../collaborators/Joyce-Bacic.html">
-     Joyce Bacic
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../collaborators/Ashwin-Patil.html">
-     Ashwin Patil
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../collaborators/Thomas-Roccia.html">
-     Thomas Roccia
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../collaborators/Pete-Bryan.html">
-     Pete Bryan
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../collaborators/Jose-Rodriguez.html">
-     Jose Rodriguez
-    </a>
-   </li>
-  </ul>
- </li>
+<li class="toctree-l1"><a class="reference internal" href="../../conduct.html">Code of Conduct</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../collaborators/intro.html">Collaborators</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../collaborators/Roberto-Rodriguez.html">Roberto Rodriguez</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../collaborators/Chi-Nguyen.html">Chi Nguyen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../collaborators/Ian-Hellen.html">Ian Hellen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../collaborators/Joyce-Bacic.html">Joyce Bacic</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../collaborators/Ashwin-Patil.html">Ashwin Patil</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../collaborators/Thomas-Roccia.html">Thomas Roccia</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../collaborators/Pete-Bryan.html">Pete Bryan</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../collaborators/Jose-Rodriguez.html">Jose Rodriguez</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  2022 Edition
- </span>
-</p>
+</li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">2022 Edition</span></p>
 <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../../2022/agenda.html">
-   Agenda
-  </a>
- </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../../2022/speakers/intro.html">
-   Speakers
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
-  <label for="toctree-checkbox-2">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../2022/speakers/roberto_rodriguez.html">
-     Roberto Rodriguez
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../2022/speakers/ian_hellen.html">
-     Ian Hellen
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../2022/speakers/leo_meyerovich.html">
-     Leo Meyerovich
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../2022/speakers/chi_nguyen.html">
-     Chi Nguyen
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../2022/speakers/amritpal_singh.html">
-     Amritpal Singh
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../2022/speakers/vijay_punja.html">
-     Vijay Punja
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../2022/speakers/james_duncan.html">
-     James Duncan
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../2022/speakers/ryan_marcotte_cobb.html">
-     Ryan Marcotte Cobb
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../2022/speakers/saksham_tushar.html">
-     Saksham Tushar
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../2022/speakers/christian_camilo_urcuqui_lopez.html">
-     Christian Camilo Urcuqui Lopez
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../2022/speakers/pete_bryan.html">
-     Pete Bryan
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../2022/speakers/ashwin_patil.html">
-     Ashwin Patil
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../2022/speakers/thomas_roccia.html">
-     Thomas Roccia
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../2022/speakers/jose_rodriguez.html">
-     Jose Rodriguez
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../2022/speakers/alex_morrise.html">
-     Alex Morrise
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../2022/speakers/dmitrijs_trizna.html">
-     Dmitrijs Trizna
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../2022/speakers/mehmet_ergene.html">
-     Mehmet Ergene
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../2022/speakers/jerry_gamblin.html">
-     Jerry Gamblin
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../2022/speakers/balaji_sampath.html">
-     Balaji Sampath
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../2022/speakers/janantha_marasinghe.html">
-     Janantha Marasinghe
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../2022/speakers/paul_coccoli.html">
-     Paul Coccoli
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../2022/speakers/brayan_mena.html">
-     Brayan Mena
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../2022/speakers/john_mac.html">
-     John Mac
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../../2022/sessions/intro.html">
-   Sessions
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
-  <label for="toctree-checkbox-3">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../2022/sessions/day1-01-Opening_Remarks.html">
-     Opening Remarks
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../2022/sessions/day1-11-Extending_MSTICPy.html">
-     Ian Hellen (
-     <span style="color: blue">
-      @ianhellen
-     </span>
-     Twitter/
-     <span style="color: blue">
-      @ianhelle
-     </span>
-     GitHub)
-    </a>
-   </li>
-  </ul>
- </li>
+<li class="toctree-l1"><a class="reference internal" href="../../2022/agenda.html">Agenda</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../2022/speakers/intro.html">Speakers</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../2022/speakers/roberto_rodriguez.html">Roberto Rodriguez</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../2022/speakers/ian_hellen.html">Ian Hellen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../2022/speakers/leo_meyerovich.html">Leo Meyerovich</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../2022/speakers/chi_nguyen.html">Chi Nguyen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../2022/speakers/amritpal_singh.html">Amritpal Singh</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../2022/speakers/vijay_punja.html">Vijay Punja</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../2022/speakers/james_duncan.html">James Duncan</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../2022/speakers/ryan_marcotte_cobb.html">Ryan Marcotte Cobb</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../2022/speakers/saksham_tushar.html">Saksham Tushar</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../2022/speakers/christian_camilo_urcuqui_lopez.html">Christian Camilo Urcuqui Lopez</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../2022/speakers/pete_bryan.html">Pete Bryan</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../2022/speakers/ashwin_patil.html">Ashwin Patil</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../2022/speakers/thomas_roccia.html">Thomas Roccia</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../2022/speakers/jose_rodriguez.html">Jose Rodriguez</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../2022/speakers/alex_morrise.html">Alex Morrise</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../2022/speakers/dmitrijs_trizna.html">Dmitrijs Trizna</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../2022/speakers/mehmet_ergene.html">Mehmet Ergene</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../2022/speakers/jerry_gamblin.html">Jerry Gamblin</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../2022/speakers/balaji_sampath.html">Balaji Sampath</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../2022/speakers/janantha_marasinghe.html">Janantha Marasinghe</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../2022/speakers/paul_coccoli.html">Paul Coccoli</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../2022/speakers/brayan_mena.html">Brayan Mena</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../2022/speakers/john_mac.html">John Mac</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Workshops
- </span>
-</p>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../2022/sessions/intro.html">Sessions</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../2022/sessions/day1-01-Opening_Remarks.html">Opening Remarks</a></li>
+
+
+
+
+
+
+
+<li class="toctree-l2"><a class="reference internal" href="../../2022/sessions/day1-05-Exploratory_Data_I_mean_Threat_Analytics_using_Jupyter_Notebooks.html">Exploratory Threat Analytics using Jupyter Notebooks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../2022/sessions/day1-11-Extending_MSTICPy.html">Extending MSTICPy with Pivot functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../2022/sessions/day2-08-Shell-Language-Processing.html">Shell Language Processing</a></li>
+
+
+
+
+
+
+
+
+</ul>
+</li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Workshops</span></p>
 <ul class="current nav bd-sidenav">
- <li class="toctree-l1 current active has-children">
-  <a class="reference internal" href="intro.html">
-   Day 1
-  </a>
-  <input checked="" class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
-  <label for="toctree-checkbox-4">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul class="current">
-   <li class="toctree-l2 current active">
-    <a class="current reference internal" href="#">
-     Workshop 1.1:
-     <font color="peru">
-      Jupyter Notebooks Introduction
-     </font>
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="day1-2-Acquiring-data.html">
-     Workshop 1.2:
-     <font color="peru">
-      Acquiring Data
-     </font>
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="day1-3-Data-Analysis-with-Pandas%20Intro.html">
-     Workshop 1.3:
-     <font color="peru">
-      Basics of Data Analysis with Pandas
-     </font>
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../day2/intro.html">
-   Day 2
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
-  <label for="toctree-checkbox-5">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../day2/day2-1-Jupyter-advanced-topics.html">
-     Workshop 2.1:
-     <font color="peru">
-      Jupyter Notebooks Advanced
-     </font>
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../day2/day2-1-R-demo-notebook.html">
-     Workshop 2.1:
-     <font color="peru">
-      R Demo Notebook
-     </font>
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../day2/day2-2-Visualization.html">
-     Workshop 2.2:
-     <font color="peru">
-      Visualization in Jupyter Notebooks
-     </font>
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../day2/day2-3-Advanced-pandas.html">
-     Workshop 2.3:
-     <font color="peru">
-      Advanced Pandas
-     </font>
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../day2/day2-4-MSTICPy.html">
-     Workshop 2.4:
-     <font color="peru">
-      MSTICPy
-     </font>
-    </a>
-   </li>
-  </ul>
- </li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="intro.html">Day 1</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Workshop 1.1: <font color="peru">Jupyter Notebooks Introduction</font></a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li class="toctree-l2"><a class="reference internal" href="day1-2-Acquiring-data.html">Workshop 1.2: <font color="peru">Acquiring Data</font></a></li>
+
+
+
+
+
+<li class="toctree-l2"><a class="reference internal" href="day1-3-Data-Analysis-with-Pandas%20Intro.html">Workshop 1.3: <font color="peru">Basics of Data Analysis with Pandas</font></a></li>
+
+
+
+
+
+
+
+
+
+
+
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../day2/intro.html">Day 2</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../day2/day2-1-Jupyter-advanced-topics.html">Workshop 2.1: <font color="peru">Jupyter Notebooks Advanced</font></a></li>
+
+
+
+
+
+
+
+
+
+<li class="toctree-l2"><a class="reference internal" href="../day2/day2-1-R-demo-notebook.html">Workshop 2.1: <font color="peru">R Demo Notebook</font></a></li>
+
+
+<li class="toctree-l2"><a class="reference internal" href="../day2/day2-2-Visualization.html">Workshop 2.2: <font color="peru">Visualization in Jupyter Notebooks</font></a></li>
+
+
+
+
+
+
+
+<li class="toctree-l2"><a class="reference internal" href="../day2/day2-3-Advanced-pandas.html">Workshop 2.3: <font color="peru">Advanced Pandas</font></a></li>
+
+
+
+
+
+
+
+
+<li class="toctree-l2"><a class="reference internal" href="../day2/day2-4-MSTICPy.html">Workshop 2.4: <font color="peru">MSTICPy</font></a></li>
+
+
+
+
+
+
+
+
+
+
+</ul>
+</li>
 </ul>
 
     </div>
 </nav></div>
-        <div class="bd-sidebar__bottom">
-             <!-- To handle the deprecated key -->
-            
-            <div class="navbar_extra_footer">
-            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
-            </div>
-            
-        </div>
     </div>
-    <div id="rtd-footer-container"></div>
-</div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
 
 
-          
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
 
-
-          
-<!-- A tiny helper pixel to detect if we've scrolled -->
 <div class="sbt-scroll-pixel-helper"></div>
-<!-- Main content -->
-<div class="col py-0 content-container">
-    
-    <div class="header-article row sticky-top noprint">
-        
 
-
-
-<div class="col py-1 d-flex header-article-main">
-    <div class="header-article__left">
-        
-        <label for="__navigation"
-  class="headerbtn"
-  data-toggle="tooltip"
-data-placement="right"
-title="Toggle navigation"
->
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
   
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-bars"></i>
-  </span>
-
-</label>
-
-        
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
     </div>
-    <div class="header-article__right">
-<div class="menu-dropdown menu-dropdown-launch-buttons">
-  <button class="headerbtn menu-dropdown__trigger"
-      aria-label="Launch interactive content">
-      <i class="fas fa-rocket"></i>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
   </button>
-  <div class="menu-dropdown__content">
-    <ul>
-      <li>
-        <a href="https://mybinder.org/v2/gh/OTRF/infosec-jupyterthon/master?urlpath=lab/tree/docs/workshops/day1/day1-1-Jupyter-Introduction.ipynb"
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Launch on Binder"
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://mybinder.org/v2/gh/OTRF/infosec-jupyterthon/master?urlpath=lab/tree/docs/workshops/day1/day1-1-Jupyter-Introduction.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch onBinder"
+   data-bs-placement="left" data-bs-toggle="tooltip"
 >
   
 
-<span class="headerbtn__icon-container">
+<span class="btn__icon-container">
   
     <img src="../../_static/images/logo_binder.svg">
   </span>
-<span class="headerbtn__text-container">Binder</span>
+<span class="btn__text-container">Binder</span>
 </a>
-
-      </li>
+</li>
       
-    </ul>
-  </div>
+  </ul>
 </div>
 
-<button onclick="toggleFullScreen()"
-  class="headerbtn"
-  data-toggle="tooltip"
-data-placement="bottom"
-title="Fullscreen mode"
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/OTRF/infosec-jupyterthon" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
 >
   
 
-<span class="headerbtn__icon-container">
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/OTRF/infosec-jupyterthon/edit/master/docs/workshops/day1/day1-1-Jupyter-Introduction.ipynb" target="_blank"
+   class="btn btn-sm btn-source-edit-button dropdown-item"
+   title="Suggest edit"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-pencil-alt"></i>
+  </span>
+<span class="btn__text-container">Suggest edit</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/OTRF/infosec-jupyterthon/issues/new?title=Issue%20on%20page%20%2Fworkshops/day1/day1-1-Jupyter-Introduction.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../_sources/workshops/day1/day1-1-Jupyter-Introduction.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
   <i class="fas fa-expand"></i>
   </span>
 
 </button>
 
-<div class="menu-dropdown menu-dropdown-repository-buttons">
-  <button class="headerbtn menu-dropdown__trigger"
-      aria-label="Source repositories">
-      <i class="fab fa-github"></i>
+
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
   </button>
-  <div class="menu-dropdown__content">
-    <ul>
-      <li>
-        <a href="https://github.com/OTRF/infosec-jupyterthon"
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Source repository"
->
-  
+`);
+</script>
 
-<span class="headerbtn__icon-container">
-  <i class="fab fa-github"></i>
-  </span>
-<span class="headerbtn__text-container">repository</span>
-</a>
-
-      </li>
-      
-      <li>
-        <a href="https://github.com/OTRF/infosec-jupyterthon/issues/new?title=Issue%20on%20page%20%2Fworkshops/day1/day1-1-Jupyter-Introduction.html&body=Your%20issue%20content%20here."
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Open an issue"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-lightbulb"></i>
-  </span>
-<span class="headerbtn__text-container">open issue</span>
-</a>
-
-      </li>
-      
-      <li>
-        <a href="https://github.com/OTRF/infosec-jupyterthon/edit/master/docs/workshops/day1/day1-1-Jupyter-Introduction.ipynb"
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Edit this page"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-pencil-alt"></i>
-  </span>
-<span class="headerbtn__text-container">suggest edit</span>
-</a>
-
-      </li>
-      
-    </ul>
-  </div>
-</div>
-
-<div class="menu-dropdown menu-dropdown-download-buttons">
-  <button class="headerbtn menu-dropdown__trigger"
-      aria-label="Download this page">
-      <i class="fas fa-download"></i>
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
   </button>
-  <div class="menu-dropdown__content">
-    <ul>
-      <li>
-        <a href="../../_sources/workshops/day1/day1-1-Jupyter-Introduction.ipynb"
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Download source file"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-file"></i>
-  </span>
-<span class="headerbtn__text-container">.ipynb</span>
-</a>
-
-      </li>
-      
-      <li>
-        
-<button onclick="printPdf(this)"
-  class="headerbtn"
-  data-toggle="tooltip"
-data-placement="left"
-title="Print to PDF"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-file-pdf"></i>
-  </span>
-<span class="headerbtn__text-container">.pdf</span>
-</button>
-
-      </li>
-      
-    </ul>
-  </div>
-</div>
-<label for="__page-toc"
-  class="headerbtn headerbtn-page-toc"
-  
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-list"></i>
-  </span>
-
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
 </label>
-
+</div></div>
+      
     </div>
+  
 </div>
-
-<!-- Table of contents -->
-<div class="col-md-3 bd-toc show noprint">
-    <div class="tocsection onthispage pt-5 pb-3">
-        <i class="fas fa-list"></i> Contents
-    </div>
-    <nav id="bd-toc-nav" aria-label="Page">
-        <ul class="visible nav section-nav flex-column">
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#">
-   Workshop 1.1:
-   <font color="peru">
-    Jupyter Notebooks Introduction
-   </font>
-  </a>
- </li>
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#a-style-border-solid-padding-5pt-color-black-background-color-90caf9-name-overview-jupyter-notebooks-overview-a">
-   <a name="overview" style="border: solid; padding:5pt; color:black; background-color:#90CAF9">
-    Jupyter Notebooks Overview
-   </a>
-  </a>
- </li>
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#font-color-dimgray-getting-up-to-speed-font">
-   <font color="dimgray">
-    Getting up to speed…
-   </font>
-  </a>
- </li>
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#id1">
-   <font color="dimgray">
-    Getting up to speed…
-   </font>
-  </a>
- </li>
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#font-color-dimgray-what-is-interactive-computing-font">
-   <font color="dimgray">
-    What is Interactive Computing?
-   </font>
-  </a>
- </li>
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#font-color-dimgray-interactivity-as-a-protocol-font">
-   <font color="dimgray">
-    Interactivity as a Protocol
-   </font>
-  </a>
- </li>
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#font-color-dimgray-ipython-font">
-   <font color="dimgray">
-    IPython
-   </font>
-  </a>
- </li>
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#font-color-dimgray-fernando-perez-inspiration-font">
-   <font color="dimgray">
-    Fernando Perez Inspiration
-   </font>
-  </a>
- </li>
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#font-color-dimgray-ipython-jupyter-project-font">
-   <font color="dimgray">
-    IPython -&gt; Jupyter Project
-   </font>
-  </a>
- </li>
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#font-color-dimgray-what-are-jupyter-notebooks-font">
-   <font color="dimgray">
-    What are Jupyter Notebooks?
-   </font>
-  </a>
- </li>
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#font-color-dimgray-what-does-it-look-like-font">
-   <font color="dimgray">
-    What does it look like?
-   </font>
-  </a>
- </li>
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#a-style-border-solid-padding-5pt-color-black-background-color-90caf9-name-architecture-jupyter-notebook-architecture-a">
-   <a name="architecture" style="border: solid; padding:5pt; color:black; background-color:#90CAF9">
-    Jupyter Notebook Architecture
-   </a>
-  </a>
- </li>
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#font-color-dimgray-architecture-interactive-protocol-font">
-   <font color="dimgray">
-    Architecture (Interactive Protocol)
-   </font>
-  </a>
- </li>
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#a-style-border-solid-padding-5pt-color-black-background-color-90caf9-name-deployment-jupyter-notebook-deployments-a">
-   <a name="deployment" style="border: solid; padding:5pt; color:black; background-color:#90CAF9">
-    Jupyter Notebook Deployments
-   </a>
-  </a>
- </li>
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#font-color-dimgray-installing-jupyter-notebooks-manually-font">
-   <font color="dimgray">
-    Installing Jupyter Notebooks (Manually)
-   </font>
-  </a>
-  <ul class="visible nav section-nav flex-column">
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#classic-jupyter-notebook">
-     Classic Jupyter Notebook
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#id2">
-   <font color="dimgray">
-    Installing Jupyter Notebooks (Manually)
-   </font>
-  </a>
-  <ul class="visible nav section-nav flex-column">
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#jupyterlab">
-     JupyterLab
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#font-color-dimgray-installing-jupyter-notebooks-docker-ce-font">
-   <font color="dimgray">
-    Installing Jupyter Notebooks (Docker CE)
-   </font>
-  </a>
-  <ul class="visible nav section-nav flex-column">
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#running-the-jupyter-base-notebook">
-     Running the Jupyter Base Notebook
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#jupyterthon-otrf-docker-image">
-     Jupyterthon - OTRF Docker Image
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#font-color-dimgray-jupyter-hub-font">
-   <font color="dimgray">
-    Jupyter Hub
-   </font>
-  </a>
- </li>
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#font-color-dimgray-enter-binder-project-font">
-   <font color="dimgray">
-    Enter Binder Project
-   </font>
-  </a>
- </li>
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#font-color-dimgray-binderhub-font">
-   <font color="dimgray">
-    BinderHub
-   </font>
-  </a>
- </li>
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#font-color-dimgray-binderhub-flow-font">
-   <font color="dimgray">
-    BinderHub Flow
-   </font>
-  </a>
- </li>
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#font-color-dimgray-lets-try-it-font">
-   <font color="dimgray">
-    Let’s Try it!
-   </font>
-  </a>
- </li>
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#font-color-dimgray-jupyterlab-desktop-app-font">
-   <font color="dimgray">
-    JupyterLab Desktop App
-   </font>
-  </a>
- </li>
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#a-style-border-solid-padding-5pt-color-black-background-color-90caf9-name-flavors-jupyter-notebooks-flavors-a">
-   <a name="flavors" style="border: solid; padding:5pt; color:black; background-color:#90CAF9">
-    Jupyter Notebooks Flavors
-   </a>
-  </a>
- </li>
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#font-color-dimgray-classic-jupyter-notebook-font">
-   <font color="dimgray">
-    Classic Jupyter Notebook
-   </font>
-  </a>
- </li>
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#font-color-dimgray-jupyterlab-font">
-   <font color="dimgray">
-    JupyterLab
-   </font>
-  </a>
- </li>
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#font-color-dimgray-vscode-jupyter-notebook-font">
-   <font color="dimgray">
-    VSCode Jupyter Notebook
-   </font>
-  </a>
- </li>
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#font-color-dimgray-resources-font">
-   <font color="dimgray">
-    Resources
-   </font>
-  </a>
- </li>
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#font-color-peru-break-5-minutes-font">
-   <font color="peru">
-    Break: 5 Minutes
-   </font>
-  </a>
- </li>
-</ul>
-
-    </nav>
 </div>
-    </div>
-    <div class="article row">
-        <div class="col pl-md-3 pl-lg-5 content-container">
-            <!-- Table of contents that is only displayed when printing the page -->
-            <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Workshop 1.1: <font color=peru>Jupyter Notebooks Introduction</font></h1>
-                <!-- Table of contents -->
-                <div id="print-main-content">
-                    <div id="jb-print-toc">
-                        
-                        <div>
-                            <h2> Contents </h2>
-                        </div>
-                        <nav aria-label="Page">
-                            <ul class="visible nav section-nav flex-column">
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#">
-   Workshop 1.1:
-   <font color="peru">
-    Jupyter Notebooks Introduction
-   </font>
-  </a>
- </li>
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#a-style-border-solid-padding-5pt-color-black-background-color-90caf9-name-overview-jupyter-notebooks-overview-a">
-   <a name="overview" style="border: solid; padding:5pt; color:black; background-color:#90CAF9">
-    Jupyter Notebooks Overview
-   </a>
-  </a>
- </li>
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#font-color-dimgray-getting-up-to-speed-font">
-   <font color="dimgray">
-    Getting up to speed…
-   </font>
-  </a>
- </li>
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#id1">
-   <font color="dimgray">
-    Getting up to speed…
-   </font>
-  </a>
- </li>
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#font-color-dimgray-what-is-interactive-computing-font">
-   <font color="dimgray">
-    What is Interactive Computing?
-   </font>
-  </a>
- </li>
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#font-color-dimgray-interactivity-as-a-protocol-font">
-   <font color="dimgray">
-    Interactivity as a Protocol
-   </font>
-  </a>
- </li>
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#font-color-dimgray-ipython-font">
-   <font color="dimgray">
-    IPython
-   </font>
-  </a>
- </li>
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#font-color-dimgray-fernando-perez-inspiration-font">
-   <font color="dimgray">
-    Fernando Perez Inspiration
-   </font>
-  </a>
- </li>
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#font-color-dimgray-ipython-jupyter-project-font">
-   <font color="dimgray">
-    IPython -&gt; Jupyter Project
-   </font>
-  </a>
- </li>
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#font-color-dimgray-what-are-jupyter-notebooks-font">
-   <font color="dimgray">
-    What are Jupyter Notebooks?
-   </font>
-  </a>
- </li>
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#font-color-dimgray-what-does-it-look-like-font">
-   <font color="dimgray">
-    What does it look like?
-   </font>
-  </a>
- </li>
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#a-style-border-solid-padding-5pt-color-black-background-color-90caf9-name-architecture-jupyter-notebook-architecture-a">
-   <a name="architecture" style="border: solid; padding:5pt; color:black; background-color:#90CAF9">
-    Jupyter Notebook Architecture
-   </a>
-  </a>
- </li>
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#font-color-dimgray-architecture-interactive-protocol-font">
-   <font color="dimgray">
-    Architecture (Interactive Protocol)
-   </font>
-  </a>
- </li>
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#a-style-border-solid-padding-5pt-color-black-background-color-90caf9-name-deployment-jupyter-notebook-deployments-a">
-   <a name="deployment" style="border: solid; padding:5pt; color:black; background-color:#90CAF9">
-    Jupyter Notebook Deployments
-   </a>
-  </a>
- </li>
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#font-color-dimgray-installing-jupyter-notebooks-manually-font">
-   <font color="dimgray">
-    Installing Jupyter Notebooks (Manually)
-   </font>
-  </a>
-  <ul class="visible nav section-nav flex-column">
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#classic-jupyter-notebook">
-     Classic Jupyter Notebook
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#id2">
-   <font color="dimgray">
-    Installing Jupyter Notebooks (Manually)
-   </font>
-  </a>
-  <ul class="visible nav section-nav flex-column">
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#jupyterlab">
-     JupyterLab
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#font-color-dimgray-installing-jupyter-notebooks-docker-ce-font">
-   <font color="dimgray">
-    Installing Jupyter Notebooks (Docker CE)
-   </font>
-  </a>
-  <ul class="visible nav section-nav flex-column">
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#running-the-jupyter-base-notebook">
-     Running the Jupyter Base Notebook
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#jupyterthon-otrf-docker-image">
-     Jupyterthon - OTRF Docker Image
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#font-color-dimgray-jupyter-hub-font">
-   <font color="dimgray">
-    Jupyter Hub
-   </font>
-  </a>
- </li>
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#font-color-dimgray-enter-binder-project-font">
-   <font color="dimgray">
-    Enter Binder Project
-   </font>
-  </a>
- </li>
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#font-color-dimgray-binderhub-font">
-   <font color="dimgray">
-    BinderHub
-   </font>
-  </a>
- </li>
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#font-color-dimgray-binderhub-flow-font">
-   <font color="dimgray">
-    BinderHub Flow
-   </font>
-  </a>
- </li>
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#font-color-dimgray-lets-try-it-font">
-   <font color="dimgray">
-    Let’s Try it!
-   </font>
-  </a>
- </li>
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#font-color-dimgray-jupyterlab-desktop-app-font">
-   <font color="dimgray">
-    JupyterLab Desktop App
-   </font>
-  </a>
- </li>
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#a-style-border-solid-padding-5pt-color-black-background-color-90caf9-name-flavors-jupyter-notebooks-flavors-a">
-   <a name="flavors" style="border: solid; padding:5pt; color:black; background-color:#90CAF9">
-    Jupyter Notebooks Flavors
-   </a>
-  </a>
- </li>
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#font-color-dimgray-classic-jupyter-notebook-font">
-   <font color="dimgray">
-    Classic Jupyter Notebook
-   </font>
-  </a>
- </li>
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#font-color-dimgray-jupyterlab-font">
-   <font color="dimgray">
-    JupyterLab
-   </font>
-  </a>
- </li>
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#font-color-dimgray-vscode-jupyter-notebook-font">
-   <font color="dimgray">
-    VSCode Jupyter Notebook
-   </font>
-  </a>
- </li>
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#font-color-dimgray-resources-font">
-   <font color="dimgray">
-    Resources
-   </font>
-  </a>
- </li>
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#font-color-peru-break-5-minutes-font">
-   <font color="peru">
-    Break: 5 Minutes
-   </font>
-  </a>
- </li>
-</ul>
+              
+              
 
-                        </nav>
-                    </div>
-                </div>
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Workshop 1.1: <font color=peru>Jupyter Notebooks Introduction</font></h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
             </div>
-            <main id="main-content" role="main">
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Workshop 1.1: <font color="peru">Jupyter Notebooks Introduction</font></a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#a-style-border-solid-padding-5pt-color-black-background-color-90caf9-name-overview-jupyter-notebooks-overview-a"><a name="overview" style="border: solid; padding:5pt; color:black; background-color:#90CAF9">Jupyter Notebooks Overview</a></a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#font-color-dimgray-getting-up-to-speed-font"><font color="dimgray">Getting up to speed…</font></a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id1"><font color="dimgray">Getting up to speed…</font></a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#font-color-dimgray-what-is-interactive-computing-font"><font color="dimgray">What is Interactive Computing?</font></a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#font-color-dimgray-interactivity-as-a-protocol-font"><font color="dimgray">Interactivity as a Protocol</font></a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#font-color-dimgray-ipython-font"><font color="dimgray">IPython</font></a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#font-color-dimgray-fernando-perez-inspiration-font"><font color="dimgray">Fernando Perez Inspiration</font></a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#font-color-dimgray-ipython-jupyter-project-font"><font color="dimgray">IPython -&gt; Jupyter Project</font></a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#font-color-dimgray-what-are-jupyter-notebooks-font"><font color="dimgray">What are Jupyter Notebooks?</font></a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#font-color-dimgray-what-does-it-look-like-font"><font color="dimgray">What does it look like?</font></a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#a-style-border-solid-padding-5pt-color-black-background-color-90caf9-name-architecture-jupyter-notebook-architecture-a"><a name="architecture" style="border: solid; padding:5pt; color:black; background-color:#90CAF9">Jupyter Notebook Architecture</a></a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#font-color-dimgray-architecture-interactive-protocol-font"><font color="dimgray">Architecture (Interactive Protocol)</font></a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#a-style-border-solid-padding-5pt-color-black-background-color-90caf9-name-deployment-jupyter-notebook-deployments-a"><a name="deployment" style="border: solid; padding:5pt; color:black; background-color:#90CAF9">Jupyter Notebook Deployments</a></a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#font-color-dimgray-installing-jupyter-notebooks-manually-font"><font color="dimgray">Installing Jupyter Notebooks (Manually)</font></a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#classic-jupyter-notebook">Classic Jupyter Notebook</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id2"><font color="dimgray">Installing Jupyter Notebooks (Manually)</font></a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#jupyterlab">JupyterLab</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#font-color-dimgray-installing-jupyter-notebooks-docker-ce-font"><font color="dimgray">Installing Jupyter Notebooks (Docker CE)</font></a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#running-the-jupyter-base-notebook">Running the Jupyter Base Notebook</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#jupyterthon-otrf-docker-image">Jupyterthon - OTRF Docker Image</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#font-color-dimgray-jupyter-hub-font"><font color="dimgray">Jupyter Hub</font></a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#font-color-dimgray-enter-binder-project-font"><font color="dimgray">Enter Binder Project</font></a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#font-color-dimgray-binderhub-font"><font color="dimgray">BinderHub</font></a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#font-color-dimgray-binderhub-flow-font"><font color="dimgray">BinderHub Flow</font></a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#font-color-dimgray-lets-try-it-font"><font color="dimgray">Let’s Try it!</font></a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#font-color-dimgray-jupyterlab-desktop-app-font"><font color="dimgray">JupyterLab Desktop App</font></a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#a-style-border-solid-padding-5pt-color-black-background-color-90caf9-name-flavors-jupyter-notebooks-flavors-a"><a name="flavors" style="border: solid; padding:5pt; color:black; background-color:#90CAF9">Jupyter Notebooks Flavors</a></a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#font-color-dimgray-classic-jupyter-notebook-font"><font color="dimgray">Classic Jupyter Notebook</font></a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#font-color-dimgray-jupyterlab-font"><font color="dimgray">JupyterLab</font></a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#font-color-dimgray-vscode-jupyter-notebook-font"><font color="dimgray">VSCode Jupyter Notebook</font></a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#font-color-dimgray-resources-font"><font color="dimgray">Resources</font></a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#font-color-peru-break-5-minutes-font"><font color="peru">Break: 5 Minutes</font></a></li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
                 
-              <div>
-                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
   <p><img alt="Banner" src="../../_images/banner1.png" /></p>
 <hr class="docutils" />
-<div class="tex2jax_ignore mathjax_ignore section" id="workshop-1-1-font-color-peru-jupyter-notebooks-introduction-font">
-<h1>Workshop 1.1: <font color=peru>Jupyter Notebooks Introduction</font><a class="headerlink" href="#workshop-1-1-font-color-peru-jupyter-notebooks-introduction-font" title="Permalink to this headline">#</a></h1>
+<section class="tex2jax_ignore mathjax_ignore" id="workshop-1-1-font-color-peru-jupyter-notebooks-introduction-font">
+<h1>Workshop 1.1: <font color=peru>Jupyter Notebooks Introduction</font><a class="headerlink" href="#workshop-1-1-font-color-peru-jupyter-notebooks-introduction-font" title="Permalink to this heading">#</a></h1>
 <ul class="simple">
 <li><p><strong>Contributors</strong>:</p>
 <ul>
@@ -1158,34 +626,34 @@ title="Print to PDF"
 </li>
 <li><p><strong>Agenda</strong>:</p>
 <ul>
-<li><p><a class="reference external" href="#overview">Overview</a></p></li>
-<li><p><a class="reference external" href="#architecture">Architecture</a></p></li>
-<li><p><a class="reference external" href="#deployment">Deployment</a></p></li>
-<li><p><a class="reference external" href="#flavors">Jupyter Flavors</a></p></li>
+<li><p><span class="xref myst">Overview</span></p></li>
+<li><p><span class="xref myst">Architecture</span></p></li>
+<li><p><span class="xref myst">Deployment</span></p></li>
+<li><p><span class="xref myst">Jupyter Flavors</span></p></li>
 </ul>
 </li>
 <li><p><strong>Notebook</strong>: <a class="reference external" href="https://aka.ms/Jupyterthon-ws-1-1">https://aka.ms/Jupyterthon-ws-1-1</a></p></li>
 <li><p><strong>License</strong>: <a class="reference external" href="https://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International</a></p></li>
 </ul>
-</div>
-<div class="tex2jax_ignore mathjax_ignore section" id="a-style-border-solid-padding-5pt-color-black-background-color-90caf9-name-overview-jupyter-notebooks-overview-a">
-<h1><a style="border: solid; padding:5pt; color:black; background-color:#90CAF9" name="overview">Jupyter Notebooks Overview</a><a class="headerlink" href="#a-style-border-solid-padding-5pt-color-black-background-color-90caf9-name-overview-jupyter-notebooks-overview-a" title="Permalink to this headline">#</a></h1>
-</div>
-<div class="tex2jax_ignore mathjax_ignore section" id="font-color-dimgray-getting-up-to-speed-font">
-<h1><font color=dimgray>Getting up to speed…</font><a class="headerlink" href="#font-color-dimgray-getting-up-to-speed-font" title="Permalink to this headline">#</a></h1>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="a-style-border-solid-padding-5pt-color-black-background-color-90caf9-name-overview-jupyter-notebooks-overview-a">
+<h1><a style="border: solid; padding:5pt; color:black; background-color:#90CAF9" name="overview">Jupyter Notebooks Overview</a><a class="headerlink" href="#a-style-border-solid-padding-5pt-color-black-background-color-90caf9-name-overview-jupyter-notebooks-overview-a" title="Permalink to this heading">#</a></h1>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="font-color-dimgray-getting-up-to-speed-font">
+<h1><font color=dimgray>Getting up to speed…</font><a class="headerlink" href="#font-color-dimgray-getting-up-to-speed-font" title="Permalink to this heading">#</a></h1>
 <p><img alt="" src="../../_images/timeline-2021.png" /></p>
-</div>
-<div class="tex2jax_ignore mathjax_ignore section" id="id1">
-<h1><font color=dimgray>Getting up to speed…</font><a class="headerlink" href="#id1" title="Permalink to this headline">#</a></h1>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="id1">
+<h1><font color=dimgray>Getting up to speed…</font><a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h1>
 <p><img alt="" src="../../_images/timeline-ipython-2021.png" /></p>
-</div>
-<div class="tex2jax_ignore mathjax_ignore section" id="font-color-dimgray-what-is-interactive-computing-font">
-<h1><font color=dimgray>What is Interactive Computing?</font><a class="headerlink" href="#font-color-dimgray-what-is-interactive-computing-font" title="Permalink to this headline">#</a></h1>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="font-color-dimgray-what-is-interactive-computing-font">
+<h1><font color=dimgray>What is Interactive Computing?</font><a class="headerlink" href="#font-color-dimgray-what-is-interactive-computing-font" title="Permalink to this heading">#</a></h1>
 <p>An Interactive computation is a persistent computer program that runs with a <strong>“human in the loop”</strong> where the primary mode of steering the program is through the human iteratively writing/running blocks of code and looking at the result.</p>
-<p>Reference:<a class="reference external" href="https://www.youtube.com/watch?v=YKmJvHjTGAM&amp;list=PL055Epbe6d5aP6Ru42r7hk68GTSaclYgi&amp;index=29">https://www.youtube.com/watch?v=YKmJvHjTGAM&amp;list=PL055Epbe6d5aP6Ru42r7hk68GTSaclYgi&amp;index=29</a></p>
-</div>
-<div class="tex2jax_ignore mathjax_ignore section" id="font-color-dimgray-interactivity-as-a-protocol-font">
-<h1><font color=dimgray>Interactivity as a Protocol</font><a class="headerlink" href="#font-color-dimgray-interactivity-as-a-protocol-font" title="Permalink to this headline">#</a></h1>
+<p>Reference:<a class="reference external" href="https://www.youtube.com/watch?v=YKmJvHjTGAM&amp;amp;list=PL055Epbe6d5aP6Ru42r7hk68GTSaclYgi&amp;amp;index=29">https://www.youtube.com/watch?v=YKmJvHjTGAM&amp;list=PL055Epbe6d5aP6Ru42r7hk68GTSaclYgi&amp;index=29</a></p>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="font-color-dimgray-interactivity-as-a-protocol-font">
+<h1><font color=dimgray>Interactivity as a Protocol</font><a class="headerlink" href="#font-color-dimgray-interactivity-as-a-protocol-font" title="Permalink to this heading">#</a></h1>
 <ul class="simple">
 <li><p>Read-Evaluate-Print Loop (REPL):</p>
 <ul>
@@ -1201,9 +669,9 @@ title="Print to PDF"
 </ul>
 </li>
 </ul>
-</div>
-<div class="tex2jax_ignore mathjax_ignore section" id="font-color-dimgray-ipython-font">
-<h1><font color=dimgray>IPython</font><a class="headerlink" href="#font-color-dimgray-ipython-font" title="Permalink to this headline">#</a></h1>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="font-color-dimgray-ipython-font">
+<h1><font color=dimgray>IPython</font><a class="headerlink" href="#font-color-dimgray-ipython-font" title="Permalink to this heading">#</a></h1>
 <ul class="simple">
 <li><p>Released on Dec 10, 2001 by Fernando Perez while he was a graduate student at the University of Colorado</p>
 <ul>
@@ -1221,9 +689,9 @@ title="Print to PDF"
 <p>Reference: <a class="reference external" href="https://ipython.readthedocs.io/en/stable/about/history.html">https://ipython.readthedocs.io/en/stable/about/history.html</a></p>
 <p><img alt="" src="../../_images/python-ipython-notebook.png" />
 Reference: <a class="reference external" href="https://ipython.readthedocs.io/en/stable/interactive/python-ipython-diff.html">https://ipython.readthedocs.io/en/stable/interactive/python-ipython-diff.html</a></p>
-</div>
-<div class="tex2jax_ignore mathjax_ignore section" id="font-color-dimgray-fernando-perez-inspiration-font">
-<h1><font color=dimgray>Fernando Perez Inspiration</font><a class="headerlink" href="#font-color-dimgray-fernando-perez-inspiration-font" title="Permalink to this headline">#</a></h1>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="font-color-dimgray-fernando-perez-inspiration-font">
+<h1><font color=dimgray>Fernando Perez Inspiration</font><a class="headerlink" href="#font-color-dimgray-fernando-perez-inspiration-font" title="Permalink to this heading">#</a></h1>
 <ul class="simple">
 <li><p>Research with open tools for access and collaboration</p>
 <ul>
@@ -1243,18 +711,18 @@ Reference: <a class="reference external" href="https://ipython.readthedocs.io/en
 </ul>
 </li>
 </ul>
-<p>reference: <a class="reference external" href="https://www.youtube.com/watch?v=xuNj5paMuow&amp;list=PL055Epbe6d5aP6Ru42r7hk68GTSaclYgi">https://www.youtube.com/watch?v=xuNj5paMuow&amp;list=PL055Epbe6d5aP6Ru42r7hk68GTSaclYgi</a></p>
-</div>
-<div class="tex2jax_ignore mathjax_ignore section" id="font-color-dimgray-ipython-jupyter-project-font">
-<h1><font color=dimgray>IPython -&gt; Jupyter Project</font><a class="headerlink" href="#font-color-dimgray-ipython-jupyter-project-font" title="Permalink to this headline">#</a></h1>
+<p>reference: <a class="reference external" href="https://www.youtube.com/watch?v=xuNj5paMuow&amp;amp;list=PL055Epbe6d5aP6Ru42r7hk68GTSaclYgi">https://www.youtube.com/watch?v=xuNj5paMuow&amp;list=PL055Epbe6d5aP6Ru42r7hk68GTSaclYgi</a></p>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="font-color-dimgray-ipython-jupyter-project-font">
+<h1><font color=dimgray>IPython -&gt; Jupyter Project</font><a class="headerlink" href="#font-color-dimgray-ipython-jupyter-project-font" title="Permalink to this heading">#</a></h1>
 <p><img alt="" src="../../_images/ipython-to-jupyter.png" /></p>
 <p><img alt="" src="../../_images/ipython-features.png" /></p>
 <p>Reference: <a class="reference external" href="https://speakerdeck.com/fperez/project-jupyter?slide=5">https://speakerdeck.com/fperez/project-jupyter?slide=5</a></p>
 <p><img alt="" src="../../_images/ipython-jupyter-features.png" /></p>
 <p>Reference: <a class="reference external" href="https://speakerdeck.com/fperez/project-jupyter?slide=5">https://speakerdeck.com/fperez/project-jupyter?slide=5</a></p>
-</div>
-<div class="tex2jax_ignore mathjax_ignore section" id="font-color-dimgray-what-are-jupyter-notebooks-font">
-<h1><font color=dimgray>What are Jupyter Notebooks?</font><a class="headerlink" href="#font-color-dimgray-what-are-jupyter-notebooks-font" title="Permalink to this headline">#</a></h1>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="font-color-dimgray-what-are-jupyter-notebooks-font">
+<h1><font color=dimgray>What are Jupyter Notebooks?</font><a class="headerlink" href="#font-color-dimgray-what-are-jupyter-notebooks-font" title="Permalink to this heading">#</a></h1>
 <p>The Jupyter Notebook is an open-source web application that allows you to create and share documents that contain live code, equations, visualizations and narrative text. The Jupyter notebook combines two components:</p>
 <ul class="simple">
 <li><p><strong>A web application</strong>: a browser-based tool for interactive authoring of documents which combine explanatory text, mathematics, computations and their rich media output.</p></li>
@@ -1268,9 +736,9 @@ Reference: <a class="reference external" href="https://ipython.readthedocs.io/en
 <li><p>Machine learning, and much more</p></li>
 </ul>
 <p>reference: <a class="reference external" href="https://jupyter.org/">https://jupyter.org/</a></p>
-</div>
-<div class="tex2jax_ignore mathjax_ignore section" id="font-color-dimgray-what-does-it-look-like-font">
-<h1><font color=dimgray>What does it look like?</font><a class="headerlink" href="#font-color-dimgray-what-does-it-look-like-font" title="Permalink to this headline">#</a></h1>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="font-color-dimgray-what-does-it-look-like-font">
+<h1><font color=dimgray>What does it look like?</font><a class="headerlink" href="#font-color-dimgray-what-does-it-look-like-font" title="Permalink to this heading">#</a></h1>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Hola Roberto!&quot;</span><span class="p">)</span>
@@ -1301,23 +769,23 @@ Reference: <a class="reference external" href="https://ipython.readthedocs.io/en
 </div>
 </div>
 <p><img alt="" src="../../_images/jupyter-notebooks-classic.png" /></p>
-</div>
-<div class="tex2jax_ignore mathjax_ignore section" id="a-style-border-solid-padding-5pt-color-black-background-color-90caf9-name-architecture-jupyter-notebook-architecture-a">
-<h1><a style="border: solid; padding:5pt; color:black; background-color:#90CAF9" name="architecture">Jupyter Notebook Architecture</a><a class="headerlink" href="#a-style-border-solid-padding-5pt-color-black-background-color-90caf9-name-architecture-jupyter-notebook-architecture-a" title="Permalink to this headline">#</a></h1>
-</div>
-<div class="tex2jax_ignore mathjax_ignore section" id="font-color-dimgray-architecture-interactive-protocol-font">
-<h1><font color=dimgray>Architecture (Interactive Protocol)</font><a class="headerlink" href="#font-color-dimgray-architecture-interactive-protocol-font" title="Permalink to this headline">#</a></h1>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="a-style-border-solid-padding-5pt-color-black-background-color-90caf9-name-architecture-jupyter-notebook-architecture-a">
+<h1><a style="border: solid; padding:5pt; color:black; background-color:#90CAF9" name="architecture">Jupyter Notebook Architecture</a><a class="headerlink" href="#a-style-border-solid-padding-5pt-color-black-background-color-90caf9-name-architecture-jupyter-notebook-architecture-a" title="Permalink to this heading">#</a></h1>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="font-color-dimgray-architecture-interactive-protocol-font">
+<h1><font color=dimgray>Architecture (Interactive Protocol)</font><a class="headerlink" href="#font-color-dimgray-architecture-interactive-protocol-font" title="Permalink to this heading">#</a></h1>
 <p><img alt="" src="../../_images/jupyter-notebooks-architecture.png" /></p>
-</div>
-<div class="tex2jax_ignore mathjax_ignore section" id="a-style-border-solid-padding-5pt-color-black-background-color-90caf9-name-deployment-jupyter-notebook-deployments-a">
-<h1><a style="border: solid; padding:5pt; color:black; background-color:#90CAF9" name="deployment">Jupyter Notebook Deployments</a><a class="headerlink" href="#a-style-border-solid-padding-5pt-color-black-background-color-90caf9-name-deployment-jupyter-notebook-deployments-a" title="Permalink to this headline">#</a></h1>
-</div>
-<div class="tex2jax_ignore mathjax_ignore section" id="font-color-dimgray-installing-jupyter-notebooks-manually-font">
-<h1><font color=dimgray>Installing Jupyter Notebooks (Manually)</font><a class="headerlink" href="#font-color-dimgray-installing-jupyter-notebooks-manually-font" title="Permalink to this headline">#</a></h1>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="a-style-border-solid-padding-5pt-color-black-background-color-90caf9-name-deployment-jupyter-notebook-deployments-a">
+<h1><a style="border: solid; padding:5pt; color:black; background-color:#90CAF9" name="deployment">Jupyter Notebook Deployments</a><a class="headerlink" href="#a-style-border-solid-padding-5pt-color-black-background-color-90caf9-name-deployment-jupyter-notebook-deployments-a" title="Permalink to this heading">#</a></h1>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="font-color-dimgray-installing-jupyter-notebooks-manually-font">
+<h1><font color=dimgray>Installing Jupyter Notebooks (Manually)</font><a class="headerlink" href="#font-color-dimgray-installing-jupyter-notebooks-manually-font" title="Permalink to this heading">#</a></h1>
 <p><strong>Prerequisite</strong>: Python</p>
 <p>While Jupyter runs code in many programming languages, Python is a requirement (Python 3.3 or greater, or Python 2.7) for installing the JupyterLab or the classic Jupyter Notebook.</p>
-<div class="section" id="classic-jupyter-notebook">
-<h2>Classic Jupyter Notebook<a class="headerlink" href="#classic-jupyter-notebook" title="Permalink to this headline">#</a></h2>
+<section id="classic-jupyter-notebook">
+<h2>Classic Jupyter Notebook<a class="headerlink" href="#classic-jupyter-notebook" title="Permalink to this heading">#</a></h2>
 <p><strong>Using Mamba or Conda</strong></p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">mamba</span> <span class="n">install</span> <span class="o">-</span><span class="n">c</span> <span class="n">conda</span><span class="o">-</span><span class="n">forge</span> <span class="n">notebook</span>
 </pre></div>
@@ -1334,14 +802,14 @@ Reference: <a class="reference external" href="https://ipython.readthedocs.io/en
 
 </pre></div>
 </div>
-</div>
-</div>
-<div class="tex2jax_ignore mathjax_ignore section" id="id2">
-<h1><font color=dimgray>Installing Jupyter Notebooks (Manually)</font><a class="headerlink" href="#id2" title="Permalink to this headline">#</a></h1>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="id2">
+<h1><font color=dimgray>Installing Jupyter Notebooks (Manually)</font><a class="headerlink" href="#id2" title="Permalink to this heading">#</a></h1>
 <p><strong>Prerequisite</strong>: Python</p>
 <p>While Jupyter runs code in many programming languages, Python is a requirement (Python 3.3 or greater, or Python 2.7) for installing the JupyterLab or the classic Jupyter Notebook.</p>
-<div class="section" id="jupyterlab">
-<h2>JupyterLab<a class="headerlink" href="#jupyterlab" title="Permalink to this headline">#</a></h2>
+<section id="jupyterlab">
+<h2>JupyterLab<a class="headerlink" href="#jupyterlab" title="Permalink to this heading">#</a></h2>
 <p><strong>Using Mamba or Conda</strong></p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">mamba</span> <span class="n">install</span> <span class="o">-</span><span class="n">c</span> <span class="n">conda</span><span class="o">-</span><span class="n">forge</span> <span class="n">jupyterlab</span>
 </pre></div>
@@ -1368,19 +836,19 @@ Reference: <a class="reference external" href="https://ipython.readthedocs.io/en
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html">
-<iframe
-    width="1000"
-    height="800"
-    src="https://www.youtube.com/embed/KcoYnFVw9Xs"
-    frameborder="0"
-    allowfullscreen
-></iframe>
-</div></div>
+        <iframe
+            width="1000"
+            height="800"
+            src="https://www.youtube.com/embed/KcoYnFVw9Xs"
+            frameborder="0"
+            allowfullscreen
+        ></iframe>
+        </div></div>
 </div>
-</div>
-</div>
-<div class="tex2jax_ignore mathjax_ignore section" id="font-color-dimgray-installing-jupyter-notebooks-docker-ce-font">
-<h1><font color=dimgray>Installing Jupyter Notebooks (Docker CE)</font><a class="headerlink" href="#font-color-dimgray-installing-jupyter-notebooks-docker-ce-font" title="Permalink to this headline">#</a></h1>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="font-color-dimgray-installing-jupyter-notebooks-docker-ce-font">
+<h1><font color=dimgray>Installing Jupyter Notebooks (Docker CE)</font><a class="headerlink" href="#font-color-dimgray-installing-jupyter-notebooks-docker-ce-font" title="Permalink to this heading">#</a></h1>
 <p><strong>Prerequisite</strong>: Docker CE</p>
 <p>You just have to install the community edition of Docker, so that you can install JupyterLab from Docker images containing Jupyter applications and interactive computing tools.
 You can use a docker stack image to do any of the following (and more):</p>
@@ -1391,12 +859,12 @@ You can use a docker stack image to do any of the following (and more):</p>
 </ul>
 <p>You can use <a class="reference external" href="https://github.com/jupyter/docker-stacks">ready-to-run Docker images</a> maintained by the Jupyter team:</p>
 <ul class="simple">
-<li><p>Jupyter Github Docker Stacks project: <a class="reference external" href="https://github.com/jupyter/docker-stacks">https://github.com/jupyter/docker-stacks</a></p></li>
+<li><p>Jupyter Github Docker Stacks project: <a class="github reference external" href="https://github.com/jupyter/docker-stacks">jupyter/docker-stacks</a></p></li>
 <li><p>Jupyter Docker registry: <a class="reference external" href="https://hub.docker.com/u/jupyter">https://hub.docker.com/u/jupyter</a></p></li>
 <li><p>Jupyter Docker Base Image: <a class="reference external" href="https://hub.docker.com/r/jupyter/base-notebook/">https://hub.docker.com/r/jupyter/base-notebook/</a></p></li>
 </ul>
-<div class="section" id="running-the-jupyter-base-notebook">
-<h2>Running the Jupyter Base Notebook<a class="headerlink" href="#running-the-jupyter-base-notebook" title="Permalink to this headline">#</a></h2>
+<section id="running-the-jupyter-base-notebook">
+<h2>Running the Jupyter Base Notebook<a class="headerlink" href="#running-the-jupyter-base-notebook" title="Permalink to this heading">#</a></h2>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">docker</span> <span class="n">run</span> <span class="o">-</span><span class="n">p</span> <span class="mi">8888</span><span class="p">:</span><span class="mi">8888</span> <span class="n">jupyter</span><span class="o">/</span><span class="n">minimal</span><span class="o">-</span><span class="n">notebook</span><span class="p">:</span><span class="mi">3</span><span class="n">b1f4f5e6cc1</span>
 </pre></div>
 </div>
@@ -1410,25 +878,25 @@ You can use a docker stack image to do any of the following (and more):</p>
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html">
-<iframe
-    width="1000"
-    height="800"
-    src="https://www.youtube.com/embed/KVR1_cVlLRE"
-    frameborder="0"
-    allowfullscreen
-></iframe>
-</div></div>
+        <iframe
+            width="1000"
+            height="800"
+            src="https://www.youtube.com/embed/KVR1_cVlLRE"
+            frameborder="0"
+            allowfullscreen
+        ></iframe>
+        </div></div>
 </div>
-</div>
-<div class="section" id="jupyterthon-otrf-docker-image">
-<h2>Jupyterthon - OTRF Docker Image<a class="headerlink" href="#jupyterthon-otrf-docker-image" title="Permalink to this headline">#</a></h2>
+</section>
+<section id="jupyterthon-otrf-docker-image">
+<h2>Jupyterthon - OTRF Docker Image<a class="headerlink" href="#jupyterthon-otrf-docker-image" title="Permalink to this heading">#</a></h2>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">docker</span> <span class="n">run</span> <span class="o">-</span><span class="n">ti</span> <span class="o">--</span><span class="n">rm</span> <span class="o">-</span><span class="n">p</span> <span class="mi">8888</span><span class="p">:</span><span class="mi">8888</span> <span class="n">otrf</span><span class="o">/</span><span class="n">jupyterthon</span><span class="p">:</span><span class="mi">2021</span>
 </pre></div>
 </div>
-</div>
-</div>
-<div class="tex2jax_ignore mathjax_ignore section" id="font-color-dimgray-jupyter-hub-font">
-<h1><font color=dimgray>Jupyter Hub</font><a class="headerlink" href="#font-color-dimgray-jupyter-hub-font" title="Permalink to this headline">#</a></h1>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="font-color-dimgray-jupyter-hub-font">
+<h1><font color=dimgray>Jupyter Hub</font><a class="headerlink" href="#font-color-dimgray-jupyter-hub-font" title="Permalink to this heading">#</a></h1>
 <p>JupyterHub is a set of processes that together provide a single user Jupyter Notebook server for each person in a group. Three major subsystems are started by the jupyterhub command line program:</p>
 <ul class="simple">
 <li><p><strong>Hub (Python/Tornado)</strong>: manages user accounts, authentication, and coordinates Single User Notebook Servers using a Spawner.</p></li>
@@ -1437,9 +905,9 @@ You can use a docker stack image to do any of the following (and more):</p>
 </ul>
 <p>Reference: <a class="reference external" href="https://jupyterhub.readthedocs.io/en/latest/reference/technical-overview.html">https://jupyterhub.readthedocs.io/en/latest/reference/technical-overview.html</a></p>
 <p><img alt="" src="../../_images/jupyter-hub-subsystems.png" /></p>
-</div>
-<div class="tex2jax_ignore mathjax_ignore section" id="font-color-dimgray-enter-binder-project-font">
-<h1><font color=dimgray>Enter Binder Project</font><a class="headerlink" href="#font-color-dimgray-enter-binder-project-font" title="Permalink to this headline">#</a></h1>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="font-color-dimgray-enter-binder-project-font">
+<h1><font color=dimgray>Enter Binder Project</font><a class="headerlink" href="#font-color-dimgray-enter-binder-project-font" title="Permalink to this heading">#</a></h1>
 <ul class="simple">
 <li><p>Released in May, 2016</p></li>
 <li><p>Updated 2.0 on November, 2019</p></li>
@@ -1451,9 +919,9 @@ You can use a docker stack image to do any of the following (and more):</p>
 </ul>
 </li>
 </ul>
-</div>
-<div class="tex2jax_ignore mathjax_ignore section" id="font-color-dimgray-binderhub-font">
-<h1><font color=dimgray>BinderHub</font><a class="headerlink" href="#font-color-dimgray-binderhub-font" title="Permalink to this headline">#</a></h1>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="font-color-dimgray-binderhub-font">
+<h1><font color=dimgray>BinderHub</font><a class="headerlink" href="#font-color-dimgray-binderhub-font" title="Permalink to this heading">#</a></h1>
 <p>BinderHub connects several services together to provide on-the-fly creation and registry of Docker images. It utilizes the following tools:</p>
 <ul class="simple">
 <li><p>A cloud provider such Google Cloud, Microsoft Azure, Amazon EC2, and others</p></li>
@@ -1465,17 +933,17 @@ You can use a docker stack image to do any of the following (and more):</p>
 <li><p>A Docker registry (such as <a class="reference external" href="http://gcr.io">gcr.io</a>) that hosts container images</p></li>
 <li><p>JupyterHub to deploy temporary containers for users</p></li>
 </ul>
-</div>
-<div class="tex2jax_ignore mathjax_ignore section" id="font-color-dimgray-binderhub-flow-font">
-<h1><font color=dimgray>BinderHub Flow</font><a class="headerlink" href="#font-color-dimgray-binderhub-flow-font" title="Permalink to this headline">#</a></h1>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="font-color-dimgray-binderhub-flow-font">
+<h1><font color=dimgray>BinderHub Flow</font><a class="headerlink" href="#font-color-dimgray-binderhub-flow-font" title="Permalink to this heading">#</a></h1>
 <p><img alt="" src="../../_images/Binderhub-Architecture.png" /></p>
-</div>
-<div class="tex2jax_ignore mathjax_ignore section" id="font-color-dimgray-lets-try-it-font">
-<h1><font color=dimgray>Let’s Try it!</font><a class="headerlink" href="#font-color-dimgray-lets-try-it-font" title="Permalink to this headline">#</a></h1>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="font-color-dimgray-lets-try-it-font">
+<h1><font color=dimgray>Let’s Try it!</font><a class="headerlink" href="#font-color-dimgray-lets-try-it-font" title="Permalink to this heading">#</a></h1>
 <p><img alt="" src="../../_images/interactive-example.png" /></p>
-</div>
-<div class="tex2jax_ignore mathjax_ignore section" id="font-color-dimgray-jupyterlab-desktop-app-font">
-<h1><font color=dimgray>JupyterLab Desktop App</font><a class="headerlink" href="#font-color-dimgray-jupyterlab-desktop-app-font" title="Permalink to this headline">#</a></h1>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="font-color-dimgray-jupyterlab-desktop-app-font">
+<h1><font color=dimgray>JupyterLab Desktop App</font><a class="headerlink" href="#font-color-dimgray-jupyterlab-desktop-app-font" title="Permalink to this heading">#</a></h1>
 <ul class="simple">
 <li><p>Released in September 2021.</p></li>
 <li><p>Cross-platform standalone application distribution of JupyterLab.</p></li>
@@ -1492,35 +960,35 @@ You can use a docker stack image to do any of the following (and more):</p>
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html">
-<iframe
-    width="1000"
-    height="800"
-    src="https://www.youtube.com/embed/1g1c81YTONo"
-    frameborder="0"
-    allowfullscreen
-></iframe>
-</div></div>
+        <iframe
+            width="1000"
+            height="800"
+            src="https://www.youtube.com/embed/1g1c81YTONo"
+            frameborder="0"
+            allowfullscreen
+        ></iframe>
+        </div></div>
 </div>
-</div>
-<div class="tex2jax_ignore mathjax_ignore section" id="a-style-border-solid-padding-5pt-color-black-background-color-90caf9-name-flavors-jupyter-notebooks-flavors-a">
-<h1><a style="border: solid; padding:5pt; color:black; background-color:#90CAF9" name="flavors">Jupyter Notebooks Flavors</a><a class="headerlink" href="#a-style-border-solid-padding-5pt-color-black-background-color-90caf9-name-flavors-jupyter-notebooks-flavors-a" title="Permalink to this headline">#</a></h1>
-</div>
-<div class="tex2jax_ignore mathjax_ignore section" id="font-color-dimgray-classic-jupyter-notebook-font">
-<h1><font color=dimgray>Classic Jupyter Notebook</font><a class="headerlink" href="#font-color-dimgray-classic-jupyter-notebook-font" title="Permalink to this headline">#</a></h1>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="a-style-border-solid-padding-5pt-color-black-background-color-90caf9-name-flavors-jupyter-notebooks-flavors-a">
+<h1><a style="border: solid; padding:5pt; color:black; background-color:#90CAF9" name="flavors">Jupyter Notebooks Flavors</a><a class="headerlink" href="#a-style-border-solid-padding-5pt-color-black-background-color-90caf9-name-flavors-jupyter-notebooks-flavors-a" title="Permalink to this heading">#</a></h1>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="font-color-dimgray-classic-jupyter-notebook-font">
+<h1><font color=dimgray>Classic Jupyter Notebook</font><a class="headerlink" href="#font-color-dimgray-classic-jupyter-notebook-font" title="Permalink to this heading">#</a></h1>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">docker</span> <span class="n">run</span> <span class="o">-</span><span class="n">ti</span> <span class="o">--</span><span class="n">rm</span> <span class="o">-</span><span class="n">p</span> <span class="mi">8888</span><span class="p">:</span><span class="mi">8888</span> <span class="n">otrf</span><span class="o">/</span><span class="n">jupyterthon</span><span class="p">:</span><span class="mi">2021</span>
 </pre></div>
 </div>
 <p><img alt="" src="../../_images/jupyter-notebook-classic.png" /></p>
-</div>
-<div class="tex2jax_ignore mathjax_ignore section" id="font-color-dimgray-jupyterlab-font">
-<h1><font color=dimgray>JupyterLab</font><a class="headerlink" href="#font-color-dimgray-jupyterlab-font" title="Permalink to this headline">#</a></h1>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="font-color-dimgray-jupyterlab-font">
+<h1><font color=dimgray>JupyterLab</font><a class="headerlink" href="#font-color-dimgray-jupyterlab-font" title="Permalink to this heading">#</a></h1>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">docker</span> <span class="n">run</span> <span class="o">-</span><span class="n">ti</span> <span class="o">--</span><span class="n">rm</span> <span class="o">-</span><span class="n">e</span> <span class="n">JUPYTER_ENABLE_LAB</span><span class="o">=</span><span class="n">yes</span> <span class="o">-</span><span class="n">p</span> <span class="mi">8888</span><span class="p">:</span><span class="mi">8888</span> <span class="n">otrf</span><span class="o">/</span><span class="n">jupyterthon</span><span class="p">:</span><span class="mi">2021</span>
 </pre></div>
 </div>
 <p><img alt="" src="../../_images/jupyterLab.png" /></p>
-</div>
-<div class="tex2jax_ignore mathjax_ignore section" id="font-color-dimgray-vscode-jupyter-notebook-font">
-<h1><font color=dimgray>VSCode Jupyter Notebook</font><a class="headerlink" href="#font-color-dimgray-vscode-jupyter-notebook-font" title="Permalink to this headline">#</a></h1>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="font-color-dimgray-vscode-jupyter-notebook-font">
+<h1><font color=dimgray>VSCode Jupyter Notebook</font><a class="headerlink" href="#font-color-dimgray-vscode-jupyter-notebook-font" title="Permalink to this heading">#</a></h1>
 <ul class="simple">
 <li><p>Visual Studio Code</p></li>
 <li><p>Python Extension for Visual Studio Code</p></li>
@@ -1541,18 +1009,18 @@ You can use a docker stack image to do any of the following (and more):</p>
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html">
-<iframe
-    width="1000"
-    height="800"
-    src="https://www.youtube.com/embed/4LrBMHL69VI"
-    frameborder="0"
-    allowfullscreen
-></iframe>
-</div></div>
+        <iframe
+            width="1000"
+            height="800"
+            src="https://www.youtube.com/embed/4LrBMHL69VI"
+            frameborder="0"
+            allowfullscreen
+        ></iframe>
+        </div></div>
 </div>
-</div>
-<div class="tex2jax_ignore mathjax_ignore section" id="font-color-dimgray-resources-font">
-<h1><font color=dimgray>Resources</font><a class="headerlink" href="#font-color-dimgray-resources-font" title="Permalink to this headline">#</a></h1>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="font-color-dimgray-resources-font">
+<h1><font color=dimgray>Resources</font><a class="headerlink" href="#font-color-dimgray-resources-font" title="Permalink to this heading">#</a></h1>
 <ul class="simple">
 <li><p><a class="reference external" href="https://the-turing-way.netlify.app/introduction/introduction.html">https://the-turing-way.netlify.app/introduction/introduction.html</a></p></li>
 <li><p><a class="reference external" href="https://gist.github.com/fperez/1579699">https://gist.github.com/fperez/1579699</a></p></li>
@@ -1563,20 +1031,20 @@ You can use a docker stack image to do any of the following (and more):</p>
 <li><p><a class="reference external" href="https://blog.jupyter.org/binder-2-0-a-tech-guide-2017-fd40515a3a84">https://blog.jupyter.org/binder-2-0-a-tech-guide-2017-fd40515a3a84</a></p></li>
 <li><p><a class="reference external" href="https://jupyterbook.org/intro.html">https://jupyterbook.org/intro.html</a></p></li>
 <li><p><a class="reference external" href="https://jupyterlab.readthedocs.io/en/stable/getting_started/installation.html#pip">https://jupyterlab.readthedocs.io/en/stable/getting_started/installation.html#pip</a></p></li>
-<li><p><a class="reference external" href="https://github.com/jupyter/docker-stacks">https://github.com/jupyter/docker-stacks</a></p></li>
+<li><p><a class="github reference external" href="https://github.com/jupyter/docker-stacks">jupyter/docker-stacks</a></p></li>
 <li><p><a class="reference external" href="http://ipython.org/news">http://ipython.org/news</a></p></li>
 <li><p><a class="reference external" href="https://pypi.org/project/jupyterlite/#history">https://pypi.org/project/jupyterlite/#history</a></p></li>
 <li><p><a class="reference external" href="https://blog.jupyter.org/jupyterlite-jupyter-%EF%B8%8F-webassembly-%EF%B8%8F-python-f6e2e41ab3fa">https://blog.jupyter.org/jupyterlite-jupyter-️-webassembly-️-python-f6e2e41ab3fa</a></p></li>
-<li><p><a class="reference external" href="https://github.com/jupyterlab/jupyterlab-desktop#download">https://github.com/jupyterlab/jupyterlab-desktop#download</a></p></li>
+<li><p><a class="github reference external" href="https://github.com/jupyterlab/jupyterlab-desktop#download">jupyterlab/jupyterlab-desktop</a></p></li>
 <li><p><a class="reference external" href="https://blog.jupyter.org/jupyterlab-desktop-app-now-available-b8b661b17e9a">https://blog.jupyter.org/jupyterlab-desktop-app-now-available-b8b661b17e9a</a></p></li>
 <li><p><a class="reference external" href="https://elifesciences.org/labs/a7d53a88/toward-publishing-reproducible-computation-with-binder">https://elifesciences.org/labs/a7d53a88/toward-publishing-reproducible-computation-with-binder</a></p></li>
 <li><p><a class="reference external" href="https://tljh.jupyter.org/en/latest/">https://tljh.jupyter.org/en/latest/</a></p></li>
 </ul>
-</div>
-<div class="tex2jax_ignore mathjax_ignore section" id="font-color-peru-break-5-minutes-font">
-<h1><font color=peru>Break: 5 Minutes</font><a class="headerlink" href="#font-color-peru-break-5-minutes-font" title="Permalink to this headline">#</a></h1>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="font-color-peru-break-5-minutes-font">
+<h1><font color=peru>Break: 5 Minutes</font><a class="headerlink" href="#font-color-peru-break-5-minutes-font" title="Permalink to this heading">#</a></h1>
 <p><img alt="" src="../../_images/dog-leash-break.jpg" /></p>
-</div>
+</section>
 
     <script type="text/x-thebe-config">
     {
@@ -1590,7 +1058,7 @@ You can use a docker stack image to do any of the following (and more):</p>
             mode: "python"
         },
         kernelOptions: {
-            kernelName: "python3",
+            name: "python3",
             path: "./workshops\day1"
         },
         predefinedOutput: true
@@ -1598,50 +1066,144 @@ You can use a docker stack image to do any of the following (and more):</p>
     </script>
     <script>kernelName = 'python3'</script>
 
-              </div>
+                </article>
               
-            </main>
-            <footer class="footer-article noprint">
-                
-    <!-- Previous / next buttons -->
-<div class='prev-next-area'>
-    <a class='left-prev' id="prev-link" href="intro.html" title="previous page">
-        <i class="fas fa-angle-left"></i>
-        <div class="prev-next-info">
-            <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">Day 1</p>
-        </div>
+
+              
+              
+                <footer class="bd-footer-article">
+                  
+<div class="footer-article-items footer-article__inner">
+  
+    <div class="footer-article-item"><!-- Previous / next buttons -->
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="intro.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Day 1</p>
+      </div>
     </a>
-    <a class='right-next' id="next-link" href="day1-2-Acquiring-data.html" title="next page">
-    <div class="prev-next-info">
+    <a class="right-next"
+       href="day1-2-Acquiring-data.html"
+       title="next page">
+      <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
         <p class="prev-next-title">Workshop 1.2: <font color=peru>Acquiring Data</font></p>
-    </div>
-    <i class="fas fa-angle-right"></i>
-    </a>
-</div>
-            </footer>
-        </div>
-    </div>
-    <div class="footer-content row">
-        <footer class="col footer"><p>
-  
-    By Open Threat Research @OTR_Community<br/>
-  
-      &copy; Copyright 2022.<br/>
-</p>
-        </footer>
-    </div>
-    
-</div>
-
-
       </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div></div>
+  
+</div>
+
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Workshop 1.1: <font color="peru">Jupyter Notebooks Introduction</font></a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#a-style-border-solid-padding-5pt-color-black-background-color-90caf9-name-overview-jupyter-notebooks-overview-a"><a name="overview" style="border: solid; padding:5pt; color:black; background-color:#90CAF9">Jupyter Notebooks Overview</a></a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#font-color-dimgray-getting-up-to-speed-font"><font color="dimgray">Getting up to speed…</font></a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id1"><font color="dimgray">Getting up to speed…</font></a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#font-color-dimgray-what-is-interactive-computing-font"><font color="dimgray">What is Interactive Computing?</font></a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#font-color-dimgray-interactivity-as-a-protocol-font"><font color="dimgray">Interactivity as a Protocol</font></a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#font-color-dimgray-ipython-font"><font color="dimgray">IPython</font></a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#font-color-dimgray-fernando-perez-inspiration-font"><font color="dimgray">Fernando Perez Inspiration</font></a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#font-color-dimgray-ipython-jupyter-project-font"><font color="dimgray">IPython -&gt; Jupyter Project</font></a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#font-color-dimgray-what-are-jupyter-notebooks-font"><font color="dimgray">What are Jupyter Notebooks?</font></a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#font-color-dimgray-what-does-it-look-like-font"><font color="dimgray">What does it look like?</font></a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#a-style-border-solid-padding-5pt-color-black-background-color-90caf9-name-architecture-jupyter-notebook-architecture-a"><a name="architecture" style="border: solid; padding:5pt; color:black; background-color:#90CAF9">Jupyter Notebook Architecture</a></a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#font-color-dimgray-architecture-interactive-protocol-font"><font color="dimgray">Architecture (Interactive Protocol)</font></a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#a-style-border-solid-padding-5pt-color-black-background-color-90caf9-name-deployment-jupyter-notebook-deployments-a"><a name="deployment" style="border: solid; padding:5pt; color:black; background-color:#90CAF9">Jupyter Notebook Deployments</a></a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#font-color-dimgray-installing-jupyter-notebooks-manually-font"><font color="dimgray">Installing Jupyter Notebooks (Manually)</font></a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#classic-jupyter-notebook">Classic Jupyter Notebook</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id2"><font color="dimgray">Installing Jupyter Notebooks (Manually)</font></a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#jupyterlab">JupyterLab</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#font-color-dimgray-installing-jupyter-notebooks-docker-ce-font"><font color="dimgray">Installing Jupyter Notebooks (Docker CE)</font></a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#running-the-jupyter-base-notebook">Running the Jupyter Base Notebook</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#jupyterthon-otrf-docker-image">Jupyterthon - OTRF Docker Image</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#font-color-dimgray-jupyter-hub-font"><font color="dimgray">Jupyter Hub</font></a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#font-color-dimgray-enter-binder-project-font"><font color="dimgray">Enter Binder Project</font></a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#font-color-dimgray-binderhub-font"><font color="dimgray">BinderHub</font></a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#font-color-dimgray-binderhub-flow-font"><font color="dimgray">BinderHub Flow</font></a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#font-color-dimgray-lets-try-it-font"><font color="dimgray">Let’s Try it!</font></a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#font-color-dimgray-jupyterlab-desktop-app-font"><font color="dimgray">JupyterLab Desktop App</font></a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#a-style-border-solid-padding-5pt-color-black-background-color-90caf9-name-flavors-jupyter-notebooks-flavors-a"><a name="flavors" style="border: solid; padding:5pt; color:black; background-color:#90CAF9">Jupyter Notebooks Flavors</a></a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#font-color-dimgray-classic-jupyter-notebook-font"><font color="dimgray">Classic Jupyter Notebook</font></a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#font-color-dimgray-jupyterlab-font"><font color="dimgray">JupyterLab</font></a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#font-color-dimgray-vscode-jupyter-notebook-font"><font color="dimgray">VSCode Jupyter Notebook</font></a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#font-color-dimgray-resources-font"><font color="dimgray">Resources</font></a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#font-color-peru-break-5-minutes-font"><font color="peru">Break: 5 Minutes</font></a></li>
+</ul>
+
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Open Threat Research @OTR_Community
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
     </div>
+  </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+  <script src="../../_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
 
-
+  <footer class="bd-footer">
+  </footer>
   </body>
 </html>

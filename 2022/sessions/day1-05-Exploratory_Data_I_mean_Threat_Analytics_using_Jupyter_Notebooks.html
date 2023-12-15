@@ -1,49 +1,61 @@
 
+
 <!DOCTYPE html>
 
-<html>
+
+<html lang="en" >
+
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Exploratory Threat Analytics using Jupyter Notebooks</title>
-    
-  <!-- Loaded before other Sphinx assets -->
-  <link href="../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
-<link href="../../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    
-  <link rel="stylesheet"
-    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
-  <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
-  <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+    <title>Exploratory Threat Analytics using Jupyter Notebooks</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+
+  
+  <link href="../../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
 
     <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
-    <link rel="stylesheet" href="../../_static/styles/sphinx-book-theme.css?digest=62ba249389abaaa9ffc34bf36a076bdc1d65ee18" type="text/css" />
+    <link rel="stylesheet" href="../../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/tabs.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
-    
+    <link rel="stylesheet" type="text/css" href="../../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
 
     <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
     <script src="../../_static/jquery.js"></script>
     <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../../_static/doctools.js"></script>
     <script src="../../_static/clipboard.min.js"></script>
     <script src="../../_static/copybutton.js"></script>
-    <script src="../../_static/scripts/sphinx-book-theme.js?digest=f31d14ad54b65d19161ba51d4ffff3a77ae00456"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
     <script src="../../_static/tabs.js"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
     <script src="../../_static/togglebutton.js"></script>
-    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script src="../../_static/design-tabs.js"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
 const thebe_selector = ".thebe,.cell"
@@ -51,863 +63,557 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '2022/sessions/day1-05-Exploratory_Data_I_mean_Threat_Analytics_using_Jupyter_Notebooks';</script>
     <link rel="canonical" href="https://infosecjupyterthon.com/2022/sessions/day1-05-Exploratory_Data_I_mean_Threat_Analytics_using_Jupyter_Notebooks.html" />
     <link rel="shortcut icon" href="../../_static/favicon.jpg"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="Extending MSTICPy with Pivot functions" href="day1-11-Extending_MSTICPy.html" />
     <link rel="prev" title="Opening Remarks" href="day1-01-Opening_Remarks.html" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="docsearch:language" content="None">
-    
-
-    <!-- Google Analytics -->
-    
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
   </head>
-  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
-<!-- Checkboxes to toggle the left sidebar -->
-<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
-<label class="overlay overlay-navbar" for="__navigation">
-    <div class="visually-hidden">Toggle navigation sidebar</div>
-</label>
-<!-- Checkboxes to toggle the in-page toc -->
-<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
-<label class="overlay overlay-pagetoc" for="__page-toc">
-    <div class="visually-hidden">Toggle in-page Table of Contents</div>
-</label>
-<!-- Headers at the top -->
-<div class="announcement header-item noprint">💖 The InfoSec Jupyterthon is back! December 2nd and 3rd, 2022 🚀</div>
-<div class="header header-item noprint"></div>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
 
-    
-    <div class="container-fluid" id="banner"></div>
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
 
-    
 
-    <div class="container-xl">
-      <div class="row">
-          
-<!-- Sidebar -->
-<div class="bd-sidebar noprint" id="site-navigation">
-    <div class="bd-sidebar__content">
-        <div class="bd-sidebar__top"><div class="navbar-brand-box">
-    <a class="navbar-brand text-wrap" href="../../index.html">
+  <div class="bd-header-announcement container-fluid bd-header-announcement">
+    <div class="bd-header-announcement__content">💖 The InfoSec Jupyterthon is back! February, 2024 🚀</div>
+  </div>
+
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
       
-        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+      <div class="bd-sidebar-primary bd-sidebar">
         
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
+
+<a class="navbar-brand logo" href="../../introduction.html">
+  
+  
+  
+  
+    
+    
       
-      
-      <img src="../../_static/logo.png" class="logo" alt="logo">
-      
-      
-    </a>
-</div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
-  <i class="icon fas fa-search"></i>
-  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
-</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
-    <div class="bd-toc-item active">
-        <p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Getting Started
- </span>
-</p>
+    
+    
+    <img src="../../_static/logo.png" class="logo__image only-light" alt="Logo image"/>
+    <script>document.write(`<img src="../../_static/logo.png" class="logo__image only-dark" alt="Logo image"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Getting Started</span></p>
 <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../../conduct.html">
-   Code of Conduct
-  </a>
- </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../../collaborators/intro.html">
-   Collaborators
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
-  <label for="toctree-checkbox-1">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../collaborators/Roberto-Rodriguez.html">
-     Roberto Rodriguez
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../collaborators/Chi-Nguyen.html">
-     Chi Nguyen
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../collaborators/Ian-Hellen.html">
-     Ian Hellen
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../collaborators/Joyce-Bacic.html">
-     Joyce Bacic
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../collaborators/Ashwin-Patil.html">
-     Ashwin Patil
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../collaborators/Thomas-Roccia.html">
-     Thomas Roccia
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../collaborators/Pete-Bryan.html">
-     Pete Bryan
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../collaborators/Jose-Rodriguez.html">
-     Jose Rodriguez
-    </a>
-   </li>
-  </ul>
- </li>
+<li class="toctree-l1"><a class="reference internal" href="../../conduct.html">Code of Conduct</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../collaborators/intro.html">Collaborators</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../collaborators/Roberto-Rodriguez.html">Roberto Rodriguez</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../collaborators/Chi-Nguyen.html">Chi Nguyen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../collaborators/Ian-Hellen.html">Ian Hellen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../collaborators/Joyce-Bacic.html">Joyce Bacic</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../collaborators/Ashwin-Patil.html">Ashwin Patil</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../collaborators/Thomas-Roccia.html">Thomas Roccia</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../collaborators/Pete-Bryan.html">Pete Bryan</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../collaborators/Jose-Rodriguez.html">Jose Rodriguez</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  2022 Edition
- </span>
-</p>
+</li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">2022 Edition</span></p>
 <ul class="current nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../agenda.html">
-   Agenda
-  </a>
- </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../speakers/intro.html">
-   Speakers
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
-  <label for="toctree-checkbox-2">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../speakers/roberto_rodriguez.html">
-     Roberto Rodriguez
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../speakers/ian_hellen.html">
-     Ian Hellen
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../speakers/leo_meyerovich.html">
-     Leo Meyerovich
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../speakers/chi_nguyen.html">
-     Chi Nguyen
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../speakers/amritpal_singh.html">
-     Amritpal Singh
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../speakers/vijay_punja.html">
-     Vijay Punja
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../speakers/james_duncan.html">
-     James Duncan
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../speakers/ryan_marcotte_cobb.html">
-     Ryan Marcotte Cobb
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../speakers/saksham_tushar.html">
-     Saksham Tushar
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../speakers/christian_camilo_urcuqui_lopez.html">
-     Christian Camilo Urcuqui Lopez
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../speakers/pete_bryan.html">
-     Pete Bryan
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../speakers/ashwin_patil.html">
-     Ashwin Patil
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../speakers/thomas_roccia.html">
-     Thomas Roccia
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../speakers/jose_rodriguez.html">
-     Jose Rodriguez
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../speakers/alex_morrise.html">
-     Alex Morrise
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../speakers/dmitrijs_trizna.html">
-     Dmitrijs Trizna
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../speakers/mehmet_ergene.html">
-     Mehmet Ergene
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../speakers/jerry_gamblin.html">
-     Jerry Gamblin
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../speakers/balaji_sampath.html">
-     Balaji Sampath
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../speakers/janantha_marasinghe.html">
-     Janantha Marasinghe
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../speakers/paul_coccoli.html">
-     Paul Coccoli
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../speakers/brayan_mena.html">
-     Brayan Mena
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../speakers/john_mac.html">
-     John Mac
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l1 current active has-children">
-  <a class="reference internal" href="intro.html">
-   Sessions
-  </a>
-  <input checked="" class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
-  <label for="toctree-checkbox-3">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul class="current">
-   <li class="toctree-l2">
-    <a class="reference internal" href="day1-01-Opening_Remarks.html">
-     Opening Remarks
-    </a>
-   </li>
-   <li class="toctree-l2 current active">
-    <a class="current reference internal" href="#">
-     Exploratory Threat Analytics using Jupyter Notebooks
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="day1-11-Extending_MSTICPy.html">
-     Extending MSTICPy with Pivot functions
-    </a>
-   </li>
-  </ul>
- </li>
+<li class="toctree-l1"><a class="reference internal" href="../agenda.html">Agenda</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../speakers/intro.html">Speakers</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../speakers/roberto_rodriguez.html">Roberto Rodriguez</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../speakers/ian_hellen.html">Ian Hellen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../speakers/leo_meyerovich.html">Leo Meyerovich</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../speakers/chi_nguyen.html">Chi Nguyen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../speakers/amritpal_singh.html">Amritpal Singh</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../speakers/vijay_punja.html">Vijay Punja</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../speakers/james_duncan.html">James Duncan</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../speakers/ryan_marcotte_cobb.html">Ryan Marcotte Cobb</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../speakers/saksham_tushar.html">Saksham Tushar</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../speakers/christian_camilo_urcuqui_lopez.html">Christian Camilo Urcuqui Lopez</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../speakers/pete_bryan.html">Pete Bryan</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../speakers/ashwin_patil.html">Ashwin Patil</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../speakers/thomas_roccia.html">Thomas Roccia</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../speakers/jose_rodriguez.html">Jose Rodriguez</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../speakers/alex_morrise.html">Alex Morrise</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../speakers/dmitrijs_trizna.html">Dmitrijs Trizna</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../speakers/mehmet_ergene.html">Mehmet Ergene</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../speakers/jerry_gamblin.html">Jerry Gamblin</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../speakers/balaji_sampath.html">Balaji Sampath</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../speakers/janantha_marasinghe.html">Janantha Marasinghe</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../speakers/paul_coccoli.html">Paul Coccoli</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../speakers/brayan_mena.html">Brayan Mena</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../speakers/john_mac.html">John Mac</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Workshops
- </span>
-</p>
+</li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="intro.html">Sessions</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="day1-01-Opening_Remarks.html">Opening Remarks</a></li>
+
+
+
+
+
+
+
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Exploratory Threat Analytics using Jupyter Notebooks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day1-11-Extending_MSTICPy.html">Extending MSTICPy with Pivot functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="day2-08-Shell-Language-Processing.html">Shell Language Processing</a></li>
+
+
+
+
+
+
+
+
+</ul>
+</li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Workshops</span></p>
 <ul class="nav bd-sidenav">
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../../workshops/day1/intro.html">
-   Day 1
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
-  <label for="toctree-checkbox-4">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../workshops/day1/day1-1-Jupyter-Introduction.html">
-     Workshop 1.1:
-     <font color="peru">
-      Jupyter Notebooks Introduction
-     </font>
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../workshops/day1/day1-2-Acquiring-data.html">
-     Workshop 1.2:
-     <font color="peru">
-      Acquiring Data
-     </font>
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../workshops/day1/day1-3-Data-Analysis-with-Pandas%20Intro.html">
-     Workshop 1.3:
-     <font color="peru">
-      Basics of Data Analysis with Pandas
-     </font>
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../../workshops/day2/intro.html">
-   Day 2
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
-  <label for="toctree-checkbox-5">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../workshops/day2/day2-1-Jupyter-advanced-topics.html">
-     Workshop 2.1:
-     <font color="peru">
-      Jupyter Notebooks Advanced
-     </font>
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../workshops/day2/day2-1-R-demo-notebook.html">
-     Workshop 2.1:
-     <font color="peru">
-      R Demo Notebook
-     </font>
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../workshops/day2/day2-2-Visualization.html">
-     Workshop 2.2:
-     <font color="peru">
-      Visualization in Jupyter Notebooks
-     </font>
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../workshops/day2/day2-3-Advanced-pandas.html">
-     Workshop 2.3:
-     <font color="peru">
-      Advanced Pandas
-     </font>
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../workshops/day2/day2-4-MSTICPy.html">
-     Workshop 2.4:
-     <font color="peru">
-      MSTICPy
-     </font>
-    </a>
-   </li>
-  </ul>
- </li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../workshops/day1/intro.html">Day 1</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../workshops/day1/day1-1-Jupyter-Introduction.html">Workshop 1.1: <font color="peru">Jupyter Notebooks Introduction</font></a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li class="toctree-l2"><a class="reference internal" href="../../workshops/day1/day1-2-Acquiring-data.html">Workshop 1.2: <font color="peru">Acquiring Data</font></a></li>
+
+
+
+
+
+<li class="toctree-l2"><a class="reference internal" href="../../workshops/day1/day1-3-Data-Analysis-with-Pandas%20Intro.html">Workshop 1.3: <font color="peru">Basics of Data Analysis with Pandas</font></a></li>
+
+
+
+
+
+
+
+
+
+
+
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../workshops/day2/intro.html">Day 2</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../workshops/day2/day2-1-Jupyter-advanced-topics.html">Workshop 2.1: <font color="peru">Jupyter Notebooks Advanced</font></a></li>
+
+
+
+
+
+
+
+
+
+<li class="toctree-l2"><a class="reference internal" href="../../workshops/day2/day2-1-R-demo-notebook.html">Workshop 2.1: <font color="peru">R Demo Notebook</font></a></li>
+
+
+<li class="toctree-l2"><a class="reference internal" href="../../workshops/day2/day2-2-Visualization.html">Workshop 2.2: <font color="peru">Visualization in Jupyter Notebooks</font></a></li>
+
+
+
+
+
+
+
+<li class="toctree-l2"><a class="reference internal" href="../../workshops/day2/day2-3-Advanced-pandas.html">Workshop 2.3: <font color="peru">Advanced Pandas</font></a></li>
+
+
+
+
+
+
+
+
+<li class="toctree-l2"><a class="reference internal" href="../../workshops/day2/day2-4-MSTICPy.html">Workshop 2.4: <font color="peru">MSTICPy</font></a></li>
+
+
+
+
+
+
+
+
+
+
+</ul>
+</li>
 </ul>
 
     </div>
 </nav></div>
-        <div class="bd-sidebar__bottom">
-             <!-- To handle the deprecated key -->
-            
-            <div class="navbar_extra_footer">
-            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
-            </div>
-            
-        </div>
     </div>
-    <div id="rtd-footer-container"></div>
-</div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
 
 
-          
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
 
-
-          
-<!-- A tiny helper pixel to detect if we've scrolled -->
 <div class="sbt-scroll-pixel-helper"></div>
-<!-- Main content -->
-<div class="col py-0 content-container">
-    
-    <div class="header-article row sticky-top noprint">
-        
 
-
-
-<div class="col py-1 d-flex header-article-main">
-    <div class="header-article__left">
-        
-        <label for="__navigation"
-  class="headerbtn"
-  data-toggle="tooltip"
-data-placement="right"
-title="Toggle navigation"
->
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
   
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-bars"></i>
-  </span>
-
-</label>
-
-        
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
     </div>
-    <div class="header-article__right">
-<div class="menu-dropdown menu-dropdown-launch-buttons">
-  <button class="headerbtn menu-dropdown__trigger"
-      aria-label="Launch interactive content">
-      <i class="fas fa-rocket"></i>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
   </button>
-  <div class="menu-dropdown__content">
-    <ul>
-      <li>
-        <a href="https://mybinder.org/v2/gh/OTRF/infosec-jupyterthon/master?urlpath=lab/tree/docs/2022/sessions/day1-05-Exploratory_Data_I_mean_Threat_Analytics_using_Jupyter_Notebooks.ipynb"
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Launch on Binder"
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://mybinder.org/v2/gh/OTRF/infosec-jupyterthon/master?urlpath=lab/tree/docs/2022/sessions/day1-05-Exploratory_Data_I_mean_Threat_Analytics_using_Jupyter_Notebooks.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch onBinder"
+   data-bs-placement="left" data-bs-toggle="tooltip"
 >
   
 
-<span class="headerbtn__icon-container">
+<span class="btn__icon-container">
   
     <img src="../../_static/images/logo_binder.svg">
   </span>
-<span class="headerbtn__text-container">Binder</span>
+<span class="btn__text-container">Binder</span>
 </a>
-
-      </li>
+</li>
       
-    </ul>
-  </div>
+  </ul>
 </div>
 
-<button onclick="toggleFullScreen()"
-  class="headerbtn"
-  data-toggle="tooltip"
-data-placement="bottom"
-title="Fullscreen mode"
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/OTRF/infosec-jupyterthon" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
 >
   
 
-<span class="headerbtn__icon-container">
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/OTRF/infosec-jupyterthon/edit/master/docs/2022/sessions/day1-05-Exploratory_Data_I_mean_Threat_Analytics_using_Jupyter_Notebooks.ipynb" target="_blank"
+   class="btn btn-sm btn-source-edit-button dropdown-item"
+   title="Suggest edit"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-pencil-alt"></i>
+  </span>
+<span class="btn__text-container">Suggest edit</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/OTRF/infosec-jupyterthon/issues/new?title=Issue%20on%20page%20%2F2022/sessions/day1-05-Exploratory_Data_I_mean_Threat_Analytics_using_Jupyter_Notebooks.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../_sources/2022/sessions/day1-05-Exploratory_Data_I_mean_Threat_Analytics_using_Jupyter_Notebooks.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
   <i class="fas fa-expand"></i>
   </span>
 
 </button>
 
-<div class="menu-dropdown menu-dropdown-repository-buttons">
-  <button class="headerbtn menu-dropdown__trigger"
-      aria-label="Source repositories">
-      <i class="fab fa-github"></i>
+
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
   </button>
-  <div class="menu-dropdown__content">
-    <ul>
-      <li>
-        <a href="https://github.com/OTRF/infosec-jupyterthon"
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Source repository"
->
-  
+`);
+</script>
 
-<span class="headerbtn__icon-container">
-  <i class="fab fa-github"></i>
-  </span>
-<span class="headerbtn__text-container">repository</span>
-</a>
-
-      </li>
-      
-      <li>
-        <a href="https://github.com/OTRF/infosec-jupyterthon/issues/new?title=Issue%20on%20page%20%2F2022/sessions/day1-05-Exploratory_Data_I_mean_Threat_Analytics_using_Jupyter_Notebooks.html&body=Your%20issue%20content%20here."
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Open an issue"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-lightbulb"></i>
-  </span>
-<span class="headerbtn__text-container">open issue</span>
-</a>
-
-      </li>
-      
-      <li>
-        <a href="https://github.com/OTRF/infosec-jupyterthon/edit/master/docs/2022/sessions/day1-05-Exploratory_Data_I_mean_Threat_Analytics_using_Jupyter_Notebooks.ipynb"
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Edit this page"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-pencil-alt"></i>
-  </span>
-<span class="headerbtn__text-container">suggest edit</span>
-</a>
-
-      </li>
-      
-    </ul>
-  </div>
-</div>
-
-<div class="menu-dropdown menu-dropdown-download-buttons">
-  <button class="headerbtn menu-dropdown__trigger"
-      aria-label="Download this page">
-      <i class="fas fa-download"></i>
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
   </button>
-  <div class="menu-dropdown__content">
-    <ul>
-      <li>
-        <a href="../../_sources/2022/sessions/day1-05-Exploratory_Data_I_mean_Threat_Analytics_using_Jupyter_Notebooks.ipynb"
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Download source file"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-file"></i>
-  </span>
-<span class="headerbtn__text-container">.ipynb</span>
-</a>
-
-      </li>
-      
-      <li>
-        
-<button onclick="printPdf(this)"
-  class="headerbtn"
-  data-toggle="tooltip"
-data-placement="left"
-title="Print to PDF"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-file-pdf"></i>
-  </span>
-<span class="headerbtn__text-container">.pdf</span>
-</button>
-
-      </li>
-      
-    </ul>
-  </div>
-</div>
-<label for="__page-toc"
-  class="headerbtn headerbtn-page-toc"
-  
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-list"></i>
-  </span>
-
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
 </label>
-
+</div></div>
+      
     </div>
+  
 </div>
-
-<!-- Table of contents -->
-<div class="col-md-3 bd-toc show noprint">
-    <div class="tocsection onthispage pt-5 pb-3">
-        <i class="fas fa-list"></i> Contents
-    </div>
-    <nav id="bd-toc-nav" aria-label="Page">
-        <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#whoami">
-   Whoami ?
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#why-notebooks-not-siem-edr-or-any-other-tool">
-   Why Notebooks &amp; not SIEM/EDR or any other Tool?
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#siem-is-for-log-collection-detection-case-management-is-for-notes-annotation-lets-use-jupyter-for-investigation">
-     SIEM is for Log Collection &amp; Detection, Case Management is for Notes &amp; Annotation, Let’s use Jupyter for
-     <strong>
-      Investigation
-     </strong>
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#lets-explore-a-simple-investigation-of-finding-suspicious-powershell-executions">
-   Let’s Explore a simple Investigation of Finding Suspicious Powershell Executions.
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#use-case-data-from-wherever-you-want-security-tools-s3-online-datasets-git-repo">
-     Use-Case : Data from Wherever you want (Security Tools/S3/Online Datasets/Git repo)
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#use-case-data-analysis-capabilities">
-     Use-Case : Data Analysis Capabilities
-    </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#need-more-sql-graphs-ml-threat-intelligence-alerts-datasets-visualization">
-       Need More ?? , SQL, Graphs, ML, Threat Intelligence, Alerts, Datasets, Visualization… ?
-      </a>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#let-me-also-import-pyspark-you-know-for-sql-capabilities">
-       let me also Import Pyspark , you know for SQL capabilities
-      </a>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#lets-do-a-function-to-query-elastic-to-pull-data-we-can-call-this-function-from-whenever-i-need-so-subject-data-at-disposal-is-sorted">
-       Let’s do a function to query Elastic to Pull data! We can call this Function From whenever I Need, so subject data at disposal is sorted!!.
-      </a>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#pull-all-elasticsearch-events-from-my-siem-elastic-to-investigate-hunt-for-command-and-scripting-interpreter-powershell-https-attack-mitre-org-techniques-t1059-001">
-       Pull all elasticsearch Events from my SIEM - Elastic to investigate/Hunt for [‘Command and Scripting Interpreter: PowerShell’] https://attack.mitre.org/techniques/T1059/001/
-      </a>
-     </li>
-    </ul>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#use-case-statistical-capabilities-at-your-disposal">
-     Use-Case : Statistical Capabilities at your disposal
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#use-case-supercharged-api-utilization">
-     Use-Case : SuperCharged API Utilization
-    </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#popular-threat-hunting-techniques-like-stack-counting-grouping-clustering-are-a-breeze-away">
-       Popular Threat Hunting Techniques like stack counting/Grouping/Clustering are a breeze away!!
-      </a>
-     </li>
-    </ul>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#use-case-data-enrichment">
-     Use-Case - Data Enrichment
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#use-case-data-visualization-powers-you-are-free-to-use-your-favourite-library-matplotlib-seaborn-plotly-etc-etc">
-     Use-Case - Data Visualization powers (You are free to use your favourite library, Matplotlib, seaborn, plotly etc etc…)
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#use-case-programmatic-control-over-data-wrangling-tuning-sanitization-enrichment-whatever-you-need">
-     Use-Case - programmatic Control over Data, Wrangling, tuning, sanitization, enrichment, whatever you need !!!
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#use-case-case-management-bleeding-into-the-lifecycle">
-     Use-Case - Case-Management- bleeding into the Lifecycle !!!
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#more-tips-use-cases">
-     More Tips &amp; use-cases
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#what-youve-acheived-by-using-jupyter-notebooks-for-conducting-this-analysis">
-     What you’ve acheived by Using Jupyter Notebooks for conducting this Analysis :
-    </a>
-   </li>
-  </ul>
- </li>
-</ul>
-
-    </nav>
 </div>
-    </div>
-    <div class="article row">
-        <div class="col pl-md-3 pl-lg-5 content-container">
-            <!-- Table of contents that is only displayed when printing the page -->
-            <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Exploratory Threat Analytics using Jupyter Notebooks</h1>
-                <!-- Table of contents -->
-                <div id="print-main-content">
-                    <div id="jb-print-toc">
-                        
-                        <div>
-                            <h2> Contents </h2>
-                        </div>
-                        <nav aria-label="Page">
-                            <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#whoami">
-   Whoami ?
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#why-notebooks-not-siem-edr-or-any-other-tool">
-   Why Notebooks &amp; not SIEM/EDR or any other Tool?
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#siem-is-for-log-collection-detection-case-management-is-for-notes-annotation-lets-use-jupyter-for-investigation">
-     SIEM is for Log Collection &amp; Detection, Case Management is for Notes &amp; Annotation, Let’s use Jupyter for
-     <strong>
-      Investigation
-     </strong>
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#lets-explore-a-simple-investigation-of-finding-suspicious-powershell-executions">
-   Let’s Explore a simple Investigation of Finding Suspicious Powershell Executions.
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#use-case-data-from-wherever-you-want-security-tools-s3-online-datasets-git-repo">
-     Use-Case : Data from Wherever you want (Security Tools/S3/Online Datasets/Git repo)
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#use-case-data-analysis-capabilities">
-     Use-Case : Data Analysis Capabilities
-    </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#need-more-sql-graphs-ml-threat-intelligence-alerts-datasets-visualization">
-       Need More ?? , SQL, Graphs, ML, Threat Intelligence, Alerts, Datasets, Visualization… ?
-      </a>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#let-me-also-import-pyspark-you-know-for-sql-capabilities">
-       let me also Import Pyspark , you know for SQL capabilities
-      </a>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#lets-do-a-function-to-query-elastic-to-pull-data-we-can-call-this-function-from-whenever-i-need-so-subject-data-at-disposal-is-sorted">
-       Let’s do a function to query Elastic to Pull data! We can call this Function From whenever I Need, so subject data at disposal is sorted!!.
-      </a>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#pull-all-elasticsearch-events-from-my-siem-elastic-to-investigate-hunt-for-command-and-scripting-interpreter-powershell-https-attack-mitre-org-techniques-t1059-001">
-       Pull all elasticsearch Events from my SIEM - Elastic to investigate/Hunt for [‘Command and Scripting Interpreter: PowerShell’] https://attack.mitre.org/techniques/T1059/001/
-      </a>
-     </li>
-    </ul>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#use-case-statistical-capabilities-at-your-disposal">
-     Use-Case : Statistical Capabilities at your disposal
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#use-case-supercharged-api-utilization">
-     Use-Case : SuperCharged API Utilization
-    </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#popular-threat-hunting-techniques-like-stack-counting-grouping-clustering-are-a-breeze-away">
-       Popular Threat Hunting Techniques like stack counting/Grouping/Clustering are a breeze away!!
-      </a>
-     </li>
-    </ul>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#use-case-data-enrichment">
-     Use-Case - Data Enrichment
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#use-case-data-visualization-powers-you-are-free-to-use-your-favourite-library-matplotlib-seaborn-plotly-etc-etc">
-     Use-Case - Data Visualization powers (You are free to use your favourite library, Matplotlib, seaborn, plotly etc etc…)
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#use-case-programmatic-control-over-data-wrangling-tuning-sanitization-enrichment-whatever-you-need">
-     Use-Case - programmatic Control over Data, Wrangling, tuning, sanitization, enrichment, whatever you need !!!
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#use-case-case-management-bleeding-into-the-lifecycle">
-     Use-Case - Case-Management- bleeding into the Lifecycle !!!
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#more-tips-use-cases">
-     More Tips &amp; use-cases
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#what-youve-acheived-by-using-jupyter-notebooks-for-conducting-this-analysis">
-     What you’ve acheived by Using Jupyter Notebooks for conducting this Analysis :
-    </a>
-   </li>
-  </ul>
- </li>
-</ul>
+              
+              
 
-                        </nav>
-                    </div>
-                </div>
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Exploratory Threat Analytics using Jupyter Notebooks</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
             </div>
-            <main id="main-content" role="main">
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#whoami">Whoami ?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#why-notebooks-not-siem-edr-or-any-other-tool">Why Notebooks &amp; not SIEM/EDR or any other Tool?</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#siem-is-for-log-collection-detection-case-management-is-for-notes-annotation-lets-use-jupyter-for-investigation">SIEM is for Log Collection &amp; Detection, Case Management is for Notes &amp; Annotation, Let’s use Jupyter for <strong>Investigation</strong></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lets-explore-a-simple-investigation-of-finding-suspicious-powershell-executions">Let’s Explore a simple Investigation of Finding Suspicious Powershell Executions.</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#use-case-data-from-wherever-you-want-security-tools-s3-online-datasets-git-repo">Use-Case : Data from Wherever you want (Security Tools/S3/Online Datasets/Git repo)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#use-case-data-analysis-capabilities">Use-Case : Data Analysis Capabilities</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#need-more-sql-graphs-ml-threat-intelligence-alerts-datasets-visualization">Need More ?? , SQL, Graphs, ML, Threat Intelligence, Alerts, Datasets, Visualization… ?</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#let-me-also-import-pyspark-you-know-for-sql-capabilities">let me also Import Pyspark , you know for SQL capabilities</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#lets-do-a-function-to-query-elastic-to-pull-data-we-can-call-this-function-from-whenever-i-need-so-subject-data-at-disposal-is-sorted">Let’s do a function to query Elastic to Pull data! We can call this Function From whenever I Need, so subject data at disposal is sorted!!.</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#pull-all-elasticsearch-events-from-my-siem-elastic-to-investigate-hunt-for-command-and-scripting-interpreter-powershell-https-attack-mitre-org-techniques-t1059-001">Pull all elasticsearch Events from my SIEM - Elastic to investigate/Hunt for [‘Command and Scripting Interpreter: PowerShell’] https://attack.mitre.org/techniques/T1059/001/</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#use-case-statistical-capabilities-at-your-disposal">Use-Case : Statistical Capabilities at your disposal</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#use-case-supercharged-api-utilization">Use-Case : SuperCharged API Utilization</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#popular-threat-hunting-techniques-like-stack-counting-grouping-clustering-are-a-breeze-away">Popular Threat Hunting Techniques like stack counting/Grouping/Clustering are a breeze away!!</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#use-case-data-enrichment">Use-Case - Data Enrichment</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#use-case-data-visualization-powers-you-are-free-to-use-your-favourite-library-matplotlib-seaborn-plotly-etc-etc">Use-Case - Data Visualization powers (You are free to use your favourite library, Matplotlib, seaborn, plotly etc etc…)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#use-case-programmatic-control-over-data-wrangling-tuning-sanitization-enrichment-whatever-you-need">Use-Case - programmatic Control over Data, Wrangling, tuning, sanitization, enrichment, whatever you need !!!</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#use-case-case-management-bleeding-into-the-lifecycle">Use-Case - Case-Management- bleeding into the Lifecycle !!!</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#more-tips-use-cases">More Tips &amp; use-cases</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#what-youve-acheived-by-using-jupyter-notebooks-for-conducting-this-analysis">What you’ve acheived by Using Jupyter Notebooks for conducting this Analysis :</a></li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
                 
-              <div>
-                
-  <div class="tex2jax_ignore mathjax_ignore section" id="exploratory-threat-analytics-using-jupyter-notebooks">
-<h1>Exploratory Threat Analytics using Jupyter Notebooks<a class="headerlink" href="#exploratory-threat-analytics-using-jupyter-notebooks" title="Permalink to this headline">#</a></h1>
-<div class="section" id="whoami">
-<h2>Whoami ?<a class="headerlink" href="#whoami" title="Permalink to this headline">#</a></h2>
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="exploratory-threat-analytics-using-jupyter-notebooks">
+<h1>Exploratory Threat Analytics using Jupyter Notebooks<a class="headerlink" href="#exploratory-threat-analytics-using-jupyter-notebooks" title="Permalink to this heading">#</a></h1>
+<section id="whoami">
+<h2>Whoami ?<a class="headerlink" href="#whoami" title="Permalink to this heading">#</a></h2>
 <ul class="simple">
 <li><p>Saksham Tushar - Bangalore/India - Lead Threat Researcher/Detection Engineer &#64; CRED</p></li>
 <li><p>Loves Tactical Security (All Things Threat: Detection/Analytics/Intelligence/Hunting)</p></li>
 <li><p>Seeks automation &amp; Coffee Everywhere!!</p></li>
 </ul>
-</div>
-<div class="section" id="why-notebooks-not-siem-edr-or-any-other-tool">
-<h2>Why Notebooks &amp; not SIEM/EDR or any other Tool?<a class="headerlink" href="#why-notebooks-not-siem-edr-or-any-other-tool" title="Permalink to this headline">#</a></h2>
-<div class="section" id="siem-is-for-log-collection-detection-case-management-is-for-notes-annotation-lets-use-jupyter-for-investigation">
-<h3>SIEM is for Log Collection &amp; Detection, Case Management is for Notes &amp; Annotation, Let’s use Jupyter for <strong>Investigation</strong><a class="headerlink" href="#siem-is-for-log-collection-detection-case-management-is-for-notes-annotation-lets-use-jupyter-for-investigation" title="Permalink to this headline">#</a></h3>
+</section>
+<section id="why-notebooks-not-siem-edr-or-any-other-tool">
+<h2>Why Notebooks &amp; not SIEM/EDR or any other Tool?<a class="headerlink" href="#why-notebooks-not-siem-edr-or-any-other-tool" title="Permalink to this heading">#</a></h2>
+<section id="siem-is-for-log-collection-detection-case-management-is-for-notes-annotation-lets-use-jupyter-for-investigation">
+<h3>SIEM is for Log Collection &amp; Detection, Case Management is for Notes &amp; Annotation, Let’s use Jupyter for <strong>Investigation</strong><a class="headerlink" href="#siem-is-for-log-collection-detection-case-management-is-for-notes-annotation-lets-use-jupyter-for-investigation" title="Permalink to this heading">#</a></h3>
 <ul class="simple">
 <li><p><strong>Vendor agnostic Query Language : Programming Language</strong></p></li>
 <li><p><strong>Intersection of Code/Investigation/Annotation-notes</strong></p></li>
@@ -915,10 +621,10 @@ title="Print to PDF"
 <li><p><strong>Enrichment and Context on the Fly!!</strong></p></li>
 <li><p><strong>Orchestrated Approach and Flow</strong></p></li>
 </ul>
-</div>
-</div>
-<div class="section" id="lets-explore-a-simple-investigation-of-finding-suspicious-powershell-executions">
-<h2>Let’s Explore a simple Investigation of Finding Suspicious Powershell Executions.<a class="headerlink" href="#lets-explore-a-simple-investigation-of-finding-suspicious-powershell-executions" title="Permalink to this headline">#</a></h2>
+</section>
+</section>
+<section id="lets-explore-a-simple-investigation-of-finding-suspicious-powershell-executions">
+<h2>Let’s Explore a simple Investigation of Finding Suspicious Powershell Executions.<a class="headerlink" href="#lets-explore-a-simple-investigation-of-finding-suspicious-powershell-executions" title="Permalink to this heading">#</a></h2>
 <ul class="simple">
 <li><p>Two Common Use-case that I have is :</p>
 <ul>
@@ -927,8 +633,8 @@ title="Print to PDF"
 </ul>
 </li>
 </ul>
-<div class="section" id="use-case-data-from-wherever-you-want-security-tools-s3-online-datasets-git-repo">
-<h3>Use-Case : Data from Wherever you want (Security Tools/S3/Online Datasets/Git repo)<a class="headerlink" href="#use-case-data-from-wherever-you-want-security-tools-s3-online-datasets-git-repo" title="Permalink to this headline">#</a></h3>
+<section id="use-case-data-from-wherever-you-want-security-tools-s3-online-datasets-git-repo">
+<h3>Use-Case : Data from Wherever you want (Security Tools/S3/Online Datasets/Git repo)<a class="headerlink" href="#use-case-data-from-wherever-you-want-security-tools-s3-online-datasets-git-repo" title="Permalink to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">elasticsearch</span> <span class="kn">import</span> <span class="n">Elasticsearch</span>
@@ -938,9 +644,9 @@ title="Print to PDF"
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="use-case-data-analysis-capabilities">
-<h3>Use-Case : Data Analysis Capabilities<a class="headerlink" href="#use-case-data-analysis-capabilities" title="Permalink to this headline">#</a></h3>
+</section>
+<section id="use-case-data-analysis-capabilities">
+<h3>Use-Case : Data Analysis Capabilities<a class="headerlink" href="#use-case-data-analysis-capabilities" title="Permalink to this heading">#</a></h3>
 <ul class="simple">
 <li><p>Need Python Data Analysis capabilities ?</p></li>
 </ul>
@@ -951,14 +657,14 @@ title="Print to PDF"
 </div>
 </div>
 </div>
-<div class="section" id="need-more-sql-graphs-ml-threat-intelligence-alerts-datasets-visualization">
-<h4>Need More ?? , SQL, Graphs, ML, Threat Intelligence, Alerts, Datasets, Visualization… ?<a class="headerlink" href="#need-more-sql-graphs-ml-threat-intelligence-alerts-datasets-visualization" title="Permalink to this headline">#</a></h4>
+<section id="need-more-sql-graphs-ml-threat-intelligence-alerts-datasets-visualization">
+<h4>Need More ?? , SQL, Graphs, ML, Threat Intelligence, Alerts, Datasets, Visualization… ?<a class="headerlink" href="#need-more-sql-graphs-ml-threat-intelligence-alerts-datasets-visualization" title="Permalink to this heading">#</a></h4>
 <ul class="simple">
 <li><p>Gather Analytical Capabilties (pyspark, Seaborn,plotly, graphframes)</p></li>
 </ul>
-</div>
-<div class="section" id="let-me-also-import-pyspark-you-know-for-sql-capabilities">
-<h4>let me also Import Pyspark , you know for SQL capabilities<a class="headerlink" href="#let-me-also-import-pyspark-you-know-for-sql-capabilities" title="Permalink to this headline">#</a></h4>
+</section>
+<section id="let-me-also-import-pyspark-you-know-for-sql-capabilities">
+<h4>let me also Import Pyspark , you know for SQL capabilities<a class="headerlink" href="#let-me-also-import-pyspark-you-know-for-sql-capabilities" title="Permalink to this heading">#</a></h4>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pyspark.sql</span> <span class="kn">import</span> <span class="n">SparkSession</span>
@@ -972,9 +678,9 @@ title="Print to PDF"
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="lets-do-a-function-to-query-elastic-to-pull-data-we-can-call-this-function-from-whenever-i-need-so-subject-data-at-disposal-is-sorted">
-<h4>Let’s do a function to query Elastic to Pull data! We can call this Function From whenever I Need, so subject data at disposal is sorted!!.<a class="headerlink" href="#lets-do-a-function-to-query-elastic-to-pull-data-we-can-call-this-function-from-whenever-i-need-so-subject-data-at-disposal-is-sorted" title="Permalink to this headline">#</a></h4>
+</section>
+<section id="lets-do-a-function-to-query-elastic-to-pull-data-we-can-call-this-function-from-whenever-i-need-so-subject-data-at-disposal-is-sorted">
+<h4>Let’s do a function to query Elastic to Pull data! We can call this Function From whenever I Need, so subject data at disposal is sorted!!.<a class="headerlink" href="#lets-do-a-function-to-query-elastic-to-pull-data-we-can-call-this-function-from-whenever-i-need-so-subject-data-at-disposal-is-sorted" title="Permalink to this heading">#</a></h4>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#also Let&#39;s Suppress SSL Warnings as I&#39;m making Unverified HTTPS request in my isolated Environment. </span>
@@ -1002,9 +708,9 @@ title="Print to PDF"
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="pull-all-elasticsearch-events-from-my-siem-elastic-to-investigate-hunt-for-command-and-scripting-interpreter-powershell-https-attack-mitre-org-techniques-t1059-001">
-<h4>Pull all elasticsearch Events from my SIEM - Elastic to investigate/Hunt for [‘Command and Scripting Interpreter: PowerShell’] <a class="reference external" href="https://attack.mitre.org/techniques/T1059/001/">https://attack.mitre.org/techniques/T1059/001/</a><a class="headerlink" href="#pull-all-elasticsearch-events-from-my-siem-elastic-to-investigate-hunt-for-command-and-scripting-interpreter-powershell-https-attack-mitre-org-techniques-t1059-001" title="Permalink to this headline">#</a></h4>
+</section>
+<section id="pull-all-elasticsearch-events-from-my-siem-elastic-to-investigate-hunt-for-command-and-scripting-interpreter-powershell-https-attack-mitre-org-techniques-t1059-001">
+<h4>Pull all elasticsearch Events from my SIEM - Elastic to investigate/Hunt for [‘Command and Scripting Interpreter: PowerShell’] <a class="reference external" href="https://attack.mitre.org/techniques/T1059/001/">https://attack.mitre.org/techniques/T1059/001/</a><a class="headerlink" href="#pull-all-elasticsearch-events-from-my-siem-elastic-to-investigate-hunt-for-command-and-scripting-interpreter-powershell-https-attack-mitre-org-techniques-t1059-001" title="Permalink to this heading">#</a></h4>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">power_events</span><span class="o">=</span> <span class="n">queryes</span><span class="p">(</span><span class="s2">&quot;data_stream.dataset:endpoint.events.process AND process.name:powershell.exe&quot;</span><span class="p">)</span>
@@ -1020,10 +726,10 @@ Done!!!
 </div>
 </div>
 </div>
-</div>
-</div>
-<div class="section" id="use-case-statistical-capabilities-at-your-disposal">
-<h3>Use-Case : Statistical Capabilities at your disposal<a class="headerlink" href="#use-case-statistical-capabilities-at-your-disposal" title="Permalink to this headline">#</a></h3>
+</section>
+</section>
+<section id="use-case-statistical-capabilities-at-your-disposal">
+<h3>Use-Case : Statistical Capabilities at your disposal<a class="headerlink" href="#use-case-statistical-capabilities-at-your-disposal" title="Permalink to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">display</span><span class="p">(</span><span class="n">spark</span><span class="o">.</span><span class="n">sql</span><span class="p">(</span><span class="s1">&#39;select count(*),process_parent_name from powershell_events group by process_parent_name order by count(*) asc&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">show</span><span class="p">(</span><span class="mi">1000</span><span class="p">,</span><span class="n">truncate</span><span class="o">=</span><span class="mi">200</span><span class="p">,</span> <span class="n">vertical</span><span class="o">=</span><span class="kc">False</span><span class="p">))</span>
@@ -1135,9 +841,9 @@ Done!!!
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="use-case-supercharged-api-utilization">
-<h3>Use-Case : SuperCharged API Utilization<a class="headerlink" href="#use-case-supercharged-api-utilization" title="Permalink to this headline">#</a></h3>
+</section>
+<section id="use-case-supercharged-api-utilization">
+<h3>Use-Case : SuperCharged API Utilization<a class="headerlink" href="#use-case-supercharged-api-utilization" title="Permalink to this heading">#</a></h3>
 <ul class="simple">
 <li><p>use api powers of your tools  - SQL API from Elasticsearch</p></li>
 </ul>
@@ -1255,8 +961,8 @@ Done!!!
 </table>
 </div></div></div>
 </div>
-<div class="section" id="popular-threat-hunting-techniques-like-stack-counting-grouping-clustering-are-a-breeze-away">
-<h4>Popular Threat Hunting Techniques like stack counting/Grouping/Clustering are a breeze away!!<a class="headerlink" href="#popular-threat-hunting-techniques-like-stack-counting-grouping-clustering-are-a-breeze-away" title="Permalink to this headline">#</a></h4>
+<section id="popular-threat-hunting-techniques-like-stack-counting-grouping-clustering-are-a-breeze-away">
+<h4>Popular Threat Hunting Techniques like stack counting/Grouping/Clustering are a breeze away!!<a class="headerlink" href="#popular-threat-hunting-techniques-like-stack-counting-grouping-clustering-are-a-breeze-away" title="Permalink to this heading">#</a></h4>
 <ul class="simple">
 <li><p>Stack Counting to Check Unique IPs and Connection Count</p></li>
 </ul>
@@ -1275,10 +981,10 @@ dtype: int64
 </div>
 </div>
 <p>Interestingly All Connections are made to Same Destination IP</p>
-</div>
-</div>
-<div class="section" id="use-case-data-enrichment">
-<h3>Use-Case - Data Enrichment<a class="headerlink" href="#use-case-data-enrichment" title="Permalink to this headline">#</a></h3>
+</section>
+</section>
+<section id="use-case-data-enrichment">
+<h3>Use-Case - Data Enrichment<a class="headerlink" href="#use-case-data-enrichment" title="Permalink to this heading">#</a></h3>
 <ul class="simple">
 <li><p>Let’s Enrich reputational Data from Virustotal</p></li>
 <li><p>Gather Data &amp; Intelligence : There are Product APIs, Webhooks (Siem/Case-management/Threat Intelligence Platform/EDRs/ Git/Slack), Service-APIs(Virustotal,Curl Websites, scrape data), The possibility to gather data is endless.</p></li>
@@ -1306,9 +1012,9 @@ dtype: int64
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="use-case-data-visualization-powers-you-are-free-to-use-your-favourite-library-matplotlib-seaborn-plotly-etc-etc">
-<h3>Use-Case - Data Visualization powers (You are free to use your favourite library, Matplotlib, seaborn, plotly etc etc…)<a class="headerlink" href="#use-case-data-visualization-powers-you-are-free-to-use-your-favourite-library-matplotlib-seaborn-plotly-etc-etc" title="Permalink to this headline">#</a></h3>
+</section>
+<section id="use-case-data-visualization-powers-you-are-free-to-use-your-favourite-library-matplotlib-seaborn-plotly-etc-etc">
+<h3>Use-Case - Data Visualization powers (You are free to use your favourite library, Matplotlib, seaborn, plotly etc etc…)<a class="headerlink" href="#use-case-data-visualization-powers-you-are-free-to-use-your-favourite-library-matplotlib-seaborn-plotly-etc-etc" title="Permalink to this heading">#</a></h3>
 <ul class="simple">
 <li><p>Exploratory Analysis of Process events using plotly</p></li>
 </ul>
@@ -1323,9 +1029,9 @@ dtype: int64
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="use-case-programmatic-control-over-data-wrangling-tuning-sanitization-enrichment-whatever-you-need">
-<h3>Use-Case - programmatic Control over Data, Wrangling, tuning, sanitization, enrichment, whatever you need !!!<a class="headerlink" href="#use-case-programmatic-control-over-data-wrangling-tuning-sanitization-enrichment-whatever-you-need" title="Permalink to this headline">#</a></h3>
+</section>
+<section id="use-case-programmatic-control-over-data-wrangling-tuning-sanitization-enrichment-whatever-you-need">
+<h3>Use-Case - programmatic Control over Data, Wrangling, tuning, sanitization, enrichment, whatever you need !!!<a class="headerlink" href="#use-case-programmatic-control-over-data-wrangling-tuning-sanitization-enrichment-whatever-you-need" title="Permalink to this heading">#</a></h3>
 <ul class="simple">
 <li><p>Truely a Canvas limited by the Artist’s Creativity.</p></li>
 </ul>
@@ -1498,8 +1204,8 @@ e.exports=function(t){return null!=t&&(n(t)||function(t){return"function"==typeo
         });
         }
         </script>
-</div><div class="output text_html"><div>                            <div id="3593ba98-26b6-4e0a-920b-088d205d27a5" class="plotly-graph-div" style="height:525px; width:100%;"></div>            <script type="text/javascript">                require(["plotly"], function(Plotly) {                    window.PLOTLYENV=window.PLOTLYENV || {};                                    if (document.getElementById("3593ba98-26b6-4e0a-920b-088d205d27a5")) {                    Plotly.newPlot(                        "3593ba98-26b6-4e0a-920b-088d205d27a5",                        [{"alignmentgroup":"True","hovertemplate":"Commandline=powershell.exe -ExecutionPolicy Restricted -Command Write-Host 'Final result: 1';<br>Timestamp_date=%{x}<br>0=%{y}<extra></extra>","legendgroup":"powershell.exe -ExecutionPolicy Restricted -Command Write-Host 'Final result: 1';","marker":{"color":"#636efa","pattern":{"shape":""}},"name":"powershell.exe -ExecutionPolicy Restricted -Command Write-Host 'Final result: 1';","offsetgroup":"powershell.exe -ExecutionPolicy Restricted -Command Write-Host 'Final result: 1';","orientation":"v","showlegend":true,"textposition":"auto","x":["2022-09-01","2022-09-02","2022-09-03","2022-09-04","2022-09-05","2022-09-06","2022-09-07","2022-09-08","2022-09-09","2022-09-10","2022-09-11","2022-09-12","2022-09-13","2022-09-14","2022-09-15","2022-09-16","2022-09-17","2022-09-18","2022-09-19","2022-09-20","2022-09-21","2022-09-22","2022-09-24","2022-09-25","2022-09-26","2022-09-27","2022-09-28","2022-09-29","2022-09-30","2022-10-01","2022-10-02","2022-10-03","2022-10-31","2022-11-01","2022-11-02","2022-11-03","2022-11-04","2022-11-06","2022-11-07","2022-11-08","2022-11-09","2022-11-14","2022-11-15","2022-11-16","2022-11-17"],"xaxis":"x","y":[4,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,4,2,2,2,2,2,2,2,2,2,4,2,2,2,2,2,2,2,2,4,2,2,2],"yaxis":"y","type":"bar"},{"alignmentgroup":"True","hovertemplate":"Commandline=\"C:\\Windows\\SysWOW64\\WindowsPowerShell\\v1.0\\powershell.exe\" <br>Timestamp_date=%{x}<br>0=%{y}<extra></extra>","legendgroup":"\"C:\\Windows\\SysWOW64\\WindowsPowerShell\\v1.0\\powershell.exe\" ","marker":{"color":"#EF553B","pattern":{"shape":""}},"name":"\"C:\\Windows\\SysWOW64\\WindowsPowerShell\\v1.0\\powershell.exe\" ","offsetgroup":"\"C:\\Windows\\SysWOW64\\WindowsPowerShell\\v1.0\\powershell.exe\" ","orientation":"v","showlegend":true,"textposition":"auto","x":["2022-09-04"],"xaxis":"x","y":[2],"yaxis":"y","type":"bar"},{"alignmentgroup":"True","hovertemplate":"Commandline=\"C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe\" <br>Timestamp_date=%{x}<br>0=%{y}<extra></extra>","legendgroup":"\"C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe\" ","marker":{"color":"#00cc96","pattern":{"shape":""}},"name":"\"C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe\" ","offsetgroup":"\"C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe\" ","orientation":"v","showlegend":true,"textposition":"auto","x":["2022-09-04","2022-09-25","2022-09-26","2022-09-29","2022-09-30","2022-10-01"],"xaxis":"x","y":[2,1,2,2,6,1],"yaxis":"y","type":"bar"},{"alignmentgroup":"True","hovertemplate":"Commandline=powershell.exe -NoProfile -WindowStyle Hidden -NonInteractive -Command \"Register-ScheduledTask -Force -TaskName 'npcapwatchdog' -Description 'Ensure Npcap service is configured to start at boot' -Action (New-ScheduledTaskAction -Execute 'C:\\Program Files\\Npcap\\CheckStatus.bat') -Principal (New-ScheduledTaskPrincipal -UserId 'SYSTEM' -LogonType ServiceAccount) -Trigger (New-ScheduledTaskTrigger -AtStartup) -Settings (New-ScheduledTaskSettingsSet -AllowStartIfOnBatteries -Compatibility Win8)\"<br>Timestamp_date=%{x}<br>0=%{y}<extra></extra>","legendgroup":"powershell.exe -NoProfile -WindowStyle Hidden -NonInteractive -Command \"Register-ScheduledTask -Force -TaskName 'npcapwatchdog' -Description 'Ensure Npcap service is configured to start at boot' -Action (New-ScheduledTaskAction -Execute 'C:\\Program Files\\Npcap\\CheckStatus.bat') -Principal (New-ScheduledTaskPrincipal -UserId 'SYSTEM' -LogonType ServiceAccount) -Trigger (New-ScheduledTaskTrigger -AtStartup) -Settings (New-ScheduledTaskSettingsSet -AllowStartIfOnBatteries -Compatibility Win8)\"","marker":{"color":"#ab63fa","pattern":{"shape":""}},"name":"powershell.exe -NoProfile -WindowStyle Hidden -NonInteractive -Command \"Register-ScheduledTask -Force -TaskName 'npcapwatchdog' -Description 'Ensure Npcap service is configured to start at boot' -Action (New-ScheduledTaskAction -Execute 'C:\\Program Files\\Npcap\\CheckStatus.bat') -Principal (New-ScheduledTaskPrincipal -UserId 'SYSTEM' -LogonType ServiceAccount) -Trigger (New-ScheduledTaskTrigger -AtStartup) -Settings (New-ScheduledTaskSettingsSet -AllowStartIfOnBatteries -Compatibility Win8)\"","offsetgroup":"powershell.exe -NoProfile -WindowStyle Hidden -NonInteractive -Command \"Register-ScheduledTask -Force -TaskName 'npcapwatchdog' -Description 'Ensure Npcap service is configured to start at boot' -Action (New-ScheduledTaskAction -Execute 'C:\\Program Files\\Npcap\\CheckStatus.bat') -Principal (New-ScheduledTaskPrincipal -UserId 'SYSTEM' -LogonType ServiceAccount) -Trigger (New-ScheduledTaskTrigger -AtStartup) -Settings (New-ScheduledTaskSettingsSet -AllowStartIfOnBatteries -Compatibility Win8)\"","orientation":"v","showlegend":true,"textposition":"auto","x":["2022-09-07"],"xaxis":"x","y":[2],"yaxis":"y","type":"bar"},{"alignmentgroup":"True","hovertemplate":"Commandline=powershell.exe -NoProfile -WindowStyle Hidden -NonInteractive -Command \"Start-Service -Name npcap -PassThru | Stop-Service -PassThru | Start-Service\"<br>Timestamp_date=%{x}<br>0=%{y}<extra></extra>","legendgroup":"powershell.exe -NoProfile -WindowStyle Hidden -NonInteractive -Command \"Start-Service -Name npcap -PassThru | Stop-Service -PassThru | Start-Service\"","marker":{"color":"#FFA15A","pattern":{"shape":""}},"name":"powershell.exe -NoProfile -WindowStyle Hidden -NonInteractive -Command \"Start-Service -Name npcap -PassThru | Stop-Service -PassThru | Start-Service\"","offsetgroup":"powershell.exe -NoProfile -WindowStyle Hidden -NonInteractive -Command \"Start-Service -Name npcap -PassThru | Stop-Service -PassThru | Start-Service\"","orientation":"v","showlegend":true,"textposition":"auto","x":["2022-09-07"],"xaxis":"x","y":[2],"yaxis":"y","type":"bar"},{"alignmentgroup":"True","hovertemplate":"Commandline=\"C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\powershell.exe\" -encodedCommand JABoAD0AKABnAHAAIABIAEsATABNADoAXABTAFkAUwBUAEUATQBcAEMAdQByAHIAZQBuAHQAQwBvAG4AdAByAG8AbABTAGUAdABcAFMAZQByAHYAaQBjAGUAcwBcAFgAIAAiAHgAIgApAC4AeAA7ACQAaAAuAFMAcABsAGkAdAAoACIAIAAiACkAfABmAG8AcgBFAGEAYwBoAHsAWwBjAGgAYQByAF0AKABbAGMAbwBuAHYAZQByAHQAXQA6ADoAdABvAGkAbgB0ADEANgAoACQAXwAsADEANgApACkAfQB8AGYAbwByAEUAYQBjAGgAewAkAHIAPQAkAHIAKwAkAF8AfQA7AGkAZQB4ACAAJAByADsA<br>Timestamp_date=%{x}<br>0=%{y}<extra></extra>","legendgroup":"\"C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\powershell.exe\" -encodedCommand JABoAD0AKABnAHAAIABIAEsATABNADoAXABTAFkAUwBUAEUATQBcAEMAdQByAHIAZQBuAHQAQwBvAG4AdAByAG8AbABTAGUAdABcAFMAZQByAHYAaQBjAGUAcwBcAFgAIAAiAHgAIgApAC4AeAA7ACQAaAAuAFMAcABsAGkAdAAoACIAIAAiACkAfABmAG8AcgBFAGEAYwBoAHsAWwBjAGgAYQByAF0AKABbAGMAbwBuAHYAZQByAHQAXQA6ADoAdABvAGkAbgB0ADEANgAoACQAXwAsADEANgApACkAfQB8AGYAbwByAEUAYQBjAGgAewAkAHIAPQAkAHIAKwAkAF8AfQA7AGkAZQB4ACAAJAByADsA","marker":{"color":"#19d3f3","pattern":{"shape":""}},"name":"\"C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\powershell.exe\" -encodedCommand JABoAD0AKABnAHAAIABIAEsATABNADoAXABTAFkAUwBUAEUATQBcAEMAdQByAHIAZQBuAHQAQwBvAG4AdAByAG8AbABTAGUAdABcAFMAZQByAHYAaQBjAGUAcwBcAFgAIAAiAHgAIgApAC4AeAA7ACQAaAAuAFMAcABsAGkAdAAoACIAIAAiACkAfABmAG8AcgBFAGEAYwBoAHsAWwBjAGgAYQByAF0AKABbAGMAbwBuAHYAZQByAHQAXQA6ADoAdABvAGkAbgB0ADEANgAoACQAXwAsADEANgApACkAfQB8AGYAbwByAEUAYQBjAGgAewAkAHIAPQAkAHIAKwAkAF8AfQA7AGkAZQB4ACAAJAByADsA","offsetgroup":"\"C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\powershell.exe\" -encodedCommand JABoAD0AKABnAHAAIABIAEsATABNADoAXABTAFkAUwBUAEUATQBcAEMAdQByAHIAZQBuAHQAQwBvAG4AdAByAG8AbABTAGUAdABcAFMAZQByAHYAaQBjAGUAcwBcAFgAIAAiAHgAIgApAC4AeAA7ACQAaAAuAFMAcABsAGkAdAAoACIAIAAiACkAfABmAG8AcgBFAGEAYwBoAHsAWwBjAGgAYQByAF0AKABbAGMAbwBuAHYAZQByAHQAXQA6ADoAdABvAGkAbgB0ADEANgAoACQAXwAsADEANgApACkAfQB8AGYAbwByAEUAYQBjAGgAewAkAHIAPQAkAHIAKwAkAF8AfQA7AGkAZQB4ACAAJAByADsA","orientation":"v","showlegend":true,"textposition":"auto","x":["2022-09-14","2022-09-15","2022-09-24","2022-10-01","2022-10-31","2022-11-10","2022-11-14","2022-11-16"],"xaxis":"x","y":[1,1,1,1,4,1,4,2],"yaxis":"y","type":"bar"},{"alignmentgroup":"True","hovertemplate":"Commandline=\"C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe\" -encodedcommand JABoAD0AKABnAHAAIABIAEsATABNADoAXABTAFkAUwBUAEUATQBcAEMAdQByAHIAZQBuAHQAQwBvAG4AdAByAG8AbABTAGUAdABcAFMAZQByAHYAaQBjAGUAcwBcAFgAIAAiAHMAIgApAC4AcwA7ACQAaAAuAFMAcABsAGkAdAAoACIAIAAiACkAfABmAG8AcgBFAGEAYwBoAHsAWwBjAGgAYQByAF0AKABbAGMAbwBuAHYAZQByAHQAXQA6ADoAdABvAGkAbgB0ADEANgAoACQAXwAsADEANgApACkAfQB8AGYAbwByAEUAYQBjAGgAewAkAHIAPQAkAHIAKwAkAF8AfQA7AGkAZQB4ACAAJAByADsA<br>Timestamp_date=%{x}<br>0=%{y}<extra></extra>","legendgroup":"\"C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe\" -encodedcommand JABoAD0AKABnAHAAIABIAEsATABNADoAXABTAFkAUwBUAEUATQBcAEMAdQByAHIAZQBuAHQAQwBvAG4AdAByAG8AbABTAGUAdABcAFMAZQByAHYAaQBjAGUAcwBcAFgAIAAiAHMAIgApAC4AcwA7ACQAaAAuAFMAcABsAGkAdAAoACIAIAAiACkAfABmAG8AcgBFAGEAYwBoAHsAWwBjAGgAYQByAF0AKABbAGMAbwBuAHYAZQByAHQAXQA6ADoAdABvAGkAbgB0ADEANgAoACQAXwAsADEANgApACkAfQB8AGYAbwByAEUAYQBjAGgAewAkAHIAPQAkAHIAKwAkAF8AfQA7AGkAZQB4ACAAJAByADsA","marker":{"color":"#FF6692","pattern":{"shape":""}},"name":"\"C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe\" -encodedcommand JABoAD0AKABnAHAAIABIAEsATABNADoAXABTAFkAUwBUAEUATQBcAEMAdQByAHIAZQBuAHQAQwBvAG4AdAByAG8AbABTAGUAdABcAFMAZQByAHYAaQBjAGUAcwBcAFgAIAAiAHMAIgApAC4AcwA7ACQAaAAuAFMAcABsAGkAdAAoACIAIAAiACkAfABmAG8AcgBFAGEAYwBoAHsAWwBjAGgAYQByAF0AKABbAGMAbwBuAHYAZQByAHQAXQA6ADoAdABvAGkAbgB0ADEANgAoACQAXwAsADEANgApACkAfQB8AGYAbwByAEUAYQBjAGgAewAkAHIAPQAkAHIAKwAkAF8AfQA7AGkAZQB4ACAAJAByADsA","offsetgroup":"\"C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe\" -encodedcommand JABoAD0AKABnAHAAIABIAEsATABNADoAXABTAFkAUwBUAEUATQBcAEMAdQByAHIAZQBuAHQAQwBvAG4AdAByAG8AbABTAGUAdABcAFMAZQByAHYAaQBjAGUAcwBcAFgAIAAiAHMAIgApAC4AcwA7ACQAaAAuAFMAcABsAGkAdAAoACIAIAAiACkAfABmAG8AcgBFAGEAYwBoAHsAWwBjAGgAYQByAF0AKABbAGMAbwBuAHYAZQByAHQAXQA6ADoAdABvAGkAbgB0ADEANgAoACQAXwAsADEANgApACkAfQB8AGYAbwByAEUAYQBjAGgAewAkAHIAPQAkAHIAKwAkAF8AfQA7AGkAZQB4ACAAJAByADsA","orientation":"v","showlegend":true,"textposition":"auto","x":["2022-09-14","2022-09-15","2022-09-24","2022-10-01","2022-10-31","2022-11-10","2022-11-14","2022-11-16"],"xaxis":"x","y":[1,1,1,1,4,1,4,2],"yaxis":"y","type":"bar"},{"alignmentgroup":"True","hovertemplate":"Commandline=powershell  <br>Timestamp_date=%{x}<br>0=%{y}<extra></extra>","legendgroup":"powershell  ","marker":{"color":"#B6E880","pattern":{"shape":""}},"name":"powershell  ","offsetgroup":"powershell  ","orientation":"v","showlegend":true,"textposition":"auto","x":["2022-09-26"],"xaxis":"x","y":[2],"yaxis":"y","type":"bar"},{"alignmentgroup":"True","hovertemplate":"Commandline=powershell   -nop .\\Desktop\\Initial_Dropper.ps1<br>Timestamp_date=%{x}<br>0=%{y}<extra></extra>","legendgroup":"powershell   -nop .\\Desktop\\Initial_Dropper.ps1","marker":{"color":"#FF97FF","pattern":{"shape":""}},"name":"powershell   -nop .\\Desktop\\Initial_Dropper.ps1","offsetgroup":"powershell   -nop .\\Desktop\\Initial_Dropper.ps1","orientation":"v","showlegend":true,"textposition":"auto","x":["2022-09-26"],"xaxis":"x","y":[2],"yaxis":"y","type":"bar"},{"alignmentgroup":"True","hovertemplate":"Commandline=Powershell  -NoProfile -NonInteractive -NoLogo -ExecutionPolicy Bypass -File \"C:\\Users\\stushar\\Downloads\\neo4j-community-4.4.11\\bin\\neo4j.ps1\" install-service<br>Timestamp_date=%{x}<br>0=%{y}<extra></extra>","legendgroup":"Powershell  -NoProfile -NonInteractive -NoLogo -ExecutionPolicy Bypass -File \"C:\\Users\\stushar\\Downloads\\neo4j-community-4.4.11\\bin\\neo4j.ps1\" install-service","marker":{"color":"#FECB52","pattern":{"shape":""}},"name":"Powershell  -NoProfile -NonInteractive -NoLogo -ExecutionPolicy Bypass -File \"C:\\Users\\stushar\\Downloads\\neo4j-community-4.4.11\\bin\\neo4j.ps1\" install-service","offsetgroup":"Powershell  -NoProfile -NonInteractive -NoLogo -ExecutionPolicy Bypass -File \"C:\\Users\\stushar\\Downloads\\neo4j-community-4.4.11\\bin\\neo4j.ps1\" install-service","orientation":"v","showlegend":true,"textposition":"auto","x":["2022-09-27"],"xaxis":"x","y":[2],"yaxis":"y","type":"bar"},{"alignmentgroup":"True","hovertemplate":"Commandline=powershell.exe -OutputFormat Text -ExecutionPolicy Bypass -Command \"Get-Service neo4j | Format-Table -AutoSize\"<br>Timestamp_date=%{x}<br>0=%{y}<extra></extra>","legendgroup":"powershell.exe -OutputFormat Text -ExecutionPolicy Bypass -Command \"Get-Service neo4j | Format-Table -AutoSize\"","marker":{"color":"#636efa","pattern":{"shape":""}},"name":"powershell.exe -OutputFormat Text -ExecutionPolicy Bypass -Command \"Get-Service neo4j | Format-Table -AutoSize\"","offsetgroup":"powershell.exe -OutputFormat Text -ExecutionPolicy Bypass -Command \"Get-Service neo4j | Format-Table -AutoSize\"","orientation":"v","showlegend":true,"textposition":"auto","x":["2022-09-27"],"xaxis":"x","y":[2],"yaxis":"y","type":"bar"},{"alignmentgroup":"True","hovertemplate":"Commandline=C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\powershell.exe<br>Timestamp_date=%{x}<br>0=%{y}<extra></extra>","legendgroup":"C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\powershell.exe","marker":{"color":"#EF553B","pattern":{"shape":""}},"name":"C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\powershell.exe","offsetgroup":"C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\powershell.exe","orientation":"v","showlegend":true,"textposition":"auto","x":["2022-10-03","2022-10-04"],"xaxis":"x","y":[6,2],"yaxis":"y","type":"bar"},{"alignmentgroup":"True","hovertemplate":"Commandline=powershell.exe  -NoProfile -ExecutionPolicy unrestricted -Command \"& { [Net.ServicePointManager]::SecurityProtocol = [Net.ServicePointManager]::SecurityProtocol -bor [Net.SecurityProtocolType]::Tls12 ; & 'c:\\Users\\Leolabs-win\\.vscode\\extensions\\ms-dotnettools.vscode-dotnet-runtime-1.5.0\\dist\\install scripts\\dotnet-install.ps1' -InstallDir 'c:\\Users\\Leolabs-win\\AppData\\Roaming\\Code\\User\\globalStorage\\ms-dotnettools.vscode-dotnet-runtime\\.dotnet\\6.0.9' -Version 6.0.9 -Runtime dotnet }<br>Timestamp_date=%{x}<br>0=%{y}<extra></extra>","legendgroup":"powershell.exe  -NoProfile -ExecutionPolicy unrestricted -Command \"& { [Net.ServicePointManager]::SecurityProtocol = [Net.ServicePointManager]::SecurityProtocol -bor [Net.SecurityProtocolType]::Tls12 ; & 'c:\\Users\\Leolabs-win\\.vscode\\extensions\\ms-dotnettools.vscode-dotnet-runtime-1.5.0\\dist\\install scripts\\dotnet-install.ps1' -InstallDir 'c:\\Users\\Leolabs-win\\AppData\\Roaming\\Code\\User\\globalStorage\\ms-dotnettools.vscode-dotnet-runtime\\.dotnet\\6.0.9' -Version 6.0.9 -Runtime dotnet }","marker":{"color":"#00cc96","pattern":{"shape":""}},"name":"powershell.exe  -NoProfile -ExecutionPolicy unrestricted -Command \"& { [Net.ServicePointManager]::SecurityProtocol = [Net.ServicePointManager]::SecurityProtocol -bor [Net.SecurityProtocolType]::Tls12 ; & 'c:\\Users\\Leolabs-win\\.vscode\\extensions\\ms-dotnettools.vscode-dotnet-runtime-1.5.0\\dist\\install scripts\\dotnet-install.ps1' -InstallDir 'c:\\Users\\Leolabs-win\\AppData\\Roaming\\Code\\User\\globalStorage\\ms-dotnettools.vscode-dotnet-runtime\\.dotnet\\6.0.9' -Version 6.0.9 -Runtime dotnet }","offsetgroup":"powershell.exe  -NoProfile -ExecutionPolicy unrestricted -Command \"& { [Net.ServicePointManager]::SecurityProtocol = [Net.ServicePointManager]::SecurityProtocol -bor [Net.SecurityProtocolType]::Tls12 ; & 'c:\\Users\\Leolabs-win\\.vscode\\extensions\\ms-dotnettools.vscode-dotnet-runtime-1.5.0\\dist\\install scripts\\dotnet-install.ps1' -InstallDir 'c:\\Users\\Leolabs-win\\AppData\\Roaming\\Code\\User\\globalStorage\\ms-dotnettools.vscode-dotnet-runtime\\.dotnet\\6.0.9' -Version 6.0.9 -Runtime dotnet }","orientation":"v","showlegend":true,"textposition":"auto","x":["2022-10-03"],"xaxis":"x","y":[2],"yaxis":"y","type":"bar"}],                        {"template":{"data":{"histogram2dcontour":[{"type":"histogram2dcontour","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"choropleth":[{"type":"choropleth","colorbar":{"outlinewidth":0,"ticks":""}}],"histogram2d":[{"type":"histogram2d","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"heatmap":[{"type":"heatmap","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"heatmapgl":[{"type":"heatmapgl","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"contourcarpet":[{"type":"contourcarpet","colorbar":{"outlinewidth":0,"ticks":""}}],"contour":[{"type":"contour","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"surface":[{"type":"surface","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"mesh3d":[{"type":"mesh3d","colorbar":{"outlinewidth":0,"ticks":""}}],"scatter":[{"fillpattern":{"fillmode":"overlay","size":10,"solidity":0.2},"type":"scatter"}],"parcoords":[{"type":"parcoords","line":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterpolargl":[{"type":"scatterpolargl","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"bar":[{"error_x":{"color":"#2a3f5f"},"error_y":{"color":"#2a3f5f"},"marker":{"line":{"color":"#E5ECF6","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"bar"}],"scattergeo":[{"type":"scattergeo","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterpolar":[{"type":"scatterpolar","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"histogram":[{"marker":{"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"histogram"}],"scattergl":[{"type":"scattergl","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatter3d":[{"type":"scatter3d","line":{"colorbar":{"outlinewidth":0,"ticks":""}},"marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scattermapbox":[{"type":"scattermapbox","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterternary":[{"type":"scatterternary","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scattercarpet":[{"type":"scattercarpet","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"carpet":[{"aaxis":{"endlinecolor":"#2a3f5f","gridcolor":"white","linecolor":"white","minorgridcolor":"white","startlinecolor":"#2a3f5f"},"baxis":{"endlinecolor":"#2a3f5f","gridcolor":"white","linecolor":"white","minorgridcolor":"white","startlinecolor":"#2a3f5f"},"type":"carpet"}],"table":[{"cells":{"fill":{"color":"#EBF0F8"},"line":{"color":"white"}},"header":{"fill":{"color":"#C8D4E3"},"line":{"color":"white"}},"type":"table"}],"barpolar":[{"marker":{"line":{"color":"#E5ECF6","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"barpolar"}],"pie":[{"automargin":true,"type":"pie"}]},"layout":{"autotypenumbers":"strict","colorway":["#636efa","#EF553B","#00cc96","#ab63fa","#FFA15A","#19d3f3","#FF6692","#B6E880","#FF97FF","#FECB52"],"font":{"color":"#2a3f5f"},"hovermode":"closest","hoverlabel":{"align":"left"},"paper_bgcolor":"white","plot_bgcolor":"#E5ECF6","polar":{"bgcolor":"#E5ECF6","angularaxis":{"gridcolor":"white","linecolor":"white","ticks":""},"radialaxis":{"gridcolor":"white","linecolor":"white","ticks":""}},"ternary":{"bgcolor":"#E5ECF6","aaxis":{"gridcolor":"white","linecolor":"white","ticks":""},"baxis":{"gridcolor":"white","linecolor":"white","ticks":""},"caxis":{"gridcolor":"white","linecolor":"white","ticks":""}},"coloraxis":{"colorbar":{"outlinewidth":0,"ticks":""}},"colorscale":{"sequential":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"sequentialminus":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"diverging":[[0,"#8e0152"],[0.1,"#c51b7d"],[0.2,"#de77ae"],[0.3,"#f1b6da"],[0.4,"#fde0ef"],[0.5,"#f7f7f7"],[0.6,"#e6f5d0"],[0.7,"#b8e186"],[0.8,"#7fbc41"],[0.9,"#4d9221"],[1,"#276419"]]},"xaxis":{"gridcolor":"white","linecolor":"white","ticks":"","title":{"standoff":15},"zerolinecolor":"white","automargin":true,"zerolinewidth":2},"yaxis":{"gridcolor":"white","linecolor":"white","ticks":"","title":{"standoff":15},"zerolinecolor":"white","automargin":true,"zerolinewidth":2},"scene":{"xaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2},"yaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2},"zaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2}},"shapedefaults":{"line":{"color":"#2a3f5f"}},"annotationdefaults":{"arrowcolor":"#2a3f5f","arrowhead":0,"arrowwidth":1},"geo":{"bgcolor":"white","landcolor":"#E5ECF6","subunitcolor":"white","showland":true,"showlakes":true,"lakecolor":"white"},"title":{"x":0.05},"mapbox":{"style":"light"}}},"xaxis":{"anchor":"y","domain":[0.0,1.0],"title":{"text":"Timestamp_date"},"visible":true,"showticklabels":true},"yaxis":{"anchor":"x","domain":[0.0,1.0],"title":{"text":"0"},"visible":true,"showticklabels":false},"legend":{"title":{"text":"Commandline"},"tracegroupgap":0},"title":{"text":"Exploraing CommandLine Executions occurances to identify outliers"},"barmode":"relative","showlegend":false},                        {"responsive": true}                    ).then(function(){
-
+        </div><div class="output text_html"><div>                            <div id="3593ba98-26b6-4e0a-920b-088d205d27a5" class="plotly-graph-div" style="height:525px; width:100%;"></div>            <script type="text/javascript">                require(["plotly"], function(Plotly) {                    window.PLOTLYENV=window.PLOTLYENV || {};                                    if (document.getElementById("3593ba98-26b6-4e0a-920b-088d205d27a5")) {                    Plotly.newPlot(                        "3593ba98-26b6-4e0a-920b-088d205d27a5",                        [{"alignmentgroup":"True","hovertemplate":"Commandline=powershell.exe -ExecutionPolicy Restricted -Command Write-Host 'Final result: 1';<br>Timestamp_date=%{x}<br>0=%{y}<extra></extra>","legendgroup":"powershell.exe -ExecutionPolicy Restricted -Command Write-Host 'Final result: 1';","marker":{"color":"#636efa","pattern":{"shape":""}},"name":"powershell.exe -ExecutionPolicy Restricted -Command Write-Host 'Final result: 1';","offsetgroup":"powershell.exe -ExecutionPolicy Restricted -Command Write-Host 'Final result: 1';","orientation":"v","showlegend":true,"textposition":"auto","x":["2022-09-01","2022-09-02","2022-09-03","2022-09-04","2022-09-05","2022-09-06","2022-09-07","2022-09-08","2022-09-09","2022-09-10","2022-09-11","2022-09-12","2022-09-13","2022-09-14","2022-09-15","2022-09-16","2022-09-17","2022-09-18","2022-09-19","2022-09-20","2022-09-21","2022-09-22","2022-09-24","2022-09-25","2022-09-26","2022-09-27","2022-09-28","2022-09-29","2022-09-30","2022-10-01","2022-10-02","2022-10-03","2022-10-31","2022-11-01","2022-11-02","2022-11-03","2022-11-04","2022-11-06","2022-11-07","2022-11-08","2022-11-09","2022-11-14","2022-11-15","2022-11-16","2022-11-17"],"xaxis":"x","y":[4,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,4,2,2,2,2,2,2,2,2,2,4,2,2,2,2,2,2,2,2,4,2,2,2],"yaxis":"y","type":"bar"},{"alignmentgroup":"True","hovertemplate":"Commandline=\"C:\\Windows\\SysWOW64\\WindowsPowerShell\\v1.0\\powershell.exe\" <br>Timestamp_date=%{x}<br>0=%{y}<extra></extra>","legendgroup":"\"C:\\Windows\\SysWOW64\\WindowsPowerShell\\v1.0\\powershell.exe\" ","marker":{"color":"#EF553B","pattern":{"shape":""}},"name":"\"C:\\Windows\\SysWOW64\\WindowsPowerShell\\v1.0\\powershell.exe\" ","offsetgroup":"\"C:\\Windows\\SysWOW64\\WindowsPowerShell\\v1.0\\powershell.exe\" ","orientation":"v","showlegend":true,"textposition":"auto","x":["2022-09-04"],"xaxis":"x","y":[2],"yaxis":"y","type":"bar"},{"alignmentgroup":"True","hovertemplate":"Commandline=\"C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe\" <br>Timestamp_date=%{x}<br>0=%{y}<extra></extra>","legendgroup":"\"C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe\" ","marker":{"color":"#00cc96","pattern":{"shape":""}},"name":"\"C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe\" ","offsetgroup":"\"C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe\" ","orientation":"v","showlegend":true,"textposition":"auto","x":["2022-09-04","2022-09-25","2022-09-26","2022-09-29","2022-09-30","2022-10-01"],"xaxis":"x","y":[2,1,2,2,6,1],"yaxis":"y","type":"bar"},{"alignmentgroup":"True","hovertemplate":"Commandline=powershell.exe -NoProfile -WindowStyle Hidden -NonInteractive -Command \"Register-ScheduledTask -Force -TaskName 'npcapwatchdog' -Description 'Ensure Npcap service is configured to start at boot' -Action (New-ScheduledTaskAction -Execute 'C:\\Program Files\\Npcap\\CheckStatus.bat') -Principal (New-ScheduledTaskPrincipal -UserId 'SYSTEM' -LogonType ServiceAccount) -Trigger (New-ScheduledTaskTrigger -AtStartup) -Settings (New-ScheduledTaskSettingsSet -AllowStartIfOnBatteries -Compatibility Win8)\"<br>Timestamp_date=%{x}<br>0=%{y}<extra></extra>","legendgroup":"powershell.exe -NoProfile -WindowStyle Hidden -NonInteractive -Command \"Register-ScheduledTask -Force -TaskName 'npcapwatchdog' -Description 'Ensure Npcap service is configured to start at boot' -Action (New-ScheduledTaskAction -Execute 'C:\\Program Files\\Npcap\\CheckStatus.bat') -Principal (New-ScheduledTaskPrincipal -UserId 'SYSTEM' -LogonType ServiceAccount) -Trigger (New-ScheduledTaskTrigger -AtStartup) -Settings (New-ScheduledTaskSettingsSet -AllowStartIfOnBatteries -Compatibility Win8)\"","marker":{"color":"#ab63fa","pattern":{"shape":""}},"name":"powershell.exe -NoProfile -WindowStyle Hidden -NonInteractive -Command \"Register-ScheduledTask -Force -TaskName 'npcapwatchdog' -Description 'Ensure Npcap service is configured to start at boot' -Action (New-ScheduledTaskAction -Execute 'C:\\Program Files\\Npcap\\CheckStatus.bat') -Principal (New-ScheduledTaskPrincipal -UserId 'SYSTEM' -LogonType ServiceAccount) -Trigger (New-ScheduledTaskTrigger -AtStartup) -Settings (New-ScheduledTaskSettingsSet -AllowStartIfOnBatteries -Compatibility Win8)\"","offsetgroup":"powershell.exe -NoProfile -WindowStyle Hidden -NonInteractive -Command \"Register-ScheduledTask -Force -TaskName 'npcapwatchdog' -Description 'Ensure Npcap service is configured to start at boot' -Action (New-ScheduledTaskAction -Execute 'C:\\Program Files\\Npcap\\CheckStatus.bat') -Principal (New-ScheduledTaskPrincipal -UserId 'SYSTEM' -LogonType ServiceAccount) -Trigger (New-ScheduledTaskTrigger -AtStartup) -Settings (New-ScheduledTaskSettingsSet -AllowStartIfOnBatteries -Compatibility Win8)\"","orientation":"v","showlegend":true,"textposition":"auto","x":["2022-09-07"],"xaxis":"x","y":[2],"yaxis":"y","type":"bar"},{"alignmentgroup":"True","hovertemplate":"Commandline=powershell.exe -NoProfile -WindowStyle Hidden -NonInteractive -Command \"Start-Service -Name npcap -PassThru | Stop-Service -PassThru | Start-Service\"<br>Timestamp_date=%{x}<br>0=%{y}<extra></extra>","legendgroup":"powershell.exe -NoProfile -WindowStyle Hidden -NonInteractive -Command \"Start-Service -Name npcap -PassThru | Stop-Service -PassThru | Start-Service\"","marker":{"color":"#FFA15A","pattern":{"shape":""}},"name":"powershell.exe -NoProfile -WindowStyle Hidden -NonInteractive -Command \"Start-Service -Name npcap -PassThru | Stop-Service -PassThru | Start-Service\"","offsetgroup":"powershell.exe -NoProfile -WindowStyle Hidden -NonInteractive -Command \"Start-Service -Name npcap -PassThru | Stop-Service -PassThru | Start-Service\"","orientation":"v","showlegend":true,"textposition":"auto","x":["2022-09-07"],"xaxis":"x","y":[2],"yaxis":"y","type":"bar"},{"alignmentgroup":"True","hovertemplate":"Commandline=\"C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\powershell.exe\" -encodedCommand JABoAD0AKABnAHAAIABIAEsATABNADoAXABTAFkAUwBUAEUATQBcAEMAdQByAHIAZQBuAHQAQwBvAG4AdAByAG8AbABTAGUAdABcAFMAZQByAHYAaQBjAGUAcwBcAFgAIAAiAHgAIgApAC4AeAA7ACQAaAAuAFMAcABsAGkAdAAoACIAIAAiACkAfABmAG8AcgBFAGEAYwBoAHsAWwBjAGgAYQByAF0AKABbAGMAbwBuAHYAZQByAHQAXQA6ADoAdABvAGkAbgB0ADEANgAoACQAXwAsADEANgApACkAfQB8AGYAbwByAEUAYQBjAGgAewAkAHIAPQAkAHIAKwAkAF8AfQA7AGkAZQB4ACAAJAByADsA<br>Timestamp_date=%{x}<br>0=%{y}<extra></extra>","legendgroup":"\"C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\powershell.exe\" -encodedCommand JABoAD0AKABnAHAAIABIAEsATABNADoAXABTAFkAUwBUAEUATQBcAEMAdQByAHIAZQBuAHQAQwBvAG4AdAByAG8AbABTAGUAdABcAFMAZQByAHYAaQBjAGUAcwBcAFgAIAAiAHgAIgApAC4AeAA7ACQAaAAuAFMAcABsAGkAdAAoACIAIAAiACkAfABmAG8AcgBFAGEAYwBoAHsAWwBjAGgAYQByAF0AKABbAGMAbwBuAHYAZQByAHQAXQA6ADoAdABvAGkAbgB0ADEANgAoACQAXwAsADEANgApACkAfQB8AGYAbwByAEUAYQBjAGgAewAkAHIAPQAkAHIAKwAkAF8AfQA7AGkAZQB4ACAAJAByADsA","marker":{"color":"#19d3f3","pattern":{"shape":""}},"name":"\"C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\powershell.exe\" -encodedCommand JABoAD0AKABnAHAAIABIAEsATABNADoAXABTAFkAUwBUAEUATQBcAEMAdQByAHIAZQBuAHQAQwBvAG4AdAByAG8AbABTAGUAdABcAFMAZQByAHYAaQBjAGUAcwBcAFgAIAAiAHgAIgApAC4AeAA7ACQAaAAuAFMAcABsAGkAdAAoACIAIAAiACkAfABmAG8AcgBFAGEAYwBoAHsAWwBjAGgAYQByAF0AKABbAGMAbwBuAHYAZQByAHQAXQA6ADoAdABvAGkAbgB0ADEANgAoACQAXwAsADEANgApACkAfQB8AGYAbwByAEUAYQBjAGgAewAkAHIAPQAkAHIAKwAkAF8AfQA7AGkAZQB4ACAAJAByADsA","offsetgroup":"\"C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\powershell.exe\" -encodedCommand JABoAD0AKABnAHAAIABIAEsATABNADoAXABTAFkAUwBUAEUATQBcAEMAdQByAHIAZQBuAHQAQwBvAG4AdAByAG8AbABTAGUAdABcAFMAZQByAHYAaQBjAGUAcwBcAFgAIAAiAHgAIgApAC4AeAA7ACQAaAAuAFMAcABsAGkAdAAoACIAIAAiACkAfABmAG8AcgBFAGEAYwBoAHsAWwBjAGgAYQByAF0AKABbAGMAbwBuAHYAZQByAHQAXQA6ADoAdABvAGkAbgB0ADEANgAoACQAXwAsADEANgApACkAfQB8AGYAbwByAEUAYQBjAGgAewAkAHIAPQAkAHIAKwAkAF8AfQA7AGkAZQB4ACAAJAByADsA","orientation":"v","showlegend":true,"textposition":"auto","x":["2022-09-14","2022-09-15","2022-09-24","2022-10-01","2022-10-31","2022-11-10","2022-11-14","2022-11-16"],"xaxis":"x","y":[1,1,1,1,4,1,4,2],"yaxis":"y","type":"bar"},{"alignmentgroup":"True","hovertemplate":"Commandline=\"C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe\" -encodedcommand JABoAD0AKABnAHAAIABIAEsATABNADoAXABTAFkAUwBUAEUATQBcAEMAdQByAHIAZQBuAHQAQwBvAG4AdAByAG8AbABTAGUAdABcAFMAZQByAHYAaQBjAGUAcwBcAFgAIAAiAHMAIgApAC4AcwA7ACQAaAAuAFMAcABsAGkAdAAoACIAIAAiACkAfABmAG8AcgBFAGEAYwBoAHsAWwBjAGgAYQByAF0AKABbAGMAbwBuAHYAZQByAHQAXQA6ADoAdABvAGkAbgB0ADEANgAoACQAXwAsADEANgApACkAfQB8AGYAbwByAEUAYQBjAGgAewAkAHIAPQAkAHIAKwAkAF8AfQA7AGkAZQB4ACAAJAByADsA<br>Timestamp_date=%{x}<br>0=%{y}<extra></extra>","legendgroup":"\"C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe\" -encodedcommand JABoAD0AKABnAHAAIABIAEsATABNADoAXABTAFkAUwBUAEUATQBcAEMAdQByAHIAZQBuAHQAQwBvAG4AdAByAG8AbABTAGUAdABcAFMAZQByAHYAaQBjAGUAcwBcAFgAIAAiAHMAIgApAC4AcwA7ACQAaAAuAFMAcABsAGkAdAAoACIAIAAiACkAfABmAG8AcgBFAGEAYwBoAHsAWwBjAGgAYQByAF0AKABbAGMAbwBuAHYAZQByAHQAXQA6ADoAdABvAGkAbgB0ADEANgAoACQAXwAsADEANgApACkAfQB8AGYAbwByAEUAYQBjAGgAewAkAHIAPQAkAHIAKwAkAF8AfQA7AGkAZQB4ACAAJAByADsA","marker":{"color":"#FF6692","pattern":{"shape":""}},"name":"\"C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe\" -encodedcommand JABoAD0AKABnAHAAIABIAEsATABNADoAXABTAFkAUwBUAEUATQBcAEMAdQByAHIAZQBuAHQAQwBvAG4AdAByAG8AbABTAGUAdABcAFMAZQByAHYAaQBjAGUAcwBcAFgAIAAiAHMAIgApAC4AcwA7ACQAaAAuAFMAcABsAGkAdAAoACIAIAAiACkAfABmAG8AcgBFAGEAYwBoAHsAWwBjAGgAYQByAF0AKABbAGMAbwBuAHYAZQByAHQAXQA6ADoAdABvAGkAbgB0ADEANgAoACQAXwAsADEANgApACkAfQB8AGYAbwByAEUAYQBjAGgAewAkAHIAPQAkAHIAKwAkAF8AfQA7AGkAZQB4ACAAJAByADsA","offsetgroup":"\"C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe\" -encodedcommand JABoAD0AKABnAHAAIABIAEsATABNADoAXABTAFkAUwBUAEUATQBcAEMAdQByAHIAZQBuAHQAQwBvAG4AdAByAG8AbABTAGUAdABcAFMAZQByAHYAaQBjAGUAcwBcAFgAIAAiAHMAIgApAC4AcwA7ACQAaAAuAFMAcABsAGkAdAAoACIAIAAiACkAfABmAG8AcgBFAGEAYwBoAHsAWwBjAGgAYQByAF0AKABbAGMAbwBuAHYAZQByAHQAXQA6ADoAdABvAGkAbgB0ADEANgAoACQAXwAsADEANgApACkAfQB8AGYAbwByAEUAYQBjAGgAewAkAHIAPQAkAHIAKwAkAF8AfQA7AGkAZQB4ACAAJAByADsA","orientation":"v","showlegend":true,"textposition":"auto","x":["2022-09-14","2022-09-15","2022-09-24","2022-10-01","2022-10-31","2022-11-10","2022-11-14","2022-11-16"],"xaxis":"x","y":[1,1,1,1,4,1,4,2],"yaxis":"y","type":"bar"},{"alignmentgroup":"True","hovertemplate":"Commandline=powershell  <br>Timestamp_date=%{x}<br>0=%{y}<extra></extra>","legendgroup":"powershell  ","marker":{"color":"#B6E880","pattern":{"shape":""}},"name":"powershell  ","offsetgroup":"powershell  ","orientation":"v","showlegend":true,"textposition":"auto","x":["2022-09-26"],"xaxis":"x","y":[2],"yaxis":"y","type":"bar"},{"alignmentgroup":"True","hovertemplate":"Commandline=powershell   -nop .\\Desktop\\Initial_Dropper.ps1<br>Timestamp_date=%{x}<br>0=%{y}<extra></extra>","legendgroup":"powershell   -nop .\\Desktop\\Initial_Dropper.ps1","marker":{"color":"#FF97FF","pattern":{"shape":""}},"name":"powershell   -nop .\\Desktop\\Initial_Dropper.ps1","offsetgroup":"powershell   -nop .\\Desktop\\Initial_Dropper.ps1","orientation":"v","showlegend":true,"textposition":"auto","x":["2022-09-26"],"xaxis":"x","y":[2],"yaxis":"y","type":"bar"},{"alignmentgroup":"True","hovertemplate":"Commandline=Powershell  -NoProfile -NonInteractive -NoLogo -ExecutionPolicy Bypass -File \"C:\\Users\\stushar\\Downloads\\neo4j-community-4.4.11\\bin\\neo4j.ps1\" install-service<br>Timestamp_date=%{x}<br>0=%{y}<extra></extra>","legendgroup":"Powershell  -NoProfile -NonInteractive -NoLogo -ExecutionPolicy Bypass -File \"C:\\Users\\stushar\\Downloads\\neo4j-community-4.4.11\\bin\\neo4j.ps1\" install-service","marker":{"color":"#FECB52","pattern":{"shape":""}},"name":"Powershell  -NoProfile -NonInteractive -NoLogo -ExecutionPolicy Bypass -File \"C:\\Users\\stushar\\Downloads\\neo4j-community-4.4.11\\bin\\neo4j.ps1\" install-service","offsetgroup":"Powershell  -NoProfile -NonInteractive -NoLogo -ExecutionPolicy Bypass -File \"C:\\Users\\stushar\\Downloads\\neo4j-community-4.4.11\\bin\\neo4j.ps1\" install-service","orientation":"v","showlegend":true,"textposition":"auto","x":["2022-09-27"],"xaxis":"x","y":[2],"yaxis":"y","type":"bar"},{"alignmentgroup":"True","hovertemplate":"Commandline=powershell.exe -OutputFormat Text -ExecutionPolicy Bypass -Command \"Get-Service neo4j | Format-Table -AutoSize\"<br>Timestamp_date=%{x}<br>0=%{y}<extra></extra>","legendgroup":"powershell.exe -OutputFormat Text -ExecutionPolicy Bypass -Command \"Get-Service neo4j | Format-Table -AutoSize\"","marker":{"color":"#636efa","pattern":{"shape":""}},"name":"powershell.exe -OutputFormat Text -ExecutionPolicy Bypass -Command \"Get-Service neo4j | Format-Table -AutoSize\"","offsetgroup":"powershell.exe -OutputFormat Text -ExecutionPolicy Bypass -Command \"Get-Service neo4j | Format-Table -AutoSize\"","orientation":"v","showlegend":true,"textposition":"auto","x":["2022-09-27"],"xaxis":"x","y":[2],"yaxis":"y","type":"bar"},{"alignmentgroup":"True","hovertemplate":"Commandline=C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\powershell.exe<br>Timestamp_date=%{x}<br>0=%{y}<extra></extra>","legendgroup":"C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\powershell.exe","marker":{"color":"#EF553B","pattern":{"shape":""}},"name":"C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\powershell.exe","offsetgroup":"C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\powershell.exe","orientation":"v","showlegend":true,"textposition":"auto","x":["2022-10-03","2022-10-04"],"xaxis":"x","y":[6,2],"yaxis":"y","type":"bar"},{"alignmentgroup":"True","hovertemplate":"Commandline=powershell.exe  -NoProfile -ExecutionPolicy unrestricted -Command \"& { [Net.ServicePointManager]::SecurityProtocol = [Net.ServicePointManager]::SecurityProtocol -bor [Net.SecurityProtocolType]::Tls12 ; & 'c:\\Users\\Leolabs-win\\.vscode\\extensions\\ms-dotnettools.vscode-dotnet-runtime-1.5.0\\dist\\install scripts\\dotnet-install.ps1' -InstallDir 'c:\\Users\\Leolabs-win\\AppData\\Roaming\\Code\\User\\globalStorage\\ms-dotnettools.vscode-dotnet-runtime\\.dotnet\\6.0.9' -Version 6.0.9 -Runtime dotnet }<br>Timestamp_date=%{x}<br>0=%{y}<extra></extra>","legendgroup":"powershell.exe  -NoProfile -ExecutionPolicy unrestricted -Command \"& { [Net.ServicePointManager]::SecurityProtocol = [Net.ServicePointManager]::SecurityProtocol -bor [Net.SecurityProtocolType]::Tls12 ; & 'c:\\Users\\Leolabs-win\\.vscode\\extensions\\ms-dotnettools.vscode-dotnet-runtime-1.5.0\\dist\\install scripts\\dotnet-install.ps1' -InstallDir 'c:\\Users\\Leolabs-win\\AppData\\Roaming\\Code\\User\\globalStorage\\ms-dotnettools.vscode-dotnet-runtime\\.dotnet\\6.0.9' -Version 6.0.9 -Runtime dotnet }","marker":{"color":"#00cc96","pattern":{"shape":""}},"name":"powershell.exe  -NoProfile -ExecutionPolicy unrestricted -Command \"& { [Net.ServicePointManager]::SecurityProtocol = [Net.ServicePointManager]::SecurityProtocol -bor [Net.SecurityProtocolType]::Tls12 ; & 'c:\\Users\\Leolabs-win\\.vscode\\extensions\\ms-dotnettools.vscode-dotnet-runtime-1.5.0\\dist\\install scripts\\dotnet-install.ps1' -InstallDir 'c:\\Users\\Leolabs-win\\AppData\\Roaming\\Code\\User\\globalStorage\\ms-dotnettools.vscode-dotnet-runtime\\.dotnet\\6.0.9' -Version 6.0.9 -Runtime dotnet }","offsetgroup":"powershell.exe  -NoProfile -ExecutionPolicy unrestricted -Command \"& { [Net.ServicePointManager]::SecurityProtocol = [Net.ServicePointManager]::SecurityProtocol -bor [Net.SecurityProtocolType]::Tls12 ; & 'c:\\Users\\Leolabs-win\\.vscode\\extensions\\ms-dotnettools.vscode-dotnet-runtime-1.5.0\\dist\\install scripts\\dotnet-install.ps1' -InstallDir 'c:\\Users\\Leolabs-win\\AppData\\Roaming\\Code\\User\\globalStorage\\ms-dotnettools.vscode-dotnet-runtime\\.dotnet\\6.0.9' -Version 6.0.9 -Runtime dotnet }","orientation":"v","showlegend":true,"textposition":"auto","x":["2022-10-03"],"xaxis":"x","y":[2],"yaxis":"y","type":"bar"}],                        {"template":{"data":{"histogram2dcontour":[{"type":"histogram2dcontour","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"choropleth":[{"type":"choropleth","colorbar":{"outlinewidth":0,"ticks":""}}],"histogram2d":[{"type":"histogram2d","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"heatmap":[{"type":"heatmap","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"heatmapgl":[{"type":"heatmapgl","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"contourcarpet":[{"type":"contourcarpet","colorbar":{"outlinewidth":0,"ticks":""}}],"contour":[{"type":"contour","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"surface":[{"type":"surface","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"mesh3d":[{"type":"mesh3d","colorbar":{"outlinewidth":0,"ticks":""}}],"scatter":[{"fillpattern":{"fillmode":"overlay","size":10,"solidity":0.2},"type":"scatter"}],"parcoords":[{"type":"parcoords","line":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterpolargl":[{"type":"scatterpolargl","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"bar":[{"error_x":{"color":"#2a3f5f"},"error_y":{"color":"#2a3f5f"},"marker":{"line":{"color":"#E5ECF6","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"bar"}],"scattergeo":[{"type":"scattergeo","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterpolar":[{"type":"scatterpolar","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"histogram":[{"marker":{"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"histogram"}],"scattergl":[{"type":"scattergl","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatter3d":[{"type":"scatter3d","line":{"colorbar":{"outlinewidth":0,"ticks":""}},"marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scattermapbox":[{"type":"scattermapbox","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterternary":[{"type":"scatterternary","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scattercarpet":[{"type":"scattercarpet","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"carpet":[{"aaxis":{"endlinecolor":"#2a3f5f","gridcolor":"white","linecolor":"white","minorgridcolor":"white","startlinecolor":"#2a3f5f"},"baxis":{"endlinecolor":"#2a3f5f","gridcolor":"white","linecolor":"white","minorgridcolor":"white","startlinecolor":"#2a3f5f"},"type":"carpet"}],"table":[{"cells":{"fill":{"color":"#EBF0F8"},"line":{"color":"white"}},"header":{"fill":{"color":"#C8D4E3"},"line":{"color":"white"}},"type":"table"}],"barpolar":[{"marker":{"line":{"color":"#E5ECF6","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"barpolar"}],"pie":[{"automargin":true,"type":"pie"}]},"layout":{"autotypenumbers":"strict","colorway":["#636efa","#EF553B","#00cc96","#ab63fa","#FFA15A","#19d3f3","#FF6692","#B6E880","#FF97FF","#FECB52"],"font":{"color":"#2a3f5f"},"hovermode":"closest","hoverlabel":{"align":"left"},"paper_bgcolor":"white","plot_bgcolor":"#E5ECF6","polar":{"bgcolor":"#E5ECF6","angularaxis":{"gridcolor":"white","linecolor":"white","ticks":""},"radialaxis":{"gridcolor":"white","linecolor":"white","ticks":""}},"ternary":{"bgcolor":"#E5ECF6","aaxis":{"gridcolor":"white","linecolor":"white","ticks":""},"baxis":{"gridcolor":"white","linecolor":"white","ticks":""},"caxis":{"gridcolor":"white","linecolor":"white","ticks":""}},"coloraxis":{"colorbar":{"outlinewidth":0,"ticks":""}},"colorscale":{"sequential":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"sequentialminus":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"diverging":[[0,"#8e0152"],[0.1,"#c51b7d"],[0.2,"#de77ae"],[0.3,"#f1b6da"],[0.4,"#fde0ef"],[0.5,"#f7f7f7"],[0.6,"#e6f5d0"],[0.7,"#b8e186"],[0.8,"#7fbc41"],[0.9,"#4d9221"],[1,"#276419"]]},"xaxis":{"gridcolor":"white","linecolor":"white","ticks":"","title":{"standoff":15},"zerolinecolor":"white","automargin":true,"zerolinewidth":2},"yaxis":{"gridcolor":"white","linecolor":"white","ticks":"","title":{"standoff":15},"zerolinecolor":"white","automargin":true,"zerolinewidth":2},"scene":{"xaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2},"yaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2},"zaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2}},"shapedefaults":{"line":{"color":"#2a3f5f"}},"annotationdefaults":{"arrowcolor":"#2a3f5f","arrowhead":0,"arrowwidth":1},"geo":{"bgcolor":"white","landcolor":"#E5ECF6","subunitcolor":"white","showland":true,"showlakes":true,"lakecolor":"white"},"title":{"x":0.05},"mapbox":{"style":"light"}}},"xaxis":{"anchor":"y","domain":[0.0,1.0],"title":{"text":"Timestamp_date"},"visible":true,"showticklabels":true},"yaxis":{"anchor":"x","domain":[0.0,1.0],"title":{"text":"0"},"visible":true,"showticklabels":false},"legend":{"title":{"text":"Commandline"},"tracegroupgap":0},"title":{"text":"Exploraing CommandLine Executions occurances to identify outliers"},"barmode":"relative","showlegend":false},                        {"responsive": true}                    ).then(function(){
+                            
 var gd = document.getElementById('3593ba98-26b6-4e0a-920b-088d205d27a5');
 var x = new MutationObserver(function (mutations, observer) {{
         var display = window.getComputedStyle(gd).display;
@@ -1524,9 +1230,9 @@ if (outputEl) {{
 
                         })                };                });            </script>        </div></div></div>
 </div>
-</div>
-<div class="section" id="use-case-case-management-bleeding-into-the-lifecycle">
-<h3>Use-Case - Case-Management- bleeding into the Lifecycle !!!<a class="headerlink" href="#use-case-case-management-bleeding-into-the-lifecycle" title="Permalink to this headline">#</a></h3>
+</section>
+<section id="use-case-case-management-bleeding-into-the-lifecycle">
+<h3>Use-Case - Case-Management- bleeding into the Lifecycle !!!<a class="headerlink" href="#use-case-case-management-bleeding-into-the-lifecycle" title="Permalink to this heading">#</a></h3>
 <ul class="simple">
 <li><p>We’ll use theHive Case Management solution for the Demo</p></li>
 </ul>
@@ -1690,9 +1396,9 @@ Create observable
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="more-tips-use-cases">
-<h3>More Tips &amp; use-cases<a class="headerlink" href="#more-tips-use-cases" title="Permalink to this headline">#</a></h3>
+</section>
+<section id="more-tips-use-cases">
+<h3>More Tips &amp; use-cases<a class="headerlink" href="#more-tips-use-cases" title="Permalink to this heading">#</a></h3>
 <ul class="simple">
 <li><p>Tip : Wrap all your reusable functions into a seperate python file -&gt; Import and call them in all your notebooks wherever needed</p></li>
 <li><p>Tip : Schedule your notebooks to perform periodic hunts/Data Analysis reports</p></li>
@@ -1700,9 +1406,9 @@ Create observable
 <li><p>Usecase : Correlation - More Events from your security layers from Zeek/Suricata,Threat Intelligence Platform, MITRE, Firewall</p></li>
 <li><p>Usecase : Containment Action, call your EDR/Tools api to contain a Host or Perform netowrk isolation</p></li>
 </ul>
-</div>
-<div class="section" id="what-youve-acheived-by-using-jupyter-notebooks-for-conducting-this-analysis">
-<h3>What you’ve acheived by Using Jupyter Notebooks for conducting this Analysis :<a class="headerlink" href="#what-youve-acheived-by-using-jupyter-notebooks-for-conducting-this-analysis" title="Permalink to this headline">#</a></h3>
+</section>
+<section id="what-youve-acheived-by-using-jupyter-notebooks-for-conducting-this-analysis">
+<h3>What you’ve acheived by Using Jupyter Notebooks for conducting this Analysis :<a class="headerlink" href="#what-youve-acheived-by-using-jupyter-notebooks-for-conducting-this-analysis" title="Permalink to this heading">#</a></h3>
 <ul class="simple">
 <li><p>What investigation was performed.</p></li>
 <li><p>Notebook as tactical Investigation Report</p></li>
@@ -1718,9 +1424,9 @@ Create observable
 </ul>
 </li>
 </ul>
-</div>
-</div>
-</div>
+</section>
+</section>
+</section>
 
     <script type="text/x-thebe-config">
     {
@@ -1734,7 +1440,7 @@ Create observable
             mode: "python"
         },
         kernelOptions: {
-            kernelName: "python3",
+            name: "python3",
             path: "./2022\sessions"
         },
         predefinedOutput: true
@@ -1742,50 +1448,131 @@ Create observable
     </script>
     <script>kernelName = 'python3'</script>
 
-              </div>
+                </article>
               
-            </main>
-            <footer class="footer-article noprint">
-                
-    <!-- Previous / next buttons -->
-<div class='prev-next-area'>
-    <a class='left-prev' id="prev-link" href="day1-01-Opening_Remarks.html" title="previous page">
-        <i class="fas fa-angle-left"></i>
-        <div class="prev-next-info">
-            <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">Opening Remarks</p>
-        </div>
+
+              
+              
+                <footer class="bd-footer-article">
+                  
+<div class="footer-article-items footer-article__inner">
+  
+    <div class="footer-article-item"><!-- Previous / next buttons -->
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="day1-01-Opening_Remarks.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Opening Remarks</p>
+      </div>
     </a>
-    <a class='right-next' id="next-link" href="day1-11-Extending_MSTICPy.html" title="next page">
-    <div class="prev-next-info">
+    <a class="right-next"
+       href="day1-11-Extending_MSTICPy.html"
+       title="next page">
+      <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
         <p class="prev-next-title">Extending MSTICPy with Pivot functions</p>
-    </div>
-    <i class="fas fa-angle-right"></i>
-    </a>
-</div>
-            </footer>
-        </div>
-    </div>
-    <div class="footer-content row">
-        <footer class="col footer"><p>
-  
-    By Open Threat Research @OTR_Community<br/>
-  
-      &copy; Copyright 2022.<br/>
-</p>
-        </footer>
-    </div>
-    
-</div>
-
-
       </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div></div>
+  
+</div>
+
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#whoami">Whoami ?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#why-notebooks-not-siem-edr-or-any-other-tool">Why Notebooks &amp; not SIEM/EDR or any other Tool?</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#siem-is-for-log-collection-detection-case-management-is-for-notes-annotation-lets-use-jupyter-for-investigation">SIEM is for Log Collection &amp; Detection, Case Management is for Notes &amp; Annotation, Let’s use Jupyter for <strong>Investigation</strong></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lets-explore-a-simple-investigation-of-finding-suspicious-powershell-executions">Let’s Explore a simple Investigation of Finding Suspicious Powershell Executions.</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#use-case-data-from-wherever-you-want-security-tools-s3-online-datasets-git-repo">Use-Case : Data from Wherever you want (Security Tools/S3/Online Datasets/Git repo)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#use-case-data-analysis-capabilities">Use-Case : Data Analysis Capabilities</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#need-more-sql-graphs-ml-threat-intelligence-alerts-datasets-visualization">Need More ?? , SQL, Graphs, ML, Threat Intelligence, Alerts, Datasets, Visualization… ?</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#let-me-also-import-pyspark-you-know-for-sql-capabilities">let me also Import Pyspark , you know for SQL capabilities</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#lets-do-a-function-to-query-elastic-to-pull-data-we-can-call-this-function-from-whenever-i-need-so-subject-data-at-disposal-is-sorted">Let’s do a function to query Elastic to Pull data! We can call this Function From whenever I Need, so subject data at disposal is sorted!!.</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#pull-all-elasticsearch-events-from-my-siem-elastic-to-investigate-hunt-for-command-and-scripting-interpreter-powershell-https-attack-mitre-org-techniques-t1059-001">Pull all elasticsearch Events from my SIEM - Elastic to investigate/Hunt for [‘Command and Scripting Interpreter: PowerShell’] https://attack.mitre.org/techniques/T1059/001/</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#use-case-statistical-capabilities-at-your-disposal">Use-Case : Statistical Capabilities at your disposal</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#use-case-supercharged-api-utilization">Use-Case : SuperCharged API Utilization</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#popular-threat-hunting-techniques-like-stack-counting-grouping-clustering-are-a-breeze-away">Popular Threat Hunting Techniques like stack counting/Grouping/Clustering are a breeze away!!</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#use-case-data-enrichment">Use-Case - Data Enrichment</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#use-case-data-visualization-powers-you-are-free-to-use-your-favourite-library-matplotlib-seaborn-plotly-etc-etc">Use-Case - Data Visualization powers (You are free to use your favourite library, Matplotlib, seaborn, plotly etc etc…)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#use-case-programmatic-control-over-data-wrangling-tuning-sanitization-enrichment-whatever-you-need">Use-Case - programmatic Control over Data, Wrangling, tuning, sanitization, enrichment, whatever you need !!!</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#use-case-case-management-bleeding-into-the-lifecycle">Use-Case - Case-Management- bleeding into the Lifecycle !!!</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#more-tips-use-cases">More Tips &amp; use-cases</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#what-youve-acheived-by-using-jupyter-notebooks-for-conducting-this-analysis">What you’ve acheived by Using Jupyter Notebooks for conducting this Analysis :</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Open Threat Research @OTR_Community
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
     </div>
+  </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+  <script src="../../_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
 
-
+  <footer class="bd-footer">
+  </footer>
   </body>
 </html>

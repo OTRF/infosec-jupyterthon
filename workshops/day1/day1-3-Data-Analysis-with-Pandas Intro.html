@@ -1,49 +1,61 @@
 
+
 <!DOCTYPE html>
 
-<html>
+
+<html lang="en" >
+
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Workshop 1.3: Basics of Data Analysis with Pandas</title>
-    
-  <!-- Loaded before other Sphinx assets -->
-  <link href="../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
-<link href="../../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    
-  <link rel="stylesheet"
-    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
-  <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
-  <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+    <title>Workshop 1.3: Basics of Data Analysis with Pandas</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+
+  
+  <link href="../../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
 
     <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
-    <link rel="stylesheet" href="../../_static/styles/sphinx-book-theme.css?digest=62ba249389abaaa9ffc34bf36a076bdc1d65ee18" type="text/css" />
+    <link rel="stylesheet" href="../../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/tabs.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
-    
+    <link rel="stylesheet" type="text/css" href="../../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
 
     <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
     <script src="../../_static/jquery.js"></script>
     <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../../_static/doctools.js"></script>
     <script src="../../_static/clipboard.min.js"></script>
     <script src="../../_static/copybutton.js"></script>
-    <script src="../../_static/scripts/sphinx-book-theme.js?digest=f31d14ad54b65d19161ba51d4ffff3a77ae00456"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
     <script src="../../_static/tabs.js"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
     <script src="../../_static/togglebutton.js"></script>
-    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script src="../../_static/design-tabs.js"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
 const thebe_selector = ".thebe,.cell"
@@ -51,1812 +63,652 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'workshops/day1/day1-3-Data-Analysis-with-Pandas Intro';</script>
     <link rel="canonical" href="https://infosecjupyterthon.com/workshops/day1/day1-3-Data-Analysis-with-Pandas Intro.html" />
     <link rel="shortcut icon" href="../../_static/favicon.jpg"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="Day 2" href="../day2/intro.html" />
     <link rel="prev" title="Workshop 1.2: Acquiring Data" href="day1-2-Acquiring-data.html" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="docsearch:language" content="None">
-    
-
-    <!-- Google Analytics -->
-    
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
   </head>
-  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
-<!-- Checkboxes to toggle the left sidebar -->
-<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
-<label class="overlay overlay-navbar" for="__navigation">
-    <div class="visually-hidden">Toggle navigation sidebar</div>
-</label>
-<!-- Checkboxes to toggle the in-page toc -->
-<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
-<label class="overlay overlay-pagetoc" for="__page-toc">
-    <div class="visually-hidden">Toggle in-page Table of Contents</div>
-</label>
-<!-- Headers at the top -->
-<div class="announcement header-item noprint">💖 The InfoSec Jupyterthon is back! December 2nd and 3rd, 2022 🚀</div>
-<div class="header header-item noprint"></div>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
 
-    
-    <div class="container-fluid" id="banner"></div>
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
 
-    
 
-    <div class="container-xl">
-      <div class="row">
-          
-<!-- Sidebar -->
-<div class="bd-sidebar noprint" id="site-navigation">
-    <div class="bd-sidebar__content">
-        <div class="bd-sidebar__top"><div class="navbar-brand-box">
-    <a class="navbar-brand text-wrap" href="../../index.html">
+  <div class="bd-header-announcement container-fluid bd-header-announcement">
+    <div class="bd-header-announcement__content">💖 The InfoSec Jupyterthon is back! February, 2024 🚀</div>
+  </div>
+
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
       
-        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+      <div class="bd-sidebar-primary bd-sidebar">
         
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
+
+<a class="navbar-brand logo" href="../../introduction.html">
+  
+  
+  
+  
+    
+    
       
-      
-      <img src="../../_static/logo.png" class="logo" alt="logo">
-      
-      
-    </a>
-</div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
-  <i class="icon fas fa-search"></i>
-  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
-</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
-    <div class="bd-toc-item active">
-        <p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Getting Started
- </span>
-</p>
+    
+    
+    <img src="../../_static/logo.png" class="logo__image only-light" alt="Logo image"/>
+    <script>document.write(`<img src="../../_static/logo.png" class="logo__image only-dark" alt="Logo image"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Getting Started</span></p>
 <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../../conduct.html">
-   Code of Conduct
-  </a>
- </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../../collaborators/intro.html">
-   Collaborators
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
-  <label for="toctree-checkbox-1">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../collaborators/Roberto-Rodriguez.html">
-     Roberto Rodriguez
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../collaborators/Chi-Nguyen.html">
-     Chi Nguyen
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../collaborators/Ian-Hellen.html">
-     Ian Hellen
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../collaborators/Joyce-Bacic.html">
-     Joyce Bacic
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../collaborators/Ashwin-Patil.html">
-     Ashwin Patil
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../collaborators/Thomas-Roccia.html">
-     Thomas Roccia
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../collaborators/Pete-Bryan.html">
-     Pete Bryan
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../collaborators/Jose-Rodriguez.html">
-     Jose Rodriguez
-    </a>
-   </li>
-  </ul>
- </li>
+<li class="toctree-l1"><a class="reference internal" href="../../conduct.html">Code of Conduct</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../collaborators/intro.html">Collaborators</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../collaborators/Roberto-Rodriguez.html">Roberto Rodriguez</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../collaborators/Chi-Nguyen.html">Chi Nguyen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../collaborators/Ian-Hellen.html">Ian Hellen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../collaborators/Joyce-Bacic.html">Joyce Bacic</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../collaborators/Ashwin-Patil.html">Ashwin Patil</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../collaborators/Thomas-Roccia.html">Thomas Roccia</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../collaborators/Pete-Bryan.html">Pete Bryan</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../collaborators/Jose-Rodriguez.html">Jose Rodriguez</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  2022 Edition
- </span>
-</p>
+</li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">2022 Edition</span></p>
 <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../../2022/agenda.html">
-   Agenda
-  </a>
- </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../../2022/speakers/intro.html">
-   Speakers
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
-  <label for="toctree-checkbox-2">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../2022/speakers/roberto_rodriguez.html">
-     Roberto Rodriguez
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../2022/speakers/ian_hellen.html">
-     Ian Hellen
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../2022/speakers/leo_meyerovich.html">
-     Leo Meyerovich
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../2022/speakers/chi_nguyen.html">
-     Chi Nguyen
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../2022/speakers/amritpal_singh.html">
-     Amritpal Singh
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../2022/speakers/vijay_punja.html">
-     Vijay Punja
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../2022/speakers/james_duncan.html">
-     James Duncan
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../2022/speakers/ryan_marcotte_cobb.html">
-     Ryan Marcotte Cobb
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../2022/speakers/saksham_tushar.html">
-     Saksham Tushar
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../2022/speakers/christian_camilo_urcuqui_lopez.html">
-     Christian Camilo Urcuqui Lopez
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../2022/speakers/pete_bryan.html">
-     Pete Bryan
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../2022/speakers/ashwin_patil.html">
-     Ashwin Patil
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../2022/speakers/thomas_roccia.html">
-     Thomas Roccia
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../2022/speakers/jose_rodriguez.html">
-     Jose Rodriguez
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../2022/speakers/alex_morrise.html">
-     Alex Morrise
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../2022/speakers/dmitrijs_trizna.html">
-     Dmitrijs Trizna
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../2022/speakers/mehmet_ergene.html">
-     Mehmet Ergene
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../2022/speakers/jerry_gamblin.html">
-     Jerry Gamblin
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../2022/speakers/balaji_sampath.html">
-     Balaji Sampath
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../2022/speakers/janantha_marasinghe.html">
-     Janantha Marasinghe
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../2022/speakers/paul_coccoli.html">
-     Paul Coccoli
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../2022/speakers/brayan_mena.html">
-     Brayan Mena
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../2022/speakers/john_mac.html">
-     John Mac
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../../2022/sessions/intro.html">
-   Sessions
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
-  <label for="toctree-checkbox-3">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../2022/sessions/day1-01-Opening_Remarks.html">
-     Opening Remarks
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../2022/sessions/day1-11-Extending_MSTICPy.html">
-     Ian Hellen (
-     <span style="color: blue">
-      @ianhellen
-     </span>
-     Twitter/
-     <span style="color: blue">
-      @ianhelle
-     </span>
-     GitHub)
-    </a>
-   </li>
-  </ul>
- </li>
+<li class="toctree-l1"><a class="reference internal" href="../../2022/agenda.html">Agenda</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../2022/speakers/intro.html">Speakers</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../2022/speakers/roberto_rodriguez.html">Roberto Rodriguez</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../2022/speakers/ian_hellen.html">Ian Hellen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../2022/speakers/leo_meyerovich.html">Leo Meyerovich</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../2022/speakers/chi_nguyen.html">Chi Nguyen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../2022/speakers/amritpal_singh.html">Amritpal Singh</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../2022/speakers/vijay_punja.html">Vijay Punja</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../2022/speakers/james_duncan.html">James Duncan</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../2022/speakers/ryan_marcotte_cobb.html">Ryan Marcotte Cobb</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../2022/speakers/saksham_tushar.html">Saksham Tushar</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../2022/speakers/christian_camilo_urcuqui_lopez.html">Christian Camilo Urcuqui Lopez</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../2022/speakers/pete_bryan.html">Pete Bryan</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../2022/speakers/ashwin_patil.html">Ashwin Patil</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../2022/speakers/thomas_roccia.html">Thomas Roccia</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../2022/speakers/jose_rodriguez.html">Jose Rodriguez</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../2022/speakers/alex_morrise.html">Alex Morrise</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../2022/speakers/dmitrijs_trizna.html">Dmitrijs Trizna</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../2022/speakers/mehmet_ergene.html">Mehmet Ergene</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../2022/speakers/jerry_gamblin.html">Jerry Gamblin</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../2022/speakers/balaji_sampath.html">Balaji Sampath</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../2022/speakers/janantha_marasinghe.html">Janantha Marasinghe</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../2022/speakers/paul_coccoli.html">Paul Coccoli</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../2022/speakers/brayan_mena.html">Brayan Mena</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../2022/speakers/john_mac.html">John Mac</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Workshops
- </span>
-</p>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../2022/sessions/intro.html">Sessions</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../2022/sessions/day1-01-Opening_Remarks.html">Opening Remarks</a></li>
+
+
+
+
+
+
+
+<li class="toctree-l2"><a class="reference internal" href="../../2022/sessions/day1-05-Exploratory_Data_I_mean_Threat_Analytics_using_Jupyter_Notebooks.html">Exploratory Threat Analytics using Jupyter Notebooks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../2022/sessions/day1-11-Extending_MSTICPy.html">Extending MSTICPy with Pivot functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../2022/sessions/day2-08-Shell-Language-Processing.html">Shell Language Processing</a></li>
+
+
+
+
+
+
+
+
+</ul>
+</li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Workshops</span></p>
 <ul class="current nav bd-sidenav">
- <li class="toctree-l1 current active has-children">
-  <a class="reference internal" href="intro.html">
-   Day 1
-  </a>
-  <input checked="" class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
-  <label for="toctree-checkbox-4">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul class="current">
-   <li class="toctree-l2">
-    <a class="reference internal" href="day1-1-Jupyter-Introduction.html">
-     Workshop 1.1:
-     <font color="peru">
-      Jupyter Notebooks Introduction
-     </font>
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="day1-2-Acquiring-data.html">
-     Workshop 1.2:
-     <font color="peru">
-      Acquiring Data
-     </font>
-    </a>
-   </li>
-   <li class="toctree-l2 current active">
-    <a class="current reference internal" href="#">
-     Workshop 1.3:
-     <font color="peru">
-      Basics of Data Analysis with Pandas
-     </font>
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../day2/intro.html">
-   Day 2
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
-  <label for="toctree-checkbox-5">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../day2/day2-1-Jupyter-advanced-topics.html">
-     Workshop 2.1:
-     <font color="peru">
-      Jupyter Notebooks Advanced
-     </font>
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../day2/day2-1-R-demo-notebook.html">
-     Workshop 2.1:
-     <font color="peru">
-      R Demo Notebook
-     </font>
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../day2/day2-2-Visualization.html">
-     Workshop 2.2:
-     <font color="peru">
-      Visualization in Jupyter Notebooks
-     </font>
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../day2/day2-3-Advanced-pandas.html">
-     Workshop 2.3:
-     <font color="peru">
-      Advanced Pandas
-     </font>
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../day2/day2-4-MSTICPy.html">
-     Workshop 2.4:
-     <font color="peru">
-      MSTICPy
-     </font>
-    </a>
-   </li>
-  </ul>
- </li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="intro.html">Day 1</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="day1-1-Jupyter-Introduction.html">Workshop 1.1: <font color="peru">Jupyter Notebooks Introduction</font></a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li class="toctree-l2"><a class="reference internal" href="day1-2-Acquiring-data.html">Workshop 1.2: <font color="peru">Acquiring Data</font></a></li>
+
+
+
+
+
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Workshop 1.3: <font color="peru">Basics of Data Analysis with Pandas</font></a></li>
+
+
+
+
+
+
+
+
+
+
+
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../day2/intro.html">Day 2</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../day2/day2-1-Jupyter-advanced-topics.html">Workshop 2.1: <font color="peru">Jupyter Notebooks Advanced</font></a></li>
+
+
+
+
+
+
+
+
+
+<li class="toctree-l2"><a class="reference internal" href="../day2/day2-1-R-demo-notebook.html">Workshop 2.1: <font color="peru">R Demo Notebook</font></a></li>
+
+
+<li class="toctree-l2"><a class="reference internal" href="../day2/day2-2-Visualization.html">Workshop 2.2: <font color="peru">Visualization in Jupyter Notebooks</font></a></li>
+
+
+
+
+
+
+
+<li class="toctree-l2"><a class="reference internal" href="../day2/day2-3-Advanced-pandas.html">Workshop 2.3: <font color="peru">Advanced Pandas</font></a></li>
+
+
+
+
+
+
+
+
+<li class="toctree-l2"><a class="reference internal" href="../day2/day2-4-MSTICPy.html">Workshop 2.4: <font color="peru">MSTICPy</font></a></li>
+
+
+
+
+
+
+
+
+
+
+</ul>
+</li>
 </ul>
 
     </div>
 </nav></div>
-        <div class="bd-sidebar__bottom">
-             <!-- To handle the deprecated key -->
-            
-            <div class="navbar_extra_footer">
-            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
-            </div>
-            
-        </div>
     </div>
-    <div id="rtd-footer-container"></div>
-</div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
 
 
-          
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
 
-
-          
-<!-- A tiny helper pixel to detect if we've scrolled -->
 <div class="sbt-scroll-pixel-helper"></div>
-<!-- Main content -->
-<div class="col py-0 content-container">
-    
-    <div class="header-article row sticky-top noprint">
-        
 
-
-
-<div class="col py-1 d-flex header-article-main">
-    <div class="header-article__left">
-        
-        <label for="__navigation"
-  class="headerbtn"
-  data-toggle="tooltip"
-data-placement="right"
-title="Toggle navigation"
->
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
   
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-bars"></i>
-  </span>
-
-</label>
-
-        
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
     </div>
-    <div class="header-article__right">
-<div class="menu-dropdown menu-dropdown-launch-buttons">
-  <button class="headerbtn menu-dropdown__trigger"
-      aria-label="Launch interactive content">
-      <i class="fas fa-rocket"></i>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
   </button>
-  <div class="menu-dropdown__content">
-    <ul>
-      <li>
-        <a href="https://mybinder.org/v2/gh/OTRF/infosec-jupyterthon/master?urlpath=lab/tree/docs/workshops/day1/day1-3-Data-Analysis-with-Pandas Intro.ipynb"
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Launch on Binder"
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://mybinder.org/v2/gh/OTRF/infosec-jupyterthon/master?urlpath=lab/tree/docs/workshops/day1/day1-3-Data-Analysis-with-Pandas Intro.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch onBinder"
+   data-bs-placement="left" data-bs-toggle="tooltip"
 >
   
 
-<span class="headerbtn__icon-container">
+<span class="btn__icon-container">
   
     <img src="../../_static/images/logo_binder.svg">
   </span>
-<span class="headerbtn__text-container">Binder</span>
+<span class="btn__text-container">Binder</span>
 </a>
-
-      </li>
+</li>
       
-    </ul>
-  </div>
+  </ul>
 </div>
 
-<button onclick="toggleFullScreen()"
-  class="headerbtn"
-  data-toggle="tooltip"
-data-placement="bottom"
-title="Fullscreen mode"
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/OTRF/infosec-jupyterthon" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
 >
   
 
-<span class="headerbtn__icon-container">
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/OTRF/infosec-jupyterthon/edit/master/docs/workshops/day1/day1-3-Data-Analysis-with-Pandas Intro.ipynb" target="_blank"
+   class="btn btn-sm btn-source-edit-button dropdown-item"
+   title="Suggest edit"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-pencil-alt"></i>
+  </span>
+<span class="btn__text-container">Suggest edit</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/OTRF/infosec-jupyterthon/issues/new?title=Issue%20on%20page%20%2Fworkshops/day1/day1-3-Data-Analysis-with-Pandas Intro.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../_sources/workshops/day1/day1-3-Data-Analysis-with-Pandas Intro.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
   <i class="fas fa-expand"></i>
   </span>
 
 </button>
 
-<div class="menu-dropdown menu-dropdown-repository-buttons">
-  <button class="headerbtn menu-dropdown__trigger"
-      aria-label="Source repositories">
-      <i class="fab fa-github"></i>
+
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
   </button>
-  <div class="menu-dropdown__content">
-    <ul>
-      <li>
-        <a href="https://github.com/OTRF/infosec-jupyterthon"
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Source repository"
->
-  
+`);
+</script>
 
-<span class="headerbtn__icon-container">
-  <i class="fab fa-github"></i>
-  </span>
-<span class="headerbtn__text-container">repository</span>
-</a>
-
-      </li>
-      
-      <li>
-        <a href="https://github.com/OTRF/infosec-jupyterthon/issues/new?title=Issue%20on%20page%20%2Fworkshops/day1/day1-3-Data-Analysis-with-Pandas Intro.html&body=Your%20issue%20content%20here."
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Open an issue"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-lightbulb"></i>
-  </span>
-<span class="headerbtn__text-container">open issue</span>
-</a>
-
-      </li>
-      
-      <li>
-        <a href="https://github.com/OTRF/infosec-jupyterthon/edit/master/docs/workshops/day1/day1-3-Data-Analysis-with-Pandas Intro.ipynb"
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Edit this page"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-pencil-alt"></i>
-  </span>
-<span class="headerbtn__text-container">suggest edit</span>
-</a>
-
-      </li>
-      
-    </ul>
-  </div>
-</div>
-
-<div class="menu-dropdown menu-dropdown-download-buttons">
-  <button class="headerbtn menu-dropdown__trigger"
-      aria-label="Download this page">
-      <i class="fas fa-download"></i>
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
   </button>
-  <div class="menu-dropdown__content">
-    <ul>
-      <li>
-        <a href="../../_sources/workshops/day1/day1-3-Data-Analysis-with-Pandas Intro.ipynb"
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Download source file"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-file"></i>
-  </span>
-<span class="headerbtn__text-container">.ipynb</span>
-</a>
-
-      </li>
-      
-      <li>
-        
-<button onclick="printPdf(this)"
-  class="headerbtn"
-  data-toggle="tooltip"
-data-placement="left"
-title="Print to PDF"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-file-pdf"></i>
-  </span>
-<span class="headerbtn__text-container">.pdf</span>
-</button>
-
-      </li>
-      
-    </ul>
-  </div>
-</div>
-<label for="__page-toc"
-  class="headerbtn headerbtn-page-toc"
-  
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-list"></i>
-  </span>
-
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
 </label>
-
+</div></div>
+      
     </div>
+  
 </div>
-
-<!-- Table of contents -->
-<div class="col-md-3 bd-toc show noprint">
-    <div class="tocsection onthispage pt-5 pb-3">
-        <i class="fas fa-list"></i> Contents
-    </div>
-    <nav id="bd-toc-nav" aria-label="Page">
-        <ul class="visible nav section-nav flex-column">
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#">
-   Workshop 1.3:
-   <font color="peru">
-    Basics of Data Analysis with Pandas
-   </font>
-  </a>
- </li>
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#a-style-border-solid-padding-5pt-color-black-background-color-90caf9-name-import-pandas-importing-the-pandas-library-a">
-   <a name="import-pandas" style="border: solid; padding:5pt; color:black; background-color:#90CAF9">
-    Importing the Pandas Library
-   </a>
-  </a>
- </li>
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#a-style-border-solid-padding-5pt-color-black-background-color-90caf9-name-dataframe-representing-data-in-an-organized-way-dataframe-a">
-   <a name="dataframe" style="border: solid; padding:5pt; color:black; background-color:#90CAF9">
-    Representing data in an Organized way: Dataframe
-   </a>
-  </a>
-  <ul class="visible nav section-nav flex-column">
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#pandas-structures">
-     Pandas Structures
-    </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#series">
-       Series
-      </a>
-     </li>
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#dataframe">
-       DataFrame
-      </a>
-     </li>
-    </ul>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#importing-data-as-a-pandas-dataframe">
-     Importing data as a Pandas DataFrame
-    </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#importing-json-files">
-       Importing
-       <strong>
-        JSON
-       </strong>
-       files
-      </a>
-     </li>
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#importing-csv-files">
-       Importing
-       <strong>
-        CSV
-       </strong>
-       files
-      </a>
-     </li>
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#notes-on-csv-files">
-       Notes on CSV Files
-      </a>
-     </li>
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#importing-pickle-files">
-       Importing
-       <strong>
-        PICKLE
-       </strong>
-       files
-      </a>
-     </li>
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#importing-remote-files">
-       Importing
-       <strong>
-        Remote Files
-       </strong>
-      </a>
-     </li>
-    </ul>
-   </li>
-  </ul>
- </li>
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#a-style-border-solid-padding-5pt-color-black-background-color-90caf9-name-interacting-interacting-with-dataframes-a">
-   <a name="interacting" style="border: solid; padding:5pt; color:black; background-color:#90CAF9">
-    Interacting with DataFrames
-   </a>
-  </a>
-  <ul class="visible nav section-nav flex-column">
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#size-shape-of-a-dataframe">
-     Size/Shape of a DataFrame
-    </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#single-row-of-dataframe-series">
-       Single row of DataFrame == Series
-      </a>
-     </li>
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#intersection-of-a-row-and-column-is-a-simple-type-the-cell-content">
-       Intersection of a row and column is a simple type - the cell content
-      </a>
-     </li>
-    </ul>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#selecting-columns">
-     Selecting Columns
-    </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#use-the-columns-property-to-get-the-column-names">
-       Use the columns property to get the column names
-      </a>
-     </li>
-    </ul>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#indexes-brief-introduction">
-     Indexes - brief introduction
-    </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#setting-another-column-as-index">
-       Setting another column as index
-      </a>
-     </li>
-    </ul>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#accessing-individual-cell-values">
-     Accessing individual (“cell”) values
-    </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#a-single-value">
-       A single value
-      </a>
-     </li>
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#retrieving-values-from-a-pandas-series">
-       Retrieving values from a pandas series
-      </a>
-     </li>
-    </ul>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#pandas-i-o-functions">
-     pandas I/O functions
-    </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#dataframe-input-functions">
-       DataFrame input functions
-      </a>
-     </li>
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#dataframe-output-functions">
-       DataFrame output functions
-      </a>
-     </li>
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#export-to-excel-typically-need-openpyxl-installed-and-excel-or-similar">
-       Export to Excel - typically need
-       <code class="docutils literal notranslate">
-        <span class="pre">
-         openpyxl
-        </span>
-       </code>
-       installed (and Excel or similar)
-      </a>
-     </li>
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#read-json-vs-json-normalize">
-       read_json vs json_normalize
-      </a>
-     </li>
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#read-html-to-read-tables-from-web-pages">
-       read_html to read tables from web pages
-      </a>
-     </li>
-    </ul>
-   </li>
-  </ul>
- </li>
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#a-style-border-solid-padding-5pt-color-black-background-color-90caf9-name-selecting-selecting-searching-a">
-   <a name="selecting" style="border: solid; padding:5pt; color:black; background-color:#90CAF9">
-    Selecting/Searching
-   </a>
-  </a>
-  <ul class="visible nav section-nav flex-column">
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#specific-row-or-col-by-number">
-     Specific row (or col) by number
-    </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#you-can-go-full-numpy-and-use-iloc-with-int-indexing">
-       You can go full numpy and use
-       <code class="docutils literal notranslate">
-        <span class="pre">
-         iloc
-        </span>
-       </code>
-       with int indexing
-      </a>
-     </li>
-    </ul>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#select-by-content-boolean-indexing">
-     Select by content - “Boolean indexing”
-    </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#basic-operators">
-       Basic operators
-      </a>
-     </li>
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#use-boolean-result-of-expression-to-filter-dataframe">
-       Use boolean result of expression to filter DataFrame
-      </a>
-     </li>
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#note">
-       Note
-      </a>
-     </li>
-    </ul>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#other-operators-with-boolean-indexing">
-     Other operators with boolean indexing
-    </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#pandas-supports-string-functions-but">
-       Pandas supports string functions - but
-      </a>
-     </li>
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#we-need-to-tell-pandas-to-apply-string-operation-as-a-vector-function-to-the-series">
-       We need to tell pandas to apply string operation as a
-       <em>
-        vector function
-       </em>
-       to the series
-      </a>
-     </li>
-    </ul>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#multiple-conditions">
-     Multiple conditions
-    </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#without-parentheses-have-higher-precedence">
-       Without parentheses -
-       <code class="docutils literal notranslate">
-        <span class="pre">
-         &amp;,
-        </span>
-        <span class="pre">
-         |,
-        </span>
-        <span class="pre">
-         ~
-        </span>
-       </code>
-       have higher precedence
-      </a>
-     </li>
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#boolean-indexes-are-pandas-series-you-can-save-and-re-use">
-       Boolean indexes are
-       <strong>
-        Pandas series
-       </strong>
-       - you can save and re-use
-      </a>
-     </li>
-    </ul>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#isin-operator-function">
-     <code class="docutils literal notranslate">
-      <span class="pre">
-       isin
-      </span>
-     </code>
-     operator/function
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#pandas-query-function">
-     pandas
-     <code class="docutils literal notranslate">
-      <span class="pre">
-       query
-      </span>
-     </code>
-     function
-    </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#combing-column-select-and-filter">
-       Combing Column Select and filter
-      </a>
-     </li>
-    </ul>
-   </li>
-  </ul>
- </li>
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#a-style-border-solid-padding-5pt-color-black-background-color-90caf9-name-sorting-sorting-and-removing-duplicates-a">
-   <a name="sorting" style="border: solid; padding:5pt; color:black; background-color:#90CAF9">
-    Sorting and removing duplicates
-   </a>
-  </a>
- </li>
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#a-style-border-solid-padding-5pt-color-black-background-color-90caf9-name-grouping-grouping-and-aggregation-a">
-   <a name="grouping" style="border: solid; padding:5pt; color:black; background-color:#90CAF9">
-    Grouping and Aggregation
-   </a>
-  </a>
-  <ul class="visible nav section-nav flex-column">
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#you-need-an-aggregator-or-iterator-make-use-of-grouping">
-     You need an aggregator (or iterator) make use of grouping
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#iterating-over-groups-groupby-returns-an-iterable">
-     Iterating over groups -
-     <code class="docutils literal notranslate">
-      <span class="pre">
-       groupby
-      </span>
-     </code>
-     returns an iterable
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#grouping-with-multiple-aggregation-functions">
-     Grouping with Multiple aggregation functions
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#grouping-with-multiple-columns">
-     Grouping with multiple columns
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#using-pd-grouper-to-group-by-time-interval">
-     Using pd.Grouper to group by time interval
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#a-style-border-solid-padding-5pt-color-black-background-color-90caf9-name-adding-columns-adding-and-removing-columns-a">
-   <a name="adding-columns" style="border: solid; padding:5pt; color:black; background-color:#90CAF9">
-    Adding and removing columns
-   </a>
-  </a>
-  <ul class="visible nav section-nav flex-column">
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#assign-function">
-     <code class="docutils literal notranslate">
-      <span class="pre">
-       assign
-      </span>
-     </code>
-     function
-    </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#drop-columns">
-       Drop columns
-      </a>
-     </li>
-    </ul>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#some-other-quick-ways-of-filtering-out-in-columns">
-     Some other quick ways of filtering out (in) columns
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#a-style-border-solid-padding-5pt-color-black-background-color-90caf9-name-simple-joins-simple-joins-a">
-   <a name="simple-joins" style="border: solid; padding:5pt; color:black; background-color:#90CAF9">
-    Simple Joins
-   </a>
-  </a>
-  <ul class="visible nav section-nav flex-column">
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#concatenating-dfs">
-     Concatenating DFs
-    </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#joining-rows">
-       Joining rows
-      </a>
-      <ul class="nav section-nav flex-column">
-       <li class="toc-h4 nav-item toc-entry">
-        <a class="reference internal nav-link" href="#ignore-index-true-causes-python-to-regenerate-a-new-index">
-         <code class="docutils literal notranslate">
-          <span class="pre">
-           ignore_index=True
-          </span>
-         </code>
-         causes Python to regenerate a new index
-        </a>
-       </li>
-      </ul>
-     </li>
-    </ul>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#joining-columns-horizontal">
-     Joining columns (horizontal)
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#a-style-border-solid-padding-5pt-color-black-background-color-90caf9-name-stats-101-statistics-101-with-pandas-a">
-   <a name="stats-101" style="border: solid; padding:5pt; color:black; background-color:#90CAF9">
-    Statistics 101 with Pandas
-   </a>
-  </a>
-  <ul class="visible nav section-nav flex-column">
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#data-types">
-     Data Types
-    </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#numerical-data">
-       <strong>
-        Numerical
-       </strong>
-       data
-      </a>
-     </li>
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#categorical-data">
-       <strong>
-        Categorical
-       </strong>
-       data
-      </a>
-     </li>
-    </ul>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#descriptive-analysis-for-categorical-data">
-     Descriptive Analysis for Categorical data
-    </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#categorical-data-types-in-pandas">
-       <strong>
-        Categorical data types
-       </strong>
-       in Pandas
-      </a>
-     </li>
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#describe-method">
-       <strong>
-        Describe Method
-       </strong>
-      </a>
-     </li>
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#frequency-of-values">
-       <strong>
-        Frequency of Values
-       </strong>
-      </a>
-     </li>
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#central-tendency">
-       <strong>
-        Central Tendency
-       </strong>
-      </a>
-     </li>
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#correlation">
-       <strong>
-        Correlation
-       </strong>
-      </a>
-     </li>
-    </ul>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#descriptive-analysis-for-numerical-data">
-     Descriptive Analysis for Numerical data
-    </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#numerical-data-type-in-pandas">
-       <strong>
-        Numerical data type
-       </strong>
-       in Pandas
-      </a>
-     </li>
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#id1">
-       <strong>
-        Describe Method
-       </strong>
-      </a>
-     </li>
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#id2">
-       <strong>
-        Frequency of Values
-       </strong>
-      </a>
-     </li>
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#id3">
-       <strong>
-        Central Tendency
-       </strong>
-      </a>
-     </li>
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#shape-of-distribution-of-frequencies">
-       <strong>
-        Shape of Distribution of Frequencies
-       </strong>
-      </a>
-     </li>
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#variability">
-       <strong>
-        Variability
-       </strong>
-      </a>
-     </li>
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#id4">
-       <strong>
-        Correlation
-       </strong>
-      </a>
-     </li>
-    </ul>
-   </li>
-  </ul>
- </li>
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#end-of-session">
-   End of Session
-  </a>
- </li>
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#font-color-peru-break-5-minutes-font">
-   <font color="peru">
-    Break: 5 Minutes
-   </font>
-  </a>
- </li>
-</ul>
-
-    </nav>
 </div>
-    </div>
-    <div class="article row">
-        <div class="col pl-md-3 pl-lg-5 content-container">
-            <!-- Table of contents that is only displayed when printing the page -->
-            <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Workshop 1.3: <font color=peru>Basics of Data Analysis with Pandas</font></h1>
-                <!-- Table of contents -->
-                <div id="print-main-content">
-                    <div id="jb-print-toc">
-                        
-                        <div>
-                            <h2> Contents </h2>
-                        </div>
-                        <nav aria-label="Page">
-                            <ul class="visible nav section-nav flex-column">
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#">
-   Workshop 1.3:
-   <font color="peru">
-    Basics of Data Analysis with Pandas
-   </font>
-  </a>
- </li>
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#a-style-border-solid-padding-5pt-color-black-background-color-90caf9-name-import-pandas-importing-the-pandas-library-a">
-   <a name="import-pandas" style="border: solid; padding:5pt; color:black; background-color:#90CAF9">
-    Importing the Pandas Library
-   </a>
-  </a>
- </li>
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#a-style-border-solid-padding-5pt-color-black-background-color-90caf9-name-dataframe-representing-data-in-an-organized-way-dataframe-a">
-   <a name="dataframe" style="border: solid; padding:5pt; color:black; background-color:#90CAF9">
-    Representing data in an Organized way: Dataframe
-   </a>
-  </a>
-  <ul class="visible nav section-nav flex-column">
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#pandas-structures">
-     Pandas Structures
-    </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#series">
-       Series
-      </a>
-     </li>
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#dataframe">
-       DataFrame
-      </a>
-     </li>
-    </ul>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#importing-data-as-a-pandas-dataframe">
-     Importing data as a Pandas DataFrame
-    </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#importing-json-files">
-       Importing
-       <strong>
-        JSON
-       </strong>
-       files
-      </a>
-     </li>
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#importing-csv-files">
-       Importing
-       <strong>
-        CSV
-       </strong>
-       files
-      </a>
-     </li>
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#notes-on-csv-files">
-       Notes on CSV Files
-      </a>
-     </li>
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#importing-pickle-files">
-       Importing
-       <strong>
-        PICKLE
-       </strong>
-       files
-      </a>
-     </li>
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#importing-remote-files">
-       Importing
-       <strong>
-        Remote Files
-       </strong>
-      </a>
-     </li>
-    </ul>
-   </li>
-  </ul>
- </li>
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#a-style-border-solid-padding-5pt-color-black-background-color-90caf9-name-interacting-interacting-with-dataframes-a">
-   <a name="interacting" style="border: solid; padding:5pt; color:black; background-color:#90CAF9">
-    Interacting with DataFrames
-   </a>
-  </a>
-  <ul class="visible nav section-nav flex-column">
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#size-shape-of-a-dataframe">
-     Size/Shape of a DataFrame
-    </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#single-row-of-dataframe-series">
-       Single row of DataFrame == Series
-      </a>
-     </li>
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#intersection-of-a-row-and-column-is-a-simple-type-the-cell-content">
-       Intersection of a row and column is a simple type - the cell content
-      </a>
-     </li>
-    </ul>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#selecting-columns">
-     Selecting Columns
-    </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#use-the-columns-property-to-get-the-column-names">
-       Use the columns property to get the column names
-      </a>
-     </li>
-    </ul>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#indexes-brief-introduction">
-     Indexes - brief introduction
-    </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#setting-another-column-as-index">
-       Setting another column as index
-      </a>
-     </li>
-    </ul>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#accessing-individual-cell-values">
-     Accessing individual (“cell”) values
-    </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#a-single-value">
-       A single value
-      </a>
-     </li>
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#retrieving-values-from-a-pandas-series">
-       Retrieving values from a pandas series
-      </a>
-     </li>
-    </ul>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#pandas-i-o-functions">
-     pandas I/O functions
-    </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#dataframe-input-functions">
-       DataFrame input functions
-      </a>
-     </li>
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#dataframe-output-functions">
-       DataFrame output functions
-      </a>
-     </li>
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#export-to-excel-typically-need-openpyxl-installed-and-excel-or-similar">
-       Export to Excel - typically need
-       <code class="docutils literal notranslate">
-        <span class="pre">
-         openpyxl
-        </span>
-       </code>
-       installed (and Excel or similar)
-      </a>
-     </li>
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#read-json-vs-json-normalize">
-       read_json vs json_normalize
-      </a>
-     </li>
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#read-html-to-read-tables-from-web-pages">
-       read_html to read tables from web pages
-      </a>
-     </li>
-    </ul>
-   </li>
-  </ul>
- </li>
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#a-style-border-solid-padding-5pt-color-black-background-color-90caf9-name-selecting-selecting-searching-a">
-   <a name="selecting" style="border: solid; padding:5pt; color:black; background-color:#90CAF9">
-    Selecting/Searching
-   </a>
-  </a>
-  <ul class="visible nav section-nav flex-column">
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#specific-row-or-col-by-number">
-     Specific row (or col) by number
-    </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#you-can-go-full-numpy-and-use-iloc-with-int-indexing">
-       You can go full numpy and use
-       <code class="docutils literal notranslate">
-        <span class="pre">
-         iloc
-        </span>
-       </code>
-       with int indexing
-      </a>
-     </li>
-    </ul>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#select-by-content-boolean-indexing">
-     Select by content - “Boolean indexing”
-    </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#basic-operators">
-       Basic operators
-      </a>
-     </li>
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#use-boolean-result-of-expression-to-filter-dataframe">
-       Use boolean result of expression to filter DataFrame
-      </a>
-     </li>
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#note">
-       Note
-      </a>
-     </li>
-    </ul>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#other-operators-with-boolean-indexing">
-     Other operators with boolean indexing
-    </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#pandas-supports-string-functions-but">
-       Pandas supports string functions - but
-      </a>
-     </li>
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#we-need-to-tell-pandas-to-apply-string-operation-as-a-vector-function-to-the-series">
-       We need to tell pandas to apply string operation as a
-       <em>
-        vector function
-       </em>
-       to the series
-      </a>
-     </li>
-    </ul>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#multiple-conditions">
-     Multiple conditions
-    </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#without-parentheses-have-higher-precedence">
-       Without parentheses -
-       <code class="docutils literal notranslate">
-        <span class="pre">
-         &amp;,
-        </span>
-        <span class="pre">
-         |,
-        </span>
-        <span class="pre">
-         ~
-        </span>
-       </code>
-       have higher precedence
-      </a>
-     </li>
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#boolean-indexes-are-pandas-series-you-can-save-and-re-use">
-       Boolean indexes are
-       <strong>
-        Pandas series
-       </strong>
-       - you can save and re-use
-      </a>
-     </li>
-    </ul>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#isin-operator-function">
-     <code class="docutils literal notranslate">
-      <span class="pre">
-       isin
-      </span>
-     </code>
-     operator/function
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#pandas-query-function">
-     pandas
-     <code class="docutils literal notranslate">
-      <span class="pre">
-       query
-      </span>
-     </code>
-     function
-    </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#combing-column-select-and-filter">
-       Combing Column Select and filter
-      </a>
-     </li>
-    </ul>
-   </li>
-  </ul>
- </li>
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#a-style-border-solid-padding-5pt-color-black-background-color-90caf9-name-sorting-sorting-and-removing-duplicates-a">
-   <a name="sorting" style="border: solid; padding:5pt; color:black; background-color:#90CAF9">
-    Sorting and removing duplicates
-   </a>
-  </a>
- </li>
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#a-style-border-solid-padding-5pt-color-black-background-color-90caf9-name-grouping-grouping-and-aggregation-a">
-   <a name="grouping" style="border: solid; padding:5pt; color:black; background-color:#90CAF9">
-    Grouping and Aggregation
-   </a>
-  </a>
-  <ul class="visible nav section-nav flex-column">
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#you-need-an-aggregator-or-iterator-make-use-of-grouping">
-     You need an aggregator (or iterator) make use of grouping
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#iterating-over-groups-groupby-returns-an-iterable">
-     Iterating over groups -
-     <code class="docutils literal notranslate">
-      <span class="pre">
-       groupby
-      </span>
-     </code>
-     returns an iterable
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#grouping-with-multiple-aggregation-functions">
-     Grouping with Multiple aggregation functions
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#grouping-with-multiple-columns">
-     Grouping with multiple columns
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#using-pd-grouper-to-group-by-time-interval">
-     Using pd.Grouper to group by time interval
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#a-style-border-solid-padding-5pt-color-black-background-color-90caf9-name-adding-columns-adding-and-removing-columns-a">
-   <a name="adding-columns" style="border: solid; padding:5pt; color:black; background-color:#90CAF9">
-    Adding and removing columns
-   </a>
-  </a>
-  <ul class="visible nav section-nav flex-column">
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#assign-function">
-     <code class="docutils literal notranslate">
-      <span class="pre">
-       assign
-      </span>
-     </code>
-     function
-    </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#drop-columns">
-       Drop columns
-      </a>
-     </li>
-    </ul>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#some-other-quick-ways-of-filtering-out-in-columns">
-     Some other quick ways of filtering out (in) columns
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#a-style-border-solid-padding-5pt-color-black-background-color-90caf9-name-simple-joins-simple-joins-a">
-   <a name="simple-joins" style="border: solid; padding:5pt; color:black; background-color:#90CAF9">
-    Simple Joins
-   </a>
-  </a>
-  <ul class="visible nav section-nav flex-column">
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#concatenating-dfs">
-     Concatenating DFs
-    </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#joining-rows">
-       Joining rows
-      </a>
-      <ul class="nav section-nav flex-column">
-       <li class="toc-h4 nav-item toc-entry">
-        <a class="reference internal nav-link" href="#ignore-index-true-causes-python-to-regenerate-a-new-index">
-         <code class="docutils literal notranslate">
-          <span class="pre">
-           ignore_index=True
-          </span>
-         </code>
-         causes Python to regenerate a new index
-        </a>
-       </li>
-      </ul>
-     </li>
-    </ul>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#joining-columns-horizontal">
-     Joining columns (horizontal)
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#a-style-border-solid-padding-5pt-color-black-background-color-90caf9-name-stats-101-statistics-101-with-pandas-a">
-   <a name="stats-101" style="border: solid; padding:5pt; color:black; background-color:#90CAF9">
-    Statistics 101 with Pandas
-   </a>
-  </a>
-  <ul class="visible nav section-nav flex-column">
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#data-types">
-     Data Types
-    </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#numerical-data">
-       <strong>
-        Numerical
-       </strong>
-       data
-      </a>
-     </li>
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#categorical-data">
-       <strong>
-        Categorical
-       </strong>
-       data
-      </a>
-     </li>
-    </ul>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#descriptive-analysis-for-categorical-data">
-     Descriptive Analysis for Categorical data
-    </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#categorical-data-types-in-pandas">
-       <strong>
-        Categorical data types
-       </strong>
-       in Pandas
-      </a>
-     </li>
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#describe-method">
-       <strong>
-        Describe Method
-       </strong>
-      </a>
-     </li>
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#frequency-of-values">
-       <strong>
-        Frequency of Values
-       </strong>
-      </a>
-     </li>
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#central-tendency">
-       <strong>
-        Central Tendency
-       </strong>
-      </a>
-     </li>
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#correlation">
-       <strong>
-        Correlation
-       </strong>
-      </a>
-     </li>
-    </ul>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#descriptive-analysis-for-numerical-data">
-     Descriptive Analysis for Numerical data
-    </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#numerical-data-type-in-pandas">
-       <strong>
-        Numerical data type
-       </strong>
-       in Pandas
-      </a>
-     </li>
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#id1">
-       <strong>
-        Describe Method
-       </strong>
-      </a>
-     </li>
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#id2">
-       <strong>
-        Frequency of Values
-       </strong>
-      </a>
-     </li>
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#id3">
-       <strong>
-        Central Tendency
-       </strong>
-      </a>
-     </li>
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#shape-of-distribution-of-frequencies">
-       <strong>
-        Shape of Distribution of Frequencies
-       </strong>
-      </a>
-     </li>
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#variability">
-       <strong>
-        Variability
-       </strong>
-      </a>
-     </li>
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#id4">
-       <strong>
-        Correlation
-       </strong>
-      </a>
-     </li>
-    </ul>
-   </li>
-  </ul>
- </li>
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#end-of-session">
-   End of Session
-  </a>
- </li>
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#font-color-peru-break-5-minutes-font">
-   <font color="peru">
-    Break: 5 Minutes
-   </font>
-  </a>
- </li>
-</ul>
+              
+              
 
-                        </nav>
-                    </div>
-                </div>
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Workshop 1.3: <font color=peru>Basics of Data Analysis with Pandas</font></h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
             </div>
-            <main id="main-content" role="main">
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Workshop 1.3: <font color="peru">Basics of Data Analysis with Pandas</font></a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#a-style-border-solid-padding-5pt-color-black-background-color-90caf9-name-import-pandas-importing-the-pandas-library-a"><a name="import-pandas" style="border: solid; padding:5pt; color:black; background-color:#90CAF9">Importing the Pandas Library</a></a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#a-style-border-solid-padding-5pt-color-black-background-color-90caf9-name-dataframe-representing-data-in-an-organized-way-dataframe-a"><a name="dataframe" style="border: solid; padding:5pt; color:black; background-color:#90CAF9">Representing data in an Organized way: Dataframe</a></a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pandas-structures">Pandas Structures</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#series">Series</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dataframe">DataFrame</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#importing-data-as-a-pandas-dataframe">Importing data as a Pandas DataFrame</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#importing-json-files">Importing <strong>JSON</strong> files</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#importing-csv-files">Importing <strong>CSV</strong> files</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#notes-on-csv-files">Notes on CSV Files</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#importing-pickle-files">Importing <strong>PICKLE</strong> files</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#importing-remote-files">Importing <strong>Remote Files</strong></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#a-style-border-solid-padding-5pt-color-black-background-color-90caf9-name-interacting-interacting-with-dataframes-a"><a name="interacting" style="border: solid; padding:5pt; color:black; background-color:#90CAF9">Interacting with DataFrames</a></a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#size-shape-of-a-dataframe">Size/Shape of a DataFrame</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#single-row-of-dataframe-series">Single row of DataFrame == Series</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#intersection-of-a-row-and-column-is-a-simple-type-the-cell-content">Intersection of a row and column is a simple type - the cell content</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#selecting-columns">Selecting Columns</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#use-the-columns-property-to-get-the-column-names">Use the columns property to get the column names</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#indexes-brief-introduction">Indexes - brief introduction</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#setting-another-column-as-index">Setting another column as index</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#accessing-individual-cell-values">Accessing individual (“cell”) values</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#a-single-value">A single value</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#retrieving-values-from-a-pandas-series">Retrieving values from a pandas series</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pandas-i-o-functions">pandas I/O functions</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dataframe-input-functions">DataFrame input functions</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dataframe-output-functions">DataFrame output functions</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#export-to-excel-typically-need-openpyxl-installed-and-excel-or-similar">Export to Excel - typically need <code class="docutils literal notranslate"><span class="pre">openpyxl</span></code> installed (and Excel or similar)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#read-json-vs-json-normalize">read_json vs json_normalize</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#read-html-to-read-tables-from-web-pages">read_html to read tables from web pages</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#a-style-border-solid-padding-5pt-color-black-background-color-90caf9-name-selecting-selecting-searching-a"><a name="selecting" style="border: solid; padding:5pt; color:black; background-color:#90CAF9">Selecting/Searching</a></a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#specific-row-or-col-by-number">Specific row (or col) by number</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#you-can-go-full-numpy-and-use-iloc-with-int-indexing">You can go full numpy and use <code class="docutils literal notranslate"><span class="pre">iloc</span></code> with int indexing</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#select-by-content-boolean-indexing">Select by content - “Boolean indexing”</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#basic-operators">Basic operators</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#use-boolean-result-of-expression-to-filter-dataframe">Use boolean result of expression to filter DataFrame</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#note">Note</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#other-operators-with-boolean-indexing">Other operators with boolean indexing</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pandas-supports-string-functions-but">Pandas supports string functions - but</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#we-need-to-tell-pandas-to-apply-string-operation-as-a-vector-function-to-the-series">We need to tell pandas to apply string operation as a <em>vector function</em> to the series</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#multiple-conditions">Multiple conditions</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#without-parentheses-have-higher-precedence">Without parentheses - <code class="docutils literal notranslate"><span class="pre">&amp;,</span> <span class="pre">|,</span> <span class="pre">~</span></code> have higher precedence</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#boolean-indexes-are-pandas-series-you-can-save-and-re-use">Boolean indexes are <strong>Pandas series</strong> - you can save and re-use</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#isin-operator-function"><code class="docutils literal notranslate"><span class="pre">isin</span></code> operator/function</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pandas-query-function">pandas <code class="docutils literal notranslate"><span class="pre">query</span></code> function</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#combing-column-select-and-filter">Combing Column Select and filter</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#a-style-border-solid-padding-5pt-color-black-background-color-90caf9-name-sorting-sorting-and-removing-duplicates-a"><a name="sorting" style="border: solid; padding:5pt; color:black; background-color:#90CAF9">Sorting and removing duplicates</a></a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#a-style-border-solid-padding-5pt-color-black-background-color-90caf9-name-grouping-grouping-and-aggregation-a"><a name="grouping" style="border: solid; padding:5pt; color:black; background-color:#90CAF9">Grouping and Aggregation</a></a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#you-need-an-aggregator-or-iterator-make-use-of-grouping">You need an aggregator (or iterator) make use of grouping</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#iterating-over-groups-groupby-returns-an-iterable">Iterating over groups - <code class="docutils literal notranslate"><span class="pre">groupby</span></code> returns an iterable</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#grouping-with-multiple-aggregation-functions">Grouping with Multiple aggregation functions</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#grouping-with-multiple-columns">Grouping with multiple columns</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#using-pd-grouper-to-group-by-time-interval">Using pd.Grouper to group by time interval</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#a-style-border-solid-padding-5pt-color-black-background-color-90caf9-name-adding-columns-adding-and-removing-columns-a"><a name="adding-columns" style="border: solid; padding:5pt; color:black; background-color:#90CAF9">Adding and removing columns</a></a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#assign-function"><code class="docutils literal notranslate"><span class="pre">assign</span></code> function</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#drop-columns">Drop columns</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#some-other-quick-ways-of-filtering-out-in-columns">Some other quick ways of filtering out (in) columns</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#a-style-border-solid-padding-5pt-color-black-background-color-90caf9-name-simple-joins-simple-joins-a"><a name="simple-joins" style="border: solid; padding:5pt; color:black; background-color:#90CAF9">Simple Joins</a></a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#concatenating-dfs">Concatenating DFs</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#joining-rows">Joining rows</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ignore-index-true-causes-python-to-regenerate-a-new-index"><code class="docutils literal notranslate"><span class="pre">ignore_index=True</span></code> causes Python to regenerate a new index</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#joining-columns-horizontal">Joining columns (horizontal)</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#a-style-border-solid-padding-5pt-color-black-background-color-90caf9-name-stats-101-statistics-101-with-pandas-a"><a name="stats-101" style="border: solid; padding:5pt; color:black; background-color:#90CAF9">Statistics 101 with Pandas</a></a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#data-types">Data Types</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#numerical-data"><strong>Numerical</strong> data</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#categorical-data"><strong>Categorical</strong> data</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#descriptive-analysis-for-categorical-data">Descriptive Analysis for Categorical data</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#categorical-data-types-in-pandas"><strong>Categorical data types</strong> in Pandas</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#describe-method"><strong>Describe Method</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#frequency-of-values"><strong>Frequency of Values</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#central-tendency"><strong>Central Tendency</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#correlation"><strong>Correlation</strong></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#descriptive-analysis-for-numerical-data">Descriptive Analysis for Numerical data</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#numerical-data-type-in-pandas"><strong>Numerical data type</strong> in Pandas</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1"><strong>Describe Method</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2"><strong>Frequency of Values</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3"><strong>Central Tendency</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#shape-of-distribution-of-frequencies"><strong>Shape of Distribution of Frequencies</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#variability"><strong>Variability</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4"><strong>Correlation</strong></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#end-of-session">End of Session</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#font-color-peru-break-5-minutes-font"><font color="peru">Break: 5 Minutes</font></a></li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
                 
-              <div>
-                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
   <p><img alt="Banner" src="../../_images/banner1.png" /></p>
 <hr class="docutils" />
-<div class="tex2jax_ignore mathjax_ignore section" id="workshop-1-3-font-color-peru-basics-of-data-analysis-with-pandas-font">
-<h1>Workshop 1.3: <font color=peru>Basics of Data Analysis with Pandas</font><a class="headerlink" href="#workshop-1-3-font-color-peru-basics-of-data-analysis-with-pandas-font" title="Permalink to this headline">#</a></h1>
+<section class="tex2jax_ignore mathjax_ignore" id="workshop-1-3-font-color-peru-basics-of-data-analysis-with-pandas-font">
+<h1>Workshop 1.3: <font color=peru>Basics of Data Analysis with Pandas</font><a class="headerlink" href="#workshop-1-3-font-color-peru-basics-of-data-analysis-with-pandas-font" title="Permalink to this heading">#</a></h1>
 <ul class="simple">
 <li><p><strong>Contributors</strong>:</p>
 <ul>
@@ -1870,14 +722,14 @@ title="Print to PDF"
 <ul>
 <li><p>Part 1</p>
 <ul>
-<li><p><a class="reference external" href="#import-pandas">Importing the Pandas Library</a></p></li>
-<li><p><a class="reference external" href="#dataframe">DataFrame, an organized way to represent data</a></p>
+<li><p><span class="xref myst">Importing the Pandas Library</span></p></li>
+<li><p><span class="xref myst">DataFrame, an organized way to represent data</span></p>
 <ul>
 <li><p>Pandas Structures</p></li>
 <li><p>Importing data</p></li>
 </ul>
 </li>
-<li><p><a class="reference external" href="#interacting">Interacting with DataFrames</a></p>
+<li><p><span class="xref myst">Interacting with DataFrames</span></p>
 <ul>
 <li><p>Selecting columns</p></li>
 <li><p>Indexes</p></li>
@@ -1885,16 +737,16 @@ title="Print to PDF"
 <li><p>pandas I/O functions</p></li>
 </ul>
 </li>
-<li><p><a class="reference external" href="#selecting">Selection and Filtering</a></p></li>
+<li><p><span class="xref myst">Selection and Filtering</span></p></li>
 </ul>
 </li>
 <li><p>Part 2</p>
 <ul>
-<li><p><a class="reference external" href="#sorting">Sorting and removing duplicates</a></p></li>
-<li><p><a class="reference external" href="#grouping">Grouping</a></p></li>
-<li><p><a class="reference external" href="#adding-columns">Adding and removing columns</a></p></li>
-<li><p><a class="reference external" href="#simple-joins">Simple joins</a></p></li>
-<li><p><a class="reference external" href="#stats-101">Statistics 101</a>
+<li><p><span class="xref myst">Sorting and removing duplicates</span></p></li>
+<li><p><span class="xref myst">Grouping</span></p></li>
+<li><p><span class="xref myst">Adding and removing columns</span></p></li>
+<li><p><span class="xref myst">Simple joins</span></p></li>
+<li><p><span class="xref myst">Statistics 101</span>
 <br><br></p></li>
 </ul>
 </li>
@@ -1904,10 +756,10 @@ title="Print to PDF"
 <li><p><strong>License</strong>: <a class="reference external" href="https://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International</a></p></li>
 <li><p><strong>Q&amp;A</strong> - OTR Discord <strong>#Jupyterthon #WORKSHOP DAY 1 - BASICS OF DATA ANALYSIS</strong></p></li>
 </ul>
-</div>
+</section>
 <hr class="docutils" />
-<div class="tex2jax_ignore mathjax_ignore section" id="a-style-border-solid-padding-5pt-color-black-background-color-90caf9-name-import-pandas-importing-the-pandas-library-a">
-<h1><a style="border: solid; padding:5pt; color:black; background-color:#90CAF9" name="import-pandas">Importing the Pandas Library</a><a class="headerlink" href="#a-style-border-solid-padding-5pt-color-black-background-color-90caf9-name-import-pandas-importing-the-pandas-library-a" title="Permalink to this headline">#</a></h1>
+<section class="tex2jax_ignore mathjax_ignore" id="a-style-border-solid-padding-5pt-color-black-background-color-90caf9-name-import-pandas-importing-the-pandas-library-a">
+<h1><a style="border: solid; padding:5pt; color:black; background-color:#90CAF9" name="import-pandas">Importing the Pandas Library</a><a class="headerlink" href="#a-style-border-solid-padding-5pt-color-black-background-color-90caf9-name-import-pandas-importing-the-pandas-library-a" title="Permalink to this heading">#</a></h1>
 <p>This entire section of the workshop is based on the <strong><a class="reference external" href="https://pandas.pydata.org/">Pandas</a></strong> Python Library. Therefore, it makes sense to start by importing the library.</p>
 <p>If you have not installed <strong>pandas</strong> yet, you can install it via <strong><a class="reference external" href="https://pypi.org/project/pip/">pip</a></strong> by running the following code in a notebook cell:</p>
 <p><strong>%pip install pandas</strong></p>
@@ -1918,14 +770,14 @@ title="Print to PDF"
 </div>
 </div>
 </div>
-</div>
+</section>
 <hr class="docutils" />
-<div class="tex2jax_ignore mathjax_ignore section" id="a-style-border-solid-padding-5pt-color-black-background-color-90caf9-name-dataframe-representing-data-in-an-organized-way-dataframe-a">
-<h1><a style="border: solid; padding:5pt; color:black; background-color:#90CAF9" name="dataframe">Representing data in an Organized way: Dataframe</a><a class="headerlink" href="#a-style-border-solid-padding-5pt-color-black-background-color-90caf9-name-dataframe-representing-data-in-an-organized-way-dataframe-a" title="Permalink to this headline">#</a></h1>
-<div class="section" id="pandas-structures">
-<h2>Pandas Structures<a class="headerlink" href="#pandas-structures" title="Permalink to this headline">#</a></h2>
-<div class="section" id="series">
-<h3>Series<a class="headerlink" href="#series" title="Permalink to this headline">#</a></h3>
+<section class="tex2jax_ignore mathjax_ignore" id="a-style-border-solid-padding-5pt-color-black-background-color-90caf9-name-dataframe-representing-data-in-an-organized-way-dataframe-a">
+<h1><a style="border: solid; padding:5pt; color:black; background-color:#90CAF9" name="dataframe">Representing data in an Organized way: Dataframe</a><a class="headerlink" href="#a-style-border-solid-padding-5pt-color-black-background-color-90caf9-name-dataframe-representing-data-in-an-organized-way-dataframe-a" title="Permalink to this heading">#</a></h1>
+<section id="pandas-structures">
+<h2>Pandas Structures<a class="headerlink" href="#pandas-structures" title="Permalink to this heading">#</a></h2>
+<section id="series">
+<h3>Series<a class="headerlink" href="#series" title="Permalink to this heading">#</a></h3>
 <p>A <strong><a class="reference external" href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.Series.html">Pandas Series</a></strong> is a one-dimensional array-like object that can hold any data type, with a single Series holding multiple data types if needed. The axis labels area refered to as index.</p>
 <p>They can be created from a range of different Python data structures, including a list, ndarry, dictionary or scalar value.</p>
 <ul class="simple">
@@ -1991,9 +843,9 @@ Name of my Series:  Dictionary Series
 </div>
 <p>You can find more details about <strong>Pandas Series</strong> here:</p>
 <p><strong><a class="reference external" href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.Series.html">https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.Series.html</a></strong></p>
-</div>
-<div class="section" id="dataframe">
-<h3>DataFrame<a class="headerlink" href="#dataframe" title="Permalink to this headline">#</a></h3>
+</section>
+<section id="dataframe">
+<h3>DataFrame<a class="headerlink" href="#dataframe" title="Permalink to this heading">#</a></h3>
 <p>A <strong><a class="reference external" href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.html">Pandas DataFrame</a></strong> is a two-dimensional tabular data structure with labeled axes (rows and columns). Similar to a table.</p>
 <p>A DataFrame can be considered to be make up for multiple Series, with each row being its own Series, and as with Series not each column in an DataFrame is necessarily the same type of data.</p>
 <p>DataFrames can be created from a range of input types including Pythos data structures such as lists, tuples, dictionaries, Series, ndarrays, or other DataFrames.</p>
@@ -2219,15 +1071,15 @@ Name of my Series:  Dictionary Series
 </div>
 <p>You can find more details about <strong>Pandas DataFrames</strong> here:</p>
 <p><strong><a class="reference external" href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.html">https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.html</a></strong></p>
-</div>
-</div>
+</section>
+</section>
 <hr class="docutils" />
-<div class="section" id="importing-data-as-a-pandas-dataframe">
-<h2>Importing data as a Pandas DataFrame<a class="headerlink" href="#importing-data-as-a-pandas-dataframe" title="Permalink to this headline">#</a></h2>
+<section id="importing-data-as-a-pandas-dataframe">
+<h2>Importing data as a Pandas DataFrame<a class="headerlink" href="#importing-data-as-a-pandas-dataframe" title="Permalink to this heading">#</a></h2>
 <p>In the previous section, we showed how to create a Pandas DataFrame from Python data structures such as Series and Dictionaries.</p>
 <p>In addition to this, Pandas contains several <strong>READ</strong> methods that allow us to convert data stored in different formats such as <em>JSON, EXCEL(CSV, XLSX), SQL, HTML, XML, and PICKLE</em>.</p>
-<div class="section" id="importing-json-files">
-<h3>Importing <strong>JSON</strong> files<a class="headerlink" href="#importing-json-files" title="Permalink to this headline">#</a></h3>
+<section id="importing-json-files">
+<h3>Importing <strong>JSON</strong> files<a class="headerlink" href="#importing-json-files" title="Permalink to this heading">#</a></h3>
 <p>We already showed to you how to import a JSON file using the <strong><a class="reference external" href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.io.json.read_json.html">read_json</a></strong> method.</p>
 <p>Additionally to the pandas library we imported at the beginning of the session, we will need to import the <strong>JSON</strong> module from <strong><a class="reference external" href="http://pandas.io">pandas.io</a></strong> in order to be able to use the <em>read_json</em> method.</p>
 <div class="cell docutils container">
@@ -2429,9 +1281,9 @@ Name of my Series:  Dictionary Series
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="importing-csv-files">
-<h3>Importing <strong>CSV</strong> files<a class="headerlink" href="#importing-csv-files" title="Permalink to this headline">#</a></h3>
+</section>
+<section id="importing-csv-files">
+<h3>Importing <strong>CSV</strong> files<a class="headerlink" href="#importing-csv-files" title="Permalink to this heading">#</a></h3>
 <p>Another useful format in InfoSec is CSV (Comma Separated Values). To import a CSV file we will use the <strong><a class="reference external" href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.read_csv.html">read_csv</a></strong> method.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -2543,9 +1395,9 @@ Name of my Series:  Dictionary Series
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="notes-on-csv-files">
-<h3>Notes on CSV Files<a class="headerlink" href="#notes-on-csv-files" title="Permalink to this headline">#</a></h3>
+</section>
+<section id="notes-on-csv-files">
+<h3>Notes on CSV Files<a class="headerlink" href="#notes-on-csv-files" title="Permalink to this heading">#</a></h3>
 <p>Other useful options for CSV include:</p>
 <p style="font-family:consolas; font-size:12pt; color:green">
 pd.read_csv(<br>
@@ -2554,9 +1406,9 @@ pd.read_csv(<br>
 &nbsp;&nbsp;<b>header=row_num</b>,&nbsp;&nbsp;&nbsp;# which row headers are found in (def = first row)<br> 
 &nbsp;&nbsp;<b>on_bad_lines="warn"</b>, # warn but don't fail on line parsing (other options are "error", "skip"<br>
 )
-<p></div>
-<div class="section" id="importing-pickle-files">
-<h3>Importing <strong>PICKLE</strong> files<a class="headerlink" href="#importing-pickle-files" title="Permalink to this headline">#</a></h3>
+<p></section>
+<section id="importing-pickle-files">
+<h3>Importing <strong>PICKLE</strong> files<a class="headerlink" href="#importing-pickle-files" title="Permalink to this heading">#</a></h3>
 <p>Another useful format in InfoSec is PICKLE. This type of files can be used to serialize Python object structures such as dictionaries, tuples, and lists. To import a PICKLE file we will use the <strong><a class="reference external" href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.read_pickle.html">read_pickle</a></strong> method.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -2628,9 +1480,9 @@ pd.read_csv(<br>
 </table>
 </div></div></div>
 </div>
-</div>
-<div class="section" id="importing-remote-files">
-<h3>Importing <strong>Remote Files</strong><a class="headerlink" href="#importing-remote-files" title="Permalink to this headline">#</a></h3>
+</section>
+<section id="importing-remote-files">
+<h3>Importing <strong>Remote Files</strong><a class="headerlink" href="#importing-remote-files" title="Permalink to this heading">#</a></h3>
 <p>Most <strong>read_</strong>* methods accept a path to the local file system and some of them accept paths to remote files. Let’s check an example with a <strong>remote CSV file</strong>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -2702,12 +1554,12 @@ pd.read_csv(<br>
 </div>
 <p>You can find more details about <strong>Pandas’ read_</strong>* methods here:</p>
 <p><strong><a class="reference external" href="https://pandas.pydata.org/docs/user_guide/io.html">https://pandas.pydata.org/docs/user_guide/io.html</a></strong></p>
-</div>
-</div>
-</div>
+</section>
+</section>
+</section>
 <hr class="docutils" />
-<div class="tex2jax_ignore mathjax_ignore section" id="a-style-border-solid-padding-5pt-color-black-background-color-90caf9-name-interacting-interacting-with-dataframes-a">
-<h1><a style="border: solid; padding:5pt; color:black; background-color:#90CAF9" name="interacting">Interacting with DataFrames</a><a class="headerlink" href="#a-style-border-solid-padding-5pt-color-black-background-color-90caf9-name-interacting-interacting-with-dataframes-a" title="Permalink to this headline">#</a></h1>
+<section class="tex2jax_ignore mathjax_ignore" id="a-style-border-solid-padding-5pt-color-black-background-color-90caf9-name-interacting-interacting-with-dataframes-a">
+<h1><a style="border: solid; padding:5pt; color:black; background-color:#90CAF9" name="interacting">Interacting with DataFrames</a><a class="headerlink" href="#a-style-border-solid-padding-5pt-color-black-background-color-90caf9-name-interacting-interacting-with-dataframes-a" title="Permalink to this heading">#</a></h1>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
@@ -2855,8 +1707,8 @@ pd.read_csv(<br>
 </table>
 </div></div></div>
 </div>
-<div class="section" id="size-shape-of-a-dataframe">
-<h2>Size/Shape of a DataFrame<a class="headerlink" href="#size-shape-of-a-dataframe" title="Permalink to this headline">#</a></h2>
+<section id="size-shape-of-a-dataframe">
+<h2>Size/Shape of a DataFrame<a class="headerlink" href="#size-shape-of-a-dataframe" title="Permalink to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;shape = rows x columns&quot;</span><span class="p">)</span>
@@ -2885,8 +1737,8 @@ pd.read_csv(<br>
 </div>
 </div>
 </div>
-<div class="section" id="single-row-of-dataframe-series">
-<h3>Single row of DataFrame == Series<a class="headerlink" href="#single-row-of-dataframe-series" title="Permalink to this headline">#</a></h3>
+<section id="single-row-of-dataframe-series">
+<h3>Single row of DataFrame == Series<a class="headerlink" href="#single-row-of-dataframe-series" title="Permalink to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">display</span><span class="p">(</span><span class="n">logons_df</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">head</span><span class="p">())</span>
@@ -2908,9 +1760,9 @@ Name: 8, dtype: object
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="intersection-of-a-row-and-column-is-a-simple-type-the-cell-content">
-<h3>Intersection of a row and column is a simple type - the cell content<a class="headerlink" href="#intersection-of-a-row-and-column-is-a-simple-type-the-cell-content" title="Permalink to this headline">#</a></h3>
+</section>
+<section id="intersection-of-a-row-and-column-is-a-simple-type-the-cell-content">
+<h3>Intersection of a row and column is a simple type - the cell content<a class="headerlink" href="#intersection-of-a-row-and-column-is-a-simple-type-the-cell-content" title="Permalink to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Intersection - logons_df.iloc[0].Account&quot;</span><span class="p">)</span>
@@ -2927,11 +1779,11 @@ Value: NT AUTHORITY\SYSTEM
 </div>
 </div>
 </div>
-</div>
-</div>
+</section>
+</section>
 <hr class="docutils" />
-<div class="section" id="selecting-columns">
-<h2>Selecting Columns<a class="headerlink" href="#selecting-columns" title="Permalink to this headline">#</a></h2>
+<section id="selecting-columns">
+<h2>Selecting Columns<a class="headerlink" href="#selecting-columns" title="Permalink to this heading">#</a></h2>
 <p style="font-family:consolas; font-size:15pt; color:green">
 df.<i>column_name</i><br>
 df[<i>column_name</i>]
@@ -3093,8 +1945,8 @@ Name: Account, dtype: object
 </table>
 </div></div></div>
 </div>
-<div class="section" id="use-the-columns-property-to-get-the-column-names">
-<h3>Use the columns property to get the column names<a class="headerlink" href="#use-the-columns-property-to-get-the-column-names" title="Permalink to this headline">#</a></h3>
+<section id="use-the-columns-property-to-get-the-column-names">
+<h3>Use the columns property to get the column names<a class="headerlink" href="#use-the-columns-property-to-get-the-column-names" title="Permalink to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">logons_df</span><span class="o">.</span><span class="n">columns</span>
@@ -3111,11 +1963,11 @@ Name: Account, dtype: object
 </div>
 </div>
 </div>
-</div>
-</div>
+</section>
+</section>
 <hr class="docutils" />
-<div class="section" id="indexes-brief-introduction">
-<h2>Indexes - brief introduction<a class="headerlink" href="#indexes-brief-introduction" title="Permalink to this headline">#</a></h2>
+<section id="indexes-brief-introduction">
+<h2>Indexes - brief introduction<a class="headerlink" href="#indexes-brief-introduction" title="Permalink to this heading">#</a></h2>
 <p>Pandas default index is a monotonically-increasing integer (a Python range)</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -3190,8 +2042,8 @@ Name: 70, dtype: object
 </div>
 </div>
 </div>
-<div class="section" id="setting-another-column-as-index">
-<h3>Setting another column as index<a class="headerlink" href="#setting-another-column-as-index" title="Permalink to this headline">#</a></h3>
+<section id="setting-another-column-as-index">
+<h3>Setting another column as index<a class="headerlink" href="#setting-another-column-as-index" title="Permalink to this heading">#</a></h3>
 <p style="font-family:consolas; font-size:15pt; color:green; color:green">
 df.set_index(<i>column_name</i>)
 </p><div class="cell docutils container">
@@ -3555,12 +2407,12 @@ Name: NT AUTHORITY\SYSTEM, dtype: object
 </div>
 </div>
 </div>
-</div>
-</div>
-<div class="section" id="accessing-individual-cell-values">
-<h2>Accessing individual (“cell”) values<a class="headerlink" href="#accessing-individual-cell-values" title="Permalink to this headline">#</a></h2>
-<div class="section" id="a-single-value">
-<h3>A single value<a class="headerlink" href="#a-single-value" title="Permalink to this headline">#</a></h3>
+</section>
+</section>
+<section id="accessing-individual-cell-values">
+<h2>Accessing individual (“cell”) values<a class="headerlink" href="#accessing-individual-cell-values" title="Permalink to this heading">#</a></h2>
+<section id="a-single-value">
+<h3>A single value<a class="headerlink" href="#a-single-value" title="Permalink to this heading">#</a></h3>
 <p>Like many things in pandas there are several ways to do something!</p>
 <p style="font-family:consolas; font-size:15pt; color:green">
 df.iloc[expr].ColumnName</p>
@@ -3589,9 +2441,9 @@ iat - row idx + column idx 4624
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="retrieving-values-from-a-pandas-series">
-<h3>Retrieving values from a pandas series<a class="headerlink" href="#retrieving-values-from-a-pandas-series" title="Permalink to this headline">#</a></h3>
+</section>
+<section id="retrieving-values-from-a-pandas-series">
+<h3>Retrieving values from a pandas series<a class="headerlink" href="#retrieving-values-from-a-pandas-series" title="Permalink to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">logons_df</span><span class="o">.</span><span class="n">Account</span><span class="o">.</span><span class="n">head</span><span class="p">()</span><span class="o">.</span><span class="n">values</span><span class="p">)</span>
@@ -3608,11 +2460,11 @@ iat - row idx + column idx 4624
 </div>
 </div>
 </div>
-</div>
-</div>
+</section>
+</section>
 <hr class="docutils" />
-<div class="section" id="pandas-i-o-functions">
-<h2>pandas I/O functions<a class="headerlink" href="#pandas-i-o-functions" title="Permalink to this headline">#</a></h2>
+<section id="pandas-i-o-functions">
+<h2>pandas I/O functions<a class="headerlink" href="#pandas-i-o-functions" title="Permalink to this heading">#</a></h2>
 <p>We covered import from CSV and JSON.</p>
 <p>Some notes:</p>
 <ul class="simple">
@@ -3625,8 +2477,8 @@ iat - row idx + column idx 4624
 <li><p>HDF</p></li>
 <li><p>Feather</p></li>
 </ul>
-<div class="section" id="dataframe-input-functions">
-<h3>DataFrame input functions<a class="headerlink" href="#dataframe-input-functions" title="Permalink to this headline">#</a></h3>
+<section id="dataframe-input-functions">
+<h3>DataFrame input functions<a class="headerlink" href="#dataframe-input-functions" title="Permalink to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">func_name</span> <span class="ow">in</span> <span class="nb">dir</span><span class="p">(</span><span class="n">pd</span><span class="p">):</span>
@@ -3661,9 +2513,9 @@ read_xml :             Read XML document into a ``DataFrame`` object.
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="dataframe-output-functions">
-<h3>DataFrame output functions<a class="headerlink" href="#dataframe-output-functions" title="Permalink to this headline">#</a></h3>
+</section>
+<section id="dataframe-output-functions">
+<h3>DataFrame output functions<a class="headerlink" href="#dataframe-output-functions" title="Permalink to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span>
@@ -3701,22 +2553,22 @@ to_xml :               Render a DataFrame to an XML document.
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="export-to-excel-typically-need-openpyxl-installed-and-excel-or-similar">
-<h3>Export to Excel - typically need <code class="docutils literal notranslate"><span class="pre">openpyxl</span></code> installed (and Excel or similar)<a class="headerlink" href="#export-to-excel-typically-need-openpyxl-installed-and-excel-or-similar" title="Permalink to this headline">#</a></h3>
+</section>
+<section id="export-to-excel-typically-need-openpyxl-installed-and-excel-or-similar">
+<h3>Export to Excel - typically need <code class="docutils literal notranslate"><span class="pre">openpyxl</span></code> installed (and Excel or similar)<a class="headerlink" href="#export-to-excel-typically-need-openpyxl-installed-and-excel-or-similar" title="Permalink to this heading">#</a></h3>
 <p>But you don’t really need Excel any more when you have pandas!</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">logons_df</span><span class="o">.</span><span class="n">to_excel</span><span class="p">(</span><span class="s2">&quot;../data/excel_sample.xlsx&quot;</span><span class="p">)</span>
 
-<span class="o">!</span>start ../data/excel_sample.xlsx
+<span class="o">!</span>start<span class="w"> </span>../data/excel_sample.xlsx
 </pre></div>
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="read-json-vs-json-normalize">
-<h3>read_json vs json_normalize<a class="headerlink" href="#read-json-vs-json-normalize" title="Permalink to this headline">#</a></h3>
+</section>
+<section id="read-json-vs-json-normalize">
+<h3>read_json vs json_normalize<a class="headerlink" href="#read-json-vs-json-normalize" title="Permalink to this heading">#</a></h3>
 <p>We saw earlier how pandas can read json formatted as records.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -3874,9 +2726,9 @@ to_xml :               Render a DataFrame to an XML document.
 </table>
 </div></div></div>
 </div>
-</div>
-<div class="section" id="read-html-to-read-tables-from-web-pages">
-<h3>read_html to read tables from web pages<a class="headerlink" href="#read-html-to-read-tables-from-web-pages" title="Permalink to this headline">#</a></h3>
+</section>
+<section id="read-html-to-read-tables-from-web-pages">
+<h3>read_html to read tables from web pages<a class="headerlink" href="#read-html-to-read-tables-from-web-pages" title="Permalink to this heading">#</a></h3>
 <p>Tables in the web page are returned as a list of DataFrames</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -3997,14 +2849,14 @@ to_xml :               Render a DataFrame to an XML document.
 </table>
 </div></div></div>
 </div>
-</div>
-</div>
-</div>
+</section>
+</section>
+</section>
 <hr class="docutils" />
-<div class="tex2jax_ignore mathjax_ignore section" id="a-style-border-solid-padding-5pt-color-black-background-color-90caf9-name-selecting-selecting-searching-a">
-<h1><a style="border: solid; padding:5pt; color:black; background-color:#90CAF9" name="selecting">Selecting/Searching</a><a class="headerlink" href="#a-style-border-solid-padding-5pt-color-black-background-color-90caf9-name-selecting-selecting-searching-a" title="Permalink to this headline">#</a></h1>
-<div class="section" id="specific-row-or-col-by-number">
-<h2>Specific row (or col) by number<a class="headerlink" href="#specific-row-or-col-by-number" title="Permalink to this headline">#</a></h2>
+<section class="tex2jax_ignore mathjax_ignore" id="a-style-border-solid-padding-5pt-color-black-background-color-90caf9-name-selecting-selecting-searching-a">
+<h1><a style="border: solid; padding:5pt; color:black; background-color:#90CAF9" name="selecting">Selecting/Searching</a><a class="headerlink" href="#a-style-border-solid-padding-5pt-color-black-background-color-90caf9-name-selecting-selecting-searching-a" title="Permalink to this heading">#</a></h1>
+<section id="specific-row-or-col-by-number">
+<h2>Specific row (or col) by number<a class="headerlink" href="#specific-row-or-col-by-number" title="Permalink to this heading">#</a></h2>
 <p style="font-family:consolas; font-size:15pt; color:green">
 df.iloc[row#]/df.iloc[row-range]
 </p><div class="cell docutils container">
@@ -4120,8 +2972,8 @@ df.iloc[row#]/df.iloc[row-range]
 </table>
 </div></div></div>
 </div>
-<div class="section" id="you-can-go-full-numpy-and-use-iloc-with-int-indexing">
-<h3>You can go full numpy and use <code class="docutils literal notranslate"><span class="pre">iloc</span></code> with int indexing<a class="headerlink" href="#you-can-go-full-numpy-and-use-iloc-with-int-indexing" title="Permalink to this headline">#</a></h3>
+<section id="you-can-go-full-numpy-and-use-iloc-with-int-indexing">
+<h3>You can go full numpy and use <code class="docutils literal notranslate"><span class="pre">iloc</span></code> with int indexing<a class="headerlink" href="#you-can-go-full-numpy-and-use-iloc-with-int-indexing" title="Permalink to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">logons_df</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span>
@@ -4134,12 +2986,12 @@ df.iloc[row#]/df.iloc[row-range]
 </div>
 </div>
 </div>
-</div>
-</div>
-<div class="section" id="select-by-content-boolean-indexing">
-<h2>Select by content - “Boolean indexing”<a class="headerlink" href="#select-by-content-boolean-indexing" title="Permalink to this headline">#</a></h2>
-<div class="section" id="basic-operators">
-<h3>Basic operators<a class="headerlink" href="#basic-operators" title="Permalink to this headline">#</a></h3>
+</section>
+</section>
+<section id="select-by-content-boolean-indexing">
+<h2>Select by content - “Boolean indexing”<a class="headerlink" href="#select-by-content-boolean-indexing" title="Permalink to this heading">#</a></h2>
+<section id="basic-operators">
+<h3>Basic operators<a class="headerlink" href="#basic-operators" title="Permalink to this heading">#</a></h3>
 <p style="font-family:consolas; font-size:15pt; color:green">
  ==<br>
  !=<br>
@@ -4176,15 +3028,15 @@ Name: Account, dtype: bool
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="use-boolean-result-of-expression-to-filter-dataframe">
-<h3>Use boolean result of expression to filter DataFrame<a class="headerlink" href="#use-boolean-result-of-expression-to-filter-dataframe" title="Permalink to this headline">#</a></h3>
+</section>
+<section id="use-boolean-result-of-expression-to-filter-dataframe">
+<h3>Use boolean result of expression to filter DataFrame<a class="headerlink" href="#use-boolean-result-of-expression-to-filter-dataframe" title="Permalink to this heading">#</a></h3>
 <p style="font-family:consolas; font-size:15pt; color:green">
 df[<i>bool_expr</i>]
 </p>
-</div>
-<div class="section" id="note">
-<h3>Note<a class="headerlink" href="#note" title="Permalink to this headline">#</a></h3>
+</section>
+<section id="note">
+<h3>Note<a class="headerlink" href="#note" title="Permalink to this heading">#</a></h3>
 <p style="font-family:consolas; font-size:15pt; color:green">
 df[<i>bool_expr</i>] == df.<b>loc</b>[<i>bool_expr</i>]
 </p><div class="cell docutils container">
@@ -4288,10 +3140,10 @@ df[<i>bool_expr</i>] == df.<b>loc</b>[<i>bool_expr</i>]
 </table>
 </div></div></div>
 </div>
-</div>
-</div>
-<div class="section" id="other-operators-with-boolean-indexing">
-<h2>Other operators with boolean indexing<a class="headerlink" href="#other-operators-with-boolean-indexing" title="Permalink to this headline">#</a></h2>
+</section>
+</section>
+<section id="other-operators-with-boolean-indexing">
+<h2>Other operators with boolean indexing<a class="headerlink" href="#other-operators-with-boolean-indexing" title="Permalink to this heading">#</a></h2>
 <p>Operators vary depending on data type!!!</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -4320,8 +3172,8 @@ dtype: object
 </div>
 </div>
 </div>
-<div class="section" id="pandas-supports-string-functions-but">
-<h3>Pandas supports string functions - but<a class="headerlink" href="#pandas-supports-string-functions-but" title="Permalink to this headline">#</a></h3>
+<section id="pandas-supports-string-functions-but">
+<h3>Pandas supports string functions - but<a class="headerlink" href="#pandas-supports-string-functions-but" title="Permalink to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">logons_df</span><span class="p">[</span><span class="n">logons_df</span><span class="p">[</span><span class="s2">&quot;Account&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">endswith</span><span class="p">(</span><span class="s2">&quot;MSTICAdmin&quot;</span><span class="p">)]</span>
@@ -4379,9 +3231,9 @@ Name: Account, dtype: object
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="we-need-to-tell-pandas-to-apply-string-operation-as-a-vector-function-to-the-series">
-<h3>We need to tell pandas to apply string operation as a <em>vector function</em> to the series<a class="headerlink" href="#we-need-to-tell-pandas-to-apply-string-operation-as-a-vector-function-to-the-series" title="Permalink to this headline">#</a></h3>
+</section>
+<section id="we-need-to-tell-pandas-to-apply-string-operation-as-a-vector-function-to-the-series">
+<h3>We need to tell pandas to apply string operation as a <em>vector function</em> to the series<a class="headerlink" href="#we-need-to-tell-pandas-to-apply-string-operation-as-a-vector-function-to-the-series" title="Permalink to this heading">#</a></h3>
 <p style="font-family:consolas; font-size:15pt; color:green">
 df[df[<i>column</i>].<b>str</b>.contains(<i>str_expr</i>)]
 </p>
@@ -4518,10 +3370,10 @@ Name: Account, dtype: bool
 </table>
 </div></div></div>
 </div>
-</div>
-</div>
-<div class="section" id="multiple-conditions">
-<h2>Multiple conditions<a class="headerlink" href="#multiple-conditions" title="Permalink to this headline">#</a></h2>
+</section>
+</section>
+<section id="multiple-conditions">
+<h2>Multiple conditions<a class="headerlink" href="#multiple-conditions" title="Permalink to this heading">#</a></h2>
 <p style="font-family:consolas; font-size:15pt; color:green">
 & == AND<br>
 | == OR<br>
@@ -4683,8 +3535,8 @@ Always use parentheses around individual expressions in composite logical expres
 </table>
 </div></div></div>
 </div>
-<div class="section" id="without-parentheses-have-higher-precedence">
-<h3>Without parentheses - <code class="docutils literal notranslate"><span class="pre">&amp;,</span> <span class="pre">|,</span> <span class="pre">~</span></code> have higher precedence<a class="headerlink" href="#without-parentheses-have-higher-precedence" title="Permalink to this headline">#</a></h3>
+<section id="without-parentheses-have-higher-precedence">
+<h3>Without parentheses - <code class="docutils literal notranslate"><span class="pre">&amp;,</span> <span class="pre">|,</span> <span class="pre">~</span></code> have higher precedence<a class="headerlink" href="#without-parentheses-have-higher-precedence" title="Permalink to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">### Without parentheses - `&amp;, |, ~` have higher precedence</span>
@@ -4956,9 +3808,9 @@ Always use parentheses around individual expressions in composite logical expres
 </table>
 </div></div></div>
 </div>
-</div>
-<div class="section" id="boolean-indexes-are-pandas-series-you-can-save-and-re-use">
-<h3>Boolean indexes are <strong>Pandas series</strong> - you can save and re-use<a class="headerlink" href="#boolean-indexes-are-pandas-series-you-can-save-and-re-use" title="Permalink to this headline">#</a></h3>
+</section>
+<section id="boolean-indexes-are-pandas-series-you-can-save-and-re-use">
+<h3>Boolean indexes are <strong>Pandas series</strong> - you can save and re-use<a class="headerlink" href="#boolean-indexes-are-pandas-series-you-can-save-and-re-use" title="Permalink to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># create individual criteria</span>
@@ -5179,10 +4031,10 @@ Always use parentheses around individual expressions in composite logical expres
 </table>
 </div></div></div>
 </div>
-</div>
-</div>
-<div class="section" id="isin-operator-function">
-<h2><code class="docutils literal notranslate"><span class="pre">isin</span></code> operator/function<a class="headerlink" href="#isin-operator-function" title="Permalink to this headline">#</a></h2>
+</section>
+</section>
+<section id="isin-operator-function">
+<h2><code class="docutils literal notranslate"><span class="pre">isin</span></code> operator/function<a class="headerlink" href="#isin-operator-function" title="Permalink to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">logons_df</span><span class="p">[</span><span class="n">logons_df</span><span class="p">[</span><span class="s2">&quot;TargetUserName&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">isin</span><span class="p">([</span><span class="s2">&quot;MSTICAdmin&quot;</span><span class="p">,</span> <span class="s2">&quot;SYSTEM&quot;</span><span class="p">])]</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
@@ -5320,9 +4172,9 @@ Always use parentheses around individual expressions in composite logical expres
 </table>
 </div></div></div>
 </div>
-</div>
-<div class="section" id="pandas-query-function">
-<h2>pandas <code class="docutils literal notranslate"><span class="pre">query</span></code> function<a class="headerlink" href="#pandas-query-function" title="Permalink to this headline">#</a></h2>
+</section>
+<section id="pandas-query-function">
+<h2>pandas <code class="docutils literal notranslate"><span class="pre">query</span></code> function<a class="headerlink" href="#pandas-query-function" title="Permalink to this heading">#</a></h2>
 <p style="font-family:consolas; font-size:15pt; color:green">
 df.query(query_str)
 </p>
@@ -5466,8 +4318,8 @@ Useful for simpler queries - and definitely nicer-looking but some limitations -
 </table>
 </div></div></div>
 </div>
-<div class="section" id="combing-column-select-and-filter">
-<h3>Combing Column Select and filter<a class="headerlink" href="#combing-column-select-and-filter" title="Permalink to this headline">#</a></h3>
+<section id="combing-column-select-and-filter">
+<h3>Combing Column Select and filter<a class="headerlink" href="#combing-column-select-and-filter" title="Permalink to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="p">(</span>
@@ -5520,12 +4372,12 @@ Useful for simpler queries - and definitely nicer-looking but some limitations -
 </table>
 </div></div></div>
 </div>
-</div>
-</div>
-</div>
+</section>
+</section>
+</section>
 <hr class="docutils" />
-<div class="tex2jax_ignore mathjax_ignore section" id="a-style-border-solid-padding-5pt-color-black-background-color-90caf9-name-sorting-sorting-and-removing-duplicates-a">
-<h1><a style="border: solid; padding:5pt; color:black; background-color:#90CAF9" name="sorting">Sorting and removing duplicates</a><a class="headerlink" href="#a-style-border-solid-padding-5pt-color-black-background-color-90caf9-name-sorting-sorting-and-removing-duplicates-a" title="Permalink to this headline">#</a></h1>
+<section class="tex2jax_ignore mathjax_ignore" id="a-style-border-solid-padding-5pt-color-black-background-color-90caf9-name-sorting-sorting-and-removing-duplicates-a">
+<h1><a style="border: solid; padding:5pt; color:black; background-color:#90CAF9" name="sorting">Sorting and removing duplicates</a><a class="headerlink" href="#a-style-border-solid-padding-5pt-color-black-background-color-90caf9-name-sorting-sorting-and-removing-duplicates-a" title="Permalink to this heading">#</a></h1>
 <p style="font-family:consolas; font-size:15pt; color:green">
 df.sort_values(<i>column</i>|<i>[column_list]</i>], [ascending=True|False])
 </p><div class="cell docutils container">
@@ -5699,10 +4551,10 @@ df.drop_duplicates()
 </table>
 </div></div></div>
 </div>
-</div>
+</section>
 <hr class="docutils" />
-<div class="tex2jax_ignore mathjax_ignore section" id="a-style-border-solid-padding-5pt-color-black-background-color-90caf9-name-grouping-grouping-and-aggregation-a">
-<h1><a style="border: solid; padding:5pt; color:black; background-color:#90CAF9" name="grouping">Grouping and Aggregation</a><a class="headerlink" href="#a-style-border-solid-padding-5pt-color-black-background-color-90caf9-name-grouping-grouping-and-aggregation-a" title="Permalink to this headline">#</a></h1>
+<section class="tex2jax_ignore mathjax_ignore" id="a-style-border-solid-padding-5pt-color-black-background-color-90caf9-name-grouping-grouping-and-aggregation-a">
+<h1><a style="border: solid; padding:5pt; color:black; background-color:#90CAF9" name="grouping">Grouping and Aggregation</a><a class="headerlink" href="#a-style-border-solid-padding-5pt-color-black-background-color-90caf9-name-grouping-grouping-and-aggregation-a" title="Permalink to this heading">#</a></h1>
 <p style="font-family:consolas; font-size:15pt; color:green">
 df.groupby(<i>column</i>|<i>[column_list]</i>])
 </p>
@@ -5718,8 +4570,8 @@ df.groupby(<i>column</i>|<i>[column_list]</i>])
 </div>
 </div>
 </div>
-<div class="section" id="you-need-an-aggregator-or-iterator-make-use-of-grouping">
-<h2>You need an aggregator (or iterator) make use of grouping<a class="headerlink" href="#you-need-an-aggregator-or-iterator-make-use-of-grouping" title="Permalink to this headline">#</a></h2>
+<section id="you-need-an-aggregator-or-iterator-make-use-of-grouping">
+<h2>You need an aggregator (or iterator) make use of grouping<a class="headerlink" href="#you-need-an-aggregator-or-iterator-make-use-of-grouping" title="Permalink to this heading">#</a></h2>
 <p>Add an aggregation function: sum, count, mean, stdev, etc.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -5911,9 +4763,9 @@ df.groupby(<i>column</i>|<i>[column_list]</i>])
 </table>
 </div></div></div>
 </div>
-</div>
-<div class="section" id="iterating-over-groups-groupby-returns-an-iterable">
-<h2>Iterating over groups - <code class="docutils literal notranslate"><span class="pre">groupby</span></code> returns an iterable<a class="headerlink" href="#iterating-over-groups-groupby-returns-an-iterable" title="Permalink to this headline">#</a></h2>
+</section>
+<section id="iterating-over-groups-groupby-returns-an-iterable">
+<h2>Iterating over groups - <code class="docutils literal notranslate"><span class="pre">groupby</span></code> returns an iterable<a class="headerlink" href="#iterating-over-groups-groupby-returns-an-iterable" title="Permalink to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Numbers of rows in each group:&quot;</span><span class="p">)</span>
@@ -6078,9 +4930,9 @@ dict_keys([&#39;MSTICAlertsWin1\\MSTICAdmin&#39;, &#39;NT AUTHORITY\\SYSTEM&#39;
 </table>
 </div></div></div>
 </div>
-</div>
-<div class="section" id="grouping-with-multiple-aggregation-functions">
-<h2>Grouping with Multiple aggregation functions<a class="headerlink" href="#grouping-with-multiple-aggregation-functions" title="Permalink to this headline">#</a></h2>
+</section>
+<section id="grouping-with-multiple-aggregation-functions">
+<h2>Grouping with Multiple aggregation functions<a class="headerlink" href="#grouping-with-multiple-aggregation-functions" title="Permalink to this heading">#</a></h2>
 <p style="font-family:consolas; font-size:15pt; color:green">
 .agg({"Column_1": "agg_func", "Column_2": "agg_func"})
 </p><div class="cell docutils container">
@@ -6149,9 +5001,9 @@ dict_keys([&#39;MSTICAlertsWin1\\MSTICAdmin&#39;, &#39;NT AUTHORITY\\SYSTEM&#39;
 </table>
 </div></div></div>
 </div>
-</div>
-<div class="section" id="grouping-with-multiple-columns">
-<h2>Grouping with multiple columns<a class="headerlink" href="#grouping-with-multiple-columns" title="Permalink to this headline">#</a></h2>
+</section>
+<section id="grouping-with-multiple-columns">
+<h2>Grouping with multiple columns<a class="headerlink" href="#grouping-with-multiple-columns" title="Permalink to this heading">#</a></h2>
 <p style="font-family:consolas; font-size:15pt; color:green">
 .groupby(["Account", "LogonType"])
 </p><div class="cell docutils container">
@@ -6273,9 +5125,9 @@ dict_keys([&#39;MSTICAlertsWin1\\MSTICAdmin&#39;, &#39;NT AUTHORITY\\SYSTEM&#39;
 </table>
 </div></div></div>
 </div>
-</div>
-<div class="section" id="using-pd-grouper-to-group-by-time-interval">
-<h2>Using pd.Grouper to group by time interval<a class="headerlink" href="#using-pd-grouper-to-group-by-time-interval" title="Permalink to this headline">#</a></h2>
+</section>
+<section id="using-pd-grouper-to-group-by-time-interval">
+<h2>Using pd.Grouper to group by time interval<a class="headerlink" href="#using-pd-grouper-to-group-by-time-interval" title="Permalink to this heading">#</a></h2>
 <p style="font-family:consolas; font-size:15pt; color:green">
 .groupby(["Account", pd.Grouper(key="TimeGenerated", freq="1D")])
 </p><div class="cell docutils container">
@@ -6462,11 +5314,11 @@ dict_keys([&#39;MSTICAlertsWin1\\MSTICAdmin&#39;, &#39;NT AUTHORITY\\SYSTEM&#39;
 </table>
 </div></div></div>
 </div>
-</div>
-</div>
+</section>
+</section>
 <hr class="docutils" />
-<div class="tex2jax_ignore mathjax_ignore section" id="a-style-border-solid-padding-5pt-color-black-background-color-90caf9-name-adding-columns-adding-and-removing-columns-a">
-<h1><a style="border: solid; padding:5pt; color:black; background-color:#90CAF9" name="adding-columns">Adding and removing columns</a><a class="headerlink" href="#a-style-border-solid-padding-5pt-color-black-background-color-90caf9-name-adding-columns-adding-and-removing-columns-a" title="Permalink to this headline">#</a></h1>
+<section class="tex2jax_ignore mathjax_ignore" id="a-style-border-solid-padding-5pt-color-black-background-color-90caf9-name-adding-columns-adding-and-removing-columns-a">
+<h1><a style="border: solid; padding:5pt; color:black; background-color:#90CAF9" name="adding-columns">Adding and removing columns</a><a class="headerlink" href="#a-style-border-solid-padding-5pt-color-black-background-color-90caf9-name-adding-columns-adding-and-removing-columns-a" title="Permalink to this heading">#</a></h1>
 <p style="font-family:consolas; font-size:15pt; color:green">
 df[<i>column_name</i>] = <i>expr</i>
 </p>
@@ -6641,8 +5493,8 @@ df[<i>column_name</i>] = <i>expr</i>
 </table>
 </div></div></div>
 </div>
-<div class="section" id="assign-function">
-<h2><code class="docutils literal notranslate"><span class="pre">assign</span></code> function<a class="headerlink" href="#assign-function" title="Permalink to this headline">#</a></h2>
+<section id="assign-function">
+<h2><code class="docutils literal notranslate"><span class="pre">assign</span></code> function<a class="headerlink" href="#assign-function" title="Permalink to this heading">#</a></h2>
 <p>Note this introduces a new column to the <strong>output</strong> - it does not update the dataframe.</p>
 <p style="font-family:consolas; font-size:15pt; color:green">
 df.assign(NewColumn=<i>expr</i>)
@@ -6871,8 +5723,8 @@ df.assign(NewColumn=<i>expr</i>)
 </table>
 </div></div></div>
 </div>
-<div class="section" id="drop-columns">
-<h3>Drop columns<a class="headerlink" href="#drop-columns" title="Permalink to this headline">#</a></h3>
+<section id="drop-columns">
+<h3>Drop columns<a class="headerlink" href="#drop-columns" title="Permalink to this heading">#</a></h3>
 <p style="font-family:consolas; font-size:15pt; color:green">
 df.drop(columns=[<i>column_list</i>])<br><br>
 df.drop(columns=[<i>column_list</i>], inplace=True) <i># Beware!</i><br>
@@ -6951,10 +5803,10 @@ df.drop(columns=[<i>column_list</i>], inplace=True) <i># Beware!</i><br>
 </table>
 </div></div></div>
 </div>
-</div>
-</div>
-<div class="section" id="some-other-quick-ways-of-filtering-out-in-columns">
-<h2>Some other quick ways of filtering out (in) columns<a class="headerlink" href="#some-other-quick-ways-of-filtering-out-in-columns" title="Permalink to this headline">#</a></h2>
+</section>
+</section>
+<section id="some-other-quick-ways-of-filtering-out-in-columns">
+<h2>Some other quick ways of filtering out (in) columns<a class="headerlink" href="#some-other-quick-ways-of-filtering-out-in-columns" title="Permalink to this heading">#</a></h2>
 <p style="font-family:consolas; font-size:15pt; color:green">
 .filter(regex="Target.*", axis=1)
 </p>
@@ -7107,17 +5959,17 @@ df.drop(columns=[<i>column_list</i>], inplace=True) <i># Beware!</i><br>
 </table>
 </div></div></div>
 </div>
-</div>
-</div>
+</section>
+</section>
 <hr class="docutils" />
-<div class="tex2jax_ignore mathjax_ignore section" id="a-style-border-solid-padding-5pt-color-black-background-color-90caf9-name-simple-joins-simple-joins-a">
-<h1><a style="border: solid; padding:5pt; color:black; background-color:#90CAF9" name="simple-joins">Simple Joins</a><a class="headerlink" href="#a-style-border-solid-padding-5pt-color-black-background-color-90caf9-name-simple-joins-simple-joins-a" title="Permalink to this headline">#</a></h1>
+<section class="tex2jax_ignore mathjax_ignore" id="a-style-border-solid-padding-5pt-color-black-background-color-90caf9-name-simple-joins-simple-joins-a">
+<h1><a style="border: solid; padding:5pt; color:black; background-color:#90CAF9" name="simple-joins">Simple Joins</a><a class="headerlink" href="#a-style-border-solid-padding-5pt-color-black-background-color-90caf9-name-simple-joins-simple-joins-a" title="Permalink to this heading">#</a></h1>
 <p style="font-family:consolas; font-size:15pt; color:green">
 pd.concat([<i>df_list</i>])
 </p>
 <p>(relational joins tomorrow)</p>
-<div class="section" id="concatenating-dfs">
-<h2>Concatenating DFs<a class="headerlink" href="#concatenating-dfs" title="Permalink to this headline">#</a></h2>
+<section id="concatenating-dfs">
+<h2>Concatenating DFs<a class="headerlink" href="#concatenating-dfs" title="Permalink to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Extract two DFs from subset of rows</span>
@@ -7322,8 +6174,8 @@ df1: (10, 15) df2: (20, 15)
 </table>
 </div></div></div>
 </div>
-<div class="section" id="joining-rows">
-<h3>Joining rows<a class="headerlink" href="#joining-rows" title="Permalink to this headline">#</a></h3>
+<section id="joining-rows">
+<h3>Joining rows<a class="headerlink" href="#joining-rows" title="Permalink to this heading">#</a></h3>
 <p style="font-family:consolas; font-size:15pt; color:green">
 pd.concat([df_1, df_2...])
 </p><div class="cell docutils container">
@@ -7448,8 +6300,8 @@ pd.concat([df_1, df_2...])
 </div>
 </div>
 </div>
-<div class="section" id="ignore-index-true-causes-python-to-regenerate-a-new-index">
-<h4><code class="docutils literal notranslate"><span class="pre">ignore_index=True</span></code> causes Python to regenerate a new index<a class="headerlink" href="#ignore-index-true-causes-python-to-regenerate-a-new-index" title="Permalink to this headline">#</a></h4>
+<section id="ignore-index-true-causes-python-to-regenerate-a-new-index">
+<h4><code class="docutils literal notranslate"><span class="pre">ignore_index=True</span></code> causes Python to regenerate a new index<a class="headerlink" href="#ignore-index-true-causes-python-to-regenerate-a-new-index" title="Permalink to this heading">#</a></h4>
 <p style="font-family:consolas; font-size:15pt; color:green">
 pd.concat(df_list, <b>ignore_index=True</b>)
 </p><div class="cell docutils container">
@@ -7572,11 +6424,11 @@ pd.concat(df_list, <b>ignore_index=True</b>)
 </div>
 </div>
 </div>
-</div>
-</div>
-</div>
-<div class="section" id="joining-columns-horizontal">
-<h2>Joining columns (horizontal)<a class="headerlink" href="#joining-columns-horizontal" title="Permalink to this headline">#</a></h2>
+</section>
+</section>
+</section>
+<section id="joining-columns-horizontal">
+<h2>Joining columns (horizontal)<a class="headerlink" href="#joining-columns-horizontal" title="Permalink to this heading">#</a></h2>
 <p style="font-family:consolas; font-size:15pt; color:green">
 pd.concat([df_1, df_2...], <b>axis="columns"</b>)
 </p><div class="cell docutils container">
@@ -7873,11 +6725,11 @@ pd.concat([df_1, df_2...], <b>axis="columns"</b>)
 </table>
 </div></div></div>
 </div>
-</div>
-</div>
+</section>
+</section>
 <hr class="docutils" />
-<div class="tex2jax_ignore mathjax_ignore section" id="a-style-border-solid-padding-5pt-color-black-background-color-90caf9-name-stats-101-statistics-101-with-pandas-a">
-<h1><a style="border: solid; padding:5pt; color:black; background-color:#90CAF9" name="stats-101">Statistics 101 with Pandas</a><a class="headerlink" href="#a-style-border-solid-padding-5pt-color-black-background-color-90caf9-name-stats-101-statistics-101-with-pandas-a" title="Permalink to this headline">#</a></h1>
+<section class="tex2jax_ignore mathjax_ignore" id="a-style-border-solid-padding-5pt-color-black-background-color-90caf9-name-stats-101-statistics-101-with-pandas-a">
+<h1><a style="border: solid; padding:5pt; color:black; background-color:#90CAF9" name="stats-101">Statistics 101 with Pandas</a><a class="headerlink" href="#a-style-border-solid-padding-5pt-color-black-background-color-90caf9-name-stats-101-statistics-101-with-pandas-a" title="Permalink to this heading">#</a></h1>
 <p>In this part of the workshop we will use a statistical approach to perform data analysis. There are two basic types of statistical analysis: <em>Descriptive</em> and <em>Inferential</em>. During this workshop, we will focus on <strong>Descriptive Analysis</strong>.</p>
 <p>For the purpose of this section, we will use a network compound Security Dataset that you can find <a class="reference external" href="https://github.com/OTRF/Security-Datasets/tree/master/datasets/compound/apt29/day1/zeek">here</a>. Therefore, let’s start by importing the dataset.</p>
 <div class="cell docutils container">
@@ -8067,11 +6919,11 @@ pd.concat([df_1, df_2...], <b>axis="columns"</b>)
 <p>5 rows × 148 columns</p>
 </div></div></div>
 </div>
-<div class="section" id="data-types">
-<h2>Data Types<a class="headerlink" href="#data-types" title="Permalink to this headline">#</a></h2>
+<section id="data-types">
+<h2>Data Types<a class="headerlink" href="#data-types" title="Permalink to this heading">#</a></h2>
 <p>Before we start reviewing different descriptive analysis techniques, it is important to understand the type of data we are collecting in order to apply these techniques accordingly.</p>
-<div class="section" id="numerical-data">
-<h3><strong>Numerical</strong> data<a class="headerlink" href="#numerical-data" title="Permalink to this headline">#</a></h3>
+<section id="numerical-data">
+<h3><strong>Numerical</strong> data<a class="headerlink" href="#numerical-data" title="Permalink to this heading">#</a></h3>
 <p>This type of data represent the output of <strong>counting</strong> or <strong>measuring</strong> activities. Numerical data values are usually represented by <strong>numbers</strong>, and arithmetic calculations such as addition or subtraction do add context to our analysis.</p>
 <ul class="simple">
 <li><p>The quantity of <strong>network packets</strong> transferred over our network is a good example of numerical data generated by counting activities. This type of numerical data is also known as <strong>discrete</strong> data.</p></li>
@@ -8209,9 +7061,9 @@ pd.concat([df_1, df_2...], <b>axis="columns"</b>)
 </table>
 </div></div></div>
 </div>
-</div>
-<div class="section" id="categorical-data">
-<h3><strong>Categorical</strong> data<a class="headerlink" href="#categorical-data" title="Permalink to this headline">#</a></h3>
+</section>
+<section id="categorical-data">
+<h3><strong>Categorical</strong> data<a class="headerlink" href="#categorical-data" title="Permalink to this heading">#</a></h3>
 <p>This type of data represents <strong>categories</strong> or <strong>qualities</strong>. Categorical data values are usually described using characters or <strong>strings of characters</strong>. Moreover, categorical data values can also be represented by <strong>numbers</strong>. Unlike numerical data, arithmetic operations such as addition or subtraction do not add any extra context.</p>
 <ul class="simple">
 <li><p>The <strong>network protocol</strong> used creating a network connection is a good example of categorical data that describes a category, and does not give us any sense of order (We cannot compare among categories). This type of categorical data is also known as <strong>nominal</strong> data.</p></li>
@@ -8284,12 +7136,12 @@ pd.concat([df_1, df_2...], <b>axis="columns"</b>)
 <ul class="simple">
 <li><p>Another type of categorical data is known as <strong>ordinal</strong> data. Unlike nominal data, this type of data gives a sense of order (We can compare among categories). A good example of this type of data is the <strong>Integrity Level</strong> of a process: Low, Medium, High, System. Using the integrity level field as a reference, we can organize our processes from lower to high integrity level (Access Rights).</p></li>
 </ul>
-</div>
-</div>
-<div class="section" id="descriptive-analysis-for-categorical-data">
-<h2>Descriptive Analysis for Categorical data<a class="headerlink" href="#descriptive-analysis-for-categorical-data" title="Permalink to this headline">#</a></h2>
-<div class="section" id="categorical-data-types-in-pandas">
-<h3><strong>Categorical data types</strong> in Pandas<a class="headerlink" href="#categorical-data-types-in-pandas" title="Permalink to this headline">#</a></h3>
+</section>
+</section>
+<section id="descriptive-analysis-for-categorical-data">
+<h2>Descriptive Analysis for Categorical data<a class="headerlink" href="#descriptive-analysis-for-categorical-data" title="Permalink to this heading">#</a></h2>
+<section id="categorical-data-types-in-pandas">
+<h3><strong>Categorical data types</strong> in Pandas<a class="headerlink" href="#categorical-data-types-in-pandas" title="Permalink to this heading">#</a></h3>
 <p>Pandas uses the <strong><a class="reference external" href="https://pandas.pydata.org/pandas-docs/stable/user_guide/categorical.html">category</a></strong> data type to represent both nominal and ordinal data. Let’s check the current type of data for the <strong>protocol</strong> field we reviewed previously:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -8321,9 +7173,9 @@ dtype: object
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="describe-method">
-<h3><strong>Describe Method</strong><a class="headerlink" href="#describe-method" title="Permalink to this headline">#</a></h3>
+</section>
+<section id="describe-method">
+<h3><strong>Describe Method</strong><a class="headerlink" href="#describe-method" title="Permalink to this heading">#</a></h3>
 <p>Using the <strong><a class="reference external" href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.describe.html">describe</a></strong> method on categorical data will calculate the following statistics.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -8341,9 +7193,9 @@ Name: service, dtype: object
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="frequency-of-values">
-<h3><strong>Frequency of Values</strong><a class="headerlink" href="#frequency-of-values" title="Permalink to this headline">#</a></h3>
+</section>
+<section id="frequency-of-values">
+<h3><strong>Frequency of Values</strong><a class="headerlink" href="#frequency-of-values" title="Permalink to this heading">#</a></h3>
 <p>We can use the <strong><a class="reference external" href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.groupby.html">groupby</a></strong>, <strong><a class="reference external" href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.size.html">size</a></strong> and <strong><a class="reference external" href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.sort_values.html">sort_values</a></strong> methods to calculate the frequency of network connections by network service.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -8375,9 +7227,9 @@ dtype: int64
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="central-tendency">
-<h3><strong>Central Tendency</strong><a class="headerlink" href="#central-tendency" title="Permalink to this headline">#</a></h3>
+</section>
+<section id="central-tendency">
+<h3><strong>Central Tendency</strong><a class="headerlink" href="#central-tendency" title="Permalink to this heading">#</a></h3>
 <p>Central tendency metrics are values that intent to describe a whole group of values. One example of central tendency metric for categorical data is the mode or most frequent value. We can use the <strong><a class="reference external" href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.mode.html">mode</a></strong> method to calculate it.</p>
 <p>Another central tendency metric that we could use with categorical data is the <strong><a class="reference external" href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.median.html">median</a></strong>, but we can use it only with <strong>ordinal</strong> data.</p>
 <div class="cell docutils container">
@@ -8394,9 +7246,9 @@ Categories (17, object): [&#39;HTTP/NASHUA&#39;, &#39;cifs/NASHUA&#39;, &#39;cif
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="correlation">
-<h3><strong>Correlation</strong><a class="headerlink" href="#correlation" title="Permalink to this headline">#</a></h3>
+</section>
+<section id="correlation">
+<h3><strong>Correlation</strong><a class="headerlink" href="#correlation" title="Permalink to this heading">#</a></h3>
 <p>We can use the <strong><a class="reference external" href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.crosstab.html">crosstab</a></strong> method to create a crossed table with two or more factors.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -8487,12 +7339,12 @@ Categories (17, object): [&#39;HTTP/NASHUA&#39;, &#39;cifs/NASHUA&#39;, &#39;cif
 </table>
 </div></div></div>
 </div>
-</div>
-</div>
-<div class="section" id="descriptive-analysis-for-numerical-data">
-<h2>Descriptive Analysis for Numerical data<a class="headerlink" href="#descriptive-analysis-for-numerical-data" title="Permalink to this headline">#</a></h2>
-<div class="section" id="numerical-data-type-in-pandas">
-<h3><strong>Numerical data type</strong> in Pandas<a class="headerlink" href="#numerical-data-type-in-pandas" title="Permalink to this headline">#</a></h3>
+</section>
+</section>
+<section id="descriptive-analysis-for-numerical-data">
+<h2>Descriptive Analysis for Numerical data<a class="headerlink" href="#descriptive-analysis-for-numerical-data" title="Permalink to this heading">#</a></h2>
+<section id="numerical-data-type-in-pandas">
+<h3><strong>Numerical data type</strong> in Pandas<a class="headerlink" href="#numerical-data-type-in-pandas" title="Permalink to this heading">#</a></h3>
 <p>Pandas uses the <em>numeric</em> data type to represent both discrete and continuous data. The numeric data type includes <strong><a class="reference external" href="https://docs.python.org/3/library/functions.html#int">integer</a></strong> and <strong><a class="reference external" href="https://docs.python.org/3/library/functions.html#float">float</a></strong> Python data types.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -8531,9 +7383,9 @@ dtype: object
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="id1">
-<h3><strong>Describe Method</strong><a class="headerlink" href="#id1" title="Permalink to this headline">#</a></h3>
+</section>
+<section id="id1">
+<h3><strong>Describe Method</strong><a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h3>
 <p>Using the <strong><a class="reference external" href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.describe.html">describe</a></strong> method on numerical data will calculate the following statistics.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -8636,9 +7488,9 @@ dtype: object
 </table>
 </div></div></div>
 </div>
-</div>
-<div class="section" id="id2">
-<h3><strong>Frequency of Values</strong><a class="headerlink" href="#id2" title="Permalink to this headline">#</a></h3>
+</section>
+<section id="id2">
+<h3><strong>Frequency of Values</strong><a class="headerlink" href="#id2" title="Permalink to this heading">#</a></h3>
 <p>Similar to categorical data, we can use the <strong><a class="reference external" href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.groupby.html">groupby</a></strong> and <strong><a class="reference external" href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.size.html">size</a></strong> methods to calculate the frequency of values. However, sometimes the output might not be the desired, especially when working with <em>continuous</em> data. In this case, we might need to group our values into bins.</p>
 <p>We can use the <strong><a class="reference external" href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.cut.html">cut</a></strong> method to generate bins with our data.</p>
 <div class="cell docutils container">
@@ -8686,12 +7538,12 @@ dtype: int64
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[&lt;AxesSubplot:title={&#39;center&#39;:&#39;duration&#39;}&gt;]], dtype=object)
 </pre></div>
 </div>
-<img alt="../../_images/day1-3-Data-Analysis-with-Pandas Intro_197_1.png" src="../../_images/day1-3-Data-Analysis-with-Pandas Intro_197_1.png" />
+<img alt="../../_images/f59b3c2b4ed22baf271e7a598614f642a9175880d266999adc0b78da3513ad30.png" src="../../_images/f59b3c2b4ed22baf271e7a598614f642a9175880d266999adc0b78da3513ad30.png" />
 </div>
 </div>
-</div>
-<div class="section" id="id3">
-<h3><strong>Central Tendency</strong><a class="headerlink" href="#id3" title="Permalink to this headline">#</a></h3>
+</section>
+<section id="id3">
+<h3><strong>Central Tendency</strong><a class="headerlink" href="#id3" title="Permalink to this heading">#</a></h3>
 <p>Central tendency metrics are values that intent to describe a whole group of values.</p>
 <p>One example of central tendency metric for numerical data is the mode or most frequent value. We can use the <strong><a class="reference external" href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.mode.html">mode</a></strong> method to calculate it.</p>
 <div class="cell docutils container">
@@ -8733,9 +7585,9 @@ dtype: float64
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="shape-of-distribution-of-frequencies">
-<h3><strong>Shape of Distribution of Frequencies</strong><a class="headerlink" href="#shape-of-distribution-of-frequencies" title="Permalink to this headline">#</a></h3>
+</section>
+<section id="shape-of-distribution-of-frequencies">
+<h3><strong>Shape of Distribution of Frequencies</strong><a class="headerlink" href="#shape-of-distribution-of-frequencies" title="Permalink to this heading">#</a></h3>
 <p>In the previous section we mentioned that our data might contain extreme values (Short or Large) that affect the calculation of the mean or average of numerical data. These extreme values could also impact the shape of the distribution of frequencies of our data.</p>
 <p>One metric that can help us to describe the shape of the distribution of frequencies is <strong>Kurtosis</strong>. This metric identifies whether the tails of a given distribution contains extreme values. A Kurtosis value greater than 3 might indicate the presence of large outliers. On the other hand, a Kurtosis value less than 3 might indicate the presence of small outliers.</p>
 <p>We can use the <strong><a class="reference external" href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.kurtosis.html">kurtosis</a></strong> method to calculate it.</p>
@@ -8766,9 +7618,9 @@ dtype: float64
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="variability">
-<h3><strong>Variability</strong><a class="headerlink" href="#variability" title="Permalink to this headline">#</a></h3>
+</section>
+<section id="variability">
+<h3><strong>Variability</strong><a class="headerlink" href="#variability" title="Permalink to this heading">#</a></h3>
 <p>After calculating central tendency and shape metrics, we identified the presence of potential extreme values. These extreme values are different from most of our data values. This means that there exists variability among our data values.</p>
 <p>Let’s start by visually describing the variability of our data using a <strong>box plot</strong>. We can use the <strong><a class="reference external" href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.boxplot.html">boxplot</a></strong> method to graph one.</p>
 <div class="cell docutils container">
@@ -8791,7 +7643,7 @@ max      1901.216208
 Name: duration, dtype: float64
 </pre></div>
 </div>
-<img alt="../../_images/day1-3-Data-Analysis-with-Pandas Intro_209_1.png" src="../../_images/day1-3-Data-Analysis-with-Pandas Intro_209_1.png" />
+<img alt="../../_images/21affbff908b13d3e87f16a5b0cd462ec141ad5ba78aac45cd2c77fc443547d4.png" src="../../_images/21affbff908b13d3e87f16a5b0cd462ec141ad5ba78aac45cd2c77fc443547d4.png" />
 </div>
 </div>
 <p>A very basic metric that we can use to describe the variability in our data is the <strong>Range</strong> of values, which is the difference between the maximum and minimum value. We can use the <strong><a class="reference external" href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.min.html">min</a></strong> and <strong><a class="reference external" href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.max.html">max</a></strong> methods to calculate the range.</p>
@@ -8836,9 +7688,9 @@ Name: duration, dtype: float64
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="id4">
-<h3><strong>Correlation</strong><a class="headerlink" href="#id4" title="Permalink to this headline">#</a></h3>
+</section>
+<section id="id4">
+<h3><strong>Correlation</strong><a class="headerlink" href="#id4" title="Permalink to this heading">#</a></h3>
 <p>To graphically understand the relationship between 2 numerical variables, we can use a <strong>scatter plot</strong>. we can use the <strong><a class="reference external" href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.plot.scatter.html">plot.scatter</a></strong> method to create a scatter plot.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -8851,7 +7703,7 @@ Name: duration, dtype: float64
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;AxesSubplot:xlabel=&#39;orig_bytes&#39;, ylabel=&#39;resp_bytes&#39;&gt;
 </pre></div>
 </div>
-<img alt="../../_images/day1-3-Data-Analysis-with-Pandas Intro_217_1.png" src="../../_images/day1-3-Data-Analysis-with-Pandas Intro_217_1.png" />
+<img alt="../../_images/e5a08841a7c5b3864071fbb1410667b907839ce45a2a63f0fc5645098e2a6943.png" src="../../_images/e5a08841a7c5b3864071fbb1410667b907839ce45a2a63f0fc5645098e2a6943.png" />
 </div>
 </div>
 <p>Pandas also provies us with the <strong><a class="reference external" href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.corr.html">corr</a></strong> method to calculate correlation coeficients (Default method: Pearson coefficient - Linear Relation). We can correlate 2 or more numerical variables.</p>
@@ -8932,17 +7784,17 @@ Name: duration, dtype: float64
 </table>
 </div></div></div>
 </div>
-</div>
-</div>
-</div>
+</section>
+</section>
+</section>
 <hr class="docutils" />
-<div class="tex2jax_ignore mathjax_ignore section" id="end-of-session">
-<h1>End of Session<a class="headerlink" href="#end-of-session" title="Permalink to this headline">#</a></h1>
-</div>
-<div class="tex2jax_ignore mathjax_ignore section" id="font-color-peru-break-5-minutes-font">
-<h1><font color=peru>Break: 5 Minutes</font><a class="headerlink" href="#font-color-peru-break-5-minutes-font" title="Permalink to this headline">#</a></h1>
+<section class="tex2jax_ignore mathjax_ignore" id="end-of-session">
+<h1>End of Session<a class="headerlink" href="#end-of-session" title="Permalink to this heading">#</a></h1>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="font-color-peru-break-5-minutes-font">
+<h1><font color=peru>Break: 5 Minutes</font><a class="headerlink" href="#font-color-peru-break-5-minutes-font" title="Permalink to this heading">#</a></h1>
 <p><img alt="" src="../../_images/dog-leash-break.jpg" /></p>
-</div>
+</section>
 
     <script type="text/x-thebe-config">
     {
@@ -8956,7 +7808,7 @@ Name: duration, dtype: float64
             mode: "python"
         },
         kernelOptions: {
-            kernelName: "python3",
+            name: "python3",
             path: "./workshops\day1"
         },
         predefinedOutput: true
@@ -8964,50 +7816,236 @@ Name: duration, dtype: float64
     </script>
     <script>kernelName = 'python3'</script>
 
-              </div>
+                </article>
               
-            </main>
-            <footer class="footer-article noprint">
-                
-    <!-- Previous / next buttons -->
-<div class='prev-next-area'>
-    <a class='left-prev' id="prev-link" href="day1-2-Acquiring-data.html" title="previous page">
-        <i class="fas fa-angle-left"></i>
-        <div class="prev-next-info">
-            <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">Workshop 1.2: <font color=peru>Acquiring Data</font></p>
-        </div>
+
+              
+              
+                <footer class="bd-footer-article">
+                  
+<div class="footer-article-items footer-article__inner">
+  
+    <div class="footer-article-item"><!-- Previous / next buttons -->
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="day1-2-Acquiring-data.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Workshop 1.2: <font color=peru>Acquiring Data</font></p>
+      </div>
     </a>
-    <a class='right-next' id="next-link" href="../day2/intro.html" title="next page">
-    <div class="prev-next-info">
+    <a class="right-next"
+       href="../day2/intro.html"
+       title="next page">
+      <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
         <p class="prev-next-title">Day 2</p>
-    </div>
-    <i class="fas fa-angle-right"></i>
-    </a>
-</div>
-            </footer>
-        </div>
-    </div>
-    <div class="footer-content row">
-        <footer class="col footer"><p>
-  
-    By Open Threat Research @OTR_Community<br/>
-  
-      &copy; Copyright 2022.<br/>
-</p>
-        </footer>
-    </div>
-    
-</div>
-
-
       </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div></div>
+  
+</div>
+
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Workshop 1.3: <font color="peru">Basics of Data Analysis with Pandas</font></a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#a-style-border-solid-padding-5pt-color-black-background-color-90caf9-name-import-pandas-importing-the-pandas-library-a"><a name="import-pandas" style="border: solid; padding:5pt; color:black; background-color:#90CAF9">Importing the Pandas Library</a></a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#a-style-border-solid-padding-5pt-color-black-background-color-90caf9-name-dataframe-representing-data-in-an-organized-way-dataframe-a"><a name="dataframe" style="border: solid; padding:5pt; color:black; background-color:#90CAF9">Representing data in an Organized way: Dataframe</a></a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pandas-structures">Pandas Structures</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#series">Series</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dataframe">DataFrame</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#importing-data-as-a-pandas-dataframe">Importing data as a Pandas DataFrame</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#importing-json-files">Importing <strong>JSON</strong> files</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#importing-csv-files">Importing <strong>CSV</strong> files</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#notes-on-csv-files">Notes on CSV Files</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#importing-pickle-files">Importing <strong>PICKLE</strong> files</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#importing-remote-files">Importing <strong>Remote Files</strong></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#a-style-border-solid-padding-5pt-color-black-background-color-90caf9-name-interacting-interacting-with-dataframes-a"><a name="interacting" style="border: solid; padding:5pt; color:black; background-color:#90CAF9">Interacting with DataFrames</a></a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#size-shape-of-a-dataframe">Size/Shape of a DataFrame</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#single-row-of-dataframe-series">Single row of DataFrame == Series</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#intersection-of-a-row-and-column-is-a-simple-type-the-cell-content">Intersection of a row and column is a simple type - the cell content</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#selecting-columns">Selecting Columns</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#use-the-columns-property-to-get-the-column-names">Use the columns property to get the column names</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#indexes-brief-introduction">Indexes - brief introduction</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#setting-another-column-as-index">Setting another column as index</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#accessing-individual-cell-values">Accessing individual (“cell”) values</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#a-single-value">A single value</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#retrieving-values-from-a-pandas-series">Retrieving values from a pandas series</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pandas-i-o-functions">pandas I/O functions</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dataframe-input-functions">DataFrame input functions</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dataframe-output-functions">DataFrame output functions</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#export-to-excel-typically-need-openpyxl-installed-and-excel-or-similar">Export to Excel - typically need <code class="docutils literal notranslate"><span class="pre">openpyxl</span></code> installed (and Excel or similar)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#read-json-vs-json-normalize">read_json vs json_normalize</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#read-html-to-read-tables-from-web-pages">read_html to read tables from web pages</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#a-style-border-solid-padding-5pt-color-black-background-color-90caf9-name-selecting-selecting-searching-a"><a name="selecting" style="border: solid; padding:5pt; color:black; background-color:#90CAF9">Selecting/Searching</a></a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#specific-row-or-col-by-number">Specific row (or col) by number</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#you-can-go-full-numpy-and-use-iloc-with-int-indexing">You can go full numpy and use <code class="docutils literal notranslate"><span class="pre">iloc</span></code> with int indexing</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#select-by-content-boolean-indexing">Select by content - “Boolean indexing”</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#basic-operators">Basic operators</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#use-boolean-result-of-expression-to-filter-dataframe">Use boolean result of expression to filter DataFrame</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#note">Note</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#other-operators-with-boolean-indexing">Other operators with boolean indexing</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pandas-supports-string-functions-but">Pandas supports string functions - but</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#we-need-to-tell-pandas-to-apply-string-operation-as-a-vector-function-to-the-series">We need to tell pandas to apply string operation as a <em>vector function</em> to the series</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#multiple-conditions">Multiple conditions</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#without-parentheses-have-higher-precedence">Without parentheses - <code class="docutils literal notranslate"><span class="pre">&amp;,</span> <span class="pre">|,</span> <span class="pre">~</span></code> have higher precedence</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#boolean-indexes-are-pandas-series-you-can-save-and-re-use">Boolean indexes are <strong>Pandas series</strong> - you can save and re-use</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#isin-operator-function"><code class="docutils literal notranslate"><span class="pre">isin</span></code> operator/function</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pandas-query-function">pandas <code class="docutils literal notranslate"><span class="pre">query</span></code> function</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#combing-column-select-and-filter">Combing Column Select and filter</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#a-style-border-solid-padding-5pt-color-black-background-color-90caf9-name-sorting-sorting-and-removing-duplicates-a"><a name="sorting" style="border: solid; padding:5pt; color:black; background-color:#90CAF9">Sorting and removing duplicates</a></a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#a-style-border-solid-padding-5pt-color-black-background-color-90caf9-name-grouping-grouping-and-aggregation-a"><a name="grouping" style="border: solid; padding:5pt; color:black; background-color:#90CAF9">Grouping and Aggregation</a></a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#you-need-an-aggregator-or-iterator-make-use-of-grouping">You need an aggregator (or iterator) make use of grouping</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#iterating-over-groups-groupby-returns-an-iterable">Iterating over groups - <code class="docutils literal notranslate"><span class="pre">groupby</span></code> returns an iterable</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#grouping-with-multiple-aggregation-functions">Grouping with Multiple aggregation functions</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#grouping-with-multiple-columns">Grouping with multiple columns</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#using-pd-grouper-to-group-by-time-interval">Using pd.Grouper to group by time interval</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#a-style-border-solid-padding-5pt-color-black-background-color-90caf9-name-adding-columns-adding-and-removing-columns-a"><a name="adding-columns" style="border: solid; padding:5pt; color:black; background-color:#90CAF9">Adding and removing columns</a></a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#assign-function"><code class="docutils literal notranslate"><span class="pre">assign</span></code> function</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#drop-columns">Drop columns</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#some-other-quick-ways-of-filtering-out-in-columns">Some other quick ways of filtering out (in) columns</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#a-style-border-solid-padding-5pt-color-black-background-color-90caf9-name-simple-joins-simple-joins-a"><a name="simple-joins" style="border: solid; padding:5pt; color:black; background-color:#90CAF9">Simple Joins</a></a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#concatenating-dfs">Concatenating DFs</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#joining-rows">Joining rows</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ignore-index-true-causes-python-to-regenerate-a-new-index"><code class="docutils literal notranslate"><span class="pre">ignore_index=True</span></code> causes Python to regenerate a new index</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#joining-columns-horizontal">Joining columns (horizontal)</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#a-style-border-solid-padding-5pt-color-black-background-color-90caf9-name-stats-101-statistics-101-with-pandas-a"><a name="stats-101" style="border: solid; padding:5pt; color:black; background-color:#90CAF9">Statistics 101 with Pandas</a></a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#data-types">Data Types</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#numerical-data"><strong>Numerical</strong> data</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#categorical-data"><strong>Categorical</strong> data</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#descriptive-analysis-for-categorical-data">Descriptive Analysis for Categorical data</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#categorical-data-types-in-pandas"><strong>Categorical data types</strong> in Pandas</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#describe-method"><strong>Describe Method</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#frequency-of-values"><strong>Frequency of Values</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#central-tendency"><strong>Central Tendency</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#correlation"><strong>Correlation</strong></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#descriptive-analysis-for-numerical-data">Descriptive Analysis for Numerical data</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#numerical-data-type-in-pandas"><strong>Numerical data type</strong> in Pandas</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1"><strong>Describe Method</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2"><strong>Frequency of Values</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3"><strong>Central Tendency</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#shape-of-distribution-of-frequencies"><strong>Shape of Distribution of Frequencies</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#variability"><strong>Variability</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4"><strong>Correlation</strong></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#end-of-session">End of Session</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#font-color-peru-break-5-minutes-font"><font color="peru">Break: 5 Minutes</font></a></li>
+</ul>
+
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Open Threat Research @OTR_Community
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
     </div>
+  </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+  <script src="../../_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
 
-
+  <footer class="bd-footer">
+  </footer>
   </body>
 </html>
