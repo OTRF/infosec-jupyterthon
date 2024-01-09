@@ -20,16 +20,16 @@ END:DAYLIGHT
 END:VTIMEZONE
 BEGIN:VEVENT
 CLASS:PUBLIC
-CREATED:20221130T045158Z
+CREATED:20240109T190220Z
 DESCRIPTION:InfoSec Jupyterthon\n \nAn open community event for security re
 	searchers to share their experience and favorite notebooks <https://jupyte
-	r.org/>  with the InfoSec community. This is our third year organizing thi
-	s event! It will be on December 2nd and 3rd\, 2022. We meet virtually\, sh
+	r.org/>  with the InfoSec community. This is our 4th year organizing thi
+	s event! It will be on February 15th and 16th\, 2024. We meet virtually\, sh
 	are notebooks\, and have fun learning more about Jupyter notebooks applied
 	 to the infosec field.\n \nA great place to meet other Infosec Jovyans!\n 
-	\nEvent Information\n*	When? December 2nd and 3rd\, 2022\n*	Where? Live St
-	ream\n	*	Day 1: https://aka.ms/Jupyterthon22Live1\n	*	Day 2: https://aka.m
-	s/Jupyterthon22Live2\n*	How Much? FREE\n*	Discord Server\n	*	Invite Link: 
+	\nEvent Information\n*	When? February 15th and 16th\, 2024\n*	Where? Live St
+	ream\n	*	https://aka.ms/JupyterthonLiveDay1\n	*	https://aka.m
+	s/JupyterthonLiveDay2\n*	How Much? FREE\n*	Discord Server\n	*	Invite Link: 
 	https://aka.ms/JupyterthonDiscord\n	*	Channel Name: OTR Conferences > Jupy
 	terthon\n		\n		\nMore Information: https://infosecjupyterthon.com/\n \n
 X-ALT-DESC;FMTTYPE=text/html:<html xmlns:v="urn:schemas-microsoft-com:vml" 
@@ -605,8 +605,8 @@ X-ALT-DESC;FMTTYPE=text/html:<html xmlns:v="urn:schemas-microsoft-com:vml"
 	p></o:p></span></p><p class=MsoNormal><o:p>&nbsp\;</o:p></p><p class=MsoNo
 	rmal>An open community event for security researchers to share their exper
 	ience and favorite&nbsp\;<a href="https://jupyter.org/" target="_blank">no
-	tebooks</a>&nbsp\;with the InfoSec community. This is our third year organ
-	izing this event! It will be on <b>December 2nd and 3rd\, 2022</b>. We mee
+	tebooks</a>&nbsp\;with the InfoSec community. This is our 4th year organ
+	izing this event! It will be on <b>February 15th and 16th\, 2024</b>. We mee
 	t virtually\, share notebooks\, and have fun learning more about Jupyter n
 	otebooks applied to the infosec field.<o:p></o:p></p><p class=MsoNormal><o
 	:p>&nbsp\;</o:p></p><p class=MsoNormal>A great place to meet other Infosec
@@ -614,15 +614,15 @@ X-ALT-DESC;FMTTYPE=text/html:<html xmlns:v="urn:schemas-microsoft-com:vml"
 	MsoNormal><b><span style='font-size:14.0pt'>Event Information</span></b><s
 	pan style='font-size:14.0pt'><o:p></o:p></span></p><ul style='margin-top:0
 	in' type=disc><li class=MsoNormal style='mso-list:l0 level1 lfo3\;tab-stop
-	s:list .5in'><b>When?</b>&nbsp\;December 2nd and 3rd\, 2022<o:p></o:p></li
+	s:list .5in'><b>When?</b>&nbsp\;February 15th and 16th\, 2024<o:p></o:p></li
 	><li class=MsoNormal style='mso-list:l0 level1 lfo3\;tab-stops:list .5in'>
 	<b>Where?</b>&nbsp\;Live Stream<o:p></o:p></li><ul style='margin-top:0in' 
 	type=circle><li class=MsoNormal style='mso-list:l0 level2 lfo3\;tab-stops:
-	list 1.0in'>Day 1:&nbsp\;<a href="https://aka.ms/Jupyterthon22Live1" targe
-	t="_blank">https://aka.ms/Jupyterthon22Live1</a><o:p></o:p></li><li class=
+	list 1.0in'>Day 1:&nbsp\;<a href="https://aka.ms/JupyterthonLiveDay1" targe
+	t="_blank">https://aka.ms/JupyterthonLiveDay1</a><o:p></o:p></li><li class=
 	MsoNormal style='mso-list:l0 level2 lfo3\;tab-stops:list 1.0in'>Day 2:&nbs
-	p\;<a href="https://aka.ms/Jupyterthon22Live2" target="_blank">https://aka
-	.ms/Jupyterthon22Live2</a><o:p></o:p></li></ul><li class=MsoNormal style='
+	p\;<a href="https://aka.ms/JupyterthonLiveDay2" target="_blank">https://aka
+	.ms/JupyterthonLiveDay2</a><o:p></o:p></li></ul><li class=MsoNormal style='
 	mso-list:l0 level1 lfo3\;tab-stops:list .5in'><b>How Much?</b>&nbsp\;FREE<
 	o:p></o:p></li><li class=MsoNormal style='mso-list:l0 level1 lfo3\;tab-sto
 	ps:list .5in'><b>Discord Server</b><o:p></o:p></li><ul style='margin-top:0
@@ -636,14 +636,13 @@ X-ALT-DESC;FMTTYPE=text/html:<html xmlns:v="urn:schemas-microsoft-com:vml"
 	sp\;<a href="https://infosecjupyterthon.com/" target="_blank">https://info
 	secjupyterthon.com/</a><o:p></o:p></p><p class=MsoNormal><o:p>&nbsp\;</o:p
 	></p></div></body></html>
-DTEND;TZID="Eastern Standard Time":20221202T173000
-DTSTAMP:20221026T044156Z
-DTSTART;TZID="Eastern Standard Time":20221202T103000
-LAST-MODIFIED:20221130T045158Z
+DTEND;TZID="Eastern Standard Time":20240215T210000
+DTSTAMP:20241026T044156Z
+DTSTART;TZID="Eastern Standard Time":20240215T160000
+LAST-MODIFIED:20240109T190600Z
 PRIORITY:5
-RRULE:FREQ=DAILY;COUNT=2
 SEQUENCE:0
-SUMMARY;LANGUAGE=en-us:InfoSec Jupyterthon 2022
+SUMMARY;LANGUAGE=en-us:InfoSec Jupyterthon 2024 - Day 1
 TRANSP:TRANSPARENT
 X-MICROSOFT-CDO-BUSYSTATUS:FREE
 X-MICROSOFT-CDO-IMPORTANCE:1
