@@ -14,42 +14,10 @@ parts:
     - file: collaborators/Thomas-Roccia
     - file: collaborators/Pete-Bryan
     - file: collaborators/Jose-Rodriguez
-- caption: 2022 Edition
+- caption: 2024 Edition
   chapters:
-  - file: 2022/agenda
+  - file: 2024/agenda
     title: Agenda
-  - file: 2022/speakers/intro
-    sections:
-    - file: 2022/speakers/roberto_rodriguez
-    - file: 2022/speakers/ian_hellen
-    - file: 2022/speakers/leo_meyerovich
-    - file: 2022/speakers/chi_nguyen
-    - file: 2022/speakers/amritpal_singh
-    - file: 2022/speakers/vijay_punja
-    - file: 2022/speakers/james_duncan
-    - file: 2022/speakers/ryan_marcotte_cobb
-    - file: 2022/speakers/saksham_tushar
-    - file: 2022/speakers/christian_camilo_urcuqui_lopez
-    - file: 2022/speakers/pete_bryan
-    - file: 2022/speakers/ashwin_patil
-    - file: 2022/speakers/thomas_roccia
-    - file: 2022/speakers/jose_rodriguez
-    - file: 2022/speakers/alex_morrise
-    - file: 2022/speakers/dmitrijs_trizna
-    - file: 2022/speakers/mehmet_ergene
-    - file: 2022/speakers/jerry_gamblin
-    - file: 2022/speakers/balaji_sampath
-    - file: 2022/speakers/janantha_marasinghe
-    - file: 2022/speakers/paul_coccoli
-    - file: 2022/speakers/brayan_mena
-    - file: 2022/speakers/john_mac
-  - file: 2022/sessions/intro
-    sections:
-    - file: 2022/sessions/day1-01-Opening_Remarks
-      title: Opening Remarks
-    - file: 2022/sessions/day1-05-Exploratory_Data_I_mean_Threat_Analytics_using_Jupyter_Notebooks
-    - file: 2022/sessions/day1-11-Extending_MSTICPy
-    - file: 2022/sessions/day2-08-Shell-Language-Processing
 - caption: Workshops
   chapters:
   - file: workshops/day1/intro

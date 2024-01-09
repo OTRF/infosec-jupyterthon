@@ -1,0 +1,17 @@
+title: CVE.ICU - Making CVE Data More Accessible 
+speaker:
+  - name: Jerry Gamblin
+    job_title: Director Of Security Research
+    company: Cisco
+    twitter: "@jgamblin"
+    bio: >-
+      Jerry Gamblin is an influential security researcher and analyst, focusing on enterprise networks and application security with over 20 years of experience.
+      His research has been presented on numerous blogs, podcasts, and security conferences.
+      When not at work, his personal research focuses on IoT & embedded automotive systems.
+date: '2022-12-03'
+time: '15:05'
+abstract: >-
+  My job often involves explaining CVE data and growth to people.
+  So over the last year, I have built out CVE.icu using the jupyterbook project and github actions to build and update the data daily automatically.
+  This talk will discuss how I built the site, future improvements, stumbling blocks, and more.
+  Interested in the code? It is here: https://github.com/jgamblin/cve.icu

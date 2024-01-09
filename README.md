@@ -20,29 +20,27 @@
 
 An open community event for security researchers to share their experience and favorite [notebooks](https://jupyter.org/) with the InfoSec community. We meet virtually, share notebooks, and have fun learning more about Jupyter notebooks applied to the InfoSec field. A great place to meet other Infosec [Jovyans!](#what-is-a-jovyan-🪐)
 
-<a rel="noopener" target="_blank" href="https://infosecjupyterthon.com/2022/Jupyterthon22.ics" class="cta btn-yellow" style="background-color: #F4D66C; font-size: 18px; font-family: Helvetica, Arial, sans-serif; font-weight:bold; text-decoration: none; padding: 14px 20px; color: #1D2025; border-radius: 5px; display:inline-block; mso-padding-alt:0; box-shadow:0 3px 6px rgba(0,0,0,.2);"><!--[if mso]><i style="letter-spacing: 25px;mso-font-width:-100%;mso-text-raise:30pt"> </i><![endif]--><span style="mso-text-raise:15pt;">Add to your Calendar</span><!--[if mso]><i style="letter-spacing: 25px;mso-font-width:-100%"> </i><![endif]--></a>
-
 ## Web Site: https://infosecjupyterthon.com
 
-## Quick Information
+## Quick Information 
 
-* **When?** February 2024 (Exact Dates TBD)
+* **When?** February 15th and 16th, 2024
 * **Where?** Live Stream
-    * Day 1: TBD
-    * Day 2: TBD
+    * https://aka.ms/JupyterthonLiveDay1
+    * https://aka.ms/JupyterthonLiveDay2
 * **How Much?** FREE
 * **Discord Server**
     * Invite Link: https://aka.ms/JupyterthonDiscord
     * Channel: OTR Conferences > Jupyterthon
 
-## Registration 
+## Registration Form
 
-Link - TBD
+https://aka.ms/JupyterthonRegistration
 
 ## Call For Notebooks
 If you are using Jupyter notebooks for any use case applied to Infosec, we want to hear from you! Presentation slides are not required. You and a notebook is enough!.
 
-* **CFN form:** https://forms.office.com/r/bKAyTRjjas
+* **CFN form:** https://aka.ms/JupyterthonCFN
 * **CFN starts:** December 15th, 2023
 * **CFN ends:** January 15th, 2024
 

@@ -1,0 +1,20 @@
+title: Threat Feeds Comparison 
+speaker:
+  - name: Balaji Sampath
+    job_title: Security Engineer
+    company: Banyan Security
+    twitter:
+    bio: >-
+      Balaji Sampath has been doing perimeter security for the last couple of years and have been with Arbor Networks, AWS, Fidelity in the past.
+      He is now part of Banyan Security, a company that provides Zero Trust Network Access solutions for various businesses.
+  - name: Brayan Mena
+    job_title: Intern
+    company: Banyan Security
+    twitter:
+    bio:
+date: '2022-12-03'
+time: '15:30'
+abstract: >-
+  Threat Feeds can provide varied results for URLs and Domains, depending on who you're asking, Chosing the right threat feeds to integrate with products or for integrating with an existing vendor can be a tough choice to make, We made a databased analysis using open source threat feeds and how various vendor feeds compare with each other.
+  Based on a hit rate and the size of samples a decision can be made for your specific use case.
+  The power of Jupyter shines through this project because of the powerful data graphing and easy to use one-liners.

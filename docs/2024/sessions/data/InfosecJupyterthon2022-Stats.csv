@@ -1,0 +1,524 @@
+Industry,JupyterNotebookLevel,Expectations,Location
+Technology,Advanced,,Australia
+Technology,Advanced,,Peru
+Technology,Advanced,,France
+Technology,Beginner,,United States
+Finance,Intermediate,,United States
+Technology,Intermediate,,Indonesia 
+Technology,Beginner,,United States
+Finance,Beginner,,United States
+Technology,Beginner,,
+Technology,Intermediate,,Switzerland
+Consulting,Beginner,How to get started ,United States
+Technology,Intermediate,Data analysis techniques for security logs,United States
+Education,Beginner,learning Info sec,Germany
+Technology,Beginner,Great ways to utilize Jupyter Notebooks in responding and investigating cybersecurity artifacts!,United States
+Finance,Beginner,,United States
+Finance,Intermediate,,United States
+Technology,Advanced,,United Kingdom
+Technology,Beginner,How to start using Jupyter,London
+Technology,Advanced,,United States
+Technology,Intermediate,"hunting, msticpy, artifact presentation ",United States
+Technology,Beginner,Rain think,Mexico 
+Technology,Advanced,"Cybersecurity, data science, Microsoft Azure, and making networking ",Colombia
+Education,Intermediate,How to do model training using EC2 access,India
+Education,Beginner,knowledge,United States
+Technology,Beginner,Learn more about Jupyter.,Mexico 
+Technology,Intermediate,,Portugal
+Hotel & Food Services,Beginner,"would like to know how i can use jupyter notebooks in my day-to-day work in infosec.
+Would like to say how people across the world are utilizing this tool.",India
+Technology,Advanced,automate threat hunts,Belgium
+Consulting,Intermediate,Learn about new frameworks and tools people are using. Also seeing how msticpy is being used. I try to write my own notebooks around msticpy functionality and it helps to have a bit of inspiration.,Qatar
+Education,Beginner,How to use them,United States
+Technology,Beginner,As much as possible,Poland
+Consulting,Beginner,Basic stuff,
+Technology,Beginner,,India
+Retail,Beginner,As much as I can! ,Canada
+Technology,Intermediate,,Canada
+Technology,Beginner,Anything is fine!,Canada
+Consulting,Intermediate,"IR notebooks best practices.
+Adversary Emulation documentation",Dominican Republic
+Finance,Beginner,,United States
+Technology,Beginner,,United States
+Technology,Intermediate,Want to see what others are making and ways they are re making detections. Scheduling notebooks is also a big interest of mjne,United States
+Technology,Intermediate,"Looking to see other people implementations of Jupyter Notebooks into their analysis as blue teams, and possibly some implementations that are leveraged to threat hunt for adversarial activity.  ",United States
+Technology,Beginner,security data analysis and automation of sec ops processes,United States
+Technology,Beginner,No expectations. ,Poland 
+Technology,Beginner,What it is and how to use it,United States
+Technology,Beginner,Interested in understanding how jupyter notebooks & secops can drive outcomes,United States
+Technology,Intermediate,,Australia
+Technology,Beginner,,United States
+Technology,Intermediate,Latest in infosec,United States
+Technology,Intermediate,,South Korea
+Technology,Beginner,No expectations at this time ,United States
+Consulting,Beginner,,United States
+Technology,Expert,,Australia
+Technology,Beginner,Use cases for using Jupiter notebooks for different analysis use cases and the technical details to make it happen.,United States
+Technology,Beginner,Would love to hear more about getting data into the notebooks and threat hunting strategies!,United States
+Technology,Beginner,,Singapore 
+Technology,Beginner,"More great strategies to employ them, day to day.",United States
+Technology,Beginner,Security topics,United States
+Technology,Beginner,,United States
+Technology,Intermediate,"More capabilities, ho others are using them and how i can expand my own use.",United States
+Technology,Intermediate,Real world implementation in threat hunting and intelligence.,India
+Retail,Beginner,Threat hunting,
+Education,Beginner,,United States
+Finance,Beginner,,India
+Finance,Advanced,,United States
+Technology,Beginner,Jupyter applied to infosec ,Brazil
+Technology,Beginner,,United States
+Technology,Beginner,,United States
+Student,Beginner,Learn something new which will me understand.,India 
+Healthcare,Beginner,,South Africa
+Technology,Beginner,Everything about Jupyter Notebooks!,India
+Retail,Beginner,,Netherlands
+Technology,Intermediate,Automation,Canada
+Technology,Beginner,,United States
+Technology,Beginner,,Mexico 
+Finance,Beginner,,India
+Education,Advanced,"Use cases, algorithms",Poland
+Consulting,Beginner,,Belgium
+Consulting,Beginner,,United States
+Technology,Beginner,,Belgium
+Technology,Intermediate,,India
+Consulting,Intermediate,New ideas for new notebooks.,Belgium
+Technology,Advanced,Applied science to cybersecurity domain.,Czech Republic
+Technology,Intermediate,,India 
+Finance,Intermediate,,Portugal
+Finance,Intermediate,New DFIR and automation techniques,Argentina
+Consulting,Intermediate,"Improve my skills, share experience of the use of Jupyter for Cybersecurity related tasks ans automation.",France
+Technology,Beginner,,Israel
+Healthcare,Advanced,Interesting data analytics techniques,Spain
+Consulting,Beginner,,Germany
+Technology,Beginner,,Czech Republic
+Consulting,Beginner,,Spain
+Consulting,Beginner,"How to operationalize the use of the notebooks. How to use it to communicate to technical/non-technical stakeholders.",United States
+Finance,Intermediate,,Singapore
+Technology,Intermediate,,India
+Technology,Intermediate,,
+Technology,Beginner,,Spain
+Technology,Advanced,New ideas,Belgium
+Consulting,Advanced,I have been using Jupyter for about 5 years so I am interested in seeing what others have done.,United States
+Retail,Beginner,,Finland
+Technology,Intermediate,,Romania
+Technology,Intermediate,,Scotland
+Technology,Intermediate,,
+Technology,Intermediate,,United States
+Technology,Beginner,,United States
+Technology,Beginner,To develope good understanding and provide good solution to prospective client for confidentiality implementing Jupyter notebooks in security context.,India
+Healthcare,Beginner,How best to utilise them and all the cool things that can be done with them,Canada
+Consulting,Intermediate,Tips and Tricks,United States
+Technology,Beginner,Playbooks that automate memory forensics on both Windows and Linux systems ,France
+Finance,Beginner,,
+Technology,Beginner,,India
+Technology,Beginner,,Australia
+Student,Beginner,,United States
+Technology,Beginner,,United States
+Finance,Beginner,"Reporting on data trends and reporting, visualizations. Learning in general ",United States
+Technology,Beginner,How cybersecurity is advancing and role of Notebooks,India
+Finance,Intermediate,"Enhance my Learning about How more I can indulge Notebooks in tactical security/Hunting/Intelligence.
+Learn how and what the community is doing with this powerful tool. 
+Things I can improve in my operational United Statesge of Jupyter.",India
+Consulting,Beginner,,Spain 
+Consulting,Intermediate,,United States
+Consulting,Beginner,,India
+Consulting,Beginner,I expect to learn about the most innovative notebooks for threat hunting,United States
+Technology,Beginner,"I'm looking to see firsthand how other intel folks are using Jupyter.  I know it's extensively used at MSFT, Meta, and AWS.",United States
+Technology,Intermediate,,United States
+Consulting,Beginner,,United States
+Technology,Intermediate,,India
+Healthcare,Beginner,Learn more about leveraging jupyter notebooks for security operations.,United Kingdom
+Technology,Beginner,,Colombia
+Technology,Beginner,Not 100% sure,United States
+Technology,Beginner,,India
+Technology,Beginner,I'm interested to learn and expert in Python language,India
+Technology,Intermediate,Jupyter and infosec tips and tricks,Canada
+Consulting,Beginner,Use case in day to day SOC,United Kingdom
+Technology,Beginner,What is Jupyter Notebooks and how I can use it to make my work more effectively.,India
+Technology,Beginner,,Australia
+Consulting,Beginner,,Spain
+Technology,Beginner,,United States
+Technology,Intermediate,,Romania
+Technology,Beginner,How to process the data and make conclusions.,United States
+Finance,Advanced,,France
+Technology,Intermediate,More on infosec application ,United States
+Technology,Intermediate,Everything!,United States
+Technology,Beginner,"As someone semi-new to using Jupyter notebooks, I'm hoping to get a pulse on how people are using notebooks in their day-to-day InfoSec lives. ",United States
+Technology,Beginner,,United States
+Technology,Beginner,"Well, It's hardest one. I like to analyze cybersecurity related data and I am looking for information that can combine cybersecurity and data analysis. I'm not a software engineer or somethig like that. I'm just looking for information, there is very little on the Internet about data analysis and cybersecurity. ",Ukraine
+Technology,Intermediate,Working to become more proficient at notebook manipulation. Need to carve more time to mess with it more. ,United States
+Technology,Advanced,"Use cases for merging data science with infosec domain. Hunting notebooks, data acquisition, visualization and insight gathering from data. ",Poland
+Consulting,Intermediate,,Brazil
+Finance,Beginner,,United States
+Finance,Beginner,How to use these notebook for incident handling code execution from Splunk edr and powershell for investigation,Saudia
+Technology,Intermediate,,United States
+Technology,Advanced,,United States
+Finance,Beginner,,Poland
+Technology,Expert,Infosec United Statesge.,United States
+Technology,Beginner,,India 
+Technology,Advanced,a lot of amazing stuff and undiscovered horizon,India
+Technology,Beginner,,Brazil
+Technology,Beginner,technical skills,United States
+Technology,Beginner,,Brazil 
+Technology,Beginner,,Qatar
+Technology,Intermediate,,United States
+Technology,Beginner,,Egypt
+Healthcare,Beginner,,South Africa
+Technology,Advanced,,United Kingdom
+Technology,Beginner,How to use jupyter in DFIR?,Saudi Arabia 
+Technology,Intermediate,,United Kingdom
+Technology,Intermediate,,United Kingdom
+Finance,Beginner,Use cases for infosec ,United States
+Technology,Beginner,,India
+Technology,Beginner,How to use Notebooks in log/treat analysis,Poland
+Technology,Beginner,Learn Jupyter,India
+Technology,Intermediate,analytics,United States
+Technology,Advanced,,United States
+Consulting,Beginner,To understand Jupyter Notebooks and see how they can be used for security. ,United States
+Technology,Intermediate,"How others within infosec are using Jupyter Notebooks, along with perhaps adoption rates of Jupyter use across organizations",United States
+Technology,Beginner,"What it does, how it's used, and what can be benefited from it. ",United States
+Technology,Beginner,,United States
+Technology,Beginner,,Australia
+Technology,Intermediate,Improve my skills in merging DS with CS,Poland
+Technology,Intermediate,Learn how others are using Jupyter Notebooks.,Singapore
+Technology,Beginner,,Ecuador
+Technology,Beginner,Latest thinking in using notebooks for threat hunting in large data volumes.,United Kingdom
+Retail,Intermediate,,Singapore
+Technology,Intermediate,,United States
+Technology,Beginner,,United States
+Consulting,Advanced,,Dubai
+Technology,Intermediate,Better United Statesge of Jupyter and how what other hunters are using it for. ,United Kingdom
+Technology,Intermediate,,United States
+Finance,Intermediate,New techniques and features.,Argentina
+Consulting,Advanced,Some new visualization techniques,United States
+Consulting,Intermediate,Exploit development or research or Scripting ,India 
+Technology,Intermediate,,India
+Consulting,Beginner,Goal is to see how portal Jupyter notebooks are for infosec runbook / playbooks,United States
+Technology,Beginner,,Diallo
+Technology,Intermediate,Anything,United States
+Technology,Beginner,"As a beginning, I am looking to get exposed on how I can use it for daily operations as a Threat Hunter. I want to be able to identify how I can use the data ingested in our SIEM to find activities that would potentially be a threat.",Romania
+Technology,Beginner,use cases,Australia
+Technology,Beginner,To expand my knowledge of how notebooks are used to solve cyber security problems.,Australia
+Consulting,Beginner,,United Kingdom
+Technology,Beginner,All. The. Things. :),United States
+Technology,Expert,New and interesting techniques to solve infosec problems,United States
+Healthcare,Intermediate,,Spain
+Healthcare,Advanced,,Spain
+Technology,Advanced,Things out of my normal work bubble.,United States
+Consulting,Beginner,,United States
+Technology,Intermediate,,Scotland
+Consulting,Intermediate,"Using them in anger other than how we use them. They're so diverse I'm interested in new ways to utilize them from other industries, etc.",United States
+Technology,Intermediate,,United States
+Finance,Intermediate,,Norway
+Finance,Beginner,Foundational understanding and potential cyber use cases,United States
+Technology,Intermediate,Build on my current knowledge and discover new and innovative ways others are using Jupyter Notebooks,United States
+Technology,Beginner,Community best practices. ,United States
+Consulting,Beginner,,Canada
+Technology,Intermediate,"Security Use Cases, Machine Learning concepts using Jupyter Notebooks",United States
+Technology,Intermediate,"Hopefully, threat hunting and incident response with Jupyter notebooks.",United States
+Technology,Beginner,,Germany
+Technology,Beginner,Getting started with Jupyter Notebooks and incorporating them into our security infrastructure. ,United States
+Finance,Advanced,"Productionalizing notebooks for security, creating security products using notebooks, best practices for detections as notebooks",United States
+Consulting,Beginner,,United States
+Technology,Intermediate,,United States
+Finance,Beginner,Learn ,Canada
+Technology,Beginner,,United States
+Consulting,Intermediate,Use in security,England
+Technology,Intermediate,Threat hunting use cases,United States
+Healthcare,Beginner,,
+Consulting,Beginner,general understanding and fast pacing my learning curve. Learn from use cases ,Netherlands
+Technology,Intermediate,,United States
+Technology,Beginner,,Canada
+Technology,Beginner,,France
+Technology,Beginner,Use cases and tips and tricks,United States
+Finance,Intermediate,,United States
+Education,Beginner,Everything ,United States
+Technology,Intermediate,How to learn more about using them to better secure infrastructure.,United States
+Technology,Beginner,,Belgium
+Healthcare,Beginner,,Canada
+Healthcare,Beginner,,United States
+Technology,Beginner,,United States
+Healthcare,Intermediate,,Belgium
+Technology,Beginner,How to use it and start developing skills ,Canada
+Healthcare,Beginner,What it is.,United States
+Technology,Beginner,Info sec stuff :),Australia
+Technology,Intermediate,"Resource management, algorithms",Israel
+Healthcare,Beginner,What it offers how how we can use it in our environment ,United Kingdom
+Technology,Beginner,,Edinburgh
+Education,Intermediate,,United States
+Technology,Beginner,Learn the Jupyter Notebooks skills in security threat hunting,China
+Technology,Beginner,,Australia
+Retail,Intermediate,learn & share my knowledge,Korea
+Technology,Beginner,,Australia
+Technology,Beginner,Basics,United States
+Student,Beginner,,India
+Technology,Beginner,,Australia
+Technology,Beginner,,United States
+Education,Intermediate,,United States
+Technology,Beginner,,Canada
+Consulting,Beginner,Work agile.,Mexico
+Finance,Beginner,,United States
+Technology,Beginner,,Dubai
+Technology,Beginner,I want to learn from basic,India
+Technology,Intermediate,Credentials management and triggering/part of workflows,Dublin
+Technology,Beginner,,United States
+Finance,Beginner,How to be more secure,Poland
+Technology,Intermediate,How to use it effectively.,India 
+Technology,Intermediate,,United States
+Consulting,Beginner,,Kuwait
+Technology,Advanced,to know how security professionals use jupyter notebooks ,Dubai
+Technology,Expert,,United States
+Technology,Advanced,,Spain
+Technology,Advanced,Brilliant ideas,Switzerland
+Finance,Intermediate,"See how others leverage programming in cyber security, especially machine learning",Netherlands
+Technology,Beginner,,France 
+Technology,Intermediate,,Denmark
+Finance,Beginner,Getting started and a good understanding of how to use it.,Sweden
+Healthcare,Intermediate,,Norway
+Technology,Beginner,Learning how to use Jupyter notebooks,Singapore 
+Technology,Advanced,,France
+Technology,Beginner,,Ukraine
+Technology,Beginner,Get and oversight of the platform ,United Kingdom
+Technology,Beginner,,Portugal
+Technology,Beginner,,
+Finance,Beginner,,Singapore 
+Technology,Intermediate,,United Kingdom
+Technology,Beginner,Inspiration how to get best out of it and tips using other languages than python.,Finland
+Technology,Beginner,How to use in soc investigation,India
+Technology,Beginner,Info Sec,Greece
+Technology,Advanced,,Australia
+Technology,Intermediate,using Notebooks with MSTICPy in Azure Sentinel,Canada
+Healthcare,Beginner,All the things ,Ireland 
+Technology,Beginner,,Canada
+Technology,Beginner,,United States
+Consulting,Intermediate,,London
+Consulting,Advanced,,United Kingdom
+Retail,Advanced,,United States
+Technology,Beginner,,United States
+Technology,Intermediate,"Inspiration, Hacks and new tricks",Sweden
+Retail,Beginner,,United States
+Education,Intermediate,"How to use Jupyter Notebooks to share analysis and ""find badness"".",United States
+Consulting,Intermediate,,Singapore
+Finance,Beginner,More ways I can leverage notebooks for threat hunting and investigations. ,United States
+Consulting,Beginner,Learn how to use Jupyter Notebook in Threat Hunting and Operations.,United States
+Retail,Intermediate,New tips and tricks for improving notebook utility and efficiency.,
+Consulting,Intermediate,,United States
+Finance,Intermediate,,United States
+Finance,Intermediate,,United States
+Technology,Beginner,,Canada
+Technology,Beginner,,United States
+Technology,Beginner,To use for daily hunting tasks,India
+Finance,Beginner,,Canada
+Technology,Beginner,,Malaysia
+Technology,Intermediate,,Canada
+Retail,Beginner,Learning about what others are doing with Jupyter Notebooks to better enable/inform security initiatives within an organization.,United States
+Technology,Intermediate,,Canada
+Technology,Intermediate,Scripting ,India
+Technology,Beginner,,India
+Consulting,Beginner,,Canada
+Technology,Intermediate,,Peru
+Consulting,Beginner,A better understanding of use cases and practical applications of them in a managed SOC environment.,United Kingdom
+Technology,Beginner,"(am Jupyter notebook noob)How does a Jupyter notebook work? Where do you ""host"" them, if that's even a thing?What are the applications in infosec? What should you NOT use a Jupyter notebook for?",United States
+Consulting,Beginner,,United States
+Technology,Beginner,,Canada
+Finance,Beginner,,United States
+Consulting,Beginner,Automation ,Singapore 
+Technology,Intermediate,More faster ways to produce results,India
+Consulting,Beginner,,Australia
+Technology,Beginner,,United States
+Technology,Beginner,,India
+Finance,Beginner,more detail on using jupyter notebooks and examples to leverage. ,United States
+Technology,Beginner,,India
+Technology,Beginner,,India
+Technology,Beginner,,India
+Finance,Intermediate,,India 
+Technology,Beginner,,United States
+Technology,Intermediate,,Germany
+Consulting,Beginner,,Nigeria
+Technology,Beginner,How are the notebooks written and integrated for detection and analys,India
+Finance,Beginner,Everything there is to be learned,Ireland
+Finance,Beginner,,United States
+Consulting,Intermediate,New tricks,India
+Technology,Intermediate,,India
+Technology,Intermediate,,Canada
+Technology,Beginner,All,Peru
+Technology,Beginner,,Thailand
+Technology,Intermediate,,Norway
+Student,Beginner,Anything,
+Technology,Intermediate,,United States
+Finance,Beginner,,Dubai
+Technology,Beginner,Intro to using Jupyter for infosec ,United States
+Technology,Beginner,Anything ,United States
+Consulting,Intermediate,Sentinel integration ,Australia
+Technology,Beginner,,United States
+Healthcare,Intermediate,,Germany
+Finance,Beginner,"Advantages, tips and tricks.",Lithuania
+Consulting,Beginner,,Kuwait
+Technology,Beginner,,Brazil
+Technology,Beginner,,Poland
+Technology,Beginner,,United Kingdom
+Technology,Intermediate,,Nepal
+Technology,Beginner,How to do more with them for filtering open source content and processing threat information.,United States
+Technology,Beginner,,United States
+Consulting,Advanced,From 0 to hero :),Poland
+Technology,Expert,Learn something new analyzing logs,Germany
+Consulting,Intermediate,,Dubai
+Technology,Intermediate,,Germany 
+Education,Advanced,,Australia
+Technology,Advanced,Jupyter notebook for InfoSec,India
+Technology,Intermediate,"Parsing logs which isn't standard example from resources like Cisco devices, Fortinet, FireEye, SonicWall etc. Get data from unstructured () sources - like different forensic tools has different output structure, how automate process. ",Poland
+Technology,Intermediate,"Techniques, ideas and people",Ireland
+Technology,Intermediate,Looking for higher level application.,United States
+Consulting,Intermediate,,United States
+Technology,Beginner,Learn more about Jupyter notebooks,New Zealand
+Technology,Advanced,,India
+Technology,Beginner,,Greece
+Education,Beginner,how to use notebooks,United States
+Technology,Intermediate,How to collaborate and secure Jupyter notebooks,United States
+Technology,Beginner,Techniques threat analysts employ to map discrete information to larger context. ,United States
+Technology,Intermediate,,United States
+Finance,Beginner,"I expect to learn to use Jupyter Notebooks to add efficiency, organization, and enhanced information sharing to my security investigations.",United States
+Technology,Intermediate,,United States
+Technology,Intermediate,,Australia
+Technology,Beginner,More in depth understanding on using Jupyter Notebooks for threat intelligence,Australia
+Finance,Beginner,"I'm a noob when it comes to Jupyter noteboos, so looking to upskill and learn more about how to use it",India
+Technology,Beginner,,India
+Finance,Intermediate,,India
+Technology,Beginner,How do use them effectively. ,India
+Finance,Beginner,,India
+Technology,Beginner,,Spain
+Technology,Beginner,On using jupytrr,United Kingdom
+Finance,Beginner,Over how to incorporate Notebooks into my workflow.,United States
+Retail,Beginner,,United States
+Consulting,Intermediate,Mainly interested in how to apply data science techniques to infosec problems.,United States
+Technology,Intermediate,,United States
+Technology,Beginner,,United States
+Technology,Beginner,How they can be used to improve our work,United States
+Technology,Beginner,Best practices ,United States
+Technology,Beginner,Practical applications for Security Operations,United States
+Technology,Beginner,,United States
+Technology,Beginner,,United States
+Technology,Beginner,,United States
+Student,Beginner,How Jupyter Notebook could be used for threat hunting,United States
+Technology,Expert,,United States
+Technology,Intermediate,,Netherlands
+Healthcare,Intermediate,,United States
+Technology,Beginner,,United Kingdom
+Technology,Advanced,applied threat hunting and machine learning,United States
+Technology,Beginner,"""how security practitioners do their day to day jobs for analyzing and hunting bad guy�s tracks.""",United States
+Retail,Beginner,"Learn Python to create Jupyter Notebooks
+Learn threat-hunting techniques
+create detection rule with the notebooks",New Zealand
+Finance,Beginner,,United States
+Technology,Advanced,How to get involved,United States
+Technology,Expert,use cases,Taiwan
+Healthcare,Beginner,,United States
+Finance,Intermediate,Exposure to advances in the space and new workflows,United States
+Technology,Beginner,"I'm definitely new to the Jupyter world, so seeing how others in InfoSec are utilizing these notebooks can give a great direction of how these can be utilized within our CSOC to enhance our existing processes and workflows.",United States
+Consulting,Beginner,,United States
+Technology,Beginner,,United States
+Student,Beginner,,India
+Retail,Beginner,Learn how to use Jupyter notebooks fora hunting threts,Spain
+Retail,Beginner,,United States
+Consulting,Advanced,cool stuff,United Kingdom
+Technology,Beginner,,United States
+Retail,Advanced,How cyber security experts use Jupyter notebooks,United States
+Technology,Advanced,,Germany
+Technology,Beginner,,Australia
+Technology,Beginner,,United States
+Technology,Intermediate,,United States
+Technology,Beginner,,United States
+Retail,Beginner,,Australia
+Consulting,Beginner,,Canada
+Consulting,Intermediate,,Canada
+Finance,Beginner,,United States
+Technology,Intermediate,,United States
+Technology,Intermediate,,United States
+Technology,Beginner,How to use it for threat hunting ,United States
+Finance,Intermediate,I'd like to see where Roberto is taking Microsoft,Canada
+Finance,Intermediate,Everything there is to learn ,Singapore
+Education,Intermediate,Use notebooks to do cyber data analysis,Mexico
+Technology,Beginner,lots,Canada
+Consulting,Beginner,Will be getting an intense sea breeze of Cyber security data science.,Pakistan
+Technology,Intermediate,,India
+Finance,Beginner,Gain a better grasp on the potential use cases,United States
+Technology,Intermediate,,United States
+Finance,Beginner,,Australia
+Finance,Beginner,,Australia
+Consulting,Beginner,"as mentioned beginner , would like to start using it",Australia
+Technology,Intermediate,Jupyter Notebook for threat hunting ,India
+Technology,Intermediate,Ideas to improve the management of IOC (validation / searches in the SIEM),France
+Student,Beginner,,Finland
+Consulting,Beginner,,Austria
+Technology,Intermediate,,India
+Technology,Intermediate,"New data analysis techniques, tips, and tricks. Automation strategies. ",Canada
+Technology,Intermediate,hunting,Netherlands
+Consulting,Beginner,,France
+Technology,Beginner,,United States
+Healthcare,Intermediate,To learn how to make notebooks more useful and insightful during SOC investigations,India
+Finance,Beginner,,Cyprus
+Technology,Intermediate,,Germany
+Technology,Beginner,Learning how to utilize it to improve myself as a threat hunter.,Romania
+Technology,Beginner,How to use jupyter notebook effectively for hunting.,India
+Consulting,Intermediate,,United States
+Technology,Expert,Always really interested to see what cool stuff others are doing with Jupyter :),United Kingdom
+Technology,Beginner,Creation of Automatic Playbooks for Threat Hunting.,India
+Technology,Intermediate,,United States
+Technology,Intermediate,,United States
+Finance,Beginner,"My team has an established Jupyter notebook environment which we use for Incident Response, and I am looking to build my knowledge base in the environment",United States
+Technology,Beginner,,Czech Republic
+Consulting,Beginner,,United States
+Student,Intermediate,,United States
+Technology,Beginner,Everything that's in bucket,India
+Consulting,Beginner,,Belgium
+Technology,Beginner,,United States
+Technology,Advanced,,Israel
+Technology,Intermediate,,United States
+Technology,Beginner,,United States
+Consulting,Beginner,Application and United Statesge,United States
+Technology,Beginner,Learn about the different applications for Jupyter Notebooks since I'm very new to the toolset.,United States
+Technology,Intermediate,re-United Statesble libraries/modules; areas where folks could use community contributions; overcoming common challenges when sharing/extending/collab'ing on a single notebook across multiple folks; ,United States
+Technology,Beginner,,United States
+Technology,Intermediate,,United States
+Technology,Intermediate,,United States
+Healthcare,Intermediate,Cool stuff!,Ireland
+Technology,Intermediate,,United States
+Technology,Intermediate,,Argentina
+Technology,Beginner,Twitter,India
+Technology,Advanced,How it can be used in cybersecurity ,United States
+Consulting,Intermediate,,United States
+Consulting,Beginner,,Brazil 
+Finance,Beginner,As much as possible,United States
+Consulting,Intermediate,,United States
+Consulting,Intermediate,,India
+Technology,Beginner,"How to use them for infosec operations such as threat hunting, or a custom hunting workflow for training new analysts",United States
+Consulting,Beginner,Basics,United States
+Consulting,Intermediate,"Ideas on how to improve, automate, or expand threat hunting.",United States
+Technology,Beginner,,India
+Technology,Beginner,,United States
+Finance,Intermediate,,India
+Finance,Beginner,Basics and how to utilize in our cyber security domain,India
+Consulting,Intermediate,,Norway
+Technology,Beginner,,United States
+Finance,Beginner,,India
+Healthcare,Intermediate,,United States
+Technology,Beginner,familiarization on leveraging the platform.,United States
+Technology,Beginner,Learn more about Threat Intel sharing and new techniques,Canada
+Technology,Beginner,How to use Jupyter Notebooks to address security issues.,United States
+Technology,Beginner,,United States
+Finance,Advanced,New knowledge,Netherlands
+Technology,Beginner,,United States
+Finance,Beginner,Starting the journey and looking to learn basics as well as seeing potential uses. ,United States
+Finance,Advanced,Something new ,Canada
+Student,Beginner,,India
+Technology,Beginner,United Statesge in Infosec,India
+Technology,Beginner,Applications to Threat Intel and cybersecurity in general,Canada
+Retail,Intermediate,,United States
+Finance,Beginner,It's applications in cyber security ,Australia
+Technology,Intermediate,A lot more about the United Statesge of jupyter/python in information security!,Germany
+Technology,Beginner,About how to work more effectively and efficiently in notebooks.,Canada
+Technology,Beginner,How I can use jupyter notebooks to analyze security incidents and threat hunt more effectively and potentially automate some tasks.,United States
+Retail,Beginner,,United States
+Technology,Beginner,How other teams are utilizing notebooks for threat intel/hunting.,Hawaii
+Technology,Beginner,Improve my Jupyter knowledge,United Kingdom
+Technology,Intermediate,Leveraging Jupyter Notebooks for threat hunting and processing large datasets. ,United States
