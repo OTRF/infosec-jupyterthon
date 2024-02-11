@@ -1,0 +1,18 @@
+title: 'Enable Vulnerabilities with Audit Vulnerabilities'
+speaker:
+  - name: Reza Rashidi
+    job_title: Security Researcher
+    company: Hadess
+    twitter: "@rezaduty"
+    github:
+    picture: RezaRashidi.png
+    bio: >-
+      Software Security & Red Team at Hadess. Offensively Defensive Continuous Developer and Life/Human and Computer Enthusiastic.
+date: '2024-02-16'
+time: '13:45'
+abstract: >-
+  Organizations must recognize that even vulnerabilities with lower severity ratings can be critical in a chain of attacks. Adversaries often use a combination of low and medium severity vulnerabilities to create a pathway for more significant exploits.
+  Therefore, it's essential to address these vulnerabilities promptly and incorporate them into regular security training and adversary simulation exercises.
+  By simulating attacks that exploit these vulnerabilities, organizations can better understand potential attack vectors and strengthen their defenses accordingly.
+  This proactive approach is key to maintaining robust security in an ever-evolving threat landscape.
+  

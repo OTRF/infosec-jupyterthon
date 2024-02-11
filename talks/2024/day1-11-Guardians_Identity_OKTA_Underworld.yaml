@@ -1,0 +1,18 @@
+title: "Guardians of Identity: OKTA's Underworld"
+speaker:
+  - name: Kai Iyer
+    job_title: Senior Security Engineer
+    company: EY Canada
+    twitter: "@kaiiyer"
+    github:
+    picture: KaiIyer.png
+    bio: >-
+      Kai is a Senior Security Engineer at EY's Cyber Threat Management team and manages Security Engineering and Applied Machine Learning Research.
+      He holds multiple certifications and has extensive knowledge in various domains, including Web-App Development, Data Science, Incident Response, DevSecOps and Purple Teaming.
+      He is also an advocate for open source software and data privacy.
+      He dreams of a world where no one clicks on phishing e-mails.
+date: '2024-02-15'
+time: '19:10'
+abstract: >-
+  Threat Hunting OKTA Logs at Scale using Jupyter. I'll be discussing some strategies which could be adopted by a matured SOC to start looking for threats in their IAM environment.
+  The notebook would contain detections and some ideas about looking at logs using Visualizations.

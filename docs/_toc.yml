@@ -18,6 +18,27 @@ parts:
   chapters:
   - file: 2024/agenda
     title: Agenda
+  - file: 2024/speakers/intro
+    sections:
+    - file: 2024/speakers/roberto_rodriguez
+    - file: 2024/speakers/ryan_marcotte_cobb
+    - file: 2024/speakers/colin_cowie
+    - file: 2024/speakers/ryan_fetterman
+    - file: 2024/speakers/ismael_valenzuela
+    - file: 2024/speakers/pete_bryan
+    - file: 2024/speakers/ashwin_patil
+    - file: 2024/speakers/kai_iyer
+    - file: 2024/speakers/tatsuya_hasegawa
+    - file: 2024/speakers/pallavi_kumari_jha
+    - file: 2024/speakers/leo_meyerovich
+    - file: 2024/speakers/luis_f_monge_martinez
+    - file: 2024/speakers/xavier_marrugat
+    - file: 2024/speakers/fred_baguelin
+    - file: 2024/speakers/koen_van_impe
+    - file: 2024/speakers/swarup_pattnaik
+    - file: 2024/speakers/reza_rashidi
+    - file: 2024/speakers/christian_camilo_urcuqui_lopez
+    - file: 2024/speakers/john_mcintosh
 - caption: Workshops
   chapters:
   - file: workshops/day1/intro

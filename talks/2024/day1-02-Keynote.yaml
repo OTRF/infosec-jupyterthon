@@ -1,0 +1,20 @@
+title: 'Keynote - Barn Raising: Building a Community Around Jupyter Notebooks for DFIR, SecOps, and Detection Engineering Teams'
+speaker:
+  - name: Ryan Marcotte Cobb
+    job_title: Principal Security Researcher
+    company: Secureworks
+    twitter: "@detectdotdev"
+    github:
+    picture: RyanMarcotteCobb.png
+    bio: >-
+      Ryan Marcotte Cobb is a principal security researcher in the Secureworks Counter Threat Unit (CTU).
+      Ryan serves in a cross-functional role supporting detection engineering, threat hunting, and incident response teams.
+      Ryan joined Secureworks in 2013 as a consultant on the Incident Response team and led investigations into complex nation-state intrusions.
+      He is the author of a Jupyter-based threat hunting platform and an active contributor to open source projects.
+      Ryan has a B.A. in Philosophy and a Graduate Certificate in Digital Forensics from the University of Rhode Island.
+date: '2024-02-15'
+time: '16:10'
+abstract: >-
+  This talk is a retrospective on how my organization grew a community of notebook users across DFIR, SecOps, and detection engineering teams and how notebooks became core to our workflows.
+  We will share some of the challenges when trying to convince an organization to adopt Jupyter notebooks and the paved roads that were helpful to support the range of use-cases.
+  Lastly, we will evaluate the positive and negative impacts from operationalizing notebooks at scale.

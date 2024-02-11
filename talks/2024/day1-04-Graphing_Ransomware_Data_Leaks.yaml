@@ -1,0 +1,16 @@
+title: 'Graphing Ransomware & Data Leak Sites Trends with Plotly'
+speaker:
+  - name: Colin Cowie
+    job_title: Threat Intelligence Analyst
+    company: Sophos
+    twitter: "@th3_protoCOL"
+    github: colincowie
+    picture: ColinCowie.png
+    bio: >-
+      I have a specialty in digital forensics and incident response with experience in malware forensics, mobile forensics, offensive security audits as well as software and web application development.
+      I enjoy leading teams of information security professionals to help organizations strengthen and defend against digital threats.
+date: '2024-02-15'
+time: '16:50'
+abstract: >-
+  This talk delves into analytics of data leak sites using RansomWatch's open-source data.
+  We employ Plotly for crafting high-quality, interactive visualizations, such as heatmaps, to uncover trends in ransomware attacks and examine group rebrandings.

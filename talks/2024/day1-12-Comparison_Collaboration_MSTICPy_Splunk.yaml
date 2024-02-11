@@ -1,0 +1,22 @@
+title: 'Comparison of collaboration methods between MSTICpy and Splunk SIEM'
+speaker:
+  - name: Tatsuya Hasegawa
+    job_title: Threat Hunter
+    company: GoAhead
+    twitter: "@T_8ase"
+    github:
+    picture: TatsuyaHasegawa.png
+    bio: >-
+      Tatsuya Hasegawa is a self-employed Threat Hunter contracting to GoAhead in Japan.
+      He mainly involves to "detection engineering" for cyber attack and internal threat widely and has experiences working as SOC analyst in MSSP, incident responder in CSIRT, Senior Principal Researcher at Cylance/BlackBerry.
+      On the other hand, he has an aspect of application developer for data visualization on Splunk and his applications are listed in 'https://splunkbase.splunk.com/apps?author=hacket'.
+      Besides he is a contributor of MSTICpy and Unprotect Project.
+      Regarding to certification and speech, he holds GX-FA, 7 GIACs, CISSP and CISA, and speaker of SANS APAC DFIR Summit 2023, FIRST T.C Amsterdam 2017 and 2018.
+date: '2024-02-15'
+time: '19:30'
+abstract: >-
+  Method 1 is simply to use msticpy's Query Provider and Uploader.
+  Method 2 is to use Splunk DSDL App for data transfering to Jupyter, and msticpy for only analysis.
+  There are advantages and disadvantages in case by case.
+  On the other hand, We have no worry about the choice in MS Sentinel which has the highly compatible method by using "Microsoft Sentinel ML Notebooks".
+  Audiences can take away about Splunk DSDL mechanism and the pros/cons for these Methods.

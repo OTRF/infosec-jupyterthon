@@ -35,12 +35,35 @@ for yaml_doc in yaml_loaded:
     agenda_files[day].append(yaml_doc)
 
 # ******* Create Speakers List **********
-speakers_list = list()
+# Assuming yaml_loaded is a list of dictionaries loaded from your YAML files
+speakers_dict = {}
+
 for yaml_doc in yaml_loaded:
-    if yaml_doc['speaker']:
+    if yaml_doc.get('speaker'):
         for speaker in yaml_doc['speaker']:
-            if speaker not in speakers_list:
-                speakers_list.append(speaker)
+            speaker_name = speaker.get('name')
+            if speaker_name:
+                # Prepare the talk details
+                talk_details = {
+                    'title': yaml_doc.get('title'),
+                    'abstract': yaml_doc.get('abstract'),
+                    'date': yaml_doc.get('date'),
+                    'time': yaml_doc.get('time')
+                }
+                # Check if the speaker already exists in the dictionary
+                if speaker_name not in speakers_dict:
+                    speakers_dict[speaker_name] = {
+                        'job_title': speaker.get('job_title'),
+                        'company': speaker.get('company'),
+                        'twitter': speaker.get('twitter'),
+                        'github': speaker.get('github'),
+                        'picture': speaker.get('picture'),
+                        'bio': speaker.get('bio'),
+                        'talks': [talk_details]
+                    }
+                else:
+                    # Append the talk details to the existing speaker's list of talks
+                    speakers_dict[speaker_name]['talks'].append(talk_details)
 
 # ******** Open Agenda template ****************
 print("  [>] Reading template..")
@@ -58,13 +81,12 @@ open(agenda_file, 'w').write(markdown)
 toc_yaml = yaml.safe_load(open(toc_file).read())
 
 # ******** Process Speakers *********
-for speaker in speakers_list:
-    speaker_name = speaker['name']
-    print(f'[+] Creating {speaker_name} markdown ..')
+for speaker_name, speaker_details in speakers_dict.items():
+    print(f'[+] Creating {speaker_name} markdown ...')
     yaml_template = Template(open(path.join(templates_directory, "speaker_template.md")).read())
 
-    # Create Markdown file
-    yaml_for_render = copy.deepcopy(speaker)
+    # Prepare data for rendering by making a deep copy of the speaker's details
+    yaml_for_render = copy.deepcopy(speaker_details)
 
     # Generate the markdown
     file_name = (speaker_name.lower()).replace(' ','_') + '.md'

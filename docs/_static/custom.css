@@ -1,0 +1,28 @@
+.circular {
+    border: 3px solid transparent; /* Make the border transparent to allow the gradient to show through */
+    border-radius: 50%;
+    object-fit: cover;
+    position: relative;
+    overflow: hidden; /* Ensures the pseudo-element doesn't exceed the circular shape */
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+    transition: all 0.3s ease; /* Smooth transition for hover effects */
+}
+
+.circular::before {
+    content: "";
+    position: absolute;
+    top: -3px; left: -3px; /* Slightly larger than the image to create a border effect */
+    width: calc(100% + 6px); height: calc(100% + 6px);
+    background: linear-gradient(45deg, #007bff, #ff2d55);
+    border-radius: 50%;
+    z-index: -1;
+    transition: transform 0.3s ease; /* Smooth transition for the gradient on hover */
+}
+
+.circular:hover {
+    box-shadow: 0px 8px 12px rgba(0, 0, 0, 0.3); /* Intensify shadow on hover */
+}
+
+.circular:hover::before {
+    transform: rotate(45deg); /* Rotate the gradient border on hover for a dynamic effect */
+}

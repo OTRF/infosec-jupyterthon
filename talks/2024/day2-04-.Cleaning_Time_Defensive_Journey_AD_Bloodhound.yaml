@@ -1,0 +1,18 @@
+title: 'Cleaning time: A defensive journey through Active Directory with Bloodhound CE, Jupyter and Python'
+speaker:
+  - name: Luis F Monge Martinez
+    job_title: Endpoint and Active Directory Security Lead
+    company: European External Action Service
+    twitter: "@Lukky86"
+    github:
+    picture: LuisFMongeMartinez.png
+    bio: >-
+      With a diverse background in cybersecurity, Luis currently serves as the Endpoint and Active Directory Security Lead at the European External Action Service.
+      Previously focused on incident response and threat hunting, he found an alternative research approach in data analysis, which led him to dive into the world of Jupyter Notebooks.
+      Keen on photography, open source projects and good food, he never says no to a collaboration proposal.
+date: '2024-02-16'
+time: '11:50'
+abstract: >-
+  Delve into an investigation of Active Directory missconfigurations utilizing a Jupyter notebook and Python, interfacing with Bloodhound CE APIs.
+  This research addresses the challenges of identifying and prioritizing security risks in AD, shedding light on the historically manual and often impractical nature of these tasks.
+  Learn about the efforts to streamline and automate the process, making domain cleanup more feasible and efficient.

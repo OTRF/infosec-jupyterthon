@@ -1,0 +1,18 @@
+title: 'Unveiling the Power of Google Dorks: A Stealthy Approach to Employee and Email Discovery in OSINT'
+speaker:
+  - name: Xavier Marrugat
+    job_title: Cybersecurity Engineer
+    company: i2Cat
+    twitter: "@hck4fun"
+    github:
+    picture: XavierMarrugat.png
+    bio: >-
+      I'm a passionate cybersecurity professional based in Barcelona, always eager to explore new approaches.
+      Started my journey in offensive security, and now I'm focused on developing cutting-edge preventive and detection tools based on User and Entity Behavior Analytics (UEBA) at i2Cat.
+      Additionally, I'm deeply involved in Open Source Intelligence (OSINT) and have created a tool called InfoHound for domain/organization profiling.
+date: '2024-02-16'
+time: '12:10'
+abstract: >-
+  Advanced Google search queries (dorks) unveil an untapped realm for OSINT exploration.
+  This lightning talk delves into the nuances of this powerful information-gathering technique, offering insights beyond conventional approaches.
+  
