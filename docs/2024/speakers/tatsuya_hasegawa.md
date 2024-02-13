@@ -16,7 +16,7 @@
 :::{grid-item}
 :columns: 7
 :child-align: center
-Tatsuya Hasegawa is a self-employed Threat Hunter contracting to GoAhead in Japan. He mainly involves to "detection engineering" for cyber attack and internal threat widely and has experiences working as SOC analyst in MSSP, incident responder in CSIRT, Senior Principal Researcher at Cylance/BlackBerry. On the other hand, he has an aspect of application developer for data visualization on Splunk and his applications are listed in 'https://splunkbase.splunk.com/apps?author=hacket'. Besides he is a contributor of MSTICpy and Unprotect Project. Regarding to certification and speech, he holds GX-FA, 7 GIACs, CISSP and CISA, and speaker of SANS APAC DFIR Summit 2023, FIRST T.C Amsterdam 2017 and 2018.
+Tatsuya Hasegawa is a self-employed Threat Hunter contracting with GoAhead in Japan. He is now engaged in "detection engineering" for cyberattack and internal threat and has experiences working as SOC analyst in MSSP, incident responder in CSIRT, Senior Principal Researcher at Cylance/BlackBerry. On the other hand, he has an aspect of application developer for data visualization on Splunk and his applications are listed in 'https://splunkbase.splunk.com/apps?author=hacket'. Besides he is a contributor of MSTICpy and Unprotect Project. Regarding to certification and speech, he holds GX-FA, 7 GIACs, CISSP and CISA, and speaker of SANS APAC DFIR Summit 2023, FIRST T.C Amsterdam 2017 and 2018.
 :::
 
 ::::

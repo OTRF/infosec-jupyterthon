@@ -39,6 +39,7 @@ parts:
     - file: 2024/speakers/reza_rashidi
     - file: 2024/speakers/christian_camilo_urcuqui_lopez
     - file: 2024/speakers/john_mcintosh
+    - file: 2024/speakers/thomas_roccia
 - caption: Workshops
   chapters:
   - file: workshops/day1/intro

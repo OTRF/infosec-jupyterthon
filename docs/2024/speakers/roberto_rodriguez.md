@@ -26,5 +26,5 @@ Roberto Rodriquez is a Principal Threat Researcher and Security engineer at the 
 | Title | Abstract | Date | Time |
 | ----- | -------- | ---- | ---- |
 | Opening Remarks |  | 2024-02-15 | 16:00 |
-| Closing Remarks |  | 2024-02-15 | 20:10 |
+| Closing Remarks |  | 2024-02-15 | 20:30 |
 | Opening Remarks |  | 2024-02-16 | 11:00 |

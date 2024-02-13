@@ -24,7 +24,9 @@ An open community event for security researchers to share their experience and f
 
 ## Quick Information 
 
-* **When?** February 15th and 16th, 2024
+* **When? (Eastern Time)**
+    * February 15th, 2024 - 16:00 to 21:00 (Eastern Time)
+    * February 16th, 2024 - 11:00 to 16:00 (Eastern Time)
 * **Where?** Live Stream
     * https://aka.ms/JupyterthonLiveDay1
     * https://aka.ms/JupyterthonLiveDay2

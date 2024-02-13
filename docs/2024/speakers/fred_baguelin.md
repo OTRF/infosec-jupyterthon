@@ -25,4 +25,4 @@ Fred is a security researcher at Datadog, focusing on threat research. Fred is a
 
 | Title | Abstract | Date | Time |
 | ----- | -------- | ---- | ---- |
-| Yeti in a notebook | YETI is an open source threat intelligence platform storing data in a graph database. It implements a REST API giving access to all stored data which can then be reused in your hunting notebook to then build nice visualisation graph. This short presentation will demo what's possible to achieve with Yeti in a notebook and highlight some nice Python libraries to play with graph data. | 2024-02-16 | 12:20 |
+| Hunting the Yeti on Jupyter: A practical exploration of the YETI platform using notebook for Threat Intelligence | YETI is an open source threat intelligence platform storing data in a graph database. It implements a REST API giving access to all stored data which can then be reused in your hunting notebook to then build nice visualisation graph. This short presentation will demo what's possible to achieve with Yeti in a notebook and highlight some nice Python libraries to play with graph data. | 2024-02-16 | 12:20 |

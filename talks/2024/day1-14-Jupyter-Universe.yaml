@@ -1,0 +1,20 @@
+title: 'Jupyter Universe: Buckle Up for Notebooks Exploration!'
+speaker:
+  - name: Thomas Roccia
+    job_title: Senior Security Researcher
+    company: Microsoft
+    twitter: "@fr0gger_"
+    github:
+    picture: ThomasRoccia.png
+    bio: >-
+      Thomas Roccia is Senior Security Researcher at Microsoft.
+      He works in the Defender team to improve detection and research novel techniques.
+      Previously Thomas was working at McAfee in the Advanced Threat Research team.
+      He worked on threat intelligence, tracking cybercrime campaigns, and collaborated with law enforcement agencies.
+      He performed worldwide incident response, malware hunting, and helped customers during major outbreaks.
+      He speaks regularly at security conferences.
+date: '2024-02-15'
+time: '20:10'
+abstract: >-
+  Throughout the past few years, Jupyter has become a popular tool within the security community because it can easily be used by others to leverage different capabilities. Notebooks are shareable and reusable, and they improve collaboration and workflow. There are many use cases available, and for sure, there is one for you.
+  In this talk, I want to offer the community the key to start or improve their journey with notebooks. Welcome to the Jupyter Universe!
