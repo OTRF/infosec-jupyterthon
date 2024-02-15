@@ -1,0 +1,570 @@
+Id,Start time,Completion time,Location,Job Title,Industry,JupyterNotebookLevel,Expectations
+1,1/9/2024 18:50,1/9/2024 18:52,United Kingdom,VP,Finance,Beginner,
+2,1/9/2024 19:30,1/9/2024 19:32,United States,Threat Intelligence Lead,Finance,Intermediate,"Alternative workflows, new levels, and other advanced tradecraft"
+3,1/9/2024 20:07,1/9/2024 20:08,United States,Threat Hunter,Technology,Advanced,
+4,1/9/2024 20:28,1/9/2024 20:29,United States,Cyber Security Incident Response,Technology,Beginner,
+5,1/9/2024 20:34,1/9/2024 20:35,United States,Cyber Security Principal,Finance,Advanced,How others are using notebooks to codify their detection and response capabilities 
+6,1/9/2024 20:33,1/9/2024 20:37,United States,Security Administrator,Technology,Intermediate,"I KNOW I'll learn some great stuff regardless... but for me personally - 
+1) Using ChatGPT with notable.io to walk through creating a notebook
+2) Using Jupyter Notebook all the way through on an incident, from incident summary to printing out the final report.  Ideally, MDE but Sentinel seems to be the more popular way to do this. 
+3) Is there a way to print or save the results from my notebook investigation to upload to a SOAR OR incident ticket? 
+And thank you so much for doing this!!! "
+7,1/9/2024 21:02,1/9/2024 21:03,United States,Detection engineer ,Finance,Intermediate,How to use it more efficiently 
+8,1/9/2024 19:20,1/9/2024 22:00,Japan,Threat Hunter,Consulting,Intermediate,Meeting new techniques.
+9,1/10/2024 1:55,1/10/2024 1:57,United Kingdom,Incident Response ,Consulting,Beginner,Mind blowing use cases for using Jupyter in security. 
+10,1/10/2024 2:08,1/10/2024 2:11,Germany,Ciso,Technology,Beginner,Update on latest trends 
+11,1/10/2024 3:09,1/10/2024 3:09,United States,Threat hunt ,Technology,Beginner,
+12,1/10/2024 3:40,1/10/2024 3:41,Switzerland ,Independent Threat Researcher ,Technology,Intermediate,
+13,1/10/2024 4:11,1/10/2024 4:13,Netherlands,Freelance Security Engineer,Technology,Advanced,
+14,1/10/2024 4:29,1/10/2024 4:30,Netherlands,NinjaCat,Consulting,Intermediate,Learning more ideas and logic l.
+15,1/9/2024 18:56,1/10/2024 7:27,United Kingdom,Business Analyst,Technology,Intermediate,
+16,1/10/2024 5:55,1/10/2024 7:49,United States,Cybers Security Incident Response,Technology,Beginner,
+17,1/10/2024 8:40,1/10/2024 8:48,United States,Cybersecurity Threat Hunt Analyst,Finance,Intermediate,Just wanted to gain more knowledge on what others are doing with Jupyter Notebooks in the field and how I can start leveraging notebooks in my job role.
+18,1/10/2024 9:54,1/10/2024 9:55,United States,Senior Cyber Analyst,Consulting,Beginner,Learn about Jupyter Notebooks and findout how I can contribute back to the community. 
+19,1/10/2024 10:06,1/10/2024 10:07,South Korea,Director,Consulting,Intermediate,
+20,1/10/2024 10:49,1/10/2024 10:52,United States,Cyber Threat Intelligence Analyst ,Technology,Beginner,I expect to learn how to leverage jupyther to facilitate cyber related tasks. 
+21,1/10/2024 11:11,1/10/2024 11:12,Belgium,Lead CTI Automation & Tooling,Technology,Beginner,
+22,1/10/2024 11:53,1/10/2024 12:03,United States,Director of Threat Research,Technology,Intermediate,How Jupyter notebooks are being used in the security industry.
+23,1/11/2024 11:10,1/11/2024 11:13,India,Senior Security Engineer,Technology,Beginner,I am a new learner in the security data science field with some experiences in data wrangling using Pandas. I want to participate and learn from the various engineers sharing their notebooks during the event.
+24,1/11/2024 12:51,1/11/2024 12:52,United States,Security Researcher,Technology,Advanced,"Workflows for threat hunting, machine learning, data enrichment"
+25,1/12/2024 11:21,1/12/2024 11:21,United States,Security Analyst,Technology,Beginner,
+26,1/13/2024 10:41,1/13/2024 10:43,Israel,Security Researcher,Technology,Intermediate,
+27,1/13/2024 18:07,1/13/2024 18:08,United States,Faculty,Education,Beginner,Learn more about Jupyter notebooks to develop course content.
+28,1/15/2024 6:46,1/15/2024 6:47,Australia ,Student,Student,Beginner,How i can use juypternotebooks in learning about cybersecurity 
+29,1/16/2024 3:15,1/16/2024 3:16,Norway,Security analyst /engineer ,Technology,Intermediate,
+30,1/16/2024 8:47,1/16/2024 8:48,Norway,Senior Security Analyst,Technology,Beginner,"EVERYTHING, or anything.. at least something... I need to get into this game, thats all I know, and Im here for it"
+31,1/17/2024 13:18,1/17/2024 13:20,United Kingdom ,TS Security Compliance & Identity,Technology,Beginner,
+32,1/17/2024 13:39,1/17/2024 13:40,United Kingdom,Lead detection engineer,Technology,Advanced,Usage of msticpy for threat hunting
+33,1/17/2024 13:46,1/17/2024 13:48,Turkey,Cybersecurity expert,Technology,Beginner,
+34,1/17/2024 14:17,1/17/2024 14:23,India,Consultant,Technology,Beginner,"To take a basic use case and understand the depth of Jupiter notebook in Microsoft Sentinel.
+Atleast to be capable to implement all the native jupyter notebooks of Microsoft Sentinel"
+35,1/17/2024 14:31,1/17/2024 14:32,United States,Security,Technology,Beginner,
+36,1/17/2024 15:31,1/17/2024 15:32,United States,Data deobfuscation djinni,Technology,Intermediate,
+37,1/17/2024 16:24,1/17/2024 16:26,Brazil,Security Technical Specialist,Technology,Intermediate,Refresh Jupyter Notebook knowledge and learn more on how to apply it to Cybersecurity
+38,1/17/2024 16:50,1/17/2024 16:51,United States,Incident Response Advisor,Technology,Intermediate,
+39,1/17/2024 17:14,1/17/2024 17:15,Australia,Cloud solution architect,Technology,Beginner,Hope to learn how to best utilise msticpy 
+40,1/17/2024 18:49,1/17/2024 18:50,United States,Security Analyst,Consulting,Beginner,
+41,1/17/2024 19:21,1/17/2024 19:23,India,Cyber Security Engineer,Consulting,Intermediate,"Python latest research, methodology"
+42,1/17/2024 21:18,1/17/2024 21:21,United States,Security Analyst,Technology,Intermediate,Latest and greatest useful ways to use notebooks for security
+43,1/18/2024 1:24,1/18/2024 1:25,Venezuela,Threat Hunter ,Consulting,Beginner,
+44,1/18/2024 1:22,1/18/2024 1:31,United States ,Cybersecurity Engineer ,Finance,Beginner,How to start threat hunting and developing more detections with Jupyter notebooks
+45,1/18/2024 5:15,1/18/2024 5:17,Germany,Senior Consultant IR/Forensics,Consulting,Advanced,
+46,1/18/2024 6:51,1/18/2024 6:52,United States,Security Researcher,Technology,Intermediate,Security applications
+47,1/18/2024 9:21,1/18/2024 9:23,United States,Software Engineer 2 ,Technology,Beginner,"No expectations, just excited to learn a bit more about Jupyter"
+48,1/18/2024 10:17,1/18/2024 10:18,India,Data engineer,Student,Intermediate,Advance features 
+49,1/18/2024 10:18,1/18/2024 10:19,India ,Student,Student,Beginner,Yes
+50,1/17/2024 14:11,1/18/2024 10:19,United States,Intel Analyst,Finance,Beginner,
+51,1/18/2024 10:19,1/18/2024 10:22,India,Student,Student,Beginner,Functionality
+52,1/18/2024 10:20,1/18/2024 10:22,India,Service Engineer ,Technology,Intermediate,"Techniques and efficient way of writing jupyter notebooks,"
+53,1/18/2024 10:21,1/18/2024 10:24,India,Student ,Student,Beginner,
+54,1/18/2024 10:23,1/18/2024 10:25,India,Student ,Technology,Intermediate,How we can use Jupiter notebook ifecently 
+55,1/18/2024 10:28,1/18/2024 10:31,India,Student,Student,Beginner,
+57,1/18/2024 10:56,1/18/2024 10:57,India,Student ,Student,Intermediate,
+58,1/18/2024 10:57,1/18/2024 10:59,United States,Threat Intelligence Lead,Technology,Intermediate,
+59,1/18/2024 11:06,1/18/2024 11:07,India,Student,Student,Beginner,Yes
+60,1/18/2024 11:13,1/18/2024 11:17,India,Student,Student,Intermediate,How to use jupyter effectively.
+61,1/18/2024 11:30,1/18/2024 11:32,India ,Student ,Student,Intermediate,
+62,1/18/2024 12:25,1/18/2024 12:26,United States,Technical PM,Technology,Beginner,automated incident response runbooks 
+64,1/18/2024 15:14,1/18/2024 15:16,United States,Security Engineer,Technology,Beginner,How it can be used for InfoSec
+65,1/18/2024 16:24,1/18/2024 16:25,United States,Security Consultant,Technology,Beginner,
+66,1/18/2024 17:03,1/18/2024 17:04,Argentina,It analyst,Finance,Beginner,
+67,1/19/2024 4:48,1/19/2024 4:49,Pakistan ,SOC Analyst L2 ,Consulting,Beginner,To learn
+68,1/19/2024 9:53,1/19/2024 9:57,India,student,Student,Intermediate,python coding etc
+69,1/19/2024 10:41,1/19/2024 10:46,United States,Threat Intelligence Lead,Finance,Intermediate,
+70,1/19/2024 21:43,1/19/2024 21:44,United States,Senior Cybersecurity Engineer,Hotel & Food Services,Advanced,How everyone else is employing Jupyter in their day-to-day
+72,1/20/2024 5:15,1/20/2024 5:17,United States,Prof,Education,Beginner,General use of notebooks and automation detection of badness.
+73,1/20/2024 8:37,1/20/2024 8:38,United States,SOC Manager,Education,Beginner,Learn about Jupyter notebooks. See what people are up to.
+74,1/20/2024 10:13,1/20/2024 10:15,United States,PM,Technology,Beginner,How to investigate & respond to threats using automation
+75,1/20/2024 10:52,1/20/2024 10:59,United States,Cyber incident response analyst ,Consulting,Beginner,Want to learn how they have used Jupyter Notebook in security field to identify malicious or suspicious activity based on various data sources from a perspective of data analysis or statistics.
+76,1/20/2024 23:07,1/20/2024 23:09,India,Student ,Student,Intermediate,Advance jupyter notebook which help to handle the projects
+77,1/21/2024 12:25,1/21/2024 12:28,United States,Principal Software Engineer Manager,Technology,Expert,
+78,1/21/2024 16:12,1/21/2024 16:13,Switzerland,Independent Threat Researcher,Technology,Intermediate,
+79,1/22/2024 7:14,1/22/2024 7:15,united kingdom,lead detection engineer,Technology,Advanced,
+80,1/22/2024 11:31,1/22/2024 11:32,Canada,MDR,Consulting,Intermediate,
+81,1/22/2024 12:02,1/22/2024 12:04,United Kingdom,Principal Threat Intelligence Analyst,Technology,Advanced,Establish the latest trends that people are making notebooks to tackle. Have been working on some to open source but not ready in time to submit for a talk
+82,1/22/2024 14:29,1/22/2024 14:30,United States,Student,Education,Intermediate,
+83,1/22/2024 12:29,1/22/2024 15:30,Canada,Director,Consulting,Beginner,Understanding how it can help my team and our business
+84,1/22/2024 18:11,1/22/2024 18:12,United Kingdom,Threat Hunter ,Technology,Intermediate,
+85,1/22/2024 19:55,1/22/2024 19:58,United States,Principal Lead Threat Research ,Finance,Beginner,Better understand how to use Jupyter in my daily threat research tasks
+86,1/22/2024 20:37,1/22/2024 20:37,united states,sr technical director,Technology,Intermediate,more ideas and insights!
+87,1/22/2024 22:07,1/22/2024 22:10,Australia,Adversary Emulation Specialist,Technology,Beginner,I have been using Jupyter Notebooks recently in developing tools that interact with public AI models. My primary role however is in offensive cyber security and I would like to learn more about how I can use Jupyter in that context.
+88,1/22/2024 22:10,1/22/2024 22:12,United States,Security Engineer,Technology,Intermediate,Just see cool security work blended with data science and ml in notebooks. 
+89,1/23/2024 0:15,1/23/2024 0:16,South Africa,Head IR,Finance,Beginner,Insights for myself and team. 
+90,1/23/2024 3:43,1/23/2024 3:46,France ,Detection Engineer,Technology,Intermediate,
+91,1/23/2024 6:51,1/23/2024 6:52,United States,Director of Threat Detection Engineering,Finance,Intermediate,
+92,1/23/2024 14:08,1/23/2024 14:09,India,Threat Detection Engineer,Technology,Beginner,How to start out using Notebooks for threat hunts
+93,1/24/2024 4:03,1/24/2024 4:05,India,Threat Analyst,Technology,Intermediate,
+94,1/24/2024 12:55,1/24/2024 12:56,Mozambique,Research ,Consulting,Beginner,
+95,1/24/2024 17:11,1/24/2024 17:13,Switzerland,Advanced Threat Operations Lead,Technology,Advanced,Learn and interact with the attendees on nb best practices
+96,1/25/2024 7:37,1/25/2024 7:45,MALAYSIA,NETWORK ENGINEEER,Technology,Intermediate,
+97,1/25/2024 7:54,1/25/2024 7:55,Malaysia,Network Security Engineer,Technology,Intermediate,More knowledge about Jupyter Notebooks
+98,1/25/2024 9:10,1/25/2024 9:12,MALAYSIA,ENGINEER,Education,Beginner,Exploring difference use case 
+99,1/25/2024 20:24,1/25/2024 20:30,MALAYSIA,OSINT DATA ANALYST,Technology,Intermediate,"I hope to hear about real-world applications of JupyterLab in various domains, such as academia, industry, and research. Additionally, I am hoping to understand the concept of interactive computing and how JupyterLab facilitates an interactive and exploratory data science workflow."
+100,1/26/2024 12:35,1/26/2024 12:39,India,Student,Technology,Beginner,
+101,1/27/2024 7:17,1/27/2024 7:19,Australia,Associate Cyber Engineer ,Finance,Intermediate,As much as possible!
+102,1/29/2024 9:23,1/29/2024 9:24,India,Security analyst,Technology,Beginner,okta
+103,1/29/2024 12:15,1/29/2024 12:16,United States,Researcher,Technology,Beginner,
+104,1/29/2024 13:06,1/29/2024 13:07,United States,security engineer,Technology,Beginner,
+105,1/29/2024 13:05,1/29/2024 13:07,Kuwait,Cybersecurity Specialist ,Technology,Beginner,anything
+106,1/29/2024 13:08,1/29/2024 13:09,Malawi,Security Engineer ,Finance,Beginner,
+107,1/29/2024 13:09,1/29/2024 13:10,Dominican Republic ,Security analyst ,Healthcare,Beginner,
+108,1/29/2024 13:12,1/29/2024 13:13,Poland,Security Researcher,Technology,Advanced,
+109,1/29/2024 13:12,1/29/2024 13:13,India,Security Analyst ,Technology,Beginner,To become a guru of the product
+110,1/29/2024 13:20,1/29/2024 13:21,Canada,"Director, Cybersecurity ",Retail,Beginner,
+111,1/29/2024 13:26,1/29/2024 13:27,United Kingdom,Senior Security Analyst ,Technology,Beginner,Use cases & concepts to improve SOC operations using Jupyter notebooks.
+112,1/29/2024 13:28,1/29/2024 13:29,United Kingdom,principal security delivery manager,Technology,Beginner,
+113,1/29/2024 13:32,1/29/2024 13:34,india,Founder,Technology,Beginner,
+114,1/29/2024 13:33,1/29/2024 13:35,Serbia,Cloud solutions architect ,Technology,Beginner,Need a new perspective on infosec tools
+115,1/29/2024 13:38,1/29/2024 13:39,Canada,IT Security Specialist,Technology,Beginner,Learn more about notebooks and their applications
+116,1/29/2024 13:53,1/29/2024 13:54,Netherlands ,Consultant ,Consulting,Beginner,
+117,1/29/2024 13:58,1/29/2024 13:58,India,CTI,Finance,Expert,
+118,1/29/2024 13:59,1/29/2024 14:00,India,InfoSec Engineer,Finance,Beginner,
+119,1/29/2024 14:01,1/29/2024 14:04,South Korea,Security Researcher,Technology,Intermediate,How to use Jupyter Notebooks for threat hunting 
+120,1/29/2024 14:13,1/29/2024 14:14,Turkey,Cybersecurity expert,Technology,Beginner,
+121,1/29/2024 14:13,1/29/2024 14:14,Poland,CSA,Technology,Intermediate,
+122,1/29/2024 14:27,1/29/2024 14:28,Trinidad and Tobago ,Security Engineer ,Finance,Intermediate,
+124,1/29/2024 14:53,1/29/2024 14:53,United States,Threat Researcher,Technology,Beginner,
+125,1/29/2024 14:54,1/29/2024 14:55,Norway,Security analyst,Technology,Advanced,
+126,1/29/2024 15:03,1/29/2024 15:04,India,Global Lead - Cyber Defense ,Hotel & Food Services,Beginner,
+127,1/29/2024 15:21,1/29/2024 15:21,United States,Sr. Cybersecurity Consultant ,Technology,Beginner,
+128,1/29/2024 15:23,1/29/2024 15:23,United States,Information Security Engineer,Education,Beginner,More about Jupyter Notebooks
+129,1/29/2024 15:26,1/29/2024 15:27,United States,IT Security & Compliance Analyst,Retail,Beginner,Whether the product is a good fit for our organization. 
+130,1/29/2024 15:26,1/29/2024 15:27,United States,Security engineer ,Technology,Intermediate,
+131,1/29/2024 15:18,1/29/2024 15:27,Italy,Cybersecurity Technology Specialist,Technology,Intermediate,"Building data-driven security tools with Streamlit
+Red teaming LLMs with Jupyter notebooks
+Automating adversary emulation"
+132,1/29/2024 15:40,1/29/2024 15:41,Canada,IT Manager,Technology,Intermediate,Interaction with SIEM tools
+133,1/29/2024 15:41,1/29/2024 15:42,United Kingdom,Cyber Security Analyst,Technology,Intermediate,To utilise this within my role of the SOC at my current workplace 
+134,1/29/2024 15:51,1/29/2024 15:52,India,Security engineer ,Technology,Beginner,Twitter
+135,1/29/2024 15:52,1/29/2024 15:53,Spain,Security Researcher,Technology,Intermediate,"new capabilities, how to collaborate"
+136,1/29/2024 15:57,1/29/2024 15:59,Austria,Security Technical Specialist,Technology,Beginner,Use cases
+137,1/29/2024 15:53,1/29/2024 16:02,Nigeria,Student,Student,Beginner,"I have just begin my journey into cybersecurity, currently enrolled in MSc Cybersecurity, I'd love to learn how notebooks are used interactively for threat detection and response, or as automated tasks in a larger pipeline of diiferent security situation."
+138,1/29/2024 16:07,1/29/2024 16:08,United States,Research Analyst,Technology,Intermediate,Looking to learn more about applicaiton of notebooks to security topics 
+139,1/29/2024 17:12,1/29/2024 17:17,United States,Security Architect,Consulting,Beginner,To improve my personal skills on this technology
+140,1/29/2024 17:17,1/29/2024 17:18,Spain,DFIR,Consulting,Beginner,
+141,1/29/2024 17:21,1/29/2024 17:23,Vietnam,IT Security,Technology,Intermediate,
+142,1/29/2024 17:26,1/29/2024 17:28,United States,CyberSecOps,Finance,Beginner,
+143,1/29/2024 17:52,1/29/2024 17:59,United Kingdom,IT Manager,Technology,Beginner,To learn more
+144,1/29/2024 18:00,1/29/2024 18:02,United States,Security Engineer,Finance,Beginner,
+145,1/29/2024 18:08,1/29/2024 18:08,United States,Architect ,Technology,Intermediate,More knowledge 
+146,1/29/2024 18:10,1/29/2024 18:12,United States,Architect,Technology,Intermediate,more knowledge
+147,1/29/2024 18:13,1/29/2024 18:15,Ghana,IT Auditor ,Finance,Beginner,Best practices 
+148,1/29/2024 18:16,1/29/2024 18:18,Ghana,IT Auditor ,Finance,Beginner,Learn something new 
+149,1/29/2024 18:19,1/29/2024 18:20,South Africa,Security Specialist,Finance,Beginner,How you can better utilise Jupyter to better protect an enterprise environment.
+151,1/29/2024 19:07,1/29/2024 19:08,United States,Senior Security analyst ,Retail,Beginner,As much as possible 
+152,1/29/2024 19:18,1/29/2024 19:20,New Zealand,Security consultant,Technology,Intermediate,Improve skills and gain insight into new scenarios
+153,1/29/2024 19:24,1/29/2024 19:26,New Zealand,Cyber Security Analyst,Technology,Beginner,
+154,1/29/2024 19:40,1/29/2024 19:43,Singapore,Assistant Manager,Technology,Beginner,Able to use Jupyter to learn Python and able to script in Python and use it on threat intelligent.
+155,1/29/2024 20:24,1/29/2024 20:25,Singapore,Researcher,Technology,Beginner,Newbie and would like to learn what Jupyter can do!
+156,1/29/2024 20:37,1/29/2024 20:38,India,Consultant ,Consulting,Beginner,
+157,1/29/2024 20:53,1/29/2024 20:56,India,Sr.lead,Technology,Intermediate,How notebooks can be effectively utilized on monitoring and mitigating threats. 
+158,1/29/2024 21:02,1/29/2024 21:02,United States,VP PM,Technology,Intermediate,
+159,1/29/2024 21:21,1/29/2024 21:21,Singapore,Noob,Technology,Intermediate,
+160,1/29/2024 21:40,1/29/2024 21:41,India,Security Specialist ,Technology,Beginner,How to use for threat hunting and analysis 
+161,1/29/2024 22:18,1/29/2024 22:19,Malaysia,Security Consultant,Consulting,Beginner,
+162,1/29/2024 22:23,1/29/2024 22:24,United States,Security Engineer ,Technology,Beginner,
+163,1/29/2024 22:48,1/29/2024 22:49,Philippines,Security Engineer,Healthcare,Beginner,
+164,1/29/2024 23:01,1/29/2024 23:01,Mexico,Security Delivery Manager,Technology,Beginner,
+166,1/29/2024 23:10,1/29/2024 23:12,Mexico,Student,Student,Beginner,How to is used in cybersecurity
+167,1/29/2024 23:22,1/29/2024 23:24,Singapore,Senior Detection and Response Analyst,Technology,Beginner,
+168,1/29/2024 23:33,1/29/2024 23:35,India,Analyst ,Technology,Beginner,possible use case for Jupyter Notebooks
+169,1/29/2024 23:35,1/29/2024 23:37,Singapore,Cybersecurity Engineer,Technology,Beginner,To learn Jupyter Notebooks from scratch to advanced
+170,1/30/2024 0:14,1/30/2024 0:16,United States,Infosec Manager,Education,Beginner,Blue Teaming 
+171,1/30/2024 1:00,1/30/2024 1:01,United States,Information Security Analyst,Education,Beginner,
+172,1/30/2024 1:13,1/30/2024 1:14,United States,IT Security Professional,Consulting,Beginner,
+173,1/30/2024 1:13,1/30/2024 1:15,Uganda,Cybersecurity Analyst ,Technology,Beginner,How to get started using Jupyter notebooks to analyze data.
+174,1/30/2024 2:13,1/30/2024 2:15,Malaysia,SOC Analyst L1,Technology,Intermediate,Wants to grab some knowledge about how JUPYTER Playbook works
+175,1/30/2024 2:49,1/30/2024 2:53,India,Cloud Security Specialist,Technology,Intermediate,Get new ideas etc. 
+176,1/30/2024 3:53,1/30/2024 3:54,Philippines ,Cyber Security Analyst,Finance,Intermediate,Everything 
+177,1/30/2024 4:03,1/30/2024 4:05,India,CYBER SECURITY ENGINEER,Retail,Beginner,
+178,1/30/2024 4:11,1/30/2024 4:12,Australia,Principle IR consultant,Consulting,Intermediate,
+179,1/30/2024 2:14,1/30/2024 4:25,Netherlands,Security Analist,Technology,Beginner,How to apply them during red team operations
+180,1/30/2024 5:09,1/30/2024 5:10,Portugal,Security Engineer,Finance,Beginner,
+181,1/30/2024 5:15,1/30/2024 5:17,Netherlands,Security Consultant / SOC Analyst,Technology,Beginner,
+182,1/30/2024 5:23,1/30/2024 5:24,Sweden,Seniour Threat Analyst,Finance,Intermediate,AI AI AI 
+183,1/30/2024 5:30,1/30/2024 5:31,Canada ,Cloud Solutions Developer,Education,Intermediate,
+185,1/30/2024 5:54,1/30/2024 5:54,United States,Cyber ,Finance,Beginner,
+186,1/30/2024 6:03,1/30/2024 6:11,United States,Security Researcher,Technology,Beginner,"Get an understanding about Jupyter Notebooks, and obtain the knowledge to get started with using them myself."
+187,1/30/2024 6:49,1/30/2024 6:51,Finland,Security Engineer,Consulting,Intermediate,"How they can be utilised in information security research.
+"
+188,1/30/2024 7:11,1/30/2024 7:17,United States,Principal Analyst,Technology,Intermediate,I expect to learn more of the capabilities of Jupyter Notebooks as well as some useful ones created by the community that I can use.  I also expect to get some ideas on how to enhance the ones I have and will create.
+189,1/30/2024 7:25,1/30/2024 7:26,United States,Sr systems engineer ,Technology,Intermediate,
+190,1/30/2024 7:42,1/30/2024 7:43,Finland,Cloud Security Architect,Consulting,Beginner,How to use Jupyter Notebooks in day 2 day secops.
+191,1/30/2024 7:47,1/30/2024 7:48,United States,Cybersecurity specialist ,Technology,Beginner,
+192,1/30/2024 8:09,1/30/2024 8:14,United States,System Engineer,Retail,Intermediate,To learn how Jupyter notebooks are being used in cybersecurity.
+193,1/30/2024 8:38,1/30/2024 8:39,Canada,IT,Consulting,Intermediate,
+194,1/30/2024 8:37,1/30/2024 8:40,United Kingdom,CTI analyst ,Technology,Advanced,BAU
+195,1/30/2024 8:42,1/30/2024 8:44,United States,Threat Hunter,Technology,Beginner,
+196,1/30/2024 8:45,1/30/2024 8:45,Japan,Security Engineering guy,Finance,Intermediate,
+197,1/30/2024 8:54,1/30/2024 8:55,United States,Co founder ,Consulting,Advanced,
+198,1/30/2024 8:57,1/30/2024 8:58,Switzerland,Security researcher,Retail,Beginner,
+199,1/30/2024 8:58,1/30/2024 8:59,United Kingdom,Student,Student,Beginner,
+200,1/30/2024 9:33,1/30/2024 9:34,United States,CERT Specialist,Technology,Beginner,using notebooks for security event analysis
+201,1/30/2024 9:39,1/30/2024 9:40,Canada,Cloud Architect,Technology,Intermediate,
+202,1/30/2024 9:48,1/30/2024 9:51,United States,Sr. Security Operations Engineer ,Technology,Intermediate,Different use cases and approaches to problem solving using notebooks
+203,1/30/2024 10:00,1/30/2024 10:01,United States,SecOps Engineer,Technology,Beginner,Everything
+204,1/30/2024 9:58,1/30/2024 10:07,United Kingdom,Cyber Security Operations Engineer,Technology,Beginner,I expect to learn how Jupyter Notebook can help me in my day to day tasks. Also learn how to code and what level of code is needed for Jupyter Notebook.
+205,1/30/2024 10:09,1/30/2024 10:11,India,Security Analyst-L3,Finance,Intermediate,Want to learn new stuff in advance level. 
+206,1/30/2024 10:36,1/30/2024 10:36,United States,Security Engineer,Technology,Intermediate,
+207,1/30/2024 10:46,1/30/2024 10:49,United States,Security Engineer,Technology,Beginner,Stumbled upon this and was curious how Jupyter Notebooks can help me and my organization to automate threat detection and response.
+208,1/30/2024 11:10,1/30/2024 11:11,United States,Graduate Student and a Data Analyst,Education,Beginner,
+209,1/30/2024 11:58,1/30/2024 12:00,Finland,Threat Intelligence Specialist,Technology,Beginner,
+210,1/30/2024 12:37,1/30/2024 12:39,United States,Senior Security Operations Engineer,Technology,Beginner,How to use Jupyter Notebooks more effectively
+211,1/30/2024 9:58,1/30/2024 12:52,United States,Security Operations Engineer,Technology,Beginner,Gain a better understanding of capabilities of Jupyter notebook so I can implement them into my own workflow.
+212,1/30/2024 13:17,1/30/2024 13:18,United States,Principal Threat Hunter ,Technology,Beginner,How I can use them to do model assisted threat hunting 
+213,1/30/2024 13:47,1/30/2024 13:48,United States,Threat Hunter,Technology,Beginner,
+214,1/30/2024 15:47,1/30/2024 15:48,United States,Senior Intelligence Enablement Consultant,Consulting,Intermediate,Using Jupyter Notebooks to interact with data in support of repeatable processes. 
+215,1/30/2024 15:45,1/30/2024 15:49,Canada,"Senior Manager, Threat Defence",Consulting,Beginner,Looking to ramp up quickly on some good use cases for Jupyter to improve my automation & scripting skills!
+216,1/30/2024 15:47,1/30/2024 15:55,Norway,Security Researcher,Technology,Intermediate,
+217,1/30/2024 16:02,1/30/2024 16:04,United States,Security CSA,Technology,Beginner,
+218,1/30/2024 16:35,1/30/2024 16:37,United States,Security Engineer,Technology,Beginner,"I would like to see how other people are using Notebooks. I am not using them currently, but I did on a previous team."
+219,1/30/2024 16:53,1/30/2024 16:54,United States,Head of Threat Research,Technology,Intermediate,Anything and everything!
+220,1/30/2024 17:01,1/30/2024 17:01,United States,Threat Researcher,Retail,Intermediate,
+221,1/30/2024 17:05,1/30/2024 17:10,United States,Student,Technology,Beginner,How it can be used and apply to an organization's CTI
+222,1/30/2024 17:24,1/30/2024 17:25,United States,Senior Security Research Manager,Technology,Beginner,Simply hoping to continue learning via the experiences of others. 
+223,1/30/2024 17:32,1/30/2024 17:33,United States,Threat Intelligence Researcher,Technology,Beginner,How to leverage it for daily workflow
+224,1/30/2024 17:47,1/30/2024 17:48,United States,Threat Analyst,Technology,Beginner,
+225,1/30/2024 18:45,1/30/2024 18:46,Colombia,Responsable Seguridad Tecnol�gica,Technology,Beginner,Usos y mejores pr�cticas en ciberseguridad desde la perspectiva pr�ctica 
+226,1/30/2024 18:49,1/30/2024 18:50,United States,TPM,Technology,Beginner,It'll all be new to me.
+227,1/30/2024 19:12,1/30/2024 19:14,United States,Information Security Analyst,Finance,Beginner,Possible use cases and ways to expand our security tools.
+228,1/30/2024 19:26,1/30/2024 19:26,South Korea,Director,Technology,Intermediate,
+229,1/30/2024 19:37,1/30/2024 19:40,Singapore ,Technical Specialist ,Technology,Beginner,
+230,1/30/2024 21:44,1/30/2024 21:46,United States,Cloud Security Administrator ,Technology,Beginner,Any and everything
+231,1/30/2024 21:52,1/30/2024 21:54,Colombia,Analista junios de Seguridad Tecnol�gica,Technology,Intermediate,Cacer�a de amenzas
+232,1/31/2024 0:32,1/31/2024 0:34,Finland,Pentester,Technology,Beginner,
+234,1/31/2024 1:31,1/31/2024 1:33,South Africa,Threat Intel Analyst,Technology,Beginner,"Defend against and prepare for cyber threats, "
+235,1/31/2024 1:48,1/31/2024 1:49,United Kingdom,SOC Manager,Finance,Beginner,"Looking to gain insight from others, I'm a beginner."
+236,1/31/2024 3:06,1/31/2024 3:07,Turkey,Manager,Technology,Beginner,
+237,1/31/2024 3:05,1/31/2024 3:08,Italy,Security Architect,Technology,Beginner,New skills for blue team activities
+238,1/31/2024 3:24,1/31/2024 3:24,Portugal,Security Researcher,Technology,Beginner,
+239,1/31/2024 4:13,1/31/2024 4:14,United Kingdom,Engineer,Technology,Intermediate,
+240,1/31/2024 4:25,1/31/2024 4:26,czech republic,Security Engineer,Consulting,Beginner,
+241,1/31/2024 4:52,1/31/2024 4:59,France,IT System Engineer.,Technology,Beginner,Improve my knowledge and my own notebooks..
+242,1/31/2024 5:14,1/31/2024 5:15,India,Data Engineer,Technology,Beginner,Possibilities of Improving SOC
+243,1/31/2024 5:30,1/31/2024 5:31,Poland,SOC Analyst,Retail,Beginner,
+244,1/31/2024 5:47,1/31/2024 5:48,United Kingdom,Snr Sec Engineer,Technology,Beginner,Benefits of Jupyter
+245,1/31/2024 5:49,1/31/2024 5:51,India,Data Scientist,Technology,Expert,Explore machine learning use cases for cyber security enhancement.
+246,1/31/2024 5:51,1/31/2024 5:52,United Kingdom,Security Engineer,Technology,Beginner,
+247,1/31/2024 5:58,1/31/2024 6:00,United States,Senior Research Analyst,Healthcare,Expert,
+248,1/31/2024 6:22,1/31/2024 6:24,Spain,Director,Technology,Intermediate,New ideas and technologies to solve security problems
+249,1/31/2024 6:40,1/31/2024 6:41,United States,manager,Student,Intermediate,msticpy
+250,1/31/2024 6:47,1/31/2024 6:48,United States,Cyber Threat Intelligence Team Lead,Technology,Beginner,Real world applications and how to operationalize notebooks with a team.
+251,1/31/2024 6:51,1/31/2024 6:52,India,Analyst,Healthcare,Beginner,Lets find out
+252,1/31/2024 6:55,1/31/2024 6:57,United States,Senior Security Researcher ,Technology,Intermediate,Learning more on how to leverage MSTICPy. 
+253,1/31/2024 7:08,1/31/2024 7:10,czech republic,Web Security Analyst,Finance,Intermediate,
+254,1/31/2024 8:02,1/31/2024 8:03,South Africa,Technology Specialist,Technology,Beginner,
+255,1/31/2024 8:05,1/31/2024 8:06,Netherlands,Technology Specialist,Hotel & Food Services,Beginner,
+256,1/31/2024 8:28,1/31/2024 8:31,United States,Sr. Dir. Cybersecurity Operations,Technology,Beginner,
+257,1/31/2024 8:43,1/31/2024 8:44,United States,Head of Information Security and Privacy,Technology,Beginner,Erryythang
+258,1/31/2024 9:01,1/31/2024 9:02,United States,Security Researcher,Technology,Beginner,
+259,1/31/2024 9:27,1/31/2024 9:27,United States,IR,Finance,Beginner,
+260,1/31/2024 9:35,1/31/2024 9:38,United States,Sr. Threat Management Consultant,Finance,Beginner,red teaming with jupyter notebooks and automating adversary emulation
+261,1/31/2024 8:11,1/31/2024 9:45,Egypt,Security Engineer,Hotel & Food Services,Beginner,
+262,1/31/2024 9:47,1/31/2024 9:48,United States,Security Engineer,Technology,Intermediate,Crunch data from various security tools to provide targeted focus on security remediations and incident response
+263,1/31/2024 9:51,1/31/2024 9:52,United States,Threat Analyst,Technology,Beginner,
+264,1/31/2024 10:10,1/31/2024 10:11,United States,Security Analyst,Education,Beginner,
+265,1/31/2024 10:34,1/31/2024 10:36,India,Student,Student,Beginner,I'm interested in learning SOC
+266,1/31/2024 10:46,1/31/2024 10:47,United States,Senior Security Engineer,Technology,Intermediate,New ways to use it. Interested in Forensic options.
+267,1/31/2024 13:25,1/31/2024 13:26,United States,Security Engineer,Technology,Intermediate,Threat hunting fun!
+268,1/31/2024 9:00,1/31/2024 14:33,United States,Forensic,Healthcare,Beginner,
+269,1/31/2024 14:34,1/31/2024 14:35,United States,Dir Cyber Engineering,Healthcare,Beginner,
+270,1/31/2024 14:35,1/31/2024 14:36,United States,Cyber Security Engineer,Technology,Beginner,I would like to see if this environment could be relevant to my job functions.
+271,1/31/2024 14:39,1/31/2024 14:40,United States,IT Engineer,Healthcare,Beginner,
+272,1/31/2024 17:16,1/31/2024 17:18,New Zealand,Security Analyst,Technology,Beginner,
+273,1/31/2024 20:05,1/31/2024 20:06,United States,Security Manager,Technology,Intermediate,
+274,1/31/2024 20:32,1/31/2024 20:33,Argentina,Student,Student,Intermediate,
+276,1/31/2024 22:24,1/31/2024 22:24,Australia,Student ,Student,Beginner,
+277,2/1/2024 2:37,2/1/2024 2:38,INDIA,Manager,Finance,Intermediate,To learn about new packages.
+278,2/1/2024 3:34,2/1/2024 3:54,United Kingdom,Operational Security Analyst,Technology,Beginner,Understand some of the uses of Jupyter Notebooks in cyber security
+279,2/1/2024 5:18,2/1/2024 5:19,Portugal,Support Engineer,Technology,Beginner,
+280,2/1/2024 6:42,2/1/2024 6:43,Canada,Senior Manager - Incident Response,Consulting,Intermediate,
+281,2/1/2024 6:50,2/1/2024 6:51,Bahrain,Security Consultant,Consulting,Intermediate,
+282,2/1/2024 8:03,2/1/2024 8:03,United Kingdom,Intel Analyst,Technology,Beginner,
+283,2/1/2024 9:37,2/1/2024 9:39,India,Associate Technical Consultant,Technology,Beginner,I need strengthen the knowledge to intermediate level
+284,2/1/2024 9:48,2/1/2024 9:50,United States,Pen Tester,Consulting,Beginner,Gaining knowledge around using Jupyter notebooks for pen testing / red teaming.
+285,2/1/2024 10:12,2/1/2024 10:12,United States,Cybersecurity Analyst,Finance,Intermediate,
+286,2/1/2024 11:54,2/1/2024 11:56,United States,Intelligence Analyst,Finance,Beginner,
+287,2/1/2024 18:04,2/1/2024 18:05,Canada,Threat hunter,Finance,Beginner,
+288,2/1/2024 18:49,2/1/2024 18:50,United States,Security Researcher,Technology,Beginner,
+289,2/1/2024 19:09,2/1/2024 19:12,Canada,Security Specialist,Education,Beginner,I will to learn the newest trends and help get a better overview of what is out there in technology changes and challenges.
+290,2/1/2024 20:56,2/1/2024 20:57,United States,SOC Engineer,Technology,Intermediate,Methodologies and Approaches to reproduce the work and collaboration on new ideas of Data Exploration
+291,2/1/2024 21:58,2/1/2024 22:00,China,Security Manager,Technology,Intermediate,how to use it in daily operation on SOC
+292,2/1/2024 22:08,2/1/2024 22:11,United States,Senior End User Compute Analyst,Healthcare,Beginner,Implementation of security reporting for operations and leadership presentation. 
+293,2/1/2024 23:16,2/1/2024 23:18,Australia,Cyber Security Anlayst,Technology,Beginner,Anything and everything
+294,2/2/2024 1:19,2/2/2024 1:20,India,Threat Analyst,Technology,Intermediate,na
+295,2/2/2024 4:28,2/2/2024 4:31,Poland,Security Engineer,Retail,Beginner,
+296,2/2/2024 4:57,2/2/2024 5:03,Brazil,Security Engineer,Technology,Intermediate,New use cases that I can get as ideas to apply in my daily basis routine.
+297,2/2/2024 6:47,2/2/2024 6:48,Bulgaria,Cloud Security Architect,Consulting,Beginner,
+298,2/2/2024 8:15,2/2/2024 8:18,United States,Manager of Information Security Incident Response,Technology,Beginner,
+299,2/2/2024 8:39,2/2/2024 8:40,Belgium,Threat Hunter,Technology,Intermediate,
+300,2/2/2024 8:45,2/2/2024 8:46,United States,Cyber Security Support Specialist ,Education,Beginner,
+301,2/2/2024 11:50,2/2/2024 11:51,United States,Cyber Security Director,Technology,Beginner,
+302,2/2/2024 14:18,2/2/2024 14:19,United States,Senior Cyber Security Specialist,Technology,Beginner,
+303,2/2/2024 14:32,2/2/2024 14:32,germany,sec engineer,Consulting,Intermediate,
+304,2/2/2024 14:49,2/2/2024 14:50,United States,Endpoint Manager,Healthcare,Beginner,
+305,2/2/2024 16:24,2/2/2024 16:24,United States,Architect,Healthcare,Intermediate,
+306,2/2/2024 18:17,2/2/2024 18:17,United States,Security Researcher,Technology,Beginner,
+307,2/3/2024 0:14,2/3/2024 0:17,United States,None - Unemployeed,Technology,Beginner," threat detection, malware analysis, securing a business at scale."
+308,2/3/2024 4:47,2/3/2024 4:48,Belgium,Detection Engineer,Technology,Advanced,
+309,2/3/2024 14:57,2/3/2024 14:59,Canada,Information Security Consultant ,Consulting,Intermediate,
+310,2/3/2024 15:24,2/3/2024 15:25,United States,"Consulting Director, DFIR",Consulting,Intermediate,
+311,2/4/2024 9:29,2/4/2024 9:41,France,sec analyst,Finance,Intermediate,"Many thanks for the MSTICPy project, I'm in love with it. I expect to learn about topics covered in this year�s talks. I want to find new techniques and ideas to help me to expand the usage of infosec jupyter notebooks in my company. My aim is to convince managers to give us more time and budget, to enable us to develop an expertise and contribute back to the msticpy community."
+312,2/4/2024 9:55,2/4/2024 9:56,United States,Threat intel- Hunt team ,Healthcare,Beginner,Cool ways to use notebooks. 
+313,2/4/2024 14:16,2/4/2024 14:20,India,Cloud Security Specialist,Technology,Beginner,"how to gain meaningful insights using Jupyter Notebooks from vulnerabilities, OSINT, Inventory etc data and how to present these insights in a pretty way. :) 
+"
+314,2/4/2024 14:31,2/4/2024 14:31,Italy,CyberSecurity Manager ,Technology,Beginner,
+315,2/4/2024 15:00,2/4/2024 15:01,czech republic,Sec engineer/architect,Technology,Beginner,
+316,2/4/2024 18:26,2/4/2024 18:28,India,Cybersecurity consultant,Consulting,Beginner,Advanced Threat hunting
+317,2/5/2024 1:18,2/5/2024 1:19,South Africa,Cyber Security Operations Specialist,Finance,Beginner,
+318,2/5/2024 1:19,2/5/2024 1:20,South Africa,Security,Technology,Beginner,Everything there is to learn.
+319,2/5/2024 1:27,2/5/2024 1:29,South Africa,Cyber Security Operations Specialist,Technology,Beginner,How they are being used to detect and respond to threats
+320,2/5/2024 1:42,2/5/2024 1:43,Austria,Security Engineer,Technology,Beginner,
+321,2/5/2024 2:27,2/5/2024 2:28,Austria,Security Engineer,Technology,Beginner,
+322,2/5/2024 3:49,2/5/2024 3:49,Bulgaria,Security Operations Officer,Finance,Beginner,
+323,2/5/2024 4:02,2/5/2024 4:04,Germany,Security Analyst ,Consulting,Beginner,Usage of Notebooks in security 
+324,2/5/2024 6:56,2/5/2024 6:58,United Kingdom,IT Security Engineer,Technology,Beginner,
+325,2/5/2024 7:00,2/5/2024 7:00,Argentina,Security Lead & Data Engineer,Technology,Advanced,
+326,2/5/2024 7:31,2/5/2024 7:33,United States,Senior Cybersecurity Risk & Governance Analyst,Technology,Beginner,
+327,2/5/2024 7:59,2/5/2024 8:00,United Kingdom,Incident Lead,Technology,Beginner,
+328,2/5/2024 9:02,2/5/2024 9:04,Canada,Risk Consultant,Consulting,Beginner,I expect a solid introduction about Jupyter Notebooks.
+329,2/5/2024 9:04,2/5/2024 9:05,India,Cyber Security Lead,Finance,Beginner,
+330,2/5/2024 9:10,2/5/2024 9:13,United States,Cyber Threat Intelligence Manager,Finance,Beginner,Would like to know more about what it is and how threat intelligence teams are using the tool. 
+331,2/5/2024 9:30,2/5/2024 9:31,India,SOC consultant,Technology,Beginner,understand the applied usecases and innovations
+332,2/5/2024 9:33,2/5/2024 9:35,India,Security Engineer,Technology,Intermediate,KT
+333,2/5/2024 9:42,2/5/2024 9:46,United States,Vulnerability Intelligence Analyst,Finance,Beginner,Learning how Jupyter Notebooks can enhance my role.
+334,2/5/2024 10:54,2/5/2024 10:54,United States,Data Scientist,Technology,Beginner,
+335,2/5/2024 13:36,2/5/2024 13:37,United States,Threat Detection Engineer ,Retail,Intermediate,What ever I can.  Probably best practices and new ways to use notebooks in Detect/Hunt workflows. 
+336,2/5/2024 14:21,2/5/2024 14:22,United States,Network Security Engineer,Technology,Beginner,
+337,2/5/2024 15:36,2/5/2024 15:37,United States,Software Engineer,Technology,Beginner,Overview 
+338,2/5/2024 19:14,2/5/2024 19:20,Australia,Technician,Technology,Intermediate,Identification of anomalies in network logs.
+339,2/5/2024 19:33,2/5/2024 19:34,Australia,Technician,Technology,Intermediate,Identifying anomalies in network logs.
+340,2/5/2024 21:43,2/5/2024 21:45,Australia,Team Lead - Managed Detection Response,Technology,Intermediate,
+341,2/5/2024 21:53,2/5/2024 21:54,malaysia,network security technician,Technology,Beginner,learn how to use jupyter notebook
+342,2/6/2024 2:08,2/6/2024 2:09,Finland,Technical Specialist - Security,Technology,Beginner,c00l stuff :)
+343,2/6/2024 3:44,2/6/2024 3:46,India,Threat Hunter,Technology,Beginner,Wanted to learn How Jupyter Notebooks can be useful for threat hunting and investigation purpose
+344,2/6/2024 4:55,2/6/2024 4:56,Netherlands,Incident Response Coordinator,Technology,Intermediate,
+345,2/6/2024 4:56,2/6/2024 4:57,Netherlands,Incident Responder,Technology,Intermediate,
+346,2/6/2024 3:13,2/6/2024 8:33,Brussels,Cyber Threat Analyst,Technology,Intermediate,Exploring Cyber use cases 
+347,2/6/2024 8:48,2/6/2024 8:51,United States,Data Scientist IV,Technology,Advanced,
+348,2/6/2024 9:14,2/6/2024 9:14,United States,Security Researcher,Technology,Intermediate,
+349,2/6/2024 10:44,2/6/2024 10:46,United States,Software Engineer,Technology,Beginner,
+350,2/6/2024 12:04,2/6/2024 12:07,United States,Software senior principal engineer,Technology,Expert,"Analysis, security, notebooky things"
+351,2/6/2024 12:56,2/6/2024 12:56,United States,Consultant,Technology,Beginner,
+352,2/6/2024 14:54,2/6/2024 14:54,United Kingdom,SOC Manager,Finance,Beginner,Really looking for inspiration
+353,2/6/2024 8:52,2/7/2024 1:03,South Africa,Manager,Consulting,Beginner,Gain Experience in Jupyter Notebook
+354,2/7/2024 1:35,2/7/2024 1:36,Singapore,Assistant Engineer,Technology,Beginner,Interesting notebooks created by others
+355,2/7/2024 6:15,2/7/2024 6:17,Ireland,Threat Hunting Manager,Finance,Intermediate,How to apply Jupyter Notebooks to supplement tooling in real world threat hunting activities.
+356,2/7/2024 6:49,2/7/2024 6:49,United States,analyst,Finance,Beginner,
+357,2/7/2024 7:47,2/7/2024 7:48,United States,Senior IT Vulnerability Management Engineer,Finance,Beginner,Learn something new
+358,2/7/2024 8:28,2/7/2024 8:28,Germany,Cyber Security Engineer,Technology,Intermediate,ML stuff
+359,2/7/2024 9:07,2/7/2024 9:08,United States,Security engineers ,Technology,Beginner,How to start using them
+360,2/7/2024 9:58,2/7/2024 10:02,United States,Threat Detection Engineer,Finance,Beginner,
+361,2/7/2024 11:58,2/7/2024 12:01,Canada,Cybersecurity Analyst,Healthcare,Beginner,Learn and discover this technology.
+362,2/7/2024 12:09,2/7/2024 12:10,United States,"Sys Admin, Cyber",Technology,Intermediate,
+363,2/7/2024 12:21,2/7/2024 12:23,Canada,SOC Analyst,Technology,Beginner,How to make my SOC better
+364,2/7/2024 12:54,2/7/2024 12:55,Canada,Senior Security Analyst,Technology,Beginner,Anything to start my journey.
+365,2/7/2024 14:06,2/7/2024 14:07,United States,Solution Architect,Technology,Beginner,
+366,2/7/2024 14:09,2/7/2024 14:12,United States,Security Analyst,Finance,Beginner,security uses for notebooks
+367,2/7/2024 16:52,2/7/2024 16:53,United States,Security Data Scientist,Technology,Expert,
+368,2/7/2024 21:34,2/7/2024 21:36,United States,Cyber Threat Analyst,Technology,Intermediate,How others are using it in  cyber defense.
+369,2/7/2024 22:56,2/7/2024 22:58,United States,Registered Nurse,Healthcare,Beginner,Hopefully some new information that I could apply to my self-studying in the future.
+370,2/8/2024 6:02,2/8/2024 6:02,Spain,DPO,Healthcare,Beginner,
+371,2/8/2024 9:56,2/8/2024 9:57,Slovakia,SOC Analyst,Technology,Beginner,How to use it in cybersecurity
+372,2/8/2024 10:29,2/8/2024 10:30,United States,Lead Senior Information Security Engineer,Technology,Beginner,
+373,2/8/2024 13:41,2/8/2024 13:41,United States,Staff Security Engineer ,Technology,Advanced,
+374,2/8/2024 17:23,2/8/2024 17:24,Belgium,Head of Cyber Detection and Response,Healthcare,Beginner,
+375,2/9/2024 8:21,2/9/2024 8:25,Mexico,Incident Response,Hotel & Food Services,Beginner,"Learn about Jupyter, how it works and how to use it for cybersecurity"
+376,2/9/2024 9:10,2/9/2024 9:11,United States,InfoSec Engineer,Finance,Beginner,Get a good overall concept how to use and implement. 
+377,2/9/2024 10:18,2/9/2024 10:21,United States,Security Researcher,Student,Beginner,best practices and real-world applications
+378,2/9/2024 10:42,2/9/2024 10:44,United States,Corporate Director,Technology,Beginner,Use cases and how to improve security processes.
+379,2/9/2024 12:50,2/9/2024 12:51,United States,Student,Student,Beginner,I want to learn about the applications of Jupyter Notebooks in the security field
+380,2/9/2024 13:09,2/9/2024 13:10,Argentina,Threat Analyst,Technology,Beginner,
+381,2/9/2024 13:14,2/9/2024 13:14,United States,Information Security Professional,Technology,Intermediate,
+382,2/9/2024 13:13,2/9/2024 13:16,United States,"Co-Founder, CEO",Technology,Beginner,Learn the applicability of notebooks to security. 
+383,2/9/2024 15:02,2/9/2024 15:03,United States,Threat Response,Technology,Beginner,
+384,2/9/2024 15:15,2/9/2024 15:16,United States,Mgr Threat Response,Technology,Beginner,
+385,2/9/2024 18:12,2/9/2024 18:14,United States,Strategic Partner Alliance Manager ,Technology,Beginner,A Ton about 2024 updates 
+386,2/9/2024 22:20,2/9/2024 22:21,Brasil ,Cyber security analyst ,Technology,Beginner,
+387,2/9/2024 23:22,2/9/2024 23:24,India,Detection Engineer ,Technology,Intermediate,
+388,2/10/2024 6:06,2/10/2024 6:07,India ,Detection Engineer ,Technology,Intermediate,
+389,2/10/2024 16:22,2/10/2024 16:23,United Kingdom,Cyber Intel Analyst,Technology,Intermediate,
+390,2/10/2024 19:18,2/10/2024 19:55,Vietnam,Security Specialist,Finance,Beginner,learn more from using Jupyter notebooks for security research
+391,2/11/2024 20:07,2/11/2024 20:07,Australia,Security Researcher,Technology,Intermediate,
+392,2/11/2024 23:16,2/11/2024 23:20,India,Senior Security Researcher,Technology,Beginner,
+393,2/12/2024 1:57,2/12/2024 1:58,Australia,Security Researcher,Technology,Intermediate,
+394,2/12/2024 3:33,2/12/2024 3:34,France,Computer stuff,Technology,Advanced,Have a look at how other are doing with the technology and cybersecurity.
+395,2/12/2024 3:46,2/12/2024 3:48,Germany,Security Engineer,Technology,Intermediate,Interesting CTI and ML usecases
+396,2/12/2024 6:04,2/12/2024 6:05,Spain,Security Researcher,Technology,Intermediate,
+397,2/12/2024 8:40,2/12/2024 8:41,France,Security Engineer,Technology,Beginner,Learn more on how my peers are using Jupyter for security purposes.
+398,2/12/2024 9:51,2/12/2024 9:52,canada,researcher,Technology,Intermediate,
+399,2/12/2024 11:31,2/12/2024 11:34,United States,Global Offensive Assessment Program Manager,Finance,Beginner,Just looking to get my feet wet with the platform.  
+400,2/12/2024 11:33,2/12/2024 11:35,United States,Senior Incident Response Analyst,Technology,Beginner,We are currently exploring ways to integrate Jupyter into our current workflow of Elastic and Service Now. 
+401,2/12/2024 11:48,2/12/2024 11:53,United States,Security Analyst,Technology,Beginner,What is a Jupyter Notebook and how are they used for cybersecurity.
+402,2/12/2024 12:02,2/12/2024 12:03,United Kingdom,Data Scientist,Finance,Expert,
+403,2/12/2024 12:06,2/12/2024 12:06,United States,Senior Data and Applied Scientist,Technology,Expert,
+404,2/12/2024 12:41,2/12/2024 12:42,Poland,Threat Researcher,Finance,Beginner,
+405,2/12/2024 14:40,2/12/2024 14:42,Canada,Security Engineer,Technology,Expert,
+406,2/12/2024 15:35,2/12/2024 15:38,Italy,Transport modeller; Cyber security student,Consulting,Advanced,Best practices
+407,2/12/2024 16:24,2/12/2024 16:25,Canada,Manager,Finance,Beginner,
+408,2/12/2024 16:30,2/12/2024 16:32,France,Cybersecurity Engineer,Technology,Beginner,
+409,2/12/2024 18:42,2/12/2024 18:45,London,Security engineer,Healthcare,Beginner,"Collaboration, automation, information analysis, visualization for threat hunting and threat landscape assessment"
+410,2/12/2024 18:51,2/12/2024 18:53,Australia,Security Engineer,Technology,Beginner,Tips and tricks for using Jypyter notebook in SecOps
+411,2/12/2024 20:26,2/12/2024 20:27,Indonesia,Security Researcher,Finance,Beginner,Have inspiration and idea
+412,2/12/2024 21:06,2/12/2024 21:07,Singapore,Lead Detection Engineer,Technology,Intermediate,
+413,2/12/2024 23:09,2/12/2024 23:10,United States,Detection & Response Engineer,Technology,Beginner,
+414,2/12/2024 23:27,2/12/2024 23:30,United States,Student,Student,Beginner,Whatever I can!
+415,2/13/2024 3:58,2/13/2024 4:01,FRANCE,Digital Forensics,Technology,Beginner,
+416,2/13/2024 4:42,2/13/2024 4:43,Belgium,"Founder, Threat Intelligence Expert",Consulting,Beginner,"Use cases I can learn from to implement in my work and improve my work to collect, process and analyse information."
+417,2/13/2024 4:43,2/13/2024 4:45,Ireland,Sr. Security Engineering Manager,Technology,Intermediate,New techniques. Interesting ways to use Jupyter notebooks in security
+418,2/13/2024 4:59,2/13/2024 5:00,Sweden,siso,Finance,Intermediate,
+419,2/13/2024 6:39,2/13/2024 6:40,United Kingdom,Manager,Technology,Beginner,Seeking a general overview in order to expand personal knowledge
+420,2/13/2024 6:54,2/13/2024 6:56,United Kingdom,Security Researcher,Technology,Beginner,If and/or how I could use it in my role
+421,2/13/2024 7:02,2/13/2024 7:04,Canada,Senior Security Researcher,Consulting,Beginner,Learn more about it
+422,2/13/2024 7:15,2/13/2024 7:16,United States,Lead Security Data Scientist,Retail,Advanced,
+423,2/13/2024 8:56,2/13/2024 8:59,Canada,Threat Analyst,Finance,Beginner,
+424,2/13/2024 9:00,2/13/2024 9:02,United States ,Cybersecurity data scientists ,Finance,Intermediate,New ways to process cyber datasets for better detections and also leveraging generative AI
+425,2/13/2024 9:01,2/13/2024 9:02,United States,Security Analyst,Finance,Advanced,I have no idea. 
+427,2/13/2024 9:31,2/13/2024 9:31,United States,Senior security operations analyst,Technology,Beginner,
+428,2/13/2024 9:37,2/13/2024 9:38,Kenya,Security Engineer,Finance,Intermediate,
+429,2/13/2024 9:50,2/13/2024 9:51,United States,Malware Analyst,Finance,Beginner,
+430,2/13/2024 9:55,2/13/2024 9:56,United Kingdom,Lead Security Engineer,Finance,Beginner,
+431,2/13/2024 9:54,2/13/2024 9:56,United States,Student,Education,Beginner,"I expect to learn leading security researchers, amazing things they are doing with notebooks in the field of Cybersecurity."
+432,2/13/2024 10:41,2/13/2024 10:54,United States,Cybersecurity Engineer,Finance,Beginner,
+433,2/13/2024 10:57,2/13/2024 10:58,Germany,Security Architect,Healthcare,Beginner,
+434,2/13/2024 10:58,2/13/2024 10:59,United States,Staff Security Engineer,Technology,Intermediate,Just want to listen to the talks.
+435,2/13/2024 10:58,2/13/2024 11:00,Czech Republic,cyber security analyst,Technology,Beginner,
+436,2/13/2024 11:13,2/13/2024 11:14,United States,Secutity Engineer,Technology,Beginner,How Jupyter notebooks are used in security
+437,2/13/2024 11:25,2/13/2024 11:26,United Kingdom,Threat Intelligence Analyst,Technology,Advanced,Learn new ways/libraries to visualise and explore threat data with Jupyter notebooks.
+438,2/13/2024 11:38,2/13/2024 11:40,Canada,"Senior Advisor, Information Security",Consulting,Beginner,
+439,2/13/2024 12:19,2/13/2024 12:20,United States,"Senior Director, Detection Research",Technology,Intermediate,How similar organization are applying the technology to meet their customers greatest needs.
+440,2/13/2024 13:02,2/13/2024 13:03,Czech Republic,Security engineer,Technology,Beginner,
+441,2/13/2024 13:11,2/13/2024 13:11,Spain,Incident Responder,Technology,Beginner,
+442,2/13/2024 13:42,2/13/2024 13:44,South Africa,ICT security Enginer,Finance,Beginner,"IT security concept, ramsomware  and threathhurting."
+443,2/13/2024 13:48,2/13/2024 13:49,Portugal,Security engineer,Technology,Intermediate,"Use cases, analytics methods"
+444,2/13/2024 13:58,2/13/2024 13:59,Canada,Senior Threat Researcher,Technology,Intermediate,
+445,2/13/2024 14:11,2/13/2024 14:12,United States,Senior SOC Analyst,Technology,Advanced,
+446,2/13/2024 14:02,2/13/2024 15:04,Australia ,Consultant ,Finance,Beginner,How to use it in Cyber Security ?
+447,2/13/2024 15:23,2/13/2024 15:26,United States,Sr Security Forensics Consultant ,Finance,Beginner,
+448,2/13/2024 15:48,2/13/2024 15:49,United States,Network Threat Hunter,Finance,Beginner,Good Notebooks to use for threat hunting and ideas for developing my own.
+449,2/13/2024 16:10,2/13/2024 16:11,Colombia ,Analista senior ,Technology,Beginner,
+450,2/13/2024 16:45,2/13/2024 16:47,United States,Consultant,Consulting,Beginner,How to incorporate Jupyter notebooks with Cybersecurity services for ML/statistical analysis purposes.
+451,2/13/2024 16:48,2/13/2024 16:51,United States,Lead Security Engineer,Finance,Beginner,"Threat hunting techniques, automated detection updating"
+452,2/13/2024 16:52,2/13/2024 16:55,Colombia,Analista senior ,Technology,Beginner,
+453,2/13/2024 16:58,2/13/2024 17:01,United States,Security Researcher,Technology,Beginner,Get more familiar with using it. Learn in general.
+454,2/13/2024 17:01,2/13/2024 17:02,United States,SIEM Data Analyst,Finance,Beginner,
+455,2/13/2024 17:20,2/13/2024 17:21,United States,IT Security Mgr,Consulting,Beginner,As much as possible LOL.   Some base familiarity would like to expand knowledge
+456,2/13/2024 17:31,2/13/2024 17:33,Mexico,Security Engineer,Consulting,Beginner,
+457,2/13/2024 17:44,2/13/2024 17:47,Norway,Chief Consultant,Consulting,Beginner,To see what other people are doing with ML in infosec
+458,2/13/2024 17:49,2/13/2024 17:50,United States,Analyst,Healthcare,Beginner,Cybersecurity related information
+459,2/13/2024 17:58,2/13/2024 18:00,United Kingdom,Security Researcher,Consulting,Intermediate,
+460,2/13/2024 18:01,2/13/2024 18:03,United Kingdom,Security Researcher,Technology,Beginner,"Listen to the experts, get insights and perspectives."
+461,2/13/2024 19:17,2/13/2024 19:18,India ,Manager ,Technology,Beginner,
+462,2/13/2024 19:19,2/13/2024 19:20,Austria,Security Consultant,Consulting,Advanced,How to use them for AD security
+463,2/13/2024 19:35,2/13/2024 19:36,Singapore,Engineer,Technology,Intermediate,
+464,2/13/2024 19:47,2/13/2024 19:48,United Kingdom,security researcher,Consulting,Advanced,
+465,2/13/2024 20:01,2/13/2024 20:02,Australia,Security Architect,Finance,Beginner,
+466,2/13/2024 21:04,2/13/2024 21:05,canada,security researcher,Technology,Advanced,Looking forward to see some new stuff people do with Jupyter
+467,2/13/2024 21:06,2/13/2024 21:09,Portugal ,Security Consultant,Consulting,Beginner,How threat modeling can be integrated within red and blue team processes
+468,2/13/2024 17:01,2/13/2024 21:36,United States,funemployed,Consulting,Expert,see how others are using notebooks these days - especially what interfaces they gravitate towards.
+469,2/13/2024 22:42,2/13/2024 22:43,India,Student,Education,Intermediate,
+470,2/13/2024 22:50,2/13/2024 22:51,Guatemala ,Analyst,Technology,Beginner,
+471,2/13/2024 23:04,2/13/2024 23:06,United States,Security Advisor ,Technology,Beginner,
+472,2/13/2024 23:47,2/13/2024 23:48,United States,Threat Hunter,Technology,Beginner,
+473,2/13/2024 23:54,2/13/2024 23:56,Netherlands,Security Researcher,Technology,Beginner,Possibilities and advancements of jupyter usage in infosec (and LLM applications)
+474,2/14/2024 0:17,2/14/2024 0:18,Australia ,Security Analyst,Finance,Intermediate,
+475,2/14/2024 0:37,2/14/2024 0:57,India,Cyber Security Consultant,Technology,Beginner,I am Beginner. I am expecting to learn all about Jupyter Notebooks
+476,2/14/2024 1:05,2/14/2024 1:07,United States,Information Security,Technology,Beginner,get some knowledge of how folks are using jupyter notebooks for security visualization
+477,2/14/2024 1:16,2/14/2024 1:17,Australia,Principal Security Strategist,Technology,Beginner,
+478,2/14/2024 1:11,2/14/2024 1:21,India,Security Analyst,Education,Beginner,Interested in learning how can Jupyter Notebooks used for DFIR and stuffs
+479,2/14/2024 1:53,2/14/2024 1:54,India ,Senior Cloud Security Engineer ,Consulting,Beginner,Learn about the usecases of leveraging Jupiter Notebook
+480,2/14/2024 0:53,2/14/2024 2:03,United States ,Security consultant ,Consulting,Advanced,Using notebooks in deployment
+481,2/14/2024 3:27,2/14/2024 3:28,United States ,Student ,Student,Beginner,
+483,2/14/2024 3:32,2/14/2024 3:33,France,Pentester,Technology,Intermediate,
+484,2/14/2024 4:09,2/14/2024 4:12,switzerland,Malware researcher,Finance,Advanced,We use them for POCs in developments. I want to see what can we use in infosec
+485,2/14/2024 4:19,2/14/2024 4:21,United Kingdom ,Student,Student,Beginner,Learn more advanced concepts 
+486,2/14/2024 4:41,2/14/2024 4:42,Mauritius ,IT Support ,Hotel & Food Services,Beginner,
+487,2/14/2024 6:39,2/14/2024 6:41,United Kingdom,Student,Student,Beginner,
+488,2/14/2024 7:08,2/14/2024 7:12,France,Cybersecurity Engineer,Retail,Intermediate,"Anything really, but preferably something that is related to Threat Hunting"
+489,2/14/2024 7:08,2/14/2024 7:18,France,Head of Cybersecurity - IT security Engineer,Technology,Intermediate,
+490,2/14/2024 7:16,2/14/2024 7:28,Portugal,Threat Hunting Lead,Technology,Advanced,"Learn about new ideas to improve cyber defense, specially threat hunting and detection engineering, using Jupyter Notebooks."
+491,2/14/2024 8:10,2/14/2024 8:11,Bratislava,Security Analyst,Technology,Beginner,How to detect the cool things with minimal/awkward telemetry.
+492,2/14/2024 8:15,2/14/2024 8:18,Belgium,Cloud Security Officer,Technology,Beginner,
+493,2/13/2024 23:37,2/14/2024 8:29,United States,Security Research,Technology,Beginner,
+494,2/14/2024 9:00,2/14/2024 9:02,United States,Cybersecurity Analyst ,Finance,Intermediate,
+495,2/14/2024 9:51,2/14/2024 9:52,South Africa,Consultant,Consulting,Intermediate,Inspiration and tips/tricks
+496,2/14/2024 10:47,2/14/2024 10:49,United States,Researcher,Consulting,Beginner,
+497,2/14/2024 10:54,2/14/2024 10:56,United States,Consultant,Finance,Beginner,Improve workflow
+498,2/14/2024 7:06,2/14/2024 11:01,India,Student,Education,Intermediate,
+499,2/14/2024 11:00,2/14/2024 11:01,Italy,Sales Engineer,Technology,Intermediate,
+500,2/14/2024 11:15,2/14/2024 11:16,United States,Cloud Solutions Architect,Technology,Beginner,Beginner - Get started with Jupyter notebooks.
+501,2/14/2024 11:15,2/14/2024 11:16,United States,Security Researcher,Education,Advanced,New ways to use them.
+502,2/14/2024 11:55,2/14/2024 11:56,Ireland,Security Operations Engineer,Technology,Advanced,
+503,2/14/2024 11:57,2/14/2024 11:58,United States,Security Researcher,Technology,Intermediate,
+504,2/14/2024 12:06,2/14/2024 12:13,Brazil,Malware Analyst,Technology,Intermediate,"Learn more about and learn new ways to use it, since I use it in my job."
+505,2/14/2024 12:23,2/14/2024 12:25,United States,Security Risk,Technology,Intermediate,
+506,2/14/2024 12:33,2/14/2024 12:35,United States ,Cloud Threat Detection Manager,Technology,Beginner,How notebooks can be used for detection engineering and security operations. 
+507,2/14/2024 12:53,2/14/2024 12:55,India,Data Scientist,Finance,Advanced,
+508,2/14/2024 12:51,2/14/2024 12:59,United States,"Co-Founder, CEO",Technology,Beginner,Application of Jupyter notebook in cybersecurity.
+509,2/14/2024 12:59,2/14/2024 13:00,United States,Data Scientist,Technology,Advanced,
+510,2/14/2024 13:02,2/14/2024 13:04,Canada,Cybersecurity | Data Scientist | Threat Hunter | Detection Engineer | Developer,Technology,Advanced,Curious to see the use cases...
+511,2/14/2024 14:06,2/14/2024 14:09,Canada,Student,Student,Intermediate,
+512,2/14/2024 14:14,2/14/2024 14:28,United States,Senior Security Engineer ,Technology,Intermediate,
+513,2/14/2024 15:00,2/14/2024 15:02,India,Analyst,Technology,Beginner,
+514,2/14/2024 15:14,2/14/2024 15:15,Belgium,sysadmin,Healthcare,Beginner,
+515,2/14/2024 15:23,2/14/2024 15:24,United States,Malware Reverse Engineer,Technology,Beginner,
+516,2/14/2024 16:11,2/14/2024 16:11,Colombia,Senior Data Scientist,Technology,Advanced,
+517,2/14/2024 16:20,2/14/2024 16:23,United States,Threat Hunter,Technology,Advanced,"Excited to learn what my ""cousins"" Roberto and Jose have been up to these days. Hopefully some new analytic models with pandas and notebooks? "
+518,2/14/2024 16:54,2/14/2024 16:55,United States,Red Team,Finance,Beginner,
+519,2/14/2024 9:25,2/14/2024 17:09,United States,Analyst,Technology,Intermediate,how to visualize elements and how to incorporate chatgpt
+520,2/14/2024 17:16,2/14/2024 17:17,Colombia,Administrador de seguridad,Technology,Beginner,
+521,2/14/2024 17:15,2/14/2024 17:19,United States,Software engineer ,Technology,Beginner,learn about AI
+522,2/14/2024 17:39,2/14/2024 17:42,Indonesia ,Security Engineer ,Technology,Beginner,Learn about threat hunting using jupyter
+523,2/14/2024 18:00,2/14/2024 18:01,United States,Manager,Consulting,Intermediate,Re-familiarize myself with notebooks and latest library updates.
+524,2/14/2024 18:15,2/14/2024 18:35,United States,@Datta_Boy,Technology,Advanced,"tips and tricks from infoSec professionals, have really loved the last 2 years sessions!! thank you!"
+525,2/14/2024 19:46,2/14/2024 19:47,Dominican Republic,CISO,Finance,Intermediate,
+526,2/14/2024 19:48,2/14/2024 19:51,Japan,Security Researcher,Consulting,Intermediate,
+527,2/14/2024 20:24,2/14/2024 20:25,United States,Senior Solutions Engineer,Technology,Intermediate,
+528,2/14/2024 20:40,2/14/2024 20:46,Colombia,Infosec engineer,Healthcare,Intermediate,Analyze more in deep bad threats actors
+529,2/14/2024 20:52,2/14/2024 21:02,Colombia ,Security consultant,Consulting,Beginner,
+530,2/14/2024 21:05,2/14/2024 21:06,United States,Cyber,Healthcare,Beginner,
+531,2/14/2024 21:08,2/14/2024 21:09,United States,Security Engineer,Finance,Beginner,How to get started
+532,2/14/2024 21:29,2/14/2024 21:30,United States,CloudSec Solutions Engineer,Technology,Expert,
+533,2/14/2024 21:35,2/14/2024 21:35,United States,Manager,Consulting,Intermediate,
+534,2/14/2024 18:41,2/14/2024 22:30,Japan,Security Engineer,Finance,Beginner,How Jupyter can help in cybersecurity operation
+535,2/14/2024 22:50,2/14/2024 22:53,Malaysia,Network Engineer,Technology,Intermediate,
+536,2/14/2024 22:58,2/14/2024 23:01,United States,Senior Security Engineer,Technology,Beginner,
+537,2/14/2024 23:00,2/14/2024 23:01,Malaysia,Network Engineer,Consulting,Intermediate,
+538,2/14/2024 23:02,2/14/2024 23:03,Lithuania,Student,Technology,Beginner,
+539,2/14/2024 23:01,2/14/2024 23:05,malaysia,IT operator,Consulting,Beginner,expect to be more expert level
+540,2/14/2024 23:03,2/14/2024 23:05,United States,"Senior Manager, Security Research",Technology,Intermediate,
+541,2/14/2024 23:12,2/14/2024 23:15,India,security researcher,Technology,Intermediate,how to integrate them for enterprise use case
+542,2/14/2024 23:55,2/14/2024 23:56,Canada,security researcher,Technology,Intermediate,Interested in how notebooks are interacting with LLMs. 
+543,2/15/2024 0:49,2/15/2024 0:50,United States,Analyst,Technology,Beginner,
+544,2/15/2024 4:57,2/15/2024 4:59,FRANCE,Cyber Threat Intelligence Analyst,Technology,Beginner,security and automation
+545,2/15/2024 6:24,2/15/2024 6:25,United Kingdom,SOC analyst,Technology,Beginner,
+546,2/15/2024 6:33,2/15/2024 6:33,United Kingdom,Security Researcher,Technology,Intermediate,
+547,2/15/2024 6:33,2/15/2024 6:35,Colombia ,System analyst ,Technology,Intermediate,
+548,2/15/2024 7:17,2/15/2024 7:17,United States,analyst,Finance,Beginner,
+549,2/15/2024 7:21,2/15/2024 7:22,Spain,Security SOC Analyst,Technology,Beginner,
+550,2/15/2024 8:00,2/15/2024 8:02,United States,Security Engineer,Technology,Intermediate,
+551,2/15/2024 8:11,2/15/2024 8:12,United Kingdom,Lead Security Analyst,Technology,Intermediate,
+552,2/15/2024 8:24,2/15/2024 8:25,Spain,Senior Security Engineer,Technology,Beginner,
+553,2/15/2024 8:26,2/15/2024 8:27,Denmark,Security Analyst,Consulting,Intermediate,Twitter
+554,2/15/2024 8:26,2/15/2024 8:28,Ireland,threat hunter,Healthcare,Intermediate,
+555,2/15/2024 8:30,2/15/2024 8:30,Canada,Security,Education,Beginner,
+556,2/15/2024 9:19,2/15/2024 9:20,United States,Engineer,Technology,Intermediate,How security researchers are using notebooks to detect anomalies
+557,2/15/2024 9:47,2/15/2024 9:48,United States,Security Engineer,Education,Intermediate,
+558,2/15/2024 9:47,2/15/2024 9:49,United States,Consultant,Consulting,Beginner,Better technique 
+559,2/15/2024 9:52,2/15/2024 9:54,Canada,security,Education,Beginner,
+560,2/15/2024 10:02,2/15/2024 10:03,Indonesia,Security analyst,Consulting,Beginner,
+561,2/15/2024 10:13,2/15/2024 10:13,United States,Principal Security Researcher,Technology,Expert,What everyone else is up to!
+562,2/15/2024 10:20,2/15/2024 10:21,United States,Professor,Education,Advanced,
+563,2/15/2024 10:24,2/15/2024 10:28,Canada,Freelancer,Technology,Beginner,"improve my day-to-day workflow, wether it's for pentest methodology, pentest reports and casual note keeping."
+564,2/15/2024 10:39,2/15/2024 10:39,Norway,ueo,Finance,Advanced,oue
+565,2/15/2024 11:15,2/15/2024 11:18,United States,analyst,Technology,Beginner,
+566,2/15/2024 11:22,2/15/2024 11:22,United States,Lead Security Analyst,Technology,Beginner,
+567,2/15/2024 11:26,2/15/2024 11:28,Romania,IR Consultant,Technology,Beginner,More about Notebooks efficiency for DFIR
+568,2/15/2024 11:55,2/15/2024 11:57,United States,Cyber ,Healthcare,Beginner,
+569,2/15/2024 11:30,2/15/2024 12:13,United States,Director of IT,Technology,Intermediate,anything new is helpful.
+570,2/15/2024 12:44,2/15/2024 12:45,Canada,Security Admin,Consulting,Intermediate,
+571,2/15/2024 13:09,2/15/2024 13:13,malaysia,it operator,Consulting,Beginner,want to be expert

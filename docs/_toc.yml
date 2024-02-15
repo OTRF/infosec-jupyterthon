@@ -40,6 +40,9 @@ parts:
     - file: 2024/speakers/christian_camilo_urcuqui_lopez
     - file: 2024/speakers/john_mcintosh
     - file: 2024/speakers/thomas_roccia
+  - file: 2024/sessions/intro
+    sections:
+    - file: 2024/sessions/day1-01-Opening_Remarks
 - caption: Workshops
   chapters:
   - file: workshops/day1/intro
